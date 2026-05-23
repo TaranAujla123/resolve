@@ -37,12 +37,9 @@ export function Hero() {
           The sales that need more than a standard listing.
         </p>
         <p className="mt-7 max-w-2xl text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft">
-          Resolve is a boutique seller representation practice operating through HomeLife
-          G1 Realty Inc., Brokerage. We work the files that fall outside the standard
-          listing playbook, with the same standard applied on every engagement. The first
-          conversation is private and free. When selling is the right path, we handle the
-          sale on your timeline, focused on protecting what you&rsquo;ve worked for. When
-          it isn&rsquo;t, we&rsquo;ll tell you that too.
+          A boutique seller representation practice operating through HomeLife G1
+          Realty Inc., Brokerage. The first conversation is private and free, focused
+          on protecting what you&rsquo;ve worked for.
         </p>
         <motion.div
           initial="hidden"
