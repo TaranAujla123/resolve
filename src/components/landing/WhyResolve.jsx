@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Lock, Coins, MessageCircleHeart, MapPin } from 'lucide-react'
+import { Lock, Coins, MessageCircleHeart, Compass } from 'lucide-react'
 import { Section, SectionHead } from './Section'
 
 const pillars = [
@@ -20,9 +20,9 @@ const pillars = [
     body: 'Plain language, honest timelines, and clear next steps. You will always know where you stand.',
   },
   {
-    icon: MapPin,
-    title: 'Ontario expertise',
-    body: 'Local, current, and grounded in how Ontario seller representation actually works on the ground.',
+    icon: Compass,
+    title: 'Strategy, not a price cut',
+    body: 'The work starts before the listing: understanding the file, the timeline, and the pressures, so problems get handled early instead of at the closing table.',
   },
 ]
 

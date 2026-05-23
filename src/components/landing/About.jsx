@@ -35,19 +35,29 @@ export function About() {
           </div>
           <div className="mt-7 space-y-4 text-[16.5px] leading-relaxed text-ink-soft">
             <p>
-              Resolve was created for sellers who need quieter, more careful
-              representation than the standard listing playbook allows. Every file
-              is treated as situation-specific, with diligence-led work that begins
-              well before any sign goes up.
+              For close to a decade I practised business and real estate law in
+              Ontario, working through hundreds of transactions and the
+              complications that come with them. I was often the one called in
+              when a deal was tangled, time-sensitive, or going sideways. That
+              work taught me exactly where property transactions break, and how
+              to keep them from breaking. I now work on the deal side directly,
+              as a real estate Salesperson with HomeLife G1 Realty Inc., Brokerage.
             </p>
             <p>
-              The aim is simple: a thoughtful plan, a respectful process, and a
-              sale that protects the equity you have built. No theatrics, no
-              pressure, no shortcuts.
+              A difficult situation isn&rsquo;t solved by putting a sign on the
+              lawn and cutting the price until something sells. It&rsquo;s solved
+              by understanding it first. Before anything is listed, I work to
+              understand your full situation, the timeline, the numbers, the
+              pressures, and what a genuinely good outcome looks like for you,
+              so the plan is built around your circumstances rather than a
+              generic playbook. The legal questions go to your lawyer. The
+              strategy, the preparation, and the representation are mine.
             </p>
             <p>
-              If you would like a private, confidential conversation about what
-              you are facing, you are welcome to reach out below or by phone.
+              That preparation is the difference between a sale that adds to the
+              stress and one that quietly takes it away. If you would like a
+              private, confidential conversation about what you are facing, with
+              no obligation and no pressure, reach out below or by phone.
             </p>
           </div>
         </motion.div>
