@@ -30,7 +30,7 @@ export function Hero() {
           <span>Resolve &middot; Seller Representation</span>
         </p>
         <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-semibold">
-          For Ontario homeowners in difficult situations.
+          Facing a difficult property situation?
         </h1>
         <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium">
           Power of sale. Mortgage arrears. Separation. Estate sales. Property disputes.
