@@ -7,13 +7,11 @@ import { Input, Textarea, Select, Label, Checkbox } from '@/components/ui/Field'
 import { Section, SectionHead } from './Section'
 import portrait from '@/portrait.jpg'
 
-// When the Formspree endpoint is ready:
-//   1. Set FORM_DISABLED to false
-//   2. Replace FORMSPREE_ENDPOINT with the live form URL (e.g. https://formspree.io/f/abcd1234)
-// Until both are done, the form renders in a quiet disabled state that
-// directs visitors to call (365) 645-7332 instead. No submissions are sent.
-const FORM_DISABLED = true
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/REPLACE_ME'
+// Kill-switch: set to true to revert to the "call only" state.
+// Flips the form between live submission and a disabled state that
+// directs visitors to call (365) 645-7332 instead.
+const FORM_DISABLED = false
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 
 const situations = [
   'Power of Sale',
@@ -91,6 +89,9 @@ export function InquiryForm() {
         className="mt-6 mx-auto max-w-3xl bg-white border border-surface-line rounded-2xl p-7 sm:p-10 shadow-card"
         aria-disabled={FORM_DISABLED}
       >
+        {/* Formspree special fields: set inbox subject + ensure replies go to the inquirer.
+            Formspree auto-uses a field named "email" as Reply-To, but _replyto makes it explicit. */}
+        <input type="hidden" name="_subject" value="Resolve · New confidential inquiry" />
         <fieldset disabled={FORM_DISABLED} className="contents">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
