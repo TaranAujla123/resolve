@@ -14,38 +14,50 @@ const items = [
   {
     icon: Gavel,
     title: 'Power of Sale',
-    body:
-      'When the lender has begun enforcement, time matters and so does composure. We work to position the property, manage process, and protect any remaining equity available to you.',
+    situation:
+      'Your lender has started enforcement and the clock is running. The real fear is losing the home, and the equity in it, on the bank’s timeline instead of yours.',
+    help:
+      'We move quickly to list and position the property properly and coordinate with your lawyer and lender, so the sale is handled in good order with your remaining equity kept front and centre.',
   },
   {
     icon: HeartHandshake,
     title: 'Divorce or Separation',
-    body:
-      'Selling during separation is rarely just about the house. We coordinate with your counsel, keep communication neutral, and run a tidy sale so both sides feel respected.',
+    situation:
+      'Selling the matrimonial home during a separation is rarely just about the house. Two sets of interests, raw emotions, and hard timelines all have to be managed at once.',
+    help:
+      'We keep communication neutral, coordinate with both parties’ lawyers, and run a clean, fair sale so neither side feels disadvantaged by how the home was handled.',
   },
   {
     icon: Scroll,
     title: 'Estate and Probate',
-    body:
-      'Selling a loved one’s home asks a lot of executors. We move at the pace of the estate, work with your lawyer, and bring careful, patient guidance to every step.',
+    situation:
+      'Selling a loved one’s home as an executor means carrying probate timelines, multiple beneficiaries, and the weight of the loss all at the same time.',
+    help:
+      'We move at the pace the estate allows, coordinate with the estate lawyer and the beneficiaries, and manage the sale with patience and care so it’s handled properly for everyone.',
   },
   {
     icon: AlertCircle,
     title: 'Mortgage Arrears',
-    body:
-      'If arrears are mounting and the calls feel heavier each week, you have more options than you think. A confidential review can show what is realistic and what is not.',
+    situation:
+      'When payments fall behind and the calls get heavier each week, it’s hard to see a way out, and the longer it waits, the narrower the options become.',
+    help:
+      'A private, no-obligation review shows you what’s realistic. When selling is the right path, we list and manage it carefully so you move from a reactive position to a planned one.',
   },
   {
     icon: Sunrise,
     title: 'Life Transitions',
-    body:
-      'Job change, health change, downsizing, relocation. Major life shifts deserve a sale that is planned rather than rushed, with options laid out clearly before any listing begins.',
+    situation:
+      'A job move, a health change, a downsizing, a retirement. Sometimes life calls for a property change on a real timeline.',
+    help:
+      'We plan the sale around your timeline rather than rushing it, handling pricing, preparation, and negotiation so the move happens on your terms, not under pressure.',
   },
   {
     icon: Scale,
     title: 'Property Disputes',
-    body:
-      'Co-ownership friction, boundary or tenancy questions, partition matters. We listen carefully, coordinate with your legal team, and help bring the property toward a clean resolution.',
+    situation:
+      'Co-ownership friction, a boundary or tenancy question, a lien, or a partition matter. Anything clouding title makes a clean sale harder.',
+    help:
+      'We listen carefully, coordinate with your real estate lawyer to address the title and ownership issues, and work to bring the property to a clean, orderly sale.',
   },
 ]
 
@@ -63,8 +75,8 @@ export function Situations() {
     <Section id="situations" tint>
       <SectionHead
         eyebrow="Situations we focus on"
-        title="Quiet help for the moments that feel anything but quiet."
-        intro="Resolve was built around the situations where a thoughtful sale matters most. Every engagement begins with a private conversation, never a pitch."
+        title="Whatever you&rsquo;re facing, there&rsquo;s a way through."
+        intro="Resolve focuses on the sales most agents aren&rsquo;t built for. Each one starts with a private conversation, never a pitch."
       />
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {items.map((it, i) => {
@@ -77,13 +89,19 @@ export function Situations() {
               viewport={{ once: true, margin: '-60px' }}
               variants={cardVariants}
               custom={i}
-              className="group bg-white rounded-2xl border border-surface-line p-7 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300"
+              className="group bg-white rounded-2xl border border-surface-line p-7 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
             >
               <div className="h-11 w-11 rounded-xl bg-accent-soft text-accent-deep flex items-center justify-center">
                 <Icon className="h-5 w-5" strokeWidth={1.8} />
               </div>
               <h3 className="mt-5 text-[1.2rem] font-semibold text-ink">{it.title}</h3>
-              <p className="mt-2.5 text-[15px] text-ink-soft leading-relaxed">{it.body}</p>
+              <p className="mt-2.5 text-[15px] text-ink-soft leading-relaxed">{it.situation}</p>
+              <div className="mt-5 pt-5 border-t border-surface-line">
+                <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">
+                  How we help
+                </p>
+                <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">{it.help}</p>
+              </div>
             </motion.article>
           )
         })}
