@@ -1,4 +1,5 @@
 import React from 'react'
+import { ArrowUpRight } from 'lucide-react'
 import { Wordmark } from './Wordmark'
 
 export function Footer() {
@@ -48,16 +49,28 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 grid grid-cols-1 lg:grid-cols-12 gap-6">
-          <p className="lg:col-span-8 text-[12.5px] text-white/55 leading-relaxed">
-            The content on this site is informational only and is not legal, accounting,
-            or financial advice. References to protecting equity are aspirational and
-            are not a guarantee of any specific outcome. Real estate trades require a
-            written representation agreement and are conducted under TRESA.
+        <div className="mt-12 pt-8 border-t border-white/10 space-y-6">
+          <p className="text-[12.5px] text-white/55 leading-relaxed">
+            Also by Taran Aujla.{' '}
+            <a
+              href="https://prime-gate.ca"
+              className="text-white/80 hover:text-accent transition-colors underline-offset-4 hover:underline whitespace-nowrap"
+            >
+              Primegate<ArrowUpRight className="inline h-3 w-3 ml-0.5 -translate-y-px" aria-hidden="true" />
+            </a>
+            : representation for investment, land, development, and income-producing real estate.
           </p>
-          <p className="lg:col-span-4 text-[12.5px] text-white/55 lg:text-right">
-            &copy; {new Date().getFullYear()} Taran Aujla, Salesperson. HomeLife G1 Realty Inc., Brokerage.
-          </p>
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+            <p className="lg:col-span-8 text-[12.5px] text-white/55 leading-relaxed">
+              The content on this site is informational only and is not legal, accounting,
+              or financial advice. References to protecting equity are aspirational and
+              are not a guarantee of any specific outcome. Real estate trades require a
+              written representation agreement and are conducted under TRESA.
+            </p>
+            <p className="lg:col-span-4 text-[12.5px] text-white/55 lg:text-right">
+              &copy; {new Date().getFullYear()} Taran Aujla, Salesperson. HomeLife G1 Realty Inc., Brokerage.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
