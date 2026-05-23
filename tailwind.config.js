@@ -27,9 +27,9 @@ export default {
           line: '#E2E8F0',
         },
         accent: {
-          DEFAULT: '#0EA5E9',
-          deep: '#0284C7',
-          soft: '#E0F2FE',
+          DEFAULT: '#1F8B5A',
+          deep: '#126142',
+          soft: '#DEF1E5',
         },
       },
       fontFamily: {
@@ -51,7 +51,7 @@ export default {
       boxShadow: {
         card: '0 1px 2px rgba(15, 23, 42, 0.04), 0 8px 24px -12px rgba(15, 23, 42, 0.08)',
         'card-hover': '0 2px 4px rgba(15, 23, 42, 0.05), 0 16px 32px -12px rgba(15, 23, 42, 0.12)',
-        ring: '0 0 0 4px rgba(14, 165, 233, 0.18)',
+        ring: '0 0 0 4px rgba(31, 139, 90, 0.18)',
       },
       borderRadius: {
         xl: '14px',
@@ -59,7 +59,7 @@ export default {
       },
       backgroundImage: {
         'hero-fade':
-          'radial-gradient(60% 60% at 80% 0%, rgba(14,165,233,0.10) 0%, rgba(14,165,233,0) 60%), radial-gradient(40% 50% at 0% 20%, rgba(10,31,68,0.06) 0%, rgba(10,31,68,0) 60%)',
+          'radial-gradient(60% 60% at 80% 0%, rgba(31,139,90,0.10) 0%, rgba(31,139,90,0) 60%), radial-gradient(40% 50% at 0% 20%, rgba(10,31,68,0.06) 0%, rgba(10,31,68,0) 60%)',
       },
     },
   },
