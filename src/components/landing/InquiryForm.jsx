@@ -5,6 +5,7 @@ import { Lock, Send, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input, Textarea, Select, Label, Checkbox } from '@/components/ui/Field'
 import { Section, SectionHead } from './Section'
+import portrait from '@/portrait.jpg'
 
 // When the Formspree endpoint is ready:
 //   1. Set FORM_DISABLED to false
@@ -70,13 +71,24 @@ export function InquiryForm() {
         }
         align="center"
       />
+      <div className="mt-8 mx-auto max-w-3xl flex items-center justify-center gap-3 text-[14px] text-ink-soft">
+        <img
+          src={portrait}
+          alt=""
+          aria-hidden="true"
+          width="44"
+          height="44"
+          className="h-11 w-11 rounded-full object-cover object-top border border-surface-line shadow-sm flex-shrink-0"
+        />
+        <span>You will be speaking directly with Taran Aujla.</span>
+      </div>
       <motion.form
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-12 mx-auto max-w-3xl bg-white border border-surface-line rounded-2xl p-7 sm:p-10 shadow-card"
+        className="mt-6 mx-auto max-w-3xl bg-white border border-surface-line rounded-2xl p-7 sm:p-10 shadow-card"
         aria-disabled={FORM_DISABLED}
       >
         <fieldset disabled={FORM_DISABLED} className="contents">

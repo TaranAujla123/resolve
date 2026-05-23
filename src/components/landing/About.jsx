@@ -2,6 +2,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Building2, BadgeCheck } from 'lucide-react'
 import { Section, SectionHead } from './Section'
+import portrait from '@/portrait.jpg'
 
 export function About() {
   return (
@@ -15,13 +16,24 @@ export function About() {
           className="lg:col-span-7"
         >
           <p className="eyebrow">About</p>
-          <h2 className="mt-3 text-display-lg text-ink font-semibold">
-            Taran Aujla, Salesperson.
-          </h2>
-          <p className="mt-2 text-ink-soft font-medium">
-            HomeLife G1 Realty Inc., Brokerage
-          </p>
-          <div className="mt-6 space-y-4 text-[16.5px] leading-relaxed text-ink-soft">
+          <div className="mt-5 flex flex-col sm:flex-row sm:items-end gap-6 sm:gap-7">
+            <img
+              src={portrait}
+              alt="Taran Aujla, Salesperson, HomeLife G1 Realty Inc., Brokerage"
+              width="208"
+              height="260"
+              className="w-44 sm:w-52 h-56 sm:h-64 object-cover object-top rounded-2xl border border-surface-line shadow-card flex-shrink-0"
+            />
+            <div className="pb-1">
+              <h2 className="text-display-lg text-ink font-semibold">
+                Taran Aujla, Salesperson.
+              </h2>
+              <p className="mt-2 text-ink-soft font-medium">
+                HomeLife G1 Realty Inc., Brokerage
+              </p>
+            </div>
+          </div>
+          <div className="mt-7 space-y-4 text-[16.5px] leading-relaxed text-ink-soft">
             <p>
               Resolve was created for sellers who need quieter, more careful
               representation than the standard listing playbook allows. Every file
