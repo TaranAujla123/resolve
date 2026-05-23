@@ -28,9 +28,12 @@ export function Hero() {
       <div className="container section-y relative">
         <p className="eyebrow">For Ontario homeowners in difficult situations</p>
         <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-semibold">
-          Facing a difficult property situation? You have more options than you&rsquo;ve been told.
+          Facing a difficult property situation?
         </h1>
-        <p className="mt-6 max-w-2xl text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft">
+        <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium">
+          You have more options than you&rsquo;ve been told.
+        </p>
+        <p className="mt-7 max-w-2xl text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft">
           Resolve is private, experienced representation for Ontario homeowners in hard
           situations. We help you see your real options, and when selling is the right path,
           we list your home and guide the sale to a clean close, protecting what you&rsquo;ve
