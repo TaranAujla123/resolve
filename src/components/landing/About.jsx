@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Building2, BadgeCheck } from 'lucide-react'
+import { Building2, BadgeCheck, Quote } from 'lucide-react'
 import { Section, SectionHead } from './Section'
 import portrait from '@/portrait.jpg'
 
@@ -16,50 +16,59 @@ export function About() {
           className="lg:col-span-7"
         >
           <p className="eyebrow">About</p>
-          <div className="mt-5 flex flex-col sm:flex-row sm:items-end gap-6 sm:gap-7">
-            <img
-              src={portrait}
-              alt="Taran Aujla, Salesperson, HomeLife G1 Realty Inc., Brokerage"
-              width="208"
-              height="260"
-              className="w-44 sm:w-52 h-56 sm:h-64 object-cover object-top rounded-2xl border border-surface-line shadow-card flex-shrink-0"
-            />
-            <div className="pb-1">
-              <h2 className="text-display-lg text-ink font-semibold">
-                Taran Aujla, Salesperson.
-              </h2>
-              <p className="mt-2 text-ink-soft font-medium">
-                HomeLife G1 Realty Inc., Brokerage
-              </p>
+          <h2 className="mt-3 text-display-lg text-ink font-semibold">About Resolve</h2>
+
+          <div className="mt-6 space-y-4 text-[16.5px] leading-relaxed text-ink-soft">
+            <p>
+              Resolve is a boutique seller representation practice operating through
+              HomeLife G1 Realty Inc., Brokerage. It was built to handle the files
+              that don&rsquo;t fit the standard listing playbook, where timing,
+              discretion, equity, and the right counsel matter more than maximum
+              exposure. The standard is the same on every file: a private first
+              conversation, a clear written assessment before any decision, and full
+              representation through to closing, with protecting your equity the
+              priority at every stage. The practice operates from Brampton and
+              serves Ontario.
+            </p>
+            <p>
+              Resolve is led by Taran Aujla, Salesperson, and Dave Dhaliwal, Broker,
+              both with HomeLife G1 Realty Inc., Brokerage. Between them they bring
+              brokerage-level experience and several hundred Ontario property
+              transactions across residential, commercial, and complex situations.
+            </p>
+          </div>
+
+          <figure className="mt-8 rounded-2xl border border-surface-line bg-white p-6 sm:p-7 shadow-card">
+            <div className="flex flex-col sm:flex-row gap-5 sm:gap-7">
+              <img
+                src={portrait}
+                alt="Taran Aujla, Salesperson, HomeLife G1 Realty Inc., Brokerage"
+                width="156"
+                height="196"
+                className="w-36 h-44 sm:w-40 sm:h-48 object-cover object-top rounded-xl border border-surface-line flex-shrink-0"
+              />
+              <div className="flex-1">
+                <Quote
+                  className="h-6 w-6 text-accent-deep/70"
+                  strokeWidth={1.6}
+                  aria-hidden="true"
+                />
+                <blockquote className="mt-3 text-[15.5px] text-ink-soft leading-relaxed">
+                  For close to a decade I practised business and real estate law in
+                  Ontario, working through hundreds of transactions and the
+                  complications that come with them. I was often the one called in
+                  when a deal was tangled, time-sensitive, or going sideways. That
+                  work taught me where property transactions break, and how to keep
+                  them from breaking. I now work on the deal side directly, as a
+                  Salesperson, not as a lawyer. Legal questions go to your lawyer;
+                  the strategy, the preparation, and the representation are mine.
+                </blockquote>
+                <figcaption className="mt-4 text-[13px] uppercase tracking-[0.12em] font-semibold text-ink">
+                  Taran Aujla, Salesperson
+                </figcaption>
+              </div>
             </div>
-          </div>
-          <div className="mt-7 space-y-4 text-[16.5px] leading-relaxed text-ink-soft">
-            <p>
-              For close to a decade I practised business and real estate law in
-              Ontario, working through hundreds of transactions and the
-              complications that come with them. I was often the one called in
-              when a deal was tangled, time-sensitive, or going sideways. That
-              work taught me exactly where property transactions break, and how
-              to keep them from breaking. I now work on the deal side directly,
-              as a real estate Salesperson with HomeLife G1 Realty Inc., Brokerage.
-            </p>
-            <p>
-              A difficult situation isn&rsquo;t solved by putting a sign on the
-              lawn and cutting the price until something sells. It&rsquo;s solved
-              by understanding it first. Before anything is listed, I work to
-              understand your full situation, the timeline, the numbers, the
-              pressures, and what a genuinely good outcome looks like for you,
-              so the plan is built around your circumstances rather than a
-              generic playbook. The legal questions go to your lawyer. The
-              strategy, the preparation, and the representation are mine.
-            </p>
-            <p>
-              That preparation is the difference between a sale that adds to the
-              stress and one that quietly takes it away. If you would like a
-              private, confidential conversation about what you are facing, with
-              no obligation and no pressure, reach out below or by phone.
-            </p>
-          </div>
+          </figure>
         </motion.div>
 
         <motion.aside
@@ -101,16 +110,18 @@ export function About() {
                 </div>
                 <div>
                   <p className="text-[11px] uppercase tracking-[0.14em] text-ink-mute font-medium">
-                    Practitioner
+                    Practitioners
                   </p>
                   <p className="mt-1 font-semibold text-ink">Taran Aujla, Salesperson</p>
-                  <p className="text-sm text-ink-soft">
+                  <p className="text-sm text-ink-soft">RECO Registration No. 6024721</p>
+                  <p className="mt-2 font-semibold text-ink">Dave Dhaliwal, Broker</p>
+                  <p className="text-sm text-ink-soft">RECO Registration No. [DAVE_RECO_NUMBER]</p>
+                  <p className="mt-3 text-sm text-ink-soft">
                     Direct:{' '}
                     <a href="tel:+13656457332" className="text-ink hover:text-accent-deep transition-colors">
                       (365) 645-7332
                     </a>
                   </p>
-                  <p className="text-sm text-ink-soft mt-1">RECO Registration No. 6024721</p>
                 </div>
               </div>
             </div>

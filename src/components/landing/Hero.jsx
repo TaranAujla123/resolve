@@ -4,8 +4,7 @@ import { Phone, ArrowRight, Check } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 // Hero text renders statically so the headline is fully visible from frame 1.
-// Only the secondary CTA row, trust row, and footnote get a subtle entrance
-// animation, kept short (0.35s) so nothing important is invisible while it plays.
+// Only the CTA row, trust row, and footnote get a short fade-up entrance.
 const polish = {
   hidden: { opacity: 0, y: 8 },
   show: (i = 0) => ({
@@ -16,8 +15,8 @@ const polish = {
 }
 
 const trustItems = [
-  'Full-service representation',
   'Confidential',
+  'Boutique practice',
   'No obligation',
   'Serving Ontario',
 ]
@@ -28,32 +27,35 @@ export function Hero() {
       <div className="container section-y relative">
         <p className="flex items-center gap-3 text-[13px] sm:text-[13.5px] font-semibold uppercase tracking-[0.16em] text-accent-deep">
           <span aria-hidden="true" className="block h-px w-8 sm:w-10 flex-shrink-0 bg-accent-deep" />
-          <span>For Ontario homeowners in difficult situations</span>
+          <span>Resolve &middot; Seller Representation</span>
         </p>
         <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-semibold">
-          Facing a difficult property situation?
+          For Ontario homeowners in difficult situations.
         </h1>
         <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium">
-          You have more options than you&rsquo;ve been told.
+          Power of sale. Mortgage arrears. Separation. Estate sales. Property disputes.
+          The sales that need more than a standard listing.
         </p>
         <p className="mt-7 max-w-2xl text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft">
-          Resolve is private, experienced representation for Ontario homeowners in hard
-          situations. We help you see your real options, and when selling is the right path,
-          we list your home and guide the sale to a clean close, protecting what you&rsquo;ve
-          worked for.
+          Resolve is a boutique seller representation practice operating through HomeLife
+          G1 Realty Inc., Brokerage. We work the files that fall outside the standard
+          listing playbook, with the same standard applied on every engagement. The first
+          conversation is private and free. When selling is the right path, we handle the
+          sale on your timeline, focused on protecting what you&rsquo;ve worked for. When
+          it isn&rsquo;t, we&rsquo;ll tell you that too.
         </p>
         <motion.div
           initial="hidden"
           animate="show"
           variants={polish}
           custom={0}
-          className="mt-9 flex flex-col sm:flex-row sm:items-center gap-3"
+          className="mt-9 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
         >
           <Button as="a" href="#contact" size="lg" variant="primary" className="group">
             Request a Private Consultation
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Button>
-          <Button as="a" href="tel:+13656457332" size="lg" variant="outline">
+          <Button as="a" href="tel:+13656457332" size="lg" variant="ghost">
             <Phone className="h-4 w-4" />
             Call (365) 645-7332
           </Button>

@@ -76,7 +76,7 @@ export function Situations() {
       <SectionHead
         eyebrow="Situations we focus on"
         title="Whatever you&rsquo;re facing, there&rsquo;s a way through."
-        intro="Resolve focuses on the sales most agents aren&rsquo;t built for. Each one starts with a private conversation, never a pitch."
+        intro="Resolve focuses on the sales that need more than a standard listing. Every file is handled to the same standard. Each one starts with a private conversation, never a pitch."
       />
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {items.map((it, i) => {

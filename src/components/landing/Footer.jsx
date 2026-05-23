@@ -10,15 +10,14 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Wordmark tone="invert" />
             <p className="mt-5 text-[14.5px] leading-relaxed text-white/70 max-w-md">
-              Resolve is a trade name used by Taran Aujla in connection with real
-              estate services provided through HomeLife G1 Realty Inc., Brokerage.
-              Resolve is not a brokerage and does not itself trade in real estate.
-              All real estate trades are made through HomeLife G1 Realty Inc.,
-              Brokerage.
+              Resolve is a trade name used in connection with real estate services
+              provided through HomeLife G1 Realty Inc., Brokerage. Resolve is not a
+              brokerage and does not itself trade in real estate. All real estate
+              trades are made through HomeLife G1 Realty Inc., Brokerage.
             </p>
           </div>
 
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-3">
             <p className="text-[11px] uppercase tracking-[0.16em] text-white/55 font-medium">
               Brokerage
             </p>
@@ -34,18 +33,29 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-4">
             <p className="text-[11px] uppercase tracking-[0.16em] text-white/55 font-medium">
-              Practitioner
+              Practitioners
             </p>
-            <p className="mt-3 font-semibold text-white">Taran Aujla, Salesperson</p>
-            <p className="mt-2 text-[14px]">
-              Direct:{' '}
-              <a href="tel:+13656457332" className="text-white hover:text-accent transition-colors">
+            <div className="mt-3 space-y-2.5 text-[14px]">
+              <div>
+                <p className="font-semibold text-white">Taran Aujla, Salesperson</p>
+                <p className="text-white/70">RECO Registration No. 6024721</p>
+              </div>
+              <div>
+                <p className="font-semibold text-white">Dave Dhaliwal, Broker</p>
+                <p className="text-white/70">RECO Registration No. [DAVE_RECO_NUMBER]</p>
+              </div>
+            </div>
+            <p className="mt-4 pt-4 border-t border-white/10 text-[14px]">
+              <span className="text-white/55 uppercase tracking-[0.12em] text-[11px] font-medium">
+                Direct Line
+              </span>
+              <br />
+              <a href="tel:+13656457332" className="text-white hover:text-accent transition-colors text-[15px] font-semibold">
                 (365) 645-7332
               </a>
             </p>
-            <p className="mt-1 text-[14px] text-white/70">RECO Registration No. 6024721</p>
           </div>
         </div>
 
@@ -68,7 +78,7 @@ export function Footer() {
               written representation agreement and are conducted under TRESA.
             </p>
             <p className="lg:col-span-4 text-[12.5px] text-white/55 lg:text-right">
-              &copy; {new Date().getFullYear()} Taran Aujla, Salesperson. HomeLife G1 Realty Inc., Brokerage.
+              &copy; {new Date().getFullYear()} Resolve. HomeLife G1 Realty Inc., Brokerage.
             </p>
           </div>
         </div>

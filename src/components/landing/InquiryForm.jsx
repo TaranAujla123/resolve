@@ -64,8 +64,8 @@ export function InquiryForm() {
         title="Tell us a little. We will take it from there."
         intro={
           FORM_DISABLED
-            ? 'The confidential inquiry form is opening shortly. In the meantime, you are welcome to call Taran directly at (365) 645-7332. Calls are answered personally and remain confidential.'
-            : 'Your message goes only to Taran Aujla at HomeLife G1 Realty Inc., Brokerage. We respond personally, usually within one business day.'
+            ? 'The confidential inquiry form is opening shortly. In the meantime, you are welcome to call (365) 645-7332. Calls are answered personally and remain confidential.'
+            : 'Your message goes to Resolve at HomeLife G1 Realty Inc., Brokerage. We read every message personally, usually within one business day.'
         }
         align="center"
       />
@@ -78,7 +78,7 @@ export function InquiryForm() {
           height="44"
           className="h-11 w-11 rounded-full object-cover object-top border border-surface-line shadow-sm flex-shrink-0"
         />
-        <span>You will be speaking directly with Taran Aujla.</span>
+        <span>You&rsquo;ll speak directly with Taran or Dave. Never a call centre, never a hard sell.</span>
       </div>
       <motion.form
         onSubmit={handleSubmit}

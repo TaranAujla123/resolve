@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Lock, Coins, MessageCircleHeart, Compass } from 'lucide-react'
+import { Lock, Coins, Compass, MessageCircleHeart } from 'lucide-react'
 import { Section, SectionHead } from './Section'
 
 const pillars = [
@@ -15,14 +15,14 @@ const pillars = [
     body: 'Every decision is weighed against one question: does this protect what you have built in the home?',
   },
   {
-    icon: MessageCircleHeart,
-    title: 'Empathetic guidance',
-    body: 'Plain language, honest timelines, and clear next steps. You will always know where you stand.',
-  },
-  {
     icon: Compass,
     title: 'Strategy, not a price cut',
     body: 'The work starts before the listing: understanding the file, the timeline, and the pressures, so problems get handled early instead of at the closing table.',
+  },
+  {
+    icon: MessageCircleHeart,
+    title: 'Plain language',
+    body: 'Plain language, honest timelines, and clear next steps. You will always know where you stand.',
   },
 ]
 
@@ -31,7 +31,7 @@ export function WhyResolve() {
     <Section id="why" tint>
       <SectionHead
         eyebrow="Why Resolve"
-        title="Four commitments, held steady through every engagement."
+        title="Four commitments. Held on every file."
       />
       <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {pillars.map((p, i) => {

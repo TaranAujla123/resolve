@@ -32,7 +32,7 @@ export function Process() {
     <Section id="process">
       <SectionHead
         eyebrow="How it works"
-        title="A calm, considered process. From first call to closing day."
+        title="Three steps. No pressure. Full discretion."
         intro="There is no obligation to list and no pressure at any stage. Many conversations stay private and never move further. That is fine."
       />
       <ol className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-5">
