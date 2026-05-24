@@ -19,7 +19,10 @@ export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const location = useLocation()
-  const isBuyers = location.pathname === '/buyers'
+  // Routes that get the slim nav (wordmark + back-to-home only): every
+  // page that is not the homepage. Keeps focus on the page's own CTA.
+  const isHome = location.pathname === '/'
+  const isSlim = !isHome
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -40,8 +43,10 @@ export function Nav() {
       : 'bg-white/70 backdrop-blur-sm border-b border-transparent',
   )
 
-  // Slim nav on the /buyers route: wordmark + back to home only.
-  if (isBuyers) {
+  // Slim nav on /buyers and on the dedicated situation pages
+  // (/power-of-sale, /mortgage-arrears, etc.): wordmark + back to home
+  // only. Keeps the page focused on its own CTA.
+  if (isSlim) {
     return (
       <header className={headerClass}>
         <div className="container flex items-center justify-between h-16 sm:h-[72px]">

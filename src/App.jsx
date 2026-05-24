@@ -13,6 +13,8 @@ import { InquiryForm } from '@/components/landing/InquiryForm'
 import { Footer } from '@/components/landing/Footer'
 import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
 import { Seo } from '@/components/seo/Seo'
+import { PowerOfSale } from '@/components/landing/situations/PowerOfSale'
+import { MortgageArrears } from '@/components/landing/situations/MortgageArrears'
 
 // -----------------------------------------------------------------------
 // Per-route SEO payloads
@@ -152,6 +154,62 @@ const BUYERS_JSONLD = [
   },
 ]
 
+// -----------------------------------------------------------------------
+// Situation page JSON-LD helpers
+// -----------------------------------------------------------------------
+// Each dedicated situation page (e.g. /power-of-sale) ships with three
+// structured-data blocks: WebPage (canonical, breadcrumb), Service
+// (specific serviceType for Google's entity graph), and a small FAQ-
+// adjacent description that helps People-Also-Ask coverage.
+
+function situationJsonLd({ slug, name, serviceType, description, breadcrumbName }) {
+  const pageUrl = `${SITE_URL}/${slug}`
+  return [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'WebPage',
+      name,
+      url: pageUrl,
+      description,
+      isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
+      breadcrumb: {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: 'Situations', item: `${SITE_URL}/#situations` },
+          { '@type': 'ListItem', position: 3, name: breadcrumbName, item: pageUrl },
+        ],
+      },
+    },
+    {
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      serviceType,
+      provider: RESOLVE_ORG,
+      areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
+      description,
+    },
+  ]
+}
+
+const POWER_OF_SALE_JSONLD = situationJsonLd({
+  slug: 'power-of-sale',
+  name: 'Selling a Home in Power of Sale · Ontario · Resolve',
+  serviceType: 'Real Estate Representation — Power of Sale (Ontario)',
+  breadcrumbName: 'Power of Sale',
+  description:
+    'Power of sale is a lender-driven sale process in Ontario. Resolve represents homeowners navigating it quietly and quickly, with equity protection at the centre of every decision through to closing.',
+})
+
+const MORTGAGE_ARREARS_JSONLD = situationJsonLd({
+  slug: 'mortgage-arrears',
+  name: 'Selling a Home in Mortgage Arrears · Ontario · Resolve',
+  serviceType: 'Real Estate Representation — Mortgage Arrears (Ontario)',
+  breadcrumbName: 'Mortgage Arrears',
+  description:
+    'Behind on mortgage payments and considering a sale? Resolve represents Ontario homeowners through the arrears window, privately and on a defensible timeline, with equity protection at the centre.',
+})
+
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation()
   useEffect(() => {
@@ -193,6 +251,34 @@ function BuyersPage() {
   )
 }
 
+function PowerOfSalePage() {
+  return (
+    <>
+      <Seo
+        title="Power of Sale in Ontario · Selling Your Home · Resolve"
+        description="Power of sale is a lender-driven sale process in Ontario. Resolve represents homeowners navigating it quietly and quickly, with equity protection at the centre of every decision."
+        canonical={`${SITE_URL}/power-of-sale`}
+        jsonLd={POWER_OF_SALE_JSONLD}
+      />
+      <PowerOfSale />
+    </>
+  )
+}
+
+function MortgageArrearsPage() {
+  return (
+    <>
+      <Seo
+        title="Mortgage Arrears in Ontario · Selling Your Home · Resolve"
+        description="Behind on mortgage payments and considering a sale? Resolve represents Ontario homeowners through the arrears window, privately and on a defensible timeline."
+        canonical={`${SITE_URL}/mortgage-arrears`}
+        jsonLd={MORTGAGE_ARREARS_JSONLD}
+      />
+      <MortgageArrears />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -204,6 +290,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/buyers" element={<BuyersPage />} />
+            <Route path="/power-of-sale" element={<PowerOfSalePage />} />
+            <Route path="/mortgage-arrears" element={<MortgageArrearsPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>

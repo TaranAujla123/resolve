@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import {
   Gavel,
   HeartHandshake,
@@ -7,6 +8,7 @@ import {
   AlertCircle,
   Sunrise,
   Scale,
+  ArrowRight,
 } from 'lucide-react'
 import { Section, SectionHead } from './Section'
 
@@ -14,6 +16,7 @@ const items = [
   {
     icon: AlertCircle,
     title: 'Mortgage Arrears',
+    href: '/mortgage-arrears',
     situation:
       'When payments fall behind and the calls get heavier each week, it’s hard to see a way out, and the longer it waits, the narrower the options become.',
     help:
@@ -22,6 +25,7 @@ const items = [
   {
     icon: Gavel,
     title: 'Power of Sale',
+    href: '/power-of-sale',
     situation:
       'Your lender has started enforcement and the clock is running. The real fear is losing the home, and the equity in it, on the bank’s timeline instead of yours.',
     help:
@@ -106,6 +110,15 @@ export function Situations() {
                   How we help
                 </p>
                 <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">{it.help}</p>
+                {it.href && (
+                  <Link
+                    to={it.href}
+                    className="mt-4 inline-flex items-center gap-1.5 text-[13.5px] font-semibold text-accent-deep hover:text-ink transition-colors"
+                  >
+                    Read about {it.title.toLowerCase()}
+                    <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                  </Link>
+                )}
               </div>
             </motion.article>
           )
