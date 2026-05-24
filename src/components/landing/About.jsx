@@ -16,7 +16,7 @@ export function About() {
         className="mx-auto max-w-4xl"
       >
         <p className="eyebrow">About</p>
-        <h2 className="mt-3 text-display-lg text-ink font-semibold">About Resolve</h2>
+        <h2 className="mt-3 text-display-lg text-ink font-display font-medium">About Resolve</h2>
 
         <div className="mt-6 max-w-3xl space-y-4 text-[16.5px] leading-relaxed text-ink-soft">
           <p>

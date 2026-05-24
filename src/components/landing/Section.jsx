@@ -26,7 +26,7 @@ export function SectionHead({ eyebrow, title, intro, align = 'left' }) {
       )}
     >
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-      <h2 className="mt-3 text-display-lg text-ink font-semibold">{title}</h2>
+      <h2 className="mt-3 text-display-lg text-ink font-display font-medium">{title}</h2>
       {intro && <p className="mt-4 text-lg text-ink-soft leading-relaxed">{intro}</p>}
     </motion.div>
   )

@@ -74,7 +74,7 @@ export function Buyers() {
           <span aria-hidden="true" className="block h-px w-8 sm:w-10 flex-shrink-0 bg-accent-deep" />
           <span>For Buyers</span>
         </p>
-        <h2 className="mt-4 text-display-lg text-ink font-semibold">
+        <h2 className="mt-4 text-display-lg text-ink font-display font-medium">
           Qualified buyers, considered representation.
         </h2>
         <p className="mt-4 text-lg text-ink-soft leading-relaxed max-w-3xl">
