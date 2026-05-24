@@ -21,6 +21,14 @@ const trustItems = [
   'Serving Ontario',
 ]
 
+const heroLanes = [
+  'Mortgage Arrears',
+  'Power of Sale',
+  'Separation',
+  'Disputes',
+  'Estate Sales',
+]
+
 export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-hero-fade">
@@ -33,7 +41,19 @@ export function Hero() {
           Facing a difficult property situation?
         </h1>
         <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium text-center sm:text-left">
-          Mortgage Arrears &middot; Power of Sale &middot; Separation &middot; Disputes &middot; Estate
+          {heroLanes.map((label, i) => (
+            <React.Fragment key={label}>
+              {label}
+              {i < heroLanes.length - 1 && (
+                <span
+                  aria-hidden="true"
+                  className="mx-1.5 sm:mx-2 text-accent text-[1.45em] leading-none align-middle"
+                >
+                  &middot;
+                </span>
+              )}
+            </React.Fragment>
+          ))}
         </p>
         <p className="mt-7 max-w-2xl mx-auto sm:mx-0 text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft text-center sm:text-left">
           A boutique seller representation practice where the sale needs more than a
