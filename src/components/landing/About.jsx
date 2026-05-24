@@ -27,7 +27,12 @@ export function About() {
             conversation, a clear written assessment before any decision, and full
             representation through to closing, with protecting your equity the
             priority at every stage. The practice operates from Brampton and
-            serves Ontario.
+            serves Ontario. Resolve also maintains a{' '}
+            <a href="#buyers" className="text-accent-deep hover:text-ink underline-offset-4 hover:underline transition-colors">
+              qualified buyer network
+            </a>
+            {' '}available to sellers who choose to involve it, alongside full MLS
+            exposure.
           </p>
           <p>
             Resolve is led by Taran Aujla, Salesperson, and Dave Dhaliwal, Broker,

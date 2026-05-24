@@ -7,6 +7,7 @@ import { Situations } from '@/components/landing/Situations'
 import { Process } from '@/components/landing/Process'
 import { WhyResolve } from '@/components/landing/WhyResolve'
 import { About } from '@/components/landing/About'
+import { Buyers } from '@/components/landing/Buyers'
 import { InquiryForm } from '@/components/landing/InquiryForm'
 import { Footer } from '@/components/landing/Footer'
 import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
@@ -22,6 +23,7 @@ export default function App() {
         <Process />
         <WhyResolve />
         <About />
+        <Buyers />
         <InquiryForm />
       </main>
       <Footer />
