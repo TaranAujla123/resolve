@@ -64,7 +64,6 @@ export function InquiryForm() {
   return (
     <Section id="contact" tint>
       <SectionHead
-        eyebrow="Confidential inquiry"
         title="Tell us a little. We will take it from there."
         intro={
           FORM_DISABLED
