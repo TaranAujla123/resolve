@@ -3,7 +3,6 @@ import { Toaster } from 'sonner'
 import { BrokerageStrip } from '@/components/landing/BrokerageStrip'
 import { Nav } from '@/components/landing/Nav'
 import { Hero } from '@/components/landing/Hero'
-import { Reality } from '@/components/landing/Reality'
 import { Situations } from '@/components/landing/Situations'
 import { Process } from '@/components/landing/Process'
 import { WhyResolve } from '@/components/landing/WhyResolve'
@@ -18,7 +17,6 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Reality />
         <Situations />
         <Process />
         <WhyResolve />
