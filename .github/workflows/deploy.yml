@@ -28,10 +28,26 @@ jobs:
           node-version: '20'
           cache: 'npm'
 
+      # Puppeteer downloads a ~150MB Chromium on install. Cache it across
+      # runs (keyed off the lockfile) so we do not pay that cost on every
+      # CI build. The path is the Puppeteer default cache directory.
+      - name: Cache Puppeteer Chromium
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/puppeteer
+          key: ${{ runner.os }}-puppeteer-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-puppeteer-
+
       - name: Install
         run: npm ci
 
-      - name: Build
+      # `npm run build` runs `vite build && node scripts/prerender.mjs`.
+      # The prerender step boots a vite preview server, launches headless
+      # Chromium, navigates to each route, and writes the post-Helmet HTML
+      # to dist/<route>/index.html so each route ships with its own
+      # title / meta / canonical / OG / JSON-LD.
+      - name: Build (vite + prerender)
         run: npm run build
 
       - name: Upload Pages artifact
