@@ -22,9 +22,7 @@ export function SectionHead({ eyebrow, title, intro, align = 'left' }) {
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
         'max-w-3xl',
-        align === 'center'
-          ? 'mx-auto text-center'
-          : 'text-center sm:text-left mx-auto sm:mx-0',
+        align === 'center' && 'mx-auto text-center',
       )}
     >
       {eyebrow && <p className="eyebrow">{eyebrow}</p>}

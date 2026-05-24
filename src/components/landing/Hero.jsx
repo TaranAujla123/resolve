@@ -33,14 +33,14 @@ export function Hero() {
   return (
     <section id="top" className="relative overflow-hidden bg-hero-fade">
       <div className="container section-y relative">
-        <p className="flex items-center justify-center sm:justify-start gap-3 text-[13px] sm:text-[13.5px] font-semibold uppercase tracking-[0.16em] text-accent-deep">
-          <span aria-hidden="true" className="hidden sm:block h-px w-10 flex-shrink-0 bg-accent-deep" />
+        <p className="flex items-center gap-3 text-[13px] sm:text-[13.5px] font-semibold uppercase tracking-[0.16em] text-accent-deep">
+          <span aria-hidden="true" className="block h-px w-8 sm:w-10 flex-shrink-0 bg-accent-deep" />
           <span>Resolve &middot; For Ontario Homeowners</span>
         </p>
-        <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-semibold text-center sm:text-left">
+        <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-semibold">
           Facing a difficult property situation?
         </h1>
-        <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium text-center sm:text-left">
+        <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium">
           {heroLanes.map((label, i) => (
             <React.Fragment key={label}>
               {label}
@@ -55,7 +55,7 @@ export function Hero() {
             </React.Fragment>
           ))}
         </p>
-        <p className="mt-7 max-w-2xl mx-auto sm:mx-0 text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft text-center sm:text-left">
+        <p className="mt-7 max-w-2xl text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft">
           A boutique seller representation practice where the sale needs more than a
           standard listing. The first conversation is private and free. Focused on
           protecting what you&rsquo;ve worked for.
@@ -81,7 +81,7 @@ export function Hero() {
           animate="show"
           variants={polish}
           custom={1}
-          className="mt-7 flex flex-wrap items-center justify-center sm:justify-start gap-x-3 gap-y-2 text-[13.5px] text-ink-soft"
+          className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13.5px] text-ink-soft"
         >
           {trustItems.map((label, idx) => (
             <li key={label} className="inline-flex items-center gap-2">
@@ -98,7 +98,7 @@ export function Hero() {
           animate="show"
           variants={polish}
           custom={2}
-          className="mt-6 text-sm text-ink-mute max-w-xl mx-auto sm:mx-0 text-center sm:text-left"
+          className="mt-6 text-sm text-ink-mute max-w-xl"
         >
           Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage. Independently Owned and Operated. Your inquiry is confidential.
         </motion.p>
