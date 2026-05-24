@@ -40,7 +40,7 @@ export function Hero() {
         <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-semibold">
           Facing a difficult property situation?
         </h1>
-        <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium">
+        <p className="mt-3 text-[22px] sm:text-display-md text-ink/90 max-w-3xl font-medium">
           {heroLanes.map((label, i) => (
             <span key={label} className="inline-block whitespace-nowrap">
               {label}
@@ -55,7 +55,7 @@ export function Hero() {
             </span>
           ))}
         </p>
-        <p className="mt-7 max-w-2xl text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft">
+        <p className="mt-5 sm:mt-7 max-w-2xl text-[15.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
           A boutique seller representation practice where the sale needs more than a
           standard listing. The first conversation is private and free. Focused on
           protecting what you&rsquo;ve worked for.
@@ -65,7 +65,7 @@ export function Hero() {
           animate="show"
           variants={polish}
           custom={0}
-          className="mt-9 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
+          className="mt-6 sm:mt-9 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
         >
           <Button as="a" href="#contact" size="lg" variant="primary" className="group">
             Request a Private Consultation
@@ -81,7 +81,7 @@ export function Hero() {
           animate="show"
           variants={polish}
           custom={1}
-          className="mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13.5px] text-ink-soft"
+          className="mt-5 sm:mt-7 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13.5px] text-ink-soft"
         >
           {trustItems.map((label, idx) => (
             <li key={label} className="inline-flex items-center gap-2">
@@ -98,7 +98,7 @@ export function Hero() {
           animate="show"
           variants={polish}
           custom={2}
-          className="mt-6 text-sm text-ink-mute max-w-xl"
+          className="mt-4 sm:mt-6 text-[12.5px] sm:text-sm text-ink-mute max-w-xl"
         >
           Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage. Independently Owned and Operated. Your inquiry is confidential.
         </motion.p>

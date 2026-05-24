@@ -9,6 +9,7 @@ import { WhyResolve } from '@/components/landing/WhyResolve'
 import { About } from '@/components/landing/About'
 import { InquiryForm } from '@/components/landing/InquiryForm'
 import { Footer } from '@/components/landing/Footer'
+import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
 
 export default function App() {
   return (
@@ -24,6 +25,7 @@ export default function App() {
         <InquiryForm />
       </main>
       <Footer />
+      <MobileStickyCta />
       <Toaster
         position="top-center"
         toastOptions={{
