@@ -54,24 +54,26 @@ export function Reality() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.05 }}
-            className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-8 md:py-10 border-b border-surface-line last:border-b-0"
+            className="py-8 md:py-10 border-b border-surface-line last:border-b-0"
           >
-            <div className="md:col-span-5">
-              <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink-mute">
-                The reality
-              </p>
-              <h3 className="mt-2 text-[1.25rem] sm:text-[1.35rem] font-semibold text-ink leading-snug">
-                {p.reality}
-              </h3>
-              <p className="mt-3 text-[15px] text-ink-soft leading-relaxed">
-                {p.realityBody}
-              </p>
-            </div>
-            <div className="md:col-span-7 md:pl-2">
-              <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">
-                How we work
-              </p>
-              <p className="mt-2 text-[15.5px] text-ink leading-relaxed">{p.approach}</p>
+            <h3 className="text-[1.25rem] sm:text-[1.35rem] font-semibold text-ink leading-snug">
+              {p.reality}
+            </h3>
+            <div className="mt-5 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10">
+              <div className="md:col-span-5">
+                <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-ink-mute">
+                  The reality
+                </p>
+                <p className="mt-2 text-[15px] text-ink-soft leading-relaxed">
+                  {p.realityBody}
+                </p>
+              </div>
+              <div className="md:col-span-7 md:pl-2">
+                <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">
+                  How we work
+                </p>
+                <p className="mt-2 text-[15.5px] text-ink leading-relaxed">{p.approach}</p>
+              </div>
             </div>
           </motion.div>
         ))}
