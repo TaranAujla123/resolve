@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 const homeLinks = [
   { href: '#situations', label: 'Situations', type: 'anchor' },
   { href: '#process', label: 'Process', type: 'anchor' },
+  { href: '#why', label: 'Why Us', type: 'anchor' },
   { href: '#about', label: 'About', type: 'anchor' },
   { to: '/buyers', label: 'Buyers', type: 'route' },
   { href: '#contact', label: 'Contact', type: 'anchor' },
