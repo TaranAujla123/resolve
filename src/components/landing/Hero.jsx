@@ -37,7 +37,7 @@ export function Hero() {
           <span aria-hidden="true" className="block h-px w-8 sm:w-10 flex-shrink-0 bg-accent-deep" />
           <span>Resolve &middot; For Ontario Homeowners</span>
         </p>
-        <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-display font-bold">
+        <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-display font-semibold">
           Facing a difficult property situation?
         </h1>
         <p className="mt-3 text-[22px] sm:text-display-md text-ink/90 max-w-3xl font-medium">
