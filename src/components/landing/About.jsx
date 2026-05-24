@@ -64,9 +64,11 @@ export function About() {
                 complications that come with them. I was often the one called in
                 when a deal was tangled, time-sensitive, or going sideways. That
                 work taught me where property transactions break, and how to keep
-                them from breaking. I now work on the deal side directly, as a
-                Salesperson, not as a lawyer. Legal questions go to your lawyer;
-                the strategy, the preparation, and the representation are mine.
+                them from breaking. How to calmly navigate the moving parts and
+                logistics when a deal gets complicated. I now work on the deal
+                side directly, as a Salesperson, not as a lawyer. Legal questions
+                go to your lawyer. I focus on the strategy, the preparation, and
+                ensuring the deal closes smoothly.
               </blockquote>
               <figcaption className="mt-4 text-[13px] uppercase tracking-[0.12em] font-semibold text-ink">
                 Taran Aujla, Salesperson
