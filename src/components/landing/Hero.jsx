@@ -42,17 +42,17 @@ export function Hero() {
         </h1>
         <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium">
           {heroLanes.map((label, i) => (
-            <React.Fragment key={label}>
+            <span key={label} className="inline-block whitespace-nowrap">
               {label}
               {i < heroLanes.length - 1 && (
                 <span
                   aria-hidden="true"
-                  className="mx-1.5 sm:mx-2 text-accent text-[1.45em] leading-none align-middle"
+                  className="mx-1.5 sm:mx-2 text-accent text-[1.15em] sm:text-[1.45em] leading-none align-middle"
                 >
                   &middot;
                 </span>
               )}
-            </React.Fragment>
+            </span>
           ))}
         </p>
         <p className="mt-7 max-w-2xl text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft">
