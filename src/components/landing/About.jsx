@@ -27,8 +27,8 @@ export function About() {
             exposure. The standard is the same on every file: a private first
             conversation, a clear written assessment before any decision, and full
             representation through to closing, with protecting your equity the
-            priority at every stage. The practice operates from Brampton and
-            serves Ontario. Resolve also maintains a{' '}
+            priority at every stage. The practice serves homeowners across
+            Ontario. Resolve also maintains a{' '}
             <Link to="/buyers" className="text-accent-deep hover:text-ink underline-offset-4 hover:underline transition-colors">
               qualified buyer network
             </Link>
