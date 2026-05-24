@@ -33,13 +33,12 @@ export function Hero() {
           Facing a difficult property situation?
         </h1>
         <p className="mt-3 text-display-md text-ink/90 max-w-3xl font-medium">
-          Power of sale. Mortgage arrears. Separation. Estate sales. Property disputes.
-          The sales that need more than a standard listing.
+          Mortgage Arrears &middot; Power of Sale &middot; Separation &middot; Disputes &middot; Estate
         </p>
         <p className="mt-7 max-w-2xl text-lg sm:text-[1.2rem] leading-relaxed text-ink-soft">
-          A boutique seller representation practice operating through HomeLife G1
-          Realty Inc., Brokerage. The first conversation is private and free, focused
-          on protecting what you&rsquo;ve worked for.
+          A boutique seller representation practice where the sale needs more than a
+          standard listing. The first conversation is private and free. Focused on
+          protecting what you&rsquo;ve worked for.
         </p>
         <motion.div
           initial="hidden"
