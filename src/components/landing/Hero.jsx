@@ -35,7 +35,7 @@ export function Hero() {
       <div className="container section-y relative">
         <p className="flex items-center gap-3 text-[13px] sm:text-[13.5px] font-semibold uppercase tracking-[0.16em] text-accent-deep">
           <span aria-hidden="true" className="block h-px w-8 sm:w-10 flex-shrink-0 bg-accent-deep" />
-          <span>Resolve &middot; For Ontario Homeowners</span>
+          <span>Seller Representation for Ontario Homeowners</span>
         </p>
         <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-display font-semibold">
           Facing a difficult property situation?
