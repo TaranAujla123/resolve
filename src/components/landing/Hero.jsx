@@ -57,8 +57,9 @@ export function Hero() {
         </p>
         <p className="mt-5 sm:mt-7 max-w-2xl text-[15.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
           A boutique seller representation practice where the sale needs more than a
-          standard listing. The first conversation is private and free. Focused on
-          protecting what you&rsquo;ve worked for.
+          standard listing. The first conversation is private and free. We move
+          quickly when timing matters, carefully where discretion matters, and keep
+          your equity at the centre of every decision through to closing.
         </p>
         <p className="mt-5 max-w-2xl text-[15.5px] sm:text-[17px] text-ink font-semibold leading-snug">
           Over 15 years of combined experience in Ontario&rsquo;s most difficult sales.
