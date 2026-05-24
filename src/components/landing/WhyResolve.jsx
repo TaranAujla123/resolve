@@ -32,7 +32,16 @@ export function WhyResolve() {
       <SectionHead
         eyebrow="Why Resolve"
         title="The experience these situations actually require."
-        intro="Between us, Taran and Dave bring more than fifteen years of combined experience in complex Ontario real estate, from power of sale and estate files to separations and partnership disputes."
+        intro={
+          <>
+            Between us, Taran and Dave bring{' '}
+            <strong className="font-semibold text-ink">
+              more than fifteen years of combined experience
+            </strong>{' '}
+            in complex Ontario real estate, from power of sale and estate files to
+            separations and partnership disputes.
+          </>
+        }
       />
       <p className="mt-4 max-w-3xl text-lg text-ink-soft leading-relaxed">
         We&rsquo;ve negotiated with the lenders, lawyers, opposing parties, and
