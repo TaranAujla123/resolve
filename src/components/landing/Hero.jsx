@@ -81,7 +81,7 @@ export function Hero() {
           custom={2}
           className="mt-6 text-sm text-ink-mute max-w-xl"
         >
-          A service of HomeLife G1 Realty Inc., Brokerage. Independently Owned and Operated. Your inquiry is confidential.
+          Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage. Independently Owned and Operated. Your inquiry is confidential.
         </motion.p>
       </div>
     </section>

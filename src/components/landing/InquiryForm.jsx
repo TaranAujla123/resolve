@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
-import { Lock, Send, Phone } from 'lucide-react'
+import { Lock, Send, Phone, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input, Textarea, Select, Label, Checkbox } from '@/components/ui/Field'
 import { Section, SectionHead } from './Section'
@@ -69,24 +69,43 @@ export function InquiryForm() {
         }
         align="center"
       />
-      <div className="mt-8 mx-auto max-w-3xl flex items-center justify-center gap-3 text-[14px] text-ink-soft">
-        <img
-          src={portrait}
-          alt=""
-          aria-hidden="true"
-          width="44"
-          height="44"
-          className="h-11 w-11 rounded-full object-cover object-top border border-surface-line shadow-sm flex-shrink-0"
-        />
-        <span>You&rsquo;ll speak directly with Taran or Dave. Never a call centre, never a hard sell.</span>
+      <div className="mt-8 mx-auto max-w-3xl bg-white border border-surface-line rounded-2xl p-5 sm:p-6 shadow-card">
+        <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-5">
+          <img
+            src={portrait}
+            alt=""
+            aria-hidden="true"
+            width="56"
+            height="56"
+            className="h-14 w-14 rounded-full object-cover object-top border border-surface-line shadow-sm flex-shrink-0"
+          />
+          <div className="flex-1 min-w-0">
+            <p className="text-[14.5px] text-ink leading-relaxed">
+              You&rsquo;ll speak directly with Taran or Dave. Never a call centre, never a hard sell.
+            </p>
+            <div className="mt-3 flex flex-col sm:flex-row gap-2 sm:gap-2.5">
+              <Button as="a" href="sms:+13656457332" variant="primary" size="sm" className="justify-center">
+                <MessageSquare className="h-4 w-4" />
+                Text (365) 645-7332
+              </Button>
+              <Button as="a" href="tel:+13656457332" variant="outline" size="sm" className="justify-center">
+                <Phone className="h-4 w-4" />
+                Call instead
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
+      <p className="mt-6 mb-1 mx-auto max-w-3xl text-center text-[12.5px] uppercase tracking-[0.18em] font-semibold text-ink-mute">
+        Or send a confidential message
+      </p>
       <motion.form
         onSubmit={handleSubmit}
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: '-60px' }}
         transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-        className="mt-6 mx-auto max-w-3xl bg-white border border-surface-line rounded-2xl p-7 sm:p-10 shadow-card"
+        className="mt-3 mx-auto max-w-3xl bg-white border border-surface-line rounded-2xl p-7 sm:p-10 shadow-card"
         aria-disabled={FORM_DISABLED}
       >
         {/* Formspree special fields: set inbox subject + ensure replies go to the inquirer.

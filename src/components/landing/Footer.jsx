@@ -10,10 +10,10 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Wordmark tone="invert" />
             <p className="mt-5 text-[14.5px] leading-relaxed text-white/70 max-w-md">
-              Resolve is a trade name used in connection with real estate services
-              provided through HomeLife G1 Realty Inc., Brokerage. Resolve is not a
-              brokerage and does not itself trade in real estate. All real estate
-              trades are made through HomeLife G1 Realty Inc., Brokerage.
+              Real estate services by Resolve are delivered through HomeLife G1
+              Realty Inc., Brokerage. Resolve is not itself a brokerage and does
+              not itself trade in real estate. All real estate trades are made
+              through HomeLife G1 Realty Inc., Brokerage.
             </p>
           </div>
 

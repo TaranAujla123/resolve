@@ -5,7 +5,8 @@ export function BrokerageStrip() {
     <div className="w-full bg-ink text-white/90 text-[12px] sm:text-[13px]">
       <div className="container flex items-center justify-between gap-4 py-2.5">
         <p className="truncate">
-          A service of <span className="font-semibold text-white">HomeLife G1 Realty Inc., Brokerage</span>
+          Real estate services by Resolve, delivered through{' '}
+          <span className="font-semibold text-white">HomeLife G1 Realty Inc., Brokerage</span>
           <span className="hidden sm:inline text-white/60"> · Independently Owned &amp; Operated</span>
         </p>
         <a
