@@ -94,7 +94,7 @@ export function Situations() {
               viewport={{ once: true, margin: '-60px' }}
               variants={cardVariants}
               custom={i}
-              className="group bg-white rounded-2xl border border-surface-line p-7 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-300 flex flex-col"
+              className="group bg-white rounded-2xl border border-surface-line p-5 sm:p-7 shadow-card hover:shadow-card-hover hover:-translate-y-1 hover:border-accent/30 transition-all duration-300 flex flex-col"
             >
               <div className="h-11 w-11 rounded-xl bg-accent-soft text-accent-deep flex items-center justify-center">
                 <Icon className="h-5 w-5" strokeWidth={1.8} />

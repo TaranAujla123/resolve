@@ -70,24 +70,36 @@ export function About() {
         </figure>
 
         <figure className="mt-5 rounded-2xl border border-surface-line bg-white p-6 sm:p-7 shadow-card">
-          <Quote
-            className="h-6 w-6 text-accent-deep/70"
-            strokeWidth={1.6}
-            aria-hidden="true"
-          />
-          <blockquote className="mt-3 text-[15.5px] text-ink-soft leading-relaxed">
-            I&rsquo;ve spent years as a broker, and as a real estate investor
-            myself, which gives me a clear read on what a property is really worth
-            and what buyers actually respond to. Much of my work has been with
-            families selling under pressure: a separation, an estate, a financial
-            squeeze, where the stakes are personal and the timing isn&rsquo;t
-            theirs. In those moments my job is to bring a steady hand, honest
-            numbers, clear options, and a sale handled with care from the first
-            conversation to the closing table.
-          </blockquote>
-          <figcaption className="mt-4 text-[13px] uppercase tracking-[0.12em] font-semibold text-ink">
-            Dave Dhaliwal, Broker
-          </figcaption>
+          <div className="flex flex-col sm:flex-row gap-5 sm:gap-7">
+            <div
+              aria-hidden="true"
+              className="w-36 h-44 sm:w-40 sm:h-48 rounded-xl border border-surface-line bg-accent-soft flex items-center justify-center flex-shrink-0"
+            >
+              <span className="font-serif text-[3rem] sm:text-[3.25rem] text-accent-deep tracking-tight leading-none">
+                DD
+              </span>
+            </div>
+            <div className="flex-1">
+              <Quote
+                className="h-6 w-6 text-accent-deep/70"
+                strokeWidth={1.6}
+                aria-hidden="true"
+              />
+              <blockquote className="mt-3 text-[15.5px] text-ink-soft leading-relaxed">
+                I&rsquo;ve spent years as a broker, and as a real estate investor
+                myself, which gives me a clear read on what a property is really
+                worth and what buyers actually respond to. Much of my work has been
+                with families selling under pressure: a separation, an estate, a
+                financial squeeze, where the stakes are personal and the timing
+                isn&rsquo;t theirs. In those moments my job is to bring a steady
+                hand, honest numbers, clear options, and a sale handled with care
+                from the first conversation to the closing table.
+              </blockquote>
+              <figcaption className="mt-4 text-[13px] uppercase tracking-[0.12em] font-semibold text-ink">
+                Dave Dhaliwal, Broker
+              </figcaption>
+            </div>
+          </div>
         </figure>
       </motion.div>
     </Section>

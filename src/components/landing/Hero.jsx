@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Phone, ArrowRight, Check } from 'lucide-react'
+import { Phone, ArrowRight, Check, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 
 // Hero text renders statically so the headline is fully visible from frame 1.
@@ -71,7 +71,7 @@ export function Hero() {
             Request a Private Consultation
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </Button>
-          <Button as="a" href="tel:+13656457332" size="lg" variant="ghost">
+          <Button as="a" href="tel:+13656457332" size="lg" variant="outline">
             <Phone className="h-4 w-4" />
             Call (365) 645-7332
           </Button>
@@ -102,6 +102,17 @@ export function Hero() {
         >
           Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage. Independently Owned and Operated. Your inquiry is confidential.
         </motion.p>
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={polish}
+          custom={3}
+          className="mt-8 flex sm:hidden flex-col items-center gap-1 text-ink-mute"
+          aria-hidden="true"
+        >
+          <span className="text-[10px] uppercase tracking-[0.2em] font-semibold">More below</span>
+          <ChevronDown className="h-4 w-4 animate-bounce" strokeWidth={2} />
+        </motion.div>
       </div>
     </section>
   )
