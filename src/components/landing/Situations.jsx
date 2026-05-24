@@ -78,7 +78,7 @@ export function Situations() {
         title={
           <>
             Whatever you&rsquo;re facing,{' '}
-            <span className="font-serif italic font-normal text-accent-deep tracking-[-0.01em]">there&rsquo;s a way through.</span>
+            <span className="font-serif italic font-normal text-ink tracking-[-0.01em]">there&rsquo;s a way through.</span>
           </>
         }
         intro="Resolve focuses on the sales that need more than a standard listing. Every file is handled to the same standard. Each one starts with a private conversation, never a pitch."
