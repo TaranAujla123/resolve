@@ -24,11 +24,7 @@ export function About() {
             HomeLife G1 Realty Inc., Brokerage. It was built to handle the files
             that don&rsquo;t fit the standard listing playbook, where timing,
             discretion, equity, and the right counsel matter more than maximum
-            exposure. The standard is the same on every file: a private first
-            conversation, a clear written assessment before any decision, and full
-            representation through to closing, with protecting your equity the
-            priority at every stage. The practice serves homeowners across
-            Ontario. Resolve also maintains a{' '}
+            exposure. The practice serves homeowners across Ontario. Resolve also maintains a{' '}
             <Link to="/buyers" className="text-accent-deep hover:text-ink underline-offset-4 hover:underline transition-colors">
               qualified buyer network
             </Link>

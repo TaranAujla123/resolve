@@ -32,7 +32,7 @@ export function WhyResolve() {
       <SectionHead
         eyebrow="Why Resolve"
         title="The experience these situations actually require."
-        intro="Between us, Taran Aujla and Dave Dhaliwal bring more than fifteen years of combined experience in complex Ontario real estate, from power of sale and estate files to separations and partnership disputes. We&rsquo;ve negotiated with the lenders, lawyers, opposing parties, and family members these situations bring to the table, and we know where these deals get stuck and how to keep them moving to a clean close."
+        intro="Between us, Taran and Dave bring more than fifteen years of combined experience in complex Ontario real estate, from power of sale and estate files to separations and partnership disputes. We&rsquo;ve negotiated with the lenders, lawyers, opposing parties, and family members these situations bring to the table, and we know where these deals get stuck and how to keep them moving to a clean close."
       />
       <p className="mt-8 text-[15.5px] text-ink font-medium max-w-3xl">
         That experience sits behind four commitments we hold on every file:
