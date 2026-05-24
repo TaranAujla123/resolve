@@ -1,4 +1,32 @@
+# Resolve · robots.txt
+# Allow well-behaved crawlers across the whole site.
+# The SPA fallback (/?/path query strings produced by 404.html) and the
+# 404.html file itself are excluded so search engines do not index the
+# transient redirect URL.
+
 User-agent: *
 Allow: /
+Disallow: /404.html
+Disallow: /*?/*
+
+# Block the most aggressive AI training crawlers by default.
+# Remove these blocks if/when you decide to opt in.
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: PerplexityBot
+Disallow: /
 
 Sitemap: https://resolveproperty.ca/sitemap.xml

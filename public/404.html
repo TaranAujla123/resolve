@@ -2,6 +2,14 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
+    <!--
+      noindex on the SPA fallback page itself. The 404.html only exists
+      to bounce deep links into index.html so React Router can handle
+      them; the transient ?/path URL should never end up in a search
+      index. Browsers and crawlers that see this fallback will not
+      add it to the index.
+    -->
+    <meta name="robots" content="noindex,nofollow" />
     <title>Resolve · Seller Representation · HomeLife G1 Realty Inc., Brokerage</title>
     <script>
       // Single Page Apps for GitHub Pages

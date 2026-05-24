@@ -4,10 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#0A1F44" />
-    <meta
-      name="description"
-      content="Resolve is a seller representation service by Taran Aujla, Salesperson at HomeLife G1 Realty Inc., Brokerage. Quiet, diligent guidance for Ontario homeowners in difficult situations."
-    />
+
+    <!--
+      Per-route SEO (title, description, canonical, OG, Twitter, JSON-LD,
+      robots, author) is owned by <Seo /> via react-helmet-async, so the
+      home page and /buyers each get their own correct head when
+      prerendered. Only static / non-SEO head content lives here in the
+      source index.html.
+
+      Fallback <title> below covers two edge cases:
+        - Dev mode (`npm run dev`), before React mounts and Helmet hydrates.
+        - Any non-prerendered request (should not happen on GH Pages once
+          the post-build prerender step has run).
+      Once Helmet mounts it overrides this title with the per-route value.
+    -->
+    <title>Resolve · Seller Representation · HomeLife G1 Realty Inc., Brokerage</title>
 
     <!-- Favicons (?v query forces refetch when the mark changes) -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2" />
@@ -15,37 +26,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png?v=2" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2" />
 
-    <!-- Open Graph (Facebook, LinkedIn, Slack, iMessage, etc.) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Resolve" />
-    <meta property="og:url" content="https://resolveproperty.ca/" />
-    <meta property="og:title" content="Resolve · Seller Representation · HomeLife G1 Realty Inc., Brokerage" />
-    <meta
-      property="og:description"
-      content="A boutique seller representation practice for Ontario homeowners navigating mortgage arrears, power of sale, separation, estate sales, and property disputes. Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage."
-    />
-    <meta property="og:image" content="https://resolveproperty.ca/og-image.png?v=2" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Resolve · For Ontario homeowners. Facing a difficult property situation?" />
-
-    <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Resolve · Seller Representation" />
-    <meta
-      name="twitter:description"
-      content="A boutique seller representation practice for Ontario homeowners navigating difficult sales. Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage."
-    />
-    <meta name="twitter:image" content="https://resolveproperty.ca/og-image.png?v=2" />
-    <meta name="twitter:image:alt" content="Resolve · For Ontario homeowners. Facing a difficult property situation?" />
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Poppins:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
-    <title>Resolve · Seller Representation · HomeLife G1 Realty Inc., Brokerage</title>
+
     <script type="text/javascript">
       // Decode the SPA redirect that 404.html performs. Runs BEFORE React
       // mounts so React Router sees the correct path.
@@ -69,5 +56,13 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+
+    <!--
+      Cloudflare Web Analytics (privacy-first, no cookies, no banner).
+      Token below is filled in once resolveproperty.ca is added as an
+      analytics-only site in the Cloudflare dashboard. Until then the
+      beacon is commented out so it does not 404 on every load.
+    -->
+    <!-- <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "REPLACE_WITH_RESOLVE_CF_TOKEN"}'></script> -->
   </body>
 </html>
