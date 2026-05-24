@@ -89,7 +89,7 @@ export function Hero() {
           {trustItems.map((label, idx) => (
             <li key={label} className="inline-flex items-center gap-2">
               <Check className="h-3.5 w-3.5 text-accent-deep flex-shrink-0" strokeWidth={2.4} />
-              <span>{label}</span>
+              <span className="font-semibold text-ink">{label}</span>
               {idx < trustItems.length - 1 && (
                 <span aria-hidden="true" className="text-ink-mute/40 select-none">&middot;</span>
               )}
