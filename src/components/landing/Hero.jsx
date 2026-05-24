@@ -60,12 +60,15 @@ export function Hero() {
           standard listing. The first conversation is private and free. Focused on
           protecting what you&rsquo;ve worked for.
         </p>
+        <p className="mt-5 max-w-2xl text-[15.5px] sm:text-[17px] text-ink font-semibold leading-snug">
+          Over 15 years of combined experience in Ontario&rsquo;s most difficult sales.
+        </p>
         <motion.div
           initial="hidden"
           animate="show"
           variants={polish}
           custom={0}
-          className="mt-6 sm:mt-9 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
+          className="mt-6 sm:mt-8 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3"
         >
           <Button as="a" href="#contact" size="lg" variant="primary" className="group">
             Request a Private Consultation
@@ -98,16 +101,7 @@ export function Hero() {
           animate="show"
           variants={polish}
           custom={2}
-          className="mt-5 sm:mt-7 text-[13px] sm:text-[13.5px] text-ink-soft italic max-w-xl"
-        >
-          Over 15 years of combined experience in Ontario&rsquo;s most difficult sales.
-        </motion.p>
-        <motion.p
-          initial="hidden"
-          animate="show"
-          variants={polish}
-          custom={3}
-          className="mt-3 sm:mt-4 text-[12.5px] sm:text-sm text-ink-mute max-w-xl"
+          className="mt-4 sm:mt-6 text-[12.5px] sm:text-sm text-ink-mute max-w-xl"
         >
           Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage. Independently Owned and Operated. Your inquiry is confidential.
         </motion.p>
@@ -115,7 +109,7 @@ export function Hero() {
           initial="hidden"
           animate="show"
           variants={polish}
-          custom={4}
+          custom={3}
           className="mt-8 flex sm:hidden flex-col items-center gap-1 text-ink-mute"
           aria-hidden="true"
         >

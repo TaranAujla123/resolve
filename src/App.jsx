@@ -26,8 +26,8 @@ function HomePage() {
     <>
       <Hero />
       <Situations />
-      <Process />
       <WhyResolve />
+      <Process />
       <About />
       <InquiryForm />
     </>
