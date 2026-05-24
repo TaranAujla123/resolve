@@ -41,7 +41,7 @@ export function Reality() {
         title={
           <>
             Real estate can get messy.{' '}
-            <span className="text-accent-deep italic font-medium">We bring clean solutions.</span>
+            <span className="font-serif italic font-normal text-accent-deep tracking-[-0.01em]">We bring clean solutions.</span>
           </>
         }
         intro="Ontario homeowners are under more pressure than ever. Rising interest rates, legal complexity, and an unforgiving market leave too many people vulnerable. Here&rsquo;s how we solve the problems."

@@ -42,6 +42,7 @@ export default {
           'Roboto',
           'sans-serif',
         ],
+        serif: ['"Instrument Serif"', 'Georgia', 'ui-serif', 'serif'],
       },
       fontSize: {
         'display-xl': ['clamp(2.75rem, 5.5vw, 4.25rem)', { lineHeight: '1.04', letterSpacing: '-0.025em' }],
