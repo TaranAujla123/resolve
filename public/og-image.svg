@@ -1,0 +1,92 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Open Graph share image for Resolve.
+    Soft white-to-tint gradient background.
+    Monogram top-left, eyebrow + headline left-aligned, brokerage
+    attribution along the bottom.
+  -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#EAF3EE"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Monogram tile, top-left -->
+  <rect x="80" y="80" width="96" height="96" rx="18" fill="#0A1F44"/>
+  <text
+    x="128"
+    y="148"
+    font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="64"
+    fill="#FFFFFF"
+    font-weight="700"
+    text-anchor="middle"
+    letter-spacing="-0.02em"
+  >R</text>
+  <circle cx="158" cy="150" r="7" fill="#1F8B5A"/>
+
+  <!-- Wordmark beside the monogram -->
+  <text
+    x="200"
+    y="135"
+    font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="44"
+    fill="#0A1F44"
+    font-weight="600"
+    letter-spacing="-0.01em"
+  >Resolve<tspan fill="#1F8B5A">.</tspan></text>
+  <text
+    x="200"
+    y="166"
+    font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="14"
+    fill="#475569"
+    font-weight="500"
+    letter-spacing="0.16em"
+  >SELLER REPRESENTATION</text>
+
+  <!-- Accent bar above headline -->
+  <rect x="80" y="290" width="56" height="3" fill="#126142"/>
+  <text
+    x="152"
+    y="298"
+    font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="18"
+    fill="#126142"
+    font-weight="600"
+    letter-spacing="0.16em"
+  >FOR ONTARIO HOMEOWNERS</text>
+
+  <!-- Headline -->
+  <text
+    x="80"
+    y="380"
+    font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="72"
+    fill="#0A1F44"
+    font-weight="600"
+    letter-spacing="-0.02em"
+  >Facing a difficult</text>
+  <text
+    x="80"
+    y="460"
+    font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="72"
+    fill="#0A1F44"
+    font-weight="600"
+    letter-spacing="-0.02em"
+  >property situation?</text>
+
+  <!-- Brokerage attribution along the bottom -->
+  <text
+    x="80"
+    y="560"
+    font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="20"
+    fill="#475569"
+    font-weight="500"
+  >Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage.</text>
+</svg>
