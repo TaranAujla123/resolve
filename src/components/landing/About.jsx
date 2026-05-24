@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { Quote } from 'lucide-react'
 import { Section } from './Section'
@@ -28,9 +29,9 @@ export function About() {
             representation through to closing, with protecting your equity the
             priority at every stage. The practice operates from Brampton and
             serves Ontario. Resolve also maintains a{' '}
-            <a href="#buyers" className="text-accent-deep hover:text-ink underline-offset-4 hover:underline transition-colors">
+            <Link to="/buyers" className="text-accent-deep hover:text-ink underline-offset-4 hover:underline transition-colors">
               qualified buyer network
-            </a>
+            </Link>
             {' '}available to sellers who choose to involve it, alongside full MLS
             exposure.
           </p>

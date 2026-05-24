@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import { Phone, MessageSquare, ArrowRight } from 'lucide-react'
 
 // Mobile-only sticky bottom bar. Appears once the visitor has scrolled
@@ -8,8 +9,14 @@ import { Phone, MessageSquare, ArrowRight } from 'lucide-react'
 // always visible.
 export function MobileStickyCta() {
   const [visible, setVisible] = useState(false)
+  const location = useLocation()
+  const onHome = location.pathname === '/'
 
   useEffect(() => {
+    if (!onHome) {
+      setVisible(false)
+      return
+    }
     const hero = document.getElementById('top')
     if (!hero) return
     const observer = new IntersectionObserver(
@@ -18,7 +25,9 @@ export function MobileStickyCta() {
     )
     observer.observe(hero)
     return () => observer.disconnect()
-  }, [])
+  }, [onHome])
+
+  if (!onHome) return null
 
   return (
     <div

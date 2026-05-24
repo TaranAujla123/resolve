@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from 'react'
-import { Phone, Menu, X } from 'lucide-react'
+import { Link, useLocation } from 'react-router-dom'
+import { Phone, Menu, X, ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Wordmark } from './Wordmark'
 import { cn } from '@/lib/utils'
 
-const links = [
-  { href: '#situations', label: 'Situations' },
-  { href: '#process', label: 'Process' },
-  { href: '#about', label: 'About' },
-  { href: '#buyers', label: 'Buyers' },
-  { href: '#contact', label: 'Contact' },
+// Home page nav items. Section anchors plus the Buyers route.
+const homeLinks = [
+  { href: '#situations', label: 'Situations', type: 'anchor' },
+  { href: '#process', label: 'Process', type: 'anchor' },
+  { href: '#about', label: 'About', type: 'anchor' },
+  { to: '/buyers', label: 'Buyers', type: 'route' },
+  { href: '#contact', label: 'Contact', type: 'anchor' },
 ]
 
 export function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const location = useLocation()
+  const isBuyers = location.pathname === '/buyers'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -23,27 +27,61 @@ export function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Close mobile menu on route change
+  useEffect(() => {
+    setOpen(false)
+  }, [location.pathname])
+
+  const headerClass = cn(
+    'sticky top-0 z-50 transition-all duration-300',
+    scrolled
+      ? 'bg-white/90 backdrop-blur-md border-b border-surface-line shadow-[0_1px_0_rgba(15,23,42,0.02)]'
+      : 'bg-white/70 backdrop-blur-sm border-b border-transparent',
+  )
+
+  // Slim nav on the /buyers route: wordmark + back to home only.
+  if (isBuyers) {
+    return (
+      <header className={headerClass}>
+        <div className="container flex items-center justify-between h-16 sm:h-[72px]">
+          <Wordmark />
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-[14px] text-ink-soft hover:text-ink font-medium transition-colors px-3 py-2 rounded-lg"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to home
+          </Link>
+        </div>
+      </header>
+    )
+  }
+
+  // Default home nav.
   return (
-    <header
-      className={cn(
-        'sticky top-0 z-50 transition-all duration-300',
-        scrolled
-          ? 'bg-white/90 backdrop-blur-md border-b border-surface-line shadow-[0_1px_0_rgba(15,23,42,0.02)]'
-          : 'bg-white/70 backdrop-blur-sm border-b border-transparent',
-      )}
-    >
+    <header className={headerClass}>
       <div className="container flex items-center justify-between h-16 sm:h-[72px]">
         <Wordmark />
         <nav className="hidden lg:flex items-center gap-8">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="text-[14px] text-ink-soft hover:text-ink font-medium transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
+          {homeLinks.map((l) =>
+            l.type === 'route' ? (
+              <Link
+                key={l.to}
+                to={l.to}
+                className="text-[14px] text-ink-soft hover:text-ink font-medium transition-colors"
+              >
+                {l.label}
+              </Link>
+            ) : (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-[14px] text-ink-soft hover:text-ink font-medium transition-colors"
+              >
+                {l.label}
+              </a>
+            ),
+          )}
         </nav>
         <div className="flex items-center gap-2">
           <a
@@ -68,16 +106,27 @@ export function Nav() {
       {open && (
         <div className="lg:hidden border-t border-surface-line bg-white">
           <div className="container py-3 flex flex-col">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="py-2.5 text-ink font-medium"
-              >
-                {l.label}
-              </a>
-            ))}
+            {homeLinks.map((l) =>
+              l.type === 'route' ? (
+                <Link
+                  key={l.to}
+                  to={l.to}
+                  onClick={() => setOpen(false)}
+                  className="py-2.5 text-ink font-medium"
+                >
+                  {l.label}
+                </Link>
+              ) : (
+                <a
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="py-2.5 text-ink font-medium"
+                >
+                  {l.label}
+                </a>
+              ),
+            )}
             <a
               href="tel:+13656457332"
               className="py-2.5 text-ink font-medium inline-flex items-center gap-2"
