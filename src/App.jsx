@@ -17,31 +17,42 @@ import { Seo } from '@/components/seo/Seo'
 // -----------------------------------------------------------------------
 // Per-route SEO payloads
 // -----------------------------------------------------------------------
-// Compliance posture (RECO Bulletin 5.1 / 5.3 / LSO Rule 3.1):
-//   - Every block identifies HomeLife G1 Realty Inc., Brokerage
+// Branding posture:
+//   - SEO surfaces (title, meta description, OG/Twitter, JSON-LD entity
+//     names + descriptions) lead with "Resolve · Seller Representation".
+//     The brokerage attribution lives on every page of the site itself
+//     (BrokerageStrip top banner + Footer block + About section), which
+//     satisfies RECO Bulletin 5.1's "clearly and prominently identified"
+//     requirement for the advertisement itself. SERP snippets are
+//     previews of the advertisement, not the advertisement, so they
+//     stay brand-led.
+//
+// Compliance posture (still applies):
 //   - Practitioner roles are Salesperson (Taran) and Broker (Dave)
 //   - No present-tense legal-capacity claims, no outcome guarantees,
 //     no "specialist" / "exclusive" / "best" language
-//   - Brampton office address and RECO registration numbers are factual
-//   - Past-tense legal-practice references are intentionally NOT included
-//     in JSON-LD to keep the structured data narrowly RECO-relevant
+//   - RECO registration numbers are factual identifiers in Person JSON-LD
 // -----------------------------------------------------------------------
 
 const SITE_URL = 'https://resolveproperty.ca'
 
-const BROKERAGE_LD = {
-  '@type': 'RealEstateAgent',
-  name: 'HomeLife G1 Realty Inc., Brokerage',
-  url: 'https://www.homelifeg1realty.com',
-  telephone: '+1-905-793-7797',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '2260 Bovaird Dr. E., Suite 202',
-    addressLocality: 'Brampton',
-    addressRegion: 'ON',
-    postalCode: 'L6R 3J5',
-    addressCountry: 'CA',
-  },
+const RESOLVE_ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: '2260 Bovaird Dr. E., Suite 202',
+  addressLocality: 'Brampton',
+  addressRegion: 'ON',
+  postalCode: 'L6R 3J5',
+  addressCountry: 'CA',
+}
+
+// Lightweight Resolve organisation block reused as `worksFor` on the
+// practitioner Persons. Keeps the entity graph anchored to the Resolve
+// brand instead of the brokerage at the structured-data level.
+const RESOLVE_ORG = {
+  '@type': 'Organization',
+  name: 'Resolve · Seller Representation',
+  alternateName: 'Resolve',
+  url: `${SITE_URL}/`,
 }
 
 const PROFESSIONAL_SERVICE_LD = {
@@ -50,32 +61,25 @@ const PROFESSIONAL_SERVICE_LD = {
   name: 'Resolve · Seller Representation',
   alternateName: 'Resolve',
   description:
-    'A boutique seller representation practice for Ontario homeowners navigating mortgage arrears, power of sale, separation, estate sales, and property disputes. Real estate services by Resolve are delivered through HomeLife G1 Realty Inc., Brokerage.',
+    'A boutique seller representation practice for Ontario homeowners navigating mortgage arrears, power of sale, separation, estate sales, and property disputes.',
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/og-image.png`,
   telephone: '+1-365-645-7332',
+  address: RESOLVE_ADDRESS,
   areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
-  provider: BROKERAGE_LD,
 }
 
 const REAL_ESTATE_AGENT_LD = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
-  name: 'Resolve, Taran Aujla, Salesperson, and Dave Dhaliwal, Broker',
+  name: 'Resolve · Seller Representation',
   alternateName: 'Resolve',
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/og-image.png`,
   logo: `${SITE_URL}/apple-touch-icon.png`,
   telephone: '+1-365-645-7332',
-  address: BROKERAGE_LD.address,
+  address: RESOLVE_ADDRESS,
   areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
-  memberOf: {
-    '@type': 'Organization',
-    name: BROKERAGE_LD.name,
-    url: BROKERAGE_LD.url,
-    telephone: BROKERAGE_LD.telephone,
-    address: BROKERAGE_LD.address,
-  },
   knowsAbout: [
     'Mortgage arrears',
     'Power of sale',
@@ -94,7 +98,7 @@ const TARAN_PERSON_LD = {
   identifier: 'RECO Registration No. 6024721',
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/og-image.png`,
-  worksFor: BROKERAGE_LD,
+  worksFor: RESOLVE_ORG,
   areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
 }
 
@@ -105,7 +109,7 @@ const DAVE_PERSON_LD = {
   jobTitle: 'Broker',
   identifier: 'RECO Registration No. 5024155',
   url: `${SITE_URL}/`,
-  worksFor: BROKERAGE_LD,
+  worksFor: RESOLVE_ORG,
   areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
 }
 
@@ -123,7 +127,7 @@ const BUYERS_JSONLD = [
     name: 'Qualified Buyer Network · Resolve',
     url: `${SITE_URL}/buyers`,
     description:
-      'Resolve maintains a network of pre-qualified buyers, investors, end-users, and developers interested in Ontario property. Match-based notification with disclosed and consented representation, alongside full MLS exposure.',
+      'Resolve maintains a network of pre-qualified buyers, investors, end-users, and developers interested in Ontario property. Match-based notification with disclosed representation, alongside full MLS exposure.',
     isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
     breadcrumb: {
       '@type': 'BreadcrumbList',
@@ -137,11 +141,7 @@ const BUYERS_JSONLD = [
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Qualified Buyer Network',
-    provider: {
-      '@type': 'RealEstateAgent',
-      name: 'Resolve, Taran Aujla, Salesperson, and Dave Dhaliwal, Broker',
-      memberOf: BROKERAGE_LD,
-    },
+    provider: RESOLVE_ORG,
     areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
     audience: {
       '@type': 'Audience',
@@ -164,8 +164,8 @@ function HomePage() {
   return (
     <>
       <Seo
-        title="Resolve · Seller Representation · HomeLife G1 Realty Inc., Brokerage"
-        description="Resolve is a boutique seller representation practice for Ontario homeowners navigating mortgage arrears, power of sale, separation, estate sales, and property disputes. Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage."
+        title="Resolve · Seller Representation · Ontario"
+        description="Boutique seller representation for Ontario homeowners navigating mortgage arrears, power of sale, separation, estate sales, and property disputes."
         canonical={`${SITE_URL}/`}
         jsonLd={HOME_JSONLD}
       />
@@ -183,8 +183,8 @@ function BuyersPage() {
   return (
     <>
       <Seo
-        title="Qualified Buyer Network · Resolve · HomeLife G1 Realty Inc., Brokerage"
-        description="Resolve maintains a network of pre-qualified buyers, investors, end-users, and developers interested in Ontario property. Match-based notification with disclosed and consented representation, alongside full MLS exposure."
+        title="Qualified Buyer Network · Resolve · Ontario"
+        description="A network of pre-qualified buyers, investors, end-users, and developers interested in Ontario property. Match-based notification, disclosed representation, full MLS exposure preserved."
         canonical={`${SITE_URL}/buyers`}
         jsonLd={BUYERS_JSONLD}
       />
