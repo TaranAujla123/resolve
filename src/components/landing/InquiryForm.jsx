@@ -14,12 +14,12 @@ const FORM_DISABLED = false
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 
 const situations = [
-  'Power of Sale',
-  'Divorce or Separation',
-  'Estate or Probate',
   'Mortgage Arrears',
-  'Life Transition (job, health, downsizing, relocation)',
-  'Property Dispute',
+  'Power of Sale',
+  'Property Disputes',
+  'Separation or Divorce',
+  'Estate or Probate',
+  'Life Transitions (job, health, downsizing, relocation)',
   'Other or prefer not to say',
 ]
 
@@ -34,6 +34,10 @@ export function InquiryForm() {
 
     if (!data.get('consent')) {
       toast.error('Please confirm the consent checkbox so we can respond.')
+      return
+    }
+    if (!data.get('no_existing_listing')) {
+      toast.error('Please confirm you are not currently under a listing agreement with another brokerage.')
       return
     }
 
@@ -163,6 +167,16 @@ export function InquiryForm() {
               I consent to be contacted by Resolve and HomeLife G1 Realty Inc., Brokerage about my inquiry.
             </label>
           </div>
+
+          <div className="mt-3 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
+            <Checkbox id="no-listing" name="no_existing_listing" value="yes" required />
+            <label htmlFor="no-listing" className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
+              I confirm I am not currently under a listing agreement with another brokerage.
+            </label>
+          </div>
+          <p className="mt-2 text-[12.5px] text-ink-mute leading-relaxed">
+            Resolve does not represent homeowners currently under an existing listing agreement with another brokerage. If you are listed, please wait until that agreement expires or is mutually released, then reach out.
+          </p>
 
           <p className="mt-3 text-[12.5px] text-ink-mute flex items-center gap-1.5">
             <Lock className="h-3.5 w-3.5" />

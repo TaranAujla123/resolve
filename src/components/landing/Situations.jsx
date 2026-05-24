@@ -12,30 +12,6 @@ import { Section, SectionHead } from './Section'
 
 const items = [
   {
-    icon: Gavel,
-    title: 'Power of Sale',
-    situation:
-      'Your lender has started enforcement and the clock is running. The real fear is losing the home, and the equity in it, on the bank’s timeline instead of yours.',
-    help:
-      'We move quickly to list and position the property properly and coordinate with your lawyer and lender, so the sale is handled in good order with your remaining equity kept front and centre.',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Divorce or Separation',
-    situation:
-      'Selling the matrimonial home during a separation is rarely just about the house. Two sets of interests, raw emotions, and hard timelines all have to be managed at once.',
-    help:
-      'We keep communication neutral, coordinate with both parties’ lawyers, and run a clean, fair sale so neither side feels disadvantaged by how the home was handled.',
-  },
-  {
-    icon: Scroll,
-    title: 'Estate and Probate',
-    situation:
-      'Selling a loved one’s home as an executor means carrying probate timelines, multiple beneficiaries, and the weight of the loss all at the same time.',
-    help:
-      'We move at the pace the estate allows, coordinate with the estate lawyer and the beneficiaries, and manage the sale with patience and care so it’s handled properly for everyone.',
-  },
-  {
     icon: AlertCircle,
     title: 'Mortgage Arrears',
     situation:
@@ -44,12 +20,12 @@ const items = [
       'A private, no-obligation review shows you what’s realistic. When selling is the right path, we list and manage it carefully so you move from a reactive position to a planned one.',
   },
   {
-    icon: Sunrise,
-    title: 'Life Transitions',
+    icon: Gavel,
+    title: 'Power of Sale',
     situation:
-      'A job move, a health change, a downsizing, a retirement. Sometimes life calls for a property change on a real timeline.',
+      'Your lender has started enforcement and the clock is running. The real fear is losing the home, and the equity in it, on the bank’s timeline instead of yours.',
     help:
-      'We plan the sale around your timeline rather than rushing it, handling pricing, preparation, and negotiation so the move happens on your terms, not under pressure.',
+      'We move quickly to list and position the property properly and coordinate with your lawyer and lender, so the sale is handled in good order with your remaining equity kept front and centre.',
   },
   {
     icon: Scale,
@@ -58,6 +34,30 @@ const items = [
       'Co-ownership friction, a boundary or tenancy question, a lien, or a partition matter. Anything clouding title makes a clean sale harder.',
     help:
       'We listen carefully, coordinate with your real estate lawyer to address the title and ownership issues, and work to bring the property to a clean, orderly sale.',
+  },
+  {
+    icon: HeartHandshake,
+    title: 'Separation or Divorce',
+    situation:
+      'Selling the matrimonial home during a separation is rarely just about the house. Two sets of interests, raw emotions, and hard timelines all have to be managed at once.',
+    help:
+      'We keep communication neutral, coordinate with both parties’ lawyers, and run a clean, fair sale so neither side feels disadvantaged by how the home was handled.',
+  },
+  {
+    icon: Scroll,
+    title: 'Estate or Probate',
+    situation:
+      'Selling a loved one’s home as an executor means carrying probate timelines, multiple beneficiaries, and the weight of the loss all at the same time.',
+    help:
+      'We move at the pace the estate allows, coordinate with the estate lawyer and the beneficiaries, and manage the sale with patience and care so it’s handled properly for everyone.',
+  },
+  {
+    icon: Sunrise,
+    title: 'Life Transitions',
+    situation:
+      'A job move, a health change, a downsizing, a retirement. Sometimes life calls for a property change on a real timeline.',
+    help:
+      'We plan the sale around your timeline rather than rushing it, handling pricing, preparation, and negotiation so the move happens on your terms, not under pressure.',
   },
 ]
 

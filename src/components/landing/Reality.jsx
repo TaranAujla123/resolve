@@ -38,8 +38,8 @@ export function Reality() {
     <Section id="reality">
       <SectionHead
         eyebrow="Ontario&rsquo;s real estate reality"
-        title="What you&rsquo;re actually up against."
-        intro="A standard listing process is built for the standard sale. These sales are not standard. The work begins by naming what is actually in the room."
+        title="Real estate can get messy. We bring clean solutions."
+        intro="Ontario homeowners are under more pressure than ever. Rising interest rates, legal complexity, and an unforgiving market leave too many people vulnerable. Here&rsquo;s how we solve the problems."
       />
       <div className="mt-10 sm:mt-12 border-y border-surface-line">
         {pairs.map((p, i) => (
