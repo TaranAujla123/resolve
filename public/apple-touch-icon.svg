@@ -1,18 +1,7 @@
 <svg width="180" height="180" viewBox="0 0 180 180" xmlns="http://www.w3.org/2000/svg">
   <!--
-    Apple touch icon (used by iOS for home-screen shortcuts).
-    Same monogram as favicon, scaled to 180x180.
+    Apple touch icon. Same Dot mark, scaled to 180x180.
   -->
   <rect width="180" height="180" rx="34" fill="#0A1F44"/>
-  <text
-    x="90"
-    y="129"
-    font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
-    font-size="118"
-    fill="#FFFFFF"
-    font-weight="700"
-    text-anchor="middle"
-    letter-spacing="-0.02em"
-  >R</text>
-  <circle cx="130" cy="130" r="12" fill="#1F8B5A"/>
+  <circle cx="90" cy="90" r="31" fill="#1F8B5A"/>
 </svg>
