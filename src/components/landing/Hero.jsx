@@ -97,20 +97,11 @@ export function Hero() {
             </li>
           ))}
         </motion.ul>
-        <motion.p
-          initial="hidden"
-          animate="show"
-          variants={polish}
-          custom={2}
-          className="mt-4 sm:mt-6 text-[12.5px] sm:text-sm text-ink-mute max-w-xl"
-        >
-          Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage. Independently Owned and Operated. Your inquiry is confidential.
-        </motion.p>
         <motion.div
           initial="hidden"
           animate="show"
           variants={polish}
-          custom={3}
+          custom={2}
           className="mt-8 flex sm:hidden flex-col items-center gap-1 text-ink-mute"
           aria-hidden="true"
         >
