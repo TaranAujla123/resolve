@@ -10,7 +10,7 @@ export function Wordmark({ className, tone = 'ink' }) {
     >
       <span
         className={cn(
-          'font-semibold tracking-tight text-[1.7rem] sm:text-[1.75rem] leading-none',
+          'font-display font-bold tracking-[-0.02em] text-[1.6rem] sm:text-[1.7rem] leading-none',
           tone === 'ink' ? 'text-ink' : 'text-white',
         )}
       >
