@@ -107,10 +107,15 @@ const TARAN_PERSON_LD = {
   areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
   // sameAs is Google's primary entity-disambiguation signal for a Person.
   // Each URL listed here tells Google "this Taran Aujla is also the
-  // person at that URL", reinforcing the entity graph. Expanding the list
-  // as profiles come online (LinkedIn early June, taranaujla.ca shortly
-  // after) will keep climbing the branded-search ranking.
-  sameAs: ['https://prime-gate.ca'],
+  // person at that URL", reinforcing the entity graph. The HomeLife G1
+  // profile is the strongest institutional anchor (the brokerage's own
+  // confirmation of practitioner status). prime-gate.ca is the
+  // sister-site link. LinkedIn and taranaujla.ca to be added as those
+  // come online.
+  sameAs: [
+    'https://www.homelifeg1realty.com/Taran-Aujla',
+    'https://prime-gate.ca',
+  ],
 }
 
 const DAVE_PERSON_LD = {
