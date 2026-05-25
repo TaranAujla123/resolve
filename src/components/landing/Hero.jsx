@@ -38,7 +38,7 @@ export function Hero() {
           <span>Seller Representation for Ontario Homeowners</span>
         </p>
         <h1 className="mt-4 text-display-xl text-ink max-w-4xl font-display font-semibold">
-          Facing a difficult property situation?
+          Facing a Difficult Property Situation?
         </h1>
         <p className="mt-3 text-[22px] sm:text-display-md text-ink/90 max-w-3xl font-medium">
           {heroLanes.map((label, i) => (
@@ -56,9 +56,10 @@ export function Hero() {
           ))}
         </p>
         <p className="mt-5 sm:mt-7 max-w-2xl text-[15.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
-          We bring more than fifteen years in Ontario&rsquo;s hardest sales &mdash; we
-          move quickly when timing matters, carefully where discretion matters, and
-          keep your equity at the centre of every decision through to closing.
+          We bring more than fifteen years of experience in Ontario&rsquo;s hardest
+          sales &mdash; we move quickly when timing matters, carefully where
+          discretion matters, and keep your equity at the centre of every decision
+          through to closing.
         </p>
         <motion.div
           initial="hidden"
