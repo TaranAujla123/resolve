@@ -34,6 +34,7 @@ const items = [
   {
     icon: Scale,
     title: 'Property Disputes',
+    href: '/property-disputes',
     situation:
       'Co-ownership friction, a boundary or tenancy question, a lien, or a partition matter. Anything clouding title makes a clean sale harder.',
     help:
@@ -42,6 +43,7 @@ const items = [
   {
     icon: HeartHandshake,
     title: 'Separation or Divorce',
+    href: '/divorce-real-estate',
     situation:
       'Selling the matrimonial home during a separation is rarely just about the house. Two sets of interests, raw emotions, and hard timelines all have to be managed at once.',
     help:
@@ -50,6 +52,7 @@ const items = [
   {
     icon: Scroll,
     title: 'Estate or Probate',
+    href: '/estate-sale',
     situation:
       'Selling a loved one’s home as an executor means carrying probate timelines, multiple beneficiaries, and the weight of the loss all at the same time.',
     help:

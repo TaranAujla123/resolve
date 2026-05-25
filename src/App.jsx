@@ -15,6 +15,9 @@ import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
 import { Seo } from '@/components/seo/Seo'
 import { PowerOfSale } from '@/components/landing/situations/PowerOfSale'
 import { MortgageArrears } from '@/components/landing/situations/MortgageArrears'
+import { EstateSale } from '@/components/landing/situations/EstateSale'
+import { DivorceRealEstate } from '@/components/landing/situations/DivorceRealEstate'
+import { PropertyDisputes } from '@/components/landing/situations/PropertyDisputes'
 
 // -----------------------------------------------------------------------
 // Per-route SEO payloads
@@ -210,6 +213,33 @@ const MORTGAGE_ARREARS_JSONLD = situationJsonLd({
     'Behind on mortgage payments and considering a sale? Resolve represents Ontario homeowners through the arrears window, privately and on a defensible timeline, with equity protection at the centre.',
 })
 
+const ESTATE_SALE_JSONLD = situationJsonLd({
+  slug: 'estate-sale',
+  name: 'Selling a Home Through Estate or Probate · Ontario · Resolve',
+  serviceType: 'Real Estate Representation — Estate and Probate Sales (Ontario)',
+  breadcrumbName: 'Estate or Probate',
+  description:
+    'Selling a loved one’s home as part of administering an Ontario estate. Resolve represents executors and estate trustees, at the pace the estate allows, in coordination with the estate lawyer.',
+})
+
+const DIVORCE_JSONLD = situationJsonLd({
+  slug: 'divorce-real-estate',
+  name: 'Selling a Home During a Separation or Divorce · Ontario · Resolve',
+  serviceType: 'Real Estate Representation — Separation and Divorce Sales (Ontario)',
+  breadcrumbName: 'Separation or Divorce',
+  description:
+    'Selling the matrimonial home during a separation or divorce in Ontario. Resolve represents the sale itself, neutrally, in coordination with both parties’ real estate lawyers.',
+})
+
+const PROPERTY_DISPUTES_JSONLD = situationJsonLd({
+  slug: 'property-disputes',
+  name: 'Selling a Home Through a Property Dispute · Ontario · Resolve',
+  serviceType: 'Real Estate Representation — Property and Co-Ownership Disputes (Ontario)',
+  breadcrumbName: 'Property Disputes',
+  description:
+    'Co-ownership friction, partition matters, title clouds, joint-owner disputes. Resolve handles the real estate side of these Ontario sales in close coordination with your real estate lawyer.',
+})
+
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation()
   useEffect(() => {
@@ -279,6 +309,48 @@ function MortgageArrearsPage() {
   )
 }
 
+function EstateSalePage() {
+  return (
+    <>
+      <Seo
+        title="Estate or Probate Sale in Ontario · Selling Your Home · Resolve"
+        description="Selling a loved one’s home as part of administering an Ontario estate. Resolve represents executors and estate trustees, at the pace the estate allows, in coordination with the estate lawyer."
+        canonical={`${SITE_URL}/estate-sale`}
+        jsonLd={ESTATE_SALE_JSONLD}
+      />
+      <EstateSale />
+    </>
+  )
+}
+
+function DivorceRealEstatePage() {
+  return (
+    <>
+      <Seo
+        title="Selling Your Home During Separation or Divorce in Ontario · Resolve"
+        description="Selling the matrimonial home during a separation or divorce in Ontario. Resolve represents the sale itself, neutrally and carefully, in coordination with both parties’ real estate lawyers."
+        canonical={`${SITE_URL}/divorce-real-estate`}
+        jsonLd={DIVORCE_JSONLD}
+      />
+      <DivorceRealEstate />
+    </>
+  )
+}
+
+function PropertyDisputesPage() {
+  return (
+    <>
+      <Seo
+        title="Selling a Home Through a Property Dispute in Ontario · Resolve"
+        description="Co-ownership friction, partition matters, title clouds. Resolve handles the real estate side of these Ontario sales in close coordination with your real estate lawyer."
+        canonical={`${SITE_URL}/property-disputes`}
+        jsonLd={PROPERTY_DISPUTES_JSONLD}
+      />
+      <PropertyDisputes />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -292,6 +364,9 @@ export default function App() {
             <Route path="/buyers" element={<BuyersPage />} />
             <Route path="/power-of-sale" element={<PowerOfSalePage />} />
             <Route path="/mortgage-arrears" element={<MortgageArrearsPage />} />
+            <Route path="/estate-sale" element={<EstateSalePage />} />
+            <Route path="/divorce-real-estate" element={<DivorceRealEstatePage />} />
+            <Route path="/property-disputes" element={<PropertyDisputesPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>

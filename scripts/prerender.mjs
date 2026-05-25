@@ -29,7 +29,15 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const ROOT = path.resolve(__dirname, '..')
 const DIST = path.join(ROOT, 'dist')
 
-const ROUTES = ['/', '/buyers', '/power-of-sale', '/mortgage-arrears']
+const ROUTES = [
+  '/',
+  '/buyers',
+  '/power-of-sale',
+  '/mortgage-arrears',
+  '/estate-sale',
+  '/divorce-real-estate',
+  '/property-disputes',
+]
 const PORT = 4321
 const NAV_TIMEOUT_MS = 30_000
 // Helmet flushes synchronously on mount but we give a small grace
