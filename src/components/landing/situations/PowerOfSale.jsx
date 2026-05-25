@@ -19,7 +19,7 @@ export function PowerOfSale() {
   return (
     <SituationPage
       eyebrow="Situations · Power of Sale"
-      title="Selling a home facing power of sale in Ontario."
+      title="Selling a Home Facing Power of Sale in Ontario."
       lead={
         <>
           If your lender has started a power of sale, the clock is running but

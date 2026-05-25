@@ -19,7 +19,7 @@ export function MortgageArrears() {
   return (
     <SituationPage
       eyebrow="Situations · Mortgage Arrears"
-      title="Selling a home in mortgage arrears in Ontario."
+      title="Selling a Home in Mortgage Arrears in Ontario."
       lead={
         <>
           Falling behind on mortgage payments does not happen overnight, and
