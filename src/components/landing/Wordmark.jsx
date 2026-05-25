@@ -1,11 +1,36 @@
 import React from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { cn } from '@/lib/utils'
 
+/**
+ * Site wordmark. Acts as the canonical "back home" affordance in the nav.
+ *
+ * Behaviour:
+ *   - On any non-home route (/buyers, /power-of-sale, /mortgage-arrears,
+ *     /estate-sale, /divorce-real-estate, /property-disputes): routes to /.
+ *     ScrollToTopOnRouteChange in App.jsx handles scroll reset.
+ *   - On / itself: prevents the route change (it would be a no-op) and
+ *     smooth-scrolls back to the top of the page instead.
+ *
+ * The previous implementation used <a href="#top"> which only worked on
+ * the homepage where the Hero carries id="top". On every other route the
+ * click did nothing useful.
+ */
 export function Wordmark({ className, tone = 'ink' }) {
+  const location = useLocation()
+
+  const handleClick = (e) => {
+    if (location.pathname === '/') {
+      e.preventDefault()
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+    }
+  }
+
   return (
-    <a
-      href="#top"
-      aria-label="Resolve, a seller representation service of Taran Aujla at HomeLife G1 Realty Inc., Brokerage"
+    <Link
+      to="/"
+      onClick={handleClick}
+      aria-label="Resolve, Seller Representation. Back to home."
       className={cn('inline-flex flex-col leading-none group', className)}
     >
       <span
@@ -24,6 +49,6 @@ export function Wordmark({ className, tone = 'ink' }) {
       >
         Seller Representation
       </span>
-    </a>
+    </Link>
   )
 }
