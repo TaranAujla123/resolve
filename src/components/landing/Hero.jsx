@@ -113,8 +113,7 @@ export function Hero() {
             HomeLife G1 Realty Inc., Brokerage
           </span>
           . Independently Owned &amp; Operated. &ldquo;Resolve&rdquo; is a name
-          used by Taran Aujla, Salesperson, and Dave Dhaliwal, Broker, in
-          connection with these services and is not itself a brokerage.
+          used in connection with these services and is not itself a brokerage.
         </motion.p>
         <motion.div
           initial="hidden"
