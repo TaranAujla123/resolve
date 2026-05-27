@@ -36,8 +36,11 @@ export function Nav() {
     setOpen(false)
   }, [location.pathname])
 
+  // Sticky positioning lives on the parent wrapper in App.jsx so the
+  // BrokerageStrip and Nav scroll together as one unit. The Nav itself
+  // just renders its content with scroll-state styling.
   const headerClass = cn(
-    'sticky top-0 z-50 transition-all duration-300',
+    'transition-all duration-300',
     scrolled
       ? 'bg-white/90 backdrop-blur-md border-b border-surface-line shadow-[0_1px_0_rgba(15,23,42,0.02)]'
       : 'bg-white/70 backdrop-blur-sm border-b border-transparent',

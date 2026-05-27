@@ -367,8 +367,17 @@ export default function App() {
     <BrowserRouter>
       <ScrollToTopOnRouteChange />
       <div className="min-h-screen bg-white text-ink antialiased selection:bg-accent/20 selection:text-ink">
-        <BrokerageStrip />
-        <Nav />
+        {/*
+          Sticky top stack: BrokerageStrip + Nav scroll together as one
+          unit so the HomeLife G1 brokerage attribution remains visible
+          throughout the page (RECO Bulletin 5.1 "clearly and prominently
+          identified" requirement is satisfied at all times, not just
+          above the fold).
+        */}
+        <div className="sticky top-0 z-50">
+          <BrokerageStrip />
+          <Nav />
+        </div>
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />

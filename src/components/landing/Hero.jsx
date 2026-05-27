@@ -94,11 +94,33 @@ export function Hero() {
             </li>
           ))}
         </motion.ul>
-        <motion.div
+        {/*
+          Brokerage attribution under the trust row. Mirrors the Primegate
+          hero footnote pattern and satisfies RECO Bulletin 5.1 in the
+          first viewport even for visitors who never scroll into the
+          footer. Practitioner roles and the "Resolve is a name, not a
+          brokerage" disclosure are both present, matching TRESA framing.
+        */}
+        <motion.p
           initial="hidden"
           animate="show"
           variants={polish}
           custom={2}
+          className="mt-6 sm:mt-7 max-w-3xl text-[12.5px] text-ink-mute leading-relaxed"
+        >
+          Real estate services by Resolve, delivered through{' '}
+          <span className="font-semibold text-ink-soft">
+            HomeLife G1 Realty Inc., Brokerage
+          </span>
+          . Independently Owned &amp; Operated. &ldquo;Resolve&rdquo; is a name
+          used by Taran Aujla, Salesperson, and Dave Dhaliwal, Broker, in
+          connection with these services and is not itself a brokerage.
+        </motion.p>
+        <motion.div
+          initial="hidden"
+          animate="show"
+          variants={polish}
+          custom={3}
           className="mt-8 flex sm:hidden flex-col items-center gap-1 text-ink-mute"
           aria-hidden="true"
         >
