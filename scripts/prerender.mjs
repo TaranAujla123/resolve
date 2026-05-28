@@ -37,6 +37,7 @@ const ROUTES = [
   '/estate-sale',
   '/divorce-real-estate',
   '/property-disputes',
+  '/thanks',
 ]
 const PORT = 4321
 const NAV_TIMEOUT_MS = 30_000

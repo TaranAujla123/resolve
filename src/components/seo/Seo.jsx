@@ -24,6 +24,7 @@ export function Seo({
   ogImageAlt = 'Resolve · For Ontario homeowners. Facing a difficult property situation?',
   ogType = 'website',
   jsonLd = [],
+  noindex = false,
 }) {
   const finalOgTitle = ogTitle || title
   const finalOgDescription = ogDescription || description
@@ -33,6 +34,7 @@ export function Seo({
       <title>{title}</title>
       <meta name="description" content={description} />
       {canonical && <link rel="canonical" href={canonical} />}
+      {noindex && <meta name="robots" content="noindex,nofollow" />}
 
       <meta property="og:type" content={ogType} />
       <meta property="og:site_name" content="Resolve" />

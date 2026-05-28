@@ -15,6 +15,7 @@ import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
 import { Seo } from '@/components/seo/Seo'
 import { PowerOfSale } from '@/components/landing/situations/PowerOfSale'
 import { MortgageArrears } from '@/components/landing/situations/MortgageArrears'
+import { ThankYou } from '@/components/landing/ThankYou'
 import { EstateSale } from '@/components/landing/situations/EstateSale'
 import { DivorceRealEstate } from '@/components/landing/situations/DivorceRealEstate'
 import { PropertyDisputes } from '@/components/landing/situations/PropertyDisputes'
@@ -320,6 +321,20 @@ function MortgageArrearsPage() {
   )
 }
 
+function ThanksPage() {
+  return (
+    <>
+      <Seo
+        title="Inquiry received · Resolve"
+        description="Your inquiry has been received. We read each one personally and will be in touch within one business day."
+        canonical={`${SITE_URL}/thanks`}
+        noindex
+      />
+      <ThankYou />
+    </>
+  )
+}
+
 function EstateSalePage() {
   return (
     <>
@@ -387,6 +402,7 @@ export default function App() {
             <Route path="/estate-sale" element={<EstateSalePage />} />
             <Route path="/divorce-real-estate" element={<DivorceRealEstatePage />} />
             <Route path="/property-disputes" element={<PropertyDisputesPage />} />
+            <Route path="/thanks" element={<ThanksPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>

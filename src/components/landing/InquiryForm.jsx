@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { Lock, Send, Phone, MessageSquare } from 'lucide-react'
@@ -25,6 +26,7 @@ const situations = [
 
 export function InquiryForm() {
   const [submitting, setSubmitting] = useState(false)
+  const navigate = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -49,8 +51,10 @@ export function InquiryForm() {
         body: data,
       })
       if (res.ok) {
-        toast.success('Thank you. Your inquiry has been received privately. We will be in touch shortly.')
-        form.reset()
+        // Hand off to the branded /thanks page. ScrollToTopOnRouteChange
+        // in App.jsx handles scroll reset; the form unmounts so no need
+        // to manually reset state.
+        navigate('/thanks')
       } else {
         toast.error('Something went wrong on our side. Please call (365) 645-7332 or try again shortly.')
       }

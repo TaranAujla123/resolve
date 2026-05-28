@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { toast } from 'sonner'
 import { Send, Shield, Users, Mail } from 'lucide-react'
@@ -35,6 +36,7 @@ const pillars = [
 
 export function Buyers() {
   const [submitting, setSubmitting] = useState(false)
+  const navigate = useNavigate()
 
   async function handleSubmit(e) {
     e.preventDefault()
@@ -55,8 +57,10 @@ export function Buyers() {
         body: data,
       })
       if (res.ok) {
-        toast.success('Thank you. Your buyer network registration has been received. We will be in touch shortly.')
-        form.reset()
+        // Same destination as the seller inquiry form. The /thanks page
+        // copy is general enough to land cleanly for buyer-network
+        // submissions too.
+        navigate('/thanks')
       } else {
         toast.error('Something went wrong. Please try again shortly, or call (365) 645-7332.')
       }
