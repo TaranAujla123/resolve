@@ -56,8 +56,8 @@ export function Hero() {
           ))}
         </p>
         <p className="mt-5 sm:mt-7 max-w-2xl text-[15.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
-          Over a decade inside Ontario&rsquo;s most complex property files. We
-          move quickly when timing matters, carefully where discretion matters,
+          More than 10 years inside Ontario&rsquo;s most complex property files.
+          We move quickly when timing matters, carefully where discretion matters,
           and protect your equity through to closing.
         </p>
         <motion.div

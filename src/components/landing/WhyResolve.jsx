@@ -44,9 +44,10 @@ export function WhyResolve() {
         }
       />
       <p className="mt-4 max-w-3xl text-lg text-ink-soft leading-relaxed">
-        We&rsquo;ve negotiated with the lenders, lawyers, opposing parties, and
-        family members these situations bring to the table, and we know where
-        these deals get stuck and how to keep them moving to a clean close.
+        We&rsquo;ve negotiated with the lenders, lawyers, opposing parties,
+        family members, and business partners these situations bring to the
+        table, and we know where these deals get stuck and how to keep them
+        moving to a clean close.
       </p>
       <p className="mt-4 max-w-3xl text-lg text-ink-soft leading-relaxed">
         We also represent buyers, so alongside a full-market listing we can bring
