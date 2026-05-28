@@ -56,10 +56,9 @@ export function Hero() {
           ))}
         </p>
         <p className="mt-5 sm:mt-7 max-w-2xl text-[15.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
-          We bring more than fifteen years of experience in Ontario&rsquo;s hardest
-          sales &mdash; we move quickly when timing matters, carefully where
-          discretion matters, and keep your equity at the centre of every decision
-          through to closing.
+          Over a decade inside Ontario&rsquo;s most complex property files. We
+          move quickly when timing matters, carefully where discretion matters,
+          and protect your equity through to closing.
         </p>
         <motion.div
           initial="hidden"

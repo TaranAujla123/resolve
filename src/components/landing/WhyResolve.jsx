@@ -36,7 +36,7 @@ export function WhyResolve() {
           <>
             Between us, Taran and Dave bring{' '}
             <strong className="font-semibold text-ink">
-              more than fifteen years of combined experience
+              more than a decade of combined experience
             </strong>{' '}
             in complex Ontario real estate, from power of sale and estate files to
             separations and partnership disputes.
