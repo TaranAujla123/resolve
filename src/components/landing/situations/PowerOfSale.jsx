@@ -1,5 +1,6 @@
 import React from 'react'
 import { SituationPage, SituationBlock } from './SituationPage'
+import { RelatedSituations } from './RelatedSituations'
 
 /**
  * Dedicated landing page for the "Power of Sale" situation.
@@ -17,6 +18,7 @@ import { SituationPage, SituationBlock } from './SituationPage'
  */
 export function PowerOfSale() {
   return (
+    <>
     <SituationPage
       eyebrow="Situations · Power of Sale"
       title="Selling a Home Facing Power of Sale in Ontario."
@@ -97,5 +99,7 @@ export function PowerOfSale() {
         </p>
       </SituationBlock>
     </SituationPage>
+    <RelatedSituations relatedSlugs={['mortgage-arrears', 'divorce-real-estate', 'property-disputes']} />
+    </>
   )
 }

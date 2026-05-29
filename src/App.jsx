@@ -19,6 +19,8 @@ import { ThankYou } from '@/components/landing/ThankYou'
 import { EstateSale } from '@/components/landing/situations/EstateSale'
 import { DivorceRealEstate } from '@/components/landing/situations/DivorceRealEstate'
 import { PropertyDisputes } from '@/components/landing/situations/PropertyDisputes'
+import { LifeTransitions } from '@/components/landing/situations/LifeTransitions'
+import { ForAgents } from '@/components/landing/ForAgents'
 
 // -----------------------------------------------------------------------
 // Per-route SEO payloads
@@ -210,7 +212,7 @@ function situationJsonLd({ slug, name, serviceType, description, breadcrumbName 
 const POWER_OF_SALE_JSONLD = situationJsonLd({
   slug: 'power-of-sale',
   name: 'Selling a Home in Power of Sale · Ontario · Resolve',
-  serviceType: 'Real Estate Representation — Power of Sale (Ontario)',
+  serviceType: 'Real Estate Representation: Power of Sale (Ontario)',
   breadcrumbName: 'Power of Sale',
   description:
     'Power of sale is a lender-driven sale process in Ontario. Resolve represents homeowners navigating it quietly and quickly, with equity protection at the centre of every decision through to closing.',
@@ -219,7 +221,7 @@ const POWER_OF_SALE_JSONLD = situationJsonLd({
 const MORTGAGE_ARREARS_JSONLD = situationJsonLd({
   slug: 'mortgage-arrears',
   name: 'Selling a Home in Mortgage Arrears · Ontario · Resolve',
-  serviceType: 'Real Estate Representation — Mortgage Arrears (Ontario)',
+  serviceType: 'Real Estate Representation: Mortgage Arrears (Ontario)',
   breadcrumbName: 'Mortgage Arrears',
   description:
     'Behind on mortgage payments and considering a sale? Resolve represents Ontario homeowners through the arrears window, privately and on a defensible timeline, with equity protection at the centre.',
@@ -228,7 +230,7 @@ const MORTGAGE_ARREARS_JSONLD = situationJsonLd({
 const ESTATE_SALE_JSONLD = situationJsonLd({
   slug: 'estate-sale',
   name: 'Selling a Home Through Estate or Probate · Ontario · Resolve',
-  serviceType: 'Real Estate Representation — Estate and Probate Sales (Ontario)',
+  serviceType: 'Real Estate Representation: Estate and Probate Sales (Ontario)',
   breadcrumbName: 'Estate or Probate',
   description:
     'Selling a loved one’s home as part of administering an Ontario estate. Resolve represents executors and estate trustees, at the pace the estate allows, in coordination with the estate lawyer.',
@@ -237,7 +239,7 @@ const ESTATE_SALE_JSONLD = situationJsonLd({
 const DIVORCE_JSONLD = situationJsonLd({
   slug: 'divorce-real-estate',
   name: 'Selling a Home During a Separation or Divorce · Ontario · Resolve',
-  serviceType: 'Real Estate Representation — Separation and Divorce Sales (Ontario)',
+  serviceType: 'Real Estate Representation: Separation and Divorce Sales (Ontario)',
   breadcrumbName: 'Separation or Divorce',
   description:
     'Selling the matrimonial home during a separation or divorce in Ontario. Resolve represents the sale itself, neutrally, in coordination with both parties’ real estate lawyers.',
@@ -246,11 +248,55 @@ const DIVORCE_JSONLD = situationJsonLd({
 const PROPERTY_DISPUTES_JSONLD = situationJsonLd({
   slug: 'property-disputes',
   name: 'Selling a Home Through a Property Dispute · Ontario · Resolve',
-  serviceType: 'Real Estate Representation — Property and Co-Ownership Disputes (Ontario)',
+  serviceType: 'Real Estate Representation: Property and Co-Ownership Disputes (Ontario)',
   breadcrumbName: 'Property Disputes',
   description:
     'Co-ownership friction, partition matters, title clouds, joint-owner disputes. Resolve handles the real estate side of these Ontario sales in close coordination with your real estate lawyer.',
 })
+
+const LIFE_TRANSITIONS_JSONLD = situationJsonLd({
+  slug: 'life-transitions',
+  name: 'Selling a Home Through a Life Transition · Ontario · Resolve',
+  serviceType: 'Real Estate Representation: Life Transition Sales (Ontario)',
+  breadcrumbName: 'Life Transitions',
+  description:
+    'Relocation, downsizing, retirement, health-driven moves. Resolve represents Ontario homeowners through life-transition sales on the timeline the move actually allows, in coordination with your accountant or financial planner where relevant.',
+})
+
+// /for-agents page is its own thing: not a situation, but a referral
+// channel for other Ontario real estate professionals. WebPage +
+// Service + breadcrumb under a "For Agents" leaf.
+const FOR_AGENTS_JSONLD = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'For Real Estate Professionals · Resolve Referral Partnership · Ontario',
+    url: `${SITE_URL}/for-agents`,
+    description:
+      'Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage referral agreements under TRESA. Referring agent keeps the client relationship and receives 25 percent of the net listing-side commission at closing.',
+    isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'For Agents', item: `${SITE_URL}/for-agents` },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Brokerage-to-Brokerage Seller File Referral (Ontario)',
+    provider: RESOLVE_ORG,
+    areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
+    audience: {
+      '@type': 'Audience',
+      audienceType: 'Ontario real estate Salespersons and Brokers',
+    },
+    description:
+      'Resolve takes the listing on referred files (power of sale, mortgage arrears, matrimonial home sales, estate sales, property disputes). Referrals are documented brokerage-to-brokerage under TRESA. The referring brokerage receives 25 percent of the net listing-side commission at closing.',
+  },
+]
 
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation()
@@ -377,6 +423,34 @@ function PropertyDisputesPage() {
   )
 }
 
+function LifeTransitionsPage() {
+  return (
+    <>
+      <Seo
+        title="Selling Your Home Through a Life Transition in Ontario · Resolve"
+        description="Relocation, downsizing, retirement, health-driven moves. Resolve represents Ontario homeowners through life-transition sales on the timeline the move actually allows."
+        canonical={`${SITE_URL}/life-transitions`}
+        jsonLd={LIFE_TRANSITIONS_JSONLD}
+      />
+      <LifeTransitions />
+    </>
+  )
+}
+
+function ForAgentsPage() {
+  return (
+    <>
+      <Seo
+        title="For Real Estate Professionals · Resolve Referral Partnership · Ontario"
+        description="Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage agreements under TRESA. You keep the client relationship and receive 25 percent of the net listing-side commission at closing."
+        canonical={`${SITE_URL}/for-agents`}
+        jsonLd={FOR_AGENTS_JSONLD}
+      />
+      <ForAgents />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -402,6 +476,8 @@ export default function App() {
             <Route path="/estate-sale" element={<EstateSalePage />} />
             <Route path="/divorce-real-estate" element={<DivorceRealEstatePage />} />
             <Route path="/property-disputes" element={<PropertyDisputesPage />} />
+            <Route path="/life-transitions" element={<LifeTransitionsPage />} />
+            <Route path="/for-agents" element={<ForAgentsPage />} />
             <Route path="/thanks" element={<ThanksPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>

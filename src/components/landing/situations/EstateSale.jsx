@@ -1,5 +1,6 @@
 import React from 'react'
 import { SituationPage, SituationBlock } from './SituationPage'
+import { RelatedSituations } from './RelatedSituations'
 
 /**
  * Dedicated landing page for the "Estate / Probate" situation.
@@ -18,6 +19,7 @@ import { SituationPage, SituationBlock } from './SituationPage'
  */
 export function EstateSale() {
   return (
+    <>
     <SituationPage
       eyebrow="Situations · Estate or Probate"
       title="Selling a Home Through Estate or Probate in Ontario."
@@ -99,5 +101,7 @@ export function EstateSale() {
         </p>
       </SituationBlock>
     </SituationPage>
+    <RelatedSituations relatedSlugs={['property-disputes', 'divorce-real-estate', 'life-transitions']} />
+    </>
   )
 }

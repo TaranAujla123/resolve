@@ -37,6 +37,8 @@ const ROUTES = [
   '/estate-sale',
   '/divorce-real-estate',
   '/property-disputes',
+  '/life-transitions',
+  '/for-agents',
   '/thanks',
 ]
 const PORT = 4321

@@ -1,5 +1,6 @@
 import React from 'react'
 import { SituationPage, SituationBlock } from './SituationPage'
+import { RelatedSituations } from './RelatedSituations'
 
 /**
  * Dedicated landing page for the "Mortgage Arrears" situation.
@@ -17,6 +18,7 @@ import { SituationPage, SituationBlock } from './SituationPage'
  */
 export function MortgageArrears() {
   return (
+    <>
     <SituationPage
       eyebrow="Situations · Mortgage Arrears"
       title="Selling a Home in Mortgage Arrears in Ontario."
@@ -96,5 +98,7 @@ export function MortgageArrears() {
         </p>
       </SituationBlock>
     </SituationPage>
+    <RelatedSituations relatedSlugs={['power-of-sale', 'divorce-real-estate', 'estate-sale']} />
+    </>
   )
 }

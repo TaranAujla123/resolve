@@ -1,5 +1,6 @@
 import React from 'react'
 import { SituationPage, SituationBlock } from './SituationPage'
+import { RelatedSituations } from './RelatedSituations'
 
 /**
  * Dedicated landing page for the "Property Disputes" situation.
@@ -21,6 +22,7 @@ import { SituationPage, SituationBlock } from './SituationPage'
  */
 export function PropertyDisputes() {
   return (
+    <>
     <SituationPage
       eyebrow="Situations · Property Disputes"
       title="Selling a Home Through a Property Dispute in Ontario."
@@ -42,8 +44,8 @@ export function PropertyDisputes() {
           The most common we see: two or more joint owners who disagree on
           whether or how to sell. Estates with multiple beneficiaries and no
           clear majority view. Partition or sale applications where a
-          co-owner is pursuing a court-ordered sale. Title clouds — liens,
-          easements, encroachments, undisclosed interests — that need
+          co-owner is pursuing a court-ordered sale. Title clouds (liens,
+          easements, encroachments, undisclosed interests) that need
           addressing before a buyer will close. Boundary or tenant questions
           that affect what the property actually is.
         </p>
@@ -104,5 +106,7 @@ export function PropertyDisputes() {
         </p>
       </SituationBlock>
     </SituationPage>
+    <RelatedSituations relatedSlugs={['estate-sale', 'divorce-real-estate', 'mortgage-arrears']} />
+    </>
   )
 }

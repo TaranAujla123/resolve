@@ -61,6 +61,7 @@ const items = [
   {
     icon: Sunrise,
     title: 'Life Transitions',
+    href: '/life-transitions',
     situation:
       'A job move, a health change, a downsizing, a retirement. Sometimes life calls for a property change on a real timeline.',
     help:

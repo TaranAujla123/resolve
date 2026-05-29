@@ -1,5 +1,6 @@
 import React from 'react'
 import { SituationPage, SituationBlock } from './SituationPage'
+import { RelatedSituations } from './RelatedSituations'
 
 /**
  * Dedicated landing page for the "Separation / Divorce" situation.
@@ -22,6 +23,7 @@ import { SituationPage, SituationBlock } from './SituationPage'
  */
 export function DivorceRealEstate() {
   return (
+    <>
     <SituationPage
       eyebrow="Situations · Separation or Divorce"
       title="Selling a Home During a Separation or Divorce in Ontario."
@@ -106,5 +108,7 @@ export function DivorceRealEstate() {
         </p>
       </SituationBlock>
     </SituationPage>
+    <RelatedSituations relatedSlugs={['estate-sale', 'property-disputes', 'mortgage-arrears']} />
+    </>
   )
 }

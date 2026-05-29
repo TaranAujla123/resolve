@@ -24,7 +24,7 @@ const situations = [
   'Estate sale',
   'Partnership / ownership dispute',
   'Other',
-  "Prefer not to say — I'll explain",
+  "Prefer not to say. I'll explain",
 ]
 
 export function InquiryForm() {
@@ -141,7 +141,7 @@ export function InquiryForm() {
             </div>
             <div className="sm:col-span-2 -mt-2">
               <p className="text-[12.5px] text-ink-mute leading-relaxed">
-                Phone or email — at least one, so we can reach you. We will use the method you prefer below.
+                Phone or email, at least one, so we can reach you. We will use the method you prefer below.
               </p>
             </div>
             <div>
@@ -186,11 +186,11 @@ export function InquiryForm() {
           <div className="mt-3 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
             <Checkbox id="no-listing" name="no_existing_listing" value="yes" required />
             <label htmlFor="no-listing" className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
-              I understand that if I&rsquo;m currently listed with another brokerage, Resolve cannot act as my representative until that agreement has ended or been mutually released &mdash; and that nothing here is intended to interfere with an existing agreement.
+              I understand that if I&rsquo;m currently listed with another brokerage, Resolve cannot act as my representative until that agreement has ended or been mutually released, and that nothing here is intended to interfere with an existing agreement.
             </label>
           </div>
           <p className="mt-2 text-[12.5px] text-ink-mute leading-relaxed">
-            Already listed with another brokerage? You&rsquo;re still welcome to reach out with general questions. We simply can&rsquo;t represent you until your existing agreement has expired or been mutually released by that brokerage. Any decision about an existing agreement is between you and your current brokerage &mdash; we never ask anyone to break an agreement they&rsquo;ve signed.
+            Already listed with another brokerage? You&rsquo;re still welcome to reach out with general questions. We simply can&rsquo;t represent you until your existing agreement has expired or been mutually released by that brokerage. Any decision about an existing agreement is between you and your current brokerage. We never ask anyone to break an agreement they&rsquo;ve signed.
           </p>
 
           <p className="mt-3 text-[12.5px] text-ink-mute flex items-center gap-1.5">
