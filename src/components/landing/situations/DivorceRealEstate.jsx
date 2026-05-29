@@ -27,6 +27,8 @@ export function DivorceRealEstate() {
     <SituationPage
       eyebrow="Situations · Separation or Divorce"
       title="Selling a Home During a Separation or Divorce in Ontario."
+      situationLabel="Separation or divorce"
+      situationSlug="divorce-real-estate"
       lead={
         <>
           Selling a home in the middle of a separation or divorce is rarely

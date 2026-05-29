@@ -68,7 +68,7 @@ const milestones = [
 
 const howItWorks = [
   'You call (365) 645-7332 or submit the form below.',
-  'We review the file in a 15 minute call (within one business day).',
+  'We review the file in a 15 minute call (within one business day, often the same day).',
   'If it is a fit, we send your brokerage a referral agreement.',
   'We take the listing. You stay informed at six milestones.',
   'Referral fee pays out brokerage to brokerage at closing.',
@@ -347,8 +347,8 @@ export function ForAgents() {
                 Confidential referral inquiry.
               </h2>
               <p className="mt-4 text-[15.5px] text-ink-soft leading-relaxed max-w-xl mx-auto">
-                Brief description of the file is enough for a first read. We respond
-                personally within one business day.
+                A brief description of the file is enough for a first read. We respond
+                personally, typically within a few hours during business hours.
               </p>
             </div>
             <motion.form
@@ -404,7 +404,7 @@ export function ForAgents() {
               </p>
 
               <p className="mt-5 text-center text-[13px] text-ink-soft leading-relaxed">
-                Confidential. No obligation. Response within one business day.
+                Confidential. No obligation. Reply typically within a few hours during business hours.
               </p>
               <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                 <p className="text-[12.5px] text-ink-mute">

@@ -26,6 +26,8 @@ export function PropertyDisputes() {
     <SituationPage
       eyebrow="Situations · Property Disputes"
       title="Selling a Home Through a Property Dispute in Ontario."
+      situationLabel="Property dispute"
+      situationSlug="property-disputes"
       lead={
         <>
           Anything clouding title makes a clean sale harder. Co-ownership

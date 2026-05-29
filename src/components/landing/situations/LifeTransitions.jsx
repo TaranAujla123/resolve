@@ -26,6 +26,8 @@ export function LifeTransitions() {
     <SituationPage
       eyebrow="Situations · Life Transitions"
       title="Selling a Home Through a Life Transition in Ontario."
+      situationLabel="Life transition"
+      situationSlug="life-transitions"
       lead={
         <>
           A job move, a health change, a downsizing, a retirement. The right

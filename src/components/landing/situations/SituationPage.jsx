@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { Phone, ArrowRight, ArrowLeft } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
+import { SituationInquiryForm } from './SituationInquiryForm'
 
 /**
  * Shared layout for a situation deep-dive page (e.g. /power-of-sale,
@@ -17,7 +18,7 @@ import { Button } from '@/components/ui/Button'
  *   - Single-line "see your real estate lawyer" disclaimer at the bottom
  *     keeps the page firmly inside the real-estate-representation lane
  */
-export function SituationPage({ eyebrow, title, lead, children }) {
+export function SituationPage({ eyebrow, title, lead, situationLabel, situationSlug, children }) {
   return (
     <>
       <section className="bg-hero-fade">
@@ -55,40 +56,47 @@ export function SituationPage({ eyebrow, title, lead, children }) {
         </div>
       </section>
 
-      <section>
-        <div className="container section-y">
-          <div className="mx-auto max-w-3xl rounded-2xl border border-surface-line bg-white p-7 sm:p-10 shadow-card">
-            <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
-              The next step
-            </p>
-            <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-              A private conversation, on your terms.
-            </h2>
-            <p className="mt-4 text-[15.5px] text-ink-soft leading-relaxed">
-              No obligation, no pressure to list, and nothing public. Many
-              conversations stay private and never move further. That is fine.
-              The point is for you to see what is realistic and what options
-              you actually have.
-            </p>
-            <div className="mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3">
-              <Button as="a" href="/#contact" size="lg" variant="primary" className="group">
-                Request a Private Consultation
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </Button>
-              <Button as="a" href="tel:+13656457332" size="lg" variant="outline">
-                <Phone className="h-4 w-4" />
-                Call (365) 645-7332
-              </Button>
+      {situationLabel && situationSlug ? (
+        <SituationInquiryForm
+          situationLabel={situationLabel}
+          situationSlug={situationSlug}
+        />
+      ) : (
+        <section>
+          <div className="container section-y">
+            <div className="mx-auto max-w-3xl rounded-2xl border border-surface-line bg-white p-7 sm:p-10 shadow-card">
+              <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
+                The next step
+              </p>
+              <h2 className="mt-3 text-display-md text-ink font-display font-medium">
+                A private conversation, on your terms.
+              </h2>
+              <p className="mt-4 text-[15.5px] text-ink-soft leading-relaxed">
+                No obligation, no pressure to list, and nothing public. Many
+                conversations stay private and never move further. That is fine.
+                The point is for you to see what is realistic and what options
+                you actually have.
+              </p>
+              <div className="mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3">
+                <Button as="a" href="/#contact" size="lg" variant="primary" className="group">
+                  Request a Private Consultation
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                </Button>
+                <Button as="a" href="tel:+13656457332" size="lg" variant="outline">
+                  <Phone className="h-4 w-4" />
+                  Call (365) 645-7332
+                </Button>
+              </div>
+              <p className="mt-6 text-[12.5px] text-ink-mute leading-relaxed">
+                This page describes a real estate process for general information.
+                It is not legal, accounting, or financial advice. For questions
+                about your specific situation, please speak with a real estate
+                lawyer in your jurisdiction.
+              </p>
             </div>
-            <p className="mt-6 text-[12.5px] text-ink-mute leading-relaxed">
-              This page describes a real estate process for general information.
-              It is not legal, accounting, or financial advice. For questions
-              about your specific situation, please speak with a real estate
-              lawyer in your jurisdiction.
-            </p>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   )
 }

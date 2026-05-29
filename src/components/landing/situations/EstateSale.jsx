@@ -23,6 +23,8 @@ export function EstateSale() {
     <SituationPage
       eyebrow="Situations · Estate or Probate"
       title="Selling a Home Through Estate or Probate in Ontario."
+      situationLabel="Estate or probate"
+      situationSlug="estate-sale"
       lead={
         <>
           Selling a loved one&rsquo;s home while administering an estate is
