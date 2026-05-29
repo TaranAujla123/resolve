@@ -48,6 +48,12 @@ export function ThankYou() {
             know. If not, we&rsquo;ll point you to a colleague better suited.
           </p>
 
+          <p className="mt-5 text-[14.5px] text-ink-soft leading-relaxed">
+            In the meantime: we&rsquo;ll handle the real estate side. Anything
+            legal is best put to your lawyer. If you don&rsquo;t have one, just
+            ask and we&rsquo;ll point you to someone good.
+          </p>
+
           <p className="mt-8 text-[14px] text-ink-mute leading-relaxed">
             All real estate trades are made through{' '}
             <span className="font-semibold text-ink-soft">

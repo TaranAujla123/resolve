@@ -45,6 +45,10 @@ export function InquiryForm() {
       toast.error('Please acknowledge the note about existing listing agreements so we can proceed.')
       return
     }
+    if (!data.get('acknowledges_real_estate_only')) {
+      toast.error('Please acknowledge that Resolve provides real estate services, not legal advice.')
+      return
+    }
 
     setSubmitting(true)
     try {
@@ -172,6 +176,13 @@ export function InquiryForm() {
           <p className="mt-2 text-[12.5px] text-ink-mute leading-relaxed">
             Already listed with another brokerage? You&rsquo;re still welcome to reach out with general questions. We simply can&rsquo;t represent you until your existing agreement has expired or been mutually released by that brokerage. Any decision about an existing agreement is between you and your current brokerage. We never ask anyone to break an agreement they&rsquo;ve signed.
           </p>
+
+          <div className="mt-6 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
+            <Checkbox id="no-legal-advice" name="acknowledges_real_estate_only" value="yes" required />
+            <label htmlFor="no-legal-advice" className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
+              I understand that Resolve provides real estate services, not legal advice, and works alongside my own legal counsel.
+            </label>
+          </div>
 
           <p className="mt-3 text-[12.5px] text-ink-mute flex items-center gap-1.5">
             <Lock className="h-3.5 w-3.5" />

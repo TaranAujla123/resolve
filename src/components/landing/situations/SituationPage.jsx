@@ -56,6 +56,20 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
         </div>
       </section>
 
+      {/*
+        Subtle coordination line. Renders on every situation page (with form
+        or with the fallback CTA card) so the "we coordinate with the
+        lawyer" note carries consistently and the old generic disclaimer is
+        replaced by something that reads like a benefit, not a hedge.
+      */}
+      <div className="container pt-8 sm:pt-10">
+        <p className="mx-auto max-w-3xl text-[12.5px] text-ink-mute leading-relaxed">
+          We coordinate with the lawyer on every file. Legal, tax, and
+          financial questions sit with your own counsel. If you don&rsquo;t
+          have one yet, we can recommend a lawyer who handles these matters.
+        </p>
+      </div>
+
       {situationLabel && situationSlug ? (
         <SituationInquiryForm
           situationLabel={situationLabel}
@@ -87,12 +101,6 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
                   Call (365) 645-7332
                 </Button>
               </div>
-              <p className="mt-6 text-[12.5px] text-ink-mute leading-relaxed">
-                This page describes a real estate process for general information.
-                It is not legal, accounting, or financial advice. For questions
-                about your specific situation, please speak with a real estate
-                lawyer in your jurisdiction.
-              </p>
             </div>
           </div>
         </section>

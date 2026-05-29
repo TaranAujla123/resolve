@@ -51,6 +51,10 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
       toast.error('Please acknowledge the note about existing listing agreements so we can proceed.')
       return
     }
+    if (!data.get('acknowledges_real_estate_only')) {
+      toast.error('Please acknowledge that Resolve provides real estate services, not legal advice.')
+      return
+    }
 
     setSubmitting(true)
     try {
@@ -142,6 +146,13 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
               </label>
             </div>
 
+            <div className="mt-3 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
+              <Checkbox id={`${formId}-no-legal-advice`} name="acknowledges_real_estate_only" value="yes" required />
+              <label htmlFor={`${formId}-no-legal-advice`} className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
+                I understand that Resolve provides real estate services, not legal advice, and works alongside my own legal counsel.
+              </label>
+            </div>
+
             <p className="mt-3 text-[12.5px] text-ink-mute flex items-center gap-1.5">
               <Lock className="h-3.5 w-3.5" />
               Your information is used only to respond to your inquiry. It is not sold, shared, or added to any list.
@@ -167,13 +178,6 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
               </Button>
             </div>
           </motion.form>
-
-          <p className="mt-6 text-center text-[12.5px] text-ink-mute leading-relaxed max-w-2xl mx-auto">
-            This page describes a real estate process for general information.
-            It is not legal, accounting, or financial advice. For questions
-            about your specific situation, please speak with a real estate
-            lawyer in your jurisdiction.
-          </p>
         </div>
       </div>
     </section>
