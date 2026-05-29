@@ -89,14 +89,47 @@ export function LifeTransitions() {
       <SituationBlock label="Timing" title="When to start the conversation.">
         <p>
           Earlier than you would assume. The most common timing mistake in a
-          life-transition sale is starting four weeks before the desired close
-          date. Six to twelve weeks of runway, when available, almost always
-          produces a better outcome than rushing for speed.
+          life-transition sale is starting four weeks before the desired
+          close date. Six to twelve weeks of runway, when available, almost
+          always produces a better outcome than rushing for speed.
         </p>
         <p>
-          The first conversation costs nothing and commits you to nothing. The
-          point is to see the runway you actually have, and to make the move on
-          your terms instead of under pressure.
+          The first conversation costs nothing and commits you to nothing.
+          The point is to see the runway you actually have, and to make the
+          move on your terms instead of under pressure.
+        </p>
+      </SituationBlock>
+
+      <SituationBlock label="The financial intersection" title="When the sale becomes a planning event.">
+        <p>
+          Life-transition sales are often the moment a real estate
+          transaction becomes a broader financial planning event. A few
+          examples we see. Capital gains on a non-principal residence (the
+          cottage, a rental property, a secondary home) need to be modelled
+          before the sale, not after, because the after-tax proceeds drive
+          the affordability of whatever comes next. A downsize that frees up
+          equity can be paired with a registered account contribution, a tax
+          deferral, or a structured gift to adult children, depending on the
+          file. A retirement sale can interact with OAS clawback thresholds,
+          depending on how the proceeds are deployed.
+        </p>
+        <p>
+          The principal residence exemption usually shelters the gain on a
+          long-tenured family home, but the rules around designated years,
+          changes of use (a basement rented out for a decade, a work-from-home
+          claim that touched a depreciation calculation), and the timing of
+          the sale relative to a property change of use can introduce
+          wrinkles that matter. None of this is real estate advice. It is
+          the reason we coordinate with your accountant or financial planner
+          where one is in the picture.
+        </p>
+        <p>
+          For relocation sales driven by an employer, we also flag the
+          interaction with any employer-sponsored relocation program. Some
+          employers reimburse closing costs, real estate commissions, or
+          carrying costs during a transition window. The terms of that
+          program often dictate timing constraints that have to be built
+          into the listing plan.
         </p>
       </SituationBlock>
     </SituationPage>

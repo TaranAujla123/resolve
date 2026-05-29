@@ -45,11 +45,13 @@ export function PropertyDisputes() {
           Property and co-ownership disputes come in many shapes in Ontario.
           The most common we see: two or more joint owners who disagree on
           whether or how to sell. Estates with multiple beneficiaries and no
-          clear majority view. Partition or sale applications where a
-          co-owner is pursuing a court-ordered sale. Title clouds (liens,
-          easements, encroachments, undisclosed interests) that need
-          addressing before a buyer will close. Boundary or tenant questions
-          that affect what the property actually is.
+          clear majority view on the disposition of estate real property.
+          Partition or sale applications under Ontario&rsquo;s Partition Act,
+          where a co-owner is pursuing a court-ordered sale of jointly held
+          land. Title clouds (construction or judgment liens, easements,
+          encroachments, undisclosed interests) that need addressing before
+          a buyer will close. Boundary or tenant questions that affect what
+          the property actually is.
         </p>
         <p>
           Each of these has a real estate dimension (what the property is,
@@ -64,6 +66,35 @@ export function PropertyDisputes() {
           right order, legal questions settled first, then a properly run
           sale, most close cleanly. Done in the wrong order, or with the
           real estate work running ahead of the legal work, they stall.
+        </p>
+      </SituationBlock>
+
+      <SituationBlock label="How liens behave at closing" title="What clouds on title actually do to a sale.">
+        <p>
+          A lien on title is not a bar to listing the property. It is a
+          claim that has to be dealt with before a buyer&rsquo;s lawyer will
+          release the closing funds. In practice that means the lien gets
+          discharged out of the sale proceeds at closing, with the seller&rsquo;s
+          lawyer holding the relevant amount in trust until the discharge is
+          registered. Construction liens, judgment liens, and Canada Revenue
+          Agency liens each follow slightly different mechanics, but the
+          common element is that the closing math has to account for them
+          before anyone signs.
+        </p>
+        <p>
+          Buyers and their lawyers are usually willing to close on a property
+          with a disclosed lien, provided the math is clean and the
+          discharge is procedurally certain. What tanks deals is incomplete
+          disclosure, last-minute discoveries, or unrealistic estimates of
+          the discharge amount. Done properly, the lien is just a line item
+          in the closing statement. Done poorly, it is the reason the deal
+          falls through and the listing has to start over.
+        </p>
+        <p>
+          The same logic applies, in different forms, to partition orders,
+          condo board disputes, easement enforcements, and most other title
+          clouds. The legal mechanics are not our lane. The closing logistics
+          that get the property properly sold around them are.
         </p>
       </SituationBlock>
 

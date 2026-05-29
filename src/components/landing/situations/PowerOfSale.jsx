@@ -39,25 +39,57 @@ export function PowerOfSale() {
         <p>
           Power of sale is the legal process by which a lender in Ontario,
           after a borrower has fallen into mortgage default, sells the property
-          to recover what is owed. Unlike foreclosure, the lender does not take
-          title to the home. They sell it, recover the mortgage balance plus
-          legal and selling costs, and any surplus is returned to the
-          homeowner. That surplus is the equity worth protecting.
+          to recover what is owed. Unlike foreclosure (which is the process
+          most Ontario lenders avoid), the lender does not take title to the
+          home. They sell it, recover the mortgage balance plus legal and
+          selling costs, and any surplus is returned to the homeowner. That
+          surplus is the equity worth protecting.
         </p>
         <p>
-          The process unfolds in stages. A Notice of Sale is issued, a
-          redemption period runs (usually 35 to 45 days under section 32 of the
-          Mortgages Act in Ontario), and if the loan is not brought current or
-          paid out by the end of that period, the lender takes control of the
-          sale. The homeowner can still sell during the redemption period, and
-          often well past it depending on lender cooperation. That window is
-          where the most important work gets done.
+          The process unfolds in stages. A Notice of Sale Under Mortgage is
+          issued and served on the borrower and any other interested parties
+          on title. A redemption period runs (usually 35 to 45 days under
+          section 32 of the Mortgages Act in Ontario, calculated from the
+          last default), and if the loan is not brought current or paid out
+          by the end of that period, the lender is entitled to take control
+          of the sale. The homeowner can still sell during the redemption
+          period, and often well past it depending on lender cooperation.
+          That window is where the most important work gets done.
         </p>
         <p>
           Power of sale does not have to mean a forced auction or a
           lender-driven price. Most homeowners have more options than they
-          realize, and the path that protects the most equity is usually the
-          one taken early.
+          realise, and the path that protects the most equity is usually the
+          one taken early, while there is still room to position the property
+          properly rather than rush it onto the market.
+        </p>
+      </SituationBlock>
+
+      <SituationBlock label="What it costs" title="The costs that come out of your equity.">
+        <p>
+          Once a power of sale is underway, the lender is entitled to recover
+          its enforcement costs from the sale proceeds before any surplus
+          flows back to the homeowner. These costs add up. Lender&rsquo;s
+          legal fees for the enforcement work. A bailiff or process server,
+          if used to serve the Notice of Sale. An appraisal commissioned by
+          the lender. Brokerage commission if the lender lists with their own
+          agent rather than allowing the homeowner to control the sale.
+          Sometimes condominium status certificates, title searches, and
+          property tax arrears advances.
+        </p>
+        <p>
+          The numbers vary by lender and by property, but in a typical Ontario
+          residential power of sale the lender&rsquo;s costs commonly run
+          into the low five figures by the time the property closes. Every
+          dollar of that comes out of the homeowner&rsquo;s equity. The
+          shorter the timeline runs and the less work the lender has to do,
+          the less of the surplus gets consumed.
+        </p>
+        <p>
+          What this means in practice: a sale arranged by the homeowner,
+          properly positioned, often produces a materially better net than a
+          sale taken over by the lender, even when the gross sale prices are
+          similar.
         </p>
       </SituationBlock>
 
