@@ -5,14 +5,18 @@ import { Button } from '@/components/ui/Button'
 import { Wordmark } from './Wordmark'
 import { cn } from '@/lib/utils'
 
-// Home page nav items. Section anchors plus the Buyers route.
+// Home page nav items. Section anchors plus the Buyers and For Agents
+// routes. Contact dropped from the nav: the visible phone number and
+// the "Request a Private Consultation" CTA already cover that intent,
+// and dropping it makes room for the For Agents referral channel
+// without crowding the nav row.
 const homeLinks = [
   { href: '#situations', label: 'Situations', type: 'anchor' },
   { href: '#why', label: 'Why Us', type: 'anchor' },
   { href: '#process', label: 'Process', type: 'anchor' },
   { href: '#about', label: 'About', type: 'anchor' },
   { to: '/buyers', label: 'Buyers', type: 'route' },
-  { href: '#contact', label: 'Contact', type: 'anchor' },
+  { to: '/for-agents', label: 'For Agents', type: 'route' },
 ]
 
 export function Nav() {
