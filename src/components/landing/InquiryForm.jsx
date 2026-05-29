@@ -14,14 +14,17 @@ import portrait from '@/portrait.jpg'
 const FORM_DISABLED = false
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 
+// Order + wording mirrors the 04_Contact_Form_Optimization plan:
+// most-frequent / highest-intent at the top, escape hatch at the bottom
+// for sellers who feel exposed by naming the situation directly.
 const situations = [
-  'Mortgage Arrears',
-  'Power of Sale',
-  'Property Disputes',
-  'Separation or Divorce',
-  'Estate or Probate',
-  'Life Transitions (job, health, downsizing, relocation)',
-  'Other or prefer not to say',
+  'Mortgage arrears',
+  'Power of sale',
+  'Separation / divorce',
+  'Estate sale',
+  'Partnership / ownership dispute',
+  'Other',
+  "Prefer not to say — I'll explain",
 ]
 
 export function InquiryForm() {
@@ -34,12 +37,16 @@ export function InquiryForm() {
     const form = e.currentTarget
     const data = new FormData(form)
 
+    if (!data.get('phone') && !data.get('email')) {
+      toast.error('Please share a phone number or email so we can reach you.')
+      return
+    }
     if (!data.get('consent')) {
       toast.error('Please confirm the consent checkbox so we can respond.')
       return
     }
     if (!data.get('no_existing_listing')) {
-      toast.error('Please confirm you are not currently under a listing agreement with another brokerage.')
+      toast.error('Please acknowledge the note about existing listing agreements so we can proceed.')
       return
     }
 
@@ -125,12 +132,17 @@ export function InquiryForm() {
               <Input id="name" name="name" autoComplete="name" required />
             </div>
             <div>
-              <Label htmlFor="phone" required>Phone</Label>
-              <Input id="phone" name="phone" type="tel" autoComplete="tel" required />
+              <Label htmlFor="phone">Phone</Label>
+              <Input id="phone" name="phone" type="tel" autoComplete="tel" />
             </div>
             <div>
-              <Label htmlFor="email" required>Email</Label>
-              <Input id="email" name="email" type="email" autoComplete="email" required />
+              <Label htmlFor="email">Email</Label>
+              <Input id="email" name="email" type="email" autoComplete="email" />
+            </div>
+            <div className="sm:col-span-2 -mt-2">
+              <p className="text-[12.5px] text-ink-mute leading-relaxed">
+                Phone or email — at least one, so we can reach you. We will use the method you prefer below.
+              </p>
             </div>
             <div>
               <Label htmlFor="area" required>Property city or area</Label>
@@ -154,9 +166,9 @@ export function InquiryForm() {
               />
             </div>
             <div className="sm:col-span-2">
-              <Label htmlFor="preferred" required>Preferred contact method</Label>
-              <Select id="preferred" name="preferred" defaultValue="" required>
-                <option value="" disabled>Select one</option>
+              <Label htmlFor="preferred">Preferred contact method (optional)</Label>
+              <Select id="preferred" name="preferred" defaultValue="">
+                <option value="">No preference</option>
                 <option value="Phone call">Phone call</option>
                 <option value="Text message">Text message</option>
                 <option value="Email">Email</option>
@@ -174,11 +186,11 @@ export function InquiryForm() {
           <div className="mt-3 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
             <Checkbox id="no-listing" name="no_existing_listing" value="yes" required />
             <label htmlFor="no-listing" className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
-              I confirm I am not currently under a listing agreement with another brokerage.
+              I understand that if I&rsquo;m currently listed with another brokerage, Resolve cannot act as my representative until that agreement has ended or been mutually released &mdash; and that nothing here is intended to interfere with an existing agreement.
             </label>
           </div>
           <p className="mt-2 text-[12.5px] text-ink-mute leading-relaxed">
-            Resolve does not represent homeowners currently under an existing listing agreement with another brokerage. If you are listed, please wait until that agreement expires or is mutually released, then reach out.
+            Already listed with another brokerage? You&rsquo;re still welcome to reach out with general questions. We simply can&rsquo;t represent you until your existing agreement has expired or been mutually released by that brokerage. Any decision about an existing agreement is between you and your current brokerage &mdash; we never ask anyone to break an agreement they&rsquo;ve signed.
           </p>
 
           <p className="mt-3 text-[12.5px] text-ink-mute flex items-center gap-1.5">
@@ -204,19 +216,24 @@ export function InquiryForm() {
             </Button>
           </div>
         ) : (
-          <div className="mt-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <p className="text-[12.5px] text-ink-mute">
-              Prefer to call? (365) 645-7332. Lines are answered personally during business hours.
+          <>
+            <p className="mt-6 text-center text-[13px] text-ink-soft leading-relaxed">
+              No obligation. Completely confidential. We typically reply within one business day.
             </p>
-            <Button type="submit" variant="primary" size="lg" disabled={submitting} className="group">
-              {submitting ? 'Sending privately…' : (
-                <>
-                  Send privately
-                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </>
-              )}
-            </Button>
-          </div>
+            <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <p className="text-[12.5px] text-ink-mute">
+                Prefer to call? (365) 645-7332. Lines are answered personally during business hours.
+              </p>
+              <Button type="submit" variant="primary" size="lg" disabled={submitting} className="group">
+                {submitting ? 'Sending…' : (
+                  <>
+                    Send Confidential Message
+                    <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+                  </>
+                )}
+              </Button>
+            </div>
+          </>
         )}
       </motion.form>
     </Section>
