@@ -47,10 +47,6 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
       toast.error('Please share a phone number or email so we can reach you.')
       return
     }
-    if (!data.get('consent')) {
-      toast.error('Please confirm the consent checkbox so we can respond.')
-      return
-    }
     if (!data.get('no_existing_listing')) {
       toast.error('Please acknowledge the note about existing listing agreements so we can proceed.')
       return
@@ -140,13 +136,6 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
             </div>
 
             <div className="mt-6 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
-              <Checkbox id={`${formId}-consent`} name="consent" value="yes" required />
-              <label htmlFor={`${formId}-consent`} className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
-                I consent to be contacted by Resolve and HomeLife G1 Realty Inc., Brokerage about my inquiry.
-              </label>
-            </div>
-
-            <div className="mt-3 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
               <Checkbox id={`${formId}-no-listing`} name="no_existing_listing" value="yes" required />
               <label htmlFor={`${formId}-no-listing`} className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
                 I understand that if I&rsquo;m currently listed with another brokerage, Resolve cannot act as my representative until that agreement has ended or been mutually released, and that nothing here is intended to interfere with an existing agreement.
