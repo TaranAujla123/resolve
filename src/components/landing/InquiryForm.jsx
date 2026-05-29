@@ -173,11 +173,7 @@ export function InquiryForm() {
               I understand that if I&rsquo;m currently listed with another brokerage, Resolve cannot act as my representative until that agreement has ended or been mutually released, and that nothing here is intended to interfere with an existing agreement.
             </label>
           </div>
-          <p className="mt-2 text-[12.5px] text-ink-mute leading-relaxed">
-            Already listed with another brokerage? You&rsquo;re still welcome to reach out with general questions. We simply can&rsquo;t represent you until your existing agreement has expired or been mutually released by that brokerage. Any decision about an existing agreement is between you and your current brokerage. We never ask anyone to break an agreement they&rsquo;ve signed.
-          </p>
-
-          <div className="mt-6 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
+          <div className="mt-3 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
             <Checkbox id="no-legal-advice" name="acknowledges_real_estate_only" value="yes" required />
             <label htmlFor="no-legal-advice" className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
               I understand that Resolve provides real estate services, not legal advice, and works alongside my own legal counsel.
