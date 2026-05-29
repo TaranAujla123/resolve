@@ -72,10 +72,10 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
                 A private conversation, on your terms.
               </h2>
               <p className="mt-4 text-[15.5px] text-ink-soft leading-relaxed">
-                No obligation, no pressure to list, and nothing public. Many
-                conversations stay private and never move further. That is fine.
-                The point is for you to see what is realistic and what options
-                you actually have.
+                No obligation, no pressure to list, and nothing public. All
+                conversations stay private and some don&rsquo;t move further.
+                That is fine. The point is for you to see what is realistic
+                and what options you actually have.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button as="a" href="/#contact" size="lg" variant="primary" className="group">

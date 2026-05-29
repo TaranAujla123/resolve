@@ -107,7 +107,7 @@ export function EstateSale() {
           We listen, look at the file, and help you see what is realistic
           given the probate stage, the property&rsquo;s condition, the
           beneficiaries&rsquo; positions, and the market. No pressure to list,
-          ever. Many conversations stay private and never move further.
+          ever. All conversations stay private and some don&rsquo;t move further.
         </p>
         <p>
           <strong className="text-ink font-semibold">Coordination with the estate lawyer.</strong>{' '}
