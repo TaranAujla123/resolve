@@ -13,6 +13,7 @@ import { InquiryForm } from '@/components/landing/InquiryForm'
 import { Footer } from '@/components/landing/Footer'
 import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
 import { Seo } from '@/components/seo/Seo'
+import { Analytics, AnalyticsRouteTracker, fireConversion } from '@/components/seo/Analytics'
 import { PowerOfSale } from '@/components/landing/situations/PowerOfSale'
 import { MortgageArrears } from '@/components/landing/situations/MortgageArrears'
 import { ThankYou } from '@/components/landing/ThankYou'
@@ -306,6 +307,13 @@ function ScrollToTopOnRouteChange() {
   return null
 }
 
+// Mount-once route tracker that hands react-router's current pathname
+// to AnalyticsRouteTracker so GA4 sees SPA navigations as pageviews.
+function RouteAnalytics() {
+  const { pathname } = useLocation()
+  return <AnalyticsRouteTracker pathname={pathname} />
+}
+
 function HomePage() {
   return (
     <>
@@ -368,6 +376,11 @@ function MortgageArrearsPage() {
 }
 
 function ThanksPage() {
+  // Fire the Google Ads conversion event once on mount. Safe to call
+  // when no Ads ID is configured — the helper returns silently.
+  useEffect(() => {
+    fireConversion()
+  }, [])
   return (
     <>
       <Seo
@@ -455,6 +468,8 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTopOnRouteChange />
+      <Analytics />
+      <RouteAnalytics />
       <div className="min-h-screen bg-white text-ink antialiased selection:bg-accent/20 selection:text-ink">
         {/*
           Sticky top stack: BrokerageStrip + Nav scroll together as one
