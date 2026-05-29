@@ -127,7 +127,7 @@ export function ForAgents() {
               <span className="text-ink-soft">For Real Estate Professionals</span>
             </p>
             <h1 className="mt-4 text-display-lg sm:text-display-xl text-ink max-w-4xl font-display font-semibold leading-tight">
-              Your client is facing a difficult property situation.
+              Is Your Client Facing a Difficult Property Situation?
             </h1>
             <p className="mt-5 sm:mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
               You would rather refer the file than risk damaging the relationship.
