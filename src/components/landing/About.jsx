@@ -32,10 +32,11 @@ export function About() {
             exposure.
           </p>
           <p>
-            Resolve is led by Taran Aujla, Salesperson, and Dave Dhaliwal, Broker,
+            Resolve is led by Taran Aujla, Salesperson, and Dave Dhaliwal, Salesperson,
             both with HomeLife G1 Realty Inc., Brokerage. Between them they bring
-            brokerage-level experience and several hundred Ontario property
-            transactions across residential, commercial, and complex situations.
+            more than a decade of combined experience across residential, commercial,
+            and complex Ontario property transactions, including the files most
+            agents are not built for.
           </p>
         </div>
 
@@ -89,17 +90,18 @@ export function About() {
                 aria-hidden="true"
               />
               <blockquote className="mt-3 text-[15.5px] text-ink-soft leading-relaxed">
-                I&rsquo;ve spent years as a broker, and as a real estate investor
-                myself, which gives me a clear read on what a property is really
-                worth and what buyers actually respond to. Much of my work has been
-                with families selling under pressure: a separation, an estate, a
-                financial squeeze, where the stakes are personal and the timing
-                isn&rsquo;t theirs. In those moments my job is to bring a steady
-                hand, honest numbers, clear options, and a sale handled with care
-                from the first conversation to the closing table.
+                Across more than a decade in Ontario real estate, I have handled a
+                wide range of files: separations, estate sales, financial-pressure
+                transactions, partnership disputes, and the standard residential
+                work that runs alongside them. As a Salesperson and as a real
+                estate investor myself, I read a property the way a buyer reads
+                it: what it is really worth, and what people will actually respond
+                to. My approach to every file is the same: calm, practical, and
+                centred on the client. Honest numbers, clear options, and a sale
+                handled with care from the first conversation to the closing table.
               </blockquote>
               <figcaption className="mt-4 text-[13px] uppercase tracking-[0.12em] font-semibold text-ink">
-                Dave Dhaliwal, Broker
+                Dave Dhaliwal, Salesperson
               </figcaption>
             </div>
           </div>

@@ -37,7 +37,7 @@ import { ForAgents } from '@/components/landing/ForAgents'
 //     stay brand-led.
 //
 // Compliance posture (still applies):
-//   - Practitioner roles are Salesperson (Taran) and Broker (Dave)
+//   - Practitioner roles are Salesperson (Taran) and Salesperson (Dave)
 //   - No present-tense legal-capacity claims, no outcome guarantees,
 //     no "specialist" / "exclusive" / "best" language
 //   - RECO registration numbers are factual identifiers in Person JSON-LD
@@ -126,7 +126,7 @@ const DAVE_PERSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Person',
   name: 'Dave Dhaliwal',
-  jobTitle: 'Broker',
+  jobTitle: 'Salesperson',
   identifier: 'RECO Registration No. 5024155',
   url: `${SITE_URL}/`,
   worksFor: RESOLVE_ORG,

@@ -44,7 +44,7 @@ export function Footer() {
                 <p className="text-white/70">RECO Registration No. 6024721</p>
               </div>
               <div>
-                <p className="font-semibold text-white">Dave Dhaliwal, Broker</p>
+                <p className="font-semibold text-white">Dave Dhaliwal, Salesperson</p>
                 <p className="text-white/70">RECO Registration No. 5024155</p>
               </div>
             </div>
