@@ -424,16 +424,19 @@ export function ForAgents() {
         </div>
       </section>
 
-      {/* Section 9: Closing handshake CTA */}
+      {/* Section 9: Closing handshake — partnership reassurance */}
       <section className="bg-surface-tint">
         <div className="container py-14 sm:py-16">
           <div className="max-w-3xl mx-auto text-center">
             <div className="h-12 w-12 mx-auto rounded-full bg-accent-soft text-accent-deep flex items-center justify-center">
               <Handshake className="h-6 w-6" strokeWidth={1.8} />
             </div>
-            <p className="mt-5 text-[14px] text-ink-soft leading-relaxed">
-              Two practitioners. Over a decade combined inside Ontario&rsquo;s most
-              difficult sales. The right file in the right hands.
+            <p className="mt-5 text-[15px] text-ink-soft leading-relaxed max-w-xl mx-auto">
+              A partnership that works for both sides. You stay close to the
+              client and keep the long-term relationship. We carry the
+              difficult file from listing through closing. Your brokerage is
+              paid at closing. Both sides do what they do best, and the
+              seller gets a clean transaction.
             </p>
           </div>
         </div>
