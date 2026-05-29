@@ -6,42 +6,42 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://resolveproperty.ca/buyers</loc>
+    <loc>https://resolveproperty.ca/buyers/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://resolveproperty.ca/power-of-sale</loc>
+    <loc>https://resolveproperty.ca/power-of-sale/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://resolveproperty.ca/mortgage-arrears</loc>
+    <loc>https://resolveproperty.ca/mortgage-arrears/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://resolveproperty.ca/estate-sale</loc>
+    <loc>https://resolveproperty.ca/estate-sale/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://resolveproperty.ca/divorce-real-estate</loc>
+    <loc>https://resolveproperty.ca/divorce-real-estate/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://resolveproperty.ca/property-disputes</loc>
+    <loc>https://resolveproperty.ca/property-disputes/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://resolveproperty.ca/life-transitions</loc>
+    <loc>https://resolveproperty.ca/life-transitions/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://resolveproperty.ca/for-agents</loc>
+    <loc>https://resolveproperty.ca/for-agents/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

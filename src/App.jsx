@@ -145,7 +145,7 @@ const BUYERS_JSONLD = [
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'Qualified Buyer Network · Resolve',
-    url: `${SITE_URL}/buyers`,
+    url: `${SITE_URL}/buyers/`,
     description:
       'Resolve maintains a network of pre-qualified buyers, investors, end-users, and developers interested in Ontario property. Match-based notification with disclosed representation, alongside full MLS exposure.',
     isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
@@ -153,7 +153,7 @@ const BUYERS_JSONLD = [
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: 'Buyer Network', item: `${SITE_URL}/buyers` },
+        { '@type': 'ListItem', position: 2, name: 'Buyer Network', item: `${SITE_URL}/buyers/` },
       ],
     },
   },
@@ -181,7 +181,7 @@ const BUYERS_JSONLD = [
 // adjacent description that helps People-Also-Ask coverage.
 
 function situationJsonLd({ slug, name, serviceType, description, breadcrumbName }) {
-  const pageUrl = `${SITE_URL}/${slug}`
+  const pageUrl = `${SITE_URL}/${slug}/`
   return [
     {
       '@context': 'https://schema.org',
@@ -272,7 +272,7 @@ const FOR_AGENTS_JSONLD = [
     '@context': 'https://schema.org',
     '@type': 'WebPage',
     name: 'For Real Estate Professionals · Resolve Referral Partnership · Ontario',
-    url: `${SITE_URL}/for-agents`,
+    url: `${SITE_URL}/for-agents/`,
     description:
       'Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage referral agreements under TRESA. Referring agent keeps the client relationship and receives 25 percent of the net listing-side commission at closing.',
     isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
@@ -280,7 +280,7 @@ const FOR_AGENTS_JSONLD = [
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: 'For Agents', item: `${SITE_URL}/for-agents` },
+        { '@type': 'ListItem', position: 2, name: 'For Agents', item: `${SITE_URL}/for-agents/` },
       ],
     },
   },
@@ -339,7 +339,7 @@ function BuyersPage() {
       <Seo
         title="Qualified Buyer Network · Resolve · Ontario"
         description="A network of pre-qualified buyers, investors, end-users, and developers interested in Ontario property. Match-based notification, disclosed representation, full MLS exposure preserved."
-        canonical={`${SITE_URL}/buyers`}
+        canonical={`${SITE_URL}/buyers/`}
         jsonLd={BUYERS_JSONLD}
       />
       <Buyers />
@@ -353,7 +353,7 @@ function PowerOfSalePage() {
       <Seo
         title="Power of Sale in Ontario · Selling Your Home · Resolve"
         description="Power of sale is a lender-driven sale process in Ontario. Resolve represents homeowners navigating it quietly and quickly, with equity protection at the centre of every decision."
-        canonical={`${SITE_URL}/power-of-sale`}
+        canonical={`${SITE_URL}/power-of-sale/`}
         jsonLd={POWER_OF_SALE_JSONLD}
       />
       <PowerOfSale />
@@ -367,7 +367,7 @@ function MortgageArrearsPage() {
       <Seo
         title="Mortgage Arrears in Ontario · Selling Your Home · Resolve"
         description="Behind on mortgage payments and considering a sale? Resolve represents Ontario homeowners through the arrears window, privately and on a defensible timeline."
-        canonical={`${SITE_URL}/mortgage-arrears`}
+        canonical={`${SITE_URL}/mortgage-arrears/`}
         jsonLd={MORTGAGE_ARREARS_JSONLD}
       />
       <MortgageArrears />
@@ -386,7 +386,7 @@ function ThanksPage() {
       <Seo
         title="Inquiry received · Resolve"
         description="Your inquiry has been received. We read each one personally and typically reply within a few hours during business hours."
-        canonical={`${SITE_URL}/thanks`}
+        canonical={`${SITE_URL}/thanks/`}
         noindex
       />
       <ThankYou />
@@ -400,7 +400,7 @@ function EstateSalePage() {
       <Seo
         title="Estate or Probate Sale in Ontario · Selling Your Home · Resolve"
         description="Selling a loved one’s home as part of administering an Ontario estate. Resolve represents executors and estate trustees, at the pace the estate allows, in coordination with the estate lawyer."
-        canonical={`${SITE_URL}/estate-sale`}
+        canonical={`${SITE_URL}/estate-sale/`}
         jsonLd={ESTATE_SALE_JSONLD}
       />
       <EstateSale />
@@ -414,7 +414,7 @@ function DivorceRealEstatePage() {
       <Seo
         title="Selling Your Home During Separation or Divorce in Ontario · Resolve"
         description="Selling the matrimonial home during a separation or divorce in Ontario. Resolve represents the sale itself, neutrally and carefully, in coordination with both parties’ real estate lawyers."
-        canonical={`${SITE_URL}/divorce-real-estate`}
+        canonical={`${SITE_URL}/divorce-real-estate/`}
         jsonLd={DIVORCE_JSONLD}
       />
       <DivorceRealEstate />
@@ -428,7 +428,7 @@ function PropertyDisputesPage() {
       <Seo
         title="Selling a Home Through a Property Dispute in Ontario · Resolve"
         description="Co-ownership friction, partition matters, title clouds. Resolve handles the real estate side of these Ontario sales in close coordination with your real estate lawyer."
-        canonical={`${SITE_URL}/property-disputes`}
+        canonical={`${SITE_URL}/property-disputes/`}
         jsonLd={PROPERTY_DISPUTES_JSONLD}
       />
       <PropertyDisputes />
@@ -442,7 +442,7 @@ function LifeTransitionsPage() {
       <Seo
         title="Selling Your Home Through a Life Transition in Ontario · Resolve"
         description="Relocation, downsizing, retirement, health-driven moves. Resolve represents Ontario homeowners through life-transition sales on the timeline the move actually allows."
-        canonical={`${SITE_URL}/life-transitions`}
+        canonical={`${SITE_URL}/life-transitions/`}
         jsonLd={LIFE_TRANSITIONS_JSONLD}
       />
       <LifeTransitions />
@@ -456,7 +456,7 @@ function ForAgentsPage() {
       <Seo
         title="For Real Estate Professionals · Resolve Referral Partnership · Ontario"
         description="Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage agreements under TRESA. You keep the client relationship and receive 25 percent of the net listing-side commission at closing."
-        canonical={`${SITE_URL}/for-agents`}
+        canonical={`${SITE_URL}/for-agents/`}
         jsonLd={FOR_AGENTS_JSONLD}
       />
       <ForAgents />
