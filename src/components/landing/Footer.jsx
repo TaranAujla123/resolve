@@ -92,12 +92,19 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Resolve. HomeLife G1 Realty Inc., Brokerage.
             </p>
           </div>
-          <p className="text-[12.5px] text-white/55 leading-relaxed">
-            <span className="text-white/70 uppercase tracking-[0.12em] text-[11px] font-medium">Privacy:</span>{' '}
-            We use Google Analytics to understand which pages are read and which campaigns bring people here.
-            No session recording, no third-party data sales, no advertising profile built from your visit.
-            Form submissions are used only to respond to your inquiry.
-          </p>
+          {import.meta.env.VITE_GA_MEASUREMENT_ID ? (
+            <p className="text-[12.5px] text-white/55 leading-relaxed">
+              <span className="text-white/70 uppercase tracking-[0.12em] text-[11px] font-medium">Privacy:</span>{' '}
+              We use Google Analytics to understand which pages are read and which campaigns bring people here.
+              No session recording, no third-party data sales, no advertising profile built from your visit.
+              Form submissions are used only to respond to your inquiry.
+            </p>
+          ) : (
+            <p className="text-[12.5px] text-white/55 leading-relaxed">
+              <span className="text-white/70 uppercase tracking-[0.12em] text-[11px] font-medium">Privacy:</span>{' '}
+              No analytics or tracking scripts are loaded on this site. Form submissions are used only to respond to your inquiry.
+            </p>
+          )}
         </div>
       </div>
     </footer>
