@@ -274,7 +274,7 @@ const FOR_AGENTS_JSONLD = [
     name: 'For Real Estate Professionals · Resolve Referral Partnership · Ontario',
     url: `${SITE_URL}/for-agents/`,
     description:
-      'Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage referral agreements under TRESA. Referring agent keeps the client relationship and receives 25 percent of the net listing-side commission at closing.',
+      'Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage referral agreements under TRESA. The referring agent keeps the client relationship and a referral fee is paid at closing under terms agreed for each file.',
     isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
     breadcrumb: {
       '@type': 'BreadcrumbList',
@@ -295,7 +295,7 @@ const FOR_AGENTS_JSONLD = [
       audienceType: 'Ontario real estate Salespersons and Brokers',
     },
     description:
-      'Resolve takes the listing on referred files (power of sale, mortgage arrears, matrimonial home sales, estate sales, property disputes). Referrals are documented brokerage-to-brokerage under TRESA. The referring brokerage receives 25 percent of the net listing-side commission at closing.',
+      'Resolve takes the listing on referred files (power of sale, mortgage arrears, matrimonial home sales, estate sales, property disputes). Referrals are documented brokerage-to-brokerage under TRESA. The referring brokerage is paid a referral fee at closing under the terms agreed for each file.',
   },
 ]
 
@@ -455,7 +455,7 @@ function ForAgentsPage() {
     <>
       <Seo
         title="For Real Estate Professionals · Resolve Referral Partnership · Ontario"
-        description="Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage agreements under TRESA. You keep the client relationship and receive 25 percent of the net listing-side commission at closing."
+        description="Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage agreements under TRESA. You keep the client relationship and a referral fee is paid at closing under terms agreed for the file."
         canonical={`${SITE_URL}/for-agents/`}
         jsonLd={FOR_AGENTS_JSONLD}
       />

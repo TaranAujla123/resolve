@@ -9,7 +9,6 @@ import {
   Send,
   Lock,
   CheckCircle2,
-  XCircle,
   Handshake,
   ShieldCheck,
 } from 'lucide-react'
@@ -48,13 +47,6 @@ const filesWeTake = [
   'Estate sales with executors or multiple beneficiaries',
   'Property disputes (partition, co-ownership, lien, title cloud)',
   'Sensitive sales requiring discretion',
-]
-
-const filesWeDont = [
-  'Standard residential listings',
-  'Pre-construction assignments',
-  'Buyer representation for investment property',
-  'Anything where we are not the clearly right fit',
 ]
 
 const milestones = [
@@ -183,9 +175,13 @@ export function ForAgents() {
                   the execution.
                 </p>
                 <p>
-                  At closing, your brokerage receives 25 percent of the net
-                  listing-side commission. Your brokerage handles the internal split
-                  with you per its standard arrangement. No invoicing, no chasing.
+                  At closing, your brokerage is paid a referral fee under the
+                  terms we agree at the outset. Every file is different. The
+                  right structure depends on the situation, the timeline, and
+                  the work involved on each side, so we discuss the terms when
+                  we discuss the file. Your brokerage handles the internal
+                  split with you per its standard arrangement. No invoicing,
+                  no chasing.
                 </p>
               </div>
             </div>
@@ -215,47 +211,35 @@ export function ForAgents() {
               </div>
             </div>
 
-            {/* Section 4: Files we take / don't */}
+            {/* Section 4: Files we take */}
             <div>
               <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
                 Scope
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                Files we take, files we don&rsquo;t.
+                The files we take.
               </h2>
-              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-5">
-                <div className="rounded-2xl border border-surface-line bg-white p-6 shadow-card">
-                  <div className="flex items-center gap-2.5">
-                    <CheckCircle2 className="h-5 w-5 text-[#1F8B5A]" strokeWidth={2} />
-                    <p className="text-[14px] font-semibold uppercase tracking-[0.12em] text-ink">
-                      Files we take
-                    </p>
-                  </div>
-                  <ul className="mt-4 space-y-2.5">
-                    {filesWeTake.map((line) => (
-                      <li key={line} className="flex gap-2.5 text-[15px] text-ink-soft leading-relaxed">
-                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-accent-deep flex-shrink-0" />
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
+              <p className="mt-4 text-[16px] text-ink-soft leading-relaxed">
+                Resolve is built for the seller files that need more than a
+                standard listing. If your client&rsquo;s situation sits in any
+                of the categories below, send it our way and we will read it
+                seriously.
+              </p>
+              <div className="mt-6 rounded-2xl border border-surface-line bg-white p-6 sm:p-7 shadow-card">
+                <div className="flex items-center gap-2.5">
+                  <CheckCircle2 className="h-5 w-5 text-[#1F8B5A]" strokeWidth={2} />
+                  <p className="text-[14px] font-semibold uppercase tracking-[0.12em] text-ink">
+                    Files we take
+                  </p>
                 </div>
-                <div className="rounded-2xl border border-surface-line bg-white p-6 shadow-card">
-                  <div className="flex items-center gap-2.5">
-                    <XCircle className="h-5 w-5 text-ink-mute" strokeWidth={2} />
-                    <p className="text-[14px] font-semibold uppercase tracking-[0.12em] text-ink">
-                      Files we don&rsquo;t
-                    </p>
-                  </div>
-                  <ul className="mt-4 space-y-2.5">
-                    {filesWeDont.map((line) => (
-                      <li key={line} className="flex gap-2.5 text-[15px] text-ink-soft leading-relaxed">
-                        <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-ink-mute flex-shrink-0" />
-                        <span>{line}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
+                  {filesWeTake.map((line) => (
+                    <li key={line} className="flex gap-2.5 text-[15px] text-ink-soft leading-relaxed">
+                      <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-accent-deep flex-shrink-0" />
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
               <p className="mt-5 text-[15px] italic text-ink-soft leading-relaxed">
                 If we are not the right fit for your file, we will tell you.
