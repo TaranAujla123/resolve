@@ -11,10 +11,11 @@ import { ArrowLeft, CheckCircle2 } from 'lucide-react'
  *
  * Tone mirrors the Primegate /thanks/ pattern (read personally + named
  * response window + brokerage attribution + back-to-home). Resolve-
- * specific: uses "one business day" matching the inquiry form copy,
- * and softens the Primegate "I will tell you" into the practice voice
- * ("we'll let you know") since Resolve operates as a two-practitioner
- * shop, not a solo voice.
+ * specific: response window is "a few hours" during business hours,
+ * matching the inquiry form intro and the reassurance microcopy above
+ * the submit button. Softens the Primegate "I will tell you" into the
+ * practice voice ("we'll let you know") since Resolve operates as a
+ * two-practitioner shop, not a solo voice.
  */
 export function ThankYou() {
   return (
@@ -42,9 +43,9 @@ export function ThankYou() {
 
           <p className="mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
             Your inquiry has been received privately. We read each one personally
-            and will be in touch within one business day. If we&rsquo;re a fit for
-            what you&rsquo;re navigating, we&rsquo;ll let you know. If not,
-            we&rsquo;ll point you to a colleague better suited.
+            and typically reply within a few hours during business hours. If
+            we&rsquo;re a fit for what you&rsquo;re navigating, we&rsquo;ll let you
+            know. If not, we&rsquo;ll point you to a colleague better suited.
           </p>
 
           <p className="mt-8 text-[14px] text-ink-mute leading-relaxed">

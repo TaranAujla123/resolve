@@ -326,7 +326,7 @@ function ThanksPage() {
     <>
       <Seo
         title="Inquiry received · Resolve"
-        description="Your inquiry has been received. We read each one personally and will be in touch within one business day."
+        description="Your inquiry has been received. We read each one personally and typically reply within a few hours during business hours."
         canonical={`${SITE_URL}/thanks`}
         noindex
       />

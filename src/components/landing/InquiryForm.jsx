@@ -79,7 +79,7 @@ export function InquiryForm() {
         intro={
           FORM_DISABLED
             ? 'The confidential inquiry form is opening shortly. In the meantime, you are welcome to call (365) 645-7332. Calls are answered personally and remain confidential.'
-            : 'Your message goes to Resolve at HomeLife G1 Realty Inc., Brokerage. We read every message personally, usually within one business day.'
+            : 'Your message goes to Resolve at HomeLife G1 Realty Inc., Brokerage. We read every message personally and typically reply within a few hours during business hours.'
         }
         align="center"
       />
@@ -218,7 +218,7 @@ export function InquiryForm() {
         ) : (
           <>
             <p className="mt-6 text-center text-[13px] text-ink-soft leading-relaxed">
-              No obligation. Completely confidential. We typically reply within one business day.
+              No obligation. Completely confidential. We typically reply within a few hours.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <p className="text-[12.5px] text-ink-mute">
