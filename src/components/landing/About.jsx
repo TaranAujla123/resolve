@@ -90,15 +90,16 @@ export function About() {
                 aria-hidden="true"
               />
               <blockquote className="mt-3 text-[15.5px] text-ink-soft leading-relaxed">
-                Across more than a decade in Ontario real estate, I have handled a
-                wide range of files: separations, estate sales, financial-pressure
-                transactions, partnership disputes, and the standard residential
-                work that runs alongside them. As a Salesperson and as a real
-                estate investor myself, I read a property the way a buyer reads
-                it: what it is really worth, and what people will actually respond
-                to. My approach to every file is the same: calm, practical, and
-                centred on the client. Honest numbers, clear options, and a sale
-                handled with care from the first conversation to the closing table.
+                Across more than five years in Ontario real estate, I have
+                handled a wide range of files: separations, estate sales,
+                financial-pressure transactions, partnership disputes, and
+                the standard residential work that runs alongside them. As a
+                Salesperson and as a real estate investor myself, I read a
+                property the way a buyer reads it: what it is really worth,
+                and what people will actually respond to. My approach to
+                every file is the same: calm, practical, and centred on the
+                client. Honest numbers, clear options, and a sale handled
+                with care from the first conversation to the closing table.
               </blockquote>
               <figcaption className="mt-4 text-[13px] uppercase tracking-[0.12em] font-semibold text-ink">
                 Dave Dhaliwal, Salesperson
