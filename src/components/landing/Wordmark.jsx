@@ -39,7 +39,7 @@ export function Wordmark({ className, tone = 'ink' }) {
           tone === 'ink' ? 'text-ink' : 'text-white',
         )}
       >
-        Resolve<span className="text-accent">.</span>
+        <span className="text-accent">Re</span>solve<span className="text-accent">.</span>
       </span>
       <span
         className={cn(
