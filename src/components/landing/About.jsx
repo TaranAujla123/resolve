@@ -59,12 +59,23 @@ export function About() {
               />
               <blockquote className="mt-3 text-[15.5px] text-ink-soft leading-relaxed space-y-4">
                 <p>
-                  My introduction to real estate came earlier than the legal
-                  work. I started managing my parents&rsquo; rental properties
-                  at sixteen, and acquired and operated my own properties in
-                  the years that followed. That foundation, alongside the
-                  years of closing-stage work, is what shapes the practice
-                  now.
+                  For close to a decade I practised real estate law in
+                  Ontario, working through hundreds of transactions and the
+                  complications that come with them. I was often the one
+                  called in when a deal was tangled, time-sensitive, or
+                  going sideways. That work taught me where property
+                  transactions break, and how to keep them from breaking.
+                  How to calmly navigate the moving parts and logistics when
+                  a deal gets complicated.
+                </p>
+                <p>
+                  My introduction to real estate came even earlier than the
+                  legal work. I started managing my parents&rsquo; rental
+                  properties at sixteen, and acquired and operated my own
+                  properties in the years that followed. That foundation,
+                  alongside the years of closing-stage work, is what shapes
+                  the practice now. I work on the deal side directly, as a
+                  Salesperson, not as a lawyer.
                 </p>
                 <p>
                   The approach is document-first, market-aware, and
