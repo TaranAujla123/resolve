@@ -34,3 +34,47 @@ lerna-debug.log*
 
 # OS
 Thumbs.db
+
+# ---------------------------------------------------------------------
+# Internal / unused material — keep OFF the public GitHub Pages repo.
+# This repo is the public source for resolveproperty.ca, so strategy
+# docs, partner lists, drafts, generated render outputs and loose source
+# images must never be committed. Only site code, the deploy `public/`
+# folder, and finished public ad assets belong here.
+# ---------------------------------------------------------------------
+
+# Internal docs & plans at repo root (no .md/.pdf/.csv are meant to be tracked)
+/*.md
+/*.pdf
+/*.csv
+/01_Website/
+/02_Google_Business_Profile/
+/03_Marketing/
+/04_Compliance/
+/strategy-docs/
+/resolve-content-to-pdf.skill
+
+# Internal marketing working files (the finished social kit + generator
+# under _marketing are tracked; everything else here stays local-only)
+/_marketing/*.md
+/_marketing/*.pdf
+/_marketing/*.html
+/_marketing/*.csv
+/_marketing/*.png
+/_marketing/*.jpg
+/_marketing/Instagram/
+/_marketing/cover-images/
+/_marketing/video-pipeline/
+/_marketing/ad-images/output/
+/_marketing/ad-images/generate-awareness-suite.mjs
+# Duplicate, non-deploying copy of the site public assets
+/_marketing/public/*
+!/_marketing/public/social-kit/
+!/_marketing/public/logo-horizontal.svg
+
+# Loose portrait source photos dropped into src/ (real assets are tracked)
+/src/*.jpg
+/src/*.jpeg
+/src/*.png
+!/src/portrait.jpg
+!/src/portrait-sweater.jpg
