@@ -126,11 +126,11 @@ export function ForAgents() {
               Here is how we work with referring agents.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Resolve is a boutique seller representation practice that takes the
-              files most agents are not built for. Power of sale, mortgage arrears,
-              matrimonial home sales, estate sales, and complex property disputes.
-              You refer the file, keep the client relationship, and get paid at
-              closing.
+              Resolve is a boutique seller representation practice focused on the
+              files that call for extra time, discretion, and specialized handling:
+              power of sale, mortgage arrears, matrimonial home sales, estate sales,
+              and complex property disputes. You refer the file, keep the client
+              relationship, and get paid at closing.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Button as="a" href="#referral-form" size="lg" variant="primary" className="group">
