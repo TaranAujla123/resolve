@@ -28,7 +28,12 @@ declare global {
   }
 }
 
-const PIXEL_ID: string | undefined = import.meta.env.VITE_META_PIXEL_ID
+// The Pixel ID is PUBLIC — it ships in the client bundle and the <noscript>
+// tag — so it is committed as the default here. Setting VITE_META_PIXEL_ID as
+// a build env/secret still overrides it. Committing it means the Pixel goes
+// live on deploy with no GitHub Secret and no workflow env edit required.
+export const META_PIXEL_ID: string = import.meta.env.VITE_META_PIXEL_ID || '26914854838125099'
+const PIXEL_ID: string = META_PIXEL_ID
 
 // Situation route slug -> human-readable category passed as ViewContent
 // content_category. Only these routes fire ViewContent.
@@ -56,6 +61,8 @@ export function initMetaPixel(): void {
   if (!PIXEL_ID) return
   if (typeof window === 'undefined' || typeof document === 'undefined') return
   if (isPrerender()) return
+  // Don't fire from local dev (npm run dev) against the production Pixel.
+  if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return
 
   /* Standard Meta Pixel base code (fbevents.js loader). */
   ;(function (f: any, b: any, e: string, v: string, n?: any, t?: any, s?: any) {

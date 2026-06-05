@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { Wordmark } from './Wordmark'
+import { META_PIXEL_ID } from '@/lib/metaPixel'
 
 export function Footer() {
   return (
@@ -94,7 +95,7 @@ export function Footer() {
           </div>
           {import.meta.env.VITE_GA_MEASUREMENT_ID ||
           import.meta.env.VITE_GOOGLE_ADS_ID ||
-          import.meta.env.VITE_META_PIXEL_ID ? (
+          META_PIXEL_ID ? (
             <p className="text-[12.5px] text-white/55 leading-relaxed">
               <span className="text-white/70 uppercase tracking-[0.12em] text-[11px] font-medium">Privacy:</span>{' '}
               We use privacy-conscious analytics and Meta advertising tools to understand which pages are read and
