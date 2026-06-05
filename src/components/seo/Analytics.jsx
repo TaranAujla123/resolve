@@ -19,7 +19,10 @@ import { Helmet } from 'react-helmet-async'
  *
  * Privacy posture:
  *   - We collect standard GA4 pageview + Google Ads click attribution.
- *   - No session replay, no Facebook Pixel, no Hotjar.
+ *   - No session replay, no Hotjar.
+ *   - The Meta Pixel + Conversions API are handled separately in
+ *     src/lib/metaPixel.ts (also env-gated, off unless VITE_META_PIXEL_ID
+ *     is set). See the Footer notice and /privacy for the full disclosure.
  *   - Per Resolve's audience (distressed Ontario sellers), this stays
  *     intentionally lean: enough to optimise paid spend, no further.
  *   - A short privacy line lives in the Footer naming what is collected.

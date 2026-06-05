@@ -6,6 +6,7 @@ import { Lock, Send, Phone, MessageSquare } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input, Textarea, Select, Label, Checkbox } from '@/components/ui/Field'
 import { Section, SectionHead } from './Section'
+import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 import portrait from '@/portrait.jpg'
 
 // Kill-switch: set to true to revert to the "call only" state.
@@ -58,6 +59,23 @@ export function InquiryForm() {
         body: data,
       })
       if (res.ok) {
+        // Measurement: fire the Meta Pixel Lead (browser) and the
+        // Conversions API Lead (server, via the Worker) with the SAME
+        // event_id so Meta deduplicates them into one conversion. Both
+        // are no-ops unless VITE_META_PIXEL_ID is set, and neither blocks
+        // the handoff to /thanks (CAPI uses fetch keepalive).
+        const eventId = genEventId()
+        const situation = (data.get('situation') || '').toString()
+        trackLead({ content_category: situation }, eventId)
+        sendLeadToCapi({
+          event_id: eventId,
+          event_source_url: window.location.href,
+          user_data: {
+            email: (data.get('email') || '').toString(),
+            phone: (data.get('phone') || '').toString(),
+          },
+          custom_data: { situation },
+        })
         // Hand off to the branded /thanks page. ScrollToTopOnRouteChange
         // in App.jsx handles scroll reset; the form unmounts so no need
         // to manually reset state.

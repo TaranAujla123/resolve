@@ -14,6 +14,8 @@ import { Footer } from '@/components/landing/Footer'
 import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
 import { Seo } from '@/components/seo/Seo'
 import { Analytics, AnalyticsRouteTracker, fireConversion } from '@/components/seo/Analytics'
+import { useMetaPixel, useMetaPixelContactLinks } from '@/lib/metaPixel'
+import { PrivacyPolicy } from '@/components/legal/PrivacyPolicy'
 import { PowerOfSale } from '@/components/landing/situations/PowerOfSale'
 import { MortgageArrears } from '@/components/landing/situations/MortgageArrears'
 import { ThankYou } from '@/components/landing/ThankYou'
@@ -314,6 +316,16 @@ function RouteAnalytics() {
   return <AnalyticsRouteTracker pathname={pathname} />
 }
 
+// Mount-once Meta Pixel: inits the Pixel, fires PageView on every route
+// change and ViewContent on the situation routes, and fires Contact on
+// any tel:/sms: link click. Inert unless VITE_META_PIXEL_ID is set.
+function MetaPixel() {
+  const { pathname } = useLocation()
+  useMetaPixel(pathname)
+  useMetaPixelContactLinks()
+  return null
+}
+
 function HomePage() {
   return (
     <>
@@ -464,12 +476,26 @@ function ForAgentsPage() {
   )
 }
 
+function PrivacyPage() {
+  return (
+    <>
+      <Seo
+        title="Privacy Policy · Resolve"
+        description="What this site collects, why, who it is shared with, and how to withdraw. Resolve seller representation through HomeLife G1 Realty Inc., Brokerage."
+        canonical={`${SITE_URL}/privacy/`}
+      />
+      <PrivacyPolicy />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTopOnRouteChange />
       <Analytics />
       <RouteAnalytics />
+      <MetaPixel />
       <div className="min-h-screen bg-white text-ink antialiased selection:bg-accent/20 selection:text-ink">
         {/*
           Sticky top stack: BrokerageStrip + Nav scroll together as one
@@ -493,6 +519,7 @@ export default function App() {
             <Route path="/property-disputes" element={<PropertyDisputesPage />} />
             <Route path="/life-transitions" element={<LifeTransitionsPage />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/thanks" element={<ThanksPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>

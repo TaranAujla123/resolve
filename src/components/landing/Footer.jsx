@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowUpRight } from 'lucide-react'
 import { Wordmark } from './Wordmark'
+import { META_PIXEL_ID } from '@/lib/metaPixel'
 
 export function Footer() {
   return (
@@ -92,17 +93,29 @@ export function Footer() {
               &copy; {new Date().getFullYear()} Resolve. HomeLife G1 Realty Inc., Brokerage.
             </p>
           </div>
-          {import.meta.env.VITE_GA_MEASUREMENT_ID ? (
+          {import.meta.env.VITE_GA_MEASUREMENT_ID ||
+          import.meta.env.VITE_GOOGLE_ADS_ID ||
+          META_PIXEL_ID ? (
             <p className="text-[12.5px] text-white/55 leading-relaxed">
               <span className="text-white/70 uppercase tracking-[0.12em] text-[11px] font-medium">Privacy:</span>{' '}
-              We use Google Analytics to understand which pages are read and which campaigns bring people here.
-              No session recording, no third-party data sales, no advertising profile built from your visit.
-              Form submissions are used only to respond to your inquiry.
+              We use privacy-conscious analytics and Meta advertising tools to understand which pages are read and
+              which campaigns bring people here. No session recording, and no sale of your information. When you
+              submit the form, a hashed, non-readable version of your contact details may be shared with Meta only to
+              measure that ad result. Form submissions are used to respond to your inquiry. See our{' '}
+              <Link to="/privacy" className="text-white/80 hover:text-accent transition-colors underline underline-offset-4">
+                Privacy Policy
+              </Link>
+              .
             </p>
           ) : (
             <p className="text-[12.5px] text-white/55 leading-relaxed">
               <span className="text-white/70 uppercase tracking-[0.12em] text-[11px] font-medium">Privacy:</span>{' '}
-              No analytics or tracking scripts are loaded on this site. Form submissions are used only to respond to your inquiry.
+              No analytics or tracking scripts are loaded on this site. Form submissions are used only to respond to
+              your inquiry. See our{' '}
+              <Link to="/privacy" className="text-white/80 hover:text-accent transition-colors underline underline-offset-4">
+                Privacy Policy
+              </Link>
+              .
             </p>
           )}
         </div>

@@ -39,6 +39,7 @@ const ROUTES = [
   '/property-disputes',
   '/life-transitions',
   '/for-agents',
+  '/privacy',
   '/thanks',
 ]
 const PORT = 4321
