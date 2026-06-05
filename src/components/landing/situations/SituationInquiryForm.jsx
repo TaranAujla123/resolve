@@ -5,6 +5,7 @@ import { toast } from 'sonner'
 import { Lock, Send, Phone } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input, Textarea, Label, Checkbox } from '@/components/ui/Field'
+import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 
 /**
  * SituationInquiryForm — slim per-situation inline form rendered at the
@@ -64,6 +65,20 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
         body: data,
       })
       if (res.ok) {
+        // Meta Pixel Lead (browser) + Conversions API Lead (server) share
+        // one event_id for dedup. The situation is known from the page.
+        // No-op unless VITE_META_PIXEL_ID is set; does not block /thanks.
+        const eventId = genEventId()
+        trackLead({ content_category: situationLabel }, eventId)
+        sendLeadToCapi({
+          event_id: eventId,
+          event_source_url: window.location.href,
+          user_data: {
+            email: (data.get('email') || '').toString(),
+            phone: (data.get('phone') || '').toString(),
+          },
+          custom_data: { situation: situationLabel, source_page: `/${situationSlug}` },
+        })
         navigate('/thanks')
       } else {
         toast.error('Something went wrong on our side. Please call (365) 645-7332 or try again shortly.')

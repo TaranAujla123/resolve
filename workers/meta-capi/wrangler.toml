@@ -1,0 +1,23 @@
+name = "meta-capi"
+main = "src/index.js"
+compatibility_date = "2024-09-01"
+
+# -- Routing -------------------------------------------------------------
+# Preferred: route the Worker at the site origin so the form posts
+# SAME-ORIGIN to /api/meta-capi (no CORS, and VITE_META_CAPI_ENDPOINT can
+# stay at its default "/api/meta-capi"). This REQUIRES resolveproperty.ca's
+# DNS to be managed in this Cloudflare account (add the zone first).
+#
+# Uncomment once the zone is confirmed on Cloudflare:
+#
+# [[routes]]
+# pattern = "resolveproperty.ca/api/meta-capi"
+# zone_name = "resolveproperty.ca"
+#
+# Fallback: if the domain is NOT on Cloudflare, deploy to the default
+# *.workers.dev URL and set VITE_META_CAPI_ENDPOINT to that full URL
+# (cross-origin; the Worker already returns the needed CORS headers).
+
+# -- Secrets (do NOT put values here; set them out of band) --------------
+#   wrangler secret put META_PIXEL_ID
+#   wrangler secret put META_CAPI_ACCESS_TOKEN
