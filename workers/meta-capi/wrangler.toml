@@ -2,21 +2,21 @@ name = "meta-capi"
 main = "src/index.js"
 compatibility_date = "2024-09-01"
 
-# -- Routing -------------------------------------------------------------
-# Preferred: route the Worker at the site origin so the form posts
-# SAME-ORIGIN to /api/meta-capi (no CORS, and VITE_META_CAPI_ENDPOINT can
-# stay at its default "/api/meta-capi"). This REQUIRES resolveproperty.ca's
-# DNS to be managed in this Cloudflare account (add the zone first).
-#
-# Uncomment once the zone is confirmed on Cloudflare:
+# CONFIRMED: resolveproperty.ca DNS is on GoDaddy (ns71/ns72.domaincontrol.com)
+# and the site is on GitHub Pages, so same-origin routing is NOT available.
+# Deploy to the default *.workers.dev URL and point the site's
+# VITE_META_CAPI_ENDPOINT GitHub Secret at that full URL. The Worker already
+# returns CORS headers for resolveproperty.ca, so the cross-origin POST works.
+workers_dev = true
+
+# -- Routing (same-origin alternative, NOT used) -------------------------
+# Only possible if resolveproperty.ca were moved onto Cloudflare. Then you
+# could route the Worker at the site origin (no CORS) and drop
+# VITE_META_CAPI_ENDPOINT back to its default "/api/meta-capi":
 #
 # [[routes]]
 # pattern = "resolveproperty.ca/api/meta-capi"
 # zone_name = "resolveproperty.ca"
-#
-# Fallback: if the domain is NOT on Cloudflare, deploy to the default
-# *.workers.dev URL and set VITE_META_CAPI_ENDPOINT to that full URL
-# (cross-origin; the Worker already returns the needed CORS headers).
 
 # -- Secrets (do NOT put values here; set them out of band) --------------
 #   wrangler secret put META_PIXEL_ID
