@@ -2,11 +2,9 @@ import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { Toaster } from 'sonner'
 
-// V2 shared layout — brokerage strip, header, trust strip, footer
-// mounted globally.
+// V2 shared layout — brokerage strip, header, footer mounted globally.
 import { Header } from '@/components/brand/Header'
 import { Footer } from '@/components/brand/Footer'
-import { TrustStrip } from '@/components/brand/TrustStrip'
 import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
 import { BrokerageStrip } from '@/components/landing/BrokerageStrip'
 
@@ -531,7 +529,7 @@ export default function App() {
           as a thin first-viewport identification of HomeLife G1 Realty
           Inc., Brokerage (plain text, no external link). The Header
           sits sticky beneath it, the page-level Routes render in the
-          main, and the TrustStrip + Footer close every page.
+          main, and the Footer closes every page.
 
           RECO Bulletin 5.1 ("clearly and prominently identified") is
           satisfied twice over — once at the top of every page via the
@@ -566,7 +564,6 @@ export default function App() {
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
-        <TrustStrip />
         <Footer />
         <MobileStickyCta />
         <Toaster

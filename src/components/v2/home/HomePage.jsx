@@ -43,8 +43,8 @@ import { ClosingCta } from './ClosingCta'
  * breath; the two Navy moments anchor "the situations are real" and
  * "this is how we approach them differently."
  *
- * TrustStrip + Footer are mounted globally in App.jsx so they render
- * underneath the page content on every route.
+ * Footer is mounted globally in App.jsx so it renders underneath the
+ * page content on every route.
  *
  * WhyThisMatters and Testimonial component files are preserved but
  * not mounted — kept in case the empathy-beat slot ever wants

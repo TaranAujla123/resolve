@@ -9,7 +9,7 @@ import { WhatThisCosts } from '@/components/brand/WhatThisCosts'
  *
  * Source of truth: Brand-System-V2/claude-code-v2-build.md §6 (Home —
  * Closing CTA). Surface returns to Stone (the "visual rhyme" back to
- * the hero) ahead of the global TrustStrip + Footer.
+ * the hero) ahead of the global Footer.
  *
  * Two-column layout. Left: Newsreader couplet ("Ready to talk? / We're
  * here when you're ready.") + body + navy CTA pointing to /contact.

@@ -19,7 +19,7 @@ import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
  * restyled to V2.
  *
  * Surface: Stone (the brief specifies Stone background for /contact).
- * The TrustStrip + Footer render globally underneath.
+ * The Footer renders globally underneath.
  */
 const FORM_DISABLED = false
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'

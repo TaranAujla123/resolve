@@ -12,9 +12,12 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
  * react). Each cell pairs a navy outline icon at 40px with a short
  * Newsreader card title and an Inter body sentence.
  *
- * The 5 process icons differ from the 5 brand pillar icons in the
- * TrustStrip — these describe the *process* the client moves through;
- * pillars describe Resolve's *character*.
+ * These 5 process icons describe the *process* the client moves
+ * through, not Resolve's character. (A separate 5-pillar TrustStrip
+ * used to live just above the Footer carrying the character beats;
+ * it was removed because it was decorative without adding new
+ * information. If a character strip ever returns, keep the two
+ * concepts visually distinct.)
  */
 const STEPS = [
   {
