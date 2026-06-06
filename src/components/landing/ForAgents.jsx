@@ -118,7 +118,7 @@ export function ForAgents() {
               <span aria-hidden="true" className="text-ink-mute/40">·</span>
               <span className="text-ink-soft">For Real Estate Professionals</span>
             </p>
-            <h1 className="mt-4 text-display-lg sm:text-display-xl text-ink max-w-4xl font-display font-semibold leading-tight">
+            <h1 className="mt-5 text-display-md sm:text-display-lg text-navy max-w-3xl font-display font-medium leading-[1.12]">
               Is Your Client Facing a Difficult Property Situation?
             </h1>
             <p className="mt-5 sm:mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
@@ -293,18 +293,23 @@ export function ForAgents() {
               </ol>
             </div>
 
-            {/* Section 7: TRESA compliance note */}
-            <div className="rounded-2xl border border-accent/30 bg-accent-soft/40 p-6 sm:p-7">
+            {/* Section 7: TRESA compliance note — migrated from V1
+                accent-soft (which composed badly with V2 alpha tokens
+                and read as bright peach against stone) to clean V2
+                surface treatment: warm Rose background for callout
+                differentiation, bronze-deep border at 40% for a
+                quiet outline, navy ink throughout. */}
+            <div className="rounded-2xl border border-bronze-deep/40 bg-rose p-6 sm:p-7">
               <div className="flex items-start gap-3">
-                <ShieldCheck className="h-5 w-5 text-accent-deep flex-shrink-0 mt-0.5" strokeWidth={1.9} />
+                <ShieldCheck className="h-5 w-5 text-bronze flex-shrink-0 mt-0.5" strokeWidth={1.9} />
                 <div>
-                  <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
+                  <p className="text-[11px] uppercase tracking-[0.18em] font-semibold text-bronze">
                     TRESA compliance
                   </p>
-                  <h3 className="mt-2 text-[1.15rem] font-semibold text-ink leading-snug">
+                  <h3 className="mt-2 text-[1.15rem] font-semibold text-navy leading-snug">
                     Brokerage to brokerage. In writing. No ambiguity.
                   </h3>
-                  <p className="mt-3 text-[15px] text-ink-soft leading-relaxed">
+                  <p className="mt-3 text-[15px] text-navy-soft leading-relaxed">
                     All referrals are documented through brokerage-to-brokerage
                     referral agreements per TRESA. Referral fees flow from HomeLife
                     G1 Realty Inc., Brokerage to your brokerage at closing. Your

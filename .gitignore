@@ -53,6 +53,8 @@ Thumbs.db
 /04_Compliance/
 /strategy-docs/
 /resolve-content-to-pdf.skill
+# Brand-system V2 handoff folder — local design-pass material only.
+/COWORK OUTPUT/
 
 # Internal marketing working files (the finished social kit + generator
 # under _marketing are tracked; everything else here stays local-only)
@@ -65,6 +67,9 @@ Thumbs.db
 /_marketing/Instagram/
 /_marketing/cover-images/
 /_marketing/video-pipeline/
+/_marketing/website/
+/_marketing/referral-engine/
+/_marketing/meta-ads/
 /_marketing/ad-images/output/
 /_marketing/ad-images/generate-awareness-suite.mjs
 # Duplicate, non-deploying copy of the site public assets

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <!--
+      /resources was a hub page that only re-listed the six situation
+      deep-dives the homepage already covers. It's been removed and
+      this static stub redirects any direct visitor (or Google crawl)
+      to the Situations grid on the homepage.
+
+      The meta refresh with "0; url=..." is treated by Google as a 301
+      equivalent, and the canonical link reinforces the intended
+      destination. Search Console will drop /resources from the index
+      over the next couple of crawls.
+    -->
+    <meta http-equiv="refresh" content="0; url=/#situations" />
+    <link rel="canonical" href="https://resolveproperty.ca/#situations" />
+    <meta name="robots" content="noindex, follow" />
+    <title>Redirecting · Resolve</title>
+    <script>
+      // Fallback for browsers that ignore meta-refresh: do it immediately
+      // in JS so there's no perceptible pause.
+      window.location.replace('/#situations');
+    </script>
+  </head>
+  <body>
+    <p style="font-family: Inter, sans-serif; padding: 2rem; color: #051A2C;">
+      This page has moved.
+      <a href="/#situations">Go to the Situations grid on the homepage.</a>
+    </p>
+  </body>
+</html>

@@ -31,6 +31,8 @@ const DIST = path.join(ROOT, 'dist')
 
 const ROUTES = [
   '/',
+  '/about',
+  '/contact',
   '/buyers',
   '/power-of-sale',
   '/mortgage-arrears',

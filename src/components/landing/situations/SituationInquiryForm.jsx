@@ -93,21 +93,21 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
   const formId = `sit-form-${situationSlug}`
 
   return (
-    <section id="inquiry">
+    <section id="inquiry" data-surface="stone" className="bg-stone">
       <div className="container section-y">
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-8">
-            <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
-              The next step
+            <p className="text-[12px] uppercase tracking-[0.18em] font-semibold text-bronze">
+              The Next Step
             </p>
-            <h2 className="mt-3 text-display-md text-ink font-display font-medium">
+            <h2 className="mt-4 font-display font-medium text-navy text-display-md">
               A private conversation, on your terms.
             </h2>
-            <p className="mt-4 text-[15.5px] text-ink-soft leading-relaxed max-w-xl mx-auto">
-              No obligation, no pressure to list, and nothing public. All
-              conversations stay private and some don&rsquo;t move further.
-              That is fine. The point is for you to see what is realistic
-              and what options you actually have.
+            <p className="mt-5 text-[16px] text-navy-soft leading-relaxed max-w-xl mx-auto">
+              No obligation, no pressure to list and nothing public. All
+              conversations stay private and some do not move further. That
+              is fine. The point is for you to see what is realistic and what
+              options you actually have.
             </p>
           </div>
 
@@ -118,7 +118,7 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-60px' }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="bg-white border border-surface-line rounded-2xl p-7 sm:p-10 shadow-card"
+            className="bg-stone border border-divider rounded-[18px] p-7 sm:p-10 shadow-card"
           >
             <input type="hidden" name="_subject" value={`Resolve · ${situationLabel} inquiry`} />
             <input type="hidden" name="situation" value={situationLabel} />
@@ -138,7 +138,7 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
                 <Input id={`${formId}-email`} name="email" type="email" autoComplete="email" />
               </div>
               <div className="sm:col-span-2 -mt-2">
-                <p className="text-[12.5px] text-ink-mute leading-relaxed">
+                <p className="text-[12.5px] text-navy-mute leading-relaxed">
                   Phone or email, at least one, so we can reach you.
                 </p>
               </div>
@@ -154,32 +154,32 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
               </div>
             </div>
 
-            <div className="mt-6 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
+            <div className="mt-6 flex items-start gap-3 rounded-[10px] bg-mist border border-divider p-4">
               <Checkbox id={`${formId}-no-listing`} name="no_existing_listing" value="yes" required />
-              <label htmlFor={`${formId}-no-listing`} className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
+              <label htmlFor={`${formId}-no-listing`} className="text-[14px] text-navy-soft leading-relaxed cursor-pointer">
                 I understand that if I&rsquo;m currently listed with another brokerage, Resolve cannot act as my representative until that agreement has ended or been mutually released, and that nothing here is intended to interfere with an existing agreement.
               </label>
             </div>
 
-            <div className="mt-3 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
+            <div className="mt-3 flex items-start gap-3 rounded-[10px] bg-mist border border-divider p-4">
               <Checkbox id={`${formId}-no-legal-advice`} name="acknowledges_real_estate_only" value="yes" required />
-              <label htmlFor={`${formId}-no-legal-advice`} className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
+              <label htmlFor={`${formId}-no-legal-advice`} className="text-[14px] text-navy-soft leading-relaxed cursor-pointer">
                 I understand that Resolve provides real estate services, not legal advice, and works alongside my own legal counsel.
               </label>
             </div>
 
-            <p className="mt-3 text-[12.5px] text-ink-mute flex items-center gap-1.5">
+            <p className="mt-3 text-[12.5px] text-navy-mute flex items-center gap-1.5">
               <Lock className="h-3.5 w-3.5" />
               Your information is used only to respond to your inquiry. It is not sold, shared, or added to any list.
             </p>
 
-            <p className="mt-6 text-center text-[13px] text-ink-soft leading-relaxed">
+            <p className="mt-6 text-center text-[13px] text-navy-soft leading-relaxed">
               No obligation. Completely confidential. We typically reply within a few hours.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-              <p className="text-[12.5px] text-ink-mute">
+              <p className="text-[12.5px] text-navy-mute">
                 Prefer to call?{' '}
-                <a href="tel:+13656457332" className="text-accent-deep hover:text-ink transition-colors font-semibold">
+                <a href="tel:+13656457332" className="text-bronze hover:text-bronze-deep transition-colors font-semibold">
                   (365) 645-7332
                 </a>
               </p>

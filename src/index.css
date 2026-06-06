@@ -2,8 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ---------------------------------------------------------------- */
+/*  Resolve V2 — Brand tokens                                        */
+/*  Source of truth: Brand-System-V2/colors.md                       */
+/* ---------------------------------------------------------------- */
 :root {
   color-scheme: light;
+
+  /* Primary ink + accent.
+     Navy: #051A2C (deeper, sister to Primegate).
+     Bronze: #C8A56B — old-gold register but brighter than the
+     previous #B89865 which was reading as muted/dusty. Still no
+     copper-orange (which is what #C58A4A read as). Bronze-deep
+     tracks proportionally as the hover state. */
+  --resolve-navy: #051A2C;
+  --resolve-bronze: #C8A56B;
+  --resolve-bronze-deep: #AC8E5C;
+
+  /* Three-tone warm surface rhythm. Stone is the default; Mist is the
+     cooler informational tone; Rose is the warmer empathy tone. */
+  --resolve-stone: #F5F1E8;
+  --resolve-mist:  #E8DFCB;
+  --resolve-rose:  #F2E8DC;
+  --resolve-divider: #D8D2C8;
+
+  /* Computed alpha tones, used for soft body text on stone / soft body
+     on navy, etc. Pre-computed so they composite cleanly. */
+  --resolve-navy-soft: rgba(5, 26, 44, 0.72);
+  --resolve-navy-mute: rgba(5, 26, 44, 0.55);
+  --resolve-stone-soft: rgba(245, 241, 232, 0.78);
+  --resolve-stone-mute: rgba(245, 241, 232, 0.55);
+
+  /* RGB channel-separated values for Tailwind 3's
+     `rgb(var(--token) / <alpha-value>)` pattern. This lets the
+     Tailwind navy/bronze/stone tokens CONSUME these CSS variables
+     directly, so changing the hex above propagates through every
+     `bg-navy`, `bg-navy/95`, `text-bronze`, etc. utility class
+     without needing to re-sync tailwind.config.js. Single source
+     of truth: this file. */
+  --resolve-navy-rgb: 5 26 44;
+  --resolve-bronze-rgb: 200 165 107;
+  --resolve-bronze-deep-rgb: 172 142 92;
+  --resolve-stone-rgb: 245 241 232;
+  --resolve-mist-rgb: 232 223 203;
+  --resolve-rose-rgb: 242 232 220;
+  --resolve-divider-rgb: 216 210 200;
 }
 
 html {
@@ -18,14 +61,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  background-color: #ffffff;
-  color: #0a1f44;
+  background-color: var(--resolve-stone);
+  color: var(--resolve-navy);
 }
 
 @layer base {
   *:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 3px rgba(31, 139, 90, 0.45);
+    box-shadow: 0 0 0 3px rgba(200, 165, 107, 0.45);
     border-radius: 6px;
   }
 }
@@ -36,10 +79,104 @@ body {
     padding-bottom: clamp(4rem, 8vw, 7rem);
   }
   .eyebrow {
-    font-size: 0.75rem;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.8125rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: #0284c7;
+    color: var(--resolve-bronze);
   }
+  .lede {
+    font-size: 1.125rem;
+    line-height: 1.55;
+    color: var(--resolve-navy-soft);
+  }
+}
+
+/* ---------------------------------------------------------------- */
+/*  Resolve wordmark — the canonical brand mark.                     */
+/*  Rendered via HTML/CSS, not as an image, so it scales at every    */
+/*  viewport. Host element sets font-size; everything else scales    */
+/*  proportionally via em-relative values.                           */
+/* ---------------------------------------------------------------- */
+.resolve-wordmark {
+  display: inline-block;
+  text-align: center;
+  line-height: 1;
+}
+
+.resolve-wordmark .wm {
+  font-family: 'Newsreader', Georgia, ui-serif, serif;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+  /* Tightened from 1 to 0.82 — Re·solve has no descending letters
+     (no g/j/p/q/y) so the standard line-height leaves a "phantom
+     descender" gap below the visible baseline. 0.82 pulls the line
+     box right down to the visible glyph bottom so the divider can
+     sit just under "Resolve" with a deliberate small gap. */
+  line-height: 0.82;
+  font-size: inherit;
+  color: var(--resolve-navy);
+  white-space: nowrap;
+  display: inline-block;
+}
+
+.resolve-wordmark--dark .wm {
+  color: var(--resolve-stone);
+}
+
+.resolve-wordmark .wm .dot {
+  display: inline-block;
+  width: 0.2em;
+  height: 0.2em;
+  border-radius: 50%;
+  background: var(--resolve-bronze);
+  /* Newsreader's x-height is ~0.5em. Mathematically the dot should
+     sit at 0.15em vertical-align to center on the x-height stripe,
+     but Newsreader's actual letterform centers (the visual middle
+     of "e" and "o") sit a touch below the mathematical x-height
+     midline. Dropped to 0.12em so the dot reads as visually
+     centered with the lowercase letters rather than slightly above
+     them. */
+  margin: 0 0.14em;
+  vertical-align: 0.12em;
+}
+
+.resolve-wordmark .divider {
+  height: 1px;
+  background: var(--resolve-bronze);
+  opacity: 0.5;
+  width: 70%;
+  /* With line-height: 0.82 on .wm above, the visible bottom of
+     "Resolve" sits right at the bottom of its box, so a tiny top
+     margin is all we need to give the divider air. */
+  margin: 0.12em auto 0.14em;
+}
+
+.resolve-wordmark--dark .divider {
+  background: var(--resolve-stone);
+  opacity: 0.4;
+}
+
+/* Descriptor — bumped from 11.5% to 17% of host and tightened from
+   0.32em to 0.22em so "SELLER REPRESENTATION" actually reads at
+   180px hero size and pulls more visual weight to balance against
+   the heavy Re·solve letters above.
+
+   Colored to MATCH the dot (base bronze) rather than bronze-deep so
+   the logo + descriptor + body eyebrows + italic emphasis all share
+   one bronze. Bronze-deep is reserved for hover states only. */
+.resolve-wordmark .descriptor {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 0.17em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--resolve-bronze);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.resolve-wordmark--dark .descriptor {
+  color: var(--resolve-bronze);
 }

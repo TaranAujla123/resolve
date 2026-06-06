@@ -1,29 +1,34 @@
 import React, { useEffect } from 'react'
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { Toaster } from 'sonner'
-import { BrokerageStrip } from '@/components/landing/BrokerageStrip'
-import { Nav } from '@/components/landing/Nav'
-import { Hero } from '@/components/landing/Hero'
-import { Situations } from '@/components/landing/Situations'
-import { Process } from '@/components/landing/Process'
-import { WhyResolve } from '@/components/landing/WhyResolve'
-import { About } from '@/components/landing/About'
+
+// V2 shared layout — header, trust strip, footer mounted globally.
+import { Header } from '@/components/brand/Header'
+import { Footer } from '@/components/brand/Footer'
+import { TrustStrip } from '@/components/brand/TrustStrip'
+
+// V2 pages (homepage + 3 standalone routes)
+import { HomePage as V2HomePage } from '@/components/v2/home/HomePage'
+import { ContactPage } from '@/components/v2/contact/ContactPage'
+import { AboutPage } from '@/components/v2/about/AboutPage'
+
+// Existing pages — kept as-is, restyled in-place to V2 surfaces and
+// typography via the updated SituationPage shell + Tailwind tokens.
 import { Buyers } from '@/components/landing/Buyers'
-import { InquiryForm } from '@/components/landing/InquiryForm'
-import { Footer } from '@/components/landing/Footer'
-import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
-import { Seo } from '@/components/seo/Seo'
-import { Analytics, AnalyticsRouteTracker, fireConversion } from '@/components/seo/Analytics'
-import { useMetaPixel, useMetaPixelContactLinks } from '@/lib/metaPixel'
-import { PrivacyPolicy } from '@/components/legal/PrivacyPolicy'
 import { PowerOfSale } from '@/components/landing/situations/PowerOfSale'
 import { MortgageArrears } from '@/components/landing/situations/MortgageArrears'
-import { ThankYou } from '@/components/landing/ThankYou'
 import { EstateSale } from '@/components/landing/situations/EstateSale'
 import { DivorceRealEstate } from '@/components/landing/situations/DivorceRealEstate'
 import { PropertyDisputes } from '@/components/landing/situations/PropertyDisputes'
 import { LifeTransitions } from '@/components/landing/situations/LifeTransitions'
 import { ForAgents } from '@/components/landing/ForAgents'
+import { ThankYou } from '@/components/landing/ThankYou'
+
+// SEO + analytics + Pixel/CAPI hooks — preserved verbatim.
+import { Seo } from '@/components/seo/Seo'
+import { Analytics, AnalyticsRouteTracker, fireConversion } from '@/components/seo/Analytics'
+import { useMetaPixel, useMetaPixelContactLinks } from '@/lib/metaPixel'
+import { PrivacyPolicy } from '@/components/legal/PrivacyPolicy'
 
 // -----------------------------------------------------------------------
 // Per-route SEO payloads
@@ -335,12 +340,33 @@ function HomePage() {
         canonical={`${SITE_URL}/`}
         jsonLd={HOME_JSONLD}
       />
-      <Hero />
-      <Situations />
-      <WhyResolve />
-      <Process />
-      <About />
-      <InquiryForm />
+      <V2HomePage />
+    </>
+  )
+}
+
+function AboutRoutePage() {
+  return (
+    <>
+      <Seo
+        title="About Resolve · Seller Representation · Ontario"
+        description="Boutique seller representation for Ontario homeowners. Led by Taran Aujla and Dave Dhaliwal under HomeLife G1 Realty Inc., Brokerage."
+        canonical={`${SITE_URL}/about/`}
+      />
+      <AboutPage />
+    </>
+  )
+}
+
+function ContactRoutePage() {
+  return (
+    <>
+      <Seo
+        title="Contact Resolve · Confidential Inquiry · Ontario"
+        description="Send a confidential inquiry to Resolve. We read every message personally and typically reply within a few hours during business hours."
+        canonical={`${SITE_URL}/contact/`}
+      />
+      <ContactPage />
     </>
   )
 }
@@ -496,21 +522,22 @@ export default function App() {
       <Analytics />
       <RouteAnalytics />
       <MetaPixel />
-      <div className="min-h-screen bg-white text-ink antialiased selection:bg-accent/20 selection:text-ink">
+      <div className="min-h-screen bg-stone text-navy antialiased selection:bg-bronze/25 selection:text-navy">
         {/*
-          Sticky top stack: BrokerageStrip + Nav scroll together as one
-          unit so the HomeLife G1 brokerage attribution remains visible
-          throughout the page (RECO Bulletin 5.1 "clearly and prominently
-          identified" requirement is satisfied at all times, not just
-          above the fold).
+          V2 global layout. Header sits at the top of every page
+          (sticky), the page-level Routes render in the main, and the
+          TrustStrip + Footer close every page. Brokerage attribution
+          lives in the Footer per the V2 brief — the previous
+          BrokerageStrip top banner is dropped, with RECO Bulletin 5.1
+          satisfied by the Footer's "clearly and prominently identified"
+          block on every page.
         */}
-        <div className="sticky top-0 z-50">
-          <BrokerageStrip />
-          <Nav />
-        </div>
+        <Header />
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutRoutePage />} />
+            <Route path="/contact" element={<ContactRoutePage />} />
             <Route path="/buyers" element={<BuyersPage />} />
             <Route path="/power-of-sale" element={<PowerOfSalePage />} />
             <Route path="/mortgage-arrears" element={<MortgageArrearsPage />} />
@@ -519,20 +546,26 @@ export default function App() {
             <Route path="/property-disputes" element={<PropertyDisputesPage />} />
             <Route path="/life-transitions" element={<LifeTransitionsPage />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
+            {/* /resources retired — was a hub that only re-listed the
+                six situation deep-dive pages. The public/resources/
+                static stub handles direct hits + crawler redirects; this
+                Navigate covers any internal Link that still points
+                there. */}
+            <Route path="/resources" element={<Navigate to="/#situations" replace />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/thanks" element={<ThanksPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
+        <TrustStrip />
         <Footer />
-        <MobileStickyCta />
         <Toaster
           position="top-center"
           toastOptions={{
             style: {
               borderRadius: '12px',
-              border: '1px solid #E2E8F0',
-              color: '#0A1F44',
+              border: '1px solid #D8D2C8',
+              color: '#051A2C',
             },
           }}
         />

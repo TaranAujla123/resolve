@@ -1,8 +1,9 @@
 import React from 'react'
 import { cn } from '@/lib/utils'
 
+// V2: stone surface, divider border, navy ink, bronze focus ring.
 const fieldBase =
-  'w-full bg-white border border-surface-line text-ink placeholder:text-ink-mute/70 rounded-lg px-3.5 py-2.5 text-[15px] transition-colors duration-150 focus:border-accent focus:ring-0 outline-none'
+  'w-full bg-stone border border-divider text-navy placeholder:text-navy-mute/70 rounded-md px-3.5 py-2.5 text-[15px] transition-colors duration-150 focus:border-bronze focus:ring-0 outline-none'
 
 export const Input = React.forwardRef(({ className, ...props }, ref) => (
   <input ref={ref} className={cn(fieldBase, 'h-11', className)} {...props} />
@@ -45,10 +46,10 @@ export function Label({ htmlFor, required, children, className }) {
   return (
     <label
       htmlFor={htmlFor}
-      className={cn('block text-sm font-medium text-ink mb-1.5', className)}
+      className={cn('block text-[14px] font-medium text-navy mb-1.5', className)}
     >
       {children}
-      {required && <span className="ml-0.5 text-accent-deep">*</span>}
+      {required && <span className="ml-0.5 text-bronze">*</span>}
     </label>
   )
 }
@@ -58,7 +59,7 @@ export const Checkbox = React.forwardRef(({ className, ...props }, ref) => (
     ref={ref}
     type="checkbox"
     className={cn(
-      'mt-1 h-4 w-4 rounded border-surface-line text-accent focus:ring-accent accent-[#1F8B5A] cursor-pointer',
+      'mt-1 h-4 w-4 rounded border-divider text-bronze focus:ring-bronze accent-[#C8A56B] cursor-pointer',
       className,
     )}
     {...props}
