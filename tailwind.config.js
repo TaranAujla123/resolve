@@ -36,6 +36,9 @@ export default {
           soft: 'rgb(var(--resolve-stone-rgb) / 0.78)',
           mute: 'rgb(var(--resolve-stone-rgb) / 0.55)',
         },
+        cream: {
+          DEFAULT: 'rgb(var(--resolve-cream-rgb) / <alpha-value>)',
+        },
         mist: {
           DEFAULT: 'rgb(var(--resolve-mist-rgb) / <alpha-value>)',
         },

@@ -53,8 +53,14 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
         </div>
       </section>
 
-      {/* Body — situation blocks */}
-      <section data-surface="mist" className="bg-mist">
+      {/* Body — situation blocks.
+          Surface dropped from Mist (#E8DFCB) to Cream (#FBF7EE) —
+          Mist is too saturated against the long SEO body copy on
+          mobile and the navy-soft text felt heavy. Cream sits just
+          above stone, gives the section a gentle lift, and keeps
+          the body text legible without going to pure white (which
+          would break the warm stone rhythm). */}
+      <section data-surface="cream" className="bg-cream">
         <div className="container section-y">
           <div className="max-w-3xl space-y-12">{children}</div>
         </div>

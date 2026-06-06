@@ -99,7 +99,7 @@ export function Situations() {
                 to={to}
                 className="
                   group flex w-full flex-col
-                  rounded-2xl border border-divider bg-stone
+                  rounded-2xl border border-divider bg-cream
                   px-6 py-7 sm:px-7 sm:py-8
                   transition-all duration-300
                   hover:border-bronze/60 hover:-translate-y-0.5

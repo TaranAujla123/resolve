@@ -6,6 +6,7 @@ import { Toaster } from 'sonner'
 import { Header } from '@/components/brand/Header'
 import { Footer } from '@/components/brand/Footer'
 import { TrustStrip } from '@/components/brand/TrustStrip'
+import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
 
 // V2 pages (homepage + 3 standalone routes)
 import { HomePage as V2HomePage } from '@/components/v2/home/HomePage'
@@ -559,6 +560,7 @@ export default function App() {
         </main>
         <TrustStrip />
         <Footer />
+        <MobileStickyCta />
         <Toaster
           position="top-center"
           toastOptions={{

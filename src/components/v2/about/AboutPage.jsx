@@ -76,113 +76,140 @@ export function AboutPage() {
         <div className="container max-w-4xl space-y-8">
           <Eyebrow>Led By</Eyebrow>
 
+          {/*
+            Practitioner figure layout (Taran + Dave below).
+
+            Top row (always flex-row, including mobile): portrait on the
+            left + identity block on the right. This fills the right-of-
+            portrait whitespace that previously sat empty on mobile — the
+            visitor now sees "Taran Aujla / Salesperson / RECO 6024721"
+            beside the photo, which doubles as RECO Bulletin 5.2's
+            practitioner identification right at the moment the face
+            registers.
+
+            Bottom row: blockquote spans the full card width below, so
+            the long body copy reads at a comfortable measure rather
+            than wedged into the right column on desktop. The bronze
+            quote-mark glyph anchors the bottom row.
+          */}
+
           {/* Taran */}
           <figure className="rounded-[18px] border border-divider bg-stone p-6 sm:p-8 shadow-card">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+            <div className="flex flex-row gap-5 sm:gap-7 items-start">
               <img
                 src={portrait}
                 alt="Taran Aujla, Salesperson"
                 width="160"
                 height="200"
-                className="w-36 h-44 sm:w-40 sm:h-48 object-cover object-top rounded-[14px] border border-divider flex-shrink-0"
+                className="w-28 h-36 sm:w-40 sm:h-48 object-cover object-top rounded-[14px] border border-divider flex-shrink-0"
               />
-              <div className="flex-1 min-w-0">
-                <Quote
-                  className="h-6 w-6 text-bronze/80"
-                  strokeWidth={1.6}
-                  aria-hidden="true"
-                />
-                <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-navy-soft">
-                  <p>
-                    For close to a decade I practised real estate law in
-                    Ontario, working through hundreds of transactions and the
-                    complications that come with them. I was often the one
-                    called in when a deal was tangled, time-sensitive, or
-                    going sideways. That work taught me where property
-                    transactions break, and how to keep them from breaking.
-                    How to calmly navigate the moving parts and logistics when
-                    a deal gets complicated.
-                  </p>
-                  <p>
-                    My introduction to real estate came even earlier than the
-                    legal work. I started managing my parents&rsquo; rental
-                    properties at sixteen, and acquired and operated my own
-                    properties in the years that followed. That foundation,
-                    alongside the years of closing-stage work, is what shapes
-                    the practice now. I work on the deal side directly, as a
-                    Salesperson, not as a lawyer.
-                  </p>
-                  <p>
-                    The approach is document-first, market-aware and
-                    position-driven. I read before I recommend, build the
-                    position before I move on it, and understand both sides
-                    of the table as carefully as I understand the file.
-                    Strength in a transaction is doing the work, holding
-                    composure and walking in with options, not noise.
-                  </p>
-                </blockquote>
-                <figcaption className="mt-5">
-                  <p className="font-sans font-semibold text-[15px] text-navy">
-                    Taran Aujla
-                  </p>
-                  <p className="text-[13.5px] text-navy-mute">Salesperson</p>
-                  <p className="text-[13px] text-navy-mute">
-                    RECO Reg. No. 6024721
-                  </p>
-                </figcaption>
+              <div className="flex-1 min-w-0 pt-1">
+                <p className="font-display font-medium text-navy text-[1.35rem] sm:text-[1.55rem] leading-tight">
+                  Taran Aujla
+                </p>
+                <p className="mt-1 font-sans text-[13.5px] sm:text-[14px] text-bronze font-semibold uppercase tracking-[0.14em]">
+                  Salesperson
+                </p>
+                <p className="mt-2 text-[13px] sm:text-[13.5px] text-navy-mute leading-relaxed">
+                  RECO Reg. No. 6024721
+                </p>
+                <p className="mt-3 text-[12.5px] text-navy-mute leading-relaxed">
+                  HomeLife G1 Realty Inc., Brokerage
+                </p>
               </div>
+            </div>
+            <div className="mt-6 sm:mt-7 pt-6 sm:pt-7 border-t border-divider/70">
+              <Quote
+                className="h-6 w-6 text-bronze/80"
+                strokeWidth={1.6}
+                aria-hidden="true"
+              />
+              <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-navy-soft">
+                <p>
+                  For close to a decade I practised real estate law in
+                  Ontario, working through hundreds of transactions and the
+                  complications that come with them. I was often the one
+                  called in when a deal was tangled, time-sensitive, or
+                  going sideways. That work taught me where property
+                  transactions break, and how to keep them from breaking.
+                  How to calmly navigate the moving parts and logistics when
+                  a deal gets complicated.
+                </p>
+                <p>
+                  My introduction to real estate came even earlier than the
+                  legal work. I started managing my parents&rsquo; rental
+                  properties at sixteen, and acquired and operated my own
+                  properties in the years that followed. That foundation,
+                  alongside the years of closing-stage work, is what shapes
+                  the practice now. I work on the deal side directly, as a
+                  Salesperson, not as a lawyer.
+                </p>
+                <p>
+                  The approach is document-first, market-aware and
+                  position-driven. I read before I recommend, build the
+                  position before I move on it, and understand both sides
+                  of the table as carefully as I understand the file.
+                  Strength in a transaction is doing the work, holding
+                  composure and walking in with options, not noise.
+                </p>
+              </blockquote>
             </div>
           </figure>
 
           {/* Dave */}
           <figure className="rounded-[18px] border border-divider bg-stone p-6 sm:p-8 shadow-card">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8">
+            <div className="flex flex-row gap-5 sm:gap-7 items-start">
               <div
                 aria-hidden="true"
-                className="w-36 h-44 sm:w-40 sm:h-48 rounded-[14px] border border-divider bg-rose flex items-center justify-center flex-shrink-0"
+                className="w-28 h-36 sm:w-40 sm:h-48 rounded-[14px] border border-divider bg-rose flex items-center justify-center flex-shrink-0"
               >
-                <span className="font-display text-[3rem] sm:text-[3.25rem] text-bronze tracking-tight leading-none">
+                <span className="font-display text-[2.4rem] sm:text-[3.25rem] text-bronze tracking-tight leading-none">
                   DD
                 </span>
               </div>
-              <div className="flex-1 min-w-0">
-                <Quote
-                  className="h-6 w-6 text-bronze/80"
-                  strokeWidth={1.6}
-                  aria-hidden="true"
-                />
-                <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-navy-soft">
-                  <p>
-                    My route into real estate started outside the licence.
-                    More than a decade investing in Ontario property,
-                    acquiring, holding and operating residential and
-                    small-portfolio assets, gave me the read on what a
-                    property is really worth and what buyers actually respond
-                    to. The past five years as a registered Salesperson sit
-                    on top of that foundation.
-                  </p>
-                  <p>
-                    My approach to every file is the same: calm, practical
-                    and centred on the client. The files I take most often
-                    are the ones where the stakes are personal and the timing
-                    is not theirs. Separations, estate sales,
-                    financial-pressure transactions, partnership disputes,
-                    alongside the standard residential work that runs through
-                    every quarter. Honest numbers, clear options and a sale
-                    handled with care from the first conversation to the
-                    closing table.
-                  </p>
-                </blockquote>
-                <figcaption className="mt-5">
-                  <p className="font-sans font-semibold text-[15px] text-navy">
-                    Dave Dhaliwal
-                  </p>
-                  <p className="text-[13.5px] text-navy-mute">Salesperson</p>
-                  <p className="text-[13px] text-navy-mute">
-                    RECO Reg. No. 5024155
-                  </p>
-                </figcaption>
+              <div className="flex-1 min-w-0 pt-1">
+                <p className="font-display font-medium text-navy text-[1.35rem] sm:text-[1.55rem] leading-tight">
+                  Dave Dhaliwal
+                </p>
+                <p className="mt-1 font-sans text-[13.5px] sm:text-[14px] text-bronze font-semibold uppercase tracking-[0.14em]">
+                  Salesperson
+                </p>
+                <p className="mt-2 text-[13px] sm:text-[13.5px] text-navy-mute leading-relaxed">
+                  RECO Reg. No. 5024155
+                </p>
+                <p className="mt-3 text-[12.5px] text-navy-mute leading-relaxed">
+                  HomeLife G1 Realty Inc., Brokerage
+                </p>
               </div>
+            </div>
+            <div className="mt-6 sm:mt-7 pt-6 sm:pt-7 border-t border-divider/70">
+              <Quote
+                className="h-6 w-6 text-bronze/80"
+                strokeWidth={1.6}
+                aria-hidden="true"
+              />
+              <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-navy-soft">
+                <p>
+                  My route into real estate started outside the licence.
+                  More than a decade investing in Ontario property,
+                  acquiring, holding and operating residential and
+                  small-portfolio assets, gave me the read on what a
+                  property is really worth and what buyers actually respond
+                  to. The past five years as a registered Salesperson sit
+                  on top of that foundation.
+                </p>
+                <p>
+                  My approach to every file is the same: calm, practical
+                  and centred on the client. The files I take most often
+                  are the ones where the stakes are personal and the timing
+                  is not theirs. Separations, estate sales,
+                  financial-pressure transactions, partnership disputes,
+                  alongside the standard residential work that runs through
+                  every quarter. Honest numbers, clear options and a sale
+                  handled with care from the first conversation to the
+                  closing table.
+                </p>
+              </blockquote>
             </div>
           </figure>
         </div>

@@ -19,8 +19,13 @@
   --resolve-bronze: #C8A56B;
   --resolve-bronze-deep: #AC8E5C;
 
-  /* Three-tone warm surface rhythm. Stone is the default; Mist is the
-     cooler informational tone; Rose is the warmer empathy tone. */
+  /* Warm surface rhythm. Cream is the lightest tier — used for content
+     cards that need to lift OFF the stone field (homepage situation
+     cards, situation-page body sections) so the body text reads
+     cleanly against a quieter backdrop. Stone is the default site
+     surface; Mist is the deeper informational tone; Rose is the warmer
+     empathy tone. */
+  --resolve-cream: #FBF7EE;
   --resolve-stone: #F5F1E8;
   --resolve-mist:  #E8DFCB;
   --resolve-rose:  #F2E8DC;
@@ -43,6 +48,7 @@
   --resolve-navy-rgb: 5 26 44;
   --resolve-bronze-rgb: 200 165 107;
   --resolve-bronze-deep-rgb: 172 142 92;
+  --resolve-cream-rgb: 251 247 238;
   --resolve-stone-rgb: 245 241 232;
   --resolve-mist-rgb: 232 223 203;
   --resolve-rose-rgb: 242 232 220;

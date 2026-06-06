@@ -103,22 +103,28 @@ export function Hero() {
                 headline. Stand out visually so the recognition is
                 instant: "this is property, and yes, my situation is
                 here." Each pill links to its deep-dive page; hover
-                fills bronze. Layout uses flex-wrap so the pills land
-                3 per line on the hero column at desktop, 2 per line
-                on tablet, 1 per line on narrow mobile. */}
-            <ul className="mt-7 flex flex-wrap gap-2">
+                fills bronze.
+
+                Layout: 2-column grid on mobile (consistent alignment
+                regardless of label length — was wrap-misaligned at
+                xs width), 3 per row on tablet+, natural-width row on
+                desktop. */}
+            <ul className="
+              mt-7 grid gap-2
+              grid-cols-2 sm:grid-cols-3
+            ">
               {SITUATIONS.map((s) => (
-                <li key={s.label}>
+                <li key={s.label} className="flex">
                   <Link
                     to={s.to}
                     className="
-                      inline-flex items-center justify-center
-                      px-4 py-2 rounded-full
+                      inline-flex items-center justify-center w-full
+                      px-3 sm:px-4 py-2 rounded-full
                       border border-bronze-deep
-                      font-sans font-semibold text-[13.5px] leading-none text-navy
+                      font-sans font-semibold text-[12.5px] sm:text-[13.5px] leading-none text-navy
                       hover:bg-bronze hover:border-bronze hover:text-stone
                       transition-colors duration-200
-                      whitespace-nowrap
+                      text-center
                     "
                   >
                     {s.label}
@@ -191,23 +197,11 @@ export function Hero() {
             </p>
           </div>
 
-          {/* Mobile image — full-width below text, no card, no shadow */}
-          <div className="lg:hidden -mx-6 mt-2">
-            <div className="relative w-full h-[320px] sm:h-[420px]">
-              <img
-                src={heroStillLife}
-                alt=""
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover"
-                loading="eager"
-                decoding="async"
-              />
-              <div
-                aria-hidden="true"
-                className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-stone to-transparent"
-              />
-            </div>
-          </div>
+          {/* On mobile the still-life image is intentionally suppressed.
+              It read as a disconnected block under the CTA + trust row
+              and added scroll length without telling the visitor
+              anything new. The desktop hero still carries the image
+              behind the text column (absolute-positioned above). */}
 
           {/* Right column spacer — empty on desktop because the image is
               absolutely positioned behind it. Reserved so the text
