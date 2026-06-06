@@ -61,10 +61,25 @@ export function DifferentApproach() {
               src={architectural}
               alt=""
               aria-hidden="true"
-              className="absolute inset-0 w-full h-full object-cover object-right"
-              style={{ filter: 'brightness(1.02) contrast(1.04)' }}
+              className="
+                absolute inset-0 w-full h-full object-cover object-right
+                brightness-[0.65] contrast-[1.08]
+                lg:brightness-[1.02] lg:contrast-[1.04]
+              "
               loading="lazy"
               decoding="async"
+            />
+            {/* Mobile-only flat navy scrim. The staircase image has a
+                bright vertical light source at its centre that was
+                reading as too harsh on phones (it sat right behind the
+                paragraph copy). A navy/45 wash on mobile pulls the
+                whole image down so the text overlay stays the visual
+                lead, then the wash lifts on lg+ where the image
+                carries its full brightness as the editorial focal
+                point alongside the headline. */}
+            <div
+              aria-hidden="true"
+              className="absolute inset-0 bg-navy/45 lg:bg-transparent"
             />
             {/* Soft fade on the image's left edge so it blends into
                 the navy field rather than butting. */}
@@ -107,8 +122,18 @@ export function DifferentApproach() {
           </div>
         </div>
 
-        {/* Right — stone + expectations */}
-        <div className="bg-stone">
+        {/* Right — stone + expectations.
+
+            Hidden on mobile (hidden lg:block). Rationale: on a phone
+            the navy DifferentApproach panel already carries the full
+            thesis + the "Learn More" CTA, and the next section
+            (WhyResolve) opens with the three-pillar proof immediately
+            underneath. The 5-item "You Can Expect" checklist between
+            them became extra scroll on mobile without adding new
+            information, so we let mobile flow straight from the
+            thesis into the structured proof. Desktop still shows
+            both columns side-by-side. */}
+        <div className="hidden lg:block bg-stone">
           <div className="px-6 sm:px-10 lg:px-16 py-16 lg:py-24 max-w-xl">
             <Eyebrow>You Can Expect</Eyebrow>
             <ul className="mt-8 space-y-5">
