@@ -2,11 +2,13 @@ import React, { useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { Toaster } from 'sonner'
 
-// V2 shared layout — header, trust strip, footer mounted globally.
+// V2 shared layout — brokerage strip, header, trust strip, footer
+// mounted globally.
 import { Header } from '@/components/brand/Header'
 import { Footer } from '@/components/brand/Footer'
 import { TrustStrip } from '@/components/brand/TrustStrip'
 import { MobileStickyCta } from '@/components/landing/MobileStickyCta'
+import { BrokerageStrip } from '@/components/landing/BrokerageStrip'
 
 // V2 pages (homepage + 3 standalone routes)
 import { HomePage as V2HomePage } from '@/components/v2/home/HomePage'
@@ -525,14 +527,20 @@ export default function App() {
       <MetaPixel />
       <div className="min-h-screen bg-stone text-navy antialiased selection:bg-bronze/25 selection:text-navy">
         {/*
-          V2 global layout. Header sits at the top of every page
-          (sticky), the page-level Routes render in the main, and the
-          TrustStrip + Footer close every page. Brokerage attribution
-          lives in the Footer per the V2 brief — the previous
-          BrokerageStrip top banner is dropped, with RECO Bulletin 5.1
-          satisfied by the Footer's "clearly and prominently identified"
-          block on every page.
+          V2 global layout. BrokerageStrip sits above the sticky Header
+          as a thin first-viewport identification of HomeLife G1 Realty
+          Inc., Brokerage (plain text, no external link). The Header
+          sits sticky beneath it, the page-level Routes render in the
+          main, and the TrustStrip + Footer close every page.
+
+          RECO Bulletin 5.1 ("clearly and prominently identified") is
+          satisfied twice over — once at the top of every page via the
+          BrokerageStrip and again in the Footer block. The strip
+          itself does not hyperlink the brokerage name; it identifies
+          the brokerage as the registered entity Resolve operates
+          under, not as a separately marketed property.
         */}
+        <BrokerageStrip />
         <Header />
         <main>
           <Routes>
