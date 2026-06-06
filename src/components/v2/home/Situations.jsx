@@ -81,11 +81,27 @@ export function Situations() {
           <Eyebrow>Situations We Handle</Eyebrow>
           <h2 className="mt-5 font-display font-medium text-navy text-display-lg">
             Six situations.{' '}
-            <span className="italic text-bronze">One discipline.</span>
+            <span className="italic text-bronze">One approach.</span>
           </h2>
+          {/*
+            Tagline — Newsreader 500 italic, bronze. Sized between the
+            display headline and the body so it reads as a named
+            organising idea, not as a second headline. Spacing locked
+            to the brief: 16px (mt-4) above, 24px (mt-6) below.
+
+            "Equity-first" rather than "equity-protected" — matches the
+            hero subhead's "equity as the priority" framing and keeps
+            clear of RECO Bulletin 5.3 (no implied outcome guarantees).
+          */}
+          <p className="
+            mt-4 font-display font-medium italic text-bronze
+            text-[18px] sm:text-[22px] leading-snug tracking-[-0.005em]
+          ">
+            Document-first. Position-driven. Equity-first.
+          </p>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-navy-soft">
             Resolve focuses on the sales that need more than a standard
-            listing. Every file is handled to the same standard.
+            listing.
           </p>
         </div>
 
