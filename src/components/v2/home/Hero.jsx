@@ -159,7 +159,8 @@ export function Hero() {
 
             <p className="mt-7 max-w-md text-[17px] leading-[1.55] text-stone/90">
               We help Ontario homeowners navigate difficult property
-              situations and sell with greater clarity and confidence.
+              situations and sell with greater clarity, confidence, and
+              equity as the priority.
             </p>
 
             {/* Two-button CTA.
