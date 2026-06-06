@@ -84,18 +84,19 @@ export function Situations() {
             <span className="italic text-bronze">One approach.</span>
           </h2>
           {/*
-            Tagline — Newsreader 500 italic, bronze. Sized between the
-            display headline and the body so it reads as a named
-            organising idea, not as a second headline. Spacing locked
-            to the brief: 16px (mt-4) above, 24px (mt-6) below.
+            Tagline — Inter bold, navy. Sized one step above the body
+            line below so it reads as a declarative, structural beat
+            (a named approach), not as ornamental italic emphasis.
+            Spacing locked to the brief: 16px (mt-4) above, 24px
+            (mt-6) below.
 
             "Equity-first" rather than "equity-protected" — matches the
             hero subhead's "equity as the priority" framing and keeps
             clear of RECO Bulletin 5.3 (no implied outcome guarantees).
           */}
           <p className="
-            mt-4 font-display font-medium italic text-bronze
-            text-[18px] sm:text-[22px] leading-snug tracking-[-0.005em]
+            mt-4 font-sans font-bold text-navy
+            text-[18px] sm:text-[19px] leading-snug
           ">
             Document-first. Position-driven. Equity-first.
           </p>
