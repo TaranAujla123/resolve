@@ -6,18 +6,21 @@ import { Button } from '@/components/brand/Button'
 import architectural from '/hero-architectural.jpg?url'
 
 /**
- * DifferentApproach — V2 home page "A Different Approach" anchor block.
+ * DifferentApproach — V2 home page "A Different Approach" / "Why Us"
+ * anchor block.
  *
- * Source of truth: Brand-System-V2/claude-code-v2-build.md §6 (Home —
- * A Different Approach).
+ * This is the strongest positioning statement on the home page:
+ *   "Most agents market property. We solve property problems."
+ *
+ * It carries the `#why-resolve` anchor so the Header's "Why Us" nav
+ * scrolls the visitor straight onto this thesis. The structured
+ * three-pillar proof block (WhyResolve component) immediately
+ * follows in the home flow.
  *
  * Split layout. Left half is the Navy emphasis panel (with a darkened
  * architectural photo overlay). Right half stays on the Stone surface
  * and carries the "You Can Expect" bullet list with bronze ring
  * checkmarks.
- *
- * Per the surface-rhythm rules: this is the page's Navy moment. Used
- * at most once per page to anchor the positioning punchline.
  */
 const EXPECTATIONS = [
   'Honest advice and clear options',
@@ -29,7 +32,12 @@ const EXPECTATIONS = [
 
 export function DifferentApproach() {
   return (
-    <section data-surface="navy" aria-label="A different approach">
+    <section
+      id="why-resolve"
+      data-surface="navy"
+      aria-label="A different approach — Why Resolve"
+      style={{ scrollMarginTop: '80px' }}
+    >
       {/* Navy column is slightly wider than half (58/42) so the
           emphasis side carries more visual weight than the
           expectations side, per the user's tuning pass. */}

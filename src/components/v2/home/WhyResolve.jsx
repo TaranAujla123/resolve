@@ -3,10 +3,10 @@ import { Award, Network, Users } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 
 /**
- * WhyResolve — V2 home page "Why Resolve" credibility section.
+ * WhyResolve — V2 home page credibility-pillars block.
  *
- * Restores three substantive claims from the live site's "Why Resolve"
- * block that V2 was missing:
+ * Three substantive claims that back up the DifferentApproach thesis
+ * directly above this in the home flow:
  *
  *   1. A decade of combined experience across complex Ontario files
  *   2. Direct negotiation history across the cast these files bring
@@ -15,14 +15,15 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
  *      Resolve can bring pre-screened buyers directly, giving the
  *      sale more than one path to a clean close
  *
- * Placement: between Situations and HowWeHelp. The page logic reads
- * Situations (what we handle) → WhyResolve (why we can handle it) →
- * HowWeHelp (the process clients move through).
+ * Placement: immediately under DifferentApproach. The header "Why Us"
+ * anchor (#why-resolve) lands on DifferentApproach's thesis panel;
+ * this block scrolls into view as the supporting proof right after.
+ * No id of its own — it reads as part of the same "Why Us"
+ * conceptual stretch and shares the anchor with the section above.
  *
- * Surface: Mist (cooler, informational). HowWeHelp continues on Mist
- * below, so the page now reads Stone → Stone → Mist → Mist → Navy →
- * Rose → Stone. Two consecutive Mist sections is intentional — these
- * are the credibility + process blocks, linked conceptually.
+ * Surface: Stone — the page's default brand surface; gives the
+ * navy DifferentApproach panel above a clean light landing as the
+ * eye travels into the proof block.
  */
 const POINTS = [
   {
@@ -48,10 +49,9 @@ const POINTS = [
 export function WhyResolve() {
   return (
     <section
-      id="why-resolve"
       data-surface="stone"
       className="bg-stone section-y"
-      aria-label="Why Resolve"
+      aria-label="The experience these situations require"
     >
       <div className="container">
         <div className="max-w-3xl">
