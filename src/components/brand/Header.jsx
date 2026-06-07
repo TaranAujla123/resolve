@@ -33,7 +33,8 @@ import { Button } from './Button'
 //   3. How We Help          — what does the process look like?
 //   4. About                — who are Taran and Dave?
 //   5. For Buyers           — the adjacent path on the buy side
-//   6. For Agents           — the referral path for other practitioners
+//   6. Partner With Us      — the partnership path for other practitioners
+//                             (refer or co-broker, brokerage-to-brokerage)
 // Contact is the separate CTA button to the right of the nav row.
 const NAV_ITEMS = [
   { to: '/#situations', label: 'Situations We Handle', isAnchor: true },
@@ -41,7 +42,7 @@ const NAV_ITEMS = [
   { to: '/#how-we-help', label: 'How We Help', isAnchor: true },
   { to: '/about', label: 'About' },
   { to: '/buyers', label: 'For Buyers' },
-  { to: '/for-agents', label: 'For Agents' },
+  { to: '/for-agents', label: 'Partner With Us' },
 ]
 
 export function Header() {

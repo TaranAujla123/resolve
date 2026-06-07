@@ -272,30 +272,31 @@ const TIME_SENSITIVE_SALES_JSONLD = situationJsonLd({
     'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive sales by making the right decisions within the time available, in coordination with the lenders, lawyers, and advisors already involved in the file.',
 })
 
-// /for-agents page is its own thing: not a situation, but a referral
-// channel for other Ontario real estate professionals. WebPage +
-// Service + breadcrumb under a "For Agents" leaf.
+// /for-agents page is its own thing: not a situation, but a partnership
+// channel for other Ontario real estate practitioners. WebPage +
+// Service + breadcrumb under a "Partner With Us" leaf. URL slug stays
+// /for-agents/ for SEO continuity; only the visible framing changed.
 const FOR_AGENTS_JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'For Real Estate Professionals · Resolve Referral Partnership · Ontario',
+    name: 'Partner With Resolve · Brokerage Partnership · Ontario',
     url: `${SITE_URL}/for-agents/`,
     description:
-      'Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage referral agreements under TRESA. The referring agent keeps the client relationship and a referral fee is paid at closing under terms agreed for each file.',
+      'Partner with Resolve on difficult or time-sensitive Ontario seller files. Refer the file and step back, or stay on as co-listing brokerage. Documented brokerage-to-brokerage under TRESA. The referring agent keeps the client relationship and is paid at closing under the structure agreed for the file.',
     isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: 'For Agents', item: `${SITE_URL}/for-agents/` },
+        { '@type': 'ListItem', position: 2, name: 'Partner With Us', item: `${SITE_URL}/for-agents/` },
       ],
     },
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: 'Brokerage-to-Brokerage Seller File Referral (Ontario)',
+    serviceType: 'Brokerage-to-Brokerage Partnership (Ontario)',
     provider: RESOLVE_ORG,
     areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
     audience: {
@@ -303,7 +304,7 @@ const FOR_AGENTS_JSONLD = [
       audienceType: 'Ontario real estate Salespersons and Brokers',
     },
     description:
-      'Resolve takes the listing on referred files (power of sale, mortgage arrears, matrimonial home sales, estate sales, property disputes). Referrals are documented brokerage-to-brokerage under TRESA. The referring brokerage is paid a referral fee at closing under the terms agreed for each file.',
+      'Resolve partners with Ontario real estate professionals on difficult and time-sensitive seller files: power of sale, mortgage arrears, matrimonial home sales, estate sales, property disputes. Two modes: full referral under a TRESA brokerage-to-brokerage referral agreement, or co-brokerage under a co-listing agreement. Both are documented brokerage-to-brokerage and pay out at closing.',
   },
 ]
 
@@ -493,8 +494,8 @@ function ForAgentsPage() {
   return (
     <>
       <Seo
-        title="For Real Estate Professionals · Resolve Referral Partnership · Ontario"
-        description="Refer a difficult Ontario seller file to Resolve. Brokerage-to-brokerage agreements under TRESA. You keep the client relationship and a referral fee is paid at closing under terms agreed for the file."
+        title="Partner With Resolve · Brokerage Partnership · Ontario"
+        description="Partner with Resolve on difficult or time-sensitive Ontario seller files. Refer the file and step back, or stay on as co-listing brokerage. Documented brokerage-to-brokerage under TRESA. You keep the client relationship and your brokerage is paid at closing."
         canonical={`${SITE_URL}/for-agents/`}
         jsonLd={FOR_AGENTS_JSONLD}
       />

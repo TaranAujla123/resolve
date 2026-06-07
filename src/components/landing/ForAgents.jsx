@@ -16,26 +16,45 @@ import { Button } from '@/components/ui/Button'
 import { Input, Textarea, Label } from '@/components/ui/Field'
 
 /**
- * /for-agents — referral page targeting other Ontario real estate
- * professionals who have inherited a difficult seller file (power of sale,
- * mortgage arrears, separation, estate, dispute) and would prefer to
- * refer the file under a TRESA-compliant brokerage-to-brokerage
- * agreement than risk damaging the client relationship.
+ * /for-agents — Partner With Us page for other Ontario real estate
+ * practitioners (brokerages, agents) who have inherited or are
+ * working a seller file that calls for Resolve's specialism: power
+ * of sale, mortgage arrears, separation, estate, dispute, or
+ * time-sensitive deadline.
  *
- * The page sits outside the main consumer funnel: not linked from the
- * primary Nav, only from the Footer and from internal cross-links on
- * the situation pages. The visual register is more direct than the
- * consumer pages — the audience is professional, not anxious.
+ * The page leads with partnership, not handoff. Two modes are
+ * presented:
+ *   1. Full referral. The default. You hand off the file under a
+ *      TRESA brokerage-to-brokerage referral agreement; we take the
+ *      listing; you stay close to the client and keep the long-term
+ *      relationship; your brokerage is paid at closing.
+ *   2. Co-brokerage. The option for files where the agent wants to
+ *      remain visibly on the file (a long-standing client, a
+ *      high-profile property, a file the agent wants to learn from).
+ *      You stay on as co-listing brokerage; we handle the
+ *      operational load; commission is split per a co-listing
+ *      agreement signed at the outset.
+ *
+ * The URL slug stays /for-agents/ for SEO continuity and inbound
+ * link stability. The nav label and the on-page framing are now
+ * "Partner With Us" / "Partner with Resolve."
  *
  * Compliance posture:
- *   - All referrals are documented brokerage-to-brokerage under TRESA
- *     Bulletin 5.1. Referral fees flow from HomeLife G1 Realty Inc.,
- *     Brokerage to the referring brokerage at closing.
- *   - No agent-to-agent payment language. Brokerage handles the internal
- *     split with the referring agent per its standard arrangement.
+ *   - All arrangements (referral or co-brokerage) are documented
+ *     brokerage-to-brokerage under TRESA. Payments flow brokerage to
+ *     brokerage at closing.
+ *   - No agent-to-agent payment language anywhere. Each brokerage
+ *     handles its internal split with its own salesperson per its
+ *     standard arrangement.
  *   - Brokerage attribution lives in BrokerageStrip + Footer; not
  *     restated here.
- *   - No outcome guarantees, no "specialist" / "exclusive" language.
+ *   - No outcome guarantees, no "specialist" / "exclusive" / "best"
+ *     language. "More than a standard listing" describes file
+ *     complexity, not promised outcome.
+ *   - "Partner" / "partnership" used in the marketing sense
+ *     (collaboration), not the legal-entity sense.
+ *   - No "Realtor" trademark usage. "Real estate professional",
+ *     "practitioner", "agent", "brokerage" are used instead.
  */
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
@@ -46,6 +65,7 @@ const filesWeTake = [
   'Matrimonial home sales during separation or divorce',
   'Estate sales with executors or multiple beneficiaries',
   'Property disputes (partition, co-ownership, lien, title cloud)',
+  'Time-sensitive deadlines (relocation, closing on the next home)',
   'Sensitive sales requiring discretion',
 ]
 
@@ -55,15 +75,15 @@ const milestones = [
   { stage: 'Offers received', note: 'Notification, with a summary of each offer.' },
   { stage: 'Offer accepted or countered', note: 'Notification of the position taken.' },
   { stage: 'Conditional waiver', note: 'Confirmation of firm sale and closing date.' },
-  { stage: 'Closing', note: 'Confirmation, and referral fee processing initiated.' },
+  { stage: 'Closing', note: 'Confirmation, and brokerage-to-brokerage payment initiated.' },
 ]
 
 const howItWorks = [
   'You call (365) 645-7332 or submit the form below.',
   'We review the file in a 15 minute call (within one business day, often the same day).',
-  'If it is a fit, we send your brokerage a referral agreement.',
-  'We take the listing. You stay informed at six milestones.',
-  'Referral fee pays out brokerage to brokerage at closing.',
+  'If it is a fit, we agree on the structure (referral or co-brokerage) and send your brokerage the paperwork.',
+  'We take the listing. You stay close to the client and stay informed at six milestones.',
+  'Referral fee or commission split pays out brokerage to brokerage at closing.',
 ]
 
 export function ForAgents() {
@@ -101,7 +121,7 @@ export function ForAgents() {
 
   return (
     <>
-      {/* Section 1: Hero, agent-facing register */}
+      {/* Section 1: Hero — partnership framing first beat */}
       <section className="bg-hero-fade">
         <div className="container section-y">
           <motion.div
@@ -116,25 +136,25 @@ export function ForAgents() {
                 Resolve
               </Link>
               <span aria-hidden="true" className="text-ink-mute/40">·</span>
-              <span className="text-ink-soft">For Real Estate Professionals</span>
+              <span className="text-ink-soft">Partner With Us</span>
             </p>
             <h1 className="mt-5 text-display-md sm:text-display-lg text-navy max-w-3xl font-display font-medium leading-[1.12]">
-              Is Your Client Facing a Difficult Property Situation?
+              Partner with Resolve on the files that need more than a standard listing.
             </h1>
             <p className="mt-5 sm:mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
-              You would rather refer the file than risk damaging the relationship.
-              Here is how we work with referring agents.
+              You bring the client relationship. We bring the bandwidth, the
+              discipline, and the boutique-practice handling that distressed
+              and complex seller files actually need.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Resolve is a boutique seller representation practice focused on the
-              files that call for extra time, discretion, and specialized handling:
-              power of sale, mortgage arrears, matrimonial home sales, estate sales,
-              and complex property disputes. You refer the file, keep the client
-              relationship, and get paid at closing.
+              Power of sale. Mortgage arrears. Estate sales. Matrimonial home
+              sales. Property disputes. Time-sensitive deadlines. Refer the
+              file and step back, or stay on as co-listing brokerage. Either
+              way, the operational weight stays with us.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-2 sm:gap-3">
-              <Button as="a" href="#referral-form" size="lg" variant="primary" className="group">
-                Discuss a Referral
+              <Button as="a" href="#partnership-form" size="lg" variant="primary" className="group">
+                Discuss a Partnership
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
               <Button as="a" href="tel:+13656457332" size="lg" variant="outline">
@@ -150,63 +170,69 @@ export function ForAgents() {
       <section className="bg-surface-tint">
         <div className="container section-y">
           <div className="max-w-3xl space-y-14">
-            {/* Section 2: How we work */}
+
+            {/* Section 2: Two ways to work together */}
             <div>
               <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
                 The structure
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                How we work with referring agents.
+                Two ways to work together.
               </h2>
               <div className="mt-5 space-y-4 text-[16px] text-ink-soft leading-relaxed">
                 <p>
-                  Resolve takes the listing under HomeLife G1 Realty Inc., Brokerage.
-                  You stay in the loop on the file&rsquo;s progress and keep the
-                  client relationship for future non-distressed business. We control
-                  execution: the listing, the communications, the negotiation, and
-                  the closing. You stay out of the day-to-day work and out of the
-                  late-night phone calls from a seller under stress.
+                  <strong className="text-ink font-semibold">Refer the file.</strong>{' '}
+                  The default path. Resolve takes the listing under HomeLife
+                  G1 Realty Inc., Brokerage, under a TRESA brokerage-to-
+                  brokerage referral agreement. You stay close to the client
+                  and keep the long-term relationship. We control execution:
+                  the listing, the communications, the negotiation, the
+                  closing. Your brokerage is paid a referral fee at closing
+                  under terms we agree at the outset.
                 </p>
                 <p>
-                  A standard referral agreement, brokerage to brokerage under TRESA,
-                  sets the terms in writing. You are notified at six key milestones
-                  (file opened, listing live, offers received, accepted, conditional
-                  waiver, closing). You are informed without being on the hook for
-                  the execution.
+                  <strong className="text-ink font-semibold">Co-broker where it fits.</strong>{' '}
+                  Where you want to stay visibly on the file (a long-standing
+                  client who knows you by name, a high-profile property, a
+                  file you want to learn from), we co-broker. You stay on as
+                  co-listing brokerage. We carry the operational load.
+                  Commission is split per a co-listing agreement signed at
+                  the outset. Same documentation discipline. Different
+                  distribution of the work.
                 </p>
                 <p>
-                  At closing, your brokerage is paid a referral fee under the
-                  terms we agree at the outset. Every file is different. The
-                  right structure depends on the situation, the timeline, and
-                  the work involved on each side, so we discuss the terms when
-                  we discuss the file. Your brokerage handles the internal
-                  split with you per its standard arrangement. No invoicing,
-                  no chasing.
+                  The right structure depends on the file. We work it out
+                  when we discuss the file.
                 </p>
               </div>
             </div>
 
-            {/* Section 3: Why this structure */}
+            {/* Section 3: Why this works */}
             <div>
               <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
-                Why this structure
+                Why this works
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                Single point of execution.
+                You keep the relationship. We carry the work.
               </h2>
               <div className="mt-5 space-y-4 text-[16px] text-ink-soft leading-relaxed">
                 <p>
-                  Difficult seller files need a single point of execution. A power of
-                  sale file handled by two agents on the communications becomes a
-                  mess for the seller. A matrimonial home sale with a co-broker
-                  arrangement signals to the buyer&rsquo;s side that the listing
-                  brokerage is not fully in control. Sensitive files close cleanly
-                  when one agent holds the line.
+                  These files have one thing in common: they need a single,
+                  experienced point of execution. A power of sale handled by
+                  two agents on the communications becomes a mess for the
+                  seller. A matrimonial home sale with unclear lines of
+                  responsibility signals to the buyer&rsquo;s side that the
+                  listing brokerage is not fully in control. The work
+                  between client conversations and closing day sits with us
+                  either way. Lender follow-ups, multi-party coordination,
+                  late-night calls from a seller under pressure.
                 </p>
                 <p>
-                  You get the financial outcome and the long-term client
-                  relationship. We get the executional control needed to handle the
-                  file properly. The seller gets a clean transaction.
+                  A clean structure protects everyone. You keep the client
+                  relationship and the long-term business that follows the
+                  file. We get the executional control needed to handle the
+                  situation properly. The seller gets one clear point of
+                  contact and a clean transaction.
                 </p>
               </div>
             </div>
@@ -221,9 +247,9 @@ export function ForAgents() {
               </h2>
               <p className="mt-4 text-[16px] text-ink-soft leading-relaxed">
                 Resolve is built for the seller files that need more than a
-                standard listing. If your client&rsquo;s situation sits in any
-                of the categories below, send it our way and we will read it
-                seriously.
+                standard listing. If your client&rsquo;s situation sits in
+                any of the categories below, send it our way and we will
+                read it seriously.
               </p>
               <div className="mt-6 rounded-2xl border border-surface-line bg-white p-6 sm:p-7 shadow-card">
                 <div className="flex items-center gap-2.5">
@@ -254,6 +280,11 @@ export function ForAgents() {
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
                 What you receive, when.
               </h2>
+              <p className="mt-4 text-[16px] text-ink-soft leading-relaxed">
+                Six milestone updates from file open to closing. Same cadence
+                whether you are referring or co-brokering, with deeper
+                involvement on the latter where joint decisions are needed.
+              </p>
               <div className="mt-6 rounded-2xl border border-surface-line bg-white overflow-hidden shadow-card">
                 <ul className="divide-y divide-surface-line">
                   {milestones.map((m, i) => (
@@ -293,12 +324,7 @@ export function ForAgents() {
               </ol>
             </div>
 
-            {/* Section 7: TRESA compliance note — migrated from V1
-                accent-soft (which composed badly with V2 alpha tokens
-                and read as bright peach against stone) to clean V2
-                surface treatment: warm Rose background for callout
-                differentiation, bronze-deep border at 40% for a
-                quiet outline, navy ink throughout. */}
+            {/* Section 7: TRESA compliance — covers both modes */}
             <div className="rounded-2xl border border-bronze-deep/40 bg-rose p-6 sm:p-7">
               <div className="flex items-start gap-3">
                 <ShieldCheck className="h-5 w-5 text-bronze flex-shrink-0 mt-0.5" strokeWidth={1.9} />
@@ -310,12 +336,13 @@ export function ForAgents() {
                     Brokerage to brokerage. In writing. No ambiguity.
                   </h3>
                   <p className="mt-3 text-[15px] text-navy-soft leading-relaxed">
-                    All referrals are documented through brokerage-to-brokerage
-                    referral agreements per TRESA. Referral fees flow from HomeLife
-                    G1 Realty Inc., Brokerage to your brokerage at closing. Your
-                    brokerage handles internal payment to you per its standard
-                    split. No agent-to-agent payments, no unwritten arrangements,
-                    no compliance ambiguity.
+                    Referrals are documented under brokerage-to-brokerage
+                    referral agreements per TRESA. Co-brokerage files are
+                    documented under co-listing agreements. Both flow
+                    brokerage to brokerage at closing. Your brokerage handles
+                    internal payment to you per its standard split. No
+                    agent-to-agent payments, no unwritten arrangements, no
+                    compliance ambiguity.
                   </p>
                 </div>
               </div>
@@ -324,8 +351,8 @@ export function ForAgents() {
         </div>
       </section>
 
-      {/* Section 8: Referral inquiry form */}
-      <section id="referral-form">
+      {/* Section 8: Partnership inquiry form */}
+      <section id="partnership-form">
         <div className="container section-y">
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
@@ -333,11 +360,12 @@ export function ForAgents() {
                 Send us a file
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                Confidential referral inquiry.
+                Confidential partnership inquiry.
               </h2>
               <p className="mt-4 text-[15.5px] text-ink-soft leading-relaxed max-w-xl mx-auto">
-                A brief description of the file is enough for a first read. We respond
-                personally, typically within a few hours during business hours.
+                A brief description of the file is enough for a first read.
+                We respond personally, typically within a few hours during
+                business hours.
               </p>
             </div>
             <motion.form
@@ -348,9 +376,9 @@ export function ForAgents() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="bg-white border border-surface-line rounded-2xl p-7 sm:p-10 shadow-card"
             >
-              <input type="hidden" name="_subject" value="Resolve · New referral inquiry from agent" />
+              <input type="hidden" name="_subject" value="Resolve · New partnership inquiry from agent" />
               <input type="hidden" name="source_page" value="/for-agents" />
-              <input type="hidden" name="inquiry_type" value="agent-referral" />
+              <input type="hidden" name="inquiry_type" value="agent-partnership" />
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <Label htmlFor="ag-name" required>Your name</Label>
@@ -388,8 +416,8 @@ export function ForAgents() {
 
               <p className="mt-5 text-[12.5px] text-ink-mute flex items-center gap-1.5">
                 <Lock className="h-3.5 w-3.5" />
-                Your information is used only to respond to this inquiry. It is not
-                shared with anyone outside the practice.
+                Your information is used only to respond to this inquiry. It
+                is not shared with anyone outside the practice.
               </p>
 
               <p className="mt-5 text-center text-[13px] text-ink-soft leading-relaxed">
@@ -421,11 +449,12 @@ export function ForAgents() {
               <Handshake className="h-6 w-6" strokeWidth={1.8} />
             </div>
             <p className="mt-5 text-[15px] text-ink-soft leading-relaxed max-w-xl mx-auto">
-              A partnership that works for both sides. You stay close to the
-              client and keep the long-term relationship. We carry the
-              difficult file from listing through closing. Your brokerage is
-              paid at closing. Both sides do what they do best, and the
-              seller gets a clean transaction.
+              A partnership designed to work for both sides. You stay close
+              to the client and keep the long-term relationship. We carry
+              the file from listing through closing. Your brokerage is paid
+              at closing under the structure we agreed at the outset. Both
+              sides do what they do best, and the seller gets a clean
+              transaction.
             </p>
           </div>
         </div>
