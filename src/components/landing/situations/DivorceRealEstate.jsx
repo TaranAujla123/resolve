@@ -60,6 +60,36 @@ export function DivorceRealEstate() {
         </p>
       </SituationBlock>
 
+      <SituationBlock label="How it works" title="The timing trade-offs in a separation sale.">
+        <p>
+          Several decisions interact with each other and the right
+          sequence is rarely obvious. Whether to list before the
+          separation agreement is finalised or after. Whether to set the
+          sale price by appraisal, mutual agreement, or open market.
+          Whether the proceeds get held in trust pending the
+          lawyers&rsquo; instructions, or distributed at closing under a
+          pre-agreed split.
+        </p>
+        <p>
+          Selling during separation versus selling after the divorce is
+          finalised changes the dynamics. During separation, both spouses
+          have to sign every document and either party can in theory
+          slow the sale down. After finalisation, the property may be
+          held by only one party, the sale is simpler operationally, but
+          the equity has often already been counted in the equalisation
+          calculation. Neither is universally better. Family lawyers
+          generally have a view on which path works best for a particular
+          file, and the sale strategy should follow that view rather than
+          run ahead of it.
+        </p>
+        <p>
+          The right time for the real estate conversation is once both
+          lawyers have aligned on the broad plan, and before any showing
+          or listing decision is made. Early enough that the calendar
+          can be built properly rather than retrofit a rushed timeline.
+        </p>
+      </SituationBlock>
+
       <SituationBlock label="Common situations" title="Files we see most often.">
         <ul className="list-disc pl-5 space-y-2">
           <li>Both parties agree the home will be sold but disagree on timing or price</li>

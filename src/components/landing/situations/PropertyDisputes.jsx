@@ -61,6 +61,33 @@ export function PropertyDisputes() {
         </p>
       </SituationBlock>
 
+      <SituationBlock label="How it works" title="A lien on title is not a bar to selling.">
+        <p>
+          A lien on title is not a bar to listing or selling the
+          property. It is a claim that has to be dealt with before a
+          buyer&rsquo;s lawyer will release the closing funds. In
+          practice that means the lien gets discharged out of the sale
+          proceeds at closing, with the seller&rsquo;s lawyer holding the
+          relevant amount in trust until the discharge is registered.
+        </p>
+        <p>
+          Construction liens, judgment liens, and Canada Revenue Agency
+          liens each follow slightly different mechanics, but the common
+          element is that the closing math has to account for them
+          before anyone signs. Buyers and their lawyers are usually
+          willing to close on a property with a disclosed lien, provided
+          the math is clean and the discharge is procedurally certain.
+        </p>
+        <p>
+          What tanks deals is incomplete disclosure, late discoveries,
+          or unrealistic estimates of the discharge amount. The same
+          logic applies, in different forms, to partition orders, condo
+          board disputes, easement enforcements, and most other title
+          clouds. The legal mechanics are not our lane. The closing
+          logistics that get the property properly sold around them are.
+        </p>
+      </SituationBlock>
+
       <SituationBlock label="Common situations" title="Files we see most often.">
         <ul className="list-disc pl-5 space-y-2">
           <li>Co-owners want to sell but cannot agree on price or timing</li>

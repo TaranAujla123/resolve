@@ -58,6 +58,30 @@ export function EstateSale() {
         </p>
       </SituationBlock>
 
+      <SituationBlock label="How it works" title="What the will and the estate direct.">
+        <p>
+          The mechanics of an estate sale layer on top of the usual real
+          estate process. The will may direct how the property is to be
+          handled, including who has the right to buy it at fair market
+          value before it goes to the open market. That right has to be
+          honoured before any external listing decision is made.
+        </p>
+        <p>
+          The proceeds of the sale flow into the estate, not directly to
+          any beneficiary. Distribution follows the estate&rsquo;s
+          administration by the estate trustee, under the estate
+          lawyer&rsquo;s direction. Timing is often driven by tax
+          filings, beneficiary needs, and probate progress rather than by
+          where the market is on any given week.
+        </p>
+        <p>
+          What this means in practice: pricing, preparation, and listing
+          timing are coordinated with the estate lawyer and, where
+          relevant, the estate&rsquo;s accountant. The sale moves when
+          the file is ready, not before.
+        </p>
+      </SituationBlock>
+
       <SituationBlock label="Common situations" title="Files we see most often.">
         <ul className="list-disc pl-5 space-y-2">
           <li>Probate granted, estate ready to sell</li>

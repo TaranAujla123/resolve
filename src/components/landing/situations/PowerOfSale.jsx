@@ -54,6 +54,35 @@ export function PowerOfSale() {
         </p>
       </SituationBlock>
 
+      <SituationBlock label="How it works" title="Power of sale is not foreclosure.">
+        <p>
+          Unlike foreclosure (which is the process most Ontario lenders
+          avoid), the lender under power of sale does not take title to
+          the home. They sell it, recover the mortgage balance plus their
+          costs, and any surplus is returned to the homeowner. That
+          surplus is your equity, and it is what these decisions are
+          protecting.
+        </p>
+        <p>
+          The cost layer is worth understanding. Once a power of sale is
+          underway, the lender is entitled to recover its enforcement
+          costs from the sale proceeds before any surplus flows back.
+          Lender&rsquo;s legal fees, bailiff or process server,
+          lender-commissioned appraisal, brokerage commission if the
+          lender lists with their own agent, status certificates, tax
+          arrears advances. In a typical Ontario residential file these
+          commonly run into the low five figures. Every dollar comes out
+          of the homeowner&rsquo;s equity.
+        </p>
+        <p>
+          A homeowner-arranged sale, properly positioned and on a
+          defensible timeline, often produces a materially better net
+          than a sale taken over by the lender, even when the gross sale
+          prices end up similar. The shorter the timeline the lender
+          has to run, the less of the surplus gets consumed.
+        </p>
+      </SituationBlock>
+
       <SituationBlock label="Common situations" title="Files we see most often.">
         <ul className="list-disc pl-5 space-y-2">
           <li>Notice of Sale Under Mortgage already received</li>

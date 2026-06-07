@@ -51,6 +51,32 @@ export function MortgageArrears() {
         </p>
       </SituationBlock>
 
+      <SituationBlock label="How it works" title="The three real paths once arrears begin.">
+        <p>
+          There are usually three real paths once arrears begin. Bring
+          the loan current, through a refinance, a second mortgage, or
+          a private lender. Restructure the loan with the existing
+          lender, through forbearance, a partial payment plan, or an
+          interest-only arrangement where the lender will accept one.
+          Or sell the home before the lender forces the issue.
+        </p>
+        <p>
+          The right path depends on the equity in the property, the
+          income picture, the timeline, and what the existing lender is
+          realistically willing to consider. Selling is not always the
+          answer. Sometimes a refinance or a structured workout makes
+          more sense, and we will say so.
+        </p>
+        <p>
+          One inflection point most homeowners do not see coming: at a
+          certain stage the file moves from the lender&rsquo;s
+          collections team to enforcement counsel, and once a lawyer is
+          engaged the cost calculus shifts. Most homeowners do not
+          register the transition until legal fees start showing up on
+          the statement.
+        </p>
+      </SituationBlock>
+
       <SituationBlock label="Common situations" title="Files we see most often.">
         <ul className="list-disc pl-5 space-y-2">
           <li>Missed two or three payments</li>
