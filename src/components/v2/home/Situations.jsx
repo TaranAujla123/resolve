@@ -90,15 +90,18 @@ export function Situations() {
             Spacing locked to the brief: 16px (mt-4) above, 24px
             (mt-6) below.
 
-            "Equity-first" rather than "equity-protected" — matches the
-            hero subhead's "equity as the priority" framing and keeps
-            clear of RECO Bulletin 5.3 (no implied outcome guarantees).
+            "Equity-led" (not "Equity-first" or "Equity-protected") —
+            three distinct suffixes (first / driven / led) so the
+            line doesn't echo on the word "first." Still frames
+            posture, not outcome, so it stays clear of RECO Bulletin
+            5.3 the same way the hero subhead's "equity as the
+            priority" framing does.
           */}
           <p className="
             mt-4 font-sans font-bold text-navy
             text-[18px] sm:text-[19px] leading-snug
           ">
-            Document-first. Position-driven. Equity-first.
+            Document-first. Position-driven. Equity-led.
           </p>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-navy-soft">
             Resolve focuses on the sales that need more than a standard
