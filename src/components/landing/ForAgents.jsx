@@ -16,28 +16,38 @@ import { Button } from '@/components/ui/Button'
 import { Input, Textarea, Label } from '@/components/ui/Field'
 
 /**
- * /for-agents — Partner With Us page for other Ontario real estate
+ * /for-agents — For Agents page for other Ontario real estate
  * practitioners (brokerages, agents) who have inherited or are
  * working a seller file that calls for Resolve's specialism: power
  * of sale, mortgage arrears, separation, estate, dispute, or
  * time-sensitive deadline.
  *
- * The page leads with partnership, not handoff. Two modes are
- * presented:
- *   1. Full referral. The default. You hand off the file under a
- *      TRESA brokerage-to-brokerage referral agreement; we take the
- *      listing; you stay close to the client and keep the long-term
- *      relationship; your brokerage is paid at closing.
+ * Naming choice — important. The nav label and the hero eyebrow
+ * both read "For Agents" so a non-registrant (a consumer, a lawyer,
+ * an accountant) landing cold cannot reasonably infer that they
+ * qualify to receive a referral fee or a co-brokerage split.
+ * Referral and co-brokerage fees can only legally flow brokerage to
+ * brokerage between RECO-registered practitioners under TRESA.
+ * "Partner with Resolve" appears in the H1 as the framing of the
+ * relationship for the qualified audience the page already
+ * identifies — it does not replace the audience signal.
+ *
+ * The page leads with partnership once the audience is named. Two
+ * modes are presented:
+ *   1. Full referral. The default. The referring agent hands off
+ *      the file under a TRESA brokerage-to-brokerage referral
+ *      agreement; Resolve takes the listing; the referring agent
+ *      stays close to the client and keeps the long-term
+ *      relationship; the referring brokerage is paid at closing.
  *   2. Co-brokerage. The option for files where the agent wants to
  *      remain visibly on the file (a long-standing client, a
- *      high-profile property, a file the agent wants to learn from).
- *      You stay on as co-listing brokerage; we handle the
- *      operational load; commission is split per a co-listing
- *      agreement signed at the outset.
+ *      high-profile property, a file the agent wants to learn
+ *      from). The referring agent stays on as co-listing brokerage;
+ *      Resolve handles the operational load; commission is split
+ *      per a co-listing agreement signed at the outset.
  *
  * The URL slug stays /for-agents/ for SEO continuity and inbound
- * link stability. The nav label and the on-page framing are now
- * "Partner With Us" / "Partner with Resolve."
+ * link stability.
  *
  * Compliance posture:
  *   - All arrangements (referral or co-brokerage) are documented
@@ -136,7 +146,7 @@ export function ForAgents() {
                 Resolve
               </Link>
               <span aria-hidden="true" className="text-ink-mute/40">·</span>
-              <span className="text-ink-soft">Partner With Us</span>
+              <span className="text-ink-soft">For Agents</span>
             </p>
             <h1 className="mt-5 text-display-md sm:text-display-lg text-navy max-w-3xl font-display font-medium leading-[1.12]">
               Partner with Resolve on the files that need more than a standard listing.

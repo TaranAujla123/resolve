@@ -274,8 +274,12 @@ const TIME_SENSITIVE_SALES_JSONLD = situationJsonLd({
 
 // /for-agents page is its own thing: not a situation, but a partnership
 // channel for other Ontario real estate practitioners. WebPage +
-// Service + breadcrumb under a "Partner With Us" leaf. URL slug stays
-// /for-agents/ for SEO continuity; only the visible framing changed.
+// Service + breadcrumb under a "For Agents" leaf — labelled that way
+// (rather than "Partner With Us") so non-registrants cannot reasonably
+// infer eligibility for referral fees, which can only legally flow
+// brokerage to brokerage between RECO-registered practitioners under
+// TRESA. Partnership framing carries in the WebPage name and H1, after
+// the audience is correctly identified.
 const FOR_AGENTS_JSONLD = [
   {
     '@context': 'https://schema.org',
@@ -289,7 +293,7 @@ const FOR_AGENTS_JSONLD = [
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: 'Partner With Us', item: `${SITE_URL}/for-agents/` },
+        { '@type': 'ListItem', position: 2, name: 'For Agents', item: `${SITE_URL}/for-agents/` },
       ],
     },
   },

@@ -33,8 +33,14 @@ import { Button } from './Button'
 //   3. How We Help          — what does the process look like?
 //   4. About                — who are Taran and Dave?
 //   5. For Buyers           — the adjacent path on the buy side
-//   6. Partner With Us      — the partnership path for other practitioners
-//                             (refer or co-broker, brokerage-to-brokerage)
+//   6. For Agents           — the partnership page for other Ontario
+//                             real estate practitioners (refer or
+//                             co-broker, brokerage-to-brokerage under
+//                             TRESA). Labelled "For Agents" rather than
+//                             "Partner With Us" so non-registrants
+//                             reading it don't infer they can receive a
+//                             referral fee — only RECO-registered
+//                             practitioners can.
 // Contact is the separate CTA button to the right of the nav row.
 const NAV_ITEMS = [
   { to: '/#situations', label: 'Situations We Handle', isAnchor: true },
@@ -42,7 +48,7 @@ const NAV_ITEMS = [
   { to: '/#how-we-help', label: 'How We Help', isAnchor: true },
   { to: '/about', label: 'About' },
   { to: '/buyers', label: 'For Buyers' },
-  { to: '/for-agents', label: 'Partner With Us' },
+  { to: '/for-agents', label: 'For Agents' },
 ]
 
 export function Header() {
