@@ -5,11 +5,17 @@ import { RelatedSituations } from './RelatedSituations'
 /**
  * Dedicated landing page for the "Property Disputes" situation.
  *
- * SEO target keywords (Ontario context):
- *   property dispute Ontario, co-owner dispute selling, partition sale Ontario,
- *   selling jointly owned property dispute, title cloud sale Ontario
+ * Service-page register. Answers three questions in 30 seconds:
+ *   1. Am I in the right place?           (Lead + Common situations)
+ *   2. Do these people understand me?     (Lead + Common situations)
+ *   3. What happens next?                 (Our role, Timing)
  *
- * Compliance posture (HIGHEST care — legal adjacency on every page area):
+ * SEO target keywords (Ontario context):
+ *   property dispute Ontario, co-owner dispute selling, partition sale
+ *   Ontario, selling jointly owned property dispute, title cloud sale
+ *   Ontario, lien on title selling Ontario
+ *
+ * Compliance posture (HIGHEST care — legal adjacency on every section):
  *   - "Real estate lane only" is enforced especially strictly here
  *   - Partition order process / title cure mechanics / lien resolution
  *     are NOT described (those are legal matters)
@@ -33,89 +39,64 @@ export function PropertyDisputes() {
           Anything clouding title makes a clean sale harder. Co-ownership
           friction, a partition matter, a boundary or easement question, a
           lien, a tenancy in common with three signatures needed where you
-          only have two. The sale can still happen, but it has to be handled
-          with the dispute kept in mind and the legal questions kept with the
-          lawyer. Resolve represents the real estate side of these sales, in
+          only have two. The sale can still happen, but it has to be
+          handled with the dispute kept in mind and the legal questions
+          kept with the lawyer. Resolve represents the real estate side, in
           close coordination with your real estate lawyer.
         </>
       }
     >
-      <SituationBlock label="What it covers" title="What kinds of property disputes this involves.">
+      <SituationBlock label="What it means" title="What kinds of disputes this covers.">
         <p>
-          Property and co-ownership disputes come in many shapes in Ontario.
-          The most common we see: two or more joint owners who disagree on
-          whether or how to sell. Estates with multiple beneficiaries and no
-          clear majority view on the disposition of estate real property.
-          Partition or sale applications under Ontario&rsquo;s Partition Act,
-          where a co-owner is pursuing a court-ordered sale of jointly held
-          land. Title clouds (construction or judgment liens, easements,
-          encroachments, undisclosed interests) that need addressing before
-          a buyer will close. Boundary or tenant questions that affect what
-          the property actually is.
-        </p>
-        <p>
-          Each of these has a real estate dimension (what the property is,
-          how it will sell, what buyers will pay) and a legal dimension (what
-          consents are needed, what orders apply, how proceeds are
-          distributed). Both have to be handled, but by different people.
+          Property and co-ownership disputes come in many shapes in
+          Ontario: joint owners who disagree on whether or how to sell,
+          estates with multiple beneficiaries and no clear direction,
+          partition or sale applications under Ontario&rsquo;s Partition
+          Act, title clouds (construction or judgment liens, easements,
+          encroachments), and boundary or tenancy questions affecting
+          marketability. Each one has a real estate dimension and a legal
+          dimension. Both have to be handled, but by different people.
           Resolve handles the real estate. Your real estate lawyer handles
           the legal.
         </p>
-        <p>
-          Many disputes look more intractable than they are. Done in the
-          right order, legal questions settled first, then a properly run
-          sale, most close cleanly. Done in the wrong order, or with the
-          real estate work running ahead of the legal work, they stall.
-        </p>
       </SituationBlock>
 
-      <SituationBlock label="How liens behave at closing" title="What clouds on title actually do to a sale.">
-        <p>
-          A lien on title is not a bar to listing the property. It is a
-          claim that has to be dealt with before a buyer&rsquo;s lawyer will
-          release the closing funds. In practice that means the lien gets
-          discharged out of the sale proceeds at closing, with the seller&rsquo;s
-          lawyer holding the relevant amount in trust until the discharge is
-          registered. Construction liens, judgment liens, and Canada Revenue
-          Agency liens each follow slightly different mechanics, but the
-          common element is that the closing math has to account for them
-          before anyone signs.
-        </p>
-        <p>
-          Buyers and their lawyers are usually willing to close on a property
-          with a disclosed lien, provided the math is clean and the
-          discharge is procedurally certain. What tanks deals is incomplete
-          disclosure, last-minute discoveries, or unrealistic estimates of
-          the discharge amount. Done properly, the lien is just a line item
-          in the closing statement. Done poorly, it is the reason the deal
-          falls through and the listing has to start over.
-        </p>
-        <p>
-          The same logic applies, in different forms, to partition orders,
-          condo board disputes, easement enforcements, and most other title
-          clouds. The legal mechanics are not our lane. The closing logistics
-          that get the property properly sold around them are.
-        </p>
+      <SituationBlock label="Common situations" title="Files we see most often.">
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Co-owners want to sell but cannot agree on price or timing</li>
+          <li>A partition or sale application is pending or being considered</li>
+          <li>Construction lien, judgment lien, or CRA lien on title</li>
+          <li>Boundary, easement, or encroachment question affecting the file</li>
+          <li>Multiple beneficiaries with no clear majority view</li>
+          <li>Tenant refusing to leave or cooperate with showings</li>
+          <li>A title cloud that has not yet been quantified</li>
+          <li>Litigation pending that touches the property</li>
+        </ul>
       </SituationBlock>
 
-      <SituationBlock label="Our role" title="How Resolve helps in a property dispute.">
+      <SituationBlock label="Our role" title="How Resolve handles property dispute files.">
         <p>
-          <strong className="text-ink font-semibold">A first conversation with your lawyer looped in early.</strong>{' '}
-          Property dispute sales work best when the real estate professional
-          and the lawyer are talking from day one. We can join a call with
-          your lawyer, review what needs to happen legally before any
-          listing, and map out a sequence that works.
+          <strong className="text-navy font-semibold">A first conversation with your lawyer looped in early.</strong>{' '}
+          Property dispute sales work best when the real estate
+          professional and the lawyer are talking from day one. We can join
+          a call with your lawyer, review what needs to happen legally
+          before any listing, and map a sequence that works.
         </p>
         <p>
-          <strong className="text-ink font-semibold">Coordination, not advocacy.</strong>{' '}
-          Where multiple owners or claimants are involved, we coordinate the
-          sale itself across all parties in writing, the same way we do for
-          separating spouses. Every decision is documented and shared. No
-          party feels shut out or surprised by what is happening with the
-          property.
+          <strong className="text-navy font-semibold">Coordination, not advocacy.</strong>{' '}
+          Where multiple owners or claimants are involved, we coordinate
+          the sale itself across all parties in writing. Every decision is
+          documented and shared. No party feels shut out or surprised by
+          what is happening with the property.
         </p>
         <p>
-          <strong className="text-ink font-semibold">A clean sale, ready to close.</strong>{' '}
+          <strong className="text-navy font-semibold">Real estate lane only.</strong>{' '}
+          Legal mechanics, partition orders, title cure, lien negotiation,
+          are not our lane. The closing logistics that get the property
+          properly sold around them are.
+        </p>
+        <p>
+          <strong className="text-navy font-semibold">A clean sale, ready to close.</strong>{' '}
           When the title issues are addressed and the legal authorisations
           are in place, the sale itself should be straightforward. We
           position, list, and run the property properly, then close cleanly
@@ -124,7 +105,7 @@ export function PropertyDisputes() {
         </p>
       </SituationBlock>
 
-      <SituationBlock label="Timing" title="When to reach out.">
+      <SituationBlock label="Timing" title="Why sellers contact Resolve early.">
         <p>
           Early, even before you know whether selling is the right path.
           Often a brief joint conversation with your lawyer and us is the
@@ -133,9 +114,9 @@ export function PropertyDisputes() {
         </p>
         <p>
           The first call costs nothing and commits you to nothing. If
-          selling is not the right path, or not the right path yet, we will
-          say so and stay out of the way until the legal situation is in a
-          place where a sale makes sense.
+          selling is not the right path yet, we will say so and stay out
+          of the way until the legal situation is in a place where a sale
+          makes sense.
         </p>
       </SituationBlock>
     </SituationPage>

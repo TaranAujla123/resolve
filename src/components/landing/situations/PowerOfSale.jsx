@@ -5,15 +5,21 @@ import { RelatedSituations } from './RelatedSituations'
 /**
  * Dedicated landing page for the "Power of Sale" situation.
  *
- * SEO target keywords (Ontario context):
- *   power of sale Ontario, power of sale realtor, power of sale process Ontario,
- *   selling home power of sale, what is power of sale Ontario, mortgages act
- *   redemption period
+ * Service-page register. Answers three questions in 30 seconds:
+ *   1. Am I in the right place?           (Lead + Common situations)
+ *   2. Do these people understand me?     (Lead + Common situations)
+ *   3. What happens next?                 (Our role, Timing)
  *
- * Compliance posture:
+ * SEO target keywords (Ontario context):
+ *   power of sale Ontario, power of sale realtor, selling home power of sale
+ *   Ontario, Notice of Sale Mortgages Act Ontario, equity protection power
+ *   of sale Ontario, redemption period Ontario
+ *
+ * Compliance posture (RECO Bulletin 5.3):
  *   - Educational framing, no "stop power of sale" / "save your home" claims
+ *   - "Equity protection as the priority" frames priority, not promise
  *   - No outcome guarantees, no specialist / exclusive / best language
- *   - Past-tense any legal-practice reference (none used here)
+ *   - No legal-practice references (past or present)
  *   - General-info disclaimer rendered in SituationPage shell
  */
 export function PowerOfSale() {
@@ -26,110 +32,81 @@ export function PowerOfSale() {
       situationSlug="power-of-sale"
       lead={
         <>
-          If your lender has started a power of sale, the clock is running but
-          the situation is not hopeless. The home still has equity, the equity
-          is still yours, and the way it gets handled in the next few weeks
-          will decide how much of it you keep. Resolve represents Ontario
-          homeowners through power of sale: quietly, quickly, and with that
-          equity protected at the centre of every decision through to closing.
+          If your lender has started a power of sale, the clock is running
+          but the situation is not hopeless. The equity in the home is
+          still yours, and how the next few weeks are handled will decide
+          how much of it you keep. Resolve represents Ontario homeowners
+          through power of sale: quietly, on a defensible timeline, with
+          equity protection as the priority through to closing.
         </>
       }
     >
       <SituationBlock label="What it means" title="What power of sale actually is in Ontario.">
         <p>
-          Power of sale is the legal process by which a lender in Ontario,
-          after a borrower has fallen into mortgage default, sells the property
-          to recover what is owed. Unlike foreclosure (which is the process
-          most Ontario lenders avoid), the lender does not take title to the
-          home. They sell it, recover the mortgage balance plus legal and
-          selling costs, and any surplus is returned to the homeowner. That
-          surplus is the equity worth protecting.
-        </p>
-        <p>
-          The process unfolds in stages. A Notice of Sale Under Mortgage is
-          issued and served on the borrower and any other interested parties
-          on title. A redemption period runs (usually 35 to 45 days under
-          section 32 of the Mortgages Act in Ontario, calculated from the
-          last default), and if the loan is not brought current or paid out
-          by the end of that period, the lender is entitled to take control
-          of the sale. The homeowner can still sell during the redemption
-          period, and often well past it depending on lender cooperation.
-          That window is where the most important work gets done.
-        </p>
-        <p>
-          Power of sale does not have to mean a forced auction or a
-          lender-driven price. Most homeowners have more options than they
-          realise, and the path that protects the most equity is usually the
-          one taken early, while there is still room to position the property
-          properly rather than rush it onto the market.
+          Power of sale is the legal process by which an Ontario lender,
+          after a borrower has fallen into mortgage default, sells the
+          property to recover the loan. A Notice of Sale Under Mortgage is
+          issued, a redemption period (commonly 35 to 45 days under
+          section 32 of the Mortgages Act) runs, and if the loan is not
+          brought current or paid out by the end of it, the lender becomes
+          entitled to take control of the sale. Within that window, the
+          homeowner usually has more room to act than they realise.
         </p>
       </SituationBlock>
 
-      <SituationBlock label="What it costs" title="The costs that come out of your equity.">
-        <p>
-          Once a power of sale is underway, the lender is entitled to recover
-          its enforcement costs from the sale proceeds before any surplus
-          flows back to the homeowner. These costs add up. Lender&rsquo;s
-          legal fees for the enforcement work. A bailiff or process server,
-          if used to serve the Notice of Sale. An appraisal commissioned by
-          the lender. Brokerage commission if the lender lists with their own
-          agent rather than allowing the homeowner to control the sale.
-          Sometimes condominium status certificates, title searches, and
-          property tax arrears advances.
-        </p>
-        <p>
-          The numbers vary by lender and by property, but in a typical Ontario
-          residential power of sale the lender&rsquo;s costs commonly run
-          into the low five figures by the time the property closes. Every
-          dollar of that comes out of the homeowner&rsquo;s equity. The
-          shorter the timeline runs and the less work the lender has to do,
-          the less of the surplus gets consumed.
-        </p>
-        <p>
-          What this means in practice: a sale arranged by the homeowner,
-          properly positioned, often produces a materially better net than a
-          sale taken over by the lender, even when the gross sale prices are
-          similar.
-        </p>
+      <SituationBlock label="Common situations" title="Files we see most often.">
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Notice of Sale Under Mortgage already received</li>
+          <li>Statement of Claim served</li>
+          <li>Redemption period running or recently expired</li>
+          <li>The lender pushing toward their own listing agent</li>
+          <li>Meaningful equity remaining that is worth protecting</li>
+          <li>A second mortgage or private lender involved</li>
+          <li>Default letter received but no Notice of Sale yet</li>
+          <li>Wanting to sell before the lender takes full control of the file</li>
+        </ul>
       </SituationBlock>
 
-      <SituationBlock label="Our role" title="How Resolve helps in a power of sale.">
+      <SituationBlock label="Our role" title="How Resolve handles power of sale files.">
         <p>
-          <strong className="text-ink font-semibold">A private, no-obligation conversation first.</strong>{' '}
-          We listen, look at the file, and tell you what is realistic given
-          your equity, your timeline, and your lender. If selling is not the
-          right path, we will say so. Nothing is listed, posted, or shared
-          unless you decide to move forward.
+          <strong className="text-navy font-semibold">Read the file first.</strong>{' '}
+          Before anything else, we look at where the matter actually stands:
+          Notice of Sale, redemption window, lender posture, equity picture.
+          Sometimes the right move is to bring the loan current rather than
+          sell, and we will say so.
         </p>
         <p>
-          <strong className="text-ink font-semibold">Coordination with your lawyer and lender.</strong>{' '}
-          Power of sale touches legal, financial, and real estate timelines all
-          at once. We work alongside your real estate lawyer and stay in
-          regular contact with the lender so the sale moves cleanly on a
+          <strong className="text-navy font-semibold">Coordinate with your real estate lawyer.</strong>{' '}
+          Power of sale touches legal and real estate timelines at once. We
+          work alongside the lawyer so the sale moves cleanly on a
           defensible timeline, not a panicked one.
         </p>
         <p>
-          <strong className="text-ink font-semibold">Quiet, equity-first sale strategy.</strong>{' '}
-          The property is positioned, priced, and prepared properly. We do not
-          race a listing onto a desperation discount. We run it as a real sale,
-          with the goal of preserving as much of your equity as the timeline
-          allows. Full MLS exposure remains available, and where you choose, we
-          can also bring qualified buyers from our own network.
+          <strong className="text-navy font-semibold">List with discipline, not desperation.</strong>{' '}
+          Properly priced, properly prepared. The goal is preserving as
+          much of your equity as the timeline allows, not racing a discount
+          onto MLS.
+        </p>
+        <p>
+          <strong className="text-navy font-semibold">Stay in contact with the lender.</strong>{' '}
+          A homeowner-led sale, communicated cleanly with the lender, often
+          produces a materially better net than a lender-driven listing
+          even when the gross sale prices are similar.
         </p>
       </SituationBlock>
 
-      <SituationBlock label="Timing" title="When to reach out.">
+      <SituationBlock label="Timing" title="Why sellers contact Resolve early.">
         <p>
-          Earlier is easier. The further into the redemption period you are,
-          the fewer options remain and the harder it becomes to influence the
-          sale&rsquo;s outcome. If you have just received a Notice of Sale, or
-          even just a default letter from your lender, this is the right time
-          for a conversation.
+          Earlier is easier. The further into the redemption period you
+          are, the fewer options remain and the harder it becomes to
+          influence the outcome. If you have just received a Notice of
+          Sale, or even just a default letter, this is the right time for
+          a conversation.
         </p>
         <p>
-          It costs nothing, it commits you to nothing, and it gives you a clear
-          read on what is realistic. The point is to take back some control of
-          the timeline before the lender takes it instead.
+          It costs nothing, commits you to nothing, and gives you a clear
+          read on what is realistic. The point is to take back some
+          control of the timeline before the lender takes it instead.
         </p>
       </SituationBlock>
     </SituationPage>

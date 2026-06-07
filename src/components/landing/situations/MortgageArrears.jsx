@@ -5,13 +5,19 @@ import { RelatedSituations } from './RelatedSituations'
 /**
  * Dedicated landing page for the "Mortgage Arrears" situation.
  *
+ * Service-page register. Answers three questions in 30 seconds:
+ *   1. Am I in the right place?           (Lead + Common situations)
+ *   2. Do these people understand me?     (Lead + Common situations)
+ *   3. What happens next?                 (Our role, Timing)
+ *
  * SEO target keywords (Ontario context):
  *   mortgage arrears Ontario, behind on mortgage payments sell house,
- *   missed mortgage payments selling, can't pay mortgage Ontario,
- *   sell house before foreclosure Ontario
+ *   missed mortgage payments selling, sell house before power of sale
+ *   Ontario, equity preservation arrears Ontario
  *
- * Compliance posture:
+ * Compliance posture (RECO Bulletin 5.3):
  *   - No "stop foreclosure" / "save your home" / outcome-guarantee language
+ *   - "Equity preserved as the situation allows" frames priority, not promise
  *   - No specialist / exclusive / best language
  *   - Educational framing; brokerage attribution covered by BrokerageStrip
  *     and Footer; general-info disclaimer rendered in SituationPage shell
@@ -26,113 +32,77 @@ export function MortgageArrears() {
       situationSlug="mortgage-arrears"
       lead={
         <>
-          Falling behind on mortgage payments does not happen overnight, and
-          the way out is rarely a single conversation either. But the longer
-          arrears sit, the narrower the options become and the heavier the
-          equity drain. Resolve represents Ontario homeowners considering a
-          sale to step out of arrears: privately, on a realistic timeline, and
-          with as much equity as possible kept in your hands.
+          Falling behind on mortgage payments narrows the options week by
+          week, and the equity drain compounds quickly. Resolve represents
+          Ontario homeowners considering a sale to step out of arrears:
+          privately, on a realistic timeline, with as much equity preserved
+          as the situation allows.
         </>
       }
     >
       <SituationBlock label="What it means" title="What mortgage arrears means here.">
         <p>
-          Mortgage arrears is the formal name for missed mortgage payments. In
-          Ontario, after a single missed payment most lenders will call. After
-          two or three, default letters start arriving and fees begin
-          accumulating. Around 90 to 120 days in arrears, most lenders will
-          either start a power of sale, call the loan, or pressure for a sale
-          arranged by the homeowner. Different lenders run different
-          timelines, but the direction is consistent: arrears get more
-          expensive the longer they run, and the options narrow at every step.
-        </p>
-        <p>
-          There are usually three real paths once arrears begin. Bring the loan
-          current (often through a refinance, a second mortgage, or a private
-          lender). Restructure the loan with the existing lender, through
-          forbearance, a partial payment plan, or an interest-only arrangement
-          where the lender will accept one. Or sell the home before the lender
-          forces the issue. The right path depends on the equity in the
-          property, the income picture, the timeline, and what your existing
-          lender is realistically willing to consider.
-        </p>
-        <p>
-          Selling is not always the answer. Sometimes a refinance or a
-          structured workout makes more sense. But when selling is the right
-          path, doing it before the lender takes control of the timeline is
-          what preserves the most value. The equity drain in late-stage
-          arrears (default fees, accrued interest, legal costs, eventually a
-          lender-driven listing) compounds quickly and is hard to reverse.
+          Mortgage arrears is the formal name for missed mortgage payments.
+          After two or three missed payments, default letters arrive and
+          fees begin accumulating. Around 90 to 120 days in, most Ontario
+          lenders move toward power of sale. The longer arrears run, the
+          narrower the options become and the more the equity is consumed
+          by default fees, accrued interest, and legal costs.
         </p>
       </SituationBlock>
 
-      <SituationBlock label="What lenders will and will not do" title="What homeowners commonly do not realise.">
-        <p>
-          Most Ontario lenders have a workout function before they reach for
-          power of sale. What they will consider varies. Forbearance, where
-          payments are deferred for a defined period, is more common with
-          A-tier lenders and with newer arrears files. Partial payment plans
-          can buy time when income is recovering. Interest-only arrangements
-          show up occasionally. A small number of lenders will quietly
-          re-amortise to lower the monthly payment.
-        </p>
-        <p>
-          What they generally will not do: forgive arrears, pause accruing
-          interest, or hold off enforcement forever. After a certain point the
-          file moves from collections to enforcement counsel, and once a
-          lawyer is engaged the cost calculus shifts. Most homeowners do not
-          see this transition coming until the legal fees start showing up on
-          the statement.
-        </p>
-        <p>
-          Refinancing into a private mortgage is a real option in many cases,
-          but it is rarely a long-term fix. Rates and fees on private lending
-          are materially higher than on A-tier mortgages, so a private
-          refinance buys time at a cost. Whether that trade is worth making is
-          a math problem that depends on the homeowner&rsquo;s plan for
-          getting back to conventional lending, and on the equity available to
-          absorb the higher carrying cost.
-        </p>
+      <SituationBlock label="Common situations" title="Files we see most often.">
+        <ul className="list-disc pl-5 space-y-2">
+          <li>Missed two or three payments</li>
+          <li>Default or demand letter received from the lender</li>
+          <li>Job loss, business slowdown, or income disruption</li>
+          <li>Mortgage renewal coming up with no clear path forward</li>
+          <li>Carrying costs no longer supportable on current income</li>
+          <li>Property tax arrears compounding the file</li>
+          <li>A private second mortgage approaching maturity</li>
+          <li>Wanting to sell on your terms before the lender forces the next step</li>
+        </ul>
       </SituationBlock>
 
-      <SituationBlock label="Our role" title="How Resolve helps when arrears begin.">
+      <SituationBlock label="Our role" title="How Resolve handles arrears files.">
         <p>
-          <strong className="text-ink font-semibold">A private conversation first.</strong>{' '}
-          Before anything else, we look at the file with you and tell you what
-          is realistic. Sometimes refinancing or a lender restructure makes
-          more sense than selling, and we will say so. The first conversation
-          stays private and never moves further unless you decide to move
-          forward.
+          <strong className="text-navy font-semibold">Understand where you actually stand.</strong>{' '}
+          Before anything is listed, we look at the file with you and tell
+          you what is realistic. Sometimes a refinance or a lender restructure
+          is the better path, and we will say so.
         </p>
         <p>
-          <strong className="text-ink font-semibold">Coordination, not handoff.</strong>{' '}
-          If selling is the right path, we coordinate with your real estate
-          lawyer and stay in contact with the lender. The sale moves on a
-          defensible timeline, not a panic one, and the lender stays informed
-          rather than surprised.
+          <strong className="text-navy font-semibold">Coordinate, not hand off.</strong>{' '}
+          If selling is the right path, we work alongside your real estate
+          lawyer and stay in contact with the lender so the sale moves on a
+          defensible timeline, not a panic one.
         </p>
         <p>
-          <strong className="text-ink font-semibold">Equity-first sale strategy.</strong>{' '}
+          <strong className="text-navy font-semibold">Equity-first sale strategy.</strong>{' '}
           Properly priced, properly prepared, listed for value rather than
-          rushed for a quick exit. Full MLS exposure remains available, and
+          rushed for a quick exit. Full MLS exposure remains available;
           where you choose, qualified buyers from our network can be brought
-          alongside. The goal is to leave you with as much of your equity as
-          the situation allows.
+          alongside.
+        </p>
+        <p>
+          <strong className="text-navy font-semibold">Discretion through every stage.</strong>{' '}
+          The fact that arrears are part of the story does not need to be
+          part of the listing. The sale runs as a sale, not as a distress
+          signal.
         </p>
       </SituationBlock>
 
-      <SituationBlock label="Timing" title="When to reach out.">
+      <SituationBlock label="Timing" title="Why sellers contact Resolve early.">
         <p>
           At the first sign of strain, ideally before the second missed
           payment. Once arrears are in the lender&rsquo;s system, options
-          narrow week by week, and the leverage in any conversation with the
-          lender drops with them.
+          narrow week by week, and the leverage in any conversation with
+          the lender drops with them.
         </p>
         <p>
           Even if you decide not to sell, knowing what the sale option looks
           like gives you real leverage in the conversations you are about to
-          have with your lender. The point of the first conversation is
-          clarity, not commitment.
+          have. It costs nothing and commits you to nothing.
         </p>
       </SituationBlock>
     </SituationPage>
