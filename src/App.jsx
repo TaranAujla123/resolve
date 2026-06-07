@@ -103,7 +103,7 @@ const REAL_ESTATE_AGENT_LD = {
     'Property disputes',
     'Separation and divorce real estate',
     'Estate and probate sales',
-    'Time-sensitive property sales',
+    'Time-sensitive sales',
   ],
 }
 
@@ -266,10 +266,10 @@ const PROPERTY_DISPUTES_JSONLD = situationJsonLd({
 const TIME_SENSITIVE_SALES_JSONLD = situationJsonLd({
   slug: 'time-sensitive-sales',
   name: 'Selling a Home Under a Deadline · Ontario · Resolve',
-  serviceType: 'Real Estate Representation: Time-Sensitive Property Sales (Ontario)',
-  breadcrumbName: 'Time-Sensitive Property Sales',
+  serviceType: 'Real Estate Representation: Time-Sensitive Sales (Ontario)',
+  breadcrumbName: 'Time-Sensitive Sales',
   description:
-    'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive property sales by making the right decisions within the time available, in coordination with the lenders, lawyers, and advisors already involved in the file.',
+    'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive sales by making the right decisions within the time available, in coordination with the lenders, lawyers, and advisors already involved in the file.',
 })
 
 // /for-agents page is its own thing: not a situation, but a referral
@@ -480,7 +480,7 @@ function TimeSensitiveSalesPage() {
     <>
       <Seo
         title="Selling Your Home Under a Deadline in Ontario · Resolve"
-        description="A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive property sales by making the right decisions within the time available."
+        description="A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive sales by making the right decisions within the time available."
         canonical={`${SITE_URL}/time-sensitive-sales/`}
         jsonLd={TIME_SENSITIVE_SALES_JSONLD}
       />

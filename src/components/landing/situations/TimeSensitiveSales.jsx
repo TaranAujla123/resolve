@@ -3,7 +3,7 @@ import { SituationPage, SituationBlock } from './SituationPage'
 import { RelatedSituations } from './RelatedSituations'
 
 /**
- * Dedicated landing page for the "Time-Sensitive Property Sales" situation.
+ * Dedicated landing page for the "Time-Sensitive Sales" situation.
  *
  * A service page, not an article. The three things a homeowner on a
  * deadline needs to answer in the first 30 seconds are:
@@ -19,8 +19,8 @@ import { RelatedSituations } from './RelatedSituations'
  * SEO target keywords (Ontario context):
  *   selling house with a deadline Ontario, selling house before
  *   closing on next home Ontario, relocation sale Ontario, selling
- *   house quickly without distress Ontario, time-sensitive property
- *   sale Ontario, bridge financing real estate Ontario
+ *   house quickly without distress Ontario, time-sensitive sale
+ *   Ontario, bridge financing real estate Ontario
  *
  * Compliance posture (RECO Bulletin 5.3):
  *   - "Decisions within the time available" frames discipline as
@@ -35,9 +35,9 @@ export function TimeSensitiveSales() {
   return (
     <>
     <SituationPage
-      eyebrow="Situations · Time-Sensitive Property Sales"
+      eyebrow="Situations · Time-Sensitive Sales"
       title="Selling a Home Under a Deadline in Ontario."
-      situationLabel="Time-sensitive property sale"
+      situationLabel="Time-sensitive sale"
       situationSlug="time-sensitive-sales"
       lead={
         <>
