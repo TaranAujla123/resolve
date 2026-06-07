@@ -60,7 +60,7 @@ const items = [
   },
   {
     icon: Clock,
-    title: 'Time-Sensitive Sales',
+    title: 'Time-Sensitive Property Sales',
     href: '/time-sensitive-sales',
     situation:
       'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. The calendar is the binding constraint.',

@@ -62,9 +62,9 @@ const SITUATIONS = [
   },
   {
     Icon: Clock,
-    title: 'Time-Sensitive Sales',
+    title: 'Time-Sensitive Property Sales',
     to: '/time-sensitive-sales',
-    body: 'A closing date on the next home, a job relocation, a family deadline. Move with discipline on the timeline that’s actually available.',
+    body: 'A closing date on the next home, a job relocation, a family deadline. Make the right decisions within the time actually available.',
   },
 ]
 

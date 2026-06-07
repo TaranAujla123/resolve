@@ -42,7 +42,7 @@ const ALL_SITUATIONS = {
     blurb: 'Partition, co-ownership, lien, title cloud. Coordinated with counsel.',
   },
   'time-sensitive-sales': {
-    title: 'Time-Sensitive Sales',
+    title: 'Time-Sensitive Property Sales',
     blurb: 'A closing date, a relocation, a family or financial deadline.',
   },
 }

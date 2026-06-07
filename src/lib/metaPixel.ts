@@ -43,7 +43,7 @@ const SITUATION_CATEGORY: Record<string, string> = {
   'property-disputes': 'Property disputes',
   'divorce-real-estate': 'Separation / divorce',
   'estate-sale': 'Estate sale',
-  'time-sensitive-sales': 'Time-sensitive sales',
+  'time-sensitive-sales': 'Time-sensitive property sales',
 }
 
 // Puppeteer (the prerender step) sets navigator.webdriver = true. We use
