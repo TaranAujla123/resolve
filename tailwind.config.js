@@ -109,7 +109,7 @@ export default {
         // Hero / Section components so they fit the V2 surface
         // language without needing to be rewritten.
         'hero-fade':
-          'radial-gradient(70% 70% at 90% 0%, rgba(200,165,107,0.10) 0%, rgba(200,165,107,0) 60%), radial-gradient(50% 60% at 0% 100%, rgba(232,223,203,0.85) 0%, rgba(245,241,232,0) 70%)',
+          'radial-gradient(70% 70% at 90% 0%, rgba(200,165,107,0.10) 0%, rgba(200,165,107,0) 60%), radial-gradient(50% 60% at 0% 100%, rgba(239,232,214,0.85) 0%, rgba(245,241,232,0) 70%)',
       },
     },
   },
