@@ -21,7 +21,7 @@ import { MortgageArrears } from '@/components/landing/situations/MortgageArrears
 import { EstateSale } from '@/components/landing/situations/EstateSale'
 import { DivorceRealEstate } from '@/components/landing/situations/DivorceRealEstate'
 import { PropertyDisputes } from '@/components/landing/situations/PropertyDisputes'
-import { LifeTransitions } from '@/components/landing/situations/LifeTransitions'
+import { TimeSensitiveSales } from '@/components/landing/situations/TimeSensitiveSales'
 import { ForAgents } from '@/components/landing/ForAgents'
 import { ThankYou } from '@/components/landing/ThankYou'
 
@@ -103,7 +103,7 @@ const REAL_ESTATE_AGENT_LD = {
     'Property disputes',
     'Separation and divorce real estate',
     'Estate and probate sales',
-    'Life transition sales',
+    'Time-sensitive sales',
   ],
 }
 
@@ -263,13 +263,13 @@ const PROPERTY_DISPUTES_JSONLD = situationJsonLd({
     'Co-ownership friction, partition matters, title clouds, joint-owner disputes. Resolve handles the real estate side of these Ontario sales in close coordination with your real estate lawyer.',
 })
 
-const LIFE_TRANSITIONS_JSONLD = situationJsonLd({
-  slug: 'life-transitions',
-  name: 'Selling a Home Through a Life Transition · Ontario · Resolve',
-  serviceType: 'Real Estate Representation: Life Transition Sales (Ontario)',
-  breadcrumbName: 'Life Transitions',
+const TIME_SENSITIVE_SALES_JSONLD = situationJsonLd({
+  slug: 'time-sensitive-sales',
+  name: 'Selling a Home Under a Deadline · Ontario · Resolve',
+  serviceType: 'Real Estate Representation: Time-Sensitive Sales (Ontario)',
+  breadcrumbName: 'Time-Sensitive Sales',
   description:
-    'Relocation, downsizing, retirement, health-driven moves. Resolve represents Ontario homeowners through life-transition sales on the timeline the move actually allows, in coordination with your accountant or financial planner where relevant.',
+    'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive sales with discipline on what is actually achievable in the window available, in coordination with your accountant, financial advisor, or mortgage broker where relevant.',
 })
 
 // /for-agents page is its own thing: not a situation, but a referral
@@ -475,16 +475,16 @@ function PropertyDisputesPage() {
   )
 }
 
-function LifeTransitionsPage() {
+function TimeSensitiveSalesPage() {
   return (
     <>
       <Seo
-        title="Selling Your Home Through a Life Transition in Ontario · Resolve"
-        description="Relocation, downsizing, retirement, health-driven moves. Resolve represents Ontario homeowners through life-transition sales on the timeline the move actually allows."
-        canonical={`${SITE_URL}/life-transitions/`}
-        jsonLd={LIFE_TRANSITIONS_JSONLD}
+        title="Selling Your Home Under a Deadline in Ontario · Resolve"
+        description="A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive sales with discipline on what is actually achievable."
+        canonical={`${SITE_URL}/time-sensitive-sales/`}
+        jsonLd={TIME_SENSITIVE_SALES_JSONLD}
       />
-      <LifeTransitions />
+      <TimeSensitiveSales />
     </>
   )
 }
@@ -551,7 +551,13 @@ export default function App() {
             <Route path="/estate-sale" element={<EstateSalePage />} />
             <Route path="/divorce-real-estate" element={<DivorceRealEstatePage />} />
             <Route path="/property-disputes" element={<PropertyDisputesPage />} />
-            <Route path="/life-transitions" element={<LifeTransitionsPage />} />
+            <Route path="/time-sensitive-sales" element={<TimeSensitiveSalesPage />} />
+            {/* Legacy URL kept temporarily for any inbound links from the
+                first index pass. Redirects via React Router to the new
+                canonical /time-sensitive-sales/. Will also be handled by
+                a static /life-transitions/index.html stub for direct
+                hard-navigation hits (search, bookmarks, social). */}
+            <Route path="/life-transitions" element={<Navigate to="/time-sensitive-sales" replace />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
             {/* /resources retired — was a hub that only re-listed the
                 six situation deep-dive pages. The public/resources/

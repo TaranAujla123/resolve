@@ -41,9 +41,9 @@ const ALL_SITUATIONS = {
     title: 'Property Disputes',
     blurb: 'Partition, co-ownership, lien, title cloud. Coordinated with counsel.',
   },
-  'life-transitions': {
-    title: 'Life Transitions',
-    blurb: 'Relocation, downsizing, retirement, family-driven moves.',
+  'time-sensitive-sales': {
+    title: 'Time-Sensitive Sales',
+    blurb: 'A closing date, a relocation, a family or financial deadline.',
   },
 }
 

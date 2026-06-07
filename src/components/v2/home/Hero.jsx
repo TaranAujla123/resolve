@@ -45,7 +45,7 @@ const SITUATIONS = [
   { label: 'Separation & Divorce', to: '/divorce-real-estate' },
   { label: 'Ownership Disputes',   to: '/property-disputes' },
   { label: 'Estate Sales',         to: '/estate-sale' },
-  { label: 'Time-Sensitive Sales', to: '/life-transitions' },
+  { label: 'Time-Sensitive Sales', to: '/time-sensitive-sales' },
 ]
 
 export function Hero() {

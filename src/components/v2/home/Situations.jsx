@@ -6,7 +6,7 @@ import {
   Scale,
   HeartHandshake,
   Scroll,
-  Sunrise,
+  Clock,
   ArrowUpRight,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
@@ -61,10 +61,10 @@ const SITUATIONS = [
     body: 'Carrying probate timelines, multiple beneficiaries, and the weight of the loss. We move at the pace the estate allows.',
   },
   {
-    Icon: Sunrise,
-    title: 'Life Transitions',
-    to: '/life-transitions',
-    body: 'A move, a health change, a downsizing, a retirement. Plan around your timeline rather than rushing it.',
+    Icon: Clock,
+    title: 'Time-Sensitive Sales',
+    to: '/time-sensitive-sales',
+    body: 'A closing date on the next home, a job relocation, a family deadline. Move with discipline on the timeline that’s actually available.',
   },
 ]
 

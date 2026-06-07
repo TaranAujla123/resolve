@@ -141,7 +141,7 @@ export function EstateSale() {
         </p>
       </SituationBlock>
     </SituationPage>
-    <RelatedSituations relatedSlugs={['property-disputes', 'divorce-real-estate', 'life-transitions']} />
+    <RelatedSituations relatedSlugs={['property-disputes', 'divorce-real-estate', 'time-sensitive-sales']} />
     </>
   )
 }

@@ -39,7 +39,7 @@ const ROUTES = [
   '/estate-sale',
   '/divorce-real-estate',
   '/property-disputes',
-  '/life-transitions',
+  '/time-sensitive-sales',
   '/for-agents',
   '/privacy',
   '/thanks',

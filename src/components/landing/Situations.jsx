@@ -6,7 +6,7 @@ import {
   HeartHandshake,
   Scroll,
   AlertCircle,
-  Sunrise,
+  Clock,
   Scale,
   ArrowRight,
 } from 'lucide-react'
@@ -59,13 +59,13 @@ const items = [
       'We move at the pace the estate allows, coordinate with the estate lawyer and the beneficiaries, and manage the sale with patience and care so it’s handled properly for everyone.',
   },
   {
-    icon: Sunrise,
-    title: 'Life Transitions',
-    href: '/life-transitions',
+    icon: Clock,
+    title: 'Time-Sensitive Sales',
+    href: '/time-sensitive-sales',
     situation:
-      'A job move, a health change, a downsizing, a retirement. Sometimes life calls for a property change on a real timeline.',
+      'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. The calendar is the binding constraint.',
     help:
-      'We plan the sale around your timeline rather than rushing it, handling pricing, preparation, and negotiation so the move happens on your terms, not under pressure.',
+      'We plan the sale around what is actually achievable in the window available, handling pricing, preparation, and negotiation so the move happens on your terms, not under pressure.',
   },
 ]
 
