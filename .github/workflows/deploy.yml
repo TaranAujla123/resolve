@@ -49,6 +49,10 @@ jobs:
       # title / meta / canonical / OG / JSON-LD.
       - name: Build (vite + prerender)
         run: npm run build
+        env:
+          VITE_META_CAPI_ENDPOINT: ${{ secrets.VITE_META_CAPI_ENDPOINT }}
+
+      - name: Upload Pages artifact
 
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
