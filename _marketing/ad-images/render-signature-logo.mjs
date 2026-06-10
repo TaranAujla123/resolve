@@ -1,20 +1,30 @@
 #!/usr/bin/env node
 /**
- * Render a transparent V2 Resolve signature logo for use in email
- * signatures (and any other context that needs the wordmark on a
- * light background without a baked-in stone field).
+ * Render the V2 Resolve signature marks for use in email signatures
+ * (and any other context that needs the wordmark on a light
+ * background without a baked-in stone field).
  *
- * Uses Puppeteer's omitBackground:true to produce a truly transparent
- * PNG. The HTML/CSS exactly mirrors the V2 .resolve-wordmark spec in
+ * Uses Puppeteer's omitBackground:true to produce truly transparent
+ * PNGs. The HTML/CSS exactly mirrors the V2 .resolve-wordmark spec in
  * src/index.css so the output matches the site brand pixel-for-pixel.
  *
- * Output:
- *   public/signature-logo.png  (overwrites the V1 file)
+ * Two files are rendered in one pass:
  *
- * The deployed URL https://resolveproperty.ca/signature-logo.png is
- * referenced by every signature HTML in /signatures/, so all three
- * email signatures pick up the V2 mark automatically after the next
- * GitHub Pages deploy.
+ *   public/signature-logo.png   FULL lockup — Re·solve wordmark +
+ *                               bronze divider + SELLER REPRESENTATION
+ *                               descriptor. Used by Dave's and Taran's
+ *                               personal email signatures at width=200.
+ *
+ *   public/signature-mark.png   COMPACT lockup — Re·solve wordmark only.
+ *                               No divider, no descriptor. Used by the
+ *                               catchall info@ signature at width=160
+ *                               where the descriptor would render too
+ *                               small to be useful.
+ *
+ * Both URLs (https://resolveproperty.ca/signature-logo.png and
+ * /signature-mark.png) are referenced by signature HTML files in
+ * /signatures/, so every email signature picks up the V2 mark
+ * automatically after the next GitHub Pages deploy.
  */
 
 import fs from 'node:fs/promises'
@@ -25,19 +35,37 @@ import puppeteer from 'puppeteer'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const REPO_ROOT = path.resolve(__dirname, '..', '..')
-const OUT_PATH = path.join(REPO_ROOT, 'public', 'signature-logo.png')
+const PUBLIC_DIR = path.join(REPO_ROOT, 'public')
 
 // Locked V2 brand tokens — these MUST match src/index.css :root.
 const NAVY   = '#051A2C'
 const BRONZE = '#C8A56B'
 
-// Render canvas. Output is 2x retina so the email display at width="200"
-// renders crisp on hi-DPI displays. With deviceScaleFactor:2 below this
-// becomes a 1600x640 PNG that displays sharp at 200x80 in the signature.
-const CANVAS_W = 800
-const CANVAS_H = 320
+// Render variants. Each produces a transparent PNG at 2x retina via
+// deviceScaleFactor:2 below.
+const VARIANTS = [
+  {
+    name: 'signature-logo.png',
+    canvasW: 800,
+    canvasH: 320,
+    fontSizePx: 180,
+    descriptor: true,    // include the SELLER REPRESENTATION line
+    divider: true,
+  },
+  {
+    name: 'signature-mark.png',
+    canvasW: 800,
+    canvasH: 200,
+    fontSizePx: 200,
+    descriptor: false,   // compact mark — wordmark only
+    divider: false,
+  },
+]
 
-const HTML = `<!doctype html>
+function buildHtml({ canvasW, canvasH, fontSizePx, descriptor, divider }) {
+  const dividerHtml    = divider    ? `<div class="divider"></div>`                         : ''
+  const descriptorHtml = descriptor ? `<div class="descriptor">Seller Representation</div>` : ''
+  return `<!doctype html>
 <html><head><meta charset="utf-8" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -45,18 +73,16 @@ const HTML = `<!doctype html>
 <style>
   html, body { margin: 0; padding: 0; background: transparent; }
   .stage {
-    width: ${CANVAS_W}px;
-    height: ${CANVAS_H}px;
+    width: ${canvasW}px;
+    height: ${canvasH}px;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   /* Host font-size drives every nested measurement via em — the entire
-     mark scales proportionally if this number changes. 180px gives a
-     visible descriptor at 17% (= ~30.6px before Inter's x-height drops
-     to ~22px), readable in production email clients. */
+     mark scales proportionally if this number changes. */
   .resolve-wordmark {
-    font-size: 180px;
+    font-size: ${fontSizePx}px;
     display: inline-block;
     text-align: center;
     line-height: 1;
@@ -106,13 +132,14 @@ const HTML = `<!doctype html>
 </head>
 <body>
 <div class="stage">
-  <div class="resolve-wordmark" id="lockup">
+  <div class="resolve-wordmark">
     <div class="wm">Re<span class="dot"></span>solve</div>
-    <div class="divider"></div>
-    <div class="descriptor">Seller Representation</div>
+    ${dividerHtml}
+    ${descriptorHtml}
   </div>
 </div>
 </body></html>`
+}
 
 async function run() {
   console.log('[signature-logo] launching puppeteer')
@@ -121,22 +148,25 @@ async function run() {
     args: ['--no-sandbox', '--disable-setuid-sandbox'],
   })
   const page = await browser.newPage()
-  // 2x device scale = sharp retina output. CANVAS_W*2 px wide in PNG.
-  await page.setViewport({ width: CANVAS_W, height: CANVAS_H, deviceScaleFactor: 2 })
-  await page.setContent(HTML, { waitUntil: 'networkidle0' })
-  await page.evaluate(() => document.fonts.ready)
-  // Small settle so the fonts apply before screenshot.
-  await new Promise((r) => setTimeout(r, 600))
 
-  // Screenshot the inner stage with transparent background.
-  const stage = await page.$('.stage')
-  await stage.screenshot({
-    path: OUT_PATH,
-    omitBackground: true,
-    type: 'png',
-  })
-  const stat = await fs.stat(OUT_PATH)
-  console.log(`  ✓ ${OUT_PATH} — ${(stat.size / 1024).toFixed(0)} KB`)
+  for (const v of VARIANTS) {
+    // 2x device scale = sharp retina output.
+    await page.setViewport({ width: v.canvasW, height: v.canvasH, deviceScaleFactor: 2 })
+    await page.setContent(buildHtml(v), { waitUntil: 'load' })
+    await page.evaluate(() => document.fonts.ready)
+    // Small settle so the fonts apply before screenshot.
+    await new Promise((r) => setTimeout(r, 600))
+
+    const outPath = path.join(PUBLIC_DIR, v.name)
+    const stage = await page.$('.stage')
+    await stage.screenshot({
+      path: outPath,
+      omitBackground: true,
+      type: 'png',
+    })
+    const stat = await fs.stat(outPath)
+    console.log(`  ✓ ${v.name} — ${v.canvasW * 2}x${v.canvasH * 2} — ${(stat.size / 1024).toFixed(0)} KB`)
+  }
   await browser.close()
 }
 
