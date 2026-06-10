@@ -159,12 +159,20 @@ export function AboutPage() {
           {/* Dave */}
           <figure className="rounded-[18px] border border-divider bg-stone p-6 sm:p-8 shadow-card">
             <div className="flex flex-row gap-5 sm:gap-7 items-start">
+              {/*
+                Dave's portrait is not yet shot. Rather than a "DD" monogram
+                (which read more like a redacted name than a deliberate
+                placeholder), the box holds a small italic note in the
+                same Newsreader voice as the section headings. Reads as
+                editorial restraint, not absence. Swap in the <img> the
+                moment the portrait file lands in src/.
+              */}
               <div
                 aria-hidden="true"
-                className="w-28 h-36 sm:w-40 sm:h-48 rounded-[14px] border border-divider bg-rose flex items-center justify-center flex-shrink-0"
+                className="w-28 h-36 sm:w-40 sm:h-48 rounded-[14px] border border-divider bg-rose flex items-center justify-center flex-shrink-0 px-3 text-center"
               >
-                <span className="font-display text-[2.4rem] sm:text-[3.25rem] text-bronze tracking-tight leading-none">
-                  DD
+                <span className="font-display italic text-bronze text-[0.95rem] sm:text-[1.1rem] leading-snug">
+                  Portrait<br />coming soon
                 </span>
               </div>
               <div className="flex-1 min-w-0 pt-1">
