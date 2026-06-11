@@ -194,32 +194,32 @@ function buildHtml(b) {
 
 const BOARDS = [
   {
-    name: 's2-arrears-lender-first-call.png',
+    name: 's2-arrears-sell-on-your-terms.png',
     eyebrow: 'Mortgage Arrears · Ontario',
-    hook: 'Before the lender\'s<br />first call.',
-    sub: 'Read the file early.',
-    body: 'Mortgage situations have a window with options inside them. <em>Reading the file early is what keeps the timeline yours.</em>',
+    hook: 'Sell on<br />your terms.',
+    sub: 'Equity preserved.',
+    body: 'A clean sale on your timeline protects the equity you have built. Resolve represents Ontario homeowners through complex mortgage situations — quietly, equity-first. <em>The way out is the right sale at the right time.</em>',
   },
   {
     name: 's3-tss-closing-frames-strategy.png',
     eyebrow: 'Time-Sensitive Sales · Ontario',
-    hook: 'Before the closing date<br />sets the strategy.',
-    sub: 'Frame, not panic.',
-    body: 'A close-by date does not change what the property is worth. It changes what the marketing plan has to do, week by week. <em>The deadline is the frame, not the price.</em>',
+    hook: 'A clean sale<br />on your timeline.',
+    sub: 'Closing date framed.',
+    body: 'A close-by date does not change what the property is worth. It changes what the marketing plan has to do, week by week. <em>The deadline is the frame. The sale stays clean.</em>',
   },
   {
     name: 's4-separation-matrimonial-public.png',
     eyebrow: 'Separation · Divorce · Ontario',
-    hook: 'Before the matrimonial<br />home goes public.',
-    sub: 'Quietly is a strategy choice.',
-    body: 'Privacy is part of the marketing plan, not a favour. Coordinated with both lawyers from the listing agreement forward. <em>Closed without the neighbourhood reading the story.</em>',
+    hook: 'Sell the matrimonial<br />home quietly.',
+    sub: 'Privacy is the strategy.',
+    body: 'Marketed with restraint. Coordinated with both lawyers from the listing agreement forward. <em>Closed cleanly, without the neighbourhood reading the story.</em>',
   },
   {
-    name: 's5-pos-reply-lender-lawyer.png',
+    name: 's5-pos-sell-inside-window.png',
     eyebrow: 'Power of Sale · Ontario',
-    hook: 'Before you reply<br />to the lender\'s lawyer.',
-    sub: 'Get a second read on the file.',
-    body: 'Power of sale is a statutory process, not foreclosure. It runs on a redemption window with options inside it. <em>Reading the file before the reply is what protects the equity that is still yours.</em>',
+    hook: 'Sell inside<br />the window.',
+    sub: 'Equity protected.',
+    body: 'Power of sale is a statutory process with a real timeline. Resolve runs a clean sale inside it — your terms, your equity, on schedule. <em>Move first. Stay in control of the close.</em>',
   },
 ]
 
