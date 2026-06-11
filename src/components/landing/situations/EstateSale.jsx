@@ -33,13 +33,13 @@ export function EstateSale() {
       situationSlug="estate-sale"
       lead={
         <>
-          Selling a loved one&rsquo;s home while administering an estate is
-          rarely just a transaction. There are probate timelines to
-          navigate, beneficiaries to coordinate, and the weight of the loss
-          carried through every conversation. Resolve represents executors
-          and estate trustees in Ontario through the sale: at the pace the
-          estate allows, in coordination with the estate lawyer, and
-          handled with the care the situation calls for.
+          Selling a loved one&rsquo;s home while administering an estate
+          is rarely just a transaction. There are probate timelines to
+          navigate, beneficiaries to coordinate, and the weight of the
+          loss carried through every conversation. Resolve lists and
+          sells for executors and estate trustees in Ontario: at the
+          pace the estate allows, in coordination with the estate
+          lawyer, and handled with the care the situation calls for.
         </>
       }
     >
@@ -98,9 +98,10 @@ export function EstateSale() {
       <SituationBlock label="Our role" title="How Resolve handles estate files.">
         <p>
           <strong className="text-navy font-semibold">A first conversation that respects the moment.</strong>{' '}
-          We listen, look at the file, and help you see what is realistic
-          given the probate stage, the property&rsquo;s condition, and the
-          beneficiaries&rsquo; positions. No pressure to list, ever.
+          We sit down, listen, and walk through what the sale would
+          actually look like given the probate stage, the
+          property&rsquo;s condition, and the beneficiaries&rsquo;
+          positions. No pressure to list, ever.
         </p>
         <p>
           <strong className="text-navy font-semibold">Coordination with the estate lawyer.</strong>{' '}
@@ -129,10 +130,10 @@ export function EstateSale() {
           they settle the rest of the estate first. Either is fine.
         </p>
         <p>
-          A first conversation costs nothing, commits you to nothing, and
-          gives you a clear picture of what the sale will involve when you
-          are ready to move. If the estate is not yet at a point where a
-          sale can proceed, we will say so and stay out of the way until
+          A first conversation costs nothing, commits you to nothing,
+          and lays out what the sale will involve when you are ready
+          to move. If the estate is not yet at a point where a sale
+          can proceed, we will say so and stay out of the way until
           the lawyer says otherwise.
         </p>
       </SituationBlock>

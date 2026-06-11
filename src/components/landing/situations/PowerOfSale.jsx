@@ -33,11 +33,11 @@ export function PowerOfSale() {
       lead={
         <>
           If your lender has started a power of sale, the clock is running
-          but the situation is not hopeless. The equity in the home is
-          still yours, and how the next few weeks are handled will decide
-          how much of it you keep. Resolve represents Ontario homeowners
-          through power of sale: quietly, on a defensible timeline, with
-          equity protection as the priority through to closing.
+          but the equity in the home is still yours. The next few weeks
+          decide how much of it you keep. Resolve lists and sells homes
+          for Ontario owners inside the power of sale window: quietly,
+          on your timeline, with as much of your equity preserved as
+          the sale allows.
         </>
       }
     >
@@ -49,8 +49,8 @@ export function PowerOfSale() {
           issued, a redemption period (commonly 35 to 45 days under
           section 32 of the Mortgages Act) runs, and if the loan is not
           brought current or paid out by the end of it, the lender becomes
-          entitled to take control of the sale. Within that window, the
-          homeowner usually has more room to act than they realise.
+          entitled to take control of the sale. Inside that window there
+          is usually still a clean sale you can run yourself. We run it.
         </p>
       </SituationBlock>
 
@@ -98,28 +98,28 @@ export function PowerOfSale() {
 
       <SituationBlock label="Our role" title="How Resolve handles power of sale files.">
         <p>
-          <strong className="text-navy font-semibold">Read the file first.</strong>{' '}
-          Before anything else, we look at where the matter actually stands:
-          Notice of Sale, redemption window, lender posture, equity picture.
-          Sometimes the right move is to bring the loan current rather than
-          sell, and we will say so.
+          <strong className="text-navy font-semibold">Plan the sale around the window you have.</strong>{' '}
+          We sit down with you, look at where things stand, and lay out
+          how the sale runs inside the time available. Sometimes the
+          right move is to bring the loan current rather than sell, and
+          we will say so.
         </p>
         <p>
           <strong className="text-navy font-semibold">Coordinate with your real estate lawyer.</strong>{' '}
-          Power of sale touches legal and real estate timelines at once. We
-          work alongside the lawyer so the sale moves cleanly on a
-          defensible timeline, not a panicked one.
+          Power of sale touches legal and real estate timelines at once.
+          We work alongside the lawyer so the sale moves cleanly on your
+          timeline, not a panicked one.
         </p>
         <p>
           <strong className="text-navy font-semibold">List with discipline, not desperation.</strong>{' '}
-          Properly priced, properly prepared. The goal is preserving as
-          much of your equity as the timeline allows, not racing a discount
-          onto MLS.
+          Properly priced, properly prepared. The goal is to sell on
+          your terms and protect as much of your equity as the timeline
+          allows, not race a discount onto MLS.
         </p>
         <p>
           <strong className="text-navy font-semibold">Stay in contact with the lender.</strong>{' '}
-          A homeowner-led sale, communicated cleanly with the lender, often
-          produces a materially better net than a lender-driven listing
+          A homeowner-led sale, communicated cleanly with the lender,
+          often nets you materially more than a lender-driven listing
           even when the gross sale prices are similar.
         </p>
       </SituationBlock>
@@ -127,15 +127,14 @@ export function PowerOfSale() {
       <SituationBlock label="Timing" title="Why sellers contact Resolve early.">
         <p>
           Earlier is easier. The further into the redemption period you
-          are, the fewer options remain and the harder it becomes to
-          influence the outcome. If you have just received a Notice of
-          Sale, or even just a default letter, this is the right time for
-          a conversation.
+          are, the harder it becomes to run the sale on your terms. If
+          you have just received a Notice of Sale, or even just a
+          default letter, this is the right time for a conversation.
         </p>
         <p>
-          It costs nothing, commits you to nothing, and gives you a clear
-          read on what is realistic. The point is to take back some
-          control of the timeline before the lender takes it instead.
+          It costs nothing and commits you to nothing. The point is to
+          take the timeline back before the lender takes it instead, so
+          the sale closes the way you want it to close.
         </p>
       </SituationBlock>
     </SituationPage>

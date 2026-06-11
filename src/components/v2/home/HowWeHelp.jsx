@@ -23,22 +23,22 @@ const STEPS = [
   {
     Icon: MessageCircle,
     title: 'Understand Your Situation',
-    body: 'We listen, ask the right questions and explain your options clearly.',
+    body: 'We listen, ask the right questions and lay out what the sale can look like.',
   },
   {
     Icon: Route,
-    title: 'Create a Plan',
-    body: 'We develop a strategy that protects your interests and reduces stress.',
+    title: 'Build the Sale Plan',
+    body: 'A listing strategy that protects your equity and keeps the timeline yours.',
   },
   {
     Icon: ClipboardCheck,
-    title: 'Manage the Process',
-    body: 'We handle the details, coordinate what is required and keep things moving.',
+    title: 'Run the Sale',
+    body: 'We market the property, coordinate the moving parts and keep the sale moving.',
   },
   {
     Icon: Target,
-    title: 'Maximize the Outcome',
-    body: 'Our goal is the best possible result with the least amount of stress for you.',
+    title: 'Close on Your Terms',
+    body: 'The right sale at the right time, with as little friction as the file allows.',
   },
   {
     Icon: Lock,

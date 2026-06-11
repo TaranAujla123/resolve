@@ -104,8 +104,8 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
               <p className="mt-4 text-[16px] text-navy-soft leading-relaxed">
                 No obligation, no pressure to list and nothing public. All
                 conversations stay private and some do not move further. That
-                is fine. The point is for you to see what is realistic and what
-                options you actually have.
+                is fine. The point is for you to see what a clean sale looks
+                like on your terms.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button as={Link} to="/contact" size="lg" variant="primary" className="group">

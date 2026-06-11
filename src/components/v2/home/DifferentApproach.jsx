@@ -23,10 +23,10 @@ import architectural from '/hero-architectural.jpg?url'
  * checkmarks.
  */
 const EXPECTATIONS = [
-  'Honest advice and clear options',
+  'A clear read on what the sale can look like',
   'Straightforward communication',
   'Experienced negotiation',
-  'Solutions tailored to your situation',
+  'A listing approach built around your timeline',
   'A respectful, supportive experience',
 ]
 
@@ -108,7 +108,8 @@ export function DifferentApproach() {
             <p className="mt-6 max-w-md text-[16px] leading-relaxed text-stone-soft">
               When the situation is complicated, you need more than a sign in
               the yard. You need an experienced team who can see the
-              full picture, reduce risk and guide you to the right decision.
+              full picture, run the right sale and protect what you have
+              built.
             </p>
             <Button
               as={Link}

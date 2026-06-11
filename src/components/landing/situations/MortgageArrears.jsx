@@ -33,10 +33,10 @@ export function MortgageArrears() {
       lead={
         <>
           Falling behind on mortgage payments narrows the options week by
-          week, and the equity drain compounds quickly. Resolve represents
-          Ontario homeowners considering a sale to step out of arrears:
-          privately, on a realistic timeline, with as much equity preserved
-          as the situation allows.
+          week, and the equity drain compounds fast. Resolve lists and
+          sells for Ontario homeowners stepping out of arrears on their
+          terms: privately, on a realistic timeline, with as much of
+          your equity preserved as the sale allows.
         </>
       }
     >
@@ -92,43 +92,45 @@ export function MortgageArrears() {
 
       <SituationBlock label="Our role" title="How Resolve handles arrears files.">
         <p>
-          <strong className="text-navy font-semibold">Understand where you actually stand.</strong>{' '}
-          Before anything is listed, we look at the file with you and tell
-          you what is realistic. Sometimes a refinance or a lender restructure
-          is the better path, and we will say so.
+          <strong className="text-navy font-semibold">Sit down with you before anything goes live.</strong>{' '}
+          Before any listing decision, we walk through where you stand
+          and what the sale would actually look like. Sometimes a
+          refinance or a lender restructure is the better path, and we
+          will say so.
         </p>
         <p>
           <strong className="text-navy font-semibold">Coordinate, not hand off.</strong>{' '}
-          If selling is the right path, we work alongside your real estate
-          lawyer and stay in contact with the lender so the sale moves on a
-          defensible timeline, not a panic one.
+          When selling is the right path, we work alongside your real
+          estate lawyer and stay in contact with the lender so the sale
+          moves on your timeline, not a panicked one.
         </p>
         <p>
-          <strong className="text-navy font-semibold">Equity-first sale strategy.</strong>{' '}
-          Properly priced, properly prepared, listed for value rather than
-          rushed for a quick exit. Full MLS exposure remains available;
-          where you choose, qualified buyers from our network can be brought
-          alongside.
+          <strong className="text-navy font-semibold">List the way that protects your equity.</strong>{' '}
+          Properly priced, properly prepared, listed for value rather
+          than rushed for a quick exit. Full MLS exposure stays on the
+          table; where you choose, qualified buyers from our network can
+          be brought alongside.
         </p>
         <p>
           <strong className="text-navy font-semibold">Discretion through every stage.</strong>{' '}
-          The fact that arrears are part of the story does not need to be
-          part of the listing. The sale runs as a sale, not as a distress
-          signal.
+          The fact that arrears are part of the story does not need to
+          be part of the listing. The sale runs as a sale, not as a
+          distress signal.
         </p>
       </SituationBlock>
 
       <SituationBlock label="Timing" title="Why sellers contact Resolve early.">
         <p>
           At the first sign of strain, ideally before the second missed
-          payment. Once arrears are in the lender&rsquo;s system, options
-          narrow week by week, and the leverage in any conversation with
-          the lender drops with them.
+          payment. Once arrears are in the lender&rsquo;s system, the
+          window to sell on your terms narrows week by week, and so
+          does the leverage in any conversation with the lender.
         </p>
         <p>
-          Even if you decide not to sell, knowing what the sale option looks
-          like gives you real leverage in the conversations you are about to
-          have. It costs nothing and commits you to nothing.
+          Even if you decide not to sell, knowing what the clean sale
+          looks like gives you real footing in the conversations you
+          are about to have. It costs nothing and commits you to
+          nothing.
         </p>
       </SituationBlock>
     </SituationPage>

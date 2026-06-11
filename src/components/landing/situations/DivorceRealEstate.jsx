@@ -36,12 +36,12 @@ export function DivorceRealEstate() {
       situationSlug="divorce-real-estate"
       lead={
         <>
-          Selling a home in the middle of a separation or divorce is rarely
-          just a real estate transaction. Two sets of interests, two
-          lawyers, and timelines nobody chose all have to be managed at
-          once. Resolve represents the sale itself, neutrally and
-          carefully, so the home moves cleanly while both parties hold on
-          to as much of their position as the process allows.
+          Selling a home in the middle of a separation or divorce is
+          rarely just a real estate transaction. Two sets of interests,
+          two lawyers, and timelines nobody chose all have to be
+          handled at once. Resolve lists and sells the home neutrally,
+          on a timeline both parties can live with, so each side holds
+          on to as much of their position as the sale allows.
         </>
       }
     >
@@ -85,8 +85,8 @@ export function DivorceRealEstate() {
         <p>
           The right time for the real estate conversation is once both
           lawyers have aligned on the broad plan, and before any showing
-          or listing decision is made. Early enough that the calendar
-          can be built properly rather than retrofit a rushed timeline.
+          or listing decision is made. Early enough that the sale runs
+          on a built calendar rather than a retrofit one.
         </p>
       </SituationBlock>
 
@@ -113,10 +113,10 @@ export function DivorceRealEstate() {
         </p>
         <p>
           <strong className="text-navy font-semibold">A fair sale process, not a tilted one.</strong>{' '}
-          Pricing, preparation, marketing, and showing decisions are made
-          on the property&rsquo;s merits, not either party&rsquo;s
-          preferences. The objective is the cleanest possible sale
-          outcome.
+          Pricing, preparation, marketing, and showing decisions are
+          made on the property&rsquo;s merits, not either party&rsquo;s
+          preferences. The objective is the cleanest sale the property
+          can produce.
         </p>
         <p>
           <strong className="text-navy font-semibold">Coordination with both lawyers through closing.</strong>{' '}
@@ -143,9 +143,9 @@ export function DivorceRealEstate() {
         <p>
           If you are the only party who has decided yet, a first
           conversation can still be useful for understanding what the
-          process will look like. The sale itself will not move forward
+          sale will look like. The sale itself will not move forward
           until both parties&rsquo; consent is properly in place, but
-          mapping the path out costs nothing and commits you to nothing.
+          mapping the path costs nothing and commits you to nothing.
         </p>
       </SituationBlock>
     </SituationPage>

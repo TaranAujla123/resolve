@@ -224,7 +224,7 @@ const POWER_OF_SALE_JSONLD = situationJsonLd({
   serviceType: 'Real Estate Representation: Power of Sale (Ontario)',
   breadcrumbName: 'Power of Sale',
   description:
-    'Power of sale is a lender-driven sale process in Ontario. Resolve represents homeowners navigating it quietly and quickly, with equity protection at the centre of every decision through to closing.',
+    'Power of sale is a lender-driven sale process in Ontario. Resolve lists and sells for homeowners inside the window: quietly, on your timeline, with as much of your equity preserved as the sale allows.',
 })
 
 const MORTGAGE_ARREARS_JSONLD = situationJsonLd({
@@ -233,7 +233,7 @@ const MORTGAGE_ARREARS_JSONLD = situationJsonLd({
   serviceType: 'Real Estate Representation: Mortgage Arrears (Ontario)',
   breadcrumbName: 'Mortgage Arrears',
   description:
-    'Behind on mortgage payments and considering a sale? Resolve represents Ontario homeowners through the arrears window, privately and on a defensible timeline, with equity protection at the centre.',
+    'Behind on mortgage payments and considering a sale? Resolve lists and sells for Ontario homeowners stepping out of arrears on their terms: privately, on a realistic timeline, with the equity you have built protected as the sale allows.',
 })
 
 const ESTATE_SALE_JSONLD = situationJsonLd({
@@ -251,7 +251,7 @@ const DIVORCE_JSONLD = situationJsonLd({
   serviceType: 'Real Estate Representation: Separation and Divorce Sales (Ontario)',
   breadcrumbName: 'Separation or Divorce',
   description:
-    'Selling the matrimonial home during a separation or divorce in Ontario. Resolve represents the sale itself, neutrally, in coordination with both parties’ real estate lawyers.',
+    'Selling the matrimonial home during a separation or divorce in Ontario. Resolve lists and sells the home neutrally, on a timeline both parties can live with, in coordination with both parties’ real estate lawyers.',
 })
 
 const PROPERTY_DISPUTES_JSONLD = situationJsonLd({
@@ -269,7 +269,7 @@ const TIME_SENSITIVE_SALES_JSONLD = situationJsonLd({
   serviceType: 'Real Estate Representation: Time-Sensitive Sales (Ontario)',
   breadcrumbName: 'Time-Sensitive Sales',
   description:
-    'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive sales by making the right decisions within the time available, in coordination with the lenders, lawyers, and advisors already involved in the file.',
+    'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve runs time-sensitive sales for Ontario homeowners on their terms inside the time available, in coordination with the lenders, lawyers, and advisors already involved in the file.',
 })
 
 // /for-agents page is its own thing: not a situation, but a partnership
@@ -396,7 +396,7 @@ function PowerOfSalePage() {
     <>
       <Seo
         title="Power of Sale in Ontario · Selling Your Home · Resolve"
-        description="Power of sale is a lender-driven sale process in Ontario. Resolve represents homeowners navigating it quietly and quickly, with equity protection at the centre of every decision."
+        description="Power of sale is a lender-driven sale process in Ontario. Resolve lists and sells for homeowners inside the window: quietly, on your timeline, with as much of your equity preserved as the sale allows."
         canonical={`${SITE_URL}/power-of-sale/`}
         jsonLd={POWER_OF_SALE_JSONLD}
       />
@@ -410,7 +410,7 @@ function MortgageArrearsPage() {
     <>
       <Seo
         title="Mortgage Arrears in Ontario · Selling Your Home · Resolve"
-        description="Behind on mortgage payments and considering a sale? Resolve represents Ontario homeowners through the arrears window, privately and on a defensible timeline."
+        description="Behind on mortgage payments and considering a sale? Resolve lists and sells for Ontario homeowners stepping out of arrears on their terms: privately, on a realistic timeline, with the equity you have built protected as the sale allows."
         canonical={`${SITE_URL}/mortgage-arrears/`}
         jsonLd={MORTGAGE_ARREARS_JSONLD}
       />
@@ -457,7 +457,7 @@ function DivorceRealEstatePage() {
     <>
       <Seo
         title="Selling Your Home During Separation or Divorce in Ontario · Resolve"
-        description="Selling the matrimonial home during a separation or divorce in Ontario. Resolve represents the sale itself, neutrally and carefully, in coordination with both parties’ real estate lawyers."
+        description="Selling the matrimonial home during a separation or divorce in Ontario. Resolve lists and sells the home neutrally, on a timeline both parties can live with, in coordination with both parties’ real estate lawyers."
         canonical={`${SITE_URL}/divorce-real-estate/`}
         jsonLd={DIVORCE_JSONLD}
       />
@@ -485,7 +485,7 @@ function TimeSensitiveSalesPage() {
     <>
       <Seo
         title="Selling Your Home Under a Deadline in Ontario · Resolve"
-        description="A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve represents Ontario homeowners through time-sensitive sales by making the right decisions within the time available."
+        description="A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve runs time-sensitive sales for Ontario homeowners on their terms inside the time available, in coordination with the lenders, lawyers, and advisors already on the file."
         canonical={`${SITE_URL}/time-sensitive-sales/`}
         jsonLd={TIME_SENSITIVE_SALES_JSONLD}
       />

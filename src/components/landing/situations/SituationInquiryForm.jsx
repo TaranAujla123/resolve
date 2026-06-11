@@ -106,8 +106,8 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
             <p className="mt-5 text-[16px] text-navy-soft leading-relaxed max-w-xl mx-auto">
               No obligation, no pressure to list and nothing public. All
               conversations stay private and some do not move further. That
-              is fine. The point is for you to see what is realistic and what
-              options you actually have.
+              is fine. The point is for you to see what a clean sale looks
+              like on your terms.
             </p>
           </div>
 

@@ -37,12 +37,12 @@ export function PropertyDisputes() {
       lead={
         <>
           Anything clouding title makes a clean sale harder. Co-ownership
-          friction, a partition matter, a boundary or easement question, a
-          lien, a tenancy in common with three signatures needed where you
-          only have two. The sale can still happen, but it has to be
-          handled with the dispute kept in mind and the legal questions
-          kept with the lawyer. Resolve represents the real estate side, in
-          close coordination with your real estate lawyer.
+          friction, a partition matter, a boundary or easement question,
+          a lien, a tenancy in common with three signatures needed
+          where you only have two. The sale can still happen, on your
+          terms, with the dispute kept in mind and the legal questions
+          kept with the lawyer. Resolve lists and sells the property
+          itself, in close coordination with your real estate lawyer.
         </>
       }
     >
@@ -105,9 +105,10 @@ export function PropertyDisputes() {
         <p>
           <strong className="text-navy font-semibold">A first conversation with your lawyer looped in early.</strong>{' '}
           Property dispute sales work best when the real estate
-          professional and the lawyer are talking from day one. We can join
-          a call with your lawyer, review what needs to happen legally
-          before any listing, and map a sequence that works.
+          practice and the lawyer are talking from day one. We can join
+          a call with your lawyer, confirm what needs to happen
+          legally before any listing, and map a sale sequence that
+          works on your timeline.
         </p>
         <p>
           <strong className="text-navy font-semibold">Coordination, not advocacy.</strong>{' '}
@@ -124,11 +125,11 @@ export function PropertyDisputes() {
         </p>
         <p>
           <strong className="text-navy font-semibold">A clean sale, ready to close.</strong>{' '}
-          When the title issues are addressed and the legal authorisations
-          are in place, the sale itself should be straightforward. We
-          position, list, and run the property properly, then close cleanly
-          so the proceeds can be distributed according to your
-          lawyer&rsquo;s instructions.
+          When the title issues are addressed and the legal
+          authorisations are in place, the sale itself should be
+          straightforward. We position, list, market, and close the
+          property properly so the proceeds can be distributed
+          according to your lawyer&rsquo;s instructions.
         </p>
       </SituationBlock>
 
@@ -141,9 +142,9 @@ export function PropertyDisputes() {
         </p>
         <p>
           The first call costs nothing and commits you to nothing. If
-          selling is not the right path yet, we will say so and stay out
-          of the way until the legal situation is in a place where a sale
-          makes sense.
+          selling is not the right path yet, we will say so and stay
+          out of the way until the legal situation is in a place where
+          a sale makes sense.
         </p>
       </SituationBlock>
     </SituationPage>

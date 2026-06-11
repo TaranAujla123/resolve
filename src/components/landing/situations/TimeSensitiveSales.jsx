@@ -43,8 +43,8 @@ export function TimeSensitiveSales() {
         <>
           A time-sensitive sale is any situation where the timeline
           matters as much as the property itself. The goal is not
-          simply to sell quickly. The goal is to make the right
-          decisions within the time available.
+          simply to sell quickly. The goal is to sell on your terms
+          inside the time available.
         </>
       }
     >
@@ -57,8 +57,7 @@ export function TimeSensitiveSales() {
         </p>
         <p>
           In each of these, the goal is not simply to sell quickly. It
-          is to make the right decisions within the time actually
-          available.
+          is to run the right sale inside the time actually available.
         </p>
       </SituationBlock>
 
@@ -77,31 +76,32 @@ export function TimeSensitiveSales() {
 
       <SituationBlock label="Our role" title="How Resolve handles time-sensitive files.">
         <p>
-          <strong className="text-navy font-semibold">Understand the real timeline.</strong>{' '}
-          The first step is determining what flexibility actually
-          exists. Many sellers have more options than they realise.
-          Others have less. Understanding the timeline properly helps
-          avoid rushed decisions and unnecessary pressure.
+          <strong className="text-navy font-semibold">Map the real timeline.</strong>{' '}
+          The first step is sorting out what flexibility actually
+          exists. Many sellers have more room than they realise.
+          Others have less. Either way, knowing the timeline early
+          keeps the sale out of rushed decisions and unnecessary
+          pressure.
         </p>
         <p>
-          <strong className="text-navy font-semibold">Build the right strategy.</strong>{' '}
+          <strong className="text-navy font-semibold">Build the right sale strategy.</strong>{' '}
           Every property and timeline are different. Sometimes the
-          best approach is immediate market exposure. Sometimes a
-          short preparation period creates a significantly better
-          result. The strategy should follow the facts of the file,
-          not the assumptions a calendar makes.
+          best move is immediate market exposure. Sometimes a short
+          preparation period nets you materially more. The strategy
+          should follow the facts of your sale, not the assumptions
+          a calendar makes.
         </p>
         <p>
           <strong className="text-navy font-semibold">Coordinate the moving parts.</strong>{' '}
           Time-sensitive sales often involve lenders, lawyers,
           accountants, family members, executors, mortgage brokers,
-          or financial advisors. We help keep the process moving so
-          deadlines do not become problems.
+          or financial advisors. We keep the sale moving so deadlines
+          do not become problems.
         </p>
         <p>
           <strong className="text-navy font-semibold">Focus on certainty.</strong>{' '}
           Speed matters. Certainty matters too. A sale that closes is
-          often more valuable than a higher offer that never reaches
+          worth more than a higher offer that never reaches
           completion.
         </p>
       </SituationBlock>
@@ -113,9 +113,9 @@ export function TimeSensitiveSales() {
           options, stronger buyer interest, and a better outcome.
         </p>
         <p>
-          An early conversation provides clarity on what is possible,
-          what risks exist, and what strategy makes sense for your
-          situation. It costs nothing and commits you to nothing.
+          An early conversation lays out what the sale can look like,
+          what the risks are, and what strategy fits your timeline. It
+          costs nothing and commits you to nothing.
         </p>
       </SituationBlock>
     </SituationPage>
