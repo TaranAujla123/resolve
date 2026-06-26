@@ -43,6 +43,7 @@ const ROUTES = [
   '/for-agents',
   '/privacy',
   '/thanks',
+  '/get-help',
 ]
 const PORT = 4321
 const NAV_TIMEOUT_MS = 30_000
