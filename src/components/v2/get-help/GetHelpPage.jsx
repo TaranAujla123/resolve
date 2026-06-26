@@ -317,17 +317,27 @@ export function GetHelpPage() {
             {/* RIGHT — compact photo + trust stack + About link */}
             <div className="lg:pt-2">
               <div className="flex gap-5 items-start">
-                <div className="w-[120px] sm:w-[140px] aspect-[4/5] shrink-0 bg-mist border border-divider rounded-[8px] overflow-hidden">
-                  <img
-                    src="/get-help/taran-headshot.jpg"
-                    alt="Taran Aujla, Salesperson at Resolve"
-                    className="w-full h-full object-cover"
-                    loading="eager"
-                    onError={(e) => {
-                      e.currentTarget.style.display = 'none'
-                    }}
-                  />
-                </div>
+                {/*
+                  Rendered as a background-image div (not <img>) so browser
+                  hover overlays (Edge's "Visual Search" toolbar, Chrome's
+                  reverse-image-search, etc.) do not appear over the
+                  portrait. Accessibility preserved via role + aria-label.
+                  user-select-none + select-none + draggable suppression
+                  block any residual save/drag interactions.
+                */}
+                <div
+                  role="img"
+                  aria-label="Taran Aujla, Salesperson at Resolve"
+                  className="w-[120px] sm:w-[140px] aspect-[4/5] shrink-0 bg-mist border border-divider rounded-[8px] bg-cover bg-center select-none"
+                  style={{
+                    backgroundImage: "url('/get-help/taran-headshot.jpg')",
+                    WebkitUserSelect: 'none',
+                    userSelect: 'none',
+                    WebkitTouchCallout: 'none',
+                  }}
+                  onDragStart={(e) => e.preventDefault()}
+                  onContextMenu={(e) => e.preventDefault()}
+                />
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-navy text-[15px] leading-tight">Taran Aujla</p>
                   <p className="mt-0.5 text-[12.5px] text-navy-soft">Salesperson</p>
