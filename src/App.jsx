@@ -13,6 +13,7 @@ import { HomePage as V2HomePage } from '@/components/v2/home/HomePage'
 import { ContactPage } from '@/components/v2/contact/ContactPage'
 import { AboutPage } from '@/components/v2/about/AboutPage'
 import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
+import { GetDealsPage } from '@/components/v2/get-deals/GetDealsPage'
 
 // Existing pages — kept as-is, restyled in-place to V2 surfaces and
 // typography via the updated SituationPage shell + Tailwind tokens.
@@ -580,6 +581,13 @@ export default function App() {
                 hero when ?cat= is missing or unrecognized. */}
             <Route path="/get-help" element={<GetHelpPage />} />
             <Route path="/get-help/" element={<GetHelpPage />} />
+            {/* /get-deals/ — paid Meta traffic landing page for BUYER side.
+                noindex,nofollow so it does not compete with the SEO /buyers
+                page. Accepts ?cat=mls | cash | investor for the dynamic
+                hero variant; falls back to the default off-market deals
+                hero when ?cat= is missing or unrecognized. */}
+            <Route path="/get-deals" element={<GetDealsPage />} />
+            <Route path="/get-deals/" element={<GetDealsPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
