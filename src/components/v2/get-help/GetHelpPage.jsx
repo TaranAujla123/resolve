@@ -345,7 +345,7 @@ export function GetHelpPage() {
                     to="/about"
                     className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-bronze hover:text-bronze-deep transition-colors group"
                   >
-                    Learn more about Taran
+                    Learn more about Taran &amp; Dave
                     <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
                   </Link>
                 </div>
