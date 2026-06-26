@@ -12,6 +12,7 @@ import { BrokerageStrip } from '@/components/landing/BrokerageStrip'
 import { HomePage as V2HomePage } from '@/components/v2/home/HomePage'
 import { ContactPage } from '@/components/v2/contact/ContactPage'
 import { AboutPage } from '@/components/v2/about/AboutPage'
+import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
 
 // Existing pages — kept as-is, restyled in-place to V2 surfaces and
 // typography via the updated SituationPage shell + Tailwind tokens.
@@ -572,6 +573,13 @@ export default function App() {
             <Route path="/resources" element={<Navigate to="/#situations" replace />} />
             <Route path="/privacy" element={<PrivacyPage />} />
             <Route path="/thanks" element={<ThanksPage />} />
+            {/* /get-help/ — paid Meta traffic landing page. noindex,nofollow
+                so it does not compete with the SEO situation pages. Accepts
+                ?cat=mortgage | separation | estate | tss | disputes for the
+                dynamic hero variant; falls back to the default seller-rep
+                hero when ?cat= is missing or unrecognized. */}
+            <Route path="/get-help" element={<GetHelpPage />} />
+            <Route path="/get-help/" element={<GetHelpPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
