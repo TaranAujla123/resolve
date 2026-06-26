@@ -85,8 +85,8 @@ export function GetDealsPage() {
     setError(null)
     const form = e.currentTarget
     const data = new FormData(form)
-    if (!data.get('first_name') || !data.get('phone')) {
-      setError('First name and phone are required so we can reach you.')
+    if (!data.get('first_name') || !data.get('phone') || !data.get('email')) {
+      setError('First name, phone, and email are required so we can reach you and send matches.')
       return
     }
 
@@ -113,6 +113,7 @@ export function GetDealsPage() {
           event_source_url: window.location.href,
           user_data: {
             phone: (data.get('phone') || '').toString(),
+            email: (data.get('email') || '').toString(),
           },
           custom_data: {
             content_name: 'Resolve Get Deals Form',
@@ -231,6 +232,26 @@ export function GetDealsPage() {
                           autoComplete="tel"
                           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
                         />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="gd-email"
+                          className="block text-[13px] font-medium text-navy-soft mb-1.5"
+                        >
+                          Email <span className="text-bronze">*</span>
+                        </label>
+                        <input
+                          id="gd-email"
+                          name="email"
+                          type="email"
+                          inputMode="email"
+                          required
+                          autoComplete="email"
+                          className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
+                        />
+                        <p className="mt-1.5 text-[11.5px] text-navy-mute">
+                          We send property briefings here. Phone is for the callback.
+                        </p>
                       </div>
                     </div>
 
