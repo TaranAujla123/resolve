@@ -328,15 +328,14 @@ const SINGLE_BOARDS = [
 const CAROUSEL_SLIDES = [
   {
     type: 'hook',
-    hook: 'The best GTA deals<br />never hit MLS.',
-    sub: 'Off-market. Direct from seller side.',
-    hookSize: 80,
+    hook: 'Tired of MLS<br />bidding wars?',
+    sub: 'We help you avoid them.',
     outName: 'buyer-carousel-v4-01-hook.png',
   },
   {
     type: 'hook',
     hook: 'Distressed sellers.<br />Estate trustees.<br />Court deadlines.',
-    sub: 'That seller pressure is buyer opportunity.',
+    sub: 'These sales never go to public bidding.',
     hookSize: 72,
     outName: 'buyer-carousel-v4-02-access.png',
   },
