@@ -341,10 +341,6 @@ export function GetHelpPage() {
                 <div className="flex-1 min-w-0">
                   <p className="font-semibold text-navy text-[15px] leading-tight">Taran Aujla</p>
                   <p className="mt-0.5 text-[12.5px] text-navy-soft">Salesperson</p>
-                  <p className="mt-2 text-[12px] text-navy-soft leading-[1.4]">
-                    Resolve · HomeLife G1 Realty Inc., Brokerage
-                  </p>
-                  <p className="text-[12px] text-navy-mute">RECO Reg. No. 6024721</p>
                   <Link
                     to="/about"
                     className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-bronze hover:text-bronze-deep transition-colors group"
