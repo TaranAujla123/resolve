@@ -328,15 +328,16 @@ const SINGLE_BOARDS = [
 const CAROUSEL_SLIDES = [
   {
     type: 'hook',
-    hook: 'Tired of MLS<br />bidding wars?',
-    sub: 'There is another door.',
+    hook: 'The best GTA deals<br />never hit MLS.',
+    sub: 'Off-market. Direct from seller side.',
+    hookSize: 80,
     outName: 'buyer-carousel-v4-01-hook.png',
   },
   {
     type: 'hook',
-    hook: 'Off-market deals.<br />Motivated GTA sellers.',
-    sub: 'Power of Sale. Arrears. Estate. Deadlines.',
-    hookSize: 80,
+    hook: 'Distressed sellers.<br />Estate trustees.<br />Court deadlines.',
+    sub: 'That seller pressure is buyer opportunity.',
+    hookSize: 72,
     outName: 'buyer-carousel-v4-02-access.png',
   },
   {
