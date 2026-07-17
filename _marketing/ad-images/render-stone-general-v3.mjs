@@ -67,10 +67,11 @@ const SLIDES = [
   },
   {
     type: 'cta',
-    hook: 'See how<br />we can help.',
-    ctaButton: 'Learn more',
-    ctaUrl: 'resolveproperty.ca',
-    outName: 'stone-general-v3-05-cta.png',
+    hook: 'Get a plan.<br />In one call.',
+    sub: 'Free 15-minute call. No commitment.',
+    ctaPhone: '(365) 645-7332',
+    ctaUrl: 'resolveproperty.ca/get-help',
+    outName: 'stone-general-v4-05-cta.png',
   },
 ]
 
@@ -79,8 +80,9 @@ function buildHtml(slide, slideIndex) {
   if (slide.type === 'cta') {
     mainBlock = `
       <h2 class="hook hook--cta">${slide.hook}</h2>
-      <div class="cta-button">${slide.ctaButton}</div>
-      <p class="cta-url">${slide.ctaUrl}</p>
+      ${slide.sub ? `<p class="sub">${slide.sub}</p>` : ''}
+      ${slide.ctaPhone ? `<div class="cta-phone">${slide.ctaPhone}</div>` : ''}
+      ${slide.ctaUrl ? `<p class="cta-url">${slide.ctaUrl}</p>` : ''}
     `
   } else {
     mainBlock = `
@@ -148,26 +150,25 @@ function buildHtml(slide, slideIndex) {
     margin: 32px 0 0;
     max-width: 820px;
   }
-  .cta-button {
+  .cta-phone {
     display: inline-block;
-    margin: 48px 0 0;
-    padding: 22px 48px;
+    margin: 40px 0 0;
+    padding: 22px 44px;
     background: ${BRONZE};
     color: ${STONE};
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    border-radius: 8px;
+    font-size: 44px;
+    letter-spacing: 0.01em;
+    border-radius: 12px;
   }
   .cta-url {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 28px;
+    font-size: 24px;
     color: ${BRONZE};
     letter-spacing: 0.02em;
-    margin: 36px 0 0;
+    margin: 28px 0 0;
   }
   .footer {
     display: flex;
