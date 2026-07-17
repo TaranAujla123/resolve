@@ -21,7 +21,6 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 const situations = [
   'Mortgage arrears',
   'Power of sale',
-  'Separation / divorce',
   'Estate sale',
   'Partnership / ownership dispute',
   'Other',

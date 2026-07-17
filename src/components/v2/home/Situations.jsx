@@ -14,20 +14,17 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
 /**
  * Situations — V2 home page "Situations We Handle" section.
  *
- * Rebuilt in the V2 editorial register from the existing site's
- * homepage Situations grid. Each tile is a quiet link to the deep-dive
- * page: bronze line-icon, navy title in Newsreader, a single
- * tightening line in Inter, and a small arrow affordance bronze on
- * hover.
+ * Four financially-motivated lanes only. Separation/divorce and
+ * ownership-dispute files were removed from the practice in a
+ * deliberate refocus toward files with cleaner mechanics, motivated
+ * sellers, and shorter cycle times. Mortgage Arrears + Power of Sale
+ * are the paid-media anchor lanes (leads); Estate + TSS are the
+ * referral-driven adjacencies.
  *
  * Surface: Stone (matches the Hero — two consecutive Stone sections
  * is intentional; the card lift creates the visual break, not a
  * surface swap). Anchor #situations so the header nav's "Situations
  * We Handle" link lands cleanly here.
- *
- * Icons match the existing landing/Situations.jsx mapping (same six
- * file types in the same order) so anyone arriving from a deep-dive
- * page in a separate tab recognises the lane immediately.
  */
 const SITUATIONS = [
   {
@@ -41,18 +38,6 @@ const SITUATIONS = [
     title: 'Power of Sale',
     to: '/power-of-sale',
     body: 'Enforcement is underway and the clock is running. Sell properly on your timeline rather than the bank’s.',
-  },
-  {
-    Icon: Scale,
-    title: 'Property Disputes',
-    to: '/property-disputes',
-    body: 'Co-ownership, boundary, tenancy, lien, or partition matters. Anything clouding title can still be sold cleanly.',
-  },
-  {
-    Icon: HeartHandshake,
-    title: 'Separation or Divorce',
-    to: '/divorce-real-estate',
-    body: 'Selling the matrimonial home rarely is just about the house. Neutral, coordinated, fair to both sides.',
   },
   {
     Icon: Scroll,
@@ -80,7 +65,7 @@ export function Situations() {
         <div className="max-w-3xl">
           <Eyebrow>Situations We Handle</Eyebrow>
           <h2 className="mt-5 font-display font-medium text-navy text-display-lg">
-            Six situations.{' '}
+            Four situations.{' '}
             <span className="italic text-bronze">One approach.</span>
           </h2>
           {/*

@@ -40,8 +40,8 @@ const PIXEL_ID: string = META_PIXEL_ID
 const SITUATION_CATEGORY: Record<string, string> = {
   'mortgage-arrears': 'Mortgage arrears',
   'power-of-sale': 'Power of sale',
-  'property-disputes': 'Property disputes',
-  'divorce-real-estate': 'Separation / divorce',
+  // property-disputes and divorce-real-estate removed as part of the
+  // 4-lane practice refocus. Kept out of ViewContent event tracking.
   'estate-sale': 'Estate sale',
   'time-sensitive-sales': 'Time-sensitive sales',
 }

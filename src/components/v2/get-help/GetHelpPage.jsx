@@ -46,12 +46,6 @@ const HERO_VARIANTS = {
     sub: 'Notice from the bank? Sell on your terms.',
     label: 'Mortgage / Power of Sale',
   },
-  separation: {
-    eyebrow: 'SEPARATION · ONTARIO',
-    headline: 'Selling the matrimonial home?',
-    sub: 'Quietly. On your timeline.',
-    label: 'Separation / Divorce',
-  },
   estate: {
     eyebrow: 'ESTATE · ONTARIO',
     headline: 'Estate property to sell?',
@@ -64,12 +58,10 @@ const HERO_VARIANTS = {
     sub: 'We work the window.',
     label: 'Time-Sensitive Sale',
   },
-  disputes: {
-    eyebrow: 'OWNERSHIP DISPUTES · ONTARIO',
-    headline: 'Co-owners. Different goals?',
-    sub: 'One clean sale.',
-    label: 'Ownership Disputes',
-  },
+  /* separation and disputes hero variants removed as part of the 4-lane
+     practice refocus. Any ?cat=separation or ?cat=disputes URL falls
+     through to the default (general) hero via the ternary in the
+     component body. Kept referenceable in git history for context. */
   default: {
     eyebrow: 'SELLER REPRESENTATION · ONTARIO',
     headline: 'A property situation that needs handling?',
@@ -157,7 +149,7 @@ export function GetHelpPage() {
     <>
       <Seo
         title={`${variant.headline} · Resolve`}
-        description="Resolve handles complex Ontario property sales — mortgage arrears, power of sale, separation, estate, ownership disputes, time-sensitive closings. Free 15-minute confidential call. We call back within 24 hours."
+        description="Resolve handles complex Ontario property sales — mortgage arrears, power of sale, estate, time-sensitive closings. Free 15-minute confidential call. We call back within 24 hours."
         canonical="https://resolveproperty.ca/get-help/"
         noindex={true}
       />
@@ -359,8 +351,6 @@ export function GetHelpPage() {
                   'Power of Sale + Notice of Sale files',
                   'Mortgage arrears + default letters',
                   'Estate trustee sales',
-                  'Separation + matrimonial home sales',
-                  'Ownership disputes',
                   'Court-deadline closings',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5">
@@ -428,7 +418,7 @@ export function GetHelpPage() {
               About Resolve
             </p>
             <p className="mt-6 text-[16px] text-navy-soft leading-[1.6]">
-              Resolve handles complex Ontario property sales — power of sale, mortgage arrears, separation, estate, ownership disputes, time-sensitive closings. The practice is defined by the type of property situation, not the location. We work across Ontario.
+              Resolve handles complex Ontario property sales — power of sale, mortgage arrears, estate, time-sensitive closings. The practice is defined by the type of property situation, not the location. We work across Ontario.
             </p>
             <p className="mt-4 text-[17px] text-navy leading-[1.55] font-medium">
               The priority is always the homeowner&rsquo;s equity.
@@ -437,7 +427,7 @@ export function GetHelpPage() {
               Whatever stage you are at — a default letter, a Notice of Sale, or just behind on payments — Resolve helps you sell on your timeline, with equity preserved, before the lender forces it.
             </p>
             <p className="mt-6 text-[13px] text-navy-mute">
-              Years of combined experience handling complex Ontario property sales — from mortgage arrears and Power of Sale to estate, separation, and court-deadline closings.
+              Years of combined experience handling complex Ontario property sales — from mortgage arrears and Power of Sale to estate and court-deadline closings.
             </p>
           </div>
         </div>

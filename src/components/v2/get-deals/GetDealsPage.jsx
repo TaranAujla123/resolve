@@ -422,7 +422,7 @@ export function GetDealsPage() {
               Why Resolve has these files
             </p>
             <p className="mt-6 text-[16px] text-navy-soft leading-[1.6]">
-              Resolve represents Ontario homeowners through complex property sales — power of sale, mortgage arrears, estate, separation, ownership disputes, and court-deadline closings. These sellers often need to close fast, close quietly, or close on a tight timeline.
+              Resolve represents Ontario homeowners through complex property sales — power of sale, mortgage arrears, estate, and court-deadline closings. These sellers often need to close fast, close quietly, or close on a tight timeline.
             </p>
             <p className="mt-4 text-[17px] text-navy leading-[1.55] font-medium">
               That seller pressure is buyer opportunity.
@@ -431,7 +431,7 @@ export function GetDealsPage() {
               Cash buyers and qualified investors with clear criteria get briefed first. Disclosed representation, properly papered. We work the GTA. We visit properties with you; we vet the file before we drive.
             </p>
             <p className="mt-6 text-[13px] text-navy-mute">
-              Years of combined experience handling complex Ontario property sales — from mortgage arrears and Power of Sale to estate, separation, and court-deadline closings.
+              Years of combined experience handling complex Ontario property sales — from mortgage arrears and Power of Sale to estate and court-deadline closings.
             </p>
           </div>
         </div>

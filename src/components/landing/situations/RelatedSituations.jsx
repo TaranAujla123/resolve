@@ -29,17 +29,12 @@ const ALL_SITUATIONS = {
     title: 'Power of Sale',
     blurb: 'Lender enforcement is running. Move before it accelerates.',
   },
-  'divorce-real-estate': {
-    title: 'Separation or Divorce',
-    blurb: 'The matrimonial home, handled neutrally between both parties.',
-  },
+  /* divorce-real-estate and property-disputes retired as part of the
+     4-lane practice refocus. Related-situation cross-links on the
+     remaining pages route only among Arrears + PoS + Estate + TSS. */
   'estate-sale': {
     title: 'Estate or Probate',
     blurb: 'Executor-led sales, at the pace the estate allows.',
-  },
-  'property-disputes': {
-    title: 'Property Disputes',
-    blurb: 'Partition, co-ownership, lien, title cloud. Coordinated with counsel.',
   },
   'time-sensitive-sales': {
     title: 'Time-Sensitive Sales',

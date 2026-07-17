@@ -63,9 +63,9 @@ export function AboutPage() {
             </p>
             <p>
               Whether the challenge involves mortgage arrears, power of
-              sale, separation, ownership disputes, estate matters, or a
-              time-sensitive sale, our role is simple: provide practical
-              seller representation when selling is not straightforward.
+              sale, an estate matter, or a time-sensitive sale, our role
+              is simple: provide practical seller representation when
+              selling is not straightforward.
             </p>
           </div>
         </div>

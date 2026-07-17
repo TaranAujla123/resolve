@@ -72,9 +72,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 const filesWeTake = [
   'Power of sale and pre-power-of-sale files',
   'Mortgage arrears with a limited remaining timeline',
-  'Matrimonial home sales during separation or divorce',
   'Estate sales with executors or multiple beneficiaries',
-  'Property disputes (partition, co-ownership, lien, title cloud)',
   'Time-sensitive deadlines (relocation, closing on the next home)',
   'Sensitive sales requiring discretion',
 ]
@@ -157,8 +155,8 @@ export function ForAgents() {
               and complex seller files actually need.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
-              Power of sale. Mortgage arrears. Estate sales. Matrimonial home
-              sales. Property disputes. Time-sensitive deadlines. Refer the
+              Power of sale. Mortgage arrears. Estate sales. Time-sensitive
+              deadlines. Refer the
               file and step back, or stay on as co-listing brokerage. Either
               way, the operational weight stays with us.
             </p>

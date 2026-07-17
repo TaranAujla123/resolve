@@ -34,16 +34,17 @@ import heroStillLife from '/hero-stilllife.jpg?url'
  *     full stone weight so it still passes the "clearly and
  *     prominently identified" RECO Bulletin 5.1 test
  */
-// Six situation labels rendered as outline pills directly under the
+// Four situation labels rendered as outline pills directly under the
 // headline so a visitor recognises "this is property — and is for me"
-// in the first second. Pills wrap naturally (2 columns mobile, 3 on
-// tablet+, fits in 2 lines on the desktop hero column). Each pill
-// links to its deep-dive page.
+// in the first second. Practice deliberately focused on financially-
+// motivated sales; separation/divorce and ownership-dispute files were
+// intentionally removed from the practice — those files carry emotional
+// and litigious loads that do not match the practitioner voice or fit.
+// Order deliberate: Arrears + PoS lead (primary paid-media anchors),
+// Estate + TSS follow (referral-driven, cleaner mechanics).
 const SITUATIONS = [
   { label: 'Mortgage Arrears',     to: '/mortgage-arrears' },
   { label: 'Power of Sale',        to: '/power-of-sale' },
-  { label: 'Separation & Divorce', to: '/divorce-real-estate' },
-  { label: 'Ownership Disputes',   to: '/property-disputes' },
   { label: 'Estate Sales',         to: '/estate-sale' },
   { label: 'Time-Sensitive Sales', to: '/time-sensitive-sales' },
 ]

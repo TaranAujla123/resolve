@@ -134,7 +134,7 @@ export function MortgageArrears() {
         </p>
       </SituationBlock>
     </SituationPage>
-    <RelatedSituations relatedSlugs={['power-of-sale', 'divorce-real-estate', 'estate-sale']} />
+    <RelatedSituations relatedSlugs={['power-of-sale', 'estate-sale', 'time-sensitive-sales']} />
     </>
   )
 }

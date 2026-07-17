@@ -556,8 +556,14 @@ export default function App() {
             <Route path="/power-of-sale" element={<PowerOfSalePage />} />
             <Route path="/mortgage-arrears" element={<MortgageArrearsPage />} />
             <Route path="/estate-sale" element={<EstateSalePage />} />
-            <Route path="/divorce-real-estate" element={<DivorceRealEstatePage />} />
-            <Route path="/property-disputes" element={<PropertyDisputesPage />} />
+            {/* /divorce-real-estate and /property-disputes routes retired
+                as part of the 4-lane practice refocus. Practice deliberately
+                stopped taking separation/divorce and ownership-dispute files
+                (emotional load + litigious mechanics did not match the
+                practitioner voice). Any inbound links redirect to the
+                homepage so bookmark/search hits still land somewhere useful. */}
+            <Route path="/divorce-real-estate" element={<Navigate to="/" replace />} />
+            <Route path="/property-disputes" element={<Navigate to="/" replace />} />
             <Route path="/time-sensitive-sales" element={<TimeSensitiveSalesPage />} />
             {/* Legacy URL kept temporarily for any inbound links from the
                 first index pass. Redirects via React Router to the new

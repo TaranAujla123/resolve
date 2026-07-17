@@ -39,7 +39,7 @@ export function WhyResolve() {
               more than a decade of combined experience
             </strong>{' '}
             in complex Ontario real estate, from power of sale and estate files to
-            separations and partnership disputes.
+            estate work, and time-sensitive sales.
           </>
         }
       />

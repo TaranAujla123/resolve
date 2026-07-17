@@ -32,24 +32,6 @@ const items = [
       'We move quickly to list and position the property properly and coordinate with your lawyer and lender, so the sale is handled in good order with your remaining equity kept front and centre.',
   },
   {
-    icon: Scale,
-    title: 'Property Disputes',
-    href: '/property-disputes',
-    situation:
-      'Co-ownership friction, a boundary or tenancy question, a lien, or a partition matter. Anything clouding title makes a clean sale harder.',
-    help:
-      'We listen carefully, coordinate with your real estate lawyer to address the title and ownership issues, and work to bring the property to a clean, orderly sale.',
-  },
-  {
-    icon: HeartHandshake,
-    title: 'Separation or Divorce',
-    href: '/divorce-real-estate',
-    situation:
-      'Selling the matrimonial home during a separation is rarely just about the house. Two sets of interests, raw emotions, and hard timelines all have to be managed at once.',
-    help:
-      'We keep communication neutral, coordinate with both parties’ lawyers, and run a clean, fair sale so neither side feels disadvantaged by how the home was handled.',
-  },
-  {
     icon: Scroll,
     title: 'Estate or Probate',
     href: '/estate-sale',

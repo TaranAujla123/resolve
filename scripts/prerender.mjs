@@ -37,8 +37,6 @@ const ROUTES = [
   '/power-of-sale',
   '/mortgage-arrears',
   '/estate-sale',
-  '/divorce-real-estate',
-  '/property-disputes',
   '/time-sensitive-sales',
   '/for-agents',
   '/privacy',

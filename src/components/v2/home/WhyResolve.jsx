@@ -30,7 +30,7 @@ const POINTS = [
     Icon: Award,
     title: 'A decade of combined experience',
     body:
-      'Across complex Ontario files — power of sale and estate work to separations and partnership disputes.',
+      'Across complex Ontario files — power of sale, mortgage arrears, estate work, and time-sensitive sales.',
   },
   {
     Icon: Network,

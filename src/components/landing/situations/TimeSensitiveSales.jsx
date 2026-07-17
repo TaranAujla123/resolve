@@ -119,7 +119,7 @@ export function TimeSensitiveSales() {
         </p>
       </SituationBlock>
     </SituationPage>
-    <RelatedSituations relatedSlugs={['estate-sale', 'divorce-real-estate', 'mortgage-arrears']} />
+    <RelatedSituations relatedSlugs={['estate-sale', 'power-of-sale', 'mortgage-arrears']} />
     </>
   )
 }
