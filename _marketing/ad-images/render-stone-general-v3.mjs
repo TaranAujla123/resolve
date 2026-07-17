@@ -46,10 +46,10 @@ const SLIDES = [
   },
   {
     type: 'hook',
-    hook: 'Arrears. Power of Sale.<br />Divorce. Estate.',
-    sub: 'Disputes. Deadlines. We list them all.',
+    hook: 'Arrears. Power of Sale.<br />Estate. Deadlines.',
+    sub: 'Four situations. We list them all.',
     hookSize: 76,
-    outName: 'stone-general-v3-02-situations.png',
+    outName: 'stone-general-v4-02-situations.png',
   },
   {
     type: 'hook',
@@ -61,9 +61,9 @@ const SLIDES = [
   {
     type: 'hook',
     hook: 'We work with<br />your advisors.',
-    sub: 'Lawyers, accountants, trustees, mediators.',
+    sub: 'Lawyers, accountants, trustees, financial advisors.',
     hookSize: 88,
-    outName: 'stone-general-v3-04-coordination.png',
+    outName: 'stone-general-v4-04-coordination.png',
   },
   {
     type: 'cta',
