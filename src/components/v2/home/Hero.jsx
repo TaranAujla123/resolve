@@ -133,9 +133,13 @@ export function Hero() {
                 Layout: 2-column grid on mobile (consistent alignment
                 regardless of label length), 3 per row on tablet+, on
                 desktop they wrap naturally within the text column. */}
+            {/* 2x2 grid across every breakpoint since the practice
+                narrowed to 4 lanes. Row 1 (Arrears + PoS) reads as the
+                paid-media anchor pair; Row 2 (Estate + TSS) reads as
+                the referral-driven pair. */}
             <ul className="
               mt-7 grid gap-2
-              grid-cols-2 sm:grid-cols-3
+              grid-cols-2
             ">
               {SITUATIONS.map((s) => (
                 <li key={s.label} className="flex">
