@@ -78,7 +78,37 @@ export function Footer() {
             <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-bronze">
               Contact
             </p>
+            {/*
+              Fast-lane CTAs. The /get-help and /get-deals pages are the
+              highest-converting entry points on the site — 2-field form,
+              above-fold, 24-hour callback promise. Giving them a bronze
+              hairline separator + bronze font weight so they read as
+              "start here if you want a fast reply" without overwhelming
+              the rest of the Contact list. Site-visitors who don't come
+              in via paid ads still get the same fast-lane path.
+            */}
             <ul className="mt-5 space-y-3 text-[14px] leading-relaxed text-stone-soft">
+              <li>
+                <Link
+                  to="/get-help"
+                  className="inline-flex items-center gap-1.5 font-semibold text-bronze hover:text-bronze-deep transition-colors"
+                >
+                  Sellers — Free 15-min call
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/get-deals"
+                  className="inline-flex items-center gap-1.5 font-semibold text-bronze hover:text-bronze-deep transition-colors"
+                >
+                  Investors — Join the buyer list
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </li>
+              <li aria-hidden="true" className="pt-1">
+                <div className="h-px w-8 bg-stone-mute/40" />
+              </li>
               <li>
                 <a
                   href="tel:+13656457332"
