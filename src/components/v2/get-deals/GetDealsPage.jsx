@@ -36,26 +36,26 @@ import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 const HERO_VARIANTS = {
   mls: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'Tired of MLS bidding wars?',
-    sub: 'Off-market deals from motivated GTA sellers.',
+    headline: 'Skip the bidding war.',
+    sub: 'Off-market GTA files — first look, before they list.',
     label: 'MLS Frustration',
   },
   cash: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'Cash buyer with clear criteria?',
-    sub: 'Distressed-seller files briefed before MLS.',
-    label: 'Cash Buyer',
+    headline: 'Ready to close quickly?',
+    sub: 'Off-market files for cash and pre-approved buyers who can move first.',
+    label: 'Close-Ready Buyer',
   },
   investor: {
     eyebrow: 'BUYER NETWORK · GTA',
     headline: 'Building your portfolio?',
-    sub: 'Off-market GTA opportunities. Direct.',
+    sub: 'Off-market GTA opportunities. Direct. Discreet.',
     label: 'Active Investor',
   },
   default: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'Looking for off-market GTA deals?',
-    sub: 'From motivated sellers. Direct.',
+    headline: 'See files before they list.',
+    sub: 'Off-market GTA deals from motivated sellers.',
     label: 'General Buyer',
   },
 }
@@ -354,7 +354,7 @@ export function GetDealsPage() {
                   'Power of Sale + Notice of Sale properties',
                   'Pre-foreclosure pipeline',
                   'Estate + court-deadline closings',
-                  'Cash-buyer-preferred sellers',
+                  'Close-ready buyers get first look',
                   'Disclosed representation, properly papered',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5">
@@ -428,7 +428,7 @@ export function GetDealsPage() {
               That seller pressure is buyer opportunity.
             </p>
             <p className="mt-4 text-[16px] text-navy-soft leading-[1.6]">
-              Cash buyers and qualified investors with clear criteria get briefed first. Disclosed representation, properly papered. We work the GTA. We visit properties with you; we vet the file before we drive.
+              Close-ready buyers — cash or pre-approved — and qualified investors with clear criteria get briefed first. Disclosed representation, properly papered. We work the GTA. We visit properties with you; we vet the file before we drive.
             </p>
             <p className="mt-6 text-[13px] text-navy-mute">
               Years of combined experience handling complex Ontario property sales — from mortgage arrears and Power of Sale to estate and court-deadline closings.
