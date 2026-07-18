@@ -36,26 +36,26 @@ import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 const HERO_VARIANTS = {
   mls: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'Skip the bidding war.',
-    sub: 'Off-market GTA files — first look, before they list.',
-    label: 'MLS Frustration',
+    headline: 'Where the value actually is.',
+    sub: 'Motivated sellers. Undervalued. Off-market — before it lists.',
+    label: 'Value Hunter',
   },
   cash: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'Ready to close quickly?',
-    sub: 'Off-market files for cash and pre-approved buyers who can move first.',
+    headline: 'The deals average buyers skip.',
+    sub: 'Off-market. Motivated GTA sellers. Not turnkey. For buyers who can close quickly.',
     label: 'Close-Ready Buyer',
   },
   investor: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'Building your portfolio?',
-    sub: 'Off-market GTA opportunities. Direct. Discreet.',
+    headline: 'Diamond-in-the-rough properties.',
+    sub: 'Value-add files from motivated GTA sellers. For close-ready portfolio buyers.',
     label: 'Active Investor',
   },
   default: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'See files before they list.',
-    sub: 'Off-market GTA deals from motivated sellers.',
+    headline: 'The deals average buyers skip.',
+    sub: 'Off-market GTA files. Motivated sellers. Not turnkey. Close-ready buyers only.',
     label: 'General Buyer',
   },
 }
@@ -351,10 +351,10 @@ export function GetDealsPage() {
               <ul className="mt-6 space-y-2 text-[13px] text-navy-soft border-t border-divider pt-5">
                 {[
                   'Off-market files (before MLS)',
+                  'Motivated sellers with pressure to close',
+                  'Value-add and non-turnkey opportunities',
                   'Power of Sale + Notice of Sale properties',
-                  'Pre-foreclosure pipeline',
                   'Estate + court-deadline closings',
-                  'Close-ready buyers get first look',
                   'Disclosed representation, properly papered',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5">
@@ -428,7 +428,7 @@ export function GetDealsPage() {
               That seller pressure is buyer opportunity.
             </p>
             <p className="mt-4 text-[16px] text-navy-soft leading-[1.6]">
-              Close-ready buyers — cash or pre-approved — and qualified investors with clear criteria get briefed first. Disclosed representation, properly papered. We work the GTA. We visit properties with you; we vet the file before we drive.
+              Ontario is a buyer&rsquo;s market right now &mdash; but the deals worth having aren&rsquo;t on Realtor.ca. They&rsquo;re off-market, they often need work, and the sellers are motivated for a reason. If you can close quickly and you don&rsquo;t need turnkey, that&rsquo;s exactly what we send you. Disclosed representation, properly papered. We work the GTA and visit properties with you; we vet the file before we drive.
             </p>
             <p className="mt-6 text-[13px] text-navy-mute">
               Years of combined experience handling complex Ontario property sales — from mortgage arrears and Power of Sale to estate and court-deadline closings.

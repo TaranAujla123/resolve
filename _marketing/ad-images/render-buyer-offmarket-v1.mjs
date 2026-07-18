@@ -29,7 +29,7 @@ import puppeteer from 'puppeteer'
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 const REPO_ROOT = path.resolve(__dirname, '..', '..')
-const OUT_PATH = path.join(REPO_ROOT, 'public', 'ads', 'buyer-offmarket-v1.png')
+const OUT_PATH = path.join(REPO_ROOT, 'public', 'ads', 'buyer-offmarket-v2.png')
 
 const NAVY      = '#051A2C'
 const NAVY_MUTE = 'rgba(5, 26, 44, 0.55)'
@@ -167,11 +167,12 @@ const HTML = `<!doctype html>
       <div class="top-row">
         <p class="eyebrow">GTA &middot; Real Estate</p>
       </div>
-      <h2 class="hook">The best deals<br />never hit MLS.</h2>
-      <p class="sub">Buyer network for investors.</p>
+      <h2 class="hook">The deals<br />average buyers<br />skip.</h2>
+      <p class="sub">Off-market. Motivated sellers. Not turnkey.</p>
       <p class="body-copy">
-        Written criteria at intake. Files matched as they surface, before they list.
-        Quiet buyer representation across the GTA.
+        Undervalued GTA files from sellers with pressure to close. For buyers who can
+        move quickly and don&rsquo;t need turnkey. Written criteria at intake &mdash; files
+        matched as they surface, before they list.
       </p>
       <div class="cta-button">Join the buyer list</div>
     </div>
