@@ -92,6 +92,12 @@ export function MortgageArrears() {
 
       <SituationBlock label="Our role" title="How Resolve handles arrears files.">
         <p>
+          <strong className="text-navy font-semibold">Buy you the time to sell on your terms.</strong>{' '}
+          We work directly with your lender and their lawyers to buy you
+          the time to sell on your terms &mdash; before they take over
+          and control the sale themselves.
+        </p>
+        <p>
           <strong className="text-navy font-semibold">Sit down with you before anything goes live.</strong>{' '}
           Before any listing decision, we walk through where you stand
           and what the sale would actually look like. Sometimes a

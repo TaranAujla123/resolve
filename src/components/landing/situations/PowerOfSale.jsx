@@ -98,6 +98,12 @@ export function PowerOfSale() {
 
       <SituationBlock label="Our role" title="How Resolve handles power of sale files.">
         <p>
+          <strong className="text-navy font-semibold">Buy you the time to sell on your terms.</strong>{' '}
+          We work directly with your lender and their lawyers to buy you
+          the time to sell on your terms &mdash; before they take over
+          and control the sale themselves.
+        </p>
+        <p>
           <strong className="text-navy font-semibold">Plan the sale around the window you have.</strong>{' '}
           We sit down with you, look at where things stand, and lay out
           how the sale runs inside the time available. Sometimes the

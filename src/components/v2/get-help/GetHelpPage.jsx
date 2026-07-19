@@ -178,6 +178,14 @@ export function GetHelpPage() {
                     {variant.sub}
                   </p>
 
+                  {cat === 'mortgage' && (
+                    <p className="mt-6 text-[15.5px] text-navy leading-relaxed max-w-md border-l-2 border-bronze pl-4">
+                      We work directly with your lender and their lawyers to buy
+                      you the time to sell on your terms &mdash; before they
+                      take over and control the sale themselves.
+                    </p>
+                  )}
+
                   <p className="mt-6 text-[16px] text-navy-soft leading-relaxed max-w-md">
                     Free 15-minute call with a real estate professional.
                     <span className="block mt-1 text-navy">
