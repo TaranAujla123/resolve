@@ -42,9 +42,11 @@ export function TimeSensitiveSales() {
       lead={
         <>
           A time-sensitive sale is any situation where the timeline
-          matters as much as the property itself. The goal is not
-          simply to sell quickly. The goal is to sell on your terms
-          inside the time available.
+          matters as much as the property itself. Estate and probate
+          sales, court-deadline closings, a firm closing date on the
+          next home, a relocation, a health or family timeline. The
+          goal is not simply to sell quickly. The goal is to sell on
+          your terms inside the time available.
         </>
       }
     >
@@ -63,15 +65,19 @@ export function TimeSensitiveSales() {
 
       <SituationBlock label="Common situations" title="Files we see most often.">
         <ul className="list-disc pl-5 space-y-2">
-          <li>Relocating for work</li>
-          <li>A firm closing date on another property</li>
-          <li>Estate administration timelines</li>
-          <li>Separation or family transitions</li>
-          <li>Financial deadlines or carrying costs</li>
+          <li>Estate and probate sales, with court deadlines and multiple beneficiaries</li>
+          <li>A firm closing date on another property already purchased</li>
+          <li>Relocating for work or a family move</li>
+          <li>Court-ordered or court-deadline closings</li>
+          <li>Financial deadlines or carrying costs the owner cannot continue to absorb</li>
           <li>Vacant properties that cannot sit indefinitely</li>
-          <li>Health or lifestyle changes requiring a move</li>
-          <li>Situations where certainty is more important than waiting for the perfect buyer</li>
+          <li>Health or lifestyle changes requiring a move on a defined schedule</li>
+          <li>Situations where certainty of close matters more than waiting for the perfect buyer</li>
         </ul>
+        <p className="text-[15px] text-navy-mute leading-relaxed pt-2">
+          Estate and probate sales are a category of their own. Longer read on the mechanics, executor duties, and coordination with the estate lawyer on the{' '}
+          <a href="/estate-sale/" className="text-bronze hover:text-bronze-deep underline underline-offset-2">Estate or Probate</a> page.
+        </p>
       </SituationBlock>
 
       <SituationBlock label="Our role" title="How Resolve handles time-sensitive files.">

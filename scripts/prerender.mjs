@@ -38,6 +38,7 @@ const ROUTES = [
   '/mortgage-arrears',
   '/estate-sale',
   '/time-sensitive-sales',
+  '/financial-pressure',
   '/for-agents',
   '/privacy',
   '/thanks',

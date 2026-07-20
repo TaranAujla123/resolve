@@ -45,7 +45,7 @@ import heroStillLife from '/hero-stilllife.jpg?url'
 const SITUATIONS = [
   { label: 'Mortgage Arrears',     to: '/mortgage-arrears' },
   { label: 'Power of Sale',        to: '/power-of-sale' },
-  { label: 'Estate Sales',         to: '/estate-sale' },
+  { label: 'Financial Pressure',   to: '/financial-pressure' },
   { label: 'Time-Sensitive Sales', to: '/time-sensitive-sales' },
 ]
 

@@ -358,8 +358,8 @@ export function GetHelpPage() {
                 {[
                   'Power of Sale + Notice of Sale files',
                   'Mortgage arrears + default letters',
-                  'Estate trustee sales',
-                  'Court-deadline closings',
+                  'Renewal shock + unaffordable carrying costs',
+                  'Estate, court-deadline, and time-sensitive closings',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5">
                     <span className="text-bronze mt-1.5 leading-none">•</span>

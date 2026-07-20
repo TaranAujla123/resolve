@@ -24,6 +24,7 @@ import { EstateSale } from '@/components/landing/situations/EstateSale'
 import { DivorceRealEstate } from '@/components/landing/situations/DivorceRealEstate'
 import { PropertyDisputes } from '@/components/landing/situations/PropertyDisputes'
 import { TimeSensitiveSales } from '@/components/landing/situations/TimeSensitiveSales'
+import { FinancialPressure } from '@/components/landing/situations/FinancialPressure'
 import { ForAgents } from '@/components/landing/ForAgents'
 import { ThankYou } from '@/components/landing/ThankYou'
 
@@ -271,7 +272,16 @@ const TIME_SENSITIVE_SALES_JSONLD = situationJsonLd({
   serviceType: 'Real Estate Representation: Time-Sensitive Sales (Ontario)',
   breadcrumbName: 'Time-Sensitive Sales',
   description:
-    'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve runs time-sensitive sales for Ontario homeowners on their terms inside the time available, in coordination with the lenders, lawyers, and advisors already involved in the file.',
+    'A closing date on the next home, an estate or probate timeline, a job relocation, a family or health timeline, a financial deadline. Resolve runs time-sensitive sales for Ontario homeowners on their terms inside the time available, in coordination with the lenders, lawyers, executors, and advisors already on the file.',
+})
+
+const FINANCIAL_PRESSURE_JSONLD = situationJsonLd({
+  slug: 'financial-pressure',
+  name: 'Selling Under Financial Pressure Before Arrears · Ontario · Resolve',
+  serviceType: 'Real Estate Representation: Financial Pressure and Renewal Shock (Ontario)',
+  breadcrumbName: 'Financial Pressure',
+  description:
+    'Mortgage renewal shock, negative cash flow rental, preconstruction closing, HELOC or private second maxed, income drop against a high carry. The strongest seller position in Ontario is before the first missed payment. Resolve lists and sells for homeowners acting from strength, before arrears begin.',
 })
 
 // /for-agents page is its own thing: not a situation, but a partnership
@@ -487,11 +497,25 @@ function TimeSensitiveSalesPage() {
     <>
       <Seo
         title="Selling Your Home Under a Deadline in Ontario · Resolve"
-        description="A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. Resolve runs time-sensitive sales for Ontario homeowners on their terms inside the time available, in coordination with the lenders, lawyers, and advisors already on the file."
+        description="A closing date on the next home, an estate or probate timeline, a job relocation, a family or health timeline, a financial deadline. Resolve runs time-sensitive sales for Ontario homeowners on their terms inside the time available, in coordination with the lenders, lawyers, executors, and advisors already on the file."
         canonical={`${SITE_URL}/time-sensitive-sales/`}
         jsonLd={TIME_SENSITIVE_SALES_JSONLD}
       />
       <TimeSensitiveSales />
+    </>
+  )
+}
+
+function FinancialPressurePage() {
+  return (
+    <>
+      <Seo
+        title="Mortgage Renewal Shock and Financial Pressure · Sell From Strength · Resolve"
+        description="You do not have to wait until you are behind. The strongest seller position in Ontario is before the first missed payment. Resolve lists and sells for homeowners under financial pressure — renewal shock, negative cash flow rental, preconstruction closing, HELOC or private second maxed — acting from strength, before arrears begin."
+        canonical={`${SITE_URL}/financial-pressure/`}
+        jsonLd={FINANCIAL_PRESSURE_JSONLD}
+      />
+      <FinancialPressure />
     </>
   )
 }
@@ -565,6 +589,7 @@ export default function App() {
             <Route path="/divorce-real-estate" element={<Navigate to="/" replace />} />
             <Route path="/property-disputes" element={<Navigate to="/" replace />} />
             <Route path="/time-sensitive-sales" element={<TimeSensitiveSalesPage />} />
+            <Route path="/financial-pressure" element={<FinancialPressurePage />} />
             {/* Legacy URL kept temporarily for any inbound links from the
                 first index pass. Redirects via React Router to the new
                 canonical /time-sensitive-sales/. Will also be handled by

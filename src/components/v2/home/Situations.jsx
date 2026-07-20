@@ -7,6 +7,7 @@ import {
   HeartHandshake,
   Scroll,
   Clock,
+  TrendingDown,
   ArrowUpRight,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
@@ -40,16 +41,16 @@ const SITUATIONS = [
     body: 'Enforcement is underway and the clock is running. Sell properly on your timeline rather than the bank’s.',
   },
   {
-    Icon: Scroll,
-    title: 'Estate or Probate',
-    to: '/estate-sale',
-    body: 'Carrying probate timelines, multiple beneficiaries, and the weight of the loss. We move at the pace the estate allows.',
+    Icon: TrendingDown,
+    title: 'Financial Pressure',
+    to: '/financial-pressure',
+    body: 'Not behind yet, but the carry has become unsustainable. A renewal that doubled the payment, a property that costs more than it returns, a closing you cannot fund. Options are widest exactly now, before arrears start.',
   },
   {
     Icon: Clock,
     title: 'Time-Sensitive Sales',
     to: '/time-sensitive-sales',
-    body: 'A closing date on the next home, a job relocation, a family deadline. Make the right decisions within the time actually available.',
+    body: 'A closing date on the next home, an estate or probate timeline, a job relocation, a family deadline. Make the right decisions within the time available.',
   },
 ]
 

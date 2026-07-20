@@ -1,6 +1,7 @@
 import React from 'react'
 import { Hero } from './Hero'
 import { Situations } from './Situations'
+import { BothSides } from './BothSides'
 import { WhyResolve } from './WhyResolve'
 import { HowWeHelp } from './HowWeHelp'
 import { DifferentApproach } from './DifferentApproach'
@@ -55,6 +56,7 @@ export function HomePage() {
     <>
       <Hero />
       <Situations />
+      <BothSides />
       <DifferentApproach />
       <WhyResolve />
       <HowWeHelp />
