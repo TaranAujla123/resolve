@@ -84,10 +84,10 @@ export function Header() {
             <ResolveWordmark
               variant={barSolid ? 'light' : 'dark'}
               showDescriptor={false}
-              className="h-6 sm:h-7"
+              className="h-[30px] sm:h-[35px]"
             />
-            <span aria-hidden="true" className="mt-[5px] h-px w-[78%] bg-bronze/55" />
-            <span className="mt-[4px] font-sans font-semibold text-[8px] sm:text-[9px] tracking-[0.34em] uppercase text-bronze pl-[0.34em]">
+            <span aria-hidden="true" className="mt-[6px] h-px w-[78%] bg-bronze/55" />
+            <span className="mt-[5px] font-sans font-semibold text-[10px] sm:text-[11px] tracking-[0.34em] uppercase text-bronze pl-[0.34em]">
               Real Estate
             </span>
           </span>
