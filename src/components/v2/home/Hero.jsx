@@ -75,11 +75,15 @@ export function Hero() {
 
       <div className="relative container w-full pt-28 pb-14 sm:pt-40 sm:pb-20">
         <div className="max-w-[600px]">
-          {/* Bronze hairline — the V2 editorial signature. */}
-          <div aria-hidden="true" className="h-px w-12 bg-bronze mb-6" />
-          <p className="font-sans font-semibold text-[12.5px] uppercase tracking-[0.18em] text-bronze">
-            Seller Representation for Ontario Homeowners
-          </p>
+          {/* Eyebrow: bronze hairline + label on one row (the "for Ontario
+              homeowners" qualifier lives in the sub-headline below, so the
+              eyebrow stays short). */}
+          <div className="flex items-center gap-4">
+            <span aria-hidden="true" className="h-px w-12 bg-bronze flex-shrink-0" />
+            <p className="font-sans font-semibold text-[12.5px] uppercase tracking-[0.18em] text-bronze">
+              Seller Representation
+            </p>
+          </div>
 
           {/* Poppins 600 stone, with the one bronze Newsreader-italic
               payoff word. "We make it clearer." starts on its own line. */}
