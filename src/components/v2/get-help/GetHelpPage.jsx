@@ -45,7 +45,14 @@ const HERO_VARIANTS = {
     headline: 'Behind on the mortgage?',
     subLead: 'Notice from the bank?',
     subEmph: 'Sell on your terms.',
-    label: 'Mortgage / Power of Sale',
+    label: 'Mortgage Arrears',
+  },
+  pos: {
+    eyebrow: 'POWER OF SALE · ONTARIO',
+    headline: 'Facing power of sale?',
+    subLead: 'A Notice of Sale from the lender?',
+    subEmph: 'There is still a way through.',
+    label: 'Power of Sale',
   },
   estate: {
     eyebrow: 'ESTATE · ONTARIO',
@@ -60,6 +67,13 @@ const HERO_VARIANTS = {
     subLead: '',
     subEmph: 'We work the window.',
     label: 'Time-Sensitive Sale',
+  },
+  financial: {
+    eyebrow: 'FINANCIAL PRESSURE · ONTARIO',
+    headline: 'Getting hard to carry?',
+    subLead: 'Not behind yet, but the numbers stopped working?',
+    subEmph: 'Sell from strength.',
+    label: 'Financial Pressure',
   },
   /* separation and disputes hero variants removed as part of the 4-lane
      practice refocus. Any ?cat=separation or ?cat=disputes URL falls
@@ -286,7 +300,7 @@ export function GetHelpPage() {
 
                   {/* Supporting trust, moved below the form so the ask
                       stays high on mobile. */}
-                  {cat === 'mortgage' && (
+                  {(cat === 'mortgage' || cat === 'pos') && (
                     <p className="mt-7 text-[15.5px] text-navy leading-relaxed max-w-md border-l-2 border-bronze pl-4">
                       We work directly with your lender and their lawyers to buy
                       you the time to sell on your terms &mdash; before they
