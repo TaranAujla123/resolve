@@ -72,7 +72,10 @@ export function AboutPage() {
       </section>
 
       {/* Practitioner bios */}
-      <section data-surface="mist" className="bg-mist section-y">
+      {/* Navy "Led By" band — the confident, lawyer-facing register for
+          the practitioner profiles. Light profile cards float on navy;
+          the gold eyebrow reads cleanly on the dark field. */}
+      <section data-surface="navy" className="bg-navy section-y">
         <div className="container max-w-4xl space-y-8">
           <Eyebrow>Led By</Eyebrow>
 
