@@ -1,23 +1,22 @@
 import React from 'react'
 
 /**
- * Button — the V2 brand button.
+ * Button — the V3.5 brand button.
  *
- * Two locked variants:
- *   - primary  → navy fill, stone text. The default CTA.
- *   - outline  → transparent fill, current-color border. Used inside the
- *                Navy "A Different Approach" panel (stone outline) and
- *                anywhere a softer affordance is needed against a busy
- *                surface.
+ * Buttons are NOT the accent colour — bronze stays reserved for the
+ * logo and the one emphasis word per headline, so CTAs read on their
+ * own weight:
+ *   - primary  → navy fill, white text. The default CTA on LIGHT
+ *                surfaces.
+ *   - contrast → cream/stone fill, navy text. The CTA on NAVY surfaces
+ *                (hero, closing band) — higher contrast than a colour
+ *                fill and keeps the accent special.
+ *   - outline  → transparent, bronze border + text on light; pass
+ *                `className="text-stone border-stone/50"` on navy.
+ *   - ghost    → transparent, navy text.
  *
- * The brief specifies Inter 600 uppercase tracked for the CTA label.
- * Sizing presets:
- *   - md (default): comfortable in body sections
- *   - lg: hero CTA
- *   - sm: dense nav / footer / inline placements
- *
- * Polymorphic via `as` — renders <button> by default; pass `as="a"` to
- * render as a link (still keeps the same classes).
+ * Sentence case, 14px radius, Poppins SemiBold. ≥44px tap height at
+ * md/lg. Polymorphic via `as`.
  */
 export function Button({
   as: Tag = 'button',
@@ -28,26 +27,31 @@ export function Button({
   ...rest
 }) {
   const variantClass = {
+    // Light-section CTA: gold fill (#B89865), navy text. Gold buttons
+    // pop on white where a cream button would disappear.
     primary:
-      'bg-navy text-stone border border-navy hover:bg-[#051F35] hover:border-[#051F35] transition-colors',
+      'bg-[#B89865] text-white border border-[#B89865] hover:bg-[#a5875a] hover:border-[#a5875a] transition-colors',
+    // Navy-section CTA: cream/stone fill, navy text.
+    contrast:
+      'bg-stone text-navy border border-stone hover:bg-white hover:border-white transition-colors',
     outline:
-      'bg-transparent text-current border border-current hover:bg-current/10 transition-colors',
+      'bg-transparent text-bronze border border-bronze hover:bg-bronze/10 transition-colors',
     ghost:
       'bg-transparent text-navy hover:bg-navy/5 transition-colors',
   }[variant]
 
   const sizeClass = {
-    sm: 'px-4 py-2 text-[12px]',
-    md: 'px-5 py-3 text-[13px]',
-    lg: 'px-6 py-3.5 text-[13.5px]',
+    sm: 'px-4 py-2.5 text-[13px]',
+    md: 'px-6 py-3 text-[14px]',
+    lg: 'px-7 py-3.5 text-[15px]',
   }[size]
 
   return (
     <Tag
       className={[
-        'inline-flex items-center gap-2',
-        'font-semibold uppercase tracking-[0.12em]',
-        'rounded-md',
+        'inline-flex items-center justify-center gap-2',
+        'font-sans font-semibold',
+        'rounded-button',
         'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-bronze focus-visible:ring-offset-2 focus-visible:ring-offset-stone',
         variantClass,
         sizeClass,

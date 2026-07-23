@@ -6,21 +6,17 @@ import { Button } from '@/components/brand/Button'
 import architectural from '/hero-architectural.jpg?url'
 
 /**
- * DifferentApproach — V2 home page "A Different Approach" / "Why Us"
- * anchor block.
+ * DifferentApproach — home "A Different Approach" / "Why Us" anchor.
  *
- * This is the strongest positioning statement on the home page:
- *   "Most agents market property. We solve property problems."
+ * V3.5: the navy split panel with the upward-staircase architectural
+ * image is restored (V2 form). Left = navy emphasis panel with the
+ * staircase photo (light climbing the stairs — "a way up"); right =
+ * light "You Can Expect" list, hidden on mobile so the phone flows
+ * from the thesis straight into the proof block below.
  *
- * It carries the `#why-resolve` anchor so the Header's "Why Us" nav
- * scrolls the visitor straight onto this thesis. The structured
- * three-pillar proof block (WhyResolve component) immediately
- * follows in the home flow.
- *
- * Split layout. Left half is the Navy emphasis panel (with a darkened
- * architectural photo overlay). Right half stays on the Stone surface
- * and carries the "You Can Expect" bullet list with bronze ring
- * checkmarks.
+ * Register updated to V3.5: Poppins 600 stone heading, ONE bronze
+ * Newsreader-italic emphasis phrase ("property problems."), outlined
+ * stone button. Carries `#why-resolve` for the header "Why Us" nav.
  */
 const EXPECTATIONS = [
   'A clear read on what the sale can look like',
@@ -38,24 +34,9 @@ export function DifferentApproach() {
       aria-label="A different approach — Why Resolve"
       style={{ scrollMarginTop: '80px' }}
     >
-      {/* Navy column is slightly wider than half (58/42) so the
-          emphasis side carries more visual weight than the
-          expectations side, per the user's tuning pass. */}
       <div className="grid grid-cols-1 lg:grid-cols-[58fr_42fr]">
-        {/* Left — navy + architectural */}
+        {/* Left — navy + architectural staircase */}
         <div className="relative bg-navy text-stone overflow-hidden">
-          {/*
-            Image lives only in the right ~60% of the panel so the left
-            text column has solid navy underneath it. A soft left-edge
-            fade blends the photo into the navy field instead of butting
-            against it with a hard seam. Same compositional technique
-            as the Hero's right-side image.
-
-            filter: brightness(1.12) contrast(1.05) pushes the
-            staircase composition forward visually so it actually
-            reads against the deep navy panel rather than melting into
-            it.
-          */}
           <div className="absolute inset-y-0 right-0 w-[62%] pointer-events-none">
             <img
               src={architectural}
@@ -69,71 +50,38 @@ export function DifferentApproach() {
               loading="lazy"
               decoding="async"
             />
-            {/* Mobile-only flat navy scrim. The staircase image has a
-                bright vertical light source at its centre that was
-                reading as too harsh on phones (it sat right behind the
-                paragraph copy). A navy/45 wash on mobile pulls the
-                whole image down so the text overlay stays the visual
-                lead, then the wash lifts on lg+ where the image
-                carries its full brightness as the editorial focal
-                point alongside the headline. */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-0 bg-navy/45 lg:bg-transparent"
-            />
-            {/* Soft fade on the image's left edge so it blends into
-                the navy field rather than butting. */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-navy to-transparent"
-            />
-            {/* Subtle top + bottom feathering for editorial finish. */}
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-navy/70 to-transparent"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-navy/70 to-transparent"
-            />
+            <div aria-hidden="true" className="absolute inset-0 bg-navy/45 lg:bg-transparent" />
+            <div aria-hidden="true" className="absolute inset-y-0 left-0 w-40 bg-gradient-to-r from-navy to-transparent" />
+            <div aria-hidden="true" className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-navy/70 to-transparent" />
+            <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-navy/70 to-transparent" />
           </div>
           <div className="relative px-6 sm:px-10 lg:px-16 py-16 lg:py-24 max-w-2xl">
-            <Eyebrow onDark>A Different Approach</Eyebrow>
-            <h2 className="mt-5 font-display font-medium text-stone text-display-md">
+            <Eyebrow>A Different Approach</Eyebrow>
+            <h2 className="mt-5 font-sans font-semibold text-stone text-display-md leading-[1.14]">
               Most agents market property.
+              <br />
+              We solve{' '}
+              <span className="font-emph italic font-normal text-bronze">property problems.</span>
             </h2>
-            <p className="mt-1 font-display font-medium italic text-bronze text-display-md leading-[1.05]">
-              We solve property problems.
-            </p>
             <p className="mt-6 max-w-md text-[16px] leading-relaxed text-stone-soft">
               When the situation is complicated, you need more than a sign in
-              the yard. You need an experienced team who can see the
-              full picture, run the right sale and protect what you have
-              built.
+              the yard. You need an experienced team who can see the full
+              picture, run the right sale and protect what you have built.
             </p>
             <Button
               as={Link}
               to="/about"
               variant="outline"
               size="md"
-              className="mt-8 text-stone"
+              className="mt-8 text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
             >
-              Learn More About How We Help
+              Learn more about how we help
             </Button>
           </div>
         </div>
 
-        {/* Right — stone + expectations.
-
-            Hidden on mobile (hidden lg:block). Rationale: on a phone
-            the navy DifferentApproach panel already carries the full
-            thesis + the "Learn More" CTA, and the next section
-            (WhyResolve) opens with the three-pillar proof immediately
-            underneath. The 5-item "You Can Expect" checklist between
-            them became extra scroll on mobile without adding new
-            information, so we let mobile flow straight from the
-            thesis into the structured proof. Desktop still shows
-            both columns side-by-side. */}
+        {/* Right — light "You Can Expect" list. Hidden on mobile (the
+            thesis + the proof block below already carry the phone). */}
         <div className="hidden lg:block bg-stone">
           <div className="px-6 sm:px-10 lg:px-16 py-16 lg:py-24 max-w-xl">
             <Eyebrow>You Can Expect</Eyebrow>
@@ -142,8 +90,7 @@ export function DifferentApproach() {
                 <li key={line} className="flex items-start gap-3.5">
                   <span className="
                     inline-flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center
-                    rounded-full border border-bronze/60 text-bronze
-                    mt-[1px]
+                    rounded-full border border-bronze/60 text-bronze mt-[1px]
                   ">
                     <Check className="h-3.5 w-3.5" strokeWidth={2.2} />
                   </span>

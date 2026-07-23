@@ -26,6 +26,7 @@ export default {
           DEFAULT: 'rgb(var(--resolve-navy-rgb) / <alpha-value>)',
           soft: 'rgb(var(--resolve-navy-rgb) / 0.72)',
           mute: 'rgb(var(--resolve-navy-rgb) / 0.55)',
+          nav: 'rgb(var(--resolve-navy-nav-rgb) / <alpha-value>)',
         },
         bronze: {
           DEFAULT: 'rgb(var(--resolve-bronze-rgb) / <alpha-value>)',
@@ -68,9 +69,13 @@ export default {
         },
       },
       fontFamily: {
-        // Inter = body / UI / descriptor / microcopy (info).
-        // Newsreader = wordmark / headlines / italic emphasis (voice).
+        // V3: Poppins everywhere. Headlines (display), body/UI (sans),
+        // and any legacy `font-serif` refs all resolve to Poppins so a
+        // full type swap lands without renaming classes. Inter stays as
+        // a fast fallback while Poppins downloads. The only serif in V3
+        // lives baked inside the logo PNG.
         sans: [
+          'Poppins',
           'Inter',
           'ui-sans-serif',
           'system-ui',
@@ -79,8 +84,11 @@ export default {
           'Roboto',
           'sans-serif',
         ],
-        display: ['Newsreader', 'Georgia', 'ui-serif', 'serif'],
-        serif: ['Newsreader', 'Georgia', 'ui-serif', 'serif'],
+        display: ['Poppins', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        serif: ['Poppins', 'Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+        // V3.5: Newsreader italic is the emphasis face — used ONLY on the
+        // one payoff word per headline (and it's baked into the logo).
+        emph: ['Newsreader', 'Georgia', 'ui-serif', 'serif'],
       },
       fontSize: {
         // Hero headline clamps from mobile (48px) to desktop (88px).
@@ -91,11 +99,15 @@ export default {
         'display-md': ['clamp(1.625rem, 2.8vw, 2.25rem)', { lineHeight: '1.18', letterSpacing: '-0.008em' }],
       },
       boxShadow: {
-        card: '0 1px 2px rgba(5, 26, 44, 0.04), 0 8px 24px -12px rgba(5, 26, 44, 0.08)',
-        'card-hover': '0 2px 4px rgba(5, 26, 44, 0.06), 0 16px 32px -12px rgba(5, 26, 44, 0.14)',
-        ring: '0 0 0 4px rgba(200, 165, 107, 0.22)',
+        // V3: subtle only. Navy-tinted, low-opacity.
+        card: '0 2px 8px rgba(10, 31, 68, 0.06)',
+        'card-hover': '0 4px 16px rgba(10, 31, 68, 0.10)',
+        ring: '0 0 0 4px rgba(23, 128, 135, 0.22)',
       },
       borderRadius: {
+        // V3 button radius: 14px (slightly rounded — not sharp, not
+        // full pill). Cards 12px, form fields 8px handled inline.
+        button: '14px',
         xl: '14px',
         '2xl': '20px',
       },
@@ -109,7 +121,7 @@ export default {
         // Hero / Section components so they fit the V2 surface
         // language without needing to be rewritten.
         'hero-fade':
-          'radial-gradient(70% 70% at 90% 0%, rgba(200,165,107,0.10) 0%, rgba(200,165,107,0) 60%), radial-gradient(50% 60% at 0% 100%, rgba(243,238,224,0.85) 0%, rgba(245,241,232,0) 70%)',
+          'radial-gradient(70% 70% at 90% 0%, rgba(23,128,135,0.08) 0%, rgba(23,128,135,0) 60%), radial-gradient(50% 60% at 0% 100%, rgba(227,240,241,0.9) 0%, rgba(238,242,244,0) 70%)',
       },
     },
   },

@@ -43,19 +43,22 @@ const HERO_VARIANTS = {
   mortgage: {
     eyebrow: 'MORTGAGE TROUBLE · ONTARIO',
     headline: 'Behind on the mortgage?',
-    sub: 'Notice from the bank? Sell on your terms.',
+    subLead: 'Notice from the bank?',
+    subEmph: 'Sell on your terms.',
     label: 'Mortgage / Power of Sale',
   },
   estate: {
     eyebrow: 'ESTATE · ONTARIO',
     headline: 'Estate property to sell?',
-    sub: 'Coordinated with the trustee.',
+    subLead: '',
+    subEmph: 'Coordinated with the trustee.',
     label: 'Estate / Probate',
   },
   tss: {
     eyebrow: 'TIME-SENSITIVE · ONTARIO',
     headline: 'Sale on a deadline?',
-    sub: 'We work the window.',
+    subLead: '',
+    subEmph: 'We work the window.',
     label: 'Time-Sensitive Sale',
   },
   /* separation and disputes hero variants removed as part of the 4-lane
@@ -65,7 +68,8 @@ const HERO_VARIANTS = {
   default: {
     eyebrow: 'SELLER REPRESENTATION · ONTARIO',
     headline: 'A property situation that needs handling?',
-    sub: 'Let’s talk.',
+    subLead: '',
+    subEmph: 'Let’s talk.',
     label: 'General',
   },
 }
@@ -171,37 +175,27 @@ export function GetHelpPage() {
                   >
                     {variant.headline}
                   </h1>
-                  <p
-                    className="mt-3 font-display font-medium italic text-bronze"
-                    style={{ fontSize: 'clamp(22px, 3vw, 36px)', lineHeight: 1.1 }}
-                  >
-                    {variant.sub}
-                  </p>
-
-                  {cat === 'mortgage' && (
-                    <p className="mt-6 text-[15.5px] text-navy leading-relaxed max-w-md border-l-2 border-bronze pl-4">
-                      We work directly with your lender and their lawyers to buy
-                      you the time to sell on your terms &mdash; before they
-                      take over and control the sale themselves.
+                  {variant.subLead && (
+                    <p
+                      className="mt-3 font-sans font-semibold text-navy"
+                      style={{ fontSize: 'clamp(17px, 2.2vw, 22px)', lineHeight: 1.2 }}
+                    >
+                      {variant.subLead}
                     </p>
                   )}
-
-                  <p className="mt-6 text-[16px] text-navy-soft leading-relaxed max-w-md">
-                    Free 15-minute call with a real estate professional.
-                    <span className="block mt-1 text-navy">
-                      We help you keep more of the <span className="italic text-bronze font-medium">equity</span> you built.
-                    </span>
-                    <span className="block mt-1 font-semibold text-navy">
-                      No fee. No obligation. Confidential.
-                    </span>
+                  {/* Payoff line on its own — Newsreader italic, gold,
+                      larger — the standout reassurance. */}
+                  <p
+                    className="mt-1 font-emph italic text-bronze"
+                    style={{ fontSize: 'clamp(28px, 4.4vw, 42px)', lineHeight: 1.05 }}
+                  >
+                    {variant.subEmph}
                   </p>
 
-                  <div className="mt-3 inline-flex items-center gap-2 text-[13px] text-navy-soft">
-                    <Clock className="h-3.5 w-3.5 text-bronze" />
-                    <span>
-                      <span className="font-semibold text-navy">Callback within 24 hours.</span> Often within 2.
-                    </span>
-                  </div>
+                  {/* Hook → form directly. This is a paid conversion page
+                      (90% mobile). All reassurance (no fee, confidential,
+                      callback, lender/lawyers, equity) lives at and below
+                      the CTA so the ask is instant, not buried under copy. */}
 
                   <form
                     onSubmit={handleSubmit}
@@ -262,13 +256,19 @@ export function GetHelpPage() {
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="mt-5 w-full bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-6 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
-                      style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}
+                      className="mt-5 w-full bg-[#B89865] hover:bg-[#a5875a] text-white font-semibold py-4 px-6 rounded-[8px] text-[15px] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                      style={{ boxShadow: '0 2px 12px rgba(184, 152, 101, 0.35)' }}
                     >
-                      {submitting ? 'Sending…' : 'Start a Private Conversation'}
+                      {submitting ? 'Sending…' : 'Start a private conversation'}
                     </button>
 
-                    <p className="mt-3 text-center text-[13px] text-navy-soft">
+                    {/* Reassurance at the point of action. */}
+                    <p className="mt-3 text-center text-[12.5px] text-navy-soft">
+                      No fee. No obligation. Confidential.{' '}
+                      <span className="font-semibold text-navy">Callback within 24 hours.</span>
+                    </p>
+
+                    <p className="mt-2 text-center text-[13px] text-navy-soft">
                       Or call directly:{' '}
                       <a
                         href="tel:+13656457332"
@@ -282,6 +282,20 @@ export function GetHelpPage() {
                   <p className="mt-4 text-[12px] text-navy-mute tracking-wide flex items-center gap-1.5">
                     <Lock className="h-3 w-3" />
                     Confidential · No obligation · RECO Reg. No. 6024721
+                  </p>
+
+                  {/* Supporting trust, moved below the form so the ask
+                      stays high on mobile. */}
+                  {cat === 'mortgage' && (
+                    <p className="mt-7 text-[15.5px] text-navy leading-relaxed max-w-md border-l-2 border-bronze pl-4">
+                      We work directly with your lender and their lawyers to buy
+                      you the time to sell on your terms &mdash; before they
+                      take over and control the sale themselves.
+                    </p>
+                  )}
+                  <p className="mt-4 text-[15px] text-navy-soft leading-relaxed max-w-md">
+                    We help you keep more of the{' '}
+                    <span className="italic text-bronze font-medium">equity</span> you built.
                   </p>
                 </>
               ) : (

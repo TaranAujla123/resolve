@@ -79,12 +79,12 @@ export function MobileStickyCta() {
           <a
             href="tel:+13656457332"
             className="
-              flex flex-col items-center justify-center gap-1 py-2
-              rounded-lg border border-stone/20 text-stone
+              flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
+              rounded-[12px] border border-stone/20 text-stone
               hover:bg-stone/10 active:bg-stone/15 transition-colors
             "
           >
-            <Phone className="h-4 w-4 text-bronze" strokeWidth={1.8} />
+            <Phone className="h-4 w-4 text-bronze" strokeWidth={1.9} />
             <span className="font-sans font-semibold text-[11.5px] tracking-wide">
               Call
             </span>
@@ -92,12 +92,12 @@ export function MobileStickyCta() {
           <a
             href="sms:+13656457332"
             className="
-              flex flex-col items-center justify-center gap-1 py-2
-              rounded-lg border border-stone/20 text-stone
+              flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
+              rounded-[12px] border border-stone/20 text-stone
               hover:bg-stone/10 active:bg-stone/15 transition-colors
             "
           >
-            <MessageSquare className="h-4 w-4 text-bronze" strokeWidth={1.8} />
+            <MessageSquare className="h-4 w-4 text-bronze" strokeWidth={1.9} />
             <span className="font-sans font-semibold text-[11.5px] tracking-wide">
               Text
             </span>
@@ -105,8 +105,8 @@ export function MobileStickyCta() {
           <Link
             to="/contact"
             className="
-              flex flex-col items-center justify-center gap-1 py-2
-              rounded-lg bg-bronze text-navy
+              flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
+              rounded-[12px] bg-bronze text-white
               hover:bg-bronze-deep active:bg-bronze-deep transition-colors
             "
           >

@@ -1,51 +1,49 @@
 import React from 'react'
+import wordmarkNavy from '/logo-wordmark-navy.png?url'
+import wordmarkLight from '/logo-wordmark-light.png?url'
+import lockupNavy from '/logo-lockup-navy.png?url'
+import logoLight from '/logo-v3-light.png?url'
 
 /**
- * ResolveWordmark — the canonical Resolve brand mark.
+ * ResolveWordmark — the canonical Resolve brand mark (V3.5).
  *
- * Source of truth: Brand-System-V2/claude-code-v2-build.md §3
- * Geometry: lowercase "Re·solve" in Newsreader 500 with a bronze
- * interpunct dot at x-height, an optional 1.5px divider, and a small
- * bronze "SELLER REPRESENTATION" descriptor underneath.
+ * Pre-baked PNG lockups: Poppins "re" (bronze) + the interpunct dot +
+ * Newsreader italic "solve". The full lockup also carries the "SELLER
+ * REPRESENTATION" descriptor.
  *
- * All proportions are em-relative so the host element controls scale by
- * setting font-size on the outer .resolve-wordmark element. Examples:
- *   - 56px in the nav (desktop)
- *   - 44px in the nav (mobile)
- *   - 180px in the hero
- *   - 32px in the footer
+ * V3.5 surfaces are navy (nav + footer), so the primary assets are the
+ * bronze-on-navy renders:
+ *   - showDescriptor={false} → wordmark only (nav). Bronze "re", cream
+ *     "solve". No descriptor (it garbles at nav size).
+ *   - variant="dark" (default full lockup) → full lockup with descriptor
+ *     for the navy footer.
+ *   - variant="light" → light-surface full lockup, kept for any light
+ *     placement (not currently mounted).
  *
- * Variants:
- *   - light (default): navy ink on a Stone / Mist / Rose background
- *   - dark: stone ink on a Navy background
- *
- * Props:
- *   variant: 'light' | 'dark'
- *   showDescriptor: boolean — hide the descriptor for compact placements
- *   className: extra classes for the outer element (e.g., to set font-size)
+ * Height is set by the caller via a Tailwind class in `className`
+ * (e.g. "h-7"); width auto-scales. A default applies if none is given.
  */
 export function ResolveWordmark({
-  variant = 'light',
-  showDescriptor = true,
+  variant = 'dark',
   className = '',
+  showDescriptor = true,
 }) {
-  const variantClass =
-    variant === 'dark' ? 'resolve-wordmark--dark' : 'resolve-wordmark--light'
+  let src
+  if (!showDescriptor) {
+    // Wordmark-only: gold "re" + navy "solve" for a LIGHT nav surface,
+    // gold "re" + cream "solve" for a NAVY nav surface.
+    src = variant === 'light' ? wordmarkLight : wordmarkNavy
+  } else {
+    src = variant === 'light' ? logoLight : lockupNavy
+  }
+  const hasHeight = /\bh-/.test(className)
   return (
-    <div
-      className={`resolve-wordmark ${variantClass} ${className}`.trim()}
-      aria-label="Resolve · Seller Representation"
-      role="img"
-    >
-      <span className="wm">
-        Re<span className="dot" aria-hidden="true" />solve
-      </span>
-      {showDescriptor && (
-        <>
-          <div className="divider" aria-hidden="true" />
-          <div className="descriptor">Seller Representation</div>
-        </>
-      )}
-    </div>
+    <img
+      src={src}
+      alt="Resolve · Seller Representation"
+      className={`block w-auto ${hasHeight ? '' : 'h-10'} ${className}`.trim()}
+      draggable={false}
+      decoding="async"
+    />
   )
 }

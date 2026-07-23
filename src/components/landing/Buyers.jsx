@@ -172,9 +172,9 @@ export function Buyers() {
             <span aria-hidden="true" className="block h-px w-8 sm:w-10 flex-shrink-0 bg-accent-deep" />
             <span>For Buyers</span>
           </p>
-          <h1 className="mt-4 text-display-lg text-ink font-display font-medium">
+          <h1 className="mt-4 text-display-lg text-navy font-sans font-semibold leading-[1.12]">
             The homes the market{' '}
-            <span className="italic">mispriced</span>.
+            <span className="font-emph italic font-normal text-bronze">mispriced.</span>
           </h1>
           <p className="mt-5 text-lg text-ink-soft leading-relaxed max-w-3xl">
             Early notification of motivated-seller listings across the GTA and Ontario. Power of sale, mortgage arrears, financial pressure, and time-sensitive files, matched to your criteria, with proper buy-side representation from first visit through closing.

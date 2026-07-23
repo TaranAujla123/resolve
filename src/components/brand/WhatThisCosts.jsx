@@ -15,29 +15,21 @@ import React from 'react'
  *
  * Source of truth for copy: locked by user on this turn.
  */
-export function WhatThisCosts({ className = '' }) {
+export function WhatThisCosts({ className = '', onDark = false }) {
   return (
     <div
       data-component="what-this-costs"
       className={`max-w-[520px] ${className}`.trim()}
     >
-      {/* Eyebrow — Inter 600, 12px, 2.4px letter-spacing, uppercase,
-          bronze. Matches the brand eyebrow rhythm without using the
-          Eyebrow shared component because this block needs slightly
-          tighter spacing than the section-level eyebrow. */}
       <p className="font-sans font-semibold text-[12px] uppercase tracking-[0.2em] text-bronze leading-none">
         What This Costs
       </p>
 
-      {/* Headline — Newsreader 500, 28-32px, navy, line-height 1.1.
-          Spaced 14px below eyebrow. */}
-      <h3 className="mt-[14px] font-display font-medium text-navy text-[clamp(1.625rem,2.4vw,2rem)] leading-[1.1] tracking-[-0.01em]">
+      <h3 className={`mt-[14px] font-sans font-bold text-[clamp(1.625rem,2.4vw,2rem)] leading-[1.1] tracking-[-0.01em] ${onDark ? 'text-stone' : 'text-navy'}`}>
         Nothing upfront.
       </h3>
 
-      {/* Body — Inter 400, 16-17px, navy-soft, line-height 1.55.
-          Spaced 16px below headline. */}
-      <p className="mt-[16px] text-[16.5px] leading-[1.55] text-navy-soft">
+      <p className={`mt-[16px] text-[16.5px] leading-[1.55] ${onDark ? 'text-stone-soft' : 'text-navy-soft'}`}>
         We&rsquo;re paid only when the sale closes, at standard
         commission. No hidden fees. No retainers. The first call is
         always free.

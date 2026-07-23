@@ -95,9 +95,11 @@ export function Situations() {
           </p>
         </div>
 
+        {/* 4 situations → symmetric grids at every breakpoint:
+            1 col mobile, 2x2 tablet, 4-across desktop. No orphan card. */}
         <ul className="
           mt-12 grid gap-5
-          grid-cols-1 sm:grid-cols-2 lg:grid-cols-3
+          grid-cols-1 sm:grid-cols-2 lg:grid-cols-4
         ">
           {SITUATIONS.map(({ Icon, title, to, body }) => (
             <li key={title} className="flex">

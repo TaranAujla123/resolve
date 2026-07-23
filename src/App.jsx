@@ -630,7 +630,7 @@ export default function App() {
             style: {
               borderRadius: '12px',
               border: '1px solid #D8D2C8',
-              color: '#051A2C',
+              color: '#0A1F44',
             },
           }}
         />

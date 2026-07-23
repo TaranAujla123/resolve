@@ -129,43 +129,48 @@ export function ForAgents() {
 
   return (
     <>
-      {/* Section 1: Hero — partnership framing first beat */}
-      <section className="bg-hero-fade">
-        <div className="container section-y">
+      {/* Section 1: Hero — partnership framing first beat.
+          V3: this referrer-facing page opens on NAVY (unlike the
+          consumer pages, which are light-first). The audience here is
+          other RECO-registered practitioners, and institutional weight
+          is an asset, not a barrier — professionals trust gravity. */}
+      <section data-surface="navy" className="bg-navy text-stone -mt-16 sm:-mt-20">
+        <div className="container pt-28 pb-16 sm:pt-40 sm:pb-24">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
             className="max-w-3xl"
           >
-            <p className="flex items-center gap-3 text-[13px] sm:text-[13.5px] font-semibold uppercase tracking-[0.16em] text-accent-deep">
-              <Link to="/" className="inline-flex items-center gap-1.5 hover:text-ink transition-colors">
+            <p className="flex items-center gap-3 text-[13px] sm:text-[13.5px] font-semibold uppercase tracking-[0.16em] text-bronze">
+              <Link to="/" className="inline-flex items-center gap-1.5 hover:text-stone transition-colors">
                 <ArrowLeft className="h-3.5 w-3.5" />
                 Resolve
               </Link>
-              <span aria-hidden="true" className="text-ink-mute/40">·</span>
-              <span className="text-ink-soft">For Agents</span>
+              <span aria-hidden="true" className="text-stone/40">·</span>
+              <span className="text-stone-soft">For Agents</span>
             </p>
-            <h1 className="mt-5 text-display-md sm:text-display-lg text-navy max-w-3xl font-display font-medium leading-[1.12]">
-              Partner with Resolve on the files that need more than a standard listing.
+            <h1 className="mt-5 text-display-md sm:text-display-lg text-stone max-w-3xl font-sans font-semibold leading-[1.14]">
+              Partner with Resolve on the files that need{' '}
+              <span className="font-emph italic font-normal text-bronze">more than a standard listing.</span>
             </h1>
-            <p className="mt-5 sm:mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-ink-soft">
+            <p className="mt-5 sm:mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-stone-soft">
               You bring the client relationship. We bring the bandwidth, the
               discipline, and the boutique-practice handling that distressed
               and complex seller files actually need.
             </p>
-            <p className="mt-4 text-[15.5px] leading-relaxed text-ink-soft">
+            <p className="mt-4 text-[15.5px] leading-relaxed text-stone-soft">
               Power of sale. Mortgage arrears. Estate sales. Time-sensitive
               deadlines. Refer the
               file and step back, or stay on as co-listing brokerage. Either
               way, the operational weight stays with us.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-2 sm:gap-3">
-              <Button as="a" href="#partnership-form" size="lg" variant="primary" className="group">
+              <Button as="a" href="#partnership-form" size="lg" variant="contrast" className="group">
                 Discuss a Partnership
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
-              <Button as="a" href="tel:+13656457332" size="lg" variant="outline">
+              <Button as="a" href="tel:+13656457332" size="lg" variant="outline" className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone">
                 <Phone className="h-4 w-4" />
                 Call (365) 645-7332
               </Button>

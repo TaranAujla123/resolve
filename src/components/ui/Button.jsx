@@ -10,23 +10,28 @@ import { cn } from '@/lib/utils'
  * `@/components/brand/Button` for parity with the V2 design system.
  */
 const buttonStyles = cva(
-  'inline-flex items-center justify-center gap-2 font-semibold uppercase tracking-[0.12em] transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap select-none',
+  'inline-flex items-center justify-center gap-2 font-sans font-semibold transition-all duration-200 disabled:opacity-50 disabled:pointer-events-none whitespace-nowrap select-none',
   {
     variants: {
       variant: {
+        // V3.5: navy is the primary CTA on light surfaces; bronze is
+        // reserved for the accent, not buttons. "accent" stays bronze
+        // for the rare intentional bronze fill.
         primary:
-          'bg-navy text-stone border border-navy hover:bg-[#051F35] hover:border-[#051F35]',
+          'bg-[#B89865] text-white border border-[#B89865] hover:bg-[#a5875a] hover:border-[#a5875a]',
+        contrast:
+          'bg-stone text-navy border border-stone hover:bg-white hover:border-white',
         accent:
-          'bg-bronze text-stone border border-bronze hover:bg-bronze-deep hover:border-bronze-deep',
+          'bg-bronze text-white border border-bronze hover:bg-bronze-deep hover:border-bronze-deep',
         outline:
-          'bg-transparent border border-navy text-navy hover:bg-navy hover:text-stone',
+          'bg-transparent border border-navy text-navy hover:bg-navy hover:text-white',
         ghost: 'text-navy hover:bg-mist',
-        link: 'text-bronze underline-offset-4 hover:underline hover:text-bronze-deep px-0 h-auto normal-case tracking-normal',
+        link: 'text-bronze underline-offset-4 hover:underline hover:text-bronze-deep px-0 h-auto tracking-normal',
       },
       size: {
-        sm: 'h-9 px-4 text-[12px] rounded-md',
-        md: 'h-11 px-5 text-[13px] rounded-md',
-        lg: 'h-12 px-6 text-[13.5px] rounded-md',
+        sm: 'h-10 px-4 text-[13px] rounded-button',
+        md: 'h-11 px-6 text-[14px] rounded-button',
+        lg: 'h-12 px-7 text-[15px] rounded-button',
       },
     },
     defaultVariants: {

@@ -27,17 +27,10 @@ export function Footer() {
     <footer className="bg-navy text-stone">
       <div className="container py-14 sm:py-16">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12">
-          {/* Column 1 — wordmark + brokerage attribution */}
+          {/* Column 1 — wordmark + brokerage attribution.
+              V3: PNG lockup (dark variant) sized via height class. */}
           <div>
-            {/* Bumped from 46px to 60px so the descriptor renders at
-                ~10.2px (was 7.8px) and the LED BY eyebrow on the right
-                (12px) read as the same bronze. At sub-8px sizes the
-                anti-aliasing on bronze text on a navy field renders
-                the color visibly lighter than at 10-12px, even though
-                the underlying hex is identical. */}
-            <div style={{ fontSize: '60px' }}>
-              <ResolveWordmark variant="dark" />
-            </div>
+            <ResolveWordmark variant="dark" className="h-12" />
             <p className="mt-6 text-[14px] leading-relaxed text-stone-soft">
               Real estate services delivered through{' '}
               <span className="font-semibold text-stone">

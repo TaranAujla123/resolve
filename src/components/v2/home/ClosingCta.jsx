@@ -41,35 +41,40 @@ const FEATURES = [
 
 export function ClosingCta() {
   return (
-    <section data-surface="stone" className="bg-stone section-y">
+    // V3: the ONE substantial navy band on the consumer pages, sitting
+    // just above the navy footer. This is where the institutional
+    // weight lives now that the rest of the site is light — a quiet,
+    // deep close that signals the practice can sit across from a lender.
+    <section data-surface="navy" className="bg-navy text-stone section-y">
       <div className="container grid grid-cols-1 lg:grid-cols-[1fr_1fr] gap-12 lg:gap-16 items-start">
         {/* Left — couplet + CTA */}
         <div className="max-w-xl">
-          <h2 className="font-display font-medium text-navy text-display-lg">
-            Ready to talk?
+          <h2 className="font-sans font-semibold text-stone text-display-md leading-[1.14]">
+            Ready to talk? We&rsquo;re here when you&rsquo;re{' '}
+            <span className="font-emph italic font-normal text-bronze">ready.</span>
           </h2>
-          <p className="mt-1 font-display font-medium italic text-bronze text-display-lg leading-[1.05]">
-            We&rsquo;re here when you&rsquo;re ready.
-          </p>
-          <p className="mt-6 text-[17px] leading-relaxed text-navy-soft">
+          <p className="mt-6 text-[17px] leading-relaxed text-stone-soft">
             A confidential conversation is the first step toward a clearer path
-            forward.
+            forward. Quiet, structured, and on your terms.
           </p>
-          <Button
-            as={Link}
-            to="/contact"
-            variant="primary"
-            size="lg"
-            className="mt-8"
-          >
-            Contact Us Today
-          </Button>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+            <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center">
+              Book a free 15-minute call
+            </Button>
+            <Button
+              as="a"
+              href="tel:+13656457332"
+              variant="outline"
+              size="lg"
+              className="justify-center text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
+            >
+              <Phone className="h-4 w-4" strokeWidth={1.9} />
+              (365) 645-7332
+            </Button>
+          </div>
 
-          {/* Cost-transparency callout — same WhatThisCosts component
-              used on every situation deep-dive page so the answer to
-              "what does this cost me?" is one consistent block across
-              the site, not a one-time hero callout. */}
-          <WhatThisCosts className="mt-12 pt-10 border-t border-divider" />
+          {/* Cost-transparency callout — dark variant on the navy band. */}
+          <WhatThisCosts onDark className="mt-12 pt-10 border-t border-white/15" />
         </div>
 
         {/* Right — 4 small feature cells */}
@@ -81,10 +86,10 @@ export function ClosingCta() {
                 strokeWidth={1.5}
                 className="h-7 w-7 text-bronze"
               />
-              <p className="mt-3.5 font-sans font-semibold text-[14.5px] text-navy">
+              <p className="mt-3.5 font-sans font-semibold text-[14.5px] text-stone">
                 {label}
               </p>
-              <p className="mt-1.5 text-[13.5px] leading-relaxed text-navy-soft">
+              <p className="mt-1.5 text-[13.5px] leading-relaxed text-stone-soft">
                 {body}
               </p>
             </li>

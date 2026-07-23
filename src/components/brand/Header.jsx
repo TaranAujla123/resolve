@@ -5,43 +5,20 @@ import { ResolveWordmark } from './ResolveWordmark'
 import { Button } from './Button'
 
 /**
- * Header — V2 sticky global header.
+ * Header — V3.5 global header with a scroll transition.
  *
- * Source of truth: Brand-System-V2/claude-code-v2-build.md §6 (Global header)
+ * On pages whose top section is navy (home, /for-agents), the nav
+ * starts TRANSPARENT so the navy hero reads full-bleed to the top edge
+ * (logo + links in stone, outlined stone Contact). Once the visitor
+ * scrolls past the hero into the light body, the nav becomes SOLID
+ * WHITE — navy links, the light-surface (gold "re" / navy "solve")
+ * logo, and a gold Contact button. On light-top pages the nav is solid
+ * white from the start.
  *
- * Layout:
- *   - Sticky top, Stone background, 1px Light Divider bottom border
- *   - Left: <ResolveWordmark /> with descriptor, font-size 48px desktop /
- *     38px mobile (the brief says 56/44 but the host descriptor sits
- *     comfortably at ~48 in dense nav rows)
- *   - Right: Home / About / How We Help / Situations We Handle /
- *     Resources, then a Navy "Contact Us" button
- *   - Active link gets a 3px bronze bottom border
- *
- * Mobile: collapses to a hamburger that opens a panel with the full
- * nav stack + Contact Us button at the bottom.
+ * The hero pages pull their hero up under the sticky header (negative
+ * top margin) so the transparent nav overlays the image. The navy
+ * BrokerageStrip sits above the header in flow and scrolls away.
  */
-// Six primary nav items. Home is dropped because the wordmark on
-// the left of the header is itself a clickable "back to /" affordance.
-// Resources is dropped because that page only redirected back to the
-// same situation deep-dives the Situations grid on the homepage
-// already covers.
-//
-// Order — front-loaded for distressed sellers who landed via search:
-//   1. Situations We Handle — does Resolve handle MY situation?
-//   2. Why Us               — why this practice over a volume agent?
-//   3. How We Help          — what does the process look like?
-//   4. About                — who are Taran and Dave?
-//   5. For Buyers           — the adjacent path on the buy side
-//   6. For Agents           — the partnership page for other Ontario
-//                             real estate practitioners (refer or
-//                             co-broker, brokerage-to-brokerage under
-//                             TRESA). Labelled "For Agents" rather than
-//                             "Partner With Us" so non-registrants
-//                             reading it don't infer they can receive a
-//                             referral fee — only RECO-registered
-//                             practitioners can.
-// Contact is the separate CTA button to the right of the nav row.
 const NAV_ITEMS = [
   { to: '/#situations', label: 'Situations We Handle', isAnchor: true },
   { to: '/#why-resolve', label: 'Why Us', isAnchor: true },
@@ -53,6 +30,7 @@ const NAV_ITEMS = [
 
 export function Header() {
   const [open, setOpen] = useState(false)
+  const [solid, setSolid] = useState(true)
   const location = useLocation()
 
   // Close mobile menu whenever the route changes.
@@ -60,41 +38,58 @@ export function Header() {
     setOpen(false)
   }, [location.pathname, location.hash])
 
+  // Transparent-over-navy-hero → solid-white-on-scroll. Solid whenever
+  // the page's first section is NOT navy, or once that navy hero has
+  // scrolled up under the nav.
+  useEffect(() => {
+    const compute = () => {
+      const first = document.querySelector('main section')
+      const topIsNavy = first && first.getAttribute('data-surface') === 'navy'
+      if (!topIsNavy) {
+        setSolid(true)
+        return
+      }
+      setSolid(first.getBoundingClientRect().bottom <= 80)
+    }
+    compute()
+    window.addEventListener('scroll', compute, { passive: true })
+    window.addEventListener('resize', compute)
+    return () => {
+      window.removeEventListener('scroll', compute)
+      window.removeEventListener('resize', compute)
+    }
+  }, [location.pathname])
+
+  // When the mobile menu is open, force the readable (solid) treatment
+  // so the panel and bar don't sit transparent over the hero.
+  const barSolid = solid || open
+
+  const linkBase = 'font-sans font-medium text-[14.5px] transition-colors py-1 border-b-[2px]'
+
   return (
     <header
-      className="
-        sticky top-0 z-50 bg-navy text-stone
-        border-b border-white/10
-        backdrop-blur supports-[backdrop-filter]:bg-navy/95
-      "
+      className={[
+        'sticky top-0 z-50 transition-colors duration-300',
+        barSolid
+          ? 'bg-surface/95 backdrop-blur supports-[backdrop-filter]:bg-surface/90 border-b border-divider text-navy'
+          : 'bg-transparent border-b border-transparent text-stone',
+      ].join(' ')}
     >
-      <div className="container flex items-center justify-between h-[68px] sm:h-[84px]">
-        <Link
-          to="/"
-          aria-label="Resolve — home"
-          className="inline-flex items-center"
-          style={{ fontSize: '42px' }}
-        >
-          {/*
-            translateY(5px) — the wordmark's geometric box centers
-            correctly, but the heavy "Re·solve" letters sit in the upper
-            half of that box while the tiny SELLER REPRESENTATION
-            descriptor sits in the lower half. The eye reads that as
-            top-aligned. A 5px downward visual nudge brings the *mass*
-            into optical balance with the nav links to the right
-            without affecting layout flow.
-          */}
-          <span
-            className="hidden sm:inline"
-            style={{ fontSize: '48px', transform: 'translateY(5px)' }}
-          >
-            <ResolveWordmark variant="dark" />
-          </span>
-          <span
-            className="inline sm:hidden"
-            style={{ transform: 'translateY(4px)' }}
-          >
-            <ResolveWordmark variant="dark" />
+      <div className="container flex items-center justify-between h-[64px] sm:h-[80px]">
+        <Link to="/" aria-label="Resolve — home" className="inline-flex items-center">
+          {/* Wordmark + live-text descriptor lockup. The descriptor is
+              rendered as HTML (not baked into the PNG) so it stays crisp
+              at nav size. Gold divider + "REAL ESTATE" in both states. */}
+          <span className="inline-flex flex-col items-center leading-none">
+            <ResolveWordmark
+              variant={barSolid ? 'light' : 'dark'}
+              showDescriptor={false}
+              className="h-6 sm:h-7"
+            />
+            <span aria-hidden="true" className="mt-[5px] h-px w-[78%] bg-bronze/55" />
+            <span className="mt-[4px] font-sans font-semibold text-[8px] sm:text-[9px] tracking-[0.34em] uppercase text-bronze pl-[0.34em]">
+              Real Estate
+            </span>
           </span>
         </Link>
 
@@ -105,11 +100,11 @@ export function Header() {
               <a
                 key={item.to}
                 href={item.to}
-                className="
-                  font-sans font-semibold text-[14.5px] text-stone
-                  hover:text-bronze transition-colors
-                  py-1 border-b-[3px] border-transparent
-                "
+                className={[
+                  linkBase,
+                  'border-transparent',
+                  barSolid ? 'text-navy hover:text-bronze' : 'text-stone/80 hover:text-stone',
+                ].join(' ')}
               >
                 {item.label}
               </a>
@@ -117,24 +112,38 @@ export function Header() {
               <NavLink
                 key={item.to}
                 to={item.to}
-                end={item.end}
-                className={({ isActive }) => [
-                  'font-sans font-semibold text-[14.5px] text-stone',
-                  'hover:text-bronze transition-colors',
-                  'py-1 border-b-[3px]',
-                  isActive ? 'border-bronze' : 'border-transparent',
-                ].join(' ')}
+                className={({ isActive }) =>
+                  [
+                    linkBase,
+                    barSolid
+                      ? isActive
+                        ? 'text-navy border-bronze'
+                        : 'text-navy border-transparent hover:text-bronze'
+                      : isActive
+                        ? 'text-stone border-bronze'
+                        : 'text-stone/80 border-transparent hover:text-stone',
+                  ].join(' ')
+                }
               >
                 {item.label}
               </NavLink>
             ),
           )}
-          {/* On navy header the primary fill (navy-on-navy) disappears,
-              so the CTA flips to outline. text-current inside Button
-              picks up the stone text color from the header parent. */}
-          <Button as={Link} to="/contact" variant="outline" size="sm">
-            Contact Us
-          </Button>
+          {barSolid ? (
+            <Button as={Link} to="/contact" variant="primary" size="sm">
+              Contact us
+            </Button>
+          ) : (
+            <Button
+              as={Link}
+              to="/contact"
+              variant="outline"
+              size="sm"
+              className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
+            >
+              Contact us
+            </Button>
+          )}
         </nav>
 
         {/* Mobile menu trigger */}
@@ -143,16 +152,19 @@ export function Header() {
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open}
           onClick={() => setOpen((o) => !o)}
-          className="lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-md text-stone hover:bg-white/10 transition-colors"
+          className={[
+            'lg:hidden inline-flex items-center justify-center h-11 w-11 rounded-md transition-colors',
+            barSolid ? 'text-navy hover:bg-navy/5' : 'text-stone hover:bg-white/10',
+          ].join(' ')}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
       </div>
 
-      {/* Mobile panel — also flipped to navy for continuity with the
-          sticky header on small screens. */}
+      {/* Mobile panel — always solid white (the bar is forced solid when
+          open) so links read cleanly. */}
       {open && (
-        <div className="lg:hidden border-t border-white/10 bg-navy">
+        <div className="lg:hidden border-t border-divider bg-surface">
           <nav className="container py-4 flex flex-col">
             {NAV_ITEMS.map((item) =>
               item.isAnchor ? (
@@ -160,7 +172,7 @@ export function Header() {
                   key={item.to}
                   href={item.to}
                   onClick={() => setOpen(false)}
-                  className="py-3 font-sans font-semibold text-[15px] text-stone hover:text-bronze"
+                  className="py-3 font-sans font-medium text-[15px] text-navy hover:text-bronze"
                 >
                   {item.label}
                 </a>
@@ -169,7 +181,7 @@ export function Header() {
                   key={item.to}
                   to={item.to}
                   onClick={() => setOpen(false)}
-                  className="py-3 font-sans font-semibold text-[15px] text-stone hover:text-bronze"
+                  className="py-3 font-sans font-medium text-[15px] text-navy hover:text-bronze"
                 >
                   {item.label}
                 </Link>
@@ -178,12 +190,12 @@ export function Header() {
             <Button
               as={Link}
               to="/contact"
-              variant="outline"
+              variant="primary"
               size="md"
               className="mt-3 mb-2 w-full justify-center"
               onClick={() => setOpen(false)}
             >
-              Contact Us
+              Contact us
             </Button>
           </nav>
         </div>
