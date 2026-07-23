@@ -30,6 +30,7 @@ import { ThankYou } from '@/components/landing/ThankYou'
 
 // SEO + analytics + Pixel/CAPI hooks — preserved verbatim.
 import { Seo } from '@/components/seo/Seo'
+import { SITUATION_FAQS } from '@/content/situationFaqs'
 import { Analytics, AnalyticsRouteTracker, fireConversion } from '@/components/seo/Analytics'
 import { useMetaPixel, useMetaPixelContactLinks } from '@/lib/metaPixel'
 import { PrivacyPolicy } from '@/components/legal/PrivacyPolicy'
@@ -65,54 +66,103 @@ const RESOLVE_ADDRESS = {
   addressCountry: 'CA',
 }
 
-// Lightweight Resolve organisation block reused as `worksFor` on the
-// practitioner Persons. Keeps the entity graph anchored to the Resolve
-// brand instead of the brokerage at the structured-data level.
-const RESOLVE_ORG = {
-  '@type': 'Organization',
-  name: 'Resolve · Seller Representation',
-  alternateName: 'Resolve',
-  url: `${SITE_URL}/`,
-}
+// Stable @ids so every page's structured data resolves back to ONE
+// business entity and ONE website entity (the core of standalone-entity
+// SEO — Google, Bing, and AI search treat resolverealestate.ca as a
+// single authoritative local real-estate business).
+const ORG_ID = `${SITE_URL}/#resolve`
+const WEBSITE_ID = `${SITE_URL}/#website`
+const TARAN_ID = `${SITE_URL}/#taran`
+const DAVE_ID = `${SITE_URL}/#dave`
 
-const PROFESSIONAL_SERVICE_LD = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'Resolve · Seller Representation',
-  alternateName: 'Resolve',
-  description:
-    'A boutique seller representation practice for Ontario homeowners navigating mortgage arrears, power of sale, separation, estate sales, and property disputes.',
-  url: `${SITE_URL}/`,
-  image: `${SITE_URL}/og-image.png`,
-  telephone: '+1-365-645-7332',
-  address: RESOLVE_ADDRESS,
-  areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
-}
+// Lightweight @id reference used as `worksFor` / `provider` / `publisher`
+// throughout the graph. Resolves to the full RealEstateAgent entity that
+// SITE_JSONLD ships on the same page.
+const RESOLVE_ORG = { '@type': 'RealEstateAgent', '@id': ORG_ID }
 
+// The full business entity. Repeated on every indexable page (via
+// SITE_JSONLD) so each page is self-contained and the NAP + @id stay
+// consistent — a strong local-SEO trust signal.
 const REAL_ESTATE_AGENT_LD = {
   '@context': 'https://schema.org',
   '@type': 'RealEstateAgent',
-  name: 'Resolve · Seller Representation',
-  alternateName: 'Resolve',
+  '@id': ORG_ID,
+  name: 'Resolve',
+  alternateName: ['Resolve Real Estate', 'Resolve · Seller Representation'],
+  description:
+    'Boutique seller representation for Ontario homeowners navigating power of sale, mortgage arrears, financial pressure, estate sales, and time-sensitive sales. Real estate services provided through HomeLife G1 Realty Inc., Brokerage.',
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/og-image.png`,
-  logo: `${SITE_URL}/apple-touch-icon.png`,
+  logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon-512.png` },
   telephone: '+1-365-645-7332',
+  email: 'info@resolverealestate.ca',
   address: RESOLVE_ADDRESS,
-  areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
+  // Approximate coordinates for the Brampton office (2260 Bovaird Dr. E.);
+  // fine-tune against the Google Business Profile pin when it is live.
+  geo: { '@type': 'GeoCoordinates', latitude: 43.7343, longitude: -79.723 },
+  areaServed: [
+    { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
+    { '@type': 'City', name: 'Brampton' },
+    { '@type': 'City', name: 'Mississauga' },
+    { '@type': 'City', name: 'Caledon' },
+    { '@type': 'AdministrativeArea', name: 'Peel Region' },
+    { '@type': 'Place', name: 'Greater Toronto Area' },
+  ],
   knowsAbout: [
-    'Mortgage arrears',
     'Power of sale',
-    'Property disputes',
-    'Separation and divorce real estate',
+    'Mortgage arrears',
+    'Financial pressure and mortgage renewal shock',
     'Estate and probate sales',
     'Time-sensitive sales',
+    'Seller representation',
   ],
+  founder: [
+    { '@type': 'Person', '@id': TARAN_ID },
+    { '@type': 'Person', '@id': DAVE_ID },
+  ],
+  sameAs: [
+    'https://www.homelifeg1realty.com/Taran-Aujla',
+    'https://prime-gate.ca',
+  ],
+}
+
+// Site entity — anchors the domain and names the publisher.
+const WEBSITE_LD = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': WEBSITE_ID,
+  name: 'Resolve',
+  alternateName: 'Resolve Real Estate',
+  url: `${SITE_URL}/`,
+  publisher: RESOLVE_ORG,
+  inLanguage: 'en-CA',
+}
+
+// Prepended to every indexable page so the business + site entities (and
+// any @id references to them) resolve locally on that page.
+const SITE_JSONLD = [REAL_ESTATE_AGENT_LD, WEBSITE_LD]
+
+// FAQPage block built from the SAME data the page renders visibly
+// (SITUATION_FAQS), so the markup always matches on-page content.
+function faqPageLd(slug) {
+  const faqs = SITUATION_FAQS[slug]
+  if (!faqs || !faqs.length) return null
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    '@id': `${SITE_URL}/${slug}/#faq`,
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  }
 }
 
 const TARAN_PERSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': TARAN_ID,
   name: 'Taran Aujla',
   jobTitle: 'Salesperson',
   identifier: 'RECO Registration No. 6024721',
@@ -136,6 +186,7 @@ const TARAN_PERSON_LD = {
 const DAVE_PERSON_LD = {
   '@context': 'https://schema.org',
   '@type': 'Person',
+  '@id': DAVE_ID,
   name: 'Dave Dhaliwal',
   jobTitle: 'Salesperson',
   identifier: 'RECO Registration No. 5024155',
@@ -145,13 +196,13 @@ const DAVE_PERSON_LD = {
 }
 
 const HOME_JSONLD = [
-  PROFESSIONAL_SERVICE_LD,
-  REAL_ESTATE_AGENT_LD,
+  ...SITE_JSONLD,
   TARAN_PERSON_LD,
   DAVE_PERSON_LD,
 ]
 
 const BUYERS_JSONLD = [
+  ...SITE_JSONLD,
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -193,7 +244,8 @@ const BUYERS_JSONLD = [
 
 function situationJsonLd({ slug, name, serviceType, description, breadcrumbName }) {
   const pageUrl = `${SITE_URL}/${slug}/`
-  return [
+  const blocks = [
+    ...SITE_JSONLD,
     {
       '@context': 'https://schema.org',
       '@type': 'WebPage',
@@ -219,6 +271,9 @@ function situationJsonLd({ slug, name, serviceType, description, breadcrumbName 
       description,
     },
   ]
+  const faq = faqPageLd(slug)
+  if (faq) blocks.push(faq)
+  return blocks
 }
 
 const POWER_OF_SALE_JSONLD = situationJsonLd({
@@ -293,6 +348,7 @@ const FINANCIAL_PRESSURE_JSONLD = situationJsonLd({
 // TRESA. Partnership framing carries in the WebPage name and H1, after
 // the audience is correctly identified.
 const FOR_AGENTS_JSONLD = [
+  ...SITE_JSONLD,
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -370,6 +426,7 @@ function AboutRoutePage() {
         title="About Resolve · Seller Representation · Ontario"
         description="Boutique seller representation for Ontario homeowners. Led by Taran Aujla and Dave Dhaliwal under HomeLife G1 Realty Inc., Brokerage."
         canonical={`${SITE_URL}/about/`}
+        jsonLd={[...SITE_JSONLD, TARAN_PERSON_LD, DAVE_PERSON_LD]}
       />
       <AboutPage />
     </>
@@ -383,6 +440,7 @@ function ContactRoutePage() {
         title="Contact Resolve · Confidential Inquiry · Ontario"
         description="Send a confidential inquiry to Resolve. We read every message personally and typically reply within a few hours during business hours."
         canonical={`${SITE_URL}/contact/`}
+        jsonLd={SITE_JSONLD}
       />
       <ContactPage />
     </>
@@ -541,6 +599,7 @@ function PrivacyPage() {
         title="Privacy Policy · Resolve"
         description="What this site collects, why, who it is shared with, and how to withdraw. Resolve seller representation through HomeLife G1 Realty Inc., Brokerage."
         canonical={`${SITE_URL}/privacy/`}
+        jsonLd={SITE_JSONLD}
       />
       <PrivacyPolicy />
     </>

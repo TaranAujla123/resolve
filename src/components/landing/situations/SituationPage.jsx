@@ -6,6 +6,7 @@ import { Button } from '@/components/brand/Button'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { WhatThisCosts } from '@/components/brand/WhatThisCosts'
 import { SituationInquiryForm } from './SituationInquiryForm'
+import { SITUATION_FAQS } from '@/content/situationFaqs'
 
 /**
  * SituationPage — shared layout for a situation deep-dive page
@@ -21,6 +22,7 @@ import { SituationInquiryForm } from './SituationInquiryForm'
  * pattern intact; only the surfaces and ink colors shift to V2.
  */
 export function SituationPage({ eyebrow, title, lead, situationLabel, situationSlug, children }) {
+  const faqs = (situationSlug && SITUATION_FAQS[situationSlug]) || null
   return (
     <>
       {/* Hero */}
@@ -65,6 +67,37 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
           <div className="max-w-3xl space-y-12">{children}</div>
         </div>
       </section>
+
+      {/* FAQ — visible, crawlable, and mirrored 1:1 by FAQPage JSON-LD in
+          App.jsx. Targets the question-shaped searches for each situation
+          (People-Also-Ask + AI answers). Rendered as always-visible Q&A so
+          the content is fully indexable with no JS gate. */}
+      {faqs && (
+        <section data-surface="stone" className="bg-stone">
+          <div className="container section-y">
+            <div className="mx-auto max-w-3xl">
+              <p className="text-[12px] uppercase tracking-[0.18em] font-semibold text-bronze">
+                Common questions
+              </p>
+              <h2 className="mt-3 font-display font-medium text-navy text-display-md">
+                {eyebrow}, answered.
+              </h2>
+              <dl className="mt-8 divide-y divide-divider">
+                {faqs.map((item) => (
+                  <div key={item.q} className="py-6 first:pt-0">
+                    <dt className="font-display font-medium text-navy text-[19px] sm:text-[20px] leading-snug">
+                      {item.q}
+                    </dt>
+                    <dd className="mt-3 text-[16.5px] text-navy-soft leading-relaxed">
+                      {item.a}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Lawyer coordination line */}
       <section data-surface="stone" className="bg-stone">
