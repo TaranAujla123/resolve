@@ -120,10 +120,10 @@ export function PrivacyPolicy() {
           <P>
             For any privacy question or request, contact Resolve at{' '}
             <a
-              href="mailto:info@resolveproperty.ca"
+              href="mailto:info@resolverealestate.ca"
               className="text-accent-deep hover:text-ink transition-colors font-semibold"
             >
-              info@resolveproperty.ca
+              info@resolverealestate.ca
             </a>{' '}
             or call{' '}
             <a

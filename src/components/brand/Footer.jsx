@@ -112,10 +112,10 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="mailto:info@resolveproperty.ca"
+                  href="mailto:info@resolverealestate.ca"
                   className="hover:text-bronze transition-colors"
                 >
-                  info@resolveproperty.ca
+                  info@resolverealestate.ca
                 </a>
               </li>
               <li>

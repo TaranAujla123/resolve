@@ -140,7 +140,7 @@ export function GetDealsPage() {
       <Seo
         title={`${variant.headline} · Resolve Buyer Network`}
         description="Off-market GTA property opportunities from motivated sellers — Power of Sale, mortgage arrears, estate, court-deadline closings. Distressed-seller files briefed before MLS. Disclosed representation. Free 15-minute call."
-        canonical="https://resolveproperty.ca/get-deals/"
+        canonical="https://resolverealestate.ca/get-deals/"
         noindex={true}
       />
 
