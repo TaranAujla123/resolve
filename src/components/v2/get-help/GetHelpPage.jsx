@@ -168,7 +168,7 @@ export function GetHelpPage() {
       <Seo
         title={`${variant.headline} · Resolve`}
         description="Resolve handles complex Ontario property sales — mortgage arrears, power of sale, estate, time-sensitive closings. Free 15-minute confidential call. We call back within 24 hours."
-        canonical="https://resolverealestate.ca/get-help/"
+        canonical="https://www.resolverealestate.ca/get-help/"
         noindex={true}
       />
 

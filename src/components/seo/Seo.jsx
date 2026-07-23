@@ -20,7 +20,7 @@ export function Seo({
   canonical,
   ogTitle,
   ogDescription,
-  ogImage = 'https://resolverealestate.ca/og-image.png?v=2',
+  ogImage = 'https://www.resolverealestate.ca/og-image.png?v=2',
   ogImageAlt = 'Resolve · For Ontario homeowners. Facing a difficult property situation?',
   ogType = 'website',
   jsonLd = [],

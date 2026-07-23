@@ -54,7 +54,7 @@ import { PrivacyPolicy } from '@/components/legal/PrivacyPolicy'
 //   - RECO registration numbers are factual identifiers in Person JSON-LD
 // -----------------------------------------------------------------------
 
-const SITE_URL = 'https://resolverealestate.ca'
+const SITE_URL = 'https://www.resolverealestate.ca'
 
 const RESOLVE_ADDRESS = {
   '@type': 'PostalAddress',
