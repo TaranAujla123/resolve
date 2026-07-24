@@ -54,16 +54,16 @@ export function AboutPage() {
               global Footer; no need to restate it here. */}
           <div className="mt-12 space-y-5 text-[17px] leading-relaxed text-navy-soft max-w-3xl">
             <p>
-              We&rsquo;re Taran and Dave. Our background spans years inside
-              Ontario real estate, including real estate law, property
-              transactions, and real estate investing. That experience
-              helps us identify issues early, understand what buyers
-              respond to, and guide sellers through more complex situations
-              with confidence.
+              I&rsquo;m Taran Aujla. My background spans decades in real
+              estate, including Ontario real estate law, property
+              transactions, and real estate investing across Ontario and
+              Montreal, Quebec. That experience helps me identify issues
+              early, understand what buyers respond to, and guide sellers
+              through more complex situations with confidence.
             </p>
             <p>
               Whether the challenge involves mortgage arrears, power of
-              sale, an estate matter, or a time-sensitive sale, our role
+              sale, an estate matter, or a time-sensitive sale, my role
               is simple: provide practical seller representation when
               selling is not straightforward.
             </p>
@@ -158,6 +158,12 @@ export function AboutPage() {
               </blockquote>
             </div>
           </figure>
+
+          {/* Team — Dave sits under his own eyebrow so the page reads as
+              led by Taran, with Dave on the team. */}
+          <div className="pt-6">
+            <Eyebrow>Team</Eyebrow>
+          </div>
 
           {/* Dave */}
           <figure className="rounded-[18px] border border-divider bg-stone p-6 sm:p-8 shadow-card">
