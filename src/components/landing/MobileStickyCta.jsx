@@ -77,19 +77,6 @@ export function MobileStickyCta() {
       <div className="container py-2.5">
         <div className="grid grid-cols-3 gap-2">
           <a
-            href="tel:+13656457332"
-            className="
-              flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
-              rounded-[12px] border border-stone/20 text-stone
-              hover:bg-stone/10 active:bg-stone/15 transition-colors
-            "
-          >
-            <Phone className="h-4 w-4 text-bronze" strokeWidth={1.9} />
-            <span className="font-sans font-semibold text-[11.5px] tracking-wide">
-              Call
-            </span>
-          </a>
-          <a
             href="sms:+13656457332"
             className="
               flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
@@ -100,6 +87,19 @@ export function MobileStickyCta() {
             <MessageSquare className="h-4 w-4 text-bronze" strokeWidth={1.9} />
             <span className="font-sans font-semibold text-[11.5px] tracking-wide">
               Text
+            </span>
+          </a>
+          <a
+            href="tel:+13656457332"
+            className="
+              flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
+              rounded-[12px] border border-stone/20 text-stone
+              hover:bg-stone/10 active:bg-stone/15 transition-colors
+            "
+          >
+            <Phone className="h-4 w-4 text-bronze" strokeWidth={1.9} />
+            <span className="font-sans font-semibold text-[11.5px] tracking-wide">
+              Call
             </span>
           </a>
           <Link
