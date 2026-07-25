@@ -46,20 +46,21 @@ export function AboutPage() {
             standard listing.
           </p>
 
-          {/* Institutional body. Credibility is sourced to judgment and
-              track record, not the legal credential — the legal reference
-              is deliberately kept OUT of this intro and appears exactly
-              once, as a single factual past-tense line, in Taran's bio
-              below (conservative LSO 3.1 / RECO 5.1 posture while the JR is
-              pending). Brokerage attribution lives on the bio cards below +
-              the global Footer; no need to restate it here. */}
+          {/* Institutional body. The legal background is stated as factual
+              past-tense biography ("including Ontario real estate law"),
+              which preserves the credibility without a present-tense
+              legal-practice or holding-out claim (conservative LSO 3.1 /
+              RECO 5.1 posture while the JR is pending). Brokerage
+              attribution lives on the bio cards below + the global Footer;
+              no need to restate it here. */}
           <div className="mt-12 space-y-5 text-[17px] leading-relaxed text-navy-soft max-w-3xl">
             <p>
-              I&rsquo;m Taran. My background spans decades in real
-              estate across Ontario and Montreal, Quebec, in property
-              transactions and investing. That experience helps me identify
-              issues early, understand what buyers respond to, and guide
-              sellers through more complex situations with confidence.
+              I&rsquo;m Taran. My background spans decades in real estate,
+              including Ontario real estate law, property transactions, and
+              real estate investing across Ontario and Montreal, Quebec. That
+              experience helps me identify issues early, understand what
+              buyers respond to, and guide sellers through more complex
+              situations with confidence.
             </p>
             <p>
               Whether the challenge involves mortgage arrears, power of
@@ -129,55 +130,32 @@ export function AboutPage() {
               />
               <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-navy-soft">
                 <p>
-                  Many home sales are straightforward. Price it right, put it
-                  in front of the market, and the process largely runs on its
-                  own. The sales I focus on are the ones that do not: power of
-                  sale, mortgage arrears, estate sales, financial pressure,
-                  and time-sensitive closings. On those files, the outcome
-                  depends on the work done before the sign goes up: reading
-                  the file, seeing where it can break, and building the deal
-                  so it holds.
+                  Many home sales are straightforward, and largely run on
+                  their own. The ones I focus on are the sales that do not:
+                  power of sale, mortgage arrears, estate sales, financial
+                  pressure, and time-sensitive closings. On those files, the
+                  outcome depends on the work done before the sign goes up:
+                  reading the file, seeing where it can break, and building
+                  the deal so it holds.
                 </p>
                 <p>
-                  That approach comes from experience. For close to a decade
-                  I practised real estate law in Ontario, across hundreds of
-                  transactions, and I was often the one called in when a deal
-                  was tangled, time-sensitive, or going sideways. What I saw
-                  over those years is what shapes how I work now. Too many of
-                  the problems that surfaced at closing, and after it, were
-                  preventable. They traced back to how the deal was put
-                  together at the very start: the wrong terms accepted, a
-                  condition missed, an opening given away before anyone
-                  reached the table. By the time a file was in trouble, the
-                  options had usually run out, and fixing it took far more
-                  work than setting it up properly would have.
+                  That comes from experience. Close to a decade in Ontario
+                  real estate law, across hundreds of transactions, showed me
+                  that most of the problems surfacing at closing were
+                  preventable, and traced back to how the deal was put
+                  together at the start. I work as a real estate Salesperson
+                  now: getting involved early, negotiating terms that hold,
+                  and steering a clean path to closing, on the files that take
+                  more than finding a buyer and getting an agreement signed.
                 </p>
                 <p>
-                  I work as a real estate Salesperson now. That means getting
-                  involved early, reading the file before I recommend
-                  anything, negotiating terms that hold, and steering a clean
-                  path to closing. In power
-                  of sale, mortgage arrears, estate sales, financial
-                  pressure, and time-sensitive closings, that difference is
-                  everything. These files take more than finding a buyer and
-                  getting an agreement of purchase and sale signed. They take
-                  someone who reads the file first, anticipates where it can
-                  break, and builds the deal so it holds.
-                </p>
-                <p>
-                  My start in real estate came earlier than any of that. I
-                  began managing my parents&rsquo; rental properties at
-                  sixteen, and acquired and operated my own in the years that
-                  followed. That foundation, alongside the years of
-                  transactional work, is what the work is built on.
-                </p>
-                <p>
-                  The approach is document-first, market-aware, and
-                  position-driven. I read before I recommend, build the
-                  position before I move on it, and understand both sides of
-                  the table as carefully as I understand the file. Strength
-                  in a transaction is doing the work, holding composure, and
-                  walking in with options, not noise.
+                  My start came earlier, managing my parents&rsquo; rental
+                  properties at sixteen and operating my own in the years
+                  after. The approach is document-first and position-driven:
+                  I read before I recommend, build the position before I move
+                  on it, and understand both sides of the table as carefully
+                  as the file. Strength in a transaction is doing the work,
+                  holding composure, and walking in with options, not noise.
                 </p>
               </blockquote>
             </div>
