@@ -14,6 +14,7 @@ import { ContactPage } from '@/components/v2/contact/ContactPage'
 import { AboutPage } from '@/components/v2/about/AboutPage'
 import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
 import { GetDealsPage } from '@/components/v2/get-deals/GetDealsPage'
+import { InvestorAccessPage } from '@/components/v2/investor-access/InvestorAccessPage'
 
 // Existing pages — kept as-is, restyled in-place to V2 surfaces and
 // typography via the updated SituationPage shell + Tailwind tokens.
@@ -678,6 +679,8 @@ export default function App() {
                 hero when ?cat= is missing or unrecognized. */}
             <Route path="/get-deals" element={<GetDealsPage />} />
             <Route path="/get-deals/" element={<GetDealsPage />} />
+            <Route path="/investor-access" element={<InvestorAccessPage />} />
+            <Route path="/investor-access/" element={<InvestorAccessPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>

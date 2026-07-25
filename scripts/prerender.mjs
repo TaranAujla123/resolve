@@ -44,6 +44,7 @@ const ROUTES = [
   '/thanks',
   '/get-help',
   '/get-deals',
+  '/investor-access',
 ]
 const PORT = 4321
 const NAV_TIMEOUT_MS = 30_000
