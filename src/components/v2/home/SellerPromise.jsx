@@ -16,11 +16,12 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
  * feel before they call. The buyer side now lives only behind direct
  * buyer ads (/get-deals, /buyers) and in the footer.
  *
- * This block replaces it with a single-loyalty statement. It answers
- * the seller's underlying question — "whose side are you really on?"
- * — before they ever reach the thesis. The heading deliberately flips
- * the old "Both sides of the table" line into "Your side of the
- * table. Only yours."
+ * This block replaces it with a seller-focused reassurance beat. The
+ * heading ("Focused on your sale.") is deliberately kept to focus and
+ * care rather than an exclusive-loyalty claim: an earlier "Only yours"
+ * version over-promised and would not hold up in a direct-buyer /
+ * multiple-representation scenario. It reassures the seller before the
+ * thesis without claiming something that could be contradicted later.
  *
  * Compliance: no guarantee of price or outcome (RECO 5.1). The pledge
  * is about representation, effort, and process — full market
@@ -45,10 +46,10 @@ export function SellerPromise() {
     >
       <div className="container">
         <div className="max-w-2xl">
-          <Eyebrow>One Loyalty</Eyebrow>
+          <Eyebrow>Your Sale</Eyebrow>
           <h2 className="mt-5 font-display font-medium text-navy text-display-md">
-            Your side of the table.{' '}
-            <span className="italic text-bronze">Only yours.</span>
+            Focused on your{' '}
+            <span className="italic text-bronze">sale.</span>
           </h2>
           <p className="mt-5 max-w-xl text-[16.5px] leading-relaxed text-navy-soft">
             When you bring us a difficult sale, we represent you and the
