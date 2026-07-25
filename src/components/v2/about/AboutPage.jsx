@@ -1,5 +1,5 @@
-import React from 'react'
-import { Quote } from 'lucide-react'
+import React, { useState } from 'react'
+import { Quote, Linkedin } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import portrait from '@/portrait.jpg'
 
@@ -21,6 +21,8 @@ import portrait from '@/portrait.jpg'
  * monogram in his place until one is added.
  */
 export function AboutPage() {
+  const [bioOpen, setBioOpen] = useState(false)
+
   return (
     <>
       {/* Hero */}
@@ -120,6 +122,19 @@ export function AboutPage() {
                 <p className="mt-3 text-[12.5px] text-navy-mute leading-relaxed">
                   HomeLife G1 Realty Inc., Brokerage
                 </p>
+                <p className="mt-4 text-[12.5px] sm:text-[13px] text-navy-soft leading-relaxed">
+                  Real estate investor &middot; Former real estate lawyer
+                  (10 yrs) &middot; Problem-solver
+                </p>
+                <a
+                  href="https://www.linkedin.com/in/itstaranaujla/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 font-sans font-semibold text-[12.5px] text-bronze hover:text-bronze-deep transition-colors"
+                >
+                  <Linkedin className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
+                  Connect on LinkedIn
+                </a>
               </div>
             </div>
             <div className="mt-6 sm:mt-7 pt-6 sm:pt-7 border-t border-divider/70">
@@ -139,30 +154,43 @@ export function AboutPage() {
                   surface at closing are preventable, and they trace back to
                   how the deal was put together at the start.
                 </p>
-                <p>
-                  I work as a real estate Salesperson now, focused on the
-                  sales that are anything but routine: power of sale, mortgage
-                  arrears, estate sales, financial pressure, and time-sensitive
-                  closings. On those files the outcome depends on the work done
-                  before the sign goes up: getting involved early, reading the
-                  file, negotiating terms that hold, and steering a clean path
-                  to closing. A signed agreement is the start of the work, not
-                  the finish.
-                </p>
-                <p>
-                  I also keep my own list of qualified buyers and investors
-                  who are ready to buy. When a home fits what one of them is
-                  looking for, I can often sell it privately, without a long
-                  wait on the open market.
-                </p>
-                <p>
-                  The approach is document-first and position-driven: I read
-                  before I recommend, build the position before I move on it,
-                  and understand both sides of the table as carefully as the
-                  file. Strength in a transaction is doing the work, holding
-                  composure, and walking in with options, not noise.
-                </p>
+                {bioOpen && (
+                  <>
+                    <p>
+                      I work as a real estate Salesperson now, focused on the
+                      sales that are anything but routine: power of sale,
+                      mortgage arrears, estate sales, financial pressure, and
+                      time-sensitive closings. On those files the outcome
+                      depends on the work done before the sign goes up: getting
+                      involved early, reading the file, negotiating terms that
+                      hold, and steering a clean path to closing. A signed
+                      agreement is the start of the work, not the finish.
+                    </p>
+                    <p>
+                      I also keep my own list of qualified buyers and investors
+                      who are ready to buy. When a home fits what one of them is
+                      looking for, I can often sell it privately, without a long
+                      wait on the open market.
+                    </p>
+                    <p>
+                      The approach is document-first and position-driven: I read
+                      before I recommend, build the position before I move on it,
+                      and understand both sides of the table as carefully as the
+                      file. Strength in a transaction is doing the work, holding
+                      composure, and walking in with options, not noise.
+                    </p>
+                  </>
+                )}
               </blockquote>
+              <button
+                type="button"
+                onClick={() => setBioOpen((o) => !o)}
+                aria-expanded={bioOpen}
+                className="mt-4 inline-flex items-center gap-1.5 font-sans font-semibold text-[12px] uppercase tracking-[0.14em] text-bronze hover:text-bronze-deep transition-colors"
+              >
+                {bioOpen ? 'Read less' : 'Read more'}
+                <span aria-hidden="true">{bioOpen ? '↑' : '↓'}</span>
+              </button>
             </div>
           </figure>
 
