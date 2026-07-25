@@ -129,13 +129,14 @@ export function AboutPage() {
               />
               <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-navy-soft">
                 <p>
-                  Marketing a home is the easy part. Full MLS exposure puts
-                  a property in front of the entire market, and most of what
-                  follows is noise. What actually moves a complicated sale is
-                  the work done before the listing goes live: reading the
-                  file, seeing where it can break, and building the deal so
-                  it holds. That is where I put the effort, not on the
-                  marketing theater.
+                  Many home sales are straightforward. Price it right, put it
+                  in front of the market, and the process largely runs on its
+                  own. The sales I focus on are the ones that do not: power of
+                  sale, mortgage arrears, estate sales, financial pressure,
+                  and time-sensitive closings. On those files, the outcome
+                  depends on the work done before the sign goes up: reading
+                  the file, seeing where it can break, and building the deal
+                  so it holds.
                 </p>
                 <p>
                   That approach comes from experience. For close to a decade
@@ -152,10 +153,10 @@ export function AboutPage() {
                   work than setting it up properly would have.
                 </p>
                 <p>
-                  I work as a real estate Salesperson now. My focus is the
-                  part most files never get: getting involved early, reading
-                  the file before I recommend anything, negotiating terms
-                  that hold, and steering a clean path to closing. In power
+                  I work as a real estate Salesperson now. That means getting
+                  involved early, reading the file before I recommend
+                  anything, negotiating terms that hold, and steering a clean
+                  path to closing. In power
                   of sale, mortgage arrears, estate sales, financial
                   pressure, and time-sensitive closings, that difference is
                   everything. These files take more than finding a buyer and
