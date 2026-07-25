@@ -130,32 +130,37 @@ export function AboutPage() {
               />
               <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-navy-soft">
                 <p>
-                  Many home sales are straightforward, and largely run on
-                  their own. The ones I focus on are the sales that do not:
-                  power of sale, mortgage arrears, estate sales, financial
-                  pressure, and time-sensitive closings. On those files, the
-                  outcome depends on the work done before the sign goes up:
-                  reading the file, seeing where it can break, and building
-                  the deal so it holds.
+                  I come at real estate from two sides: as an investor, and
+                  for close to a decade as a real estate lawyer. I started
+                  managing my family&rsquo;s rentals as a teenager and have
+                  owned and operated my own since; in practice, I closed
+                  several hundred transactions. Both taught me the same
+                  lesson, and it shapes how I work now: most problems that
+                  surface at closing are preventable, and they trace back to
+                  how the deal was put together at the start.
                 </p>
                 <p>
-                  That comes from experience. Close to a decade in Ontario
-                  real estate law, across hundreds of transactions, showed me
-                  that most of the problems surfacing at closing were
-                  preventable, and traced back to how the deal was put
-                  together at the start. I work as a real estate Salesperson
-                  now: getting involved early, negotiating terms that hold,
-                  and steering a clean path to closing, on the files that take
-                  more than finding a buyer and getting an agreement signed.
+                  I work as a real estate Salesperson now, focused on the
+                  sales that are anything but routine: power of sale, mortgage
+                  arrears, estate sales, financial pressure, and time-sensitive
+                  closings. On those files the outcome depends on the work done
+                  before the sign goes up: getting involved early, reading the
+                  file, negotiating terms that hold, and steering a clean path
+                  to closing. A signed agreement is the start of the work, not
+                  the finish.
                 </p>
                 <p>
-                  My start came earlier, managing my parents&rsquo; rental
-                  properties at sixteen and operating my own in the years
-                  after. The approach is document-first and position-driven:
-                  I read before I recommend, build the position before I move
-                  on it, and understand both sides of the table as carefully
-                  as the file. Strength in a transaction is doing the work,
-                  holding composure, and walking in with options, not noise.
+                  I also keep my own list of qualified buyers and investors
+                  who are ready to buy. When a home fits what one of them is
+                  looking for, I can often sell it privately, without a long
+                  wait on the open market.
+                </p>
+                <p>
+                  The approach is document-first and position-driven: I read
+                  before I recommend, build the position before I move on it,
+                  and understand both sides of the table as carefully as the
+                  file. Strength in a transaction is doing the work, holding
+                  composure, and walking in with options, not noise.
                 </p>
               </blockquote>
             </div>
