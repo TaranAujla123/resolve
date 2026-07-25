@@ -55,7 +55,7 @@ export function AboutPage() {
               the global Footer; no need to restate it here. */}
           <div className="mt-12 space-y-5 text-[17px] leading-relaxed text-navy-soft max-w-3xl">
             <p>
-              I&rsquo;m Taran Aujla. My background spans decades in real
+              I&rsquo;m Taran. My background spans decades in real
               estate across Ontario and Montreal, Quebec, in property
               transactions and investing. That experience helps me identify
               issues early, understand what buyers respond to, and guide
