@@ -24,7 +24,6 @@ const NAV_ITEMS = [
   { to: '/#why-resolve', label: 'Why Us', isAnchor: true },
   { to: '/#how-we-help', label: 'How We Help', isAnchor: true },
   { to: '/about', label: 'About' },
-  { to: '/buyers', label: 'For Buyers' },
   { to: '/for-agents', label: 'For Agents' },
 ]
 
