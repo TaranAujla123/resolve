@@ -124,7 +124,7 @@ export function AboutPage() {
                 </p>
                 <p className="mt-4 text-[12.5px] sm:text-[13px] text-navy-soft leading-relaxed">
                   Real estate investor &middot; Former real estate lawyer
-                  (10 yrs) &middot; Problem-solver
+                  (10 yrs) &middot; Strategic Negotiator &middot; Problem-Solver
                 </p>
                 <a
                   href="https://www.linkedin.com/in/itstaranaujla/"
