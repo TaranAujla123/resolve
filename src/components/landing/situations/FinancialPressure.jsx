@@ -64,12 +64,12 @@ export function FinancialPressure() {
         </p>
         <p>
           This window is where the options are widest and the leverage
-          is highest. Selling is one option. Restructuring the loan is
-          another. Holding the property with a change in circumstances
-          (a tenant, a co-owner arrangement, a private second) is a
-          third. The right answer depends on the equity, the income
-          picture, and the timeline. The point of the conversation is
-          to see the actual position clearly.
+          is highest, and it is the best moment to sell if the numbers
+          are not going to recover. Selling now, while the file is still
+          private and the equity is intact, captures that strength
+          instead of watching it drain away once arrears and enforcement
+          begin. The point of the first conversation is to see the
+          actual position clearly and move before the window closes.
         </p>
       </SituationBlock>
 
@@ -120,12 +120,12 @@ export function FinancialPressure() {
           paper, not a pitch.
         </p>
         <p>
-          <strong className="text-navy font-semibold">Honest about the alternatives.</strong>{' '}
-          Selling is one option. It is not always the right one. If a
-          refinance, a lender restructure, a private second, or a hold
-          with different tenants makes more sense for the file, we say
-          so and we can point you to the professionals who handle that
-          side. Resolve is paid on a sale. The recommendation is not.
+          <strong className="text-navy font-semibold">Move while the equity is still yours.</strong>{' '}
+          Under real carrying pressure, a planned sale now usually
+          protects far more of your equity than waiting for arrears and
+          enforcement to eat into it. When the numbers point to selling,
+          we move early and run it properly, so you sell on your terms
+          rather than the lender&rsquo;s.
         </p>
         <p>
           <strong className="text-navy font-semibold">Coordinate with the lender before default starts.</strong>{' '}
