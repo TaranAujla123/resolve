@@ -37,10 +37,12 @@ export function InvestorAccessPage() {
         noindex
       />
 
-      <section
-        data-surface="navy"
-        className="bg-navy section-y min-h-[72vh] flex items-center"
-      >
+      {/* No data-surface="navy" here on purpose: this page's navy hero
+          does NOT tuck up under the sticky header, so we want the header
+          in its SOLID state (white background, navy text + light-surface
+          logo) rather than the transparent white-text treatment, which
+          would be invisible on the light bar. */}
+      <section className="bg-navy section-y min-h-[72vh] flex items-center">
         <div className="container max-w-4xl">
           <Eyebrow>Investor Portal</Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl">
