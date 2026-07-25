@@ -46,20 +46,20 @@ export function AboutPage() {
             standard listing.
           </p>
 
-          {/* Paragraphs 2 and 3 — institutional body. Past-tense
-              "background spans... including real estate law" preserves
-              the legal-background credibility while staying clear of any
-              present-tense legal-practice claim (Phase 1 LSO JR posture).
-              Brokerage attribution lives on the bio cards below + the
-              global Footer; no need to restate it here. */}
+          {/* Institutional body. Credibility is sourced to judgment and
+              track record, not the legal credential — the legal reference
+              is deliberately kept OUT of this intro and appears exactly
+              once, as a single factual past-tense line, in Taran's bio
+              below (conservative LSO 3.1 / RECO 5.1 posture while the JR is
+              pending). Brokerage attribution lives on the bio cards below +
+              the global Footer; no need to restate it here. */}
           <div className="mt-12 space-y-5 text-[17px] leading-relaxed text-navy-soft max-w-3xl">
             <p>
               I&rsquo;m Taran Aujla. My background spans decades in real
-              estate, including Ontario real estate law, property
-              transactions, and real estate investing across Ontario and
-              Montreal, Quebec. That experience helps me identify issues
-              early, understand what buyers respond to, and guide sellers
-              through more complex situations with confidence.
+              estate across Ontario and Montreal, Quebec, in property
+              transactions and investing. That experience helps me identify
+              issues early, understand what buyers respond to, and guide
+              sellers through more complex situations with confidence.
             </p>
             <p>
               Whether the challenge involves mortgage arrears, power of
@@ -129,31 +129,54 @@ export function AboutPage() {
               />
               <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-navy-soft">
                 <p>
-                  For close to a decade I practised real estate law in
-                  Ontario, working through hundreds of transactions and the
-                  complications that come with them. I was often the one
-                  called in when a deal was tangled, time-sensitive, or
-                  going sideways. That work taught me where property
-                  transactions break, and how to keep them from breaking.
-                  How to calmly navigate the moving parts and logistics when
-                  a deal gets complicated.
+                  Marketing a home is the easy part. Full MLS exposure puts
+                  a property in front of the entire market, and most of what
+                  follows is noise. What actually moves a complicated sale is
+                  the work done before the listing goes live: reading the
+                  file, seeing where it can break, and building the deal so
+                  it holds. That is where I put the effort, not on the
+                  marketing theater.
                 </p>
                 <p>
-                  My introduction to real estate came even earlier than the
-                  legal work. I started managing my parents&rsquo; rental
-                  properties at sixteen, and acquired and operated my own
-                  properties in the years that followed. That foundation,
-                  alongside the years of closing-stage work, is what shapes
-                  the practice now. I work on the deal side directly, as a
-                  Salesperson, not as a lawyer.
+                  That approach comes from experience. For close to a decade
+                  I practised real estate law in Ontario, across hundreds of
+                  transactions, and I was often the one called in when a deal
+                  was tangled, time-sensitive, or going sideways. What I saw
+                  over those years is what shapes how I work now. Too many of
+                  the problems that surfaced at closing, and after it, were
+                  preventable. They traced back to how the deal was put
+                  together at the very start: the wrong terms accepted, a
+                  condition missed, an opening given away before anyone
+                  reached the table. By the time a file was in trouble, the
+                  options had usually run out, and fixing it took far more
+                  work than setting it up properly would have.
                 </p>
                 <p>
-                  The approach is document-first, market-aware and
+                  I work as a real estate Salesperson now. My focus is the
+                  part most files never get: getting involved early, reading
+                  the file before I recommend anything, negotiating terms
+                  that hold, and steering a clean path to closing. In power
+                  of sale, mortgage arrears, estate sales, financial
+                  pressure, and time-sensitive closings, that difference is
+                  everything. These files take more than finding a buyer and
+                  getting an agreement of purchase and sale signed. They take
+                  someone who reads the file first, anticipates where it can
+                  break, and builds the deal so it holds.
+                </p>
+                <p>
+                  My start in real estate came earlier than any of that. I
+                  began managing my parents&rsquo; rental properties at
+                  sixteen, and acquired and operated my own in the years that
+                  followed. That foundation, alongside the years of
+                  transactional work, is what the work is built on.
+                </p>
+                <p>
+                  The approach is document-first, market-aware, and
                   position-driven. I read before I recommend, build the
-                  position before I move on it, and understand both sides
-                  of the table as carefully as I understand the file.
-                  Strength in a transaction is doing the work, holding
-                  composure and walking in with options, not noise.
+                  position before I move on it, and understand both sides of
+                  the table as carefully as I understand the file. Strength
+                  in a transaction is doing the work, holding composure, and
+                  walking in with options, not noise.
                 </p>
               </blockquote>
             </div>
