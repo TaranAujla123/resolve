@@ -63,9 +63,9 @@ export function MortgageArrears() {
         <p>
           The right path depends on the equity in the property, the
           income picture, the timeline, and what the existing lender is
-          realistically willing to consider. Selling is not always the
-          answer. Sometimes a refinance or a structured workout makes
-          more sense, and we will say so.
+          realistically willing to consider. Where selling is the strongest
+          move, our job is to run it properly and get the home in front of
+          the right buyers, well before the lender forces a worse outcome.
         </p>
         <p>
           One inflection point most homeowners do not see coming: at a
