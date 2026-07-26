@@ -505,6 +505,58 @@ export function GetHelpPage() {
           </p>
         </div>
       </section>
+
+      {/* WHY RESOLVE — differentiators. Placed AFTER the CTA on purpose:
+          the sign-up form must stay front-and-center above the fold, so
+          this "why us" band is here for visitors who scroll, not competing
+          with the form. Pro-sell + risk-reversal, no guarantees. */}
+      <section className="bg-stone border-t border-divider">
+        <div className="container py-14 md:py-20">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">
+              Why Resolve
+            </p>
+            <h2 className="mt-4 font-display font-medium text-navy text-[28px] md:text-[36px] leading-[1.1]">
+              Why homeowners call us first
+            </h2>
+          </div>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-4xl mx-auto">
+            {[
+              {
+                title: 'Built for these exact files',
+                desc: 'Power of sale, mortgage arrears, estate, and time-sensitive closings. Not a general agent learning on your file.',
+              },
+              {
+                title: 'Your equity comes first',
+                desc: 'We help you sell on your timeline, with equity protected, before the lender forces the next step.',
+              },
+              {
+                title: 'Our own qualified buyers',
+                desc: 'Alongside a full-market listing, we can bring buyers directly, for a faster, quieter sale when timing matters.',
+              },
+              {
+                title: 'Discreet, and no pressure',
+                desc: 'A private conversation. No fee, no obligation, and if we cannot help, we tell you who can.',
+              },
+            ].map((point) => (
+              <div key={point.title} className="flex gap-3.5">
+                <CheckCircle2
+                  className="h-5 w-5 text-bronze shrink-0 mt-0.5"
+                  aria-hidden="true"
+                />
+                <div>
+                  <h3 className="font-display font-medium text-navy text-[19px] leading-tight">
+                    {point.title}
+                  </h3>
+                  <p className="mt-1.5 text-[14.5px] text-navy-soft leading-relaxed">
+                    {point.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }

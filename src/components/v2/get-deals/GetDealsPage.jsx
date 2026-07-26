@@ -473,6 +473,58 @@ export function GetDealsPage() {
           </p>
         </div>
       </section>
+
+      {/* WHY RESOLVE — buyer-side differentiators. Placed AFTER the CTA on
+          purpose so the sign-up form stays front-and-center above the fold;
+          this band is for visitors who scroll. No "guaranteed below market"
+          or exclusivity-without-backing claims (RECO buyer-side posture). */}
+      <section className="bg-stone border-t border-divider">
+        <div className="container py-14 md:py-20">
+          <div className="text-center max-w-2xl mx-auto">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">
+              Why Resolve
+            </p>
+            <h2 className="mt-4 font-display font-medium text-navy text-[28px] md:text-[36px] leading-[1.1]">
+              Why investors join the network
+            </h2>
+          </div>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-4xl mx-auto">
+            {[
+              {
+                title: 'First look at motivated-seller files',
+                desc: 'Off-market and pre-market opportunities, before they reach MLS and the wider buyer pool.',
+              },
+              {
+                title: 'Matched to your written criteria',
+                desc: 'We bring only what actually fits your box, so you are not sifting through noise.',
+              },
+              {
+                title: 'A real pipeline from the seller side',
+                desc: 'Sourced from the complex sales we work daily, not a generic mailing list.',
+              },
+              {
+                title: 'Properly papered and disclosed',
+                desc: 'Clean transactions with representation disclosed and the paperwork handled correctly.',
+              },
+            ].map((point) => (
+              <div key={point.title} className="flex gap-3.5">
+                <CheckCircle2
+                  className="h-5 w-5 text-bronze shrink-0 mt-0.5"
+                  aria-hidden="true"
+                />
+                <div>
+                  <h3 className="font-display font-medium text-navy text-[19px] leading-tight">
+                    {point.title}
+                  </h3>
+                  <p className="mt-1.5 text-[14.5px] text-navy-soft leading-relaxed">
+                    {point.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
     </>
   )
 }
