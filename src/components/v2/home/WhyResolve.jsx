@@ -82,14 +82,9 @@ export function WhyResolve() {
           </h3>
           <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-navy-soft">
             Most agents start at the photos. We start earlier. Before anything
-            goes on the market, we look at the whole picture with you and find
-            the moves that strengthen your position first: ways to lower what
-            the property costs you, to add income where it allows, and to put
-            money only into the upgrades that return more than they cost. Some
-            are straightforward. Some are creative and rarely discussed. Where a
-            step needs a lawyer, mortgage professional, or accountant, we bring
-            in the right person and coordinate the pieces so the property
-            reaches the market from strength.
+            lists, we find the moves that quietly strengthen your position,
+            some straightforward, some rarely discussed, and bring in the right
+            professional where a step calls for one.
           </p>
           <ul className="mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-x-9 gap-y-3">
             {VALUE_MOVES.map((move) => (
