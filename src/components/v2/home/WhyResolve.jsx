@@ -1,29 +1,29 @@
 import React from 'react'
-import { Award, Network, Users } from 'lucide-react'
+import { Award, Network, Users, TrendingUp, Check } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 
 /**
- * WhyResolve — V2 home page credibility-pillars block.
+ * WhyResolve — V2 home page credibility block.
  *
- * Three substantive claims that back up the DifferentApproach thesis
- * directly above this in the home flow:
+ * Leads with the practice's clearest DIFFERENTIATOR — the pre-listing
+ * value work — as a featured, visually distinct card, then backs it
+ * with three supporting pillars (experience / everyone-at-the-table /
+ * pre-screened buyers).
  *
- *   1. A decade of combined experience across complex Ontario files
- *   2. Direct negotiation history across the cast these files bring
- *      (lenders, lawyers, opposing parties, family, business partners)
- *   3. The qualified buyer network — alongside a full-market listing,
- *      Resolve can bring pre-screened buyers directly, giving the
- *      sale more than one path to a clean close
+ * The featured card is deliberately PRO-SELL and value-focused: it is
+ * about walking away with more when you do sell, NOT about talking a
+ * seller out of selling (that anti-sell framing was removed from the
+ * situation pages on purpose). Category-level only — the actual tactics
+ * (income, cost, upgrade specifics) stay off the public site by design.
+ * All value language is hedged ("where it allows," "return more than
+ * they cost"); nothing reads as a guaranteed outcome, and any step that
+ * needs a lawyer / mortgage professional / accountant is framed as
+ * "we coordinate the right professional," never as advice Resolve gives
+ * directly. Compliance posture: cleared (RECO 5.1 / LSO 3.1).
  *
- * Placement: immediately under DifferentApproach. The header "Why Us"
- * anchor (#why-resolve) lands on DifferentApproach's thesis panel;
- * this block scrolls into view as the supporting proof right after.
- * No id of its own — it reads as part of the same "Why Us"
- * conceptual stretch and shares the anchor with the section above.
- *
- * Surface: Stone — the page's default brand surface; gives the
- * navy DifferentApproach panel above a clean light landing as the
- * eye travels into the proof block.
+ * Placement: immediately under DifferentApproach; shares the
+ * #why-resolve conceptual stretch. Surface: Stone (the featured card
+ * lifts to white so it stands out from the borderless pillars).
  */
 const POINTS = [
   {
@@ -46,6 +46,12 @@ const POINTS = [
   },
 ]
 
+const VALUE_MOVES = [
+  'Lower the carrying cost',
+  'Add income where the property allows',
+  'Upgrades that return more than they cost',
+]
+
 export function WhyResolve() {
   return (
     <section
@@ -60,20 +66,56 @@ export function WhyResolve() {
             The experience these situations{' '}
             <span className="italic text-bronze">actually require.</span>
           </h2>
-          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-navy-soft">
-            Three things make a sale come together: knowing the file,
-            knowing everyone at the table, and being able to bring a
-            qualified buyer when timing matters. The combination is what
-            we built Resolve around.
-          </p>
         </div>
 
-        <ul
-          className="
-            mt-14 grid gap-x-10 gap-y-12
-            grid-cols-1 lg:grid-cols-3
-          "
-        >
+        {/* Featured differentiator — pre-listing value work */}
+        <div className="mt-10 rounded-[22px] border border-bronze/40 bg-white shadow-card p-7 sm:p-10">
+          <div className="flex items-center gap-2 text-bronze">
+            <TrendingUp className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
+            <span className="text-[11px] font-semibold uppercase tracking-[0.2em]">
+              Before You List
+            </span>
+          </div>
+          <h3 className="mt-4 font-display font-medium text-navy text-[clamp(1.6rem,3vw,2.1rem)] leading-[1.12]">
+            We build the value{' '}
+            <span className="italic text-bronze">before we list.</span>
+          </h3>
+          <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-navy-soft">
+            Most agents start at the photos. We start earlier. Before anything
+            goes on the market, we look at the whole picture with you and find
+            the moves that strengthen your position first: ways to lower what
+            the property costs you, to add income where it allows, and to put
+            money only into the upgrades that return more than they cost. Some
+            are straightforward. Some are creative and rarely discussed. Where a
+            step needs a lawyer, mortgage professional, or accountant, we bring
+            in the right person and coordinate the pieces so the property
+            reaches the market from strength.
+          </p>
+          <ul className="mt-7 flex flex-col sm:flex-row sm:flex-wrap gap-x-9 gap-y-3">
+            {VALUE_MOVES.map((move) => (
+              <li
+                key={move}
+                className="inline-flex items-center gap-2 text-[14.5px] font-medium text-navy"
+              >
+                <Check
+                  className="h-4 w-4 text-bronze flex-shrink-0"
+                  strokeWidth={2.2}
+                  aria-hidden="true"
+                />
+                {move}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* Supporting pillars — the experience behind the value work */}
+        <p className="mt-16 max-w-2xl text-[17px] leading-relaxed text-navy-soft">
+          Behind that sits the experience these files take: knowing the file,
+          knowing everyone at the table, and bringing a qualified buyer when
+          timing matters.
+        </p>
+
+        <ul className="mt-12 grid gap-x-10 gap-y-12 grid-cols-1 lg:grid-cols-3">
           {POINTS.map(({ Icon, title, body }) => (
             <li key={title} className="flex flex-col">
               <span
