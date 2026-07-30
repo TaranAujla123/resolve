@@ -35,27 +35,27 @@ import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 
 const HERO_VARIANTS = {
   mls: {
-    eyebrow: 'BUYER NETWORK · GTA',
+    eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'The value most buyers walk past.',
-    sub: 'Under-marketed GTA listings, read for real upside and the risks that do not show on the surface.',
+    sub: 'Under-marketed listings and motivated sellers, across Ontario. Priced or positioned wrong, and worth a closer look.',
     label: 'Value Hunter',
   },
   cash: {
-    eyebrow: 'BUYER NETWORK · GTA',
+    eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'The upside most buyers never see.',
-    sub: 'Value-add and non-turnkey properties across the GTA, with the honest read that comes with them. For buyers ready to move when one fits.',
+    sub: 'Value-add homes and motivated sellers, across Ontario. Real upside, with the honest risk laid out.',
     label: 'Close-Ready Buyer',
   },
   investor: {
-    eyebrow: 'BUYER NETWORK · GTA',
+    eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'Properties with room to add value.',
-    sub: 'Income potential, added units, and repositions, read for both the upside and the downside before you commit.',
+    sub: 'Income potential, added units, and repositions. The full read on upside and downside before you commit.',
     label: 'Active Investor',
   },
   default: {
-    eyebrow: 'BUYER NETWORK · GTA',
+    eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'The upside most buyers never see.',
-    sub: 'Under-marketed GTA properties, read for real value and honest risk. Not turnkey. For buyers who want the upside and the read that comes with it.',
+    sub: 'Under-marketed properties and motivated sellers, across Ontario. Real value, and the honest risk that comes with it.',
     label: 'General Buyer',
   },
 }
@@ -139,7 +139,7 @@ export function GetDealsPage() {
     <>
       <Seo
         title={`${variant.headline} · Resolve Buyer Network`}
-        description="Value-add and non-turnkey GTA property opportunities, read for real upside and the risks that do not show on the surface. Matched to your criteria, with disclosed buy-side representation. Free 15-minute call."
+        description="Value-add and non-turnkey property opportunities across Ontario, read for real upside and the risks that do not show on the surface. Matched to your criteria, with disclosed buy-side representation. Free 15-minute call."
         canonical="https://www.resolverealestate.ca/get-deals/"
         noindex={true}
       />
@@ -354,7 +354,7 @@ export function GetDealsPage() {
                   'Income potential and added-unit angles (ARUs)',
                   'Under-marketed or mispriced listings',
                   'The risks that do not show on the surface, flagged early',
-                  'Sourced across the GTA market, not a narrow list',
+                  'Sourced across the Ontario market, not a narrow list',
                   'Disclosed representation, properly papered',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5">
@@ -422,7 +422,7 @@ export function GetDealsPage() {
               Where the value comes from
             </p>
             <p className="mt-6 text-[16px] text-navy-soft leading-[1.6]">
-              We read the whole GTA market for the value most buyers walk past: listings priced or marketed wrong, properties with an added-unit or income angle, and homes that need work most buyers cannot cost out.
+              We read the whole Ontario market for the value most buyers walk past: listings priced or marketed wrong, properties with an added-unit or income angle, and homes that need work most buyers cannot cost out.
             </p>
             <p className="mt-4 text-[17px] text-navy leading-[1.55] font-medium">
               The edge is reading a property well, not finding someone in trouble.
@@ -492,7 +492,7 @@ export function GetDealsPage() {
             {[
               {
                 title: 'First look at value-add opportunities',
-                desc: 'Under-marketed and non-turnkey properties across the GTA, read before they reach the wider buyer pool.',
+                desc: 'Under-marketed and non-turnkey properties across Ontario, read before they reach the wider buyer pool.',
               },
               {
                 title: 'Matched to your written criteria',

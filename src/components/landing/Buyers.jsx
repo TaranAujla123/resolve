@@ -106,7 +106,7 @@ export function Buyers() {
           (this hero does not tuck under it), keeping nav text readable. */}
       <section className="bg-navy section-y">
         <div className="container max-w-4xl">
-          <Eyebrow>For Buyers · GTA &amp; Ontario</Eyebrow>
+          <Eyebrow>For Buyers · Ontario</Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
             Most agents send you the house. We show you{' '}
             <span className="italic text-bronze">what it could become.</span>
