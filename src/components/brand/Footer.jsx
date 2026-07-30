@@ -54,7 +54,12 @@ export function Footer() {
             </p>
             <ul className="mt-5 space-y-5 text-[14px] leading-relaxed text-stone-soft">
               <li>
-                <p className="font-semibold text-stone">Taran Aujla</p>
+                <Link
+                  to="/taranaujla"
+                  className="font-semibold text-stone hover:text-bronze transition-colors"
+                >
+                  Taran Aujla
+                </Link>
                 <p className="text-stone-mute">Salesperson</p>
                 <p className="text-stone-mute">RECO Reg. No. 6024721</p>
               </li>

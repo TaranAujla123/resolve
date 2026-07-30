@@ -15,6 +15,7 @@ import { AboutPage } from '@/components/v2/about/AboutPage'
 import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
 import { GetDealsPage } from '@/components/v2/get-deals/GetDealsPage'
 import { InvestorAccessPage } from '@/components/v2/investor-access/InvestorAccessPage'
+import { TaranProfile } from '@/components/v2/taran/TaranProfile'
 
 // Existing pages — kept as-is, restyled in-place to V2 surfaces and
 // typography via the updated SituationPage shell + Tailwind tokens.
@@ -165,22 +166,37 @@ const TARAN_PERSON_LD = {
   '@type': 'Person',
   '@id': TARAN_ID,
   name: 'Taran Aujla',
+  // Legal-name variants are declared in structured data ONLY (not shown
+  // on any page) so Google merges the professional entity with the
+  // legal-name query without surfacing the legal name in the UI.
+  alternateName: ['Tarnjit Singh Aujla', 'Tarnjit Aujla'],
   jobTitle: 'Salesperson',
   identifier: 'RECO Registration No. 6024721',
-  url: `${SITE_URL}/`,
+  url: `${SITE_URL}/taranaujla`,
+  mainEntityOfPage: `${SITE_URL}/taranaujla`,
   image: `${SITE_URL}/og-image.png`,
   worksFor: RESOLVE_ORG,
   areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
+  knowsAbout: [
+    'Ontario real estate',
+    'Power of sale',
+    'Mortgage arrears',
+    'Estate sales',
+    'Real estate investing',
+    'Value-add and multiplex property',
+  ],
   // sameAs is Google's primary entity-disambiguation signal for a Person.
-  // Each URL listed here tells Google "this Taran Aujla is also the
-  // person at that URL", reinforcing the entity graph. The HomeLife G1
-  // profile is the strongest institutional anchor (the brokerage's own
-  // confirmation of practitioner status). prime-gate.ca is the
-  // sister-site link. LinkedIn and taranaujla.ca to be added as those
-  // come online.
+  // Each URL tells Google "this Taran Aujla is also the person at that
+  // URL", merging every owned property + profile into one entity so the
+  // cluster's combined authority competes for the name query.
   sameAs: [
     'https://www.homelifeg1realty.com/Taran-Aujla',
     'https://prime-gate.ca',
+    'https://www.taranaujla.ca',
+    'https://www.alfarebuild.com',
+    'https://www.linkedin.com/in/itstaranaujla/',
+    'https://ibbacanada.org/broker/taran-aujla/',
+    'https://github.com/TaranAujla123',
   ],
 }
 
@@ -462,6 +478,32 @@ function BuyersPage() {
   )
 }
 
+function TaranAujlaPage() {
+  return (
+    <>
+      <Seo
+        title="Taran Aujla · Real Estate Salesperson · Ontario"
+        description="Taran Aujla is a real estate Salesperson in Ontario with HomeLife G1 Realty Inc., Brokerage. Investor and former real estate lawyer, focused on complex sales and value-add property. RECO Reg. No. 6024721."
+        canonical={`${SITE_URL}/taranaujla/`}
+        jsonLd={[
+          ...SITE_JSONLD,
+          TARAN_PERSON_LD,
+          {
+            '@context': 'https://schema.org',
+            '@type': 'ProfilePage',
+            '@id': `${SITE_URL}/taranaujla#profilepage`,
+            url: `${SITE_URL}/taranaujla`,
+            name: 'Taran Aujla · Real Estate Salesperson · Ontario',
+            mainEntity: { '@id': TARAN_ID },
+            isPartOf: { '@id': WEBSITE_ID },
+          },
+        ]}
+      />
+      <TaranProfile />
+    </>
+  )
+}
+
 function PowerOfSalePage() {
   return (
     <>
@@ -681,6 +723,8 @@ export default function App() {
             <Route path="/get-deals/" element={<GetDealsPage />} />
             <Route path="/investor-access" element={<InvestorAccessPage />} />
             <Route path="/investor-access/" element={<InvestorAccessPage />} />
+            <Route path="/taranaujla" element={<TaranAujlaPage />} />
+            <Route path="/taranaujla/" element={<TaranAujlaPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
