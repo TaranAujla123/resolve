@@ -196,6 +196,7 @@ const TARAN_PERSON_LD = {
     'https://www.taranaujla.ca',
     'https://www.alfarebuild.com',
     'https://www.linkedin.com/in/itstaranaujla/',
+    'https://www.instagram.com/itstaranaujla/',
     'https://ibbacanada.org/broker/taran-aujla/',
     'https://github.com/TaranAujla123',
   ],
