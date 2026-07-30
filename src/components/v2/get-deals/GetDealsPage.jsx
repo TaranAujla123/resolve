@@ -43,7 +43,7 @@ const HERO_VARIANTS = {
   cash: {
     eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'The upside most buyers never see.',
-    sub: 'Value-add homes and motivated sellers, across Ontario. Real upside, with the honest risk laid out.',
+    sub: 'Value-add homes and motivated sellers, across Ontario. Real upside, and an honest read of every one.',
     label: 'Close-Ready Buyer',
   },
   investor: {
@@ -55,7 +55,7 @@ const HERO_VARIANTS = {
   default: {
     eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'The upside most buyers never see.',
-    sub: 'Under-marketed properties and motivated sellers, across Ontario. Real value, and the honest risk that comes with it.',
+    sub: 'Under-marketed properties and motivated sellers, across Ontario. Real value, and an honest read of every one.',
     label: 'General Buyer',
   },
 }
