@@ -190,6 +190,7 @@ const TARAN_PERSON_LD = {
   // URL", merging every owned property + profile into one entity so the
   // cluster's combined authority competes for the name query.
   sameAs: [
+    'https://www.realtor.ca/agent/2260569/taran-aujla-202-2260-bovaird-dr-east-brampton-ontario-l6r3j5',
     'https://www.homelifeg1realty.com/Taran-Aujla',
     'https://prime-gate.ca',
     'https://www.taranaujla.ca',

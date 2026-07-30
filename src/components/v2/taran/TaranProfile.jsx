@@ -45,6 +45,11 @@ const PROPERTIES = [
     note: 'A venture I co-founded.',
   },
   {
+    label: 'REALTOR.ca',
+    href: 'https://www.realtor.ca/agent/2260569/taran-aujla-202-2260-bovaird-dr-east-brampton-ontario-l6r3j5',
+    note: 'Registered agent profile.',
+  },
+  {
     label: 'LinkedIn',
     href: 'https://www.linkedin.com/in/itstaranaujla/',
     note: 'Professional profile.',
