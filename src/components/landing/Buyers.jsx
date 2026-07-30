@@ -60,23 +60,23 @@ const STEPS = [
   {
     num: '01',
     Icon: ClipboardList,
-    title: 'Tell us what you are after',
+    title: 'Tell us what you want',
     body:
-      'Area, budget, and type, plus what you would do with upside: income, a suite, a hold, or a rebuild. That brief becomes your criteria on file.',
+      'You already know the area and the home you are after. Tell us that, plus what you would do with any upside: income, a suite, a hold, or a rebuild.',
   },
   {
     num: '02',
     Icon: Search,
-    title: 'We read the market for you',
+    title: 'We read them against your needs',
     body:
-      'We look past the listing copy for the value most agents miss, and past the surface for the risks most buyers do not catch. When one fits, you hear it with the full read.',
+      'For each listing you are weighing, the opportunities and the costs most agents miss, laid out side by side and measured against what matters to you.',
   },
   {
     num: '03',
     Icon: Eye,
-    title: 'You decide, eyes open',
+    title: 'You weigh it and decide',
     body:
-      'The opportunity and the honest downside, together. Disclosed representation throughout. Pass on what does not fit, and we keep looking.',
+      'The trade-off is yours to make, with the full picture in front of you. Disclosed representation throughout. Pass on what does not fit, and we keep looking.',
   },
 ]
 
@@ -145,10 +145,12 @@ export function Buyers() {
             <span className="italic text-bronze">We read it.</span>
           </h2>
           <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-navy-soft">
-            What is harder, and what actually makes you money, is seeing the
-            potential the marketing missed and the problems the photos hid. We
-            read a property for both before you commit: the upside worth paying
-            for, and the risk worth walking away from.
+            You already know the area and the home you want. The harder part,
+            and what actually makes you money, is reading each listing against
+            your needs: the potential the marketing missed, and the problems
+            the photos hid. You get both sides in a clear written read, the
+            opportunities and the costs most agents skip, side by side, so you
+            can weigh the trade-off and decide.
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
