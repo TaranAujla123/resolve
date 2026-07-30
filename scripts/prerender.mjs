@@ -41,6 +41,7 @@ const ROUTES = [
   '/financial-pressure',
   '/for-agents',
   '/privacy',
+  '/terms',
   '/thanks',
   '/get-help',
   '/get-deals',

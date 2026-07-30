@@ -36,6 +36,7 @@ import { SITUATION_FAQS } from '@/content/situationFaqs'
 import { Analytics, AnalyticsRouteTracker, fireConversion } from '@/components/seo/Analytics'
 import { useMetaPixel, useMetaPixelContactLinks } from '@/lib/metaPixel'
 import { PrivacyPolicy } from '@/components/legal/PrivacyPolicy'
+import { Terms } from '@/components/legal/Terms'
 
 // -----------------------------------------------------------------------
 // Per-route SEO payloads
@@ -651,6 +652,20 @@ function PrivacyPage() {
   )
 }
 
+function TermsPage() {
+  return (
+    <>
+      <Seo
+        title="Terms & Conditions · Resolve"
+        description="Terms of use for resolverealestate.ca. Real estate services delivered through HomeLife G1 Realty Inc., Brokerage. Information only, not advice; no guarantees; TRESA applies."
+        canonical={`${SITE_URL}/terms/`}
+        jsonLd={SITE_JSONLD}
+      />
+      <Terms />
+    </>
+  )
+}
+
 export default function App() {
   return (
     <BrowserRouter>
@@ -708,6 +723,8 @@ export default function App() {
                 there. */}
             <Route path="/resources" element={<Navigate to="/#situations" replace />} />
             <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="/terms/" element={<TermsPage />} />
             <Route path="/thanks" element={<ThanksPage />} />
             {/* /get-help/ — paid Meta traffic landing page. noindex,nofollow
                 so it does not compete with the SEO situation pages. Accepts

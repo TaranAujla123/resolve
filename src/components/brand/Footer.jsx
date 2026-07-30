@@ -157,13 +157,14 @@ export function Footer() {
         <div className="mt-14 pt-8 border-t border-stone-mute/40">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between text-[12.5px] text-stone-mute leading-relaxed">
             <p>&copy; {new Date().getFullYear()} Resolve. All rights reserved.</p>
-            <p className="sm:text-right max-w-md">
-              This site uses Meta Pixel + Conversions API for ad measurement.
-              Email and phone are hashed before transmission. See the{' '}
+            <p className="sm:text-right">
               <Link to="/privacy" className="underline hover:text-bronze">
                 Privacy Policy
-              </Link>{' '}
-              for the full data flow.
+              </Link>
+              {' · '}
+              <Link to="/terms" className="underline hover:text-bronze">
+                Terms &amp; Conditions
+              </Link>
             </p>
           </div>
         </div>
