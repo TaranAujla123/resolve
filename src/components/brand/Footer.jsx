@@ -92,10 +92,10 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  to="/get-deals"
+                  to="/buyers"
                   className="inline-flex items-center gap-1.5 font-semibold text-bronze hover:text-bronze-deep transition-colors"
                 >
-                  Investors — Join the buyer list
+                  For Buyers — what we look for
                   <span aria-hidden="true">→</span>
                 </Link>
               </li>

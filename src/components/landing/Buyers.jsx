@@ -1,405 +1,302 @@
-import React, { useState } from 'react'
-import { useNavigate, Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { toast } from 'sonner'
-import { Send, Shield, Users, Mail, ArrowRight, ClipboardList, Bell, Handshake } from 'lucide-react'
-import { Button } from '@/components/ui/Button'
-import { Input, Select, Label, Checkbox } from '@/components/ui/Field'
-import { Section } from './Section'
+import React from 'react'
+import { Link } from 'react-router-dom'
+import {
+  TrendingUp,
+  AlertTriangle,
+  ClipboardList,
+  Search,
+  Eye,
+  Phone,
+  ArrowRight,
+  Check,
+} from 'lucide-react'
+import { Eyebrow } from '@/components/brand/Eyebrow'
+import { Button } from '@/components/brand/Button'
 
 /**
- * /buyers — the demand side of the Resolve hub.
+ * /buyers — the V3.5 "For Buyers" page.
  *
- * Repositioned July 2026 to lead with end-user value buyers, not
- * investors. Reasoning: 2026 Ontario market is producing more
- * motivated-seller inventory (renewal shock, power of sale, time-
- * sensitive sales) than any year in the last decade. The buyer we
- * serve most is the family or individual who wants a home below where
- * the market priced it and is willing to look at power of sale,
- * arrears, and time-sensitive listings to get it. Investors and
- * builders remain welcome as profile options, but the page speaks to
- * the end-user.
+ * Rebuilt July 2026 from the old "motivated-seller inventory" framing
+ * to a VALUE-ADD spine: we read properties for the value the marketing
+ * missed and the risks the photos hid, across the whole market. This
+ * de-couples the buyer pitch from seller distress (which undercut the
+ * seller-side "equity first" promise) and expands the market from a
+ * narrow distressed pool to every under-marketed listing.
  *
- * Compliance spine (do not remove or soften):
+ * Firewall: this page is reachable from the FOOTER + direct buyer
+ * links, not the seller nav. Informational / organic-SEO page; the
+ * conversion form lives on /get-deals (paid landing). All CTAs here
+ * point to /get-deals so there is one form to maintain.
+ *
+ * Compliance spine (do not soften):
  *   - Sellers always retain full MLS exposure. No "insider access".
- *   - Match-based notification is opt-in and requires seller written
- *     consent for the specific file before any sharing.
- *   - Multiple representation, where applicable, is disclosed and
+ *   - Value language hedged ("could become", "worth paying for"); no
+ *     guaranteed returns or ARV.
+ *   - Multiple representation, where it applies, is disclosed and
  *     consented to in writing by both parties before any showing.
- *   - Brokerage attribution ("HomeLife G1 Realty Inc., Brokerage") in
- *     the form footer stays exact.
- *
- * Voice: dignified, factual, analyst register. No urgency-bait, no
- * countdowns, no cited statistics. Global rule for July 2026 edit:
- * no em dashes in new copy.
+ *   - Motivated-seller reality is acknowledged only as the buyer
+ *     PROVIDING certainty to a seller who needs it (win-win, disclosed),
+ *     never as a bargain off a distressed seller.
+ *   - Specialized steps (legal, zoning, financing) are framed as "we
+ *     coordinate the right professional", not advice Resolve gives.
+ *   - Voice: calm, confident, no em dashes, no exclamations.
  */
 
-const FORM_DISABLED = false
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
+const UPSIDE = [
+  'Unmarketed or add-on income potential',
+  'Lots that fit a garden or laneway suite',
+  'Basements and spaces that could be legalized',
+  'Homes priced low because they were marketed wrong',
+]
 
-const pillars = [
+const RISKS = [
+  'Units that were never legally permitted',
+  'Deferred work that fails an appraisal or inspection',
+  'Zoning or use limits that quietly kill the plan',
+  'Title or timing issues that surface at closing',
+]
+
+const STEPS = [
   {
-    icon: Users,
-    title: 'Pre-qualified by criteria',
+    num: '01',
+    Icon: ClipboardList,
+    title: 'Tell us what you are after',
     body:
-      'We document each buyer’s geography, budget, asset type, and timeline so matching is intentional, not noise.',
+      'Area, budget, and type, plus what you would do with upside: income, a suite, a hold, or a rebuild. That brief becomes your criteria on file.',
   },
   {
-    icon: Mail,
-    title: 'Match-based notification',
+    num: '02',
+    Icon: Search,
+    title: 'We read the market for you',
     body:
-      'When Resolve represents a property matching your criteria, and the seller has consented in writing to share with the network, we let you know. Sellers always retain full MLS exposure.',
+      'We look past the listing copy for the value most agents miss, and past the surface for the risks most buyers do not catch. When one fits, you hear it with the full read.',
   },
   {
-    icon: Shield,
-    title: 'Disclosed, consented representation',
+    num: '03',
+    Icon: Eye,
+    title: 'You decide, eyes open',
     body:
-      'Where Resolve would act for both sides on a transaction, multiple representation is disclosed and consented to in writing by both parties before any showing.',
+      'The opportunity and the honest downside, together. Disclosed representation throughout. Pass on what does not fit, and we keep looking.',
   },
 ]
 
-const HOW_IT_WORKS = [
+const ANSWERS = [
   {
-    step: '01',
-    icon: ClipboardList,
-    title: 'Profile',
-    body:
-      'A short intake documents what you are looking for. Geography, budget, asset type, timeline, and any hard requirements. The profile becomes your criteria on file.',
+    q: 'Is this insider access?',
+    a: 'No. Sellers always keep full MLS exposure. The value comes from reading a property well and matching it to you, not from anyone being disadvantaged or from skipping the market.',
   },
   {
-    step: '02',
-    icon: Bell,
-    title: 'Match',
-    body:
-      'When a Resolve-represented listing matches your criteria, and the seller has consented in writing to share with the network, you get a note. If nothing matches, nothing arrives. No broadcast lists, no filler.',
+    q: 'Does it cost anything to join?',
+    a: 'No. There is no fee to join or to receive matches. Buy-side representation is agreed in writing at the point we act for you on a specific file.',
   },
   {
-    step: '03',
-    icon: Handshake,
-    title: 'Represented',
-    body:
-      'When a file is worth pursuing, full buy-side representation follows. Written engagement, coordinated with the lawyer, from the initial visit through closing.',
-  },
-]
-
-const WHO_JOINS = [
-  {
-    label: 'First-home buyers',
-    body:
-      'Priced out during 2021 and 2022, waiting for value to return to the market. It has, in specific places, in specific files.',
-  },
-  {
-    label: 'Move-up buyers',
-    body:
-      'Selling the starter home and stepping up. A motivated-seller file with room to negotiate suits the double-move math.',
-  },
-  {
-    label: 'Downsizers',
-    body:
-      'Freeing capital from a larger property and moving to something smaller. Timing matters and the right file often is not on MLS on day one.',
-  },
-  {
-    label: 'Investors',
-    body:
-      'Portfolio builders and family capital deploying against documented acquisition criteria. Income and multi-unit files are welcome.',
-  },
-  {
-    label: 'Builders and developers',
-    body:
-      'Land acquisitions, assembly plays, tear-downs, or opportunistic residential. Written brief, matched against consented files.',
-  },
-]
-
-const STRAIGHT_ANSWERS = [
-  {
-    q: 'Are these "deals"?',
-    a: 'They are properly listed properties from motivated sellers. Sellers always retain full MLS exposure. Value comes from timing and matching, not from anyone being taken advantage of. When we represent a seller, we run the sale to their benefit. The buyer network sees the file where the seller has consented to share it.',
-  },
-  {
-    q: 'Does it cost me anything to join?',
-    a: 'No. There is no fee to join the network or to receive matches. Standard buyer representation, when we act for you on a file, is agreed in writing at that point.',
-  },
-  {
-    q: 'What about when Resolve represents the seller too?',
-    a: 'Multiple representation, where Resolve would act for both parties on the same transaction, is disclosed and consented to in writing by both parties before any showing. Either party may choose to be represented by a different brokerage instead, and we support that choice.',
+    q: 'What if Resolve also represents the seller?',
+    a: 'Multiple representation, where it applies, is disclosed and consented to in writing by both parties before any showing. Either party may choose a different brokerage instead, and we support that.',
   },
   {
     q: 'How often will I hear from you?',
-    a: 'Only when a file actually matches your criteria and the seller has consented to share it. Some months that is nothing. Some months it is more than one. If your criteria change, you update the profile and matching updates with it.',
+    a: 'Only when something genuinely fits your brief. Some months that is nothing. Some months it is more than one. Update your criteria any time and the matching updates with it.',
   },
 ]
 
 export function Buyers() {
-  const [submitting, setSubmitting] = useState(false)
-  const navigate = useNavigate()
-
-  async function handleSubmit(e) {
-    e.preventDefault()
-    if (FORM_DISABLED) return
-    const form = e.currentTarget
-    const data = new FormData(form)
-
-    if (!data.get('buyer_consent')) {
-      toast.error('Please confirm the consent checkbox so we can proceed.')
-      return
-    }
-
-    setSubmitting(true)
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { Accept: 'application/json' },
-        body: data,
-      })
-      if (res.ok) {
-        navigate('/thanks')
-      } else {
-        toast.error('Something went wrong. Please try again shortly, or call (365) 645-7332.')
-      }
-    } catch (err) {
-      toast.error('Network issue. Please try again shortly, or call (365) 645-7332.')
-    } finally {
-      setSubmitting(false)
-    }
-  }
-
   return (
     <>
-      {/* HERO — end-user value buyer positioning */}
-      <Section id="buyers" tint>
-        <div className="max-w-4xl">
-          <p className="flex items-center gap-3 text-[13px] sm:text-[13.5px] font-semibold uppercase tracking-[0.16em] text-accent-deep">
-            <span aria-hidden="true" className="block h-px w-8 sm:w-10 flex-shrink-0 bg-accent-deep" />
-            <span>For Buyers</span>
-          </p>
-          <h1 className="mt-4 text-display-lg text-navy font-sans font-semibold leading-[1.12]">
-            The homes the market{' '}
-            <span className="font-emph italic font-normal text-bronze">mispriced.</span>
+      {/* HERO — navy. No data-surface so the sticky header renders solid
+          (this hero does not tuck under it), keeping nav text readable. */}
+      <section className="bg-navy section-y">
+        <div className="container max-w-4xl">
+          <Eyebrow>For Buyers · GTA &amp; Ontario</Eyebrow>
+          <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
+            Most agents send you the house. We show you{' '}
+            <span className="italic text-bronze">what it could become.</span>
           </h1>
-          <p className="mt-5 text-lg text-ink-soft leading-relaxed max-w-3xl">
-            Early notification of motivated-seller listings across the GTA and Ontario. Power of sale, mortgage arrears, financial pressure, and time-sensitive files, matched to your criteria, with proper buy-side representation from first visit through closing.
+          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-stone/80">
+            We read properties for the value the marketing missed and the risks
+            the photos hid, across the whole market, and bring you the ones
+            worth your time. Not turnkey. Not for everyone. For buyers who want
+            the upside and the honest read that comes with it.
           </p>
-          <p className="mt-4 text-[15px] text-ink-mute leading-relaxed max-w-3xl">
-            Sellers always retain full MLS exposure. Nothing here is a shortcut past the market. It is a way to see the right files sooner, decide from a documented position, and be represented properly on the way in.
-          </p>
-        </div>
-
-        <div className="mt-10 grid grid-cols-1 lg:grid-cols-3 gap-5">
-          {pillars.map((p) => {
-            const Icon = p.icon
-            return (
-              <motion.div
-                key={p.title}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-60px' }}
-                transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                className="bg-white rounded-2xl border border-surface-line p-5 sm:p-6"
-              >
-                <div className="h-10 w-10 rounded-xl bg-accent-soft text-accent-deep flex items-center justify-center">
-                  <Icon className="h-5 w-5" strokeWidth={1.8} />
-                </div>
-                <h3 className="mt-4 text-[1.05rem] font-semibold text-ink">{p.title}</h3>
-                <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">{p.body}</p>
-              </motion.div>
-            )
-          })}
-        </div>
-      </Section>
-
-      {/* WHY NOW — market context (no cited stats) */}
-      <Section>
-        <div className="max-w-4xl">
-          <p className="text-[12.5px] font-semibold uppercase tracking-[0.18em] text-accent-deep">
-            Why now
-          </p>
-          <h2 className="mt-4 text-display-md text-ink font-display font-medium">
-            2026 is producing motivated-seller inventory the market has not seen in a decade.
-          </h2>
-          <div className="mt-5 space-y-4 text-[16.5px] text-ink-soft leading-relaxed">
-            <p>
-              A large share of Ontario mortgages taken during 2020 and 2021 are renewing this year at materially higher rates. Investment properties bought for cash flow are now negative-carry. Preconstruction closings are landing on owners who can no longer fund them. Court-deadline and estate files, always steady, are running heavier as the population moves through demographic transitions.
-            </p>
-            <p>
-              For a value buyer with financing ready, the position is stronger than it has been at any point since 2019. What matters is being on the right list, with a documented profile, so the file matches when it surfaces.
-            </p>
-          </div>
-        </div>
-      </Section>
-
-      {/* HOW IT WORKS — 3 steps */}
-      <Section tint>
-        <div className="max-w-4xl">
-          <p className="text-[12.5px] font-semibold uppercase tracking-[0.18em] text-accent-deep">
-            How it works
-          </p>
-          <h2 className="mt-4 text-display-md text-ink font-display font-medium">
-            Profile. Match. Represented.
-          </h2>
-          <p className="mt-5 text-[16px] text-ink-soft leading-relaxed max-w-3xl">
-            Three steps, in order. No newsletter, no filler, no broadcast list.
-          </p>
-
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-5">
-            {HOW_IT_WORKS.map((s) => {
-              const Icon = s.icon
-              return (
-                <motion.div
-                  key={s.step}
-                  initial={{ opacity: 0, y: 16 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-60px' }}
-                  transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="bg-white rounded-2xl border border-surface-line p-6 sm:p-7"
-                >
-                  <p className="text-[12.5px] font-semibold uppercase tracking-[0.2em] text-accent-deep">
-                    Step {s.step}
-                  </p>
-                  <div className="mt-3 h-10 w-10 rounded-xl bg-accent-soft text-accent-deep flex items-center justify-center">
-                    <Icon className="h-5 w-5" strokeWidth={1.8} />
-                  </div>
-                  <h3 className="mt-4 text-[1.15rem] font-semibold text-ink">{s.title}</h3>
-                  <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">{s.body}</p>
-                </motion.div>
-              )
-            })}
-          </div>
-        </div>
-      </Section>
-
-      {/* WHO JOINS */}
-      <Section>
-        <div className="max-w-4xl">
-          <p className="text-[12.5px] font-semibold uppercase tracking-[0.18em] text-accent-deep">
-            Who joins
-          </p>
-          <h2 className="mt-4 text-display-md text-ink font-display font-medium">
-            The network is intentionally mixed.
-          </h2>
-          <p className="mt-5 text-[16px] text-ink-soft leading-relaxed max-w-3xl">
-            Different files fit different buyers. What holds across the network: a written criteria profile, financing readiness, and the patience to wait for the right match.
-          </p>
-
-          <ul className="mt-8 space-y-4">
-            {WHO_JOINS.map((w) => (
-              <li key={w.label} className="bg-white rounded-xl border border-surface-line p-5 sm:p-6">
-                <p className="text-[15px] font-semibold text-ink">{w.label}</p>
-                <p className="mt-1.5 text-[14.5px] text-ink-soft leading-relaxed">{w.body}</p>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </Section>
-
-      {/* STRAIGHT ANSWERS — 4 items */}
-      <Section tint>
-        <div className="max-w-4xl">
-          <p className="text-[12.5px] font-semibold uppercase tracking-[0.18em] text-accent-deep">
-            Straight answers
-          </p>
-          <h2 className="mt-4 text-display-md text-ink font-display font-medium">
-            Questions worth answering openly.
-          </h2>
-
-          <div className="mt-8 space-y-4">
-            {STRAIGHT_ANSWERS.map((qa, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-xl border border-surface-line p-5 sm:p-6"
-              >
-                <p className="text-[15.5px] font-semibold text-ink leading-snug">{qa.q}</p>
-                <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">{qa.a}</p>
-              </div>
-            ))}
-          </div>
-
-          <p className="mt-8 text-[14px] text-ink-mute leading-relaxed max-w-3xl">
-            Selling a property yourself? See the situations we handle on the{' '}
-            <Link to="/" className="text-accent-deep hover:underline">seller side</Link>: mortgage arrears, power of sale, financial pressure, and time-sensitive closings.
-          </p>
-        </div>
-      </Section>
-
-      {/* FORM — unchanged compliance spine, expanded profile dropdown */}
-      <Section>
-        <motion.form
-          onSubmit={handleSubmit}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-          className="max-w-3xl mx-auto bg-white border border-surface-line rounded-2xl p-7 sm:p-10 shadow-card"
-          aria-disabled={FORM_DISABLED}
-        >
-          <h3 className="text-[1.25rem] sm:text-[1.4rem] font-semibold text-ink">
-            Join the buyer network
-          </h3>
-          <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">
-            A short profile so we can match you accurately. We do not sell or share your information.
-          </p>
-
-          <input type="hidden" name="_subject" value="Resolve · Buyer network signup" />
-          <input type="hidden" name="form_type" value="buyer" />
-
-          <fieldset disabled={FORM_DISABLED} className="contents">
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-5">
-              <div>
-                <Label htmlFor="buyer-name" required>Your name</Label>
-                <Input id="buyer-name" name="name" autoComplete="name" required />
-              </div>
-              <div>
-                <Label htmlFor="buyer-email" required>Email</Label>
-                <Input id="buyer-email" name="email" type="email" autoComplete="email" required />
-              </div>
-              <div>
-                <Label htmlFor="buyer-phone">Phone (optional)</Label>
-                <Input id="buyer-phone" name="phone" type="tel" autoComplete="tel" />
-              </div>
-              <div>
-                <Label htmlFor="buyer-profile" required>Buyer profile</Label>
-                <Select id="buyer-profile" name="buyer_profile" defaultValue="" required>
-                  <option value="" disabled>Select one</option>
-                  <option value="First home">First home</option>
-                  <option value="Move-up">Move-up</option>
-                  <option value="Downsizing">Downsizing</option>
-                  <option value="Investment">Investment</option>
-                  <option value="Builder / developer">Builder / developer</option>
-                  <option value="Other">Other</option>
-                </Select>
-              </div>
-              <div className="sm:col-span-2">
-                <Label htmlFor="buyer-areas">Geographic interest (optional)</Label>
-                <Input id="buyer-areas" name="areas" placeholder="e.g. Brampton, Mississauga, GTA West" />
-              </div>
-              <div className="sm:col-span-2">
-                <Label htmlFor="buyer-budget">Approximate budget range (optional)</Label>
-                <Input id="buyer-budget" name="budget" placeholder="e.g. $800K to $1.2M" />
-              </div>
-            </div>
-
-            <div className="mt-6 flex items-start gap-3 rounded-xl bg-surface-tint border border-surface-line p-4">
-              <Checkbox id="buyer-consent" name="buyer_consent" value="yes" required />
-              <label htmlFor="buyer-consent" className="text-[14px] text-ink-soft leading-relaxed cursor-pointer">
-                I understand Resolve will notify me only of properties that match my criteria where the seller has consented to share with the network, and that multiple representation, if applicable, will be disclosed and consented to in writing by both parties before any showing.
-              </label>
-            </div>
-          </fieldset>
-
-          <div className="mt-7 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-            <p className="text-[12.5px] text-ink-mute">
-              Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage.
-            </p>
-            <Button type="submit" variant="primary" size="lg" disabled={submitting} className="group">
-              {submitting ? 'Sending…' : (
-                <>
-                  Join the network
-                  <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-                </>
-              )}
+          <div className="mt-9 flex flex-col sm:flex-row gap-3">
+            <Button as={Link} to="/get-deals" variant="primary" size="md">
+              Join the buyer network
+              <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+            </Button>
+            <Button
+              as="a"
+              href="tel:+13656457332"
+              variant="outline"
+              size="md"
+              className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
+            >
+              <Phone className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+              (365) 645-7332
             </Button>
           </div>
-        </motion.form>
-      </Section>
+        </div>
+      </section>
+
+      {/* THE WORK — upside + risk, the value-add spine */}
+      <section data-surface="stone" className="bg-stone section-y">
+        <div className="container max-w-4xl">
+          <Eyebrow>The work</Eyebrow>
+          <h2 className="mt-5 font-display font-medium text-navy text-display-md">
+            Anyone can forward a listing.{' '}
+            <span className="italic text-bronze">We read it.</span>
+          </h2>
+          <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-navy-soft">
+            What is harder, and what actually makes you money, is seeing the
+            potential the marketing missed and the problems the photos hid. We
+            read a property for both before you commit: the upside worth paying
+            for, and the risk worth walking away from.
+          </p>
+
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div className="rounded-2xl border border-bronze/40 bg-white p-7 shadow-card">
+              <div className="flex items-center gap-2 text-bronze">
+                <TrendingUp className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                  The upside we look for
+                </span>
+              </div>
+              <ul className="mt-5 space-y-3">
+                {UPSIDE.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-[15px] text-navy leading-snug">
+                    <Check className="h-4 w-4 text-bronze shrink-0 mt-0.5" strokeWidth={2.2} aria-hidden="true" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-divider bg-white p-7 shadow-card">
+              <div className="flex items-center gap-2 text-navy">
+                <AlertTriangle className="h-4 w-4 text-navy-mute" strokeWidth={1.9} aria-hidden="true" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-navy-mute">
+                  The risks we flag early
+                </span>
+              </div>
+              <ul className="mt-5 space-y-3">
+                {RISKS.map((item) => (
+                  <li key={item} className="flex items-start gap-2.5 text-[15px] text-navy-soft leading-snug">
+                    <span className="text-navy-mute mt-1.5 leading-none" aria-hidden="true">•</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          <p className="mt-6 max-w-2xl text-[14px] text-navy-mute leading-relaxed">
+            Where a step needs a lawyer, a mortgage professional, or the city,
+            we point you to the right person and coordinate the pieces. We read
+            the file; the specialists confirm it.
+          </p>
+        </div>
+      </section>
+
+      {/* HOW IT WORKS */}
+      <section data-surface="mist" className="bg-mist section-y">
+        <div className="container">
+          <div className="max-w-3xl">
+            <Eyebrow>How it works</Eyebrow>
+            <h2 className="mt-5 font-display font-medium text-navy text-display-md">
+              Tell us. We read.{' '}
+              <span className="italic text-bronze">You decide.</span>
+            </h2>
+          </div>
+          <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            {STEPS.map(({ num, Icon, title, body }) => (
+              <div key={num} className="border-t border-divider pt-6">
+                <div className="flex items-center gap-3">
+                  <span className="font-display font-medium text-bronze text-[34px] leading-none">
+                    {num}
+                  </span>
+                  <Icon className="h-5 w-5 text-bronze" strokeWidth={1.6} aria-hidden="true" />
+                </div>
+                <h3 className="mt-4 font-display font-medium text-navy text-[1.25rem] leading-snug">
+                  {title}
+                </h3>
+                <p className="mt-2.5 text-[15px] text-navy-soft leading-relaxed">
+                  {body}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* MOTIVATED SELLERS, DONE RIGHT — certainty framing, disclosed */}
+      <section data-surface="stone" className="bg-stone section-y">
+        <div className="container max-w-3xl">
+          <Eyebrow>The honest part</Eyebrow>
+          <h2 className="mt-5 font-display font-medium text-navy text-display-md">
+            Some of it comes from sellers who need to move.
+          </h2>
+          <div className="mt-6 space-y-4 text-[16.5px] leading-relaxed text-navy-soft">
+            <p>
+              An estate, a relocation, a tight timeline. We do not hide that,
+              and we do not treat it as a bargain hunt. A seller in that
+              position usually values a clean, certain, on-time close over a
+              long shot at top dollar months from now, and a buyer who can close
+              cleanly delivers exactly that.
+            </p>
+            <p>
+              Handled properly, both sides win: the seller gets certainty and a
+              fair result, and you get a real opportunity on a home that may not
+              be turnkey. Representation is always disclosed, and a seller&rsquo;s
+              need for a fast, quiet close is something we serve, never something
+              we exploit.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* STRAIGHT ANSWERS */}
+      <section data-surface="mist" className="bg-mist section-y">
+        <div className="container max-w-3xl">
+          <Eyebrow>Straight answers</Eyebrow>
+          <h2 className="mt-5 font-display font-medium text-navy text-display-md">
+            Questions worth answering openly.
+          </h2>
+          <div className="mt-8 space-y-4">
+            {ANSWERS.map((qa) => (
+              <div key={qa.q} className="rounded-xl border border-divider bg-white p-6">
+                <p className="font-display font-medium text-navy text-[1.05rem] leading-snug">
+                  {qa.q}
+                </p>
+                <p className="mt-2 text-[15px] text-navy-soft leading-relaxed">
+                  {qa.a}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA — navy */}
+      <section data-surface="navy" className="bg-navy section-y">
+        <div className="container max-w-2xl text-center">
+          <h2 className="font-display font-medium text-stone text-display-md leading-[1.1]">
+            Tell us what you are after.
+          </h2>
+          <p className="mt-5 text-[16.5px] leading-relaxed text-stone/80">
+            When something fits your brief, you hear it with the full read: the
+            upside, what it would take, and what to watch for.
+          </p>
+          <div className="mt-8 flex justify-center">
+            <Button as={Link} to="/get-deals" variant="primary" size="lg">
+              Join the buyer network
+              <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+            </Button>
+          </div>
+          <p className="mt-10 text-[12px] leading-relaxed text-stone/55">
+            Real estate services by Resolve, delivered through HomeLife G1
+            Realty Inc., Brokerage. Independently Owned &amp; Operated. RECO
+            Reg. No. 6024721.
+          </p>
+        </div>
+      </section>
     </>
   )
 }

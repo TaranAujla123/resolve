@@ -36,26 +36,26 @@ import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 const HERO_VARIANTS = {
   mls: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'Where the value actually is.',
-    sub: 'Motivated sellers. Undervalued. Off-market — before it lists.',
+    headline: 'The value most buyers walk past.',
+    sub: 'Under-marketed GTA listings, read for real upside and the risks that do not show on the surface.',
     label: 'Value Hunter',
   },
   cash: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'The deals average buyers skip.',
-    sub: 'Off-market. Motivated GTA sellers. Not turnkey. For buyers who can close quickly.',
+    headline: 'The upside most buyers never see.',
+    sub: 'Value-add and non-turnkey properties across the GTA, with the honest read that comes with them. For buyers ready to move when one fits.',
     label: 'Close-Ready Buyer',
   },
   investor: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'Diamond-in-the-rough properties.',
-    sub: 'Value-add files from motivated GTA sellers. For close-ready portfolio buyers.',
+    headline: 'Properties with room to add value.',
+    sub: 'Income potential, added units, and repositions, read for both the upside and the downside before you commit.',
     label: 'Active Investor',
   },
   default: {
     eyebrow: 'BUYER NETWORK · GTA',
-    headline: 'The deals average buyers skip.',
-    sub: 'Off-market GTA files. Motivated sellers. Not turnkey. Close-ready buyers only.',
+    headline: 'The upside most buyers never see.',
+    sub: 'Under-marketed GTA properties, read for real value and honest risk. Not turnkey. For buyers who want the upside and the read that comes with it.',
     label: 'General Buyer',
   },
 }
@@ -139,7 +139,7 @@ export function GetDealsPage() {
     <>
       <Seo
         title={`${variant.headline} · Resolve Buyer Network`}
-        description="Off-market GTA property opportunities from motivated sellers — Power of Sale, mortgage arrears, estate, court-deadline closings. Distressed-seller files briefed before MLS. Disclosed representation. Free 15-minute call."
+        description="Value-add and non-turnkey GTA property opportunities, read for real upside and the risks that do not show on the surface. Matched to your criteria, with disclosed buy-side representation. Free 15-minute call."
         canonical="https://www.resolverealestate.ca/get-deals/"
         noindex={true}
       />
@@ -169,7 +169,7 @@ export function GetDealsPage() {
                   </p>
 
                   <p className="mt-6 text-[16px] text-navy-soft leading-relaxed max-w-md">
-                    Free 15-minute call. Tell us what you are looking for —
+                    Free 15-minute call. Tell us what you are looking for:
                     <span className="block mt-1 text-navy">
                       area, budget, type. When a file matches, we send it to you <span className="italic text-bronze font-medium">first</span>.
                     </span>
@@ -350,11 +350,11 @@ export function GetDealsPage() {
 
               <ul className="mt-6 space-y-2 text-[13px] text-navy-soft border-t border-divider pt-5">
                 {[
-                  'Off-market files (before MLS)',
-                  'Motivated sellers with pressure to close',
                   'Value-add and non-turnkey opportunities',
-                  'Power of Sale + Notice of Sale properties',
-                  'Estate + court-deadline closings',
+                  'Income potential and added-unit angles (ARUs)',
+                  'Under-marketed or mispriced listings',
+                  'The risks that do not show on the surface, flagged early',
+                  'Sourced across the GTA market, not a narrow list',
                   'Disclosed representation, properly papered',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5">
@@ -389,8 +389,8 @@ export function GetDealsPage() {
               },
               {
                 num: '02',
-                title: 'Files briefed before MLS',
-                desc: 'When a distressed-seller file matches your criteria, we send it to you first.',
+                title: 'Matches sent with the full read',
+                desc: 'When a property matches your criteria, we send it to you first, with the upside and the risks laid out.',
               },
               {
                 num: '03',
@@ -419,19 +419,19 @@ export function GetDealsPage() {
         <div className="container py-14 md:py-20">
           <div className="max-w-2xl mx-auto text-center">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">
-              Why Resolve has these files
+              Where the value comes from
             </p>
             <p className="mt-6 text-[16px] text-navy-soft leading-[1.6]">
-              Resolve represents Ontario homeowners through complex property sales — power of sale, mortgage arrears, estate, and court-deadline closings. These sellers often need to close fast, close quietly, or close on a tight timeline.
+              We read the whole GTA market for the value most buyers walk past: listings priced or marketed wrong, properties with an added-unit or income angle, and homes that need work most buyers cannot cost out.
             </p>
             <p className="mt-4 text-[17px] text-navy leading-[1.55] font-medium">
-              That seller pressure is buyer opportunity.
+              The edge is reading a property well, not finding someone in trouble.
             </p>
             <p className="mt-4 text-[16px] text-navy-soft leading-[1.6]">
-              Ontario is a buyer&rsquo;s market right now &mdash; but the deals worth having aren&rsquo;t on Realtor.ca. They&rsquo;re off-market, they often need work, and the sellers are motivated for a reason. If you can close quickly and you don&rsquo;t need turnkey, that&rsquo;s exactly what we send you. Disclosed representation, properly papered. We work the GTA and visit properties with you; we vet the file before we drive.
+              Some of what we find does come from sellers who need to move: an estate, a relocation, a tight timeline. Handled properly, that is a win on both sides. A seller who needs certainty gets a clean, on-time close, and a buyer who can deliver it gets a real opportunity. Representation is always disclosed. We read the file for upside and risk before we drive, and bring you the ones worth your time.
             </p>
             <p className="mt-6 text-[13px] text-navy-mute">
-              Years of combined experience handling complex Ontario property sales — from mortgage arrears and Power of Sale to estate and court-deadline closings.
+              Years of combined experience across complex Ontario property sales and value-add files, read for both what they could become and what could go wrong.
             </p>
           </div>
         </div>
@@ -491,16 +491,16 @@ export function GetDealsPage() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-4xl mx-auto">
             {[
               {
-                title: 'First look at motivated-seller files',
-                desc: 'Off-market and pre-market opportunities, before they reach MLS and the wider buyer pool.',
+                title: 'First look at value-add opportunities',
+                desc: 'Under-marketed and non-turnkey properties across the GTA, read before they reach the wider buyer pool.',
               },
               {
                 title: 'Matched to your written criteria',
                 desc: 'We bring only what actually fits your box, so you are not sifting through noise.',
               },
               {
-                title: 'A real pipeline from the seller side',
-                desc: 'Sourced from the complex sales we work daily, not a generic mailing list.',
+                title: 'A real read, not a mailing list',
+                desc: 'Each property is read for both upside and downside before it reaches you, sourced across the whole market.',
               },
               {
                 title: 'Properly papered and disclosed',

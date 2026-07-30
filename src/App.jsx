@@ -452,8 +452,8 @@ function BuyersPage() {
   return (
     <>
       <Seo
-        title="Qualified Buyer Network · Resolve · Ontario"
-        description="A network of pre-qualified buyers, investors, end-users, and developers interested in Ontario property. Match-based notification, disclosed representation, full MLS exposure preserved."
+        title="For Buyers · Resolve Real Estate · Ontario"
+        description="We read properties for the value most buyers miss and the risks that do not show on the surface. Value-add and non-turnkey opportunities across the GTA, with disclosed buy-side representation. HomeLife G1 Realty Inc., Brokerage."
         canonical={`${SITE_URL}/buyers/`}
         jsonLd={BUYERS_JSONLD}
       />
