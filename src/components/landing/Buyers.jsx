@@ -43,7 +43,7 @@ import { Button } from '@/components/brand/Button'
  */
 
 const UPSIDE = [
-  'Unmarketed or add-on income potential',
+  'Income units, small multiplexes, and rental upside',
   'Lots that fit a garden or laneway suite',
   'Basements and spaces that could be legalized',
   'Homes priced low because they were marketed wrong',
@@ -108,14 +108,14 @@ export function Buyers() {
         <div className="container max-w-4xl">
           <Eyebrow>For Buyers · Ontario</Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
-            Most agents send you the house. We show you{' '}
+            Most agents send you the listing. We show you{' '}
             <span className="italic text-bronze">what it could become.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-stone/80">
-            We read properties for the value the marketing missed and the risks
-            the photos hid, across the whole market, and bring you the ones
-            worth your time. Not turnkey. Not for everyone. For buyers who want
-            the upside and the honest read that comes with it.
+            We read properties for the potential most buyers walk past, on and
+            off market. Homes to live in, and income properties to hold. Not
+            turnkey. Not for everyone. For buyers who look past the price to
+            what a property could become.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <Button as={Link} to="/get-deals" variant="primary" size="md">
