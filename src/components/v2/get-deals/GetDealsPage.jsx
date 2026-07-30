@@ -384,18 +384,18 @@ export function GetDealsPage() {
             {[
               {
                 num: '01',
-                title: 'Free 15-minute consult',
-                desc: 'Tell us what you are looking for. Area, budget, type, timeline.',
+                title: 'Tell us what you want',
+                desc: 'The area, the home, and what you would do with any upside.',
               },
               {
                 num: '02',
-                title: 'Matches sent with the full read',
-                desc: 'When a property matches your criteria, we send it to you first, with the upside and the risks laid out.',
+                title: 'We read each one against it',
+                desc: 'The opportunities and costs most agents miss, side by side.',
               },
               {
                 num: '03',
-                title: 'You decide. No pressure',
-                desc: 'Pass on what does not fit. We keep sending. Disclosed representation throughout.',
+                title: 'You weigh it and decide',
+                desc: 'The full picture, no pressure. Representation disclosed.',
               },
             ].map((item) => (
               <div key={item.num} className="border-t border-divider pt-6">
