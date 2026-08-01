@@ -52,6 +52,7 @@ const HERO_VARIANTS = {
     headline: 'Facing power of sale?',
     subLead: 'A Notice of Sale from the lender?',
     subEmph: 'There is still a way through.',
+    note: "Behind on the mortgage and worried it's heading this way? This is the same conversation.",
     label: 'Power of Sale',
   },
   estate: {
@@ -205,6 +206,14 @@ export function GetHelpPage() {
                   >
                     {variant.subEmph}
                   </p>
+                  {variant.note && (
+                    <p
+                      className="mt-3 font-sans text-navy-soft"
+                      style={{ fontSize: 'clamp(14px, 1.9vw, 17px)', lineHeight: 1.45, maxWidth: '32rem' }}
+                    >
+                      {variant.note}
+                    </p>
+                  )}
 
                   {/* Hook → form directly. This is a paid conversion page
                       (90% mobile). All reassurance (no fee, confidential,
