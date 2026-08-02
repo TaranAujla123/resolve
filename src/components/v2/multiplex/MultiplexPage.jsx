@@ -68,15 +68,13 @@ export function MultiplexPage() {
         />
         <div className="relative container max-w-4xl pt-28 pb-16 sm:pt-40 sm:pb-24">
           <Eyebrow>Multiplex · GTA, Hamilton &amp; KW</Eyebrow>
-          <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.05]">
-            Your lot could be worth far more{' '}
-            <span className="font-display italic text-bronze">as a multiplex.</span>
+          <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.02]">
+            Your lot might be{' '}
+            <span className="font-display italic text-bronze">a multiplex.</span>
           </h1>
-          <p className="mt-7 text-[18px] leading-relaxed text-stone-soft max-w-[640px]">
-            Ontario&rsquo;s rules changed. Many lots that used to allow a single home can now hold a
-            multiplex of three to six units. We find the opportunity, value it, and &mdash; with our
-            build partner &mdash; turn it into a real, financed project. One licensed team, start to
-            finish.
+          <p className="mt-6 text-[18px] leading-relaxed text-stone-soft max-w-[540px]">
+            Ontario&rsquo;s rules changed. Many lots can now hold three to six units &mdash; worth
+            far more than the house on them. We find it, value it, and build it.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button as="a" href="/plexcheck/" variant="contrast" size="lg">
