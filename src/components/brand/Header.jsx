@@ -23,6 +23,7 @@ const NAV_ITEMS = [
   { to: '/#situations', label: 'Situations We Handle', isAnchor: true },
   { to: '/#why-resolve', label: 'Why Us', isAnchor: true },
   { to: '/#how-we-help', label: 'How We Help', isAnchor: true },
+  { to: '/multiplex', label: 'Multiplex' },
   { to: '/about', label: 'About' },
   { to: '/for-agents', label: 'For Agents' },
 ]

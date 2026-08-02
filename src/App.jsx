@@ -16,6 +16,7 @@ import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
 import { GetDealsPage } from '@/components/v2/get-deals/GetDealsPage'
 import { InvestorAccessPage } from '@/components/v2/investor-access/InvestorAccessPage'
 import { TaranProfile } from '@/components/v2/taran/TaranProfile'
+import { MultiplexPage } from '@/components/v2/multiplex/MultiplexPage'
 
 // Existing pages — kept as-is, restyled in-place to V2 surfaces and
 // typography via the updated SituationPage shell + Tailwind tokens.
@@ -400,6 +401,57 @@ const FOR_AGENTS_JSONLD = [
   },
 ]
 
+// /multiplex — the multiplex hub (front door). Indexable SEO page that
+// routes to the static PlexCheck tool + the two lead-magnet guides.
+// Tease-not-teach: names the outcome (a multiplex, 3–6 units, end-to-end
+// with a build partner); the playbook stays behind the tool/guides/call.
+const MULTIPLEX_JSONLD = [
+  ...SITE_JSONLD,
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Multiplex Property in the GTA, Hamilton & KW · Resolve',
+    url: `${SITE_URL}/multiplex/`,
+    description:
+      'Many Ontario lots can now hold a multiplex of three to six units. Resolve finds, values, lists, and buys plex-potential property, with a build partner who prices and builds it. GTA, Hamilton, and Kitchener-Waterloo.',
+    isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Multiplex', item: `${SITE_URL}/multiplex/` },
+      ],
+    },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Multiplex and Value-Add Property Representation (Ontario)',
+    provider: RESOLVE_ORG,
+    areaServed: [
+      { '@type': 'Place', name: 'Greater Toronto Area' },
+      { '@type': 'City', name: 'Hamilton' },
+      { '@type': 'City', name: 'Kitchener-Waterloo' },
+    ],
+    description:
+      'Resolve helps Ontario homeowners and buyers with plex-potential property: assessing how many units a lot can hold, valuing it, and representing the sale or purchase. A construction partner handles permits, build, and quote. Educational information; unit permissions and financing verified per lot with the municipality and a CMHC-approved lender.',
+  },
+]
+
+function MultiplexRoutePage() {
+  return (
+    <>
+      <Seo
+        title="Multiplex Property in the GTA, Hamilton & KW · Resolve"
+        description="Many Ontario lots can now hold a multiplex of 3 to 6 units. Resolve finds, values, lists and buys plex-potential property — with a build partner who prices and builds it. GTA, Hamilton & Kitchener-Waterloo."
+        canonical={`${SITE_URL}/multiplex/`}
+        jsonLd={MULTIPLEX_JSONLD}
+      />
+      <MultiplexPage />
+    </>
+  )
+}
+
 function ScrollToTopOnRouteChange() {
   const { pathname } = useLocation()
   useEffect(() => {
@@ -716,6 +768,8 @@ export default function App() {
                 hard-navigation hits (search, bookmarks, social). */}
             <Route path="/life-transitions" element={<Navigate to="/time-sensitive-sales" replace />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
+            <Route path="/multiplex" element={<MultiplexRoutePage />} />
+            <Route path="/multiplex/" element={<MultiplexRoutePage />} />
             {/* /resources retired — was a hub that only re-listed the
                 six situation deep-dive pages. The public/resources/
                 static stub handles direct hits + crawler redirects; this
