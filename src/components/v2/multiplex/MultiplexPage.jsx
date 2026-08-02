@@ -53,25 +53,42 @@ const DOORS = [
 export function MultiplexPage() {
   return (
     <>
-      {/* Hero (light) */}
-      <section data-surface="stone" className="bg-stone section-y">
-        <div className="container max-w-4xl">
+      {/* Hero (navy, full-bleed). Pulls up under the sticky header
+          (-mt-16/-20) so the nav overlays it transparently, then the nav
+          goes solid on scroll into the light "Where to start" section
+          below — giving the navy -> light -> navy rhythm. pt-28/40
+          compensates for the negative margin so copy clears the nav. */}
+      <section
+        data-surface="navy"
+        className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20"
+      >
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 bg-[radial-gradient(60%_45%_at_85%_8%,rgba(196,164,104,0.16),transparent_70%)]"
+        />
+        <div className="relative container max-w-4xl pt-28 pb-16 sm:pt-40 sm:pb-24">
           <Eyebrow>Multiplex · GTA, Hamilton &amp; KW</Eyebrow>
-          <h1 className="mt-5 font-display font-medium text-navy text-display-xl leading-[1.05]">
+          <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.05]">
             Your lot could be worth far more{' '}
             <span className="font-display italic text-bronze">as a multiplex.</span>
           </h1>
-          <p className="mt-7 text-[18px] leading-relaxed text-navy-soft max-w-[640px]">
+          <p className="mt-7 text-[18px] leading-relaxed text-stone-soft max-w-[640px]">
             Ontario&rsquo;s rules changed. Many lots that used to allow a single home can now hold a
             multiplex of three to six units. We find the opportunity, value it, and &mdash; with our
             build partner &mdash; turn it into a real, financed project. One licensed team, start to
             finish.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
-            <Button as="a" href="/plexcheck/" variant="primary" size="lg">
+            <Button as="a" href="/plexcheck/" variant="contrast" size="lg">
               Check your lot in 60 seconds <ArrowRight className="h-4 w-4" />
             </Button>
-            <Button as={Link} to="/contact" variant="outline" size="lg">
+            <Button
+              as={Link}
+              to="/contact"
+              variant="outline"
+              size="lg"
+              className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
+            >
               Talk to us
             </Button>
           </div>
