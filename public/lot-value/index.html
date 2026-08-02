@@ -31,8 +31,10 @@
   /* nav */
   .nav{background:var(--navy);color:#fff}
   .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-  .wm{font-family:'Poppins';font-weight:700;font-size:20px;letter-spacing:-.3px}
-  .wm .dot{color:var(--gold)}
+  .brand{display:inline-flex;flex-direction:column;gap:4px;text-decoration:none;line-height:1}
+  .brand img{height:27px;width:auto;display:block}
+  .brand .desc{font-family:'Poppins';font-weight:600;font-size:8px;letter-spacing:.26em;text-transform:uppercase;color:var(--gold)}
+  footer .brand img{height:25px}
   .nav .ph{font-size:14px;color:#c7d0de;font-weight:500;text-decoration:none}
   .nav .ph b{color:#fff}
 
@@ -100,7 +102,7 @@
 
   <nav class="nav">
     <div class="wrap">
-      <a href="/" style="text-decoration:none;color:#fff"><span class="wm">Resolve<span class="dot">.</span></span></a>
+      <a href="/" class="brand"><img src="/logo-wordmark-navy.png" alt="re·solve — Real Estate" /><span class="desc">Real Estate</span></a>
       <a class="ph" href="tel:+13656457332">Taran Aujla · <b>(365)&nbsp;645-7332</b></a>
     </div>
   </nav>
@@ -199,7 +201,7 @@
 
   <footer>
     <div class="wrap">
-      <div class="wm">Resolve<span class="dot" style="color:var(--gold)">.</span></div>
+      <div class="brand"><img src="/logo-wordmark-navy.png" alt="re·solve — Real Estate" /><span class="desc">Real Estate</span></div>
       <div class="sig"><b>Taran Aujla</b>, Salesperson · HomeLife G1 Realty Inc., Brokerage · Independently Owned &amp; Operated · RECO Reg.&nbsp;No.&nbsp;6024721 · (365)&nbsp;645-7332 · resolverealestate.ca</div>
       <div class="disc">This guide and page are general information for Ontario homeowners and are not legal, planning, mortgage, tax, or financial advice, and not an offer of those services. Unit permissions depend on the specific parcel and current municipal by-laws and are subject to permits and a site-specific zoning review — figures must be verified per lot. Financing programs and eligibility are confirmed only by a CMHC-approved lender. No outcome, value, or approval is guaranteed. Nothing here is a solicitation of any property currently listed for sale or of any seller already under a representation agreement with another brokerage.</div>
     </div>
