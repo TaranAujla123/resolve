@@ -67,7 +67,9 @@ export function MultiplexPage() {
           className="absolute inset-0 bg-[radial-gradient(60%_45%_at_85%_8%,rgba(196,164,104,0.16),transparent_70%)]"
         />
         <div className="relative container max-w-4xl pt-28 pb-16 sm:pt-40 sm:pb-24">
-          <Eyebrow>Multiplex · GTA, Hamilton, Kitchener-Waterloo &amp; Ottawa</Eyebrow>
+          <Eyebrow>
+            <span className="text-stone">Multiplex</span> · GTA, Hamilton, Kitchener-Waterloo &amp; Ottawa
+          </Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.02]">
             Your lot might be{' '}
             <span className="font-display italic text-bronze">a multiplex.</span>
