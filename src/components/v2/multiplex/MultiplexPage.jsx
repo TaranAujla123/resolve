@@ -112,7 +112,7 @@ export function MultiplexPage() {
                 className="group flex flex-col rounded-[18px] border border-divider bg-stone p-7 shadow-card transition-shadow hover:shadow-lg"
               >
                 <d.icon className="h-7 w-7 text-bronze" strokeWidth={1.6} aria-hidden="true" />
-                <span className="mt-5 font-sans font-bold text-[13.5px] uppercase tracking-[0.1em] text-navy">
+                <span className="mt-5 self-start inline-flex items-center rounded-full border border-bronze/35 bg-bronze-soft px-3 py-1 font-sans font-bold text-[11.5px] uppercase tracking-[0.1em] text-navy">
                   {d.label}
                 </span>
                 <h3 className="mt-2 font-display font-medium text-navy text-[1.3rem] leading-snug">
