@@ -34,7 +34,7 @@ const DOORS = [
   },
   {
     icon: Home,
-    label: 'For homeowners',
+    label: 'Homeowners',
     title: 'Your lot may be worth more than your house.',
     body: 'The value most owners are never shown, and what it could mean before you list.',
     href: '/lot-value/',
@@ -42,7 +42,7 @@ const DOORS = [
   },
   {
     icon: Building2,
-    label: 'For buyers & investors',
+    label: 'Buyers & investors',
     title: 'Buy real estate that pays for itself.',
     body: 'A multiplex where tenants carry the mortgage, for far less down than most assume.',
     href: '/pays-for-itself/',
@@ -113,10 +113,12 @@ export function MultiplexPage() {
                 href={d.href}
                 className="group flex flex-col rounded-[18px] border border-divider bg-stone p-7 shadow-card transition-shadow hover:shadow-lg"
               >
-                <d.icon className="h-7 w-7 text-bronze" strokeWidth={1.6} aria-hidden="true" />
-                <span className="mt-5 self-start inline-flex items-center rounded-full border border-bronze/35 bg-bronze-soft px-3 py-1 font-sans font-bold text-[11.5px] uppercase tracking-[0.1em] text-navy">
-                  {d.label}
-                </span>
+                <div className="flex items-center gap-2.5">
+                  <d.icon className="h-6 w-6 text-bronze flex-shrink-0" strokeWidth={1.7} aria-hidden="true" />
+                  <span className="inline-flex items-center whitespace-nowrap rounded-full bg-bronze-deep px-3 py-1.5 font-sans font-bold text-[12px] uppercase tracking-[0.11em] text-white">
+                    {d.label}
+                  </span>
+                </div>
                 <h3 className="mt-2 font-display font-medium text-navy text-[1.3rem] leading-snug">
                   {d.title}
                 </h3>
