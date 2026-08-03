@@ -67,7 +67,7 @@ export function MultiplexPage() {
           className="absolute inset-0 bg-[radial-gradient(60%_45%_at_85%_8%,rgba(196,164,104,0.16),transparent_70%)]"
         />
         <div className="relative container max-w-4xl pt-28 pb-16 sm:pt-40 sm:pb-24">
-          <Eyebrow>Multiplex · GTA, Hamilton &amp; KW</Eyebrow>
+          <Eyebrow>Multiplex · GTA, Hamilton, KW &amp; Ottawa</Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.02]">
             Your lot might be{' '}
             <span className="font-display italic text-bronze">a multiplex.</span>
@@ -90,6 +90,10 @@ export function MultiplexPage() {
               Talk to us
             </Button>
           </div>
+          <p className="mt-6 text-[13px] leading-relaxed text-stone/55 max-w-[560px]">
+            Strong across the GTA, Hamilton, Kitchener-Waterloo and Ottawa &mdash; and elsewhere in
+            Ontario through trusted local partners.
+          </p>
         </div>
       </section>
 
