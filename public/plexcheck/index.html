@@ -69,6 +69,8 @@
   .stage{display:none}
   .teaser{background:linear-gradient(180deg,#f3f8f4,#eef5f0);border:1px solid #cfe6d8;border-radius:12px;padding:20px 22px;text-align:center;margin-bottom:18px}
   .teaser .badge{display:inline-flex;align-items:center;gap:7px;background:var(--green);color:#fff;font-size:12px;font-weight:700;letter-spacing:.04em;padding:5px 12px;border-radius:999px;text-transform:uppercase}
+  .teaser.soft{background:linear-gradient(180deg,#faf6ea,#f4ecdb);border-color:#e7dabd}
+  .teaser .badge.soft{background:var(--gold);color:var(--navy)}
   .teaser h3{font-family:'Poppins';font-weight:700;font-size:19px;color:var(--navy);margin:12px 0 6px}
   .teaser p{font-size:14.5px;color:#3f4954;max-width:44ch;margin:0 auto}
   .result{text-align:left}
@@ -167,10 +169,10 @@
 
         <!-- STEP 2: teaser + email gate -->
         <div class="stage" id="s2">
-          <div class="teaser">
-            <span class="badge">✓ Good news</span>
+          <div class="teaser" id="teaserbox">
+            <span class="badge" id="teaserbadge">✓ Good news</span>
             <h3 id="teaserhead">Your lot very likely qualifies for a multiplex.</h3>
-            <p>Ontario's new rules work in your favour here. Enter your email and we'll show you how many units it could hold, the play that fits, and what it means for you.</p>
+            <p id="teasersub">Ontario's new rules work in your favour here. Enter your email and we'll show you how many units it could hold, the play that fits, and what it means for you.</p>
           </div>
           <form id="gate" action="https://formspree.io/f/xkoezqwa" method="POST">
             <div class="grid2">
@@ -205,7 +207,7 @@
             <div class="note" id="noteline"></div>
             <div class="cta">
               <a class="book" href="tel:+13656457332">Book my free 15-min review</a>
-              <a class="guide" id="guidelink" href="/lot-value/">Get the full guide</a>
+              <a class="guide" id="guidelink" href="/downloads/resolve-your-home-is-worth-more.pdf" download>Download the full guide</a>
             </div>
           </div>
           <p class="fineprint">This is a directional estimate based on what you entered. Your exact unit count depends on your parcel's zoning and a site-specific review — that's what we confirm on the call.</p>
@@ -244,16 +246,31 @@
 
   var CITY={toronto:'Toronto',peel:'Mississauga / Peel',brampton:'Brampton',york:'Vaughan / York',durham:'Durham',hamilton:'Hamilton',kw:'Kitchener-Waterloo',ottawa:'Ottawa',other:'Ontario'};
 
-  // Coarse, directional heuristic only. Province floor = 3 units almost anywhere.
-  // Deliberately rough — the precise, parcel-specific answer is human-delivered.
+  // Coarse, directional heuristic only. Province floor = 3 units on most
+  // serviced urban lots (Bill 23). Deliberately rough — the precise,
+  // parcel-specific answer is human-delivered on the call.
+  //   strong  = a known market + a workable lot → confident "qualifies"
+  //   !strong = tiny lot or outside the core → honest "worth a closer look"
   function estimate(city,w,d){
-    var low=3, high=3, roomy=(w>=40&&d>=100), tight=(w>0&&w<25);
-    if(city==='toronto'){ high=4; if(lane==='yes'||roomy) high=5; }
-    else if(city==='hamilton'||city==='kw'||city==='ottawa'){ high=4; }
-    else if(city==='other'){ high=3; }
-    else { high = tight?3:4; }
-    if(tight) high=Math.max(low,high-1);
-    return {low:low, high:high, roomy:roomy, tight:tight};
+    var roomy=(w>=40&&d>=100), big=(w>=50&&d>=120),
+        tight=(w>0&&w<25), narrow=(w>0&&w<30);
+    var low=3, high=3, strong=true, laneBonus=false;
+
+    if(city==='toronto'){ high=4; }
+    else if(city==='hamilton'||city==='ottawa'||city==='kw'||city==='peel'||city==='york'){ high=4; }
+    else if(city==='brampton'||city==='durham'){ high= roomy?4:3; }
+    else { high=3; strong=false; }                 // 'other' — elsewhere in Ontario
+
+    // A rear lane OR a big lot supports a garden/laneway suite = one more unit,
+    // but only where the base already reaches a 4-unit multiplex.
+    if((lane==='yes'||big) && high>=4){ high+=1; laneBonus=true; }
+
+    // Small lots temper the estimate and soften the claim.
+    if(tight){ low=2; high=3; strong=false; laneBonus=false; }
+    else if(narrow){ high=Math.min(high,3); laneBonus=false; }
+
+    if(high<low) high=low;
+    return {low:low, high:high, strong:strong, laneBonus:laneBonus, roomy:roomy, tight:tight};
   }
   function playText(high){
     if(high>=5) return 'That opens a serious investor play — or live in one unit and let the rest carry the mortgage.';
@@ -273,7 +290,26 @@
     err.style.display='none';
     result=estimate(city,w,d);
     inputs={city:city,w:w,d:d,lane:lane};
-    // teaser only — no number revealed pre-email
+    // teaser only — no number revealed pre-email. Tone tracks confidence:
+    // strong markets/lots get the green "qualifies"; weak ones get an
+    // honest amber "worth a closer look" (still captured, never a dead end).
+    var badge=document.getElementById('teaserbadge'),
+        head=document.getElementById('teaserhead'),
+        sub=document.getElementById('teasersub'),
+        box=document.getElementById('teaserbox');
+    if(result.strong){
+      box.classList.remove('soft'); badge.classList.remove('soft');
+      badge.textContent='✓ Good news';
+      head.textContent = result.high>=4
+        ? 'Your lot very likely qualifies for a multiplex.'
+        : 'Your lot very likely qualifies — a triplex looks within reach.';
+      sub.textContent="Ontario's new rules work in your favour here. Enter your email and we'll show you how many units it could hold, the play that fits, and what it means for you.";
+    } else {
+      box.classList.add('soft'); badge.classList.add('soft');
+      badge.textContent='Worth a closer look';
+      head.textContent='Your lot may qualify — it depends on the parcel.';
+      sub.textContent="This one takes a proper read of the zoning. Enter your email and we'll show you our honest take, the play that could fit, and how to confirm it.";
+    }
     show('s2');
     window.scrollTo({top:0,behavior:'smooth'});
   });
@@ -295,6 +331,7 @@
       document.getElementById('playline').innerHTML=playText(result.high);
       var note='In '+(CITY[inputs.city]||'your area')+', on a '+inputs.w+' × '+inputs.d+' ft lot, this is what the new rules point to.';
       if(inputs.city==='hamilton') note+=' Some Hamilton zones allow more — worth confirming your parcel.';
+      if(result.laneBonus) note+=' A rear lane or a deep lot opens room for a garden or laneway suite — that’s where the extra unit comes from.';
       if(inputs.city==='other') note+=" You're outside our core markets, but not a dead end — we work with trusted local partners across Ontario, so you'll still get a real plan.";
       note+=' The exact number and the financing depend on a site-specific review, which we do free on the call.';
       document.getElementById('noteline').textContent=note;
