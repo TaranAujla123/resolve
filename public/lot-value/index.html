@@ -99,73 +99,12 @@
 </head>
 <body>
 
-  <style>
-    .rhdr{position:sticky;top:0;z-index:60;background:#0A1F44;border-bottom:1px solid rgba(255,255,255,.09)}
-    .rhdr-in{max-width:1200px;margin:0 auto;padding:0 22px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
-    .rhdr-logo{display:inline-flex;align-items:center}
-    .rhdr-logo img{height:38px;width:auto;display:block}
-    .rhdr-nav{display:flex;align-items:center;gap:23px}
-    .rhdr-nav a{color:rgba(245,241,232,.82);text-decoration:none;font-family:'Inter','Segoe UI',sans-serif;font-weight:600;font-size:14.5px;line-height:1;white-space:nowrap;transition:color .15s}
-    .rhdr-nav a:hover{color:#fff}
-    .rhdr-inv{display:inline-flex;align-items:center;gap:6px}
-    .rhdr-cta{border:1px solid rgba(245,241,232,.5);border-radius:999px;padding:9px 17px;color:#F5F1E8}
-    .rhdr-cta:hover{background:rgba(245,241,232,.1);color:#fff}
-    .rhdr-burger{display:none;background:none;border:0;color:#F5F1E8;cursor:pointer;padding:8px;line-height:0}
-    .rhdr-burger svg{width:24px;height:24px}
-    .rhdr-x{display:none}
-    .rhdr.open .rhdr-menu{display:none}
-    .rhdr.open .rhdr-x{display:block}
-    .rhdr-panel{display:none;flex-direction:column;background:#0A1F44;border-top:1px solid rgba(255,255,255,.09);padding:8px 22px 20px}
-    .rhdr-panel a{color:#F5F1E8;text-decoration:none;font-family:'Inter','Segoe UI',sans-serif;font-weight:600;font-size:15px;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:8px}
-    .rhdr-panel .rhdr-cta{justify-content:center;border-radius:999px;margin-top:14px;padding:13px;border-bottom:1px solid rgba(245,241,232,.5)}
-    .rhdr svg.lock{width:14px;height:14px;stroke:#C4A468;fill:none}
-    @media(max-width:1000px){
-      .rhdr-nav{display:none}
-      .rhdr-burger{display:inline-flex}
-      .rhdr.open .rhdr-panel{display:flex}
-    }
-  </style>
-  <header class="rhdr" id="rhdr">
-    <div class="rhdr-in">
-      <a href="/" class="rhdr-logo" aria-label="Resolve — home"><img src="/resolve-lockup-dark.png" alt="re·solve Real Estate" /></a>
-      <nav class="rhdr-nav">
-        <a href="/#situations">Situations We Handle</a>
-        <a href="/#why-resolve">Why Us</a>
-        <a href="/#how-we-help">How We Help</a>
-        <a href="/multiplex">Multiplex</a>
-        <a href="/about">About</a>
-        <a href="/for-agents">For Agents</a>
-        <a href="/investor-access" class="rhdr-inv"><svg class="lock" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Investor Login</a>
-        <a href="/contact" class="rhdr-cta">Contact us</a>
-      </nav>
-      <button class="rhdr-burger" id="rhdrBurger" aria-label="Open menu" aria-expanded="false">
-        <svg class="rhdr-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-        <svg class="rhdr-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
-      </button>
+  <nav class="nav">
+    <div class="wrap">
+      <a href="/" class="brand"><img src="/resolve-lockup-dark.png" alt="re·solve Real Estate" /></a>
+      <a class="ph" href="tel:+13656457332">Taran Aujla · <b>(365)&nbsp;645-7332</b></a>
     </div>
-    <div class="rhdr-panel">
-      <a href="/#situations">Situations We Handle</a>
-      <a href="/#why-resolve">Why Us</a>
-      <a href="/#how-we-help">How We Help</a>
-      <a href="/multiplex">Multiplex</a>
-      <a href="/about">About</a>
-      <a href="/for-agents">For Agents</a>
-      <a href="/investor-access" class="rhdr-inv"><svg class="lock" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>Investor Login</a>
-      <a href="tel:+13656457332">Call (365) 645-7332</a>
-      <a href="/contact" class="rhdr-cta">Contact us</a>
-    </div>
-  </header>
-  <script>
-    (function(){
-      var h=document.getElementById('rhdr'), b=document.getElementById('rhdrBurger');
-      if(!h||!b) return;
-      b.addEventListener('click',function(){
-        var open=h.classList.toggle('open');
-        b.setAttribute('aria-expanded',open?'true':'false');
-        b.setAttribute('aria-label',open?'Close menu':'Open menu');
-      });
-    })();
-  </script>
+  </nav>
 
   <header class="hero">
     <div class="wrap grid">
