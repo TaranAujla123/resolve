@@ -109,7 +109,7 @@ export function Hero() {
                   to={s.to}
                   className="
                     inline-flex items-center justify-center w-full
-                    px-3 sm:px-4 py-2.5 rounded-[10px]
+                    px-4 sm:px-5 py-2.5 rounded-full
                     border border-bronze/70 bg-navy/25 backdrop-blur-[2px]
                     font-sans font-semibold text-[12.5px] sm:text-[13.5px] leading-none text-stone
                     hover:border-bronze hover:bg-bronze hover:text-navy
