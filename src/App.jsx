@@ -410,7 +410,7 @@ const MULTIPLEX_JSONLD = [
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Multiplex Property in the GTA, Hamilton & KW · Resolve',
+    name: 'Multiplex Property in the GTA, Hamilton & Kitchener-Waterloo · Resolve',
     url: `${SITE_URL}/multiplex/`,
     description:
       'Many Ontario lots can now hold a multiplex of three to six units. Resolve finds, values, lists, and buys plex-potential property, with a build partner who prices and builds it. GTA, Hamilton, and Kitchener-Waterloo.',
@@ -442,7 +442,7 @@ function MultiplexRoutePage() {
   return (
     <>
       <Seo
-        title="Multiplex Property in the GTA, Hamilton & KW · Resolve"
+        title="Multiplex Property in the GTA, Hamilton & Kitchener-Waterloo · Resolve"
         description="Many Ontario lots can now hold a multiplex of 3 to 6 units. Resolve finds, values, lists and buys plex-potential property — with a build partner who prices and builds it. GTA, Hamilton & Kitchener-Waterloo."
         canonical={`${SITE_URL}/multiplex/`}
         jsonLd={MULTIPLEX_JSONLD}
