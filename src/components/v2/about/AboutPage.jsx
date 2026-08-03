@@ -147,7 +147,7 @@ export function AboutPage() {
                 <p>
                   I come at real estate from two sides: as an investor, and
                   for close to a decade as a real estate lawyer. I started
-                  managing my family&rsquo;s rentals as a teenager and have
+                  managing my parents&rsquo; multiplexes as a teenager and have
                   owned and operated my own since; in practice, I closed
                   several hundred transactions. Both taught me the same
                   lesson, and it shapes how I work now: most problems that
