@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 900" font-family="'Poppins','Segoe UI',sans-serif">
+  <defs>
+    <style>
+      .wall{fill:#ffffff;stroke:#0A1F44;stroke-width:3}
+      .rm{fill:#0A1F44;font-weight:600;font-size:15px}
+      .rmc{fill:#0A1F44;font-weight:600;font-size:13px}
+      .dim{fill:#a9884f;font-size:11.5px;font-weight:600}
+      .win{fill:#C4A468}
+      .lbl{fill:#0A1F44;font-weight:700;font-size:16px;letter-spacing:1px}
+      .note{fill:#6f7683;font-size:12px}
+      .ent{fill:#a9884f;font-size:11px;font-weight:600}
+      .stair{stroke:#0A1F44;stroke-width:1.2}
+    </style>
+  </defs>
+
+  <rect width="1240" height="900" fill="#F5F1E8"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="1240" height="66" fill="#0A1F44"/>
+  <text x="40" y="42" fill="#F5F1E8" font-weight="700" font-size="22" letter-spacing="0.5">49 Kilgreggan · Floor Plan</text>
+  <text x="1200" y="41" text-anchor="end" fill="#C4A468" font-size="13" font-weight="600">Bendale South, Scarborough · Detached bungalow</text>
+
+  <!-- ============ MAIN FLOOR ============ -->
+  <text x="70" y="112" class="lbl">MAIN FLOOR</text>
+  <rect class="wall" x="70" y="150" width="500" height="600"/>
+  <!-- left column -->
+  <rect class="wall" x="70" y="150" width="190" height="180"/>
+  <text x="165" y="232" text-anchor="middle" class="rmc">Bedroom</text>
+  <text x="165" y="250" text-anchor="middle" class="dim">3.18 × 2.74 m</text>
+  <rect class="wall" x="70" y="330" width="190" height="170"/>
+  <text x="165" y="408" text-anchor="middle" class="rmc">Bedroom</text>
+  <text x="165" y="426" text-anchor="middle" class="dim">2.97 × 2.67 m</text>
+  <rect class="wall" x="70" y="500" width="230" height="250"/>
+  <text x="185" y="620" text-anchor="middle" class="rm">Living Room</text>
+  <text x="185" y="640" text-anchor="middle" class="dim">4.83 × 5.59 m</text>
+  <!-- center + hallway -->
+  <rect class="wall" x="260" y="150" width="180" height="180"/>
+  <text x="350" y="232" text-anchor="middle" class="rmc">Primary Bedroom</text>
+  <text x="350" y="250" text-anchor="middle" class="dim">4.06 × 3.30 m</text>
+  <rect class="wall" x="260" y="330" width="180" height="60"/>
+  <text x="350" y="366" text-anchor="middle" class="rmc">Hallway</text>
+  <rect class="wall" x="300" y="390" width="270" height="180"/>
+  <text x="435" y="475" text-anchor="middle" class="rm">Kitchen</text>
+  <text x="435" y="495" text-anchor="middle" class="dim">2.92 × 3.56 m</text>
+  <rect class="wall" x="300" y="570" width="270" height="180"/>
+  <text x="435" y="655" text-anchor="middle" class="rmc">Foyer</text>
+  <!-- right column: 4-pc bath -->
+  <rect class="wall" x="440" y="150" width="130" height="240"/>
+  <text x="505" y="266" text-anchor="middle" class="rmc">4-pc Bath</text>
+
+  <!-- main windows -->
+  <rect class="win" x="110" y="147" width="60" height="6"/>
+  <rect class="win" x="300" y="147" width="60" height="6"/>
+  <rect class="win" x="470" y="147" width="55" height="6"/>
+  <rect class="win" x="67" y="560" width="6" height="60"/>
+  <rect class="win" x="567" y="310" width="6" height="55"/>
+  <!-- front entrance -->
+  <rect x="405" y="747" width="60" height="6" fill="#0A1F44"/>
+  <text x="435" y="775" text-anchor="middle" class="ent">▲ Front entrance</text>
+  <!-- side entrance -->
+  <path d="M 585 470 L 567 470" class="stair"/>
+  <text x="590" y="455" class="ent">Side</text>
+  <text x="590" y="468" class="ent">entrance</text>
+  <rect class="win" x="567" y="440" width="6" height="34" fill="#0A1F44"/>
+
+  <!-- ============ BASEMENT ============ -->
+  <text x="700" y="112" class="lbl">BASEMENT</text>
+  <rect class="wall" x="700" y="150" width="470" height="600"/>
+  <!-- left column -->
+  <rect class="wall" x="700" y="150" width="200" height="250"/>
+  <text x="800" y="268" text-anchor="middle" class="rm">Bedroom</text>
+  <text x="800" y="286" text-anchor="middle" class="dim">6.93 × 3.81 m · splittable</text>
+  <rect class="wall" x="700" y="400" width="200" height="150"/>
+  <text x="800" y="470" text-anchor="middle" class="rmc">Laundry / Utility</text>
+  <text x="800" y="488" text-anchor="middle" class="dim">3.56 × 3.56 m</text>
+  <rect class="wall" x="700" y="550" width="200" height="200"/>
+  <text x="800" y="650" text-anchor="middle" class="rmc">Bedroom</text>
+  <text x="800" y="668" text-anchor="middle" class="dim">4.42 × 2.39 m</text>
+  <!-- center: stairs + living/kitchen -->
+  <rect class="wall" x="900" y="150" width="130" height="230"/>
+  <text x="965" y="255" text-anchor="middle" class="rmc">Stairs up</text>
+  <line x1="905" y1="270" x2="1025" y2="270" class="stair"/>
+  <line x1="905" y1="290" x2="1025" y2="290" class="stair"/>
+  <line x1="905" y1="310" x2="1025" y2="310" class="stair"/>
+  <line x1="905" y1="330" x2="1025" y2="330" class="stair"/>
+  <line x1="905" y1="350" x2="1025" y2="350" class="stair"/>
+  <rect class="wall" x="900" y="380" width="270" height="240"/>
+  <text x="1035" y="495" text-anchor="middle" class="rm">Kitchen / Living</text>
+  <text x="1035" y="515" text-anchor="middle" class="dim">6.27 × 3.81 m</text>
+  <!-- right column -->
+  <rect class="wall" x="1030" y="150" width="140" height="150"/>
+  <text x="1100" y="228" text-anchor="middle" class="rmc">3-pc Bath</text>
+  <rect class="wall" x="900" y="620" width="180" height="130"/>
+  <text x="990" y="690" text-anchor="middle" class="rmc">Cold Room</text>
+  <rect class="wall" x="1080" y="620" width="90" height="130"/>
+  <text x="1125" y="685" text-anchor="middle" class="rmc" font-size="11">Storage</text>
+
+  <!-- basement windows -->
+  <rect class="win" x="740" y="147" width="55" height="6"/>
+  <rect class="win" x="820" y="147" width="55" height="6"/>
+  <rect class="win" x="1167" y="200" width="6" height="45"/>
+  <!-- side entrance basement -->
+  <text x="1045" y="345" class="ent">Separate side entrance</text>
+  <path d="M 1100 360 L 1100 378" class="stair"/>
+  <rect class="win" x="1167" y="320" width="6" height="40" fill="#0A1F44"/>
+
+  <!-- footer -->
+  <text x="40" y="862" class="note">Illustrative floor plan created from an owner sketch. Layout and room positions are approximate and not to scale; measurements are approximate. Buyer to verify.</text>
+  <text x="1200" y="862" text-anchor="end" class="note">Resolve · resolverealestate.ca/49-kilgreggan</text>
+</svg>
