@@ -73,7 +73,7 @@ export function TaranProfile() {
               alt="Taran Aujla, Real Estate Salesperson, Ontario"
               width="160"
               height="200"
-              className="w-32 h-40 sm:w-44 sm:h-56 object-cover object-top rounded-[16px] border border-stone/20 flex-shrink-0"
+              className="w-32 h-40 sm:w-44 sm:h-56 object-cover object-center rounded-[16px] border border-stone/20 flex-shrink-0"
             />
             <div className="min-w-0">
               <Eyebrow>Salesperson · HomeLife G1 Realty Inc., Brokerage</Eyebrow>

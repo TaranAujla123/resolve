@@ -107,7 +107,7 @@ export function AboutPage() {
                 alt="Taran Aujla, Salesperson"
                 width="160"
                 height="200"
-                className="w-28 h-36 sm:w-40 sm:h-48 object-cover object-top rounded-[14px] border border-divider flex-shrink-0"
+                className="w-28 h-36 sm:w-40 sm:h-48 object-cover object-center rounded-[14px] border border-divider flex-shrink-0"
               />
               <div className="flex-1 min-w-0 pt-1">
                 <p className="font-display font-medium text-navy text-[1.35rem] sm:text-[1.55rem] leading-tight">
