@@ -8,9 +8,11 @@ import {
   Scroll,
   Clock,
   TrendingDown,
+  Gem,
   ArrowUpRight,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
+import { Button } from '@/components/brand/Button'
 
 /**
  * Situations — V2 home page "Situations We Handle" section.
@@ -66,7 +68,7 @@ export function Situations() {
         <div className="max-w-3xl">
           <Eyebrow>Situations We Handle</Eyebrow>
           <h2 className="mt-5 font-display font-medium text-navy text-display-lg">
-            Four situations.{' '}
+            Every situation.{' '}
             <span className="italic text-bronze">One approach.</span>
           </h2>
           {/*
@@ -90,8 +92,10 @@ export function Situations() {
             Document-first. Position-driven. Equity-led.
           </p>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-navy-soft">
-            Resolve focuses on the sales that need more than a standard
-            listing.
+            From financial pressure to a high-value or complex sale, Resolve
+            focuses on the sales that need more than a standard listing. The
+            same document-first, equity-led approach serves any seller who
+            wants it done right, not only those under pressure.
           </p>
         </div>
 
@@ -145,6 +149,42 @@ export function Situations() {
             </li>
           ))}
         </ul>
+
+        {/* Fifth lane — the non-distressed, discerning seller. A full-width
+            navy callout below the grid so the section reads as "any sale
+            done right," not distress-only, while keeping the 2x2/4-across
+            grid free of an orphan card. "Protecting your equity" frames
+            posture (not a guaranteed outcome), consistent with the
+            hero + "Equity-led" line, so it stays clear of RECO Bulletin 5.3. */}
+        <div className="mt-5 rounded-2xl bg-navy px-7 py-8 sm:px-9 sm:py-9 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+          <div className="max-w-2xl">
+            <div className="flex items-center gap-3">
+              <span className="inline-flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-full border border-bronze/50 text-bronze">
+                <Gem className="h-5 w-5" strokeWidth={1.6} />
+              </span>
+              <h3 className="font-display font-medium text-stone text-[1.4rem] leading-tight">
+                High-value &amp; complex sales
+              </h3>
+            </div>
+            <p className="mt-4 text-[15px] leading-relaxed text-stone-soft">
+              Not every sale is a crisis. When the property is high-value or the
+              file is complex, the details, the negotiation, and protecting your
+              equity are exactly what decide the outcome. The same
+              document-first, equity-led approach, for any seller who wants it
+              done right.
+            </p>
+          </div>
+          <Button
+            as={Link}
+            to="/get-help"
+            variant="contrast"
+            size="lg"
+            className="flex-shrink-0"
+          >
+            Start a confidential conversation
+            <ArrowUpRight className="h-4 w-4" strokeWidth={1.8} />
+          </Button>
+        </div>
       </div>
     </section>
   )

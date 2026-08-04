@@ -71,8 +71,8 @@ export function MultiplexPage() {
             <span className="text-stone">Multiplex</span> · GTA, Hamilton, Kitchener-Waterloo &amp; Ottawa
           </Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.02]">
-            Your lot might be{' '}
-            <span className="font-display italic text-bronze">a multiplex.</span>
+            The Multiplex{' '}
+            <span className="font-display italic text-bronze">Advantage.</span>
           </h1>
           <p className="mt-6 text-[18px] leading-relaxed text-stone-soft max-w-[540px]">
             Ontario&rsquo;s rules changed. Many lots can now hold three to six units &mdash; worth

@@ -133,6 +133,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  to="/for-agents"
+                  className="hover:text-bronze transition-colors"
+                >
+                  For Agents
+                </Link>
+              </li>
+              <li>
+                <Link
                   to="/privacy"
                   className="hover:text-bronze transition-colors"
                 >

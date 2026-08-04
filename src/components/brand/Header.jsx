@@ -25,7 +25,6 @@ const NAV_ITEMS = [
   { to: '/#how-we-help', label: 'How We Help', isAnchor: true },
   { to: '/multiplex', label: 'Multiplex' },
   { to: '/about', label: 'About' },
-  { to: '/for-agents', label: 'For Agents' },
 ]
 
 export function Header() {
