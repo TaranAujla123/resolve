@@ -365,7 +365,7 @@ export function GetHelpPage() {
                 <div
                   role="img"
                   aria-label="Taran Aujla, Salesperson at Resolve"
-                  className="w-[120px] sm:w-[140px] aspect-[4/5] shrink-0 bg-mist border border-divider rounded-[8px] bg-cover bg-center select-none"
+                  className="w-[120px] sm:w-[140px] aspect-[4/5] shrink-0 bg-mist border border-bronze/55 rounded-[10px] bg-cover bg-center select-none"
                   style={{
                     backgroundImage: "url('/get-help/taran-headshot.jpg')",
                     WebkitUserSelect: 'none',
@@ -376,14 +376,14 @@ export function GetHelpPage() {
                   onContextMenu={(e) => e.preventDefault()}
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-navy text-[15px] leading-tight">Taran Aujla</p>
-                  <p className="mt-0.5 text-[12.5px] text-navy-soft">Salesperson</p>
-                  <p className="mt-2.5 text-[12.5px] text-navy-soft leading-tight">
+                  <p className="font-semibold text-stone text-[15px] leading-tight">Taran Aujla</p>
+                  <p className="mt-0.5 text-[12.5px] text-stone-soft">Salesperson</p>
+                  <p className="mt-2.5 text-[12.5px] text-stone-soft leading-tight">
                     Led by Taran &amp; Dave.
                   </p>
                   <Link
                     to="/about"
-                    className="mt-1 inline-flex items-center gap-1 text-[12.5px] font-semibold text-bronze hover:text-bronze-deep transition-colors group"
+                    className="mt-1 inline-flex items-center gap-1 text-[12.5px] font-semibold text-bronze hover:text-stone transition-colors group"
                   >
                     Learn more
                     <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
@@ -391,7 +391,7 @@ export function GetHelpPage() {
                 </div>
               </div>
 
-              <ul className="mt-6 space-y-2 text-[13px] text-navy-soft border-t border-divider pt-5">
+              <ul className="mt-6 space-y-2 text-[13px] text-stone-soft border-t border-white/10 pt-5">
                 {[
                   'Power of Sale + Notice of Sale files',
                   'Mortgage arrears + default letters',
