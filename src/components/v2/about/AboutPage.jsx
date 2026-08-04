@@ -71,13 +71,14 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Practitioner bios — navy bio-card style */}
-      <section data-surface="navy" className="bg-navy pt-4 pb-20 sm:pb-28">
+      {/* Practitioner bios — navy bio-cards floating on the light band.
+          Three-band rhythm: navy hero -> light band -> navy footer. */}
+      <section data-surface="stone" className="bg-stone py-16 sm:py-24">
         <div className="container max-w-4xl space-y-8">
           <Eyebrow>Led By</Eyebrow>
 
           {/* Taran — gold-framed portrait + identity, blockquote below */}
-          <figure className="rounded-[18px] border border-white/10 bg-white/[0.035] p-6 sm:p-8">
+          <figure className="rounded-[18px] bg-navy p-6 sm:p-8 shadow-card">
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
               <div className="shrink-0 rounded-[16px] border border-bronze/60 p-1.5">
                 <img
@@ -175,7 +176,7 @@ export function AboutPage() {
           </div>
 
           {/* Dave — portrait pending */}
-          <figure className="rounded-[18px] border border-white/10 bg-white/[0.035] p-6 sm:p-8">
+          <figure className="rounded-[18px] bg-navy p-6 sm:p-8 shadow-card">
             <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
               <div
                 aria-hidden="true"
