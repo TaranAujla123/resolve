@@ -167,7 +167,7 @@ export function Situations() {
               </h3>
             </div>
             <p className="mt-4 text-[15px] leading-relaxed text-stone-soft">
-              Not every sale is a crisis. When the property is high-value or the
+              Not every sale is under pressure. When the property is high-value or the
               file is complex, the details, the negotiation, and protecting your
               equity are exactly what decide the outcome. The same
               document-first, equity-led approach, for any seller who wants it
