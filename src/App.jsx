@@ -482,6 +482,7 @@ function HomePage() {
     <>
       <Seo
         title="Resolve · Seller Representation · Ontario"
+        ogTitle="Resolve · Real Estate · Ontario"
         description="Boutique seller representation for Ontario homeowners navigating mortgage arrears, power of sale, separation, estate sales, and property disputes."
         canonical={`${SITE_URL}/`}
         jsonLd={HOME_JSONLD}
