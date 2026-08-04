@@ -352,7 +352,7 @@ export function GetHelpPage() {
             </div>
 
             {/* RIGHT — compact photo + trust stack + About link */}
-            <div className="lg:pt-2">
+            <div className="rounded-[18px] bg-navy p-6 sm:p-7 shadow-card">
               <div className="flex gap-5 items-start">
                 {/*
                   Rendered as a background-image div (not <img>) so browser
@@ -376,14 +376,22 @@ export function GetHelpPage() {
                   onContextMenu={(e) => e.preventDefault()}
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="font-semibold text-stone text-[15px] leading-tight">Taran Aujla</p>
-                  <p className="mt-0.5 text-[12.5px] text-stone-soft">Salesperson</p>
-                  <p className="mt-2.5 text-[12.5px] text-stone-soft leading-tight">
-                    Led by Taran &amp; Dave.
+                  <p className="font-semibold text-stone text-[16px] leading-tight">Taran Aujla</p>
+                  <p className="mt-1 text-[11px] font-semibold uppercase tracking-[0.14em] text-bronze">
+                    Real Estate Salesperson
+                  </p>
+                  <p className="mt-2.5 text-[12px] text-stone-soft leading-relaxed">
+                    HomeLife G1 Realty Inc., Brokerage
+                    <br />
+                    RECO Reg. No. 6024721
+                  </p>
+                  <p className="mt-2.5 text-[12px] text-stone-soft/85 leading-relaxed">
+                    Real estate investor &middot; Former real estate lawyer
+                    (10 yrs) &middot; Strategic Negotiator &middot; Problem-Solver
                   </p>
                   <Link
                     to="/about"
-                    className="mt-1 inline-flex items-center gap-1 text-[12.5px] font-semibold text-bronze hover:text-stone transition-colors group"
+                    className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-bronze hover:text-stone transition-colors group"
                   >
                     Learn more
                     <ChevronRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
