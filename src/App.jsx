@@ -524,7 +524,7 @@ function BuyersPage() {
     <>
       <Seo
         title="For Buyers · Resolve Real Estate · Ontario"
-        description="We read properties for the value most buyers miss and the risks that do not show on the surface. Value-add and non-turnkey opportunities across the GTA, with disclosed buy-side representation. HomeLife G1 Realty Inc., Brokerage."
+        description="We look past the surface of a property for the value most buyers miss and the risks that do not show. Value-add and non-turnkey opportunities across the GTA, with disclosed buy-side representation. HomeLife G1 Realty Inc., Brokerage."
         canonical={`${SITE_URL}/buyers/`}
         jsonLd={BUYERS_JSONLD}
       />

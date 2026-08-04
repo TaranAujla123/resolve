@@ -67,7 +67,7 @@ const STEPS = [
   {
     num: '02',
     Icon: Search,
-    title: 'We read them against your needs',
+    title: 'We size each up against your needs',
     body:
       'For each listing you are weighing, the opportunities and the costs most agents miss, laid out side by side and measured against what matters to you.',
   },
@@ -83,7 +83,7 @@ const STEPS = [
 const ANSWERS = [
   {
     q: 'Is this insider access?',
-    a: 'No. Sellers always keep full MLS exposure. The value comes from reading a property well and matching it to you, not from anyone being disadvantaged or from skipping the market.',
+    a: 'No. Sellers always keep full MLS exposure. The value comes from assessing a property well and matching it to you, not from anyone being disadvantaged or from skipping the market.',
   },
   {
     q: 'Does it cost anything to join?',
@@ -112,7 +112,7 @@ export function Buyers() {
             <span className="italic text-bronze">what it could become.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-stone/80">
-            We read properties for the potential most buyers walk past, on and
+            We study properties for the potential most buyers walk past, on and
             off market. Homes to live in, and income properties to hold. Not
             turnkey. Not for everyone. For buyers who look past the price to
             what a property could become.
@@ -146,9 +146,9 @@ export function Buyers() {
           </h2>
           <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-navy-soft">
             You already know the area and the home you want. The harder part,
-            and what actually makes you money, is reading each listing against
+            and what actually makes you money, is evaluating each listing against
             your needs: the potential the marketing missed, and the problems
-            the photos hid. You get both sides in a clear written read, the
+            the photos hid. You get both sides in a clear written breakdown, the
             opportunities and the costs most agents skip, side by side, so you
             can weigh the trade-off and decide.
           </p>
@@ -191,7 +191,7 @@ export function Buyers() {
 
           <p className="mt-6 max-w-2xl text-[14px] text-navy-mute leading-relaxed">
             Where a step needs a lawyer, a mortgage professional, or the city,
-            we point you to the right person and coordinate the pieces. We read
+            we point you to the right person and coordinate the pieces. We work
             the file; the specialists confirm it.
           </p>
         </div>
@@ -203,7 +203,7 @@ export function Buyers() {
           <div className="max-w-3xl">
             <Eyebrow>How it works</Eyebrow>
             <h2 className="mt-5 font-display font-medium text-navy text-display-md">
-              Tell us. We read.{' '}
+              Tell us. We dig in.{' '}
               <span className="italic text-bronze">You decide.</span>
             </h2>
           </div>
@@ -283,8 +283,8 @@ export function Buyers() {
             Tell us what you are after.
           </h2>
           <p className="mt-5 text-[16.5px] leading-relaxed text-stone/80">
-            When something fits your brief, you hear it with the full read: the
-            upside, what it would take, and what to watch for.
+            When something fits your brief, you hear it with the full rundown:
+            the upside, what it would take, and what to watch for.
           </p>
           <div className="mt-8 flex justify-center">
             <Button as={Link} to="/get-deals" variant="primary" size="lg">
