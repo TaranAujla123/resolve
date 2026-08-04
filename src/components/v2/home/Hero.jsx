@@ -95,7 +95,7 @@ export function Hero() {
           </h1>
 
           <p className="mt-5 max-w-md text-[17px] leading-[1.6] text-stone-soft">
-            We help Ontario homeowners navigate difficult property
+            We help Ontario homeowners navigate complex property
             situations and sell with greater clarity, confidence, and
             equity as the priority.
           </p>
