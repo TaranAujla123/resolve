@@ -52,7 +52,7 @@ export function SellerPromise() {
             <span className="italic text-bronze">sale.</span>
           </h2>
           <p className="mt-5 max-w-xl text-[16.5px] leading-relaxed text-navy-soft">
-            When you bring us a difficult sale, we represent you and the
+            When you bring us a complex sale, we represent you and the
             outcome you need. Nothing about that shifts partway through. The
             work is straightforward: get the value of your home in front of
             the market, negotiate it carefully, and hold your position from

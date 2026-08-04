@@ -376,7 +376,7 @@ const FOR_AGENTS_JSONLD = [
     name: 'Partner With Resolve · Brokerage Partnership · Ontario',
     url: `${SITE_URL}/for-agents/`,
     description:
-      'Partner with Resolve on difficult or time-sensitive Ontario seller files. Refer the file and step back, or stay on as co-listing brokerage. Documented brokerage-to-brokerage under TRESA. The referring agent keeps the client relationship and is paid at closing under the structure agreed for the file.',
+      'Partner with Resolve on complex or time-sensitive Ontario seller files. Refer the file and step back, or stay on as co-listing brokerage. Documented brokerage-to-brokerage under TRESA. The referring agent keeps the client relationship and is paid at closing under the structure agreed for the file.',
     isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
     breadcrumb: {
       '@type': 'BreadcrumbList',
@@ -397,7 +397,7 @@ const FOR_AGENTS_JSONLD = [
       audienceType: 'Ontario real estate Salespersons and Brokers',
     },
     description:
-      'Resolve partners with Ontario real estate professionals on difficult and time-sensitive seller files: power of sale, mortgage arrears, matrimonial home sales, estate sales, property disputes. Two modes: full referral under a TRESA brokerage-to-brokerage referral agreement, or co-brokerage under a co-listing agreement. Both are documented brokerage-to-brokerage and pay out at closing.',
+      'Resolve partners with Ontario real estate professionals on complex and time-sensitive seller files: power of sale, mortgage arrears, matrimonial home sales, estate sales, property disputes. Two modes: full referral under a TRESA brokerage-to-brokerage referral agreement, or co-brokerage under a co-listing agreement. Both are documented brokerage-to-brokerage and pay out at closing.',
   },
 ]
 
@@ -681,7 +681,7 @@ function ForAgentsPage() {
     <>
       <Seo
         title="Partner With Resolve · Brokerage Partnership · Ontario"
-        description="Partner with Resolve on difficult or time-sensitive Ontario seller files. Refer the file and step back, or stay on as co-listing brokerage. Documented brokerage-to-brokerage under TRESA. You keep the client relationship and your brokerage is paid at closing."
+        description="Partner with Resolve on complex or time-sensitive Ontario seller files. Refer the file and step back, or stay on as co-listing brokerage. Documented brokerage-to-brokerage under TRESA. You keep the client relationship and your brokerage is paid at closing."
         canonical={`${SITE_URL}/for-agents/`}
         jsonLd={FOR_AGENTS_JSONLD}
       />

@@ -63,7 +63,7 @@ export function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 space-y-6">
           <p className="text-[12.5px] text-white/55 leading-relaxed">
-            Real estate professional with a difficult seller file?{' '}
+            Real estate professional with a complex seller file?{' '}
             <Link
               to="/for-agents"
               className="text-white/80 hover:text-accent transition-colors underline-offset-4 hover:underline"

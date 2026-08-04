@@ -42,7 +42,7 @@ export function BothSides() {
             <span className="italic text-bronze">Two paths.</span>
           </h2>
           <p className="mt-5 max-w-xl text-[16.5px] leading-relaxed text-navy-soft">
-            Resolve represents sellers navigating difficult property situations, and buyers looking for value in the files those situations produce. Different work, one house. Which side are you on?
+            Resolve represents sellers navigating complex property situations, and buyers looking for value in the files those situations produce. Different work, one house. Which side are you on?
           </p>
         </div>
 

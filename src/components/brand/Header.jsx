@@ -136,7 +136,7 @@ export function Header() {
             ].join(' ')}
           >
             <Lock className="h-3.5 w-3.5 text-bronze" strokeWidth={2} aria-hidden="true" />
-            Investor Login
+            Buyer &amp; Investor Login
           </Link>
           {barSolid ? (
             <Button as={Link} to="/contact" variant="primary" size="sm">
@@ -202,7 +202,7 @@ export function Header() {
               className="py-3 inline-flex items-center gap-2 font-sans font-medium text-[15px] text-navy hover:text-bronze"
             >
               <Lock className="h-4 w-4 text-bronze" strokeWidth={2} aria-hidden="true" />
-              Investor Login
+              Buyer &amp; Investor Login
             </Link>
             <Button
               as={Link}
