@@ -176,7 +176,7 @@ export function Situations() {
           </div>
           <Button
             as={Link}
-            to="/get-help"
+            to="/contact"
             variant="contrast"
             size="lg"
             className="flex-shrink-0"
