@@ -495,8 +495,9 @@ function AboutRoutePage() {
   return (
     <>
       <Seo
-        title="About Resolve · Seller Representation · Ontario"
-        description="Boutique seller representation for Ontario homeowners. Led by Taran Aujla and Dave Dhaliwal under HomeLife G1 Realty Inc., Brokerage."
+        title="About Resolve · Real Estate · Ontario"
+        ogTitle="Resolve · Real Estate · Ontario"
+        description="Resolve is an Ontario real estate practice led by Taran Aujla and Dave Dhaliwal, working both sides of the transaction under HomeLife G1 Realty Inc., Brokerage."
         canonical={`${SITE_URL}/about/`}
         jsonLd={[...SITE_JSONLD, TARAN_PERSON_LD, DAVE_PERSON_LD]}
       />
