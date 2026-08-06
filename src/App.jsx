@@ -11,6 +11,7 @@ import { BrokerageStrip } from '@/components/landing/BrokerageStrip'
 // V2 pages (homepage + 3 standalone routes)
 import { HomePage as V2HomePage } from '@/components/v2/home/HomePage'
 import { SellersPage as V2SellersPage } from '@/components/v2/sellers/SellersPage'
+import { WhyUsPage as V2WhyUsPage } from '@/components/v2/whyus/WhyUsPage'
 import { ContactPage } from '@/components/v2/contact/ContactPage'
 import { AboutPage } from '@/components/v2/about/AboutPage'
 import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
@@ -107,19 +108,24 @@ const REAL_ESTATE_AGENT_LD = {
   geo: { '@type': 'GeoCoordinates', latitude: 43.7343, longitude: -79.723 },
   areaServed: [
     { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
-    { '@type': 'City', name: 'Brampton' },
-    { '@type': 'City', name: 'Mississauga' },
-    { '@type': 'City', name: 'Caledon' },
-    { '@type': 'AdministrativeArea', name: 'Peel Region' },
     { '@type': 'Place', name: 'Greater Toronto Area' },
+    { '@type': 'City', name: 'Toronto' },
+    { '@type': 'City', name: 'Mississauga' },
+    { '@type': 'City', name: 'Brampton' },
+    { '@type': 'City', name: 'Hamilton' },
+    { '@type': 'City', name: 'Kitchener' },
+    { '@type': 'City', name: 'Waterloo' },
+    { '@type': 'AdministrativeArea', name: 'Peel Region' },
   ],
   knowsAbout: [
     'Power of sale',
     'Mortgage arrears',
     'Financial pressure and mortgage renewal shock',
-    'Estate and probate sales',
     'Time-sensitive sales',
+    'High-value and complex home sales',
+    'Multiplex and value-add property',
     'Seller representation',
+    'Buyer representation',
   ],
   founder: [
     { '@type': 'Person', '@id': TARAN_ID },
@@ -506,6 +512,20 @@ function SellersRoutePage() {
   )
 }
 
+function WhyUsRoutePage() {
+  return (
+    <>
+      <Seo
+        title="Why Resolve · How We Work · Ontario Real Estate"
+        description="Why Resolve is different: the same judgment applied on either side of the table. We read the real position, find the value most people miss, and represent one side fully. Sellers and buyers across the GTA, Hamilton and Kitchener-Waterloo."
+        canonical={`${SITE_URL}/why-us/`}
+        jsonLd={SITE_JSONLD}
+      />
+      <V2WhyUsPage />
+    </>
+  )
+}
+
 function AboutRoutePage() {
   return (
     <>
@@ -762,12 +782,16 @@ export default function App() {
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/sellers" element={<SellersRoutePage />} />
+            <Route path="/why-us" element={<WhyUsRoutePage />} />
             <Route path="/about" element={<AboutRoutePage />} />
             <Route path="/contact" element={<ContactRoutePage />} />
             <Route path="/buyers" element={<BuyersPage />} />
             <Route path="/power-of-sale" element={<PowerOfSalePage />} />
             <Route path="/mortgage-arrears" element={<MortgageArrearsPage />} />
-            <Route path="/estate-sale" element={<EstateSalePage />} />
+            {/* Estate/probate folded into Time-Sensitive Sales (the estate
+                timeline is one of its named cases). Redirect keeps the old
+                URL and any inbound links working. */}
+            <Route path="/estate-sale" element={<Navigate to="/time-sensitive-sales" replace />} />
             {/* /divorce-real-estate and /property-disputes routes retired
                 as part of the 4-lane practice refocus. Practice deliberately
                 stopped taking separation/divorce and ownership-dispute files

@@ -99,9 +99,24 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
         </section>
       )}
 
-      {/* Lawyer coordination line */}
+      {/* Where we work — regional service-area line. Names the regions in
+          on-page copy so each situation page ranks on "<situation> + place"
+          without spinning up thin per-city pages. Mirrors areaServed in the
+          RealEstateAgent JSON-LD. Ottawa is scoped to multiplex only. */}
       <section data-surface="stone" className="bg-stone">
         <div className="container pt-10 pb-2">
+          <p className="mx-auto max-w-3xl text-[13px] text-navy-soft leading-relaxed">
+            <span className="font-semibold text-navy">Where we work.</span>{' '}
+            Resolve represents Ontario homeowners across the Greater Toronto
+            Area, plus Hamilton and Kitchener-Waterloo. Multiplex opportunities
+            extend to Ottawa with local partners.
+          </p>
+        </div>
+      </section>
+
+      {/* Lawyer coordination line */}
+      <section data-surface="stone" className="bg-stone">
+        <div className="container pt-6 pb-2">
           <p className="mx-auto max-w-3xl text-[12.5px] text-navy-mute leading-relaxed">
             We coordinate with the lawyer on every file. Legal, tax and financial
             questions sit with your own counsel. If you do not have one yet, we

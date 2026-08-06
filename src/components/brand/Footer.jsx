@@ -45,6 +45,11 @@ export function Footer() {
               <br />
               Brampton, ON&nbsp; L6R 3J5
             </p>
+            <p className="mt-4 text-[13px] leading-relaxed text-stone-mute">
+              Serving the Greater Toronto Area, Hamilton, and
+              Kitchener-Waterloo. Multiplex opportunities in Ottawa with local
+              partners.
+            </p>
           </div>
 
           {/* Column 2 — Led By (Taran + Dave) */}
@@ -129,6 +134,14 @@ export function Footer() {
                   className="hover:text-bronze transition-colors"
                 >
                   Confidential inquiry form
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/why-us"
+                  className="hover:text-bronze transition-colors"
+                >
+                  Why Resolve
                 </Link>
               </li>
               <li>

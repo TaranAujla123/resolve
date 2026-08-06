@@ -23,7 +23,7 @@ const NAV_ITEMS = [
   { to: '/sellers', label: 'For Sellers' },
   { to: '/buyers', label: 'For Buyers' },
   { to: '/multiplex', label: 'Multiplex' },
-  { to: '/sellers#why-resolve', label: 'Why Us', isAnchor: true },
+  { to: '/why-us', label: 'Why Us' },
   { to: '/about', label: 'About' },
 ]
 

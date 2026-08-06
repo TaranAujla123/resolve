@@ -32,12 +32,12 @@ const DIST = path.join(ROOT, 'dist')
 const ROUTES = [
   '/',
   '/sellers',
+  '/why-us',
   '/about',
   '/contact',
   '/buyers',
   '/power-of-sale',
   '/mortgage-arrears',
-  '/estate-sale',
   '/time-sensitive-sales',
   '/financial-pressure',
   '/for-agents',

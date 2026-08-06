@@ -44,7 +44,7 @@ export function HomePage() {
         <img
           src={heroImage}
           alt="Aerial at dawn: a single house glowing in warm morning light while the surrounding homes sit in navy-blue shade, standing out from the block"
-          className="absolute inset-0 w-full h-full object-cover object-[54%_56%] lg:object-[57%_center]"
+          className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-[64%_center]"
           loading="eager"
           decoding="async"
           draggable={false}

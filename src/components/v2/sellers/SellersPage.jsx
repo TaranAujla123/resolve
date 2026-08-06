@@ -1,7 +1,6 @@
 import React from 'react'
 import { Hero } from '../home/Hero'
 import { Situations } from '../home/Situations'
-import { DifferentApproach } from '../home/DifferentApproach'
 import { WhyResolve } from '../home/WhyResolve'
 import { HowWeHelp } from '../home/HowWeHelp'
 import { ClosingCta } from '../home/ClosingCta'
@@ -24,7 +23,6 @@ export function SellersPage() {
     <>
       <Hero />
       <Situations />
-      <DifferentApproach />
       <WhyResolve />
       <HowWeHelp />
       <ClosingCta />
