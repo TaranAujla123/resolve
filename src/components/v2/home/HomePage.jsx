@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Calendar, Phone } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
 import { BothSides } from './BothSides'
 import { ClosingCta } from './ClosingCta'
-import heroImage from '/hero-v3-a.jpg?url'
+import heroImage from '/hero-v3-crowd.jpg?url'
 
 /**
  * HomePage — the root (/) HUB (Aug 2026 restructure).
@@ -30,46 +30,46 @@ import heroImage from '/hero-v3-a.jpg?url'
 export function HomePage() {
   return (
     <>
-      {/* Hub hero — full-bleed navy hallway image (brand hero), pulled up
-          under the sticky header. Same photographic language as /sellers so
-          the root reads unmistakably as the same house, then hands off to
-          the two doors below. */}
+      {/* Hub hero — full-bleed navy aerial: hundreds of dark homes, one lit.
+          The "value most people miss / standing out from the crowd" image,
+          pulled up under the sticky header. Two audience pills + a primary
+          CTA sit above the fold, then the page hands off to the two doors. */}
       <section
         data-surface="navy"
-        className="relative bg-navy overflow-hidden isolate min-h-[730px] sm:min-h-[600px] lg:min-h-[640px] -mt-16 sm:-mt-20"
+        className="relative bg-navy overflow-hidden isolate min-h-[660px] sm:min-h-[600px] lg:min-h-[640px] -mt-16 sm:-mt-20"
       >
-        {/* Mobile-first: the doorway is cropped toward the warm light and
-            the lower scrim stays light, so on a phone the image is the
-            obvious hero beneath the copy — not a dark wash. */}
+        {/* The image is already deep navy at night, so it carries the field
+            and needs only light scrims to seat the text. Mobile crop centers
+            on the single lit house so the metaphor reads on a phone. */}
         <img
           src={heroImage}
-          alt="A home hallway opening onto a room filled with warm light"
-          className="absolute inset-0 w-full h-full object-cover object-[62%_center] lg:object-[60%_center]"
+          alt="Aerial view at dusk of hundreds of darkened homes with a single house lit up, standing out from the rest"
+          className="absolute inset-0 w-full h-full object-cover object-[58%_58%] lg:object-[60%_center]"
           loading="eager"
           decoding="async"
           draggable={false}
         />
-        {/* Light unifying tint so the doorway glow survives. */}
-        <div aria-hidden="true" className="absolute inset-0 bg-navy/38" />
-        {/* Desktop scrim — heavy left so the headline seats, doorway glows right. */}
+        {/* Faint unifying tint. */}
+        <div aria-hidden="true" className="absolute inset-0 bg-navy/25" />
+        {/* Desktop scrim — heavy left so the headline seats; the lit house
+            sits right-of-center in the clear zone. */}
         <div
           aria-hidden="true"
           className="hidden lg:block absolute inset-0 bg-gradient-to-r from-navy via-navy/72 to-navy/15"
         />
-        {/* Mobile scrim — dark enough behind the copy (top ~half) to keep
-            the stone headline crisp, then opens up so the lower half of the
-            hero is a clear, obvious doorway image on a phone. */}
+        {/* Mobile scrim — dark behind the copy up top, opening toward the
+            middle so the single lit house stays clearly visible. */}
         <div
           aria-hidden="true"
           className="lg:hidden absolute inset-0"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(10,31,68,0.92) 0%, rgba(10,31,68,0.80) 42%, rgba(10,31,68,0.30) 66%, rgba(10,31,68,0.06) 100%)',
+              'linear-gradient(to bottom, rgba(10,31,68,0.90) 0%, rgba(10,31,68,0.72) 38%, rgba(10,31,68,0.34) 62%, rgba(10,31,68,0.14) 100%)',
           }}
         />
 
-        <div className="relative container w-full pt-28 pb-16 sm:pt-40 sm:pb-24">
-          <div className="max-w-[620px]">
+        <div className="relative container w-full pt-28 pb-14 sm:pt-40 sm:pb-20">
+          <div className="max-w-[600px]">
             <div className="flex items-center gap-4">
               <span aria-hidden="true" className="h-px w-12 bg-bronze flex-shrink-0" />
               <p className="font-sans font-semibold text-[12.5px] uppercase tracking-[0.18em] text-bronze">
@@ -77,21 +77,60 @@ export function HomePage() {
               </p>
             </div>
 
-            <h1 className="mt-6 font-sans font-semibold text-stone leading-[1.08] tracking-[-0.015em] text-[clamp(2.4rem,5.2vw,3.9rem)]">
+            <h1 className="mt-5 font-sans font-semibold text-stone leading-[1.08] tracking-[-0.015em] text-[clamp(2.3rem,5vw,3.7rem)]">
               We find the value
               <br />
               most people{' '}
               <span className="font-emph italic font-normal text-bronze">miss.</span>
             </h1>
 
-            <p className="mt-6 max-w-lg text-[17px] leading-[1.62] text-stone-soft">
-              Resolve works both sides of the table. For sellers, the complex
-              and high-value sales a standard listing can&rsquo;t do justice.
-              For buyers, the upside most people scroll past. Two clients, one
-              eye for the details that decide the outcome.
+            <p className="mt-5 max-w-lg text-[17px] leading-[1.6] text-stone-soft">
+              Resolve works both sides of the table. Complex and high-value
+              sales for sellers, and the upside most buyers scroll past. Two
+              clients, one eye for the details that decide the outcome.
             </p>
 
-            <p className="mt-8 font-sans font-semibold text-[12px] uppercase tracking-[0.16em] text-stone-mute">
+            {/* Two audience pills — the primary routing decision, above the
+                fold. Bronze-outlined on navy, filling on hover. */}
+            <ul className="mt-7 grid grid-cols-2 gap-2.5 max-w-sm">
+              {[
+                { label: 'For Sellers', to: '/sellers' },
+                { label: 'For Buyers', to: '/buyers' },
+              ].map((p) => (
+                <li key={p.label} className="flex">
+                  <Link
+                    to={p.to}
+                    className="
+                      inline-flex items-center justify-center w-full gap-1.5
+                      px-5 py-2.5 rounded-full
+                      border border-bronze/70 bg-navy/25 backdrop-blur-[2px]
+                      font-sans font-semibold text-[13.5px] leading-none text-stone
+                      hover:border-bronze hover:bg-bronze hover:text-navy
+                      transition-colors duration-200
+                    "
+                  >
+                    {p.label}
+                    <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
+              <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center shadow-card">
+                <Calendar className="h-4 w-4" strokeWidth={1.9} />
+                Book a free 15-minute call
+              </Button>
+              <a
+                href="tel:+13656457332"
+                className="inline-flex items-center justify-center gap-2 font-sans font-semibold text-[15px] text-stone hover:text-bronze transition-colors"
+              >
+                <Phone className="h-4 w-4" strokeWidth={1.9} />
+                Or call (365) 645-7332
+              </a>
+            </div>
+
+            <p className="mt-7 font-sans font-semibold text-[12px] uppercase tracking-[0.16em] text-stone-mute">
               GTA &middot; Hamilton &middot; Kitchener-Waterloo &middot; Ottawa
             </p>
           </div>
