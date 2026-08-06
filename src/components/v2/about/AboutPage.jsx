@@ -57,15 +57,22 @@ export function AboutPage() {
               I&rsquo;m Taran. My background spans decades in real estate,
               including Ontario real estate law, property transactions, and
               real estate investing across Ontario and Montreal, Quebec. That
-              experience helps me identify issues early, understand what
-              buyers respond to, and guide sellers through more complex
-              situations with confidence.
+              experience helps me see issues early, read what a property is
+              really worth, and work either side of a deal with the same eye
+              for the details that decide the outcome.
             </p>
             <p>
-              Whether the challenge involves mortgage arrears, power of
-              sale, an estate matter, or a time-sensitive sale, my role
-              is simple: provide practical seller representation when
-              selling is not straightforward.
+              For sellers, that means the sales that need more than a standard
+              listing: mortgage arrears, power of sale, financial pressure,
+              time-sensitive closings, and high-value or complex homes where
+              protecting your equity is the point. For buyers, it means the
+              value most people walk past: value-add homes, multiplex-eligible
+              lots, and income potential, bought on strong bones and built up
+              over time.
+            </p>
+            <p>
+              Whichever side you are on, the work is the same: understand the
+              real position, and make it work for the person I represent.
             </p>
           </div>
         </div>

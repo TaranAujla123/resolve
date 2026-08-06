@@ -19,11 +19,11 @@ import architectural from '/hero-architectural.jpg?url'
  * stone button. Carries `#why-resolve` for the header "Why Us" nav.
  */
 const EXPECTATIONS = [
-  'A clear read on what the sale can look like',
+  'A clear read on the real position',
   'Straightforward communication',
   'Experienced negotiation',
-  'A listing approach built around your timeline',
-  'A respectful, supportive experience',
+  'A plan built around your timeline',
+  'A respectful, discreet experience',
 ]
 
 export function DifferentApproach() {
@@ -64,9 +64,10 @@ export function DifferentApproach() {
               <span className="font-emph italic font-normal text-bronze">property problems.</span>
             </h2>
             <p className="mt-6 max-w-md text-[16px] leading-relaxed text-stone-soft">
-              When the situation is complicated, you need more than a sign in
-              the yard. You need an experienced team who can see the full
-              picture, run the right sale and protect what you have built.
+              When the deal is more than a standard listing, you need more than
+              a sign in the yard. On either side of the table, we see the full
+              picture, read the real position, and make it work for the person
+              we represent.
             </p>
             <Button
               as={Link}
