@@ -3,32 +3,53 @@ import { Link } from 'react-router-dom'
 import { ResolveWordmark } from './ResolveWordmark'
 
 /**
- * Footer — V2 global footer.
+ * Footer — V2 global footer (sitemap edition).
  *
- * Source of truth: Brand-System-V2/claude-code-v2-build.md §6 (Global footer)
+ * Navy background, stone text. Layout:
+ *   Row 1: brand + brokerage attribution (compliance) | three link
+ *          columns that surface EVERY page, including the landing pages
+ *          that are not in the top nav (situation pages, /deals showcase,
+ *          multiplex tools, and the gated guides).
+ *   Row 2: Led By (Taran + Dave, RECO numbers) + direct contact.
+ *   Bottom strip: © + Privacy + Terms + Primegate cross-link.
  *
- * Navy background, stone text. Three columns:
- *   1. Wordmark (dark variant) + brokerage attribution + IO&O + address
- *   2. Led By — Taran Aujla, Salesperson, RECO 6024721
- *               Dave Dhaliwal, Salesperson, RECO 5024155
- *   3. Contact — direct line, email, Privacy Policy, Primegate
- *
- * Bottom strip carries © + Privacy Policy + Meta Pixel disclosure line
- * + cross-link to Primegate.
+ * IMPORTANT — link element choice:
+ *   - React routes use <Link>.
+ *   - The static landing pages (/deals, /plexcheck, /lot-value,
+ *     /pays-for-itself, /homeowner-options) are prerendered HTML served
+ *     directly by the host, NOT React routes. They MUST use a plain
+ *     <a href> so the browser does a full navigation; a React <Link>
+ *     would be intercepted by the router and fall through to the
+ *     catch-all. The Ext() helper below renders those.
  *
  * COMPLIANCE: this is the one place on every page where the full
  * brokerage attribution must appear. RECO Bulletin 5.1 requires
  * "HomeLife G1 Realty Inc., Brokerage" + Independently Owned & Operated
- * be clearly identified. Do not move or shorten this block without
- * compliance review.
+ * be clearly identified. Do not move or shorten the brand/Led By blocks
+ * without compliance review.
  */
+
+const linkCls =
+  'text-[14px] text-stone-soft hover:text-bronze transition-colors'
+const headCls =
+  'text-[12px] font-semibold uppercase tracking-[0.18em] text-bronze'
+
+// Static (non-React-route) landing page — full navigation required.
+function Ext({ href, children }) {
+  return (
+    <a href={href} className={linkCls}>
+      {children}
+    </a>
+  )
+}
+
 export function Footer() {
   return (
     <footer className="bg-navy text-stone">
       <div className="container py-14 sm:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 sm:gap-12">
-          {/* Column 1 — wordmark + brokerage attribution.
-              V3: PNG lockup (dark variant) sized via height class. */}
+        {/* Row 1 — brand + three link columns */}
+        <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.1fr]">
+          {/* Brand + brokerage attribution (compliance) */}
           <div>
             <ResolveWordmark variant="dark" className="h-12" />
             <p className="mt-6 text-[14px] leading-relaxed text-stone-soft">
@@ -52,17 +73,70 @@ export function Footer() {
             </p>
           </div>
 
-          {/* Column 2 — Led By (Taran + Dave) */}
+          {/* For Sellers */}
           <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-bronze">
-              Led By
-            </p>
-            <ul className="mt-5 space-y-5 text-[14px] leading-relaxed text-stone-soft">
-              <li>
+            <p className={headCls}>For Sellers</p>
+            <ul className="mt-5 space-y-2.5">
+              <li><Link to="/sellers" className={linkCls}>Seller representation</Link></li>
+              <li><Link to="/power-of-sale" className={linkCls}>Power of sale</Link></li>
+              <li><Link to="/mortgage-arrears" className={linkCls}>Mortgage arrears</Link></li>
+              <li><Link to="/financial-pressure" className={linkCls}>Financial pressure</Link></li>
+              <li><Link to="/time-sensitive-sales" className={linkCls}>Time-sensitive sales</Link></li>
+              <li className="pt-1">
                 <Link
-                  to="/taranaujla"
-                  className="font-semibold text-stone hover:text-bronze transition-colors"
+                  to="/get-help"
+                  className="inline-flex items-center gap-1.5 font-semibold text-[14px] text-bronze hover:text-bronze-deep transition-colors"
                 >
+                  Free 15-min seller call
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* For Buyers & Multiplex */}
+          <div>
+            <p className={headCls}>Buyers &amp; Multiplex</p>
+            <ul className="mt-5 space-y-2.5">
+              <li><Link to="/buyers" className={linkCls}>For buyers</Link></li>
+              <li><Ext href="/deals/">Current opportunities</Ext></li>
+              <li><Link to="/multiplex" className={linkCls}>The Multiplex Advantage</Link></li>
+              <li><Ext href="/plexcheck/">PlexCheck lot tool</Ext></li>
+              <li className="pt-1">
+                <Link
+                  to="/get-deals"
+                  className="inline-flex items-center gap-1.5 font-semibold text-[14px] text-bronze hover:text-bronze-deep transition-colors"
+                >
+                  Get matched to lots
+                  <span aria-hidden="true">→</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Guides & Practice */}
+          <div>
+            <p className={headCls}>Guides &amp; Practice</p>
+            <ul className="mt-5 space-y-2.5">
+              <li><Ext href="/lot-value/">Guide: your lot&rsquo;s value</Ext></li>
+              <li><Ext href="/pays-for-itself/">Guide: a home that pays for itself</Ext></li>
+              <li><Ext href="/homeowner-options/">Guide: homeowner options</Ext></li>
+              <li><Link to="/about" className={linkCls}>About Resolve</Link></li>
+              <li><Link to="/why-us" className={linkCls}>Why Resolve</Link></li>
+              <li><Link to="/for-agents" className={linkCls}>For agents</Link></li>
+              <li><Link to="/investor-access" className={linkCls}>Investor Portal</Link></li>
+              <li><Link to="/contact" className={linkCls}>Confidential inquiry</Link></li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Row 2 — Led By (compliance) + direct contact */}
+        <div className="mt-12 pt-8 border-t border-stone-mute/30 grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div>
+            <p className={headCls}>Led By</p>
+            <ul className="mt-5 flex flex-col sm:flex-row gap-6 sm:gap-12 text-[14px] leading-relaxed text-stone-soft">
+              <li>
+                <Link to="/taranaujla" className="font-semibold text-stone hover:text-bronze transition-colors">
                   Taran Aujla
                 </Link>
                 <p className="text-stone-mute">Salesperson</p>
@@ -75,90 +149,18 @@ export function Footer() {
               </li>
             </ul>
           </div>
-
-          {/* Column 3 — contact */}
-          <div>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-bronze">
-              Contact
-            </p>
-            {/*
-              Fast-lane CTAs. The /get-help and /get-deals pages are the
-              highest-converting entry points on the site — 2-field form,
-              above-fold, 24-hour callback promise. Giving them a bronze
-              hairline separator + bronze font weight so they read as
-              "start here if you want a fast reply" without overwhelming
-              the rest of the Contact list. Site-visitors who don't come
-              in via paid ads still get the same fast-lane path.
-            */}
-            <ul className="mt-5 space-y-3 text-[14px] leading-relaxed text-stone-soft">
+          <div className="sm:text-right">
+            <p className={headCls}>Contact</p>
+            <ul className="mt-5 space-y-2 text-[14px] text-stone-soft">
               <li>
-                <Link
-                  to="/get-help"
-                  className="inline-flex items-center gap-1.5 font-semibold text-bronze hover:text-bronze-deep transition-colors"
-                >
-                  Sellers — Free 15-min call
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/buyers"
-                  className="inline-flex items-center gap-1.5 font-semibold text-bronze hover:text-bronze-deep transition-colors"
-                >
-                  For Buyers — what we look for
-                  <span aria-hidden="true">→</span>
-                </Link>
-              </li>
-              <li aria-hidden="true" className="pt-1">
-                <div className="h-px w-8 bg-stone-mute/40" />
-              </li>
-              <li>
-                <a
-                  href="tel:+13656457332"
-                  className="hover:text-bronze transition-colors"
-                >
+                <a href="tel:+13656457332" className="hover:text-bronze transition-colors">
                   Direct line: (365) 645-7332
                 </a>
               </li>
               <li>
-                <a
-                  href="mailto:info@resolverealestate.ca"
-                  className="hover:text-bronze transition-colors"
-                >
+                <a href="mailto:info@resolverealestate.ca" className="hover:text-bronze transition-colors">
                   info@resolverealestate.ca
                 </a>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  className="hover:text-bronze transition-colors"
-                >
-                  Confidential inquiry form
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/why-us"
-                  className="hover:text-bronze transition-colors"
-                >
-                  Why Resolve
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/for-agents"
-                  className="hover:text-bronze transition-colors"
-                >
-                  For Agents
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/privacy"
-                  className="hover:text-bronze transition-colors"
-                >
-                  Privacy Policy
-                </Link>
               </li>
               <li>
                 <a
@@ -167,7 +169,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Primegate (buyer side) ↗
+                  Primegate (buyer side) &#8599;
                 </a>
               </li>
             </ul>
@@ -175,7 +177,7 @@ export function Footer() {
         </div>
 
         {/* Bottom strip */}
-        <div className="mt-14 pt-8 border-t border-stone-mute/40">
+        <div className="mt-12 pt-8 border-t border-stone-mute/40">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between text-[12.5px] text-stone-mute leading-relaxed">
             <p>&copy; {new Date().getFullYear()} Resolve. All rights reserved.</p>
             <p className="sm:text-right">
