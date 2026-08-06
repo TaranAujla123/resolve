@@ -81,7 +81,7 @@ export function HomePage() {
               We find the value
               <br />
               most people{' '}
-              <span className="font-emph italic font-normal text-bronze">miss.</span>
+              <span className="font-emph italic font-medium text-bronze">miss.</span>
             </h1>
 
             <p className="mt-5 max-w-lg text-[17px] leading-[1.6] text-stone-soft">
