@@ -5,7 +5,7 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
 import { BothSides } from './BothSides'
 import { ClosingCta } from './ClosingCta'
-import heroImage from '/hero-v3-crowd.jpg?url'
+import heroImage from '/hero-v3-dawn.jpg?url'
 
 /**
  * HomePage — the root (/) HUB (Aug 2026 restructure).
@@ -43,8 +43,8 @@ export function HomePage() {
             on the single lit house so the metaphor reads on a phone. */}
         <img
           src={heroImage}
-          alt="Aerial view at dusk of hundreds of darkened homes with a single house lit up, standing out from the rest"
-          className="absolute inset-0 w-full h-full object-cover object-[58%_58%] lg:object-[60%_center]"
+          alt="Aerial at dawn: a single house glowing in warm morning light while the surrounding homes sit in navy-blue shade, standing out from the block"
+          className="absolute inset-0 w-full h-full object-cover object-[54%_56%] lg:object-[57%_center]"
           loading="eager"
           decoding="async"
           draggable={false}
