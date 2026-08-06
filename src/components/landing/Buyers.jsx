@@ -108,12 +108,13 @@ export function Buyers() {
         <div className="container max-w-4xl">
           <Eyebrow>For Buyers · Ontario</Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
-            Most agents send you the listing. We show you{' '}
+            We show you{' '}
             <span className="italic text-bronze">what it could become.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-stone/80">
-            Value-add homes and income properties, on and off market, for
-            buyers who look past the price to the potential.
+            Most agents send you the listing. We read the value-add and income
+            potential others walk past, on and off market, for buyers who look
+            past the price to the upside.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <Button as={Link} to="/get-deals" variant="primary" size="md">
