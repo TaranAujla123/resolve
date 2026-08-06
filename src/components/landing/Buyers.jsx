@@ -12,6 +12,7 @@ import {
 } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
+import buyerHero from '/hero-architectural.jpg?url'
 
 /**
  * /buyers — the V3.5 "For Buyers" page.
@@ -102,35 +103,55 @@ const ANSWERS = [
 export function Buyers() {
   return (
     <>
-      {/* HERO — navy. No data-surface so the sticky header renders solid
-          (this hero does not tuck under it), keeping nav text readable. */}
-      <section className="bg-navy section-y">
-        <div className="container max-w-4xl">
-          <Eyebrow>For Buyers · Ontario</Eyebrow>
-          <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
-            We show you{' '}
-            <span className="italic text-bronze">what it could become.</span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-stone/80">
-            Most agents send you the listing. We read the value-add and income
-            potential others walk past, on and off market, for buyers who look
-            past the price to the upside.
-          </p>
-          <div className="mt-9 flex flex-col sm:flex-row gap-3">
-            <Button as={Link} to="/get-deals" variant="primary" size="md">
-              Join the buyer network
-              <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
-            </Button>
-            <Button
-              as="a"
-              href="tel:+13656457332"
-              variant="outline"
-              size="md"
-              className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
-            >
-              <Phone className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
-              (365) 645-7332
-            </Button>
+      {/* HERO — full-bleed navy image (upward staircase = "what it could
+          become"). Tucks under the sticky header (data-surface navy →
+          transparent nav on top, solid on scroll), matching home/sellers so
+          the buyer page reads as richly as the rest. */}
+      <section
+        data-surface="navy"
+        className="relative bg-navy overflow-hidden isolate min-h-[520px] lg:min-h-[560px] -mt-16 sm:-mt-20"
+      >
+        <img
+          src={buyerHero}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover object-[72%_center] lg:object-[76%_center]"
+          loading="eager"
+          decoding="async"
+          draggable={false}
+        />
+        <div aria-hidden="true" className="absolute inset-0 bg-navy/45" />
+        <div aria-hidden="true" className="hidden lg:block absolute inset-0 bg-gradient-to-r from-navy via-navy/78 to-navy/20" />
+        <div aria-hidden="true" className="lg:hidden absolute inset-0 bg-gradient-to-b from-navy/92 via-navy/72 to-navy/35" />
+
+        <div className="relative container w-full pt-28 pb-16 sm:pt-40 sm:pb-20">
+          <div className="max-w-[620px]">
+            <Eyebrow>For Buyers · Ontario</Eyebrow>
+            <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
+              We show you{' '}
+              <span className="italic text-bronze">what it could become.</span>
+            </h1>
+            <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-stone/85">
+              Most agents send you the listing. We read the value-add and income
+              potential others walk past, on and off market, for buyers who look
+              past the price to the upside.
+            </p>
+            <div className="mt-9 flex flex-col sm:flex-row gap-3">
+              <Button as={Link} to="/get-deals" variant="contrast" size="md">
+                Join the buyer network
+                <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+              </Button>
+              <Button
+                as="a"
+                href="tel:+13656457332"
+                variant="outline"
+                size="md"
+                className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
+              >
+                <Phone className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                (365) 645-7332
+              </Button>
+            </div>
           </div>
         </div>
       </section>

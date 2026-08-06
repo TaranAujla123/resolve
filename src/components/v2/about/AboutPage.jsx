@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Quote, Linkedin } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import aboutPortrait from '@/taran-about.jpg'
+import aboutHero from '/hero-stilllife.jpg?url'
 
 /**
  * AboutPage — V2 /about route.
@@ -28,16 +29,27 @@ export function AboutPage() {
 
   return (
     <>
-      {/* Hero (navy, pulled up under the sticky header) */}
+      {/* Hero (navy image — the door-ajar still life: "a way through").
+          Trimmed to the thesis only; the story sits in the light band
+          below so the hero stays a single confident statement. */}
       <section
         data-surface="navy"
-        className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20"
+        className="relative bg-navy overflow-hidden isolate min-h-[500px] lg:min-h-[540px] -mt-16 sm:-mt-20"
       >
-        <div
+        <img
+          src={aboutHero}
+          alt=""
           aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(60%_45%_at_85%_8%,rgba(196,164,104,0.14),transparent_70%)]"
+          className="absolute inset-0 w-full h-full object-cover object-[74%_center]"
+          loading="eager"
+          decoding="async"
+          draggable={false}
         />
-        <div className="relative container max-w-4xl pt-28 pb-14 sm:pt-40 sm:pb-16">
+        <div aria-hidden="true" className="absolute inset-0 bg-navy/45" />
+        <div aria-hidden="true" className="hidden lg:block absolute inset-0 bg-gradient-to-r from-navy via-navy/78 to-navy/25" />
+        <div aria-hidden="true" className="lg:hidden absolute inset-0 bg-gradient-to-b from-navy/92 via-navy/70 to-navy/38" />
+
+        <div className="relative container max-w-4xl w-full pt-28 pb-16 sm:pt-40 sm:pb-24">
           <Eyebrow>About Resolve</Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl">
             About Resolve.
@@ -46,13 +58,19 @@ export function AboutPage() {
             Why this practice exists.
           </p>
 
-          <p className="mt-10 font-display font-medium text-stone text-[clamp(1.5rem,2.2vw,1.75rem)] leading-[1.45] max-w-[680px]">
+          <p className="mt-8 font-display font-medium text-stone text-[clamp(1.4rem,2.2vw,1.7rem)] leading-[1.45] max-w-[620px]">
             <span className="font-display italic text-bronze">Resolve</span>
             {' '}exists because some property situations need more than a
             standard approach.
           </p>
+        </div>
+      </section>
 
-          <div className="mt-12 space-y-5 text-[17px] leading-relaxed text-stone-soft max-w-3xl">
+      {/* The story (moved out of the hero) + practitioner bios on the light
+          band. Three-band rhythm: navy hero -> light band -> navy footer. */}
+      <section data-surface="stone" className="bg-stone py-16 sm:py-24">
+        <div className="container max-w-4xl space-y-8">
+          <div className="max-w-3xl space-y-5 text-[17px] leading-relaxed text-navy-soft">
             <p>
               I&rsquo;m Taran. My background spans decades in real estate,
               including Ontario real estate law, property transactions, and
@@ -77,14 +95,10 @@ export function AboutPage() {
               real position, and make it work for the person I represent.
             </p>
           </div>
-        </div>
-      </section>
 
-      {/* Practitioner bios — navy bio-cards floating on the light band.
-          Three-band rhythm: navy hero -> light band -> navy footer. */}
-      <section data-surface="stone" className="bg-stone py-16 sm:py-24">
-        <div className="container max-w-4xl space-y-8">
-          <Eyebrow>Led By</Eyebrow>
+          <div className="pt-4">
+            <Eyebrow>Led By</Eyebrow>
+          </div>
 
           {/* Taran — gold-framed portrait + identity, blockquote below */}
           <figure className="rounded-[18px] bg-navy p-6 sm:p-8 shadow-card">

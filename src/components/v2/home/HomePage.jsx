@@ -44,7 +44,7 @@ export function HomePage() {
         <img
           src={heroImage}
           alt="Aerial at dawn: a single house glowing in warm morning light while the surrounding homes sit in navy-blue shade, standing out from the block"
-          className="absolute inset-0 w-full h-full object-cover object-[70%_center] lg:object-[64%_center]"
+          className="absolute inset-0 w-full h-full object-cover object-[66%_56%] lg:object-[60%_58%]"
           loading="eager"
           decoding="async"
           draggable={false}
@@ -132,6 +132,14 @@ export function HomePage() {
 
             <p className="mt-7 font-sans font-semibold text-[12px] uppercase tracking-[0.16em] text-stone-mute">
               GTA &middot; Hamilton &middot; Kitchener-Waterloo &middot; Ottawa
+            </p>
+
+            <p className="mt-4 max-w-md text-[12px] text-stone-mute leading-relaxed">
+              Real estate services by Resolve, delivered through{' '}
+              <span className="font-semibold text-stone">
+                HomeLife G1 Realty Inc., Brokerage
+              </span>
+              . Independently Owned &amp; Operated.
             </p>
           </div>
         </div>
