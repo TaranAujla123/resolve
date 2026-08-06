@@ -83,3 +83,19 @@ Thumbs.db
 /src/*.png
 !/src/portrait.jpg
 !/src/portrait-sweater.jpg
+!/src/taran-about.jpg
+
+# ---------------------------------------------------------------------
+# Local business working folders — NEVER belong in the public site repo.
+# These hold client files, brokerage resources, deal photos, forms and
+# large binaries (some >100MB, which GitHub hard-rejects). Local only.
+# ---------------------------------------------------------------------
+/G1_Brokerage_Resources/
+/DEALS/
+/SALE FORMS/
+/MARKETING/
+/RESOLVE REAL ESTATE - INVESTMENT/
+/Brand-Kit/
+/Brand-V3/
+/Brand-System-V2/
+/Bio-and-Profiles/

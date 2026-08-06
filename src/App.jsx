@@ -10,6 +10,7 @@ import { BrokerageStrip } from '@/components/landing/BrokerageStrip'
 
 // V2 pages (homepage + 3 standalone routes)
 import { HomePage as V2HomePage } from '@/components/v2/home/HomePage'
+import { SellersPage as V2SellersPage } from '@/components/v2/sellers/SellersPage'
 import { ContactPage } from '@/components/v2/contact/ContactPage'
 import { AboutPage } from '@/components/v2/about/AboutPage'
 import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
@@ -481,13 +482,26 @@ function HomePage() {
   return (
     <>
       <Seo
-        title="Resolve · Seller Representation · Ontario"
-        ogTitle="Resolve · Real Estate · Ontario"
-        description="Boutique seller representation for Ontario homeowners navigating mortgage arrears, power of sale, separation, estate sales, and property disputes."
+        title="Resolve · Real Estate · Ontario"
+        description="An Ontario real estate practice working both sides of the table: complex and high-value seller representation, and value-add, multiplex and income buying. Serving the GTA, Hamilton, Kitchener-Waterloo and Ottawa."
         canonical={`${SITE_URL}/`}
         jsonLd={HOME_JSONLD}
       />
       <V2HomePage />
+    </>
+  )
+}
+
+function SellersRoutePage() {
+  return (
+    <>
+      <Seo
+        title="Resolve · Seller Representation · Ontario"
+        description="Boutique seller representation for Ontario homeowners: mortgage arrears, power of sale, financial pressure, estate and time-sensitive sales, and high-value or complex homes. Equity-led and document-first."
+        canonical={`${SITE_URL}/sellers/`}
+        jsonLd={SITE_JSONLD}
+      />
+      <V2SellersPage />
     </>
   )
 }
@@ -747,6 +761,7 @@ export default function App() {
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/sellers" element={<SellersRoutePage />} />
             <Route path="/about" element={<AboutRoutePage />} />
             <Route path="/contact" element={<ContactRoutePage />} />
             <Route path="/buyers" element={<BuyersPage />} />
