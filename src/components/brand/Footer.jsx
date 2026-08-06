@@ -162,16 +162,6 @@ export function Footer() {
                   info@resolverealestate.ca
                 </a>
               </li>
-              <li>
-                <a
-                  href="https://prime-gate.ca"
-                  className="hover:text-bronze transition-colors"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Primegate (buyer side) &#8599;
-                </a>
-              </li>
             </ul>
           </div>
         </div>
