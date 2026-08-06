@@ -219,6 +219,7 @@
       fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){
         if(r.ok){
+          if(window.fbq)fbq('track','Lead',{content_name:'Pays For Itself guide',content_category:'Buyer'});
           document.getElementById('formview').style.display='none';
           document.getElementById('successview').style.display='block';
           setTimeout(triggerDownload,400);

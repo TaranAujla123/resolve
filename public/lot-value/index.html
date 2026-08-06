@@ -233,6 +233,7 @@
       fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
       .then(function(r){
         if(r.ok){
+          if(window.fbq)fbq('track','Lead',{content_name:'Lot Value guide',content_category:'Seller'});
           document.getElementById('formview').style.display='none';
           document.getElementById('successview').style.display='block';
           setTimeout(triggerDownload,400);

@@ -337,6 +337,7 @@
     fetch(gate.action,{method:'POST',body:new FormData(gate),headers:{'Accept':'application/json'}})
     .then(function(r){
       if(!r.ok) throw new Error('bad');
+      if(window.fbq)fbq('track','Lead',{content_name:'PlexCheck',content_category:'Multiplex'});
       document.getElementById('rangeval').textContent=rng.replace(' units','');
       document.getElementById('playline').innerHTML=playText(result.high);
       var note='In '+(CITY[inputs.city]||'your area')+', on a '+inputs.w+' × '+inputs.d+' ft lot, this is what the new rules point to.';
