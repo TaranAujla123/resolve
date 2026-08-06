@@ -8,6 +8,7 @@ import {
   Eye,
   Phone,
   ArrowRight,
+  Calendar,
   Check,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
@@ -25,9 +26,12 @@ import buyerHero from '/hero-architectural.jpg?url'
  * narrow distressed pool to every under-marketed listing.
  *
  * Firewall: this page is reachable from the FOOTER + direct buyer
- * links, not the seller nav. Informational / organic-SEO page; the
- * conversion form lives on /get-deals (paid landing). All CTAs here
- * point to /get-deals so there is one form to maintain.
+ * links, not the seller nav. Informational / organic-SEO page. CTAs
+ * route to /contact (book a free call), the same general inquiry path
+ * as the seller side. "Join the buyer network" wording is reserved for
+ * the gated Investor Portal (/investor-access) to avoid conflating the
+ * public buyer page with the private desk. The paid buyer ad funnel
+ * still uses /get-deals directly.
  *
  * Compliance spine (do not soften):
  *   - Sellers always retain full MLS exposure. No "insider access".
@@ -137,9 +141,9 @@ export function Buyers() {
               past the price to the upside.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
-              <Button as={Link} to="/get-deals" variant="contrast" size="md">
-                Join the buyer network
-                <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+              <Button as={Link} to="/contact" variant="contrast" size="md">
+                <Calendar className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                Book a free 15-minute call
               </Button>
               <Button
                 as="a"
@@ -307,9 +311,9 @@ export function Buyers() {
             the upside, what it would take, and what to watch for.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button as={Link} to="/get-deals" variant="primary" size="lg">
-              Join the buyer network
-              <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
+            <Button as={Link} to="/contact" variant="primary" size="lg">
+              <Calendar className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+              Book a free 15-minute call
             </Button>
           </div>
           <p className="mt-10 text-[12px] leading-relaxed text-stone/55">

@@ -64,7 +64,7 @@ export function HomePage() {
           className="lg:hidden absolute inset-0"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(10,31,68,0.90) 0%, rgba(10,31,68,0.72) 38%, rgba(10,31,68,0.34) 62%, rgba(10,31,68,0.14) 100%)',
+              'linear-gradient(to bottom, rgba(10,31,68,0.86) 0%, rgba(10,31,68,0.60) 40%, rgba(10,31,68,0.24) 66%, rgba(10,31,68,0.06) 100%)',
           }}
         />
 
@@ -84,10 +84,10 @@ export function HomePage() {
               <span className="font-emph italic font-medium text-bronze">miss.</span>
             </h1>
 
-            <p className="mt-5 max-w-lg text-[17px] leading-[1.6] text-stone-soft">
-              Resolve works both sides of the table. Complex and high-value
-              sales for sellers, and the upside most buyers scroll past. Two
-              clients, one eye for the details that decide the outcome.
+            <p className="mt-5 max-w-lg text-[16.5px] leading-[1.6] text-stone-soft">
+              Both sides of the table: complex, high-value sales for sellers,
+              and the upside most buyers scroll past. One eye for the details
+              that decide the outcome.
             </p>
 
             {/* Two audience pills — the primary routing decision, above the
