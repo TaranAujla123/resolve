@@ -49,7 +49,7 @@ export function AboutPage() {
           <p className="mt-10 font-display font-medium text-stone text-[clamp(1.5rem,2.2vw,1.75rem)] leading-[1.45] max-w-[680px]">
             <span className="font-display italic text-bronze">Resolve</span>
             {' '}exists because some property situations need more than a
-            standard listing.
+            standard approach.
           </p>
 
           <div className="mt-12 space-y-5 text-[17px] leading-relaxed text-stone-soft max-w-3xl">
@@ -65,10 +65,12 @@ export function AboutPage() {
               For sellers, that means the sales that need more than a standard
               listing: mortgage arrears, power of sale, financial pressure,
               time-sensitive closings, and high-value or complex homes where
-              protecting your equity is the point. For buyers, it means the
-              value most people walk past: value-add homes, multiplex-eligible
-              lots, and income potential, bought on strong bones and built up
-              over time.
+              protecting your equity is the point.
+            </p>
+            <p>
+              For buyers, it means the value most people walk past: value-add
+              homes, multiplex-eligible lots, and income potential, bought on
+              strong bones and built up over time.
             </p>
             <p>
               Whichever side you are on, the work is the same: understand the
