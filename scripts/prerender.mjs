@@ -109,6 +109,21 @@ async function run() {
     await new Promise((resolve, reject) => {
       server.httpServer.close((err) => (err ? reject(err) : resolve()))
     })
+
+    // Prune Meta ad creatives from the published output. public/ads holds
+    // Remotion ad exports (~86MB of images/video) for the paid-ads
+    // workflow; the site never serves them. Shipping them bloated the
+    // GitHub Pages artifact enough to intermittently trip GitHub's
+    // 10-minute internal deploy timeout (the build always passed; only
+    // the deploy step failed). Removing them keeps the published site
+    // small (~9MB) so deploys complete reliably. They remain in the repo.
+    try {
+      await fs.rm(path.join(DIST, 'ads'), { recursive: true, force: true })
+      console.log('[prerender] pruned dist/ads from the published artifact')
+    } catch (err) {
+      console.warn('[prerender] could not prune dist/ads:', err.message)
+    }
+
     console.log('[prerender] done')
   }
 }
