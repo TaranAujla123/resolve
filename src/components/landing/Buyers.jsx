@@ -112,10 +112,8 @@ export function Buyers() {
             <span className="italic text-bronze">what it could become.</span>
           </h1>
           <p className="mt-6 max-w-2xl text-[17px] leading-relaxed text-stone/80">
-            We study properties for the potential most buyers walk past, on and
-            off market. Homes to live in, and income properties to hold. Not
-            turnkey. Not for everyone. For buyers who look past the price to
-            what a property could become.
+            Value-add homes and income properties, on and off market, for
+            buyers who look past the price to the potential.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <Button as={Link} to="/get-deals" variant="primary" size="md">
