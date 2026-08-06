@@ -66,7 +66,7 @@ export function Situations() {
     >
       <div className="container">
         <div className="max-w-3xl">
-          <Eyebrow>Situations We Handle</Eyebrow>
+          <Eyebrow>For Sellers</Eyebrow>
           <h2 className="mt-5 font-display font-medium text-navy text-display-lg">
             Every situation.{' '}
             <span className="italic text-bronze">One approach.</span>
