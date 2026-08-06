@@ -2,6 +2,7 @@ import React from 'react'
 import { Hero } from './Hero'
 import { Situations } from './Situations'
 import { SellerPromise } from './SellerPromise'
+import { BothSides } from './BothSides'
 import { WhyResolve } from './WhyResolve'
 import { HowWeHelp } from './HowWeHelp'
 import { DifferentApproach } from './DifferentApproach'
@@ -57,6 +58,7 @@ export function HomePage() {
       <Hero />
       <Situations />
       <SellerPromise />
+      <BothSides />
       <DifferentApproach />
       <WhyResolve />
       <HowWeHelp />
