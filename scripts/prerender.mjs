@@ -48,6 +48,11 @@ const ROUTES = [
   '/get-help',
   '/get-deals',
   '/investor-access',
+  '/opportunities',
+  '/opportunities/kw-legal-duplex',
+  '/opportunities/kw-distressed-detached',
+  '/opportunities/kw-downtown-multiunit',
+  '/opportunities/kw-character-restoration',
   '/taranaujla',
 ]
 const PORT = 4321

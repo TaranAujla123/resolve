@@ -99,7 +99,7 @@ export function Footer() {
             <p className={headCls}>Buyers &amp; Multiplex</p>
             <ul className="mt-5 space-y-2.5">
               <li><Link to="/buyers" className={linkCls}>For buyers</Link></li>
-              <li><Ext href="/deals/">Current opportunities</Ext></li>
+              <li><Ext href="/opportunities/">Current opportunities</Ext></li>
               <li><Link to="/multiplex" className={linkCls}>The Multiplex Advantage</Link></li>
               <li><Ext href="/plexcheck/">PlexCheck lot tool</Ext></li>
               <li className="pt-1">
