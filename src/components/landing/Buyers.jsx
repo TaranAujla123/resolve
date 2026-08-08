@@ -13,7 +13,7 @@ import {
 } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
-import buyerHero from '/hero-architectural.jpg?url'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
 /**
  * /buyers — the V3.5 "For Buyers" page.
@@ -115,18 +115,7 @@ export function Buyers() {
         data-surface="navy"
         className="relative bg-navy overflow-hidden isolate min-h-[520px] lg:min-h-[560px] -mt-16 sm:-mt-20"
       >
-        <img
-          src={buyerHero}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-[72%_center] lg:object-[76%_center]"
-          loading="eager"
-          decoding="async"
-          draggable={false}
-        />
-        <div aria-hidden="true" className="absolute inset-0 bg-navy/45" />
-        <div aria-hidden="true" className="hidden lg:block absolute inset-0 bg-gradient-to-r from-navy via-navy/78 to-navy/20" />
-        <div aria-hidden="true" className="lg:hidden absolute inset-0 bg-gradient-to-b from-navy/92 via-navy/72 to-navy/35" />
+        <HeroBackdrop />
 
         <div className="relative container w-full pt-28 pb-16 sm:pt-40 sm:pb-20">
           <div className="max-w-[620px]">

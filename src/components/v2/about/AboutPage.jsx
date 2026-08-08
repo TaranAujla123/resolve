@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Quote, Linkedin } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import aboutPortrait from '@/taran-about.jpg'
-import aboutHero from '/hero-stilllife.jpg?url'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
 /**
  * AboutPage — V2 /about route.
@@ -36,18 +36,7 @@ export function AboutPage() {
         data-surface="navy"
         className="relative bg-navy overflow-hidden isolate min-h-[500px] lg:min-h-[540px] -mt-16 sm:-mt-20"
       >
-        <img
-          src={aboutHero}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 w-full h-full object-cover object-[74%_center]"
-          loading="eager"
-          decoding="async"
-          draggable={false}
-        />
-        <div aria-hidden="true" className="absolute inset-0 bg-navy/45" />
-        <div aria-hidden="true" className="hidden lg:block absolute inset-0 bg-gradient-to-r from-navy via-navy/78 to-navy/25" />
-        <div aria-hidden="true" className="lg:hidden absolute inset-0 bg-gradient-to-b from-navy/92 via-navy/70 to-navy/38" />
+        <HeroBackdrop />
 
         <div className="relative container max-w-4xl w-full pt-28 pb-16 sm:pt-40 sm:pb-24">
           <Eyebrow>About Resolve</Eyebrow>

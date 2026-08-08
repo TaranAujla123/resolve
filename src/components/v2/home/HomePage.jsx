@@ -5,6 +5,7 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
 import { BothSides } from './BothSides'
 import { ClosingCta } from './ClosingCta'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
 /**
  * HomePage — the root (/) HUB (Aug 2026 restructure).
@@ -37,42 +38,8 @@ export function HomePage() {
         data-surface="navy"
         className="relative bg-navy overflow-hidden isolate min-h-[660px] sm:min-h-[600px] lg:min-h-[640px] -mt-16 sm:-mt-20"
       >
-        {/* Clean navy field — no photo. A subtle gradient plus a whisper of
-            gold warmth give quiet depth; the message carries the hero. On-brand
-            for complex / distressed sales, where a glossy estate photo reads
-            wrong. */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            background:
-              'radial-gradient(130% 92% at 86% 16%, rgba(28,54,104,0.60) 0%, rgba(10,31,68,0) 56%), linear-gradient(158deg, #0e2652 0%, #0A1F44 52%, #081a3a 100%)',
-          }}
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 opacity-[0.09]"
-          style={{
-            background:
-              'radial-gradient(closest-side at 80% 32%, #C4A468 0%, transparent 100%)',
-            filter: 'blur(34px)',
-          }}
-        />
-        {/* Faint blueprint grid, masked to the right so it adds texture in the
-            open space without touching the headline. */}
-        <div
-          aria-hidden="true"
-          className="absolute inset-0"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-            WebkitMaskImage:
-              'radial-gradient(85% 82% at 80% 42%, #000 0%, transparent 72%)',
-            maskImage:
-              'radial-gradient(85% 82% at 80% 42%, #000 0%, transparent 72%)',
-          }}
-        />
+        {/* Shared navy hero backdrop (gradient + faint blueprint grid). */}
+        <HeroBackdrop />
 
         <div className="relative container w-full pt-28 pb-14 sm:pt-40 sm:pb-20">
           <div className="max-w-[600px]">

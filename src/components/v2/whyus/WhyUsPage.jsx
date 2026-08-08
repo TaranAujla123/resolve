@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Check, FileSearch, UserCheck, Gem, Scale, ShieldCheck, Award, Network, Users } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { ClosingCta } from '../home/ClosingCta'
 
 /**
@@ -90,10 +91,7 @@ export function WhyUsPage() {
         data-surface="navy"
         className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20"
       >
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(60%_45%_at_85%_8%,rgba(196,164,104,0.15),transparent_70%)]"
-        />
+        <HeroBackdrop />
         <div className="relative container max-w-4xl pt-28 pb-16 sm:pt-40 sm:pb-20">
           <Eyebrow>Why Resolve</Eyebrow>
           <h1 className="mt-5 font-sans font-semibold text-stone leading-[1.1] tracking-[-0.01em] text-[clamp(2.2rem,4.8vw,3.5rem)]">

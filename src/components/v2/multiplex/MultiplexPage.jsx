@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, Home, Building2, Calculator } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
 /**
  * MultiplexPage — /multiplex hub (the front door for the multiplex line).
@@ -62,10 +63,7 @@ export function MultiplexPage() {
         data-surface="navy"
         className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20"
       >
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 bg-[radial-gradient(60%_45%_at_85%_8%,rgba(196,164,104,0.16),transparent_70%)]"
-        />
+        <HeroBackdrop />
         <div className="relative container max-w-4xl pt-28 pb-16 sm:pt-40 sm:pb-24">
           <Eyebrow>
             <span className="text-stone">Multiplex</span> · GTA, Hamilton, Kitchener-Waterloo &amp; Ottawa

@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Calendar, Phone, Check } from 'lucide-react'
 import { Button } from '@/components/brand/Button'
-import heroImage from '/hero-v3-a.jpg?url'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
 /**
  * Hero — V3.5 home hero (navy, restored).
@@ -36,42 +36,8 @@ export function Hero() {
       data-surface="navy"
       className="relative bg-navy overflow-hidden isolate min-h-[600px] lg:min-h-[660px] -mt-16 sm:-mt-20"
     >
-      {/* Full-bleed dark doorway image. Its own tones are deep navy-grey
-          with a warm doorway on the right, so it carries the navy field
-          and needs only a scrim to seat the text. */}
-      {/* Residential home hallway (hardwood floors, a real house — not a
-          tiled commercial space) opening onto a warm sunlit doorway.
-          Mobile crop is pulled toward the doorway so the "light through
-          the door" reads clearly on a phone. */}
-      <img
-        src={heroImage}
-        alt="A home hallway opening onto a room filled with warm light"
-        className="
-          absolute inset-0 w-full h-full object-cover
-          object-[46%_center] lg:object-[58%_center]
-        "
-        loading="eager"
-        decoding="async"
-        draggable={false}
-      />
-
-      {/* Flat navy tint — unifies the warm residential photo into the
-          dark navy mood (the bright doorway still glows amber through
-          it), so the palette matches the rest of the navy hero. */}
-      <div aria-hidden="true" className="absolute inset-0 bg-navy/45" />
-
-      {/* Desktop scrim — horizontal, heavy left → lighter right so the
-          doorway glow reads while the text side stays deep navy. */}
-      <div
-        aria-hidden="true"
-        className="hidden lg:block absolute inset-0 bg-gradient-to-r from-navy via-navy/75 to-navy/25"
-      />
-      {/* Mobile scrim — vertical, heavy top → lighter bottom so the
-          doorway stays visible beneath the copy. */}
-      <div
-        aria-hidden="true"
-        className="lg:hidden absolute inset-0 bg-gradient-to-b from-navy/90 via-navy/65 to-navy/25"
-      />
+      {/* Shared navy hero backdrop (gradient + faint blueprint grid). */}
+      <HeroBackdrop />
 
       <div className="relative container w-full pt-28 pb-14 sm:pt-40 sm:pb-20">
         <div className="max-w-[600px]">

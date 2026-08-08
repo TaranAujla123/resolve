@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { Link, useNavigate } from 'react-router-dom'
 import { toast } from 'sonner'
 import {
@@ -134,8 +135,9 @@ export function ForAgents() {
           consumer pages, which are light-first). The audience here is
           other RECO-registered practitioners, and institutional weight
           is an asset, not a barrier — professionals trust gravity. */}
-      <section data-surface="navy" className="bg-navy text-stone -mt-16 sm:-mt-20">
-        <div className="container pt-28 pb-16 sm:pt-40 sm:pb-24">
+      <section data-surface="navy" className="relative bg-navy text-stone overflow-hidden isolate -mt-16 sm:-mt-20">
+        <HeroBackdrop />
+        <div className="relative container pt-28 pb-16 sm:pt-40 sm:pb-24">
           <motion.div
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
