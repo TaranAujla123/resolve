@@ -161,7 +161,7 @@ function SignupForm({ dealSlug, dealTitle }) {
       <input type="hidden" name="deal" value={dealSlug || 'opportunities'} />
       <input type="hidden" name="source_page" value="/opportunities" />
       <p className="font-display font-medium text-navy text-[19px] leading-tight">Want the address and the full numbers?</p>
-      <p className="mt-1.5 text-[13.5px] text-navy-soft">Tell us where to send it. No fee, no obligation.</p>
+      <p className="mt-1.5 text-[13.5px] text-navy-soft">A few quick details so we send you the right ones. No fee, no obligation.</p>
       <div className="mt-4 grid grid-cols-1 gap-3.5">
         <input name="first_name" type="text" required autoComplete="given-name" placeholder="First name"
           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all" />
@@ -169,6 +169,29 @@ function SignupForm({ dealSlug, dealTitle }) {
           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all" />
         <input name="phone" type="tel" inputMode="tel" autoComplete="tel" placeholder="Phone (optional)"
           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all" />
+        <select name="financing" required defaultValue=""
+          className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white appearance-none focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all">
+          <option value="" disabled>How would you fund a purchase?</option>
+          <option value="cash">Cash</option>
+          <option value="pre-approved">Pre-approved / financing ready</option>
+          <option value="private-jv">Private lender / JV partner</option>
+          <option value="exploring">Still exploring</option>
+        </select>
+        <select name="budget" defaultValue=""
+          className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white appearance-none focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all">
+          <option value="" disabled>Budget range</option>
+          <option value="under-500k">Under $500K</option>
+          <option value="500-750k">$500K – $750K</option>
+          <option value="750k-1m">$750K – $1M</option>
+          <option value="1m-plus">$1M+</option>
+        </select>
+        <select name="experience" defaultValue=""
+          className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white appearance-none focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all">
+          <option value="" disabled>Investment properties owned</option>
+          <option value="none">None yet</option>
+          <option value="1-3">1 – 3</option>
+          <option value="4-plus">4 or more</option>
+        </select>
       </div>
       {error && <p className="mt-3 text-[13px] text-rose" role="alert">{error}</p>}
       <button type="submit" disabled={submitting}
