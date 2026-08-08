@@ -5,7 +5,6 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
 import { BothSides } from './BothSides'
 import { ClosingCta } from './ClosingCta'
-import heroImage from '/hero-v3-dawn.jpg?url'
 
 /**
  * HomePage — the root (/) HUB (Aug 2026 restructure).
@@ -38,33 +37,40 @@ export function HomePage() {
         data-surface="navy"
         className="relative bg-navy overflow-hidden isolate min-h-[660px] sm:min-h-[600px] lg:min-h-[640px] -mt-16 sm:-mt-20"
       >
-        {/* The image is already deep navy at night, so it carries the field
-            and needs only light scrims to seat the text. Mobile crop centers
-            on the single lit house so the metaphor reads on a phone. */}
-        <img
-          src={heroImage}
-          alt="Aerial at dawn: a single house glowing in warm morning light while the surrounding homes sit in navy-blue shade, standing out from the block"
-          className="absolute inset-0 w-full h-full object-cover object-[66%_56%] lg:object-[60%_58%]"
-          loading="eager"
-          decoding="async"
-          draggable={false}
-        />
-        {/* Faint unifying tint. */}
-        <div aria-hidden="true" className="absolute inset-0 bg-navy/25" />
-        {/* Desktop scrim — heavy left so the headline seats; the lit house
-            sits right-of-center in the clear zone. */}
+        {/* Clean navy field — no photo. A subtle gradient plus a whisper of
+            gold warmth give quiet depth; the message carries the hero. On-brand
+            for complex / distressed sales, where a glossy estate photo reads
+            wrong. */}
         <div
           aria-hidden="true"
-          className="hidden lg:block absolute inset-0 bg-gradient-to-r from-navy via-navy/72 to-navy/15"
-        />
-        {/* Mobile scrim — dark behind the copy up top, opening toward the
-            middle so the single lit house stays clearly visible. */}
-        <div
-          aria-hidden="true"
-          className="lg:hidden absolute inset-0"
+          className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(10,31,68,0.86) 0%, rgba(10,31,68,0.60) 40%, rgba(10,31,68,0.24) 66%, rgba(10,31,68,0.06) 100%)',
+              'radial-gradient(130% 92% at 86% 16%, rgba(28,54,104,0.60) 0%, rgba(10,31,68,0) 56%), linear-gradient(158deg, #0e2652 0%, #0A1F44 52%, #081a3a 100%)',
+          }}
+        />
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 opacity-[0.09]"
+          style={{
+            background:
+              'radial-gradient(closest-side at 80% 32%, #C4A468 0%, transparent 100%)',
+            filter: 'blur(34px)',
+          }}
+        />
+        {/* Faint blueprint grid, masked to the right so it adds texture in the
+            open space without touching the headline. */}
+        <div
+          aria-hidden="true"
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
+            backgroundSize: '48px 48px',
+            WebkitMaskImage:
+              'radial-gradient(85% 82% at 80% 42%, #000 0%, transparent 72%)',
+            maskImage:
+              'radial-gradient(85% 82% at 80% 42%, #000 0%, transparent 72%)',
           }}
         />
 
