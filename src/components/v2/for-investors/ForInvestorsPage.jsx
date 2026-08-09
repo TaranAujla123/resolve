@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, CheckCircle2, ChevronRight, Compass, FileText, Wrench } from 'lucide-react'
 import { Seo } from '@/components/seo/Seo'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
 /**
  * ForInvestorsPage — /for-investors. The investor hub that replaces the
@@ -38,7 +39,7 @@ const GUIDES = [
   { href: '/plexcheck/', icon: Wrench, t: 'PlexCheck lot tool', d: 'Check a lot’s multiplex potential in seconds.' },
   { href: '/lot-value/', icon: FileText, t: 'Guide: your lot’s value', d: 'What a lot is really worth, and why.' },
   { href: '/pays-for-itself/', icon: FileText, t: 'A home that pays for itself', d: 'The added-unit and income playbook.' },
-  { to: '/multiplex', icon: Compass, t: 'The Multiplex Advantage', d: 'How small multiplexes pencil in Ontario.' },
+  { to: '/multiplex', icon: Compass, t: 'The Multiplex Advantage', d: 'How small multiplexes make money in Ontario.' },
 ]
 
 export function ForInvestorsPage() {
@@ -50,21 +51,22 @@ export function ForInvestorsPage() {
         canonical="https://www.resolverealestate.ca/for-investors/"
       />
 
-      {/* HERO */}
-      <section className="bg-stone">
-        <div className="container py-12 md:py-16">
+      {/* HERO — navy grid, matches the rest of the site */}
+      <section data-surface="navy" className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20">
+        <HeroBackdrop />
+        <div className="relative container pt-28 pb-14 sm:pt-40 sm:pb-20">
           <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-bronze">For Investors · GTA &amp; Kitchener-Waterloo</p>
-          <h1 className="mt-4 font-display font-medium text-navy tracking-tight" style={{ fontSize: 'clamp(32px, 5vw, 54px)', lineHeight: 1.04 }}>
+          <h1 className="mt-5 font-display font-medium text-stone tracking-tight" style={{ fontSize: 'clamp(32px, 5vw, 54px)', lineHeight: 1.04 }}>
             Vetted value-add deals, read the way an <span className="italic text-bronze">investor</span> needs them.
           </h1>
-          <p className="mt-5 text-[17px] text-navy-soft leading-[1.6] max-w-2xl">
-            I source, underwrite, and vet value-add residential deals across the GTA and Kitchener-Waterloo, and I bring investors only the ones the numbers support. If it does not pencil, you never see it.
+          <p className="mt-6 text-[17px] text-stone-soft leading-[1.6] max-w-2xl">
+            I find, analyze, and vet value-add homes across the GTA and Kitchener-Waterloo, and I bring investors only the ones where the numbers actually work. If a deal will not make money, you never see it.
           </p>
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <div className="mt-9 flex flex-col sm:flex-row gap-3">
             <Link to="/opportunities" className="inline-flex items-center justify-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
               See current opportunities <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href="#how" className="inline-flex items-center justify-center gap-2 border-2 border-navy/20 text-navy hover:border-bronze hover:text-bronze font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all">
+            <a href="#how" className="inline-flex items-center justify-center gap-2 border-2 border-stone/40 text-stone hover:border-bronze hover:text-bronze font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all">
               How I work
             </a>
           </div>
@@ -77,7 +79,7 @@ export function ForInvestorsPage() {
           <div className="flex items-end justify-between flex-wrap gap-4">
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">Current opportunities</p>
-              <h2 className="mt-3 font-display font-medium text-navy text-[26px] md:text-[34px] leading-[1.1]">The deals, with the numbers up front.</h2>
+              <h2 className="mt-3 font-display font-medium text-navy text-[26px] md:text-[34px] leading-[1.1]">Real deals. Real numbers.</h2>
             </div>
             <Link to="/opportunities" className="inline-flex items-center gap-1 text-[14px] font-semibold text-bronze hover:text-bronze-deep">View all <ChevronRight className="h-4 w-4" /></Link>
           </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
-import { ArrowRight, CheckCircle2, Lock, AlertTriangle, ChevronRight } from 'lucide-react'
+import { ArrowRight, ArrowLeft, CheckCircle2, Lock, AlertTriangle, ChevronRight } from 'lucide-react'
 import { Seo } from '@/components/seo/Seo'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 
 /**
@@ -25,7 +26,7 @@ const DEALS = {
     headline: 'A legal duplex sitting in plain sight.',
     nums: { acq: '$500–540K', repairs: '$60–90K', arv: '$715–760K', spread: '$120–180K' },
     sub: 'On the comps it is priced like a single-family home while it already performs as two units.',
-    read: 'Already a functional two-unit building, vacant, with a newer furnace and separate hydro meters. Renovated legal duplexes in the same neighbourhood have sold from the low-$700Ks into the $800Ks. It is an investor product wearing a retail listing, hard to finance conventionally, so the pool that can value it is small. That is the opening.',
+    read: 'Already a functional two-unit building, vacant, with a newer furnace and separate hydro meters. Renovated legal duplexes in the same neighbourhood have sold from the low-$700Ks into the $800Ks. It is a rental-income building being sold like an ordinary house, and it is hard to get a regular mortgage on, so most buyers pass it by. That is the opening.',
     flags: ['A cosmetic-to-moderate refresh, not a gut', 'Confirm two-unit rents cover at today’s rates', 'Confirm why earlier interest did not firm up'],
   },
   'kw-distressed-detached': {
@@ -35,7 +36,7 @@ const DEALS = {
     nums: { acq: '$460–490K', repairs: '$80–110K', arv: '~$660K', spread: '$80–120K' },
     sub: 'You cannot inspect it live, so almost everyone skips it. The value did not go anywhere.',
     read: 'A genuine distressed sale, as-is, utilities off. A renovated home of the same size one door away recently sold near the mid-$600Ks, so the finished value is well proven. The whole deal turns on one thing a contractor can measure up front, not on whether the value exists.',
-    flags: ['One measurable unknown drives it — inspect before you price', 'Distressed terms: as-is, comp-justified offers', 'Fresh distress, not a serially rejected listing'],
+    flags: ['One thing you cannot see yet decides the deal — inspect it before you price', 'Sold as-is, with offers backed by comparable sales', 'Newly distressed, not a listing the market has rejected for years'],
   },
   'kw-downtown-multiunit': {
     eyebrow: 'Kitchener · Income',
@@ -50,7 +51,7 @@ const DEALS = {
     eyebrow: 'Kitchener · Restoration',
     kind: 'Character home',
     headline: 'The highest ceiling, and the honest uncertainty.',
-    nums: { acq: '$540–575K', repairs: '$150K+', arv: '$800–900K', spread: 'Provisional' },
+    nums: { acq: '$540–575K', repairs: '$150K+', arv: '$800–900K', spread: 'Varies' },
     sub: 'A large character home in a premium heritage pocket where restored homes sell for a lot. Real upside, real risk.',
     read: 'The biggest home of the set, on a rare corner lot in a neighbourhood where restored character homes have sold from the mid-$700Ks well past a million. The ceiling is the highest here, and so is the uncertainty: few comparables, a wide range, and a full high-end restoration. A project for an investor with the capital and the crew.',
     flags: ['Thin, widely spread comparables — the exit is provisional', 'The largest and priciest renovation of the set', 'Best outcomes need a skilled contractor and real capital'],
@@ -179,16 +180,27 @@ function DealIndex() {
   return (
     <>
       <Seo title="Value-Add Property Opportunities · Resolve" description="Anonymized value-add property breakdowns across Kitchener-Waterloo — acquisition, repairs, ARV and spread. The numbers to check the math; the specifics after we connect." canonical="https://www.resolverealestate.ca/opportunities/" />
-      <section className="bg-stone">
-        <div className="container py-12 md:py-16">
-          <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-bronze">Value-Add Opportunities · Ontario</p>
-          <h1 className="mt-4 font-display font-medium text-navy tracking-tight" style={{ fontSize: 'clamp(30px, 5vw, 50px)', lineHeight: 1.05 }}>
+      {/* HERO — navy grid */}
+      <section data-surface="navy" className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20">
+        <HeroBackdrop />
+        <div className="relative container pt-28 pb-12 sm:pt-40 sm:pb-16">
+          <Link to="/for-investors" className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone/70 hover:text-stone transition-colors">
+            <ArrowLeft className="h-4 w-4" /> For Investors
+          </Link>
+          <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.18em] text-bronze">Value-Add Opportunities · Ontario</p>
+          <h1 className="mt-4 font-display font-medium text-stone tracking-tight" style={{ fontSize: 'clamp(30px, 5vw, 50px)', lineHeight: 1.05 }}>
             Unsold is not the same as <span className="italic text-bronze">bad</span>.
           </h1>
-          <p className="mt-5 text-[16px] text-navy-soft leading-[1.6] max-w-2xl">{THESIS}</p>
-          <p className="mt-4 text-[15px] text-navy leading-[1.55] font-medium max-w-2xl">Value-add files we are underwriting across Kitchener-Waterloo. The numbers are below; the specifics come once we are working together.</p>
+          <p className="mt-5 text-[16px] text-stone-soft leading-[1.6] max-w-2xl">{THESIS}</p>
+        </div>
+      </section>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Deals (light) */}
+      <section className="bg-stone">
+        <div className="container py-12 md:py-16">
+          <p className="text-[15px] text-navy leading-[1.55] font-medium max-w-2xl">These are real deals we are analyzing right now across Kitchener-Waterloo. The numbers are below; the exact address comes once we are working together.</p>
+
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
             {ORDER.map((slug) => {
               const d = DEALS[slug]
               return (
@@ -218,42 +230,49 @@ export function OpportunitiesPage() {
     <>
       <Seo title={`${d.headline} · Resolve Value-Add`} description={`${d.sub} Acquisition ${d.nums.acq}, repairs ${d.nums.repairs}, ARV ${d.nums.arv}.`} canonical={`https://www.resolverealestate.ca/opportunities/${slug}/`} />
 
-      <section className="bg-stone">
-        <div className="container py-9 md:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-start">
+      {/* HERO — navy grid, numbers + form */}
+      <section data-surface="navy" className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20">
+        <HeroBackdrop />
+        <div className="relative container pt-28 pb-12 sm:pt-36 sm:pb-14">
+          <Link to="/opportunities" className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone/70 hover:text-stone transition-colors">
+            <ArrowLeft className="h-4 w-4" /> All opportunities
+          </Link>
+          <div className="mt-5 grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-12 items-start">
             <div>
               <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-bronze">{d.eyebrow} · {d.kind}</p>
-              <h1 className="mt-2 font-display font-medium text-navy tracking-tight" style={{ fontSize: 'clamp(25px, 3.6vw, 38px)', lineHeight: 1.08 }}>{d.headline}</h1>
-
-              {/* NUMBERS FIRST */}
+              <h1 className="mt-2 font-display font-medium text-stone tracking-tight" style={{ fontSize: 'clamp(25px, 3.6vw, 38px)', lineHeight: 1.08 }}>{d.headline}</h1>
               <div className="mt-5"><NumberGrid nums={d.nums} large /></div>
-              <p className="mt-2 text-[11px] text-navy-mute">*Illustrative gross spread before renovation, financing and transaction costs. Not a guarantee.</p>
-
-              <p className="mt-6 text-[16.5px] text-navy-soft leading-relaxed max-w-xl">{d.sub}</p>
-
-              <div className="mt-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-bronze">The read</p>
-                <p className="mt-2.5 text-[15.5px] text-navy-soft leading-[1.6] max-w-xl">{d.read}</p>
-              </div>
-
-              <div className="mt-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-bronze">What to watch</p>
-                <ul className="mt-2.5 space-y-2 max-w-xl">
-                  {d.flags.map((f) => (
-                    <li key={f} className="flex items-start gap-2.5 text-[14.5px] text-navy-soft leading-relaxed">
-                      <AlertTriangle className="h-4 w-4 text-bronze shrink-0 mt-1" /><span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="mt-2 text-[11px] text-stone/55">*Illustrative gross spread before renovation, financing and transaction costs. Not a guarantee.</p>
+              <p className="mt-6 text-[16.5px] text-stone-soft leading-relaxed max-w-xl">{d.sub}</p>
             </div>
-
             <div className="lg:sticky lg:top-8">
               <SignupForm dealSlug={slug} dealTitle={d.headline} />
-              <p className="mt-4 text-[12px] text-navy-mute leading-relaxed">Figures are illustrative estimates for discussion, not an appraisal or guarantee. The property is described in general terms only; the specific listing is shared privately, on a disclosed cooperating basis, once we are working together.</p>
-              <Link to="/opportunities" className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze hover:text-bronze-deep">See the other opportunities <ChevronRight className="h-3.5 w-3.5" /></Link>
+              <p className="mt-4 text-[12px] text-stone/55 leading-relaxed">Figures are illustrative estimates for discussion, not an appraisal or guarantee. The property is described in general terms only; the specific listing is shared privately, on a disclosed cooperating basis, once we are working together.</p>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* The read + what to watch (light) */}
+      <section className="bg-stone">
+        <div className="container py-11 md:py-14">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14 max-w-5xl">
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-bronze">The read</p>
+              <p className="mt-3 text-[16px] text-navy-soft leading-[1.6]">{d.read}</p>
+            </div>
+            <div>
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-bronze">What to watch</p>
+              <ul className="mt-3 space-y-2.5">
+                {d.flags.map((f) => (
+                  <li key={f} className="flex items-start gap-2.5 text-[15px] text-navy-soft leading-relaxed">
+                    <AlertTriangle className="h-4 w-4 text-bronze shrink-0 mt-1" /><span>{f}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <Link to="/opportunities" className="mt-9 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze hover:text-bronze-deep">See the other opportunities <ChevronRight className="h-3.5 w-3.5" /></Link>
         </div>
       </section>
 
