@@ -128,6 +128,19 @@ function SignupForm({ dealSlug, dealTitle }) {
       <input type="hidden" name="source_page" value="/opportunities" />
       <p className="font-display font-medium text-navy text-[19px] leading-tight">Want the address and full numbers?</p>
       <p className="mt-1.5 text-[13.5px] text-navy-soft">A few quick details so we send the right ones. No fee, no obligation.</p>
+      <ul className="mt-3.5 pt-3.5 border-t border-divider space-y-1.5">
+        {[
+          'Exact address and location',
+          'Full price and listing history',
+          'The complete underwriting: comps, purchase and repair scope',
+          'First look at new value-add files as they come up',
+        ].map((x) => (
+          <li key={x} className="flex items-start gap-2 text-[13px] text-navy-soft leading-snug">
+            <CheckCircle2 className="h-3.5 w-3.5 text-bronze shrink-0 mt-0.5" aria-hidden="true" />
+            <span>{x}</span>
+          </li>
+        ))}
+      </ul>
       <div className="mt-4 grid grid-cols-1 gap-3.5">
         <input name="first_name" type="text" required autoComplete="given-name" placeholder="First name" className={inputCls} />
         <input name="email" type="email" inputMode="email" required autoComplete="email" placeholder="Email" className={inputCls} />
