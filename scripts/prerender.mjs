@@ -53,6 +53,7 @@ const ROUTES = [
   '/opportunities/kw-distressed-detached',
   '/opportunities/kw-downtown-multiunit',
   '/opportunities/kw-character-restoration',
+  '/for-investors',
   '/taranaujla',
 ]
 const PORT = 4321

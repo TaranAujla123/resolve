@@ -18,6 +18,7 @@ import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
 import { GetDealsPage } from '@/components/v2/get-deals/GetDealsPage'
 import { InvestorAccessPage } from '@/components/v2/investor-access/InvestorAccessPage'
 import { OpportunitiesPage } from '@/components/v2/opportunities/OpportunitiesPage'
+import { ForInvestorsPage } from '@/components/v2/for-investors/ForInvestorsPage'
 import { TaranProfile } from '@/components/v2/taran/TaranProfile'
 import { MultiplexPage } from '@/components/v2/multiplex/MultiplexPage'
 
@@ -841,6 +842,8 @@ export default function App() {
             <Route path="/opportunities" element={<OpportunitiesPage />} />
             <Route path="/opportunities/" element={<OpportunitiesPage />} />
             <Route path="/opportunities/:slug" element={<OpportunitiesPage />} />
+            <Route path="/for-investors" element={<ForInvestorsPage />} />
+            <Route path="/for-investors/" element={<ForInvestorsPage />} />
             <Route path="/taranaujla" element={<TaranAujlaPage />} />
             <Route path="/taranaujla/" element={<TaranAujlaPage />} />
             <Route path="*" element={<HomePage />} />

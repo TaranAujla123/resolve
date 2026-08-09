@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Link, NavLink, useLocation } from 'react-router-dom'
-import { Menu, X, Lock } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { ResolveWordmark } from './ResolveWordmark'
 import { Button } from './Button'
 
@@ -22,6 +22,7 @@ import { Button } from './Button'
 const NAV_ITEMS = [
   { to: '/sellers', label: 'For Sellers' },
   { to: '/buyers', label: 'For Buyers' },
+  { to: '/for-investors', label: 'For Investors' },
   { to: '/multiplex', label: 'Multiplex' },
   { to: '/why-us', label: 'Why Us' },
   { to: '/about', label: 'About' },
@@ -128,16 +129,6 @@ export function Header() {
               </NavLink>
             ),
           )}
-          <Link
-            to="/investor-access"
-            className={[
-              'inline-flex items-center gap-1.5 font-sans font-medium text-[14px] transition-colors',
-              barSolid ? 'text-navy hover:text-bronze' : 'text-stone/85 hover:text-stone',
-            ].join(' ')}
-          >
-            <Lock className="h-3.5 w-3.5 text-bronze" strokeWidth={2} aria-hidden="true" />
-            Investor Portal
-          </Link>
           {barSolid ? (
             <Button as={Link} to="/contact" variant="primary" size="sm">
               Contact us
@@ -196,14 +187,6 @@ export function Header() {
                 </Link>
               ),
             )}
-            <Link
-              to="/investor-access"
-              onClick={() => setOpen(false)}
-              className="py-3 inline-flex items-center gap-2 font-sans font-medium text-[15px] text-navy hover:text-bronze"
-            >
-              <Lock className="h-4 w-4 text-bronze" strokeWidth={2} aria-hidden="true" />
-              Investor Portal
-            </Link>
             <Button
               as={Link}
               to="/contact"

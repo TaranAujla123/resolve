@@ -124,7 +124,7 @@ export function Footer() {
               <li><Link to="/about" className={linkCls}>About Resolve</Link></li>
               <li><Link to="/why-us" className={linkCls}>Why Resolve</Link></li>
               <li><Link to="/for-agents" className={linkCls}>For agents</Link></li>
-              <li><Link to="/investor-access" className={linkCls}>Investor Portal</Link></li>
+              <li><Link to="/for-investors" className={linkCls}>For Investors</Link></li>
               <li><Link to="/contact" className={linkCls}>Confidential inquiry</Link></li>
             </ul>
           </div>
