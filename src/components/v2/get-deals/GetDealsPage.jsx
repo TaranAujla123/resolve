@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { Phone, Lock, ArrowRight, CheckCircle2, Clock, ChevronRight } from 'lucide-react'
+import { Phone, Lock, ArrowRight, CheckCircle2, Clock, ChevronRight, Gift, Scale } from 'lucide-react'
 import { Seo } from '@/components/seo/Seo'
 import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 
@@ -37,13 +37,13 @@ const HERO_VARIANTS = {
   mls: {
     eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'The value most buyers walk past.',
-    sub: 'Under-marketed listings and motivated sellers, across Ontario. Priced or positioned wrong, and worth a closer look.',
+    sub: 'Homes priced or positioned wrong, across Ontario. Worth more than they look, and worth a closer read.',
     label: 'Value Hunter',
   },
   cash: {
     eyebrow: 'BUYER NETWORK · ONTARIO',
-    headline: 'The upside most buyers never see.',
-    sub: 'Value-add homes and motivated sellers, across Ontario. Real upside, and an honest read of every opportunity.',
+    headline: 'A better home for your money.',
+    sub: 'Homes worth more than their price, across Ontario. An honest read on the value and the risks before you commit.',
     label: 'Close-Ready Buyer',
   },
   investor: {
@@ -54,8 +54,8 @@ const HERO_VARIANTS = {
   },
   default: {
     eyebrow: 'BUYER NETWORK · ONTARIO',
-    headline: 'The upside most buyers never see.',
-    sub: 'Under-marketed properties and motivated sellers, across Ontario. Real value, and an honest read of every opportunity.',
+    headline: 'The value most buyers never see.',
+    sub: 'Homes worth more than their price, and the risks that do not show on the surface. An honest read on every one, across Ontario.',
     label: 'General Buyer',
   },
 }
@@ -139,7 +139,7 @@ export function GetDealsPage() {
     <>
       <Seo
         title={`${variant.headline} · Resolve Buyer Network`}
-        description="Value-add and non-turnkey property opportunities across Ontario, read for real upside and the risks that do not show on the surface. Matched to your criteria, with disclosed buy-side representation. Free 15-minute call."
+        description="Homes worth more than their price across Ontario, read for the hidden value and the risks that do not show on the surface. Matched to your criteria, with disclosed buy-side representation. Free 15-minute call."
         canonical="https://www.resolverealestate.ca/get-deals/"
         noindex={true}
       />
@@ -358,11 +358,11 @@ export function GetDealsPage() {
 
               <ul className="mt-6 space-y-2 text-[13px] text-stone-soft border-t border-white/10 pt-5">
                 {[
-                  'Value-add and non-turnkey opportunities',
-                  'Income potential and added-unit angles (ARUs)',
-                  'Under-marketed or mispriced listings',
+                  'Homes priced under what they are worth',
+                  'A fixable flaw others overlook, costed honestly',
+                  'A layout, lot, or location advantage most miss',
                   'The risks that do not show on the surface, flagged early',
-                  'Sourced across the Ontario market, not a narrow list',
+                  'Room to grow where you want it: a suite or income',
                   'Disclosed representation, properly papered',
                 ].map((line) => (
                   <li key={line} className="flex items-start gap-2.5">
@@ -373,6 +373,31 @@ export function GetDealsPage() {
               </ul>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* THE EXTRA — buyer offer strip (on top of the representation) */}
+      <section className="bg-navy">
+        <div className="container py-8 md:py-10">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-center gap-x-9 gap-y-3 text-center">
+            <p className="font-display font-medium text-stone text-[18px] md:text-[20px] shrink-0">
+              More than a tour of homes.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center gap-x-7 gap-y-2 text-[14.5px] text-stone/85">
+              <span className="inline-flex items-center gap-2">
+                <Scale className="h-4 w-4 text-bronze" strokeWidth={1.9} aria-hidden="true" />
+                Legal fees covered on closing
+              </span>
+              <span className="inline-flex items-center gap-2">
+                <Gift className="h-4 w-4 text-bronze" strokeWidth={1.9} aria-hidden="true" />
+                $1,000 Amazon gift card when you buy
+              </span>
+            </div>
+          </div>
+          <p className="mt-3.5 text-center text-[11.5px] text-stone/50 leading-relaxed">
+            Offered through HomeLife G1 Realty Inc., Brokerage, on completed
+            purchases where Resolve represents you.
+          </p>
         </div>
       </section>
 
@@ -430,7 +455,7 @@ export function GetDealsPage() {
               Where the value comes from
             </p>
             <p className="mt-6 text-[16px] text-navy-soft leading-[1.6]">
-              We read the whole Ontario market for the value most buyers walk past: listings priced or marketed wrong, properties with an added-unit or income angle, and homes that need work most buyers cannot cost out.
+              We read the whole Ontario market for the value most buyers walk past: homes priced or marketed wrong, a fixable flaw that scares others off, a layout or lot advantage most overlook, and where you want it, room to add income later.
             </p>
             <p className="mt-4 text-[17px] text-navy leading-[1.55] font-medium">
               The edge is reading a property well, not finding someone in trouble.
@@ -499,8 +524,8 @@ export function GetDealsPage() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-4xl mx-auto">
             {[
               {
-                title: 'First look at value-add opportunities',
-                desc: 'Under-marketed and non-turnkey properties across Ontario, read before they reach the wider buyer pool.',
+                title: 'First look at the value others miss',
+                desc: 'Homes worth more than their price across Ontario, read before they reach the wider buyer pool.',
               },
               {
                 title: 'Matched to your written criteria',

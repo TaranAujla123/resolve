@@ -10,6 +10,8 @@ import {
   ArrowRight,
   Calendar,
   Check,
+  Gift,
+  Scale,
 } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
@@ -48,10 +50,10 @@ import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
  */
 
 const UPSIDE = [
-  'Income units, small multiplexes, and rental upside',
-  'Lots that fit a garden or laneway suite',
-  'Basements and spaces that could be legalized',
-  'Homes priced low because they were marketed wrong',
+  'A home priced under what it is truly worth',
+  'A fixable flaw that scares other buyers off',
+  'A layout, lot, or location advantage others overlook',
+  'Room to grow later: a suite, income, or an update',
 ]
 
 const RISKS = [
@@ -67,7 +69,7 @@ const STEPS = [
     Icon: ClipboardList,
     title: 'Tell us what you want',
     body:
-      'You already know the area and the home you are after. Tell us that, plus what you would do with any upside: income, a suite, a hold, or a rebuild.',
+      'You already know the area and the home you are after. Tell us that, plus what matters most to you: the right home, a fair price, or room to grow later.',
   },
   {
     num: '02',
@@ -121,16 +123,17 @@ export function Buyers() {
           <div className="max-w-[620px]">
             <Eyebrow>For Buyers · Ontario</Eyebrow>
             <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
-              We show you{' '}
-              <span className="italic text-bronze">what it could become.</span>
+              We find the value{' '}
+              <span className="italic text-bronze">others miss.</span>
             </h1>
             <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-stone/85">
-              Most agents send you the listing. We read the value-add and income
-              potential others walk past, on and off market, for buyers who look
-              past the price to the upside.
+              It is your biggest purchase. Most agents open doors and tour you
+              around. We read each home for the hidden value and the buried
+              risks, so you buy well, whether that is a great home at a fair
+              price or one with room to grow. On and off market.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
-              <Button as={Link} to="/contact" variant="contrast" size="md">
+              <Button as={Link} to="/get-deals" variant="contrast" size="md">
                 <Calendar className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
                 Book a free 15-minute call
               </Button>
@@ -159,11 +162,11 @@ export function Buyers() {
           </h2>
           <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-navy-soft">
             You already know the area and the home you want. The harder part,
-            and what actually makes you money, is evaluating each listing against
-            your needs: the potential the marketing missed, and the problems
-            the photos hid. You get both sides in a clear written breakdown, the
-            opportunities and the costs most agents skip, side by side, so you
-            can weigh the trade-off and decide.
+            and what actually gets you a better home for your money, is reading
+            each listing against your needs: the value the marketing missed, and
+            the problems the photos hid. You get both sides in a clear written
+            breakdown, the opportunities and the costs most agents skip, side by
+            side, so you can weigh the trade-off and decide.
           </p>
 
           <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -171,7 +174,7 @@ export function Buyers() {
               <div className="flex items-center gap-2 text-bronze">
                 <TrendingUp className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
                 <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
-                  The upside we look for
+                  The hidden value we look for
                 </span>
               </div>
               <ul className="mt-5 space-y-3">
@@ -241,6 +244,52 @@ export function Buyers() {
         </div>
       </section>
 
+      {/* THE EXTRA — buyer offer, on top of the representation */}
+      <section data-surface="navy" className="bg-navy section-y">
+        <div className="container max-w-3xl">
+          <Eyebrow>On top of all that</Eyebrow>
+          <h2 className="mt-5 font-display font-medium text-stone text-display-md leading-[1.1]">
+            More than a tour of homes.
+          </h2>
+          <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-stone/85">
+            Reading the deal is the real value. But because buying should feel
+            like the win it is, when you buy with Resolve we also handle two
+            things most agents do not.
+          </p>
+          <div className="mt-9 grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div className="rounded-2xl border border-bronze/40 bg-navy-soft/40 p-7">
+              <div className="flex items-center gap-2 text-bronze">
+                <Scale className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                  Legal fees, covered
+                </span>
+              </div>
+              <p className="mt-4 text-[15px] leading-relaxed text-stone/85">
+                We cover your legal fees on closing, so the biggest purchase of
+                your life starts without an extra bill.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-bronze/40 bg-navy-soft/40 p-7">
+              <div className="flex items-center gap-2 text-bronze">
+                <Gift className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
+                  A $1,000 congratulations
+                </span>
+              </div>
+              <p className="mt-4 text-[15px] leading-relaxed text-stone/85">
+                A $1,000 Amazon gift card when you close, as a thank-you for
+                trusting us with it.
+              </p>
+            </div>
+          </div>
+          <p className="mt-6 text-[12px] leading-relaxed text-stone/55">
+            Buyer incentive offered through HomeLife G1 Realty Inc., Brokerage,
+            on completed purchases where Resolve acts as your buyer
+            representative.
+          </p>
+        </div>
+      </section>
+
       {/* MOTIVATED SELLERS, DONE RIGHT — certainty framing, disclosed */}
       <section data-surface="stone" className="bg-stone section-y">
         <div className="container max-w-3xl">
@@ -300,7 +349,7 @@ export function Buyers() {
             the upside, what it would take, and what to watch for.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button as={Link} to="/contact" variant="primary" size="lg">
+            <Button as={Link} to="/get-deals" variant="primary" size="lg">
               <Calendar className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
               Book a free 15-minute call
             </Button>
