@@ -244,7 +244,7 @@ function DealIndex() {
                   ) : (
                     <div className="mt-5 bg-white border border-dashed border-divider rounded-[14px] p-6">
                       <p className="text-[14.5px] text-navy-soft leading-relaxed max-w-2xl">We are actively sourcing motivated-seller files in {city}. They move quietly and quickly. Tell us your box and you will see them first.</p>
-                      <a href="tel:+13656457332" className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze hover:text-bronze-deep">Get on the list · (365) 645-7332 <ChevronRight className="h-3.5 w-3.5" /></a>
+                      <Link to="/get-deals" className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze hover:text-bronze-deep">Get on the list <ChevronRight className="h-3.5 w-3.5" /></Link>
                     </div>
                   )}
                 </div>
