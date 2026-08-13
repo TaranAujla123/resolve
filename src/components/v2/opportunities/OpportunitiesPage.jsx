@@ -67,15 +67,21 @@ const CITIES = ['Toronto', 'Peel Region', 'Kitchener–Waterloo', 'Hamilton']
 const NUM_LABELS = [['acq', 'Acquisition'], ['repairs', 'Repairs'], ['arv', 'ARV (comps)'], ['spread', 'Spread*']]
 const THESIS = 'These are motivated-seller situations: a power of sale, a price that outran the condition, a building the ordinary buyer could not finance or could not read. The motivation is real and so is the value. Most buyers simply stop at the surface, and reading past it is the work. That gap is the opportunity.'
 
-function NumberGrid({ nums, large }) {
+function NumberGrid({ nums, large, compact }) {
+  const cols = compact ? 'grid-cols-2' : 'grid-cols-2 sm:grid-cols-4'
   return (
-    <div className={`grid grid-cols-2 sm:grid-cols-4 border border-divider rounded-[12px] overflow-hidden bg-white`}>
-      {NUM_LABELS.map(([key, label], i) => (
-        <div key={key} className={`px-4 ${large ? 'py-5' : 'py-3.5'} ${i % 2 === 0 ? 'border-r' : ''} ${i < 3 ? 'sm:border-r' : ''} ${i < 2 ? 'border-b sm:border-b-0' : ''} border-divider ${key === 'spread' ? 'bg-mist' : ''}`}>
-          <p className={`${large ? 'text-[10.5px]' : 'text-[9.5px]'} font-semibold uppercase tracking-[0.11em] ${key === 'spread' ? 'text-bronze-deep' : 'text-navy-mute'}`}>{label}</p>
-          <p className={`mt-1 font-display font-semibold text-navy ${large ? 'text-[22px] md:text-[26px]' : 'text-[16px]'} leading-none tabular-nums`}>{nums[key]}</p>
-        </div>
-      ))}
+    <div className={`grid ${cols} border border-divider rounded-[12px] overflow-hidden bg-white`}>
+      {NUM_LABELS.map(([key, label], i) => {
+        const borders = compact
+          ? `${i % 2 === 0 ? 'border-r' : ''} ${i < 2 ? 'border-b' : ''}`
+          : `${i % 2 === 0 ? 'border-r' : ''} ${i < 3 ? 'sm:border-r' : ''} ${i < 2 ? 'border-b sm:border-b-0' : ''}`
+        return (
+          <div key={key} className={`px-4 ${large ? 'py-5' : 'py-3.5'} ${borders} border-divider ${key === 'spread' ? 'bg-mist' : ''}`}>
+            <p className={`${large ? 'text-[10.5px]' : 'text-[9.5px]'} font-semibold uppercase tracking-[0.11em] ${key === 'spread' ? 'text-bronze-deep' : 'text-navy-mute'}`}>{label}</p>
+            <p className={`mt-1 font-display font-semibold text-navy ${large ? 'text-[22px] md:text-[26px]' : 'text-[16px]'} leading-none tabular-nums`}>{nums[key]}</p>
+          </div>
+        )
+      })}
     </div>
   )
 }
@@ -215,7 +221,7 @@ function DealIndex() {
                     <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-mute">{cityDeals.length ? `${cityDeals.length} ${cityDeals.length === 1 ? 'file' : 'files'}` : 'Sourcing now'}</span>
                   </div>
                   {cityDeals.length ? (
-                    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                       {cityDeals.map((slug) => {
                         const d = DEALS[slug]
                         return (
@@ -227,8 +233,8 @@ function DealIndex() {
                                 <h3 className="mt-2 font-display font-medium text-stone text-[22px] leading-[1.15]">{d.headline}</h3>
                               </div>
                             </div>
-                            <div className="px-6 pt-5 pb-6">
-                              <NumberGrid nums={d.nums} />
+                            <div className="px-5 pt-4 pb-5">
+                              <NumberGrid nums={d.nums} compact />
                               <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze group-hover:text-bronze-deep">See the breakdown <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" /></span>
                             </div>
                           </Link>
