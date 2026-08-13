@@ -22,6 +22,7 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 const DEALS = {
   'kw-legal-duplex': {
     eyebrow: 'Kitchener · Value-Add',
+    city: 'Kitchener–Waterloo',
     kind: 'Legal duplex',
     headline: 'A legal duplex sitting in plain sight.',
     nums: { acq: '$500–540K', repairs: '$60–90K', arv: '$715–760K', spread: '$120–180K' },
@@ -31,6 +32,7 @@ const DEALS = {
   },
   'kw-distressed-detached': {
     eyebrow: 'Kitchener · Distressed',
+    city: 'Kitchener–Waterloo',
     kind: 'Power of sale',
     headline: 'A distressed detached the crowd walked past.',
     nums: { acq: '$460–490K', repairs: '$80–110K', arv: '~$660K', spread: '$80–120K' },
@@ -40,6 +42,7 @@ const DEALS = {
   },
   'kw-downtown-multiunit': {
     eyebrow: 'Kitchener · Income',
+    city: 'Kitchener–Waterloo',
     kind: 'Multi-unit / transit',
     headline: 'A downtown multi-unit priced ahead of its condition.',
     nums: { acq: '$440–480K', repairs: '$100–130K', arv: '$650–700K', spread: '$60–100K' },
@@ -49,6 +52,7 @@ const DEALS = {
   },
   'kw-character-restoration': {
     eyebrow: 'Kitchener · Restoration',
+    city: 'Kitchener–Waterloo',
     kind: 'Character home',
     headline: 'The highest ceiling, and the honest uncertainty.',
     nums: { acq: '$540–575K', repairs: '$150K+', arv: '$800–900K', spread: 'Varies' },
@@ -59,8 +63,9 @@ const DEALS = {
 }
 
 const ORDER = ['kw-legal-duplex', 'kw-distressed-detached', 'kw-downtown-multiunit', 'kw-character-restoration']
+const CITIES = ['Toronto', 'Peel Region', 'Kitchener–Waterloo', 'Hamilton']
 const NUM_LABELS = [['acq', 'Acquisition'], ['repairs', 'Repairs'], ['arv', 'ARV (comps)'], ['spread', 'Spread*']]
-const THESIS = 'People assume a home that has been on MLS and has not sold must be a bad deal. Usually it just means the price was wrong for who saw it, or the right buyer never did. The value does not disappear because a listing expired — it waits for someone who can read it.'
+const THESIS = 'These are motivated-seller situations: a power of sale, a price that outran the condition, a building the ordinary buyer could not finance or could not read. The motivation is real and so is the value. Most buyers simply stop at the surface, and reading past it is the work. That gap is the opportunity.'
 
 function NumberGrid({ nums, large }) {
   return (
@@ -179,7 +184,7 @@ function SignupForm({ dealSlug, dealTitle }) {
 function DealIndex() {
   return (
     <>
-      <Seo title="Value-Add Property Opportunities · Resolve" description="Anonymized value-add property breakdowns across Kitchener-Waterloo — acquisition, repairs, ARV and spread. The numbers to check the math; the specifics after we connect." canonical="https://www.resolverealestate.ca/opportunities/" />
+      <Seo title="Value-Add Property Opportunities · Resolve" description="Motivated-seller, value-add property breakdowns across Toronto, Peel, Kitchener-Waterloo and Hamilton — acquisition, repairs, ARV and spread. The numbers to check the math; the specifics after we connect." canonical="https://www.resolverealestate.ca/opportunities/" />
       {/* HERO — navy grid */}
       <section data-surface="navy" className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20">
         <HeroBackdrop />
@@ -187,9 +192,9 @@ function DealIndex() {
           <Link to="/for-investors" className="inline-flex items-center gap-1.5 text-[13px] font-semibold text-stone/70 hover:text-stone transition-colors">
             <ArrowLeft className="h-4 w-4" /> For Investors
           </Link>
-          <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.18em] text-bronze">Value-Add Opportunities · Ontario</p>
+          <p className="mt-5 text-[13px] font-semibold uppercase tracking-[0.18em] text-bronze">Motivated-Seller Opportunities · Ontario</p>
           <h1 className="mt-4 font-display font-medium text-stone tracking-tight" style={{ fontSize: 'clamp(30px, 5vw, 50px)', lineHeight: 1.05 }}>
-            Unsold is not the same as <span className="italic text-bronze">bad</span>.
+            Motivated sellers, misread <span className="italic text-bronze">value</span>.
           </h1>
           <p className="mt-5 text-[16px] text-stone-soft leading-[1.6] max-w-2xl">{THESIS}</p>
         </div>
@@ -198,18 +203,38 @@ function DealIndex() {
       {/* Deals (light) */}
       <section className="bg-stone">
         <div className="container py-12 md:py-16">
-          <p className="text-[15px] text-navy leading-[1.55] font-medium max-w-2xl">These are real deals we are analyzing right now across Kitchener-Waterloo. The numbers are below; the exact address comes once we are working together.</p>
+          <p className="text-[15px] text-navy leading-[1.55] font-medium max-w-2xl">Real files we are underwriting right now, grouped by market. The numbers are below; the exact address comes once we are working together.</p>
 
-          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-6">
-            {ORDER.map((slug) => {
-              const d = DEALS[slug]
+          <div className="mt-9 space-y-11">
+            {CITIES.map((city) => {
+              const cityDeals = ORDER.filter((slug) => DEALS[slug].city === city)
               return (
-                <Link key={slug} to={`/opportunities/${slug}`} className="group block bg-white border border-divider rounded-[14px] p-6 hover:border-bronze transition-all" style={{ boxShadow: '0 2px 14px rgba(5,26,44,0.05)' }}>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-bronze">{d.eyebrow}</p>
-                  <h2 className="mt-1.5 font-display font-medium text-navy text-[20px] leading-tight">{d.headline}</h2>
-                  <div className="mt-4"><NumberGrid nums={d.nums} /></div>
-                  <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze group-hover:text-bronze-deep">See the breakdown <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" /></span>
-                </Link>
+                <div key={city}>
+                  <div className="flex items-baseline justify-between gap-3 pb-3 border-b border-divider">
+                    <h2 className="font-display font-medium text-navy text-[21px] md:text-[24px]">{city}</h2>
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.14em] text-navy-mute">{cityDeals.length ? `${cityDeals.length} ${cityDeals.length === 1 ? 'file' : 'files'}` : 'Sourcing now'}</span>
+                  </div>
+                  {cityDeals.length ? (
+                    <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                      {cityDeals.map((slug) => {
+                        const d = DEALS[slug]
+                        return (
+                          <Link key={slug} to={`/opportunities/${slug}`} className="group block bg-white border border-divider rounded-[14px] p-6 hover:border-bronze transition-all" style={{ boxShadow: '0 2px 14px rgba(5,26,44,0.05)' }}>
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-bronze">{d.eyebrow}</p>
+                            <h3 className="mt-1.5 font-display font-medium text-navy text-[20px] leading-tight">{d.headline}</h3>
+                            <div className="mt-4"><NumberGrid nums={d.nums} /></div>
+                            <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze group-hover:text-bronze-deep">See the breakdown <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" /></span>
+                          </Link>
+                        )
+                      })}
+                    </div>
+                  ) : (
+                    <div className="mt-5 bg-white border border-dashed border-divider rounded-[14px] p-6">
+                      <p className="text-[14.5px] text-navy-soft leading-relaxed max-w-2xl">We are actively sourcing motivated-seller files in {city}. They move quietly and quickly. Tell us your box and you will see them first.</p>
+                      <a href="tel:+13656457332" className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze hover:text-bronze-deep">Get on the list · (365) 645-7332 <ChevronRight className="h-3.5 w-3.5" /></a>
+                    </div>
+                  )}
+                </div>
               )
             })}
           </div>
