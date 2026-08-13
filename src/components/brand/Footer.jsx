@@ -67,7 +67,7 @@ export function Footer() {
               Brampton, ON&nbsp; L6R 3J5
             </p>
             <p className="mt-4 text-[13px] leading-relaxed text-stone-mute">
-              Serving the Greater Toronto &amp; Hamilton Area.
+              Serving the Greater Toronto &amp; Hamilton Area and Kitchener-Waterloo.
             </p>
           </div>
 

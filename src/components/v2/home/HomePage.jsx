@@ -104,7 +104,7 @@ export function HomePage() {
             </div>
 
             <p className="mt-7 font-sans font-semibold text-[12px] uppercase tracking-[0.16em] text-stone-mute">
-              Greater Toronto &amp; Hamilton Area
+              Greater Toronto &amp; Hamilton Area &middot; Kitchener-Waterloo
             </p>
 
             <p className="mt-4 max-w-md text-[12px] text-stone-mute leading-relaxed">
