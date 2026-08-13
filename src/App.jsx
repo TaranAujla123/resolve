@@ -491,7 +491,7 @@ function HomePage() {
     <>
       <Seo
         title="Resolve · Real Estate · Ontario"
-        description="An Ontario real estate practice working both sides of the table: complex and high-value seller representation, and value-add, multiplex and income buying. Serving the GTA, Hamilton, Kitchener-Waterloo and Ottawa."
+        description="An Ontario real estate practice working both sides of the table: complex and high-value seller representation, and value-add, multiplex and income buying. Serving Toronto, Peel Region, Kitchener-Waterloo and Hamilton."
         canonical={`${SITE_URL}/`}
         jsonLd={HOME_JSONLD}
       />

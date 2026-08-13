@@ -102,14 +102,13 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
       {/* Where we work — regional service-area line. Names the regions in
           on-page copy so each situation page ranks on "<situation> + place"
           without spinning up thin per-city pages. Mirrors areaServed in the
-          RealEstateAgent JSON-LD. Ottawa is scoped to multiplex only. */}
+          RealEstateAgent JSON-LD. */}
       <section data-surface="stone" className="bg-stone">
         <div className="container pt-10 pb-2">
           <p className="mx-auto max-w-3xl text-[13px] text-navy-soft leading-relaxed">
             <span className="font-semibold text-navy">Where we work.</span>{' '}
-            Resolve represents Ontario homeowners across the Greater Toronto
-            Area, plus Hamilton and Kitchener-Waterloo. Multiplex opportunities
-            extend to Ottawa with local partners.
+            Resolve represents Ontario homeowners across Toronto, Peel Region,
+            Hamilton and Kitchener-Waterloo.
           </p>
         </div>
       </section>

@@ -66,7 +66,7 @@ export function MultiplexPage() {
         <HeroBackdrop />
         <div className="relative container max-w-4xl pt-28 pb-16 sm:pt-40 sm:pb-24">
           <Eyebrow>
-            <span className="text-stone">Multiplex</span> · GTA, Hamilton, Kitchener-Waterloo &amp; Ottawa
+            <span className="text-stone">Multiplex</span> · Toronto, Peel Region, Kitchener-Waterloo &amp; Hamilton
           </Eyebrow>
           <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.02]">
             The Multiplex{' '}
@@ -91,7 +91,7 @@ export function MultiplexPage() {
             </Button>
           </div>
           <p className="mt-6 text-[13px] leading-relaxed text-stone/55 max-w-[560px]">
-            Strong across the GTA, Hamilton, Kitchener-Waterloo and Ottawa &mdash; and elsewhere in
+            Strong across Toronto, Peel Region, Kitchener-Waterloo and Hamilton &mdash; and elsewhere in
             Ontario through trusted local partners.
           </p>
         </div>
