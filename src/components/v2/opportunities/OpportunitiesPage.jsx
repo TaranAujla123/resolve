@@ -219,11 +219,18 @@ function DealIndex() {
                       {cityDeals.map((slug) => {
                         const d = DEALS[slug]
                         return (
-                          <Link key={slug} to={`/opportunities/${slug}`} className="group block bg-white border border-divider rounded-[14px] p-6 hover:border-bronze transition-all" style={{ boxShadow: '0 2px 14px rgba(5,26,44,0.05)' }}>
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-bronze">{d.eyebrow}</p>
-                            <h3 className="mt-1.5 font-display font-medium text-navy text-[20px] leading-tight">{d.headline}</h3>
-                            <div className="mt-4"><NumberGrid nums={d.nums} /></div>
-                            <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze group-hover:text-bronze-deep">See the breakdown <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" /></span>
+                          <Link key={slug} to={`/opportunities/${slug}`} className="group block bg-white border border-divider rounded-[14px] overflow-hidden hover:border-bronze hover:-translate-y-0.5 transition-all" style={{ boxShadow: '0 2px 14px rgba(5,26,44,0.06)' }}>
+                            <div className="relative bg-navy px-6 py-7 overflow-hidden">
+                              <div className="absolute inset-0 opacity-60" style={{ backgroundImage: 'linear-gradient(rgba(200,165,107,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(200,165,107,0.07) 1px, transparent 1px)', backgroundSize: '26px 26px' }} aria-hidden="true" />
+                              <div className="relative">
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-bronze">{d.eyebrow}</p>
+                                <h3 className="mt-2 font-display font-medium text-stone text-[22px] leading-[1.15]">{d.headline}</h3>
+                              </div>
+                            </div>
+                            <div className="px-6 pt-5 pb-6">
+                              <NumberGrid nums={d.nums} />
+                              <span className="mt-4 inline-flex items-center gap-1 text-[13px] font-semibold text-bronze group-hover:text-bronze-deep">See the breakdown <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" /></span>
+                            </div>
                           </Link>
                         )
                       })}
