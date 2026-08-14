@@ -423,7 +423,7 @@ export function GetDealsPage() {
               {
                 num: '02',
                 title: 'We read each one against it',
-                desc: 'The opportunities and costs most agents miss, side by side.',
+                desc: 'The opportunities and costs that are easy to miss, side by side.',
               },
               {
                 num: '03',
@@ -524,7 +524,7 @@ export function GetDealsPage() {
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-4xl mx-auto">
             {[
               {
-                title: 'First look at the value others miss',
+                title: 'First look at overlooked value',
                 desc: 'Homes worth more than their price across Ontario, read before they reach the wider buyer pool.',
               },
               {

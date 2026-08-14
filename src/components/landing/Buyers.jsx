@@ -76,7 +76,7 @@ const STEPS = [
     Icon: Search,
     title: 'We size each up against your needs',
     body:
-      'For each listing you are weighing, the opportunities and the costs most agents miss, laid out side by side and measured against what matters to you.',
+      'For each listing you are weighing, the opportunities and the costs that are easy to miss, laid out side by side and measured against what matters to you.',
   },
   {
     num: '03',
@@ -124,11 +124,11 @@ export function Buyers() {
             <Eyebrow>For Buyers · Ontario</Eyebrow>
             <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
               We find the value{' '}
-              <span className="italic text-bronze">others miss.</span>
+              <span className="italic text-bronze">hiding in plain sight.</span>
             </h1>
             <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-stone/85">
-              It is your biggest purchase. Most agents open doors and tour you
-              around. We read each home for the hidden value and the buried
+              It is your biggest purchase, so we do more than open doors and
+              tour you around. We read each home for the hidden value and the buried
               risks, so you buy well, whether that is a great home at a fair
               price or one with room to grow. On and off market.
             </p>
@@ -165,7 +165,7 @@ export function Buyers() {
             and what actually gets you a better home for your money, is reading
             each listing against your needs: the value the marketing missed, and
             the problems the photos hid. You get both sides in a clear written
-            breakdown, the opportunities and the costs most agents skip, side by
+            breakdown, the opportunities and the costs that get skipped, side by
             side, so you can weigh the trade-off and decide.
           </p>
 
@@ -254,7 +254,7 @@ export function Buyers() {
           <p className="mt-6 max-w-2xl text-[16.5px] leading-relaxed text-stone/85">
             Reading the deal is the real value. But because buying should feel
             like the win it is, when you buy with Resolve we also handle two
-            things most agents do not.
+            things that rarely come standard.
           </p>
           <div className="mt-9 grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="rounded-2xl border border-bronze/40 bg-navy-soft/40 p-7">

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Resolve LinkedIn banner (1584x396)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet" />
+<!--
+  Resolve LinkedIn banner. 1584 x 396 (LinkedIn 2026 spec).
+
+  Uses the CANONICAL Resolve wordmark from the site:
+    src/components/brand/ResolveWordmark.jsx (dark variant)
+    Geometry lifted verbatim from src/index.css (.resolve-wordmark)
+    - "Re" + interpunct dot (bronze, 0.2em, vertical-align 0.12em) + "solve"
+    - Newsreader 500, letter-spacing -0.005em, line-height 0.82
+    - 1px bronze divider under (70% width, 0.5 opacity)
+    - "SELLER REPRESENTATION" descriptor, Inter 700, 0.17em, tracked 0.22em, bronze
+
+  Palette + type per Brand-System-V2/{colors,typography}.md:
+    Navy   #051A2C  (background)
+    Bronze #B89865  (dot, divider, descriptor, italic emphasis, corner marks)
+    Stone  #F5F1E8  (wordmark + body copy)
+    Fonts  Newsreader (wordmark + hero italic) / Inter (descriptor + brokerage)
+
+  Hero italic mirrors the live site (Hero.jsx:113-124): "Selling isn't
+  always straightforward. We make it clearer." — with the color split
+  applied to "clearer." only.
+
+  Compliance (RECO 5.1/5.2/5.3):
+    - HomeLife G1 Realty Inc., Brokerage attribution with descriptor.
+    - Independently Owned & Operated declared.
+    - "Ontario" placed in the brokerage strip for LinkedIn geographic context.
+    - No misleading advertising, no "we buy", no urgency, no guarantees.
+
+  Mobile safe zone: middle ~60% (x 317-1267). All content lives inside it.
+-->
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #000;
+    color: #F5F1E8;
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+  }
+  .banner {
+    position: relative;
+    width: 1584px;
+    height: 396px;
+    background: #051A2C;
+    overflow: hidden;
+  }
+
+  /* Bronze corner marks (Resolve old-gold register) */
+  .corner {
+    position: absolute;
+    width: 42px;
+    height: 42px;
+    z-index: 2;
+  }
+  .corner.tl { top: 26px; left: 26px; border-top: 2px solid #B89865; border-left: 2px solid #B89865; }
+  .corner.tr { top: 26px; right: 26px; border-top: 2px solid #B89865; border-right: 2px solid #B89865; }
+  .corner.bl { bottom: 26px; left: 26px; border-bottom: 2px solid #B89865; border-left: 2px solid #B89865; }
+  .corner.br { bottom: 26px; right: 26px; border-bottom: 2px solid #B89865; border-right: 2px solid #B89865; }
+
+  /* Content column, mobile-safe zone */
+  .content {
+    position: absolute;
+    top: 0;
+    left: 317px;
+    width: 950px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 1;
+    padding: 44px 24px;
+  }
+
+  /* ============ CANONICAL RESOLVE WORDMARK ============
+     Geometry lifted verbatim from src/index.css .resolve-wordmark
+     rules. Dark variant. Sized via font-size on the outer element. */
+  .resolve-wordmark {
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    font-size: 108px;  /* hero-scale for LinkedIn banner */
+    margin-bottom: 22px;
+  }
+  .resolve-wordmark .wm {
+    font-family: 'Newsreader', Georgia, ui-serif, serif;
+    font-weight: 500;
+    letter-spacing: -0.005em;
+    line-height: 0.82;
+    font-size: inherit;
+    color: #F5F1E8;
+    white-space: nowrap;
+    display: inline-block;
+  }
+  .resolve-wordmark .wm .dot {
+    display: inline-block;
+    width: 0.2em;
+    height: 0.2em;
+    border-radius: 50%;
+    background: #B89865;
+    margin: 0 0.14em;
+    vertical-align: 0.12em;
+  }
+  .resolve-wordmark .divider {
+    height: 1px;
+    background: #F5F1E8;
+    opacity: 0.4;
+    width: 70%;
+    margin: 0.12em auto 0.14em;
+  }
+  .resolve-wordmark .descriptor {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.17em;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #B89865;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+  /* ============ /WORDMARK ============ */
+
+  .hero-line {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+    color: rgba(245, 241, 232, 0.82);
+    max-width: 720px;
+    letter-spacing: -0.005em;
+    margin-top: 20px;
+  }
+  .hero-line .accent {
+    color: #B89865;
+    font-style: italic;
+  }
+
+  /* Brokerage micro-line, bottom center, inside mobile-safe zone */
+  .brokerage {
+    position: absolute;
+    left: 50%;
+    bottom: 34px;
+    transform: translateX(-50%);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(245, 241, 232, 0.55);
+    white-space: nowrap;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="banner">
+  <span class="corner tl" aria-hidden="true"></span>
+  <span class="corner tr" aria-hidden="true"></span>
+  <span class="corner bl" aria-hidden="true"></span>
+  <span class="corner br" aria-hidden="true"></span>
+
+  <div class="content">
+
+    <div class="resolve-wordmark resolve-wordmark--dark" aria-label="Resolve · Seller Representation" role="img">
+      <span class="wm">Re<span class="dot" aria-hidden="true"></span>solve</span>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="descriptor">Seller Representation</div>
+    </div>
+
+    <div class="hero-line">
+      Selling isn&rsquo;t always straightforward. <span class="accent">We make it clearer.</span>
+    </div>
+
+  </div>
+
+  <div class="brokerage">
+    Ontario &middot; HomeLife G1 Realty Inc., Brokerage &middot; Independently Owned &amp; Operated
+  </div>
+</div>
+
+</body>
+</html>

@@ -541,7 +541,7 @@ export function GetHelpPage() {
             {[
               {
                 title: 'Built for these exact files',
-                desc: 'Power of sale, mortgage arrears, estate, and time-sensitive closings. Not a general agent learning on your file.',
+                desc: 'Power of sale, mortgage arrears, estate, and time-sensitive closings. Real experience in exactly these situations.',
               },
               {
                 title: 'Your equity comes first',

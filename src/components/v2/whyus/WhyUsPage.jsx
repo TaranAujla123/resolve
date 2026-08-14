@@ -36,7 +36,7 @@ const PRINCIPLES = [
   },
   {
     Icon: Gem,
-    title: 'We find the value others stop short of.',
+    title: 'We find the value beneath the surface.',
     body:
       'On either side of the table, the outcome sits in the details most people skim past: what a property is really worth, what it could become, and where the risk hides.',
   },
@@ -95,7 +95,7 @@ export function WhyUsPage() {
         <div className="relative container max-w-4xl pt-28 pb-16 sm:pt-40 sm:pb-20">
           <Eyebrow>Why Resolve</Eyebrow>
           <h1 className="mt-5 font-sans font-semibold text-stone leading-[1.1] tracking-[-0.01em] text-[clamp(2.2rem,4.8vw,3.5rem)]">
-            Most agents market property.
+            We don&rsquo;t just market property.
             <br />
             We solve{' '}
             <span className="font-emph italic font-normal text-bronze">property problems.</span>

@@ -81,7 +81,7 @@ export function WhyResolve() {
             <span className="italic text-bronze">before we list.</span>
           </h3>
           <p className="mt-5 max-w-2xl text-[16px] leading-relaxed text-navy-soft">
-            Most agents start at the photos. We start earlier. Before anything
+            We start before the photos, not at them. Before anything
             lists, we find the moves that quietly strengthen your position,
             some straightforward, some rarely discussed, and bring in the right
             professional where a step calls for one.

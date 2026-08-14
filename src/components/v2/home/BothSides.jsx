@@ -99,7 +99,7 @@ export function BothSides() {
               For Buyers
             </p>
             <h3 className="mt-4 font-display font-medium text-navy text-[1.75rem] leading-[1.1]">
-              Buy the upside others miss.
+              Buy the upside most buyers miss.
             </h3>
             <p className="mt-4 text-[15.5px] leading-relaxed text-navy-soft">
               Value-add homes, multiplex-eligible lots, and income potential,

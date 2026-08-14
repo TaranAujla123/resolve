@@ -107,7 +107,7 @@ export const SITUATION_FAQS = {
       a: 'Renewal shock is common right now. Options can include selling, refinancing, or restructuring, and the right one depends on your equity and income. Resolve helps you understand what a sale would look like so you can compare it against the alternatives with your own advisors.',
     },
     {
-      q: 'Is it too early to talk to a realtor if I am only worried?',
+      q: 'Is it too early to talk to an agent if I am only worried?',
       a: 'No. A private, no-obligation conversation early gives you a clear picture and more room to plan. Many conversations do not lead to a listing, and that is fine.',
     },
     {

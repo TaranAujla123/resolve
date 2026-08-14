@@ -1,0 +1,19 @@
+<svg width="560" height="140" viewBox="0 0 560 140" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    Resolve horizontal logo lockup (light backgrounds).
+    Mark = navy rounded square + emerald dot. Wordmark uses the
+    "RE = Real Estate" treatment: Re (emerald) + solve (navy) + . (emerald).
+    Font: Poppins (700). Falls back to system sans if Poppins is absent;
+    use the PNG renders in social-kit/ for brand-accurate type.
+  -->
+  <rect x="10" y="22" width="96" height="96" rx="18" fill="#0A1F44"/>
+  <circle cx="58" cy="70" r="17" fill="#1F8B5A"/>
+  <text x="134" y="76"
+    font-family="Poppins, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="52" font-weight="700" letter-spacing="-0.02em"
+  ><tspan fill="#1F8B5A">Re</tspan><tspan fill="#0A1F44">solve</tspan><tspan fill="#1F8B5A">.</tspan></text>
+  <text x="136" y="108"
+    font-family="Poppins, Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif"
+    font-size="16" font-weight="600" letter-spacing="0.16em" fill="#64748B"
+  >SELLER REPRESENTATION</text>
+</svg>

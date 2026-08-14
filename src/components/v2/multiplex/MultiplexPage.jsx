@@ -140,9 +140,9 @@ export function MultiplexPage() {
           </h2>
           <p className="mt-7 text-[17px] leading-relaxed text-stone/85 max-w-[650px]">
             A tool can tell you roughly what&rsquo;s possible. Turning it into reality takes a plan
-            and a builder. We bring the strategy, the research, and the realtor side &mdash; finding,
+            and a builder. We bring the strategy, the research, and the brokerage side &mdash; finding,
             valuing, listing, or buying the right lot. Our construction partner &mdash; 15+ years,
-            200+ units &mdash; brings the permits, the build, and a real quote. Most agents
+            200+ units &mdash; brings the permits, the build, and a real quote. Most people
             don&rsquo;t know where to start. With us, you get both, from one licensed team.
           </p>
           <div className="mt-9">
