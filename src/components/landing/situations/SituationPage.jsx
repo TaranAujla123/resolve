@@ -1,11 +1,13 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { Phone, ArrowRight, ArrowLeft } from 'lucide-react'
+import { Phone, ArrowRight, ArrowLeft, Check } from 'lucide-react'
 import { Button } from '@/components/brand/Button'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { WhatThisCosts } from '@/components/brand/WhatThisCosts'
+import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { SituationInquiryForm } from './SituationInquiryForm'
+import { SituationHeroForm } from './SituationHeroForm'
 import { SITUATION_FAQS } from '@/content/situationFaqs'
 
 /**
@@ -25,33 +27,65 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
   const faqs = (situationSlug && SITUATION_FAQS[situationSlug]) || null
   return (
     <>
-      {/* Hero */}
-      <section data-surface="stone" className="bg-stone">
-        <div className="container section-y">
-          <motion.div
-            initial={{ opacity: 0, y: 14 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="max-w-3xl"
-          >
-            <p className="flex items-center gap-3 text-[12.5px] sm:text-[13px] font-semibold uppercase tracking-[0.18em] text-bronze">
-              <Link
-                to="/"
-                className="inline-flex items-center gap-1.5 hover:text-bronze-deep transition-colors"
-              >
-                <ArrowLeft className="h-3.5 w-3.5" />
-                Resolve
-              </Link>
-              <span aria-hidden="true" className="text-divider">·</span>
-              <span className="text-navy-soft">{eyebrow}</span>
-            </p>
-            <h1 className="mt-5 font-display font-medium text-navy text-display-md sm:text-display-lg leading-[1.12]">
-              {title}
-            </h1>
-            <p className="mt-6 text-[17px] sm:text-[19px] leading-relaxed text-navy-soft">
-              {lead}
-            </p>
-          </motion.div>
+      {/* Hero — navy, two-column: message + above-the-fold capture.
+          Paid traffic clicks an emotional ad and lands here; the form in
+          the hero gives an immediate action instead of forcing a scroll to
+          the bottom form. Fires the same Meta Lead event. The long SEO
+          body still lives below for organic. */}
+      <section
+        data-surface="navy"
+        className="relative bg-navy overflow-hidden isolate -mt-16 sm:-mt-20"
+      >
+        <HeroBackdrop />
+        <div className="relative container w-full pt-28 pb-14 sm:pt-36 sm:pb-20">
+          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 lg:items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 14 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+              className="max-w-xl"
+            >
+              <p className="flex items-center gap-3 text-[12.5px] font-semibold uppercase tracking-[0.18em] text-bronze">
+                <Link
+                  to="/"
+                  className="inline-flex items-center gap-1.5 hover:text-bronze-deep transition-colors"
+                >
+                  <ArrowLeft className="h-3.5 w-3.5" />
+                  Resolve
+                </Link>
+                <span aria-hidden="true" className="text-stone/40">·</span>
+                <span className="text-stone/80">{eyebrow}</span>
+              </p>
+              <h1 className="mt-5 font-display font-medium text-stone text-display-md sm:text-display-lg leading-[1.1]">
+                {title}
+              </h1>
+              <p className="mt-5 text-[17px] leading-relaxed text-stone/85 max-w-lg">
+                {lead}
+              </p>
+              <ul className="mt-7 space-y-2.5">
+                {[
+                  'Complex, time-sensitive files, handled',
+                  'A network of cash-ready buyers who can close',
+                  'Free, private, no pressure',
+                ].map((c) => (
+                  <li key={c} className="flex items-center gap-3 text-[15.5px] text-stone/90">
+                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-bronze/20 text-bronze">
+                      <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" />
+                    </span>
+                    {c}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-[13px] leading-relaxed text-stone/55">
+                Taran Aujla, Salesperson &middot; former real estate lawyer &middot; HomeLife G1
+                Realty Inc., Brokerage
+              </p>
+            </motion.div>
+
+            <div className="w-full">
+              <SituationHeroForm situationLabel={situationLabel} situationSlug={situationSlug} />
+            </div>
+          </div>
         </div>
       </section>
 
