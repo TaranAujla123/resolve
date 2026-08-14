@@ -139,7 +139,7 @@ export function GetDealsPage() {
     <>
       <Seo
         title={`${variant.headline} · Resolve Buyer Network`}
-        description="Homes worth more than their price across Ontario, read for the hidden value and the risks that do not show on the surface. Matched to your criteria, with disclosed buy-side representation. Free 15-minute call."
+        description="Homes worth more than their price, read for the hidden value and the risks that do not show on the surface. Matched to your criteria, with disclosed buy-side representation. Free 15-minute call."
         canonical="https://www.resolverealestate.ca/get-deals/"
         noindex={true}
       />
