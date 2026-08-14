@@ -396,7 +396,9 @@ export function GetDealsPage() {
           </div>
           <p className="mt-3.5 text-center text-[11.5px] text-stone/50 leading-relaxed">
             Offered through HomeLife G1 Realty Inc., Brokerage, on completed
-            purchases where Resolve represents you.
+            purchases where Resolve represents you. One per client and
+            transaction, not combinable, and may be changed or withdrawn at any
+            time.
           </p>
         </div>
       </section>

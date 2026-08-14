@@ -285,7 +285,8 @@ export function Buyers() {
           <p className="mt-6 text-[12px] leading-relaxed text-stone/55">
             Buyer incentive offered through HomeLife G1 Realty Inc., Brokerage,
             on completed purchases where Resolve acts as your buyer
-            representative.
+            representative. One per client and transaction, not combinable with
+            other offers, and may be changed or withdrawn at any time.
           </p>
         </div>
       </section>
