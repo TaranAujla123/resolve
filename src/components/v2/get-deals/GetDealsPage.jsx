@@ -37,13 +37,13 @@ const HERO_VARIANTS = {
   mls: {
     eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'The value most buyers walk past.',
-    sub: 'Homes priced or positioned wrong, across Ontario. Worth more than they look, and worth a closer read.',
+    sub: 'Homes priced or positioned wrong. Worth more than they look, and worth a closer read.',
     label: 'Value Hunter',
   },
   cash: {
     eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'A better home for your money.',
-    sub: 'Homes worth more than their price, across Ontario. An honest read on the value and the risks before you commit.',
+    sub: 'Homes worth more than their price. An honest read on the value and the risks before you commit.',
     label: 'Close-Ready Buyer',
   },
   investor: {
@@ -55,7 +55,7 @@ const HERO_VARIANTS = {
   default: {
     eyebrow: 'BUYER NETWORK · ONTARIO',
     headline: 'The value most buyers never see.',
-    sub: 'Homes worth more than their price, and the risks that do not show on the surface. An honest read on every one, across Ontario.',
+    sub: 'Homes worth more than their price, and the risks that do not show on the surface. An honest read on every one.',
     label: 'General Buyer',
   },
 }
@@ -527,7 +527,7 @@ export function GetDealsPage() {
             {[
               {
                 title: 'First look at overlooked value',
-                desc: 'Homes worth more than their price across Ontario, read before they reach the wider buyer pool.',
+                desc: 'Homes worth more than their price, read before they reach the wider buyer pool.',
               },
               {
                 title: 'Matched to what you are looking for',
