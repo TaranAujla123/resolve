@@ -16,7 +16,6 @@ import {
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
-import { BuyerHeroForm } from './BuyerHeroForm'
 
 /**
  * /buyers — the V3.5 "For Buyers" page.
@@ -121,40 +120,33 @@ export function Buyers() {
         <HeroBackdrop />
 
         <div className="relative container w-full pt-28 pb-16 sm:pt-40 sm:pb-20">
-          <div className="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-10 lg:gap-14 lg:items-center">
-            <div className="max-w-xl">
-              <Eyebrow>For Buyers · Ontario</Eyebrow>
-              <h1 className="mt-5 font-display font-medium text-stone text-display-lg sm:text-display-xl leading-[1.08]">
-                The upside most buyers{' '}
-                <span className="italic text-bronze">scroll past.</span>
-              </h1>
-              <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-stone/85">
-                It is your biggest purchase, so we do more than open doors and tour
-                you around. We read each home for the value the listing photos hid:
-                income potential, a unit others miss, a home priced wrong. On and
-                off market.
-              </p>
-              <ul className="mt-7 space-y-2.5">
-                {[
-                  '$1,000 Amazon gift card on closing',
-                  'We cover your legal fees',
-                  'Value-add representation others do not offer',
-                ].map((c) => (
-                  <li key={c} className="flex items-center gap-3 text-[15.5px] text-stone/90">
-                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-bronze/20 text-bronze">
-                      <Check className="h-3.5 w-3.5" strokeWidth={2.5} aria-hidden="true" />
-                    </span>
-                    {c}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-6 text-[13px] leading-relaxed text-stone/55">
-                Taran Aujla, Salesperson &middot; HomeLife G1 Realty Inc., Brokerage
-              </p>
-            </div>
-
-            <div className="w-full">
-              <BuyerHeroForm />
+          <div className="max-w-[620px]">
+            <Eyebrow>For Buyers · Ontario</Eyebrow>
+            <h1 className="mt-5 font-display font-medium text-stone text-display-xl leading-[1.08]">
+              The upside most buyers{' '}
+              <span className="italic text-bronze">scroll past.</span>
+            </h1>
+            <p className="mt-6 max-w-lg text-[17px] leading-relaxed text-stone/85">
+              It is your biggest purchase, so we do more than open doors and
+              tour you around. We read each home for the value the listing photos
+              hid and the risks that do not show on the surface, so you buy well.
+              On and off market.
+            </p>
+            <div className="mt-9 flex flex-col sm:flex-row gap-3">
+              <Button as={Link} to="/get-deals" variant="contrast" size="md">
+                <Calendar className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                Get on the buyer list
+              </Button>
+              <Button
+                as="a"
+                href="tel:+13656457332"
+                variant="outline"
+                size="md"
+                className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
+              >
+                <Phone className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                (365) 645-7332
+              </Button>
             </div>
           </div>
         </div>

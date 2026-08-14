@@ -520,7 +520,7 @@ export function GetDealsPage() {
               Why Resolve
             </p>
             <h2 className="mt-4 font-display font-medium text-navy text-[28px] md:text-[36px] leading-[1.1]">
-              Why investors join the network
+              Why buyers join the list
             </h2>
           </div>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-10 gap-y-8 max-w-4xl mx-auto">
@@ -530,8 +530,8 @@ export function GetDealsPage() {
                 desc: 'Homes worth more than their price across Ontario, read before they reach the wider buyer pool.',
               },
               {
-                title: 'Matched to your written criteria',
-                desc: 'We bring only what actually fits your box, so you are not sifting through noise.',
+                title: 'Matched to what you are looking for',
+                desc: 'We bring only what actually fits what you want, so you are not sifting through noise.',
               },
               {
                 title: 'A real read, not a mailing list',
