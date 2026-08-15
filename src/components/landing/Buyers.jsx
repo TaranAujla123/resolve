@@ -87,24 +87,6 @@ const STEPS = [
   },
 ]
 
-const ANSWERS = [
-  {
-    q: 'Is this insider access?',
-    a: 'No. Sellers always keep full MLS exposure. The value comes from assessing a property well and matching it to you, not from anyone being disadvantaged or from skipping the market.',
-  },
-  {
-    q: 'Does it cost anything to join?',
-    a: 'No. There is no fee to join or to receive matches. Buy-side representation is agreed in writing at the point we act for you on a specific file.',
-  },
-  {
-    q: 'What if Resolve also represents the seller?',
-    a: 'Multiple representation, where it applies, is disclosed and consented to in writing by both parties before any showing. Either party may choose a different brokerage instead, and we support that.',
-  },
-  {
-    q: 'How often will I hear from you?',
-    a: 'Only when something genuinely fits your brief. Some months that is nothing. Some months it is more than one. Update your criteria any time and the matching updates with it.',
-  },
-]
 
 export function Buyers() {
   return (
@@ -313,28 +295,6 @@ export function Buyers() {
               need for a fast, quiet close is something we serve, never something
               we exploit.
             </p>
-          </div>
-        </div>
-      </section>
-
-      {/* STRAIGHT ANSWERS */}
-      <section data-surface="mist" className="bg-mist section-y">
-        <div className="container max-w-3xl">
-          <Eyebrow>Straight answers</Eyebrow>
-          <h2 className="mt-5 font-display font-medium text-navy text-display-md">
-            Questions worth answering openly.
-          </h2>
-          <div className="mt-8 space-y-4">
-            {ANSWERS.map((qa) => (
-              <div key={qa.q} className="rounded-xl border border-divider bg-white p-6">
-                <p className="font-display font-medium text-navy text-[1.05rem] leading-snug">
-                  {qa.q}
-                </p>
-                <p className="mt-2 text-[15px] text-navy-soft leading-relaxed">
-                  {qa.a}
-                </p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
