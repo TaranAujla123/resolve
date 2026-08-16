@@ -47,6 +47,7 @@ const ROUTES = [
   '/thanks',
   '/get-help',
   '/get-deals',
+  '/sell-privately',
   '/investor-access',
   '/opportunities',
   '/opportunities/kw-legal-duplex',

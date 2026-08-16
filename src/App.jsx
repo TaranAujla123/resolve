@@ -16,6 +16,7 @@ import { ContactPage } from '@/components/v2/contact/ContactPage'
 import { AboutPage } from '@/components/v2/about/AboutPage'
 import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
 import { GetDealsPage } from '@/components/v2/get-deals/GetDealsPage'
+import { SellPrivatelyPage } from '@/components/v2/sell-privately/SellPrivatelyPage'
 import { InvestorAccessPage } from '@/components/v2/investor-access/InvestorAccessPage'
 import { OpportunitiesPage } from '@/components/v2/opportunities/OpportunitiesPage'
 import { ForInvestorsPage } from '@/components/v2/for-investors/ForInvestorsPage'
@@ -837,6 +838,8 @@ export default function App() {
                 hero when ?cat= is missing or unrecognized. */}
             <Route path="/get-deals" element={<GetDealsPage />} />
             <Route path="/get-deals/" element={<GetDealsPage />} />
+            <Route path="/sell-privately" element={<SellPrivatelyPage />} />
+            <Route path="/sell-privately/" element={<SellPrivatelyPage />} />
             <Route path="/investor-access" element={<InvestorAccessPage />} />
             <Route path="/investor-access/" element={<InvestorAccessPage />} />
             <Route path="/opportunities" element={<OpportunitiesPage />} />
