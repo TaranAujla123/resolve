@@ -145,6 +145,17 @@ export function MultiplexPage() {
             200+ units &mdash; brings the permits, the build, and a real quote. Most people
             don&rsquo;t know where to start. With us, you get both, from one licensed team.
           </p>
+          <p className="mt-5 text-[15px] leading-relaxed text-stone/70 max-w-[650px]">
+            Our dedicated multiplex practice runs under{' '}
+            <a href="https://plexedge.ca/gta/" className="text-bronze underline underline-offset-4 hover:text-stone transition-colors">PlexEdge</a>,
+            with per-city guides for{' '}
+            <a href="https://plexedge.ca/toronto/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Toronto</a>,{' '}
+            <a href="https://plexedge.ca/mississauga/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Mississauga</a>,{' '}
+            <a href="https://plexedge.ca/brampton/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Brampton</a>,{' '}
+            <a href="https://plexedge.ca/hamilton/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Hamilton</a>,{' '}
+            <a href="https://plexedge.ca/kitchener-waterloo/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Kitchener-Waterloo</a>{' '}
+            and <a href="https://plexedge.ca/london/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">London</a>.
+          </p>
           <div className="mt-9">
             <Button as="a" href="/plexcheck/" variant="contrast" size="lg">
               Check your lot <ArrowRight className="h-4 w-4" />
