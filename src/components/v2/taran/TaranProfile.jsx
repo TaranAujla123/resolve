@@ -12,14 +12,15 @@ import portrait from '@/portrait.jpg'
  * page-1 asset for his name query), and the human-visible half of the
  * entity graph — it links out to every property and profile he owns, so
  * Google (and people) can see they are one person. The machine-readable
- * half (Person JSON-LD with sameAs + backend-only legal-name
- * alternateName) is wired in App.jsx on this route.
+ * half (Person JSON-LD with sameAs, shared @id) is wired in App.jsx on
+ * this route.
  *
  * Compliance: same conservative register as the About page — credibility
  * sourced to Realtor merit; the legal background is a single factual
- * past-tense line; no holding-out, no guarantees, no em dashes. The
- * legal name (Tarnjit Singh Aujla) is NOT shown here by design; it lives
- * only in structured data.
+ * past-tense line; no holding-out, no guarantees, no em dashes. The legal
+ * name (Tarnjit Singh Aujla) is NOT declared anywhere — not on-page and
+ * (as of 2026-08-17) NOT in structured data either: strategy is to win the
+ * "Taran Aujla" query without self-merging to the legal-name/LSO record.
  */
 
 const PROPERTIES = [
@@ -35,6 +36,11 @@ const PROPERTIES = [
     note: 'Off-market acquisitions and development.',
   },
   {
+    label: 'PlexEdge',
+    href: 'https://plexedge.ca',
+    note: 'Multiplex advisory and development.',
+  },
+  {
     label: 'taranaujla.ca',
     href: 'https://www.taranaujla.ca',
     note: 'Personal site and writing.',
@@ -48,6 +54,11 @@ const PROPERTIES = [
     label: 'REALTOR.ca',
     href: 'https://www.realtor.ca/agent/2260569/taran-aujla-202-2260-bovaird-dr-east-brampton-ontario-l6r3j5',
     note: 'Registered agent profile.',
+  },
+  {
+    label: 'HomeLife G1 Realty',
+    href: 'https://www.homelifeg1realty.com/Taran-Aujla',
+    note: 'Brokerage profile.',
   },
   {
     label: 'LinkedIn',
