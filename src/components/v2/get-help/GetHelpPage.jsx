@@ -173,8 +173,10 @@ export function GetHelpPage() {
         noindex={true}
       />
 
-      {/* HERO */}
-      <section className="bg-stone">
+      {/* HERO — dark, message-matched to the seller ad. Rebuilt 2026-08-17
+          for conversion: mirrors the ad, hook + offer stack + form above the
+          fold, reassurance kept at the point of action. */}
+      <section id="top" className="bg-navy">
         <div className="container py-10 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-14 items-start">
             {/* LEFT — copy + form (or success state) */}
@@ -185,14 +187,14 @@ export function GetHelpPage() {
                     {variant.eyebrow}
                   </p>
                   <h1
-                    className="mt-4 font-display font-medium text-navy tracking-tight"
-                    style={{ fontSize: 'clamp(34px, 5vw, 56px)', lineHeight: 1.04 }}
+                    className="mt-4 font-display font-medium text-stone tracking-tight"
+                    style={{ fontSize: 'clamp(36px, 5.6vw, 60px)', lineHeight: 1.01 }}
                   >
                     {variant.headline}
                   </h1>
                   {variant.subLead && (
                     <p
-                      className="mt-3 font-sans font-semibold text-navy"
+                      className="mt-3 font-sans font-semibold text-stone"
                       style={{ fontSize: 'clamp(17px, 2.2vw, 22px)', lineHeight: 1.2 }}
                     >
                       {variant.subLead}
@@ -208,12 +210,30 @@ export function GetHelpPage() {
                   </p>
                   {variant.note && (
                     <p
-                      className="mt-3 font-sans text-navy-soft"
+                      className="mt-3 font-sans text-stone/70"
                       style={{ fontSize: 'clamp(14px, 1.9vw, 17px)', lineHeight: 1.45, maxWidth: '32rem' }}
                     >
                       {variant.note}
                     </p>
                   )}
+
+                  {/* Offer stack — reasons to act, made visible before the form */}
+                  <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2.5">
+                    {[
+                      { icon: Clock, text: 'Callback often within 2 hours' },
+                      { icon: CheckCircle2, text: 'Free · no fee · no obligation' },
+                      { icon: Lock, text: 'Private & confidential' },
+                      { icon: CheckCircle2, text: 'If we can’t help, we say so' },
+                    ].map(({ icon: Icon, text }) => (
+                      <li
+                        key={text}
+                        className="inline-flex items-center gap-2 text-[13.5px] text-stone/90"
+                      >
+                        <Icon className="h-4 w-4 text-bronze shrink-0" strokeWidth={2} aria-hidden="true" />
+                        {text}
+                      </li>
+                    ))}
+                  </ul>
 
                   {/* Hook → form directly. This is a paid conversion page
                       (90% mobile). All reassurance (no fee, confidential,
@@ -302,7 +322,7 @@ export function GetHelpPage() {
                     </p>
                   </form>
 
-                  <p className="mt-4 text-[12px] text-navy-mute tracking-wide flex items-center gap-1.5">
+                  <p className="mt-4 text-[12px] text-stone/55 tracking-wide flex items-center gap-1.5">
                     <Lock className="h-3 w-3" />
                     Confidential · No obligation · RECO Reg. No. 6024721
                   </p>
@@ -310,13 +330,13 @@ export function GetHelpPage() {
                   {/* Supporting trust, moved below the form so the ask
                       stays high on mobile. */}
                   {(cat === 'mortgage' || cat === 'pos') && (
-                    <p className="mt-7 text-[15.5px] text-navy leading-relaxed max-w-md border-l-2 border-bronze pl-4">
+                    <p className="mt-7 text-[15.5px] text-stone leading-relaxed max-w-md border-l-2 border-bronze pl-4">
                       We work directly with your lender and their lawyers to buy
                       you the time to sell on your terms &mdash; before they
                       take over and control the sale themselves.
                     </p>
                   )}
-                  <p className="mt-4 text-[15px] text-navy-soft leading-relaxed max-w-md">
+                  <p className="mt-4 text-[15px] text-stone-soft leading-relaxed max-w-md">
                     We help you keep more of the{' '}
                     <span className="italic text-bronze font-medium">equity</span> you built.
                   </p>
@@ -351,8 +371,8 @@ export function GetHelpPage() {
               )}
             </div>
 
-            {/* RIGHT — compact photo + trust stack + About link */}
-            <div className="rounded-[18px] bg-navy p-6 sm:p-7 shadow-card">
+            {/* RIGHT — authority card, bordered to lift off the navy hero */}
+            <div className="rounded-[18px] bg-white/[0.04] border border-bronze/25 p-6 sm:p-7 shadow-card">
               <div className="flex gap-5 items-start">
                 {/*
                   Rendered as a background-image div (not <img>) so browser
