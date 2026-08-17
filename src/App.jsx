@@ -178,10 +178,10 @@ const TARAN_PERSON_LD = {
   '@type': 'Person',
   '@id': TARAN_ID,
   name: 'Taran Aujla',
-  // Legal-name variants are declared in structured data ONLY (not shown
-  // on any page) so Google merges the professional entity with the
-  // legal-name query without surfacing the legal name in the UI.
-  alternateName: ['Tarnjit Singh Aujla', 'Tarnjit Aujla'],
+  // Legal-name variants deliberately OMITTED. Strategy (2026-08-17): win the
+  // "Taran Aujla" entity query only; do NOT declare Tarnjit Singh Aujla as an
+  // alternateName, since that self-merges the professional entity with the
+  // legal-name/LSO record and works against the goal.
   jobTitle: 'Salesperson',
   identifier: 'RECO Registration No. 6024721',
   url: `${SITE_URL}/taranaujla`,
