@@ -205,6 +205,7 @@ const TARAN_PERSON_LD = {
     'https://www.realtor.ca/agent/2260569/taran-aujla-202-2260-bovaird-dr-east-brampton-ontario-l6r3j5',
     'https://www.homelifeg1realty.com/Taran-Aujla',
     'https://prime-gate.ca',
+    'https://plexedge.ca',
     'https://www.taranaujla.ca',
     'https://www.alfarebuild.com',
     'https://www.linkedin.com/in/itstaranaujla/',
