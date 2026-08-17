@@ -144,8 +144,10 @@ export function GetDealsPage() {
         noindex={true}
       />
 
-      {/* HERO */}
-      <section className="bg-stone">
+      {/* HERO — dark, message-matched to the ad. Rebuilt 2026-08-17 for
+          conversion: mirrors the ad's solid dark card, hook + offer stack +
+          form above the fold, long light-on-light subhead removed. */}
+      <section id="top" className="bg-navy">
         <div className="container py-10 md:py-16">
           <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_1fr] gap-8 lg:gap-14 items-start">
             {/* LEFT — copy + form (or success state) */}
@@ -156,34 +158,40 @@ export function GetDealsPage() {
                     {variant.eyebrow}
                   </p>
                   <h1
-                    className="mt-4 font-display font-medium text-navy tracking-tight"
-                    style={{ fontSize: 'clamp(34px, 5vw, 56px)', lineHeight: 1.04 }}
+                    className="mt-4 font-display font-medium text-stone tracking-tight"
+                    style={{ fontSize: 'clamp(36px, 5.6vw, 60px)', lineHeight: 1.01 }}
                   >
                     {variant.headline}
                   </h1>
                   <p
-                    className="mt-3 font-display font-medium italic text-bronze"
-                    style={{ fontSize: 'clamp(22px, 3vw, 36px)', lineHeight: 1.1 }}
+                    className="mt-4 text-stone-soft"
+                    style={{ fontSize: 'clamp(17px, 2.1vw, 21px)', lineHeight: 1.4, maxWidth: '36ch' }}
                   >
                     {variant.sub}
                   </p>
 
-                  <p className="mt-6 text-[16px] text-navy-soft leading-relaxed max-w-md">
-                    Free 15-minute call. Tell us what you are looking for:
-                    <span className="block mt-1 text-navy">
-                      area, budget, type. When a file matches, we send it to you <span className="italic text-bronze font-medium">first</span>.
-                    </span>
-                    <span className="block mt-1 font-semibold text-navy">
-                      No fee. No commitment.
-                    </span>
-                  </p>
+                  {/* Offer stack — the reasons to act, made visible before the form */}
+                  <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2.5">
+                    {[
+                      { icon: Clock, text: 'Callback often within 2 hours' },
+                      { icon: CheckCircle2, text: 'Free · no fee · no commitment' },
+                      { icon: Scale, text: 'Legal fees covered on closing' },
+                      { icon: Gift, text: '$1,000 when you buy' },
+                    ].map(({ icon: Icon, text }) => (
+                      <li
+                        key={text}
+                        className="inline-flex items-center gap-2 text-[13.5px] text-stone/90"
+                      >
+                        <Icon className="h-4 w-4 text-bronze shrink-0" strokeWidth={2} aria-hidden="true" />
+                        {text}
+                      </li>
+                    ))}
+                  </ul>
 
-                  <div className="mt-3 inline-flex items-center gap-2 text-[13px] text-navy-soft">
-                    <Clock className="h-3.5 w-3.5 text-bronze" />
-                    <span>
-                      <span className="font-semibold text-navy">Callback within 24 hours.</span> Often within 2.
-                    </span>
-                  </div>
+                  <p className="mt-5 text-[14px] text-stone/70 max-w-md">
+                    Two fields. One call. Tell us your area, budget and type, and when a file fits it goes to you{' '}
+                    <span className="italic text-bronze font-medium">first</span>.
+                  </p>
 
                   <form
                     onSubmit={handleSubmit}
@@ -267,7 +275,7 @@ export function GetDealsPage() {
                       className="mt-5 w-full bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-6 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                       style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}
                     >
-                      {submitting ? 'Sending…' : 'Join the Buyer List'}
+                      {submitting ? 'Sending…' : 'Get the deal list →'}
                     </button>
 
                     <p className="mt-3 text-center text-[13px] text-navy-soft">
@@ -316,8 +324,8 @@ export function GetDealsPage() {
               )}
             </div>
 
-            {/* RIGHT — navy bio-card (matches /about), floats on the light page */}
-            <div className="rounded-[18px] bg-navy p-6 sm:p-7 shadow-card">
+            {/* RIGHT — authority card, bordered to lift off the navy hero */}
+            <div className="rounded-[18px] bg-white/[0.04] border border-bronze/25 p-6 sm:p-7 shadow-card">
               <div className="flex gap-5 items-start">
                 <div
                   role="img"
