@@ -74,7 +74,7 @@ export function MultiplexPage() {
           </h1>
           <p className="mt-6 text-[18px] leading-relaxed text-stone-soft max-w-[540px]">
             Ontario&rsquo;s rules changed. Many lots can now hold three to six units &mdash; worth
-            far more than the house on them. We find it, value it, and build it.
+            far more than the house on them. We find it, prove what it&rsquo;s worth, and represent you.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button as="a" href="/plexcheck/" variant="contrast" size="lg">
@@ -133,28 +133,23 @@ export function MultiplexPage() {
       {/* End-to-end pitch (navy) */}
       <section data-surface="navy" className="bg-navy section-y">
         <div className="container max-w-4xl">
-          <Eyebrow>Why this is different</Eyebrow>
+          <Eyebrow>The Resolve edge</Eyebrow>
           <h2 className="mt-4 font-display font-medium text-stone text-display-lg leading-[1.1]">
-            Strategy from us.{' '}
-            <span className="font-display italic text-bronze">Build from our partner.</span>
+            We see the value{' '}
+            <span className="font-display italic text-bronze">before it&rsquo;s listed.</span>
           </h2>
           <p className="mt-7 text-[17px] leading-relaxed text-stone/85 max-w-[650px]">
-            A tool can tell you roughly what&rsquo;s possible. Turning it into reality takes a plan
-            and a builder. We bring the strategy, the research, and the brokerage side &mdash; finding,
-            valuing, listing, or buying the right lot. Our construction partner &mdash; 15+ years,
-            200+ units &mdash; brings the permits, the build, and a real quote. Most people
-            don&rsquo;t know where to start. With us, you get both, from one licensed team.
+            Most homes are sold for what they look like today. But many Ontario lots can now hold
+            three to six units &mdash; value the owner is rarely shown. Before you list, we identify
+            that potential, prove what it&rsquo;s worth, and position the property to capture it:
+            a straight sale at the higher number, or a conversion or addition that lifts the value
+            first. For buyers, it&rsquo;s the same eye in reverse &mdash; the upside a listing
+            doesn&rsquo;t mention.
           </p>
           <p className="mt-5 text-[15px] leading-relaxed text-stone/70 max-w-[650px]">
-            Our dedicated multiplex practice runs under{' '}
-            <a href="https://plexedge.ca/gta/" className="text-bronze underline underline-offset-4 hover:text-stone transition-colors">PlexEdge</a>,
-            with per-city guides for{' '}
-            <a href="https://plexedge.ca/toronto/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Toronto</a>,{' '}
-            <a href="https://plexedge.ca/mississauga/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Mississauga</a>,{' '}
-            <a href="https://plexedge.ca/brampton/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Brampton</a>,{' '}
-            <a href="https://plexedge.ca/hamilton/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Hamilton</a>,{' '}
-            <a href="https://plexedge.ca/kitchener-waterloo/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">Kitchener-Waterloo</a>{' '}
-            and <a href="https://plexedge.ca/london/" className="text-bronze underline underline-offset-2 hover:text-stone transition-colors">London</a>.
+            When a build is the right move, we bring in a vetted construction partner &mdash; 15+
+            years, 200+ units &mdash; for the permits and a real quote. Either way, you stay with one
+            licensed team, start to finish.
           </p>
           <div className="mt-9">
             <Button as="a" href="/plexcheck/" variant="contrast" size="lg">
