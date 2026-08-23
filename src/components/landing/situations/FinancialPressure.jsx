@@ -39,7 +39,7 @@ export function FinancialPressure() {
     <>
     <SituationPage
       eyebrow="Situations · Financial Pressure"
-      title="Selling From Strength, Before Arrears Begin."
+      title="Selling Under Financial Pressure, From Strength."
       situationLabel="Financial pressure"
       situationSlug="financial-pressure"
       lead={

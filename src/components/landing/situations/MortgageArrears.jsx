@@ -27,7 +27,7 @@ export function MortgageArrears() {
     <>
     <SituationPage
       eyebrow="Situations · Mortgage Arrears"
-      title="Selling a Home in Mortgage Arrears in Ontario."
+      title="Selling a Home in Mortgage Arrears or Default in Ontario."
       situationLabel="Mortgage arrears"
       situationSlug="mortgage-arrears"
       lead={

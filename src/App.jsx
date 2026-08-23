@@ -617,7 +617,7 @@ function MortgageArrearsPage() {
   return (
     <>
       <Seo
-        title="Mortgage Arrears in Ontario · Selling Your Home · Resolve"
+        title="Mortgage Arrears & Mortgage Default in Ontario · Selling Your Home · Resolve"
         description="Behind on mortgage payments and considering a sale? Resolve lists and sells for Ontario homeowners stepping out of arrears on their terms: privately, on a realistic timeline, with the equity you have built protected as the sale allows."
         canonical={`${SITE_URL}/mortgage-arrears/`}
         jsonLd={MORTGAGE_ARREARS_JSONLD}

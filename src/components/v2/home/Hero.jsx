@@ -30,7 +30,7 @@ const SITUATIONS = [
   { label: 'Time-Sensitive',     to: '/time-sensitive-sales' },
 ]
 
-export function Hero() {
+export function Hero({ headline } = {}) {
   return (
     <section
       data-surface="navy"
@@ -54,10 +54,14 @@ export function Hero() {
           {/* Poppins 600 stone, with the one bronze Newsreader-italic
               payoff word. "We make it clearer." starts on its own line. */}
           <h1 className="mt-5 font-sans font-semibold text-stone leading-[1.12] tracking-[-0.01em] text-[clamp(2.1rem,4.6vw,3.4rem)]">
-            Selling isn&rsquo;t always straightforward.
-            <br />
-            <span className="font-medium">We make it </span>
-            <span className="font-emph italic font-normal text-bronze">clearer.</span>
+            {headline || (
+              <>
+                Selling isn&rsquo;t always straightforward.
+                <br />
+                <span className="font-medium">We make it </span>
+                <span className="font-emph italic font-normal text-bronze">clearer.</span>
+              </>
+            )}
           </h1>
 
           <p className="mt-5 max-w-md text-[17px] leading-[1.6] text-stone-soft">

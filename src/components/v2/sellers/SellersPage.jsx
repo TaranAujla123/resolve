@@ -21,7 +21,16 @@ import { ClosingCta } from '../home/ClosingCta'
 export function SellersPage() {
   return (
     <>
-      <Hero />
+      <Hero
+        headline={
+          <>
+            Selling a Home Under Power of Sale, Arrears,
+            <br />
+            or Financial Pressure{' '}
+            <span className="font-emph italic font-normal text-bronze">in Ontario.</span>
+          </>
+        }
+      />
       <Situations />
       <WhyResolve />
       <HowWeHelp />
