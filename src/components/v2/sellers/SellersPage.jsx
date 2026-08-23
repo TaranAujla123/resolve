@@ -24,10 +24,10 @@ export function SellersPage() {
       <Hero
         headline={
           <>
-            Selling a Home Under Power of Sale, Arrears,
+            Selling under pressure doesn&rsquo;t mean
             <br />
-            or Financial Pressure{' '}
-            <span className="font-emph italic font-normal text-bronze">in Ontario.</span>
+            selling in the open.{' '}
+            <span className="font-emph italic font-normal text-bronze">We keep it discreet.</span>
           </>
         }
       />

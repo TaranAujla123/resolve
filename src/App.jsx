@@ -506,7 +506,7 @@ function SellersRoutePage() {
   return (
     <>
       <Seo
-        title="Resolve · Seller Representation · Ontario"
+        title="Discreet Seller Representation for Complex Ontario Sales · Resolve"
         description="Boutique seller representation for Ontario homeowners: mortgage arrears, power of sale, financial pressure, estate and time-sensitive sales, and high-value or complex homes. Equity-led and document-first."
         canonical={`${SITE_URL}/sellers/`}
         jsonLd={SITE_JSONLD}
