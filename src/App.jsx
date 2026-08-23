@@ -355,11 +355,11 @@ const PROPERTY_DISPUTES_JSONLD = situationJsonLd({
 
 const TIME_SENSITIVE_SALES_JSONLD = situationJsonLd({
   slug: 'time-sensitive-sales',
-  name: 'Selling a Home Under a Deadline · Ontario · Resolve',
+  name: 'Estate, Divorce & Time-Sensitive Home Sales · Ontario · Resolve',
   serviceType: 'Real Estate Representation: Time-Sensitive Sales (Ontario)',
   breadcrumbName: 'Time-Sensitive Sales',
   description:
-    'A closing date on the next home, an estate or probate timeline, a job relocation, a family or health timeline, a financial deadline. Resolve runs time-sensitive sales for Ontario homeowners on their terms inside the time available, in coordination with the lenders, lawyers, executors, and advisors already on the file.',
+    'An estate or probate timeline, a separation or divorce, a job relocation, a closing date on the next home, a health or family timeline, a financial deadline. Resolve runs these time-sensitive Ontario home sales on your terms inside the time available, in coordination with the lenders, lawyers, executors, and advisors already on the file.',
 })
 
 const FINANCIAL_PRESSURE_JSONLD = situationJsonLd({
@@ -692,8 +692,8 @@ function TimeSensitiveSalesPage() {
   return (
     <>
       <Seo
-        title="Selling Your Home Under a Deadline in Ontario · Resolve"
-        description="A closing date on the next home, an estate or probate timeline, a job relocation, a family or health timeline, a financial deadline. Resolve runs time-sensitive sales for Ontario homeowners on their terms inside the time available, in coordination with the lenders, lawyers, executors, and advisors already on the file."
+        title="Estate, Divorce & Time-Sensitive Home Sales in Ontario · Resolve"
+        description="An estate or probate timeline, a separation or divorce, a job relocation, a closing date on the next home, a health or family timeline, a financial deadline. Resolve runs these time-sensitive Ontario home sales on your terms inside the time available, in coordination with the lenders, lawyers, executors, and advisors already on the file."
         canonical={`${SITE_URL}/time-sensitive-sales/`}
         jsonLd={TIME_SENSITIVE_SALES_JSONLD}
       />
@@ -802,7 +802,7 @@ export default function App() {
                 (emotional load + litigious mechanics did not match the
                 practitioner voice). Any inbound links redirect to the
                 homepage so bookmark/search hits still land somewhere useful. */}
-            <Route path="/divorce-real-estate" element={<Navigate to="/" replace />} />
+            <Route path="/divorce-real-estate" element={<Navigate to="/time-sensitive-sales" replace />} />
             <Route path="/property-disputes" element={<Navigate to="/" replace />} />
             <Route path="/time-sensitive-sales" element={<TimeSensitiveSalesPage />} />
             <Route path="/financial-pressure" element={<FinancialPressurePage />} />

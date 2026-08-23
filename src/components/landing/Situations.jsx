@@ -34,7 +34,7 @@ const items = [
   {
     icon: Scroll,
     title: 'Estate or Probate',
-    href: '/estate-sale',
+    href: '/time-sensitive-sales',
     situation:
       'Selling a loved one’s home as an executor means carrying probate timelines, multiple beneficiaries, and the weight of the loss all at the same time.',
     help:

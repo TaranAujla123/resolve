@@ -144,7 +144,7 @@ export function PowerOfSale() {
         </p>
       </SituationBlock>
     </SituationPage>
-    <RelatedSituations relatedSlugs={['mortgage-arrears', 'estate-sale', 'time-sensitive-sales']} />
+    <RelatedSituations relatedSlugs={['mortgage-arrears', 'financial-pressure', 'time-sensitive-sales']} />
     </>
   )
 }

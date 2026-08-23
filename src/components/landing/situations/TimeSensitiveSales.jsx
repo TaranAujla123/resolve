@@ -66,6 +66,7 @@ export function TimeSensitiveSales() {
       <SituationBlock label="Common situations" title="Files we see most often.">
         <ul className="list-disc pl-5 space-y-2">
           <li>Estate and probate sales, with court deadlines and multiple beneficiaries</li>
+          <li>Separation or divorce sales, with two decision-makers and a shared timeline</li>
           <li>A firm closing date on another property already purchased</li>
           <li>Relocating for work or a family move</li>
           <li>Court-ordered or court-deadline closings</li>
@@ -75,8 +76,7 @@ export function TimeSensitiveSales() {
           <li>Situations where certainty of close matters more than waiting for the perfect buyer</li>
         </ul>
         <p className="text-[15px] text-navy-mute leading-relaxed pt-2">
-          Estate and probate sales are a category of their own. Longer read on the mechanics, executor duties, and coordination with the estate lawyer on the{' '}
-          <a href="/estate-sale/" className="text-bronze hover:text-bronze-deep underline underline-offset-2">Estate or Probate</a> page.
+          Estate and probate sales carry their own mechanics: executor duties, court timelines, multiple beneficiaries, and coordination with the estate lawyer. We handle those files here, start to finish.
         </p>
       </SituationBlock>
 
@@ -125,7 +125,7 @@ export function TimeSensitiveSales() {
         </p>
       </SituationBlock>
     </SituationPage>
-    <RelatedSituations relatedSlugs={['estate-sale', 'power-of-sale', 'mortgage-arrears']} />
+    <RelatedSituations relatedSlugs={['power-of-sale', 'mortgage-arrears', 'financial-pressure']} />
     </>
   )
 }
