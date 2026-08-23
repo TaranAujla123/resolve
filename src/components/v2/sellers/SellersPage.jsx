@@ -21,16 +21,7 @@ import { ClosingCta } from '../home/ClosingCta'
 export function SellersPage() {
   return (
     <>
-      <Hero
-        headline={
-          <>
-            Selling under pressure doesn&rsquo;t mean
-            <br />
-            selling in the open.{' '}
-            <span className="font-emph italic font-normal text-bronze">We keep it discreet.</span>
-          </>
-        }
-      />
+      <Hero />
       <Situations />
       <WhyResolve />
       <HowWeHelp />
