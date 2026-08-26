@@ -80,6 +80,12 @@ a {
   margin-bottom: 24px;
   font-size: 36px;
 }
+.brand-lockup .wm-img {
+  height: 46px;
+  width: auto;
+  display: block;
+  margin-bottom: 3px;
+}
 .brand-lockup .wm {
   font-family: 'Newsreader', Georgia, ui-serif, serif;
   font-weight: 500;
@@ -206,11 +212,14 @@ a {
 }
 
 .qr {
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #F5F1E8;
+  border-radius: 16px;
+  padding: 14px;
 }
 .qr svg {
   width: 100%;
