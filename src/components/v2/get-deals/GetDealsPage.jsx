@@ -258,9 +258,44 @@ export function GetDealsPage() {
                           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
                         />
                         <p className="mt-1.5 text-[11.5px] text-navy-mute">
-                          We send property briefings here. Phone is for the callback.
+                          Your matched list is sent here. Phone is so I can reach you with anything time-sensitive.
                         </p>
                       </div>
+                    </div>
+
+                    <div className="mt-4">
+                      <label
+                        htmlFor="gd-area"
+                        className="block text-[13px] font-medium text-navy-soft mb-1.5"
+                      >
+                        Area you are looking in <span className="text-navy-mute font-normal">(optional)</span>
+                      </label>
+                      <input
+                        id="gd-area"
+                        name="area"
+                        type="text"
+                        placeholder="Brampton, Durham, anywhere in the GTA..."
+                        className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
+                      />
+                    </div>
+
+                    <div className="mt-4">
+                      <label
+                        htmlFor="gd-brief"
+                        className="block text-[13px] font-medium text-navy-soft mb-1.5"
+                      >
+                        What are you looking for? <span className="text-navy-mute font-normal">(optional)</span>
+                      </label>
+                      <textarea
+                        id="gd-brief"
+                        name="brief"
+                        rows={3}
+                        placeholder="What, where, and when. Budget, property type, timing, anything that matters to you."
+                        className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
+                      />
+                      <p className="mt-1.5 text-[11.5px] text-navy-mute">
+                        The more you tell me, the better the list I send back.
+                      </p>
                     </div>
 
                     {error && (
@@ -275,7 +310,7 @@ export function GetDealsPage() {
                       className="mt-5 w-full bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-6 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                       style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}
                     >
-                      {submitting ? 'Sending…' : 'Get the deal list →'}
+                      {submitting ? 'Sending…' : 'Send me my matched list →'}
                     </button>
 
                     <p className="mt-3 text-center text-[13px] text-navy-soft">
@@ -291,7 +326,7 @@ export function GetDealsPage() {
 
                   <p className="mt-4 text-[12px] text-navy-mute tracking-wide flex items-center gap-1.5">
                     <Lock className="h-3 w-3" />
-                    Disclosed representation · No fee · RECO Reg. No. 6024721
+                    Disclosed representation · No fee · Private
                   </p>
                 </>
               ) : (
@@ -303,10 +338,10 @@ export function GetDealsPage() {
                     <CheckCircle2 className="h-9 w-9 text-bronze shrink-0 mt-1" />
                     <div>
                       <h2 className="font-display font-medium text-navy text-[28px] md:text-[32px] leading-[1.1]">
-                        On the list. We will call within 24 hours.
+                        Got it. Your list is on the way.
                       </h2>
                       <p className="mt-3 text-[16px] text-navy-soft leading-relaxed">
-                        Often within 2. We will brief you on the buyer network and ask what you are looking for. Once we have your criteria on file, matching properties get sent to you first.
+                        I go through what is currently available against what you told me, and send you the ones that actually fit, within 24 hours. If something needs a conversation first, I will call you. Nothing is shared with anyone else.
                       </p>
                       <p className="mt-5 text-[14px] text-navy-mute">
                         Need to talk sooner? Call us at{' '}
@@ -486,7 +521,7 @@ export function GetDealsPage() {
           <h2 className="font-display font-medium text-[28px] md:text-[40px] leading-[1.08] max-w-2xl mx-auto">
             One call. Your criteria on file. Matches go to you first.
           </h2>
-          <p className="mt-4 text-[15px] text-stone/80">Callback within 24 hours. Often within 2.</p>
+          <p className="mt-4 text-[15px] text-stone/80">Tell me what you are looking for. A matched list within 24 hours.</p>
 
           <div className="mt-9 flex flex-col sm:flex-row gap-3 justify-center items-center">
             <a
