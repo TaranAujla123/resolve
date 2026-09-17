@@ -211,14 +211,14 @@ export function SellPrivatelyPage() {
                       </div>
                       <div>
                         <label htmlFor="sp-address" className="block text-[13px] font-medium text-navy-soft mb-1.5">
-                          Property address <span className="text-navy-mute font-normal">(optional)</span>
+                          Full property address <span className="text-navy-mute font-normal">(optional &mdash; street, city and postal code)</span>
                         </label>
                         <input
                           id="sp-address"
                           name="address"
                           type="text"
                           autoComplete="street-address"
-                          placeholder="Helps us line up the right buyer"
+                          placeholder="123 Main St, Kitchener, ON  N2C 1R7"
                           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
                         />
                       </div>
