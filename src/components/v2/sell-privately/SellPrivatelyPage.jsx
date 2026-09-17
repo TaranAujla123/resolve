@@ -92,8 +92,8 @@ export function SellPrivatelyPage() {
       d: 'You tell us the situation and the property. No obligation, nothing public, no pressure to go further.',
     },
     {
-      t: 'An offer, usually within 48 hours',
-      d: 'We take it to a cash-ready buyer we know. If the property fits, you get a firm, written offer, often within two days.',
+      t: 'An offer if it fits, a plan if it does not',
+      d: 'We take it to the cash-ready buyers we know. If the property fits their criteria, you get a firm, written offer, often within two days. If it does not, I tell you straight and show you what it should list for instead.',
     },
     {
       t: 'You decide',
@@ -127,7 +127,7 @@ export function SellPrivatelyPage() {
     <>
       <Seo
         title="Sell Your Home Privately, Fast · Resolve"
-        description="Need to sell quickly or quietly? Resolve represents you and brings a vetted, cash-ready buyer. A private, no-obligation offer usually within 48 hours, and a close in about a week if you accept. Not a we-buy-houses lowball."
+        description="Need to sell quickly or quietly? Resolve represents you. If your property fits our cash-ready buyers, a private no-obligation offer within 48 hours. If it does not, an honest strategy to sell it for the most the market allows."
         canonical="https://www.resolverealestate.ca/sell-privately/"
       />
 
@@ -146,29 +146,29 @@ export function SellPrivatelyPage() {
                     className="mt-4 font-display font-medium text-navy tracking-tight"
                     style={{ fontSize: 'clamp(34px, 5vw, 56px)', lineHeight: 1.04 }}
                   >
-                    A no-obligation offer in 48 hours.
+                    A private offer, or a better plan.
                   </h1>
                   <p
                     className="mt-3 font-display font-medium italic text-bronze"
                     style={{ fontSize: 'clamp(21px, 3vw, 34px)', lineHeight: 1.12 }}
                   >
-                    A cash-ready buyer, without a listing, showings, or the long wait.
+                    Either way, you find out where you stand in 48 hours.
                   </p>
 
                   <p className="mt-6 text-[16px] text-navy-soft leading-relaxed max-w-md">
-                    If you need to sell quickly or quietly, we bring you a private offer from a
-                    vetted, cash-ready buyer. No sign on the lawn, no parade of showings, nothing
-                    public.
+                    If your property fits what our cash-ready buyers are looking for, we bring you
+                    a private, no-obligation offer. If it does not, I will show you the strategy that
+                    gets you the most for it on the open market. Nothing public either way.
                     <span className="block mt-1 font-semibold text-navy">
-                      You stay in control, and it costs you nothing to look.
+                      You stay in control, and it costs you nothing to find out.
                     </span>
                   </p>
 
                   <div className="mt-3 inline-flex items-start gap-2 text-[13px] text-navy-soft">
                     <Clock className="h-3.5 w-3.5 text-bronze mt-0.5 shrink-0" />
                     <span>
-                      <span className="font-semibold text-navy">Written offer usually within 48 hours.</span>{' '}
-                      Accept it and, once the buyer’s review checks out, a close in about a week.
+                      <span className="font-semibold text-navy">An answer within 48 hours.</span>{' '}
+                      A written offer if it fits, or an honest read on what it should list for if it does not.
                     </span>
                   </div>
 
@@ -249,7 +249,7 @@ export function SellPrivatelyPage() {
 
                   <p className="mt-4 text-[12px] text-navy-mute tracking-wide flex items-center gap-1.5">
                     <Lock className="h-3 w-3" />
-                    We represent you, not the buyer &middot; No obligation &middot; RECO Reg. No. 6024721
+                    We represent you, not the buyer &middot; No obligation &middot; Private
                   </p>
                 </>
               ) : (
@@ -264,9 +264,10 @@ export function SellPrivatelyPage() {
                         Got it. We will call within 24 hours.
                       </h2>
                       <p className="mt-3 text-[16px] text-navy-soft leading-relaxed">
-                        Often within 2. We will talk through your situation privately, and if a
-                        buyer fits, we will line up a no-obligation offer. Nothing is public and you
-                        are committed to nothing.
+                        Often within 2. We will talk through your situation privately. If one of our
+                        cash-ready buyers fits the property, I will line up a no-obligation offer. If
+                        not, I will tell you straight and show you what it should list for instead.
+                        Nothing is public and you are committed to nothing.
                       </p>
                       <p className="mt-5 text-[14px] text-navy-mute">
                         Need to talk sooner? Call{' '}
@@ -312,8 +313,7 @@ export function SellPrivatelyPage() {
                   ))}
                 </div>
                 <p className="mt-6 text-[12px] leading-relaxed text-stone/55">
-                  Taran Aujla, Salesperson &middot; HomeLife G1 Realty Inc., Brokerage &middot; RECO
-                  Reg. No. 6024721
+                  Taran Aujla, Salesperson &middot; HomeLife G1 Realty Inc., Brokerage &middot;
                 </p>
               </div>
             </div>
@@ -494,7 +494,7 @@ export function SellPrivatelyPage() {
             </div>
             <p className="mt-10 text-[12px] leading-relaxed text-stone/55">
               Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage.
-              Independently Owned &amp; Operated. RECO Reg. No. 6024721. A private-sale offer is not
+              Independently Owned &amp; Operated.. A private-sale offer is not
               guaranteed and depends on the property and a buyer&rsquo;s own due diligence.
             </p>
           </div>
