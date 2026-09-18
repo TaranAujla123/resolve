@@ -67,6 +67,21 @@ const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
    immediately rather than in 24 hours. */
 const BUYER_GUIDE = '/downloads/resolve-power-of-sale-buyer-guide.pdf'
 
+const BUYER_GUIDE_AUTORESPONSE = `Thank you for requesting the Resolve power-of-sale buyer guide.
+
+You can download it here:
+https://www.resolverealestate.ca/downloads/resolve-power-of-sale-buyer-guide.pdf
+
+It covers what these sales actually are, where the value genuinely hides, the six things nobody tells buyers, and the checks to run before you write an offer.
+
+Next, I go through what is currently available against what you told me and send you the ones that actually fit, within 24 hours.
+
+Taran Aujla
+Salesperson, HomeLife G1 Realty Inc., Brokerage
+(365) 645-7332  |  taran@resolverealestate.ca
+
+If you would rather not hear from me again, reply and say so.`
+
 function triggerGuideDownload() {
   try {
     const a = document.createElement('a')
@@ -103,6 +118,9 @@ export function GetDealsPage() {
     setError(null)
     const form = e.currentTarget
     const data = new FormData(form)
+    /* Formspree sends this back to whatever is in the `email` field, so the
+       guide reaches people whose browser blocked the automatic download. */
+    data.set('_autoresponse', BUYER_GUIDE_AUTORESPONSE)
     if (!data.get('first_name') || !data.get('phone') || !data.get('email')) {
       setError('First name, phone, and email are required so we can reach you and send matches.')
       return
