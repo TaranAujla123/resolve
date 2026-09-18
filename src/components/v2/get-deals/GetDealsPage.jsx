@@ -121,8 +121,8 @@ export function GetDealsPage() {
     /* Formspree sends this back to whatever is in the `email` field, so the
        guide reaches people whose browser blocked the automatic download. */
     data.set('_autoresponse', BUYER_GUIDE_AUTORESPONSE)
-    if (!data.get('first_name') || !data.get('phone') || !data.get('email')) {
-      setError('First name, phone, and email are required so we can reach you and send matches.')
+    if (!data.get('first_name') || !data.get('email')) {
+      setError('First name and email are required so I can send your guide and your matches.')
       return
     }
 
@@ -267,14 +267,16 @@ export function GetDealsPage() {
                           htmlFor="gd-phone"
                           className="block text-[13px] font-medium text-navy-soft mb-1.5"
                         >
-                          Phone <span className="text-bronze">*</span>
+                          Phone{' '}
+                          <span className="text-navy-mute font-normal">
+                            (optional &mdash; for a quicker response)
+                          </span>
                         </label>
                         <input
                           id="gd-phone"
                           name="phone"
                           type="tel"
                           inputMode="tel"
-                          required
                           autoComplete="tel"
                           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
                         />
@@ -296,7 +298,7 @@ export function GetDealsPage() {
                           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
                         />
                         <p className="mt-1.5 text-[11.5px] text-navy-mute">
-                          Your matched list is sent here. Phone is so I can reach you with anything time-sensitive.
+                          Your guide and your matched list are sent here. Leave a phone number and I can call you about anything time-sensitive rather than waiting on email.
                         </p>
                       </div>
                     </div>
