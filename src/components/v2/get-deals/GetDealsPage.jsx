@@ -62,6 +62,24 @@ const HERO_VARIANTS = {
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 
+/* The instant deliverable. Mirrors /homeowner-options, which converts at
+   roughly 10% against this page's 3% precisely because the reward arrives
+   immediately rather than in 24 hours. */
+const BUYER_GUIDE = '/downloads/resolve-power-of-sale-buyer-guide.pdf'
+
+function triggerGuideDownload() {
+  try {
+    const a = document.createElement('a')
+    a.href = BUYER_GUIDE
+    a.download = ''
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
+  } catch {
+    /* the success panel still shows a manual download link */
+  }
+}
+
 export function GetDealsPage() {
   const [searchParams] = useSearchParams()
   const catRaw = (searchParams.get('cat') || '').toLowerCase()
@@ -124,6 +142,7 @@ export function GetDealsPage() {
           },
         })
         setSuccess(true)
+        triggerGuideDownload()
         window.scrollTo({ top: 0, behavior: 'smooth' })
       } else {
         setError('Something went wrong on our side. Please call (365) 645-7332.')
@@ -173,10 +192,10 @@ export function GetDealsPage() {
                   {/* Offer stack — the reasons to act, made visible before the form */}
                   <ul className="mt-6 flex flex-wrap gap-x-5 gap-y-2.5">
                     {[
-                      { icon: Clock, text: 'Callback often within 2 hours' },
+                      { icon: Gift, text: 'Free buyer guide, instantly' },
+                      { icon: Clock, text: 'Matched list within 24 hours' },
                       { icon: CheckCircle2, text: 'Free · no fee · no commitment' },
                       { icon: Scale, text: 'Legal fees covered on closing' },
-                      { icon: Gift, text: '$1,000 when you buy' },
                     ].map(({ icon: Icon, text }) => (
                       <li
                         key={text}
@@ -189,8 +208,9 @@ export function GetDealsPage() {
                   </ul>
 
                   <p className="mt-5 text-[14px] text-stone/70 max-w-md">
-                    Two fields. One call. Tell us your area, budget and type, and when a file fits it goes to you{' '}
-                    <span className="italic text-bronze font-medium">first</span>.
+                    Tell me your area, budget and type. You get the guide{' '}
+                    <span className="italic text-bronze font-medium">now</span>, and the properties that
+                    actually fit within 24 hours.
                   </p>
 
                   <form
@@ -310,7 +330,7 @@ export function GetDealsPage() {
                       className="mt-5 w-full bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-6 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all disabled:opacity-60 disabled:cursor-not-allowed"
                       style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}
                     >
-                      {submitting ? 'Sending…' : 'Send me my matched list →'}
+                      {submitting ? 'Sending…' : 'Send me the guide →'}
                     </button>
 
                     <p className="mt-3 text-center text-[13px] text-navy-soft">
@@ -338,11 +358,22 @@ export function GetDealsPage() {
                     <CheckCircle2 className="h-9 w-9 text-bronze shrink-0 mt-1" />
                     <div>
                       <h2 className="font-display font-medium text-navy text-[28px] md:text-[32px] leading-[1.1]">
-                        Got it. Your list is on the way.
+                        Your guide is downloading.
                       </h2>
                       <p className="mt-3 text-[16px] text-navy-soft leading-relaxed">
-                        I go through what is currently available against what you told me, and send you the ones that actually fit, within 24 hours. If something needs a conversation first, I will call you. Nothing is shared with anyone else.
+                        A copy is on its way to your inbox as well. Next, I go through what is currently
+                        available against what you told me and send you the ones that actually fit, within
+                        24 hours. If something needs a conversation first, I will call you. Nothing is
+                        shared with anyone else.
                       </p>
+                      <a
+                        href={BUYER_GUIDE}
+                        download
+                        className="mt-5 inline-flex items-center gap-2 rounded-[10px] bg-navy px-5 py-3 text-[15px] font-semibold text-white hover:bg-navy-soft transition-colors"
+                      >
+                        Download the guide
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </a>
                       <p className="mt-5 text-[14px] text-navy-mute">
                         Need to talk sooner? Call us at{' '}
                         <a
