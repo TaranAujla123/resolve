@@ -127,7 +127,7 @@ export function SellPrivatelyPage() {
     <>
       <Seo
         title="Sell Your Home Privately, Fast · Resolve"
-        description="Need to sell quickly or quietly? Resolve represents you. If your property fits our cash-ready buyers, a private no-obligation offer within 48 hours. If it does not, an honest strategy to sell it for the most the market allows."
+        description="Before you list, find out what your home is really worth. If it fits our cash-ready buyers, a private no-obligation offer within 48 hours. If it does not, an honest strategy to sell it for the most the market allows."
         canonical="https://www.resolverealestate.ca/sell-privately/"
       />
 
@@ -140,25 +140,27 @@ export function SellPrivatelyPage() {
               {!success ? (
                 <>
                   <p className="text-[13px] font-semibold uppercase tracking-[0.18em] text-bronze">
-                    Sell privately &middot; Ontario
+                    Before you list &middot; Ontario
                   </p>
                   <h1
                     className="mt-4 font-display font-medium text-navy tracking-tight"
                     style={{ fontSize: 'clamp(34px, 5vw, 56px)', lineHeight: 1.04 }}
                   >
-                    A private offer, or a better plan.
+                    Before you list it, find out what it is really worth.
                   </h1>
                   <p
                     className="mt-3 font-display font-medium italic text-bronze"
                     style={{ fontSize: 'clamp(21px, 3vw, 34px)', lineHeight: 1.12 }}
                   >
-                    Either way, you find out where you stand in 48 hours.
+                    A private offer, or a better plan. You know in 48 hours.
                   </p>
 
                   <p className="mt-6 text-[16px] text-navy-soft leading-relaxed max-w-md">
-                    If your property fits what our cash-ready buyers are looking for, we bring you
-                    a private, no-obligation offer. If it does not, I will show you the strategy that
-                    gets you the most for it on the open market. Nothing public either way.
+                    Most people put the sign up first and find out what their home is worth afterwards.
+                    Do it the other way around. If your property fits what our cash-ready buyers are
+                    looking for, we bring you a private, no-obligation offer. If it does not, I will show
+                    you the strategy that gets you the most for it on the open market. Nothing public
+                    either way.
                     <span className="block mt-1 font-semibold text-navy">
                       You stay in control, and it costs you nothing to find out.
                     </span>
@@ -221,6 +223,30 @@ export function SellPrivatelyPage() {
                           placeholder="123 Main St, Kitchener, ON  N2C 1R7"
                           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
                         />
+                      </div>
+                      {/* Screens out sellers under a live agreement with another
+                          brokerage, which we cannot act for, and captures the
+                          expiry date so an expired listing can be followed up
+                          properly rather than accidentally solicited. */}
+                      <div>
+                        <label htmlFor="sp-listed" className="block text-[13px] font-medium text-navy-soft mb-1.5">
+                          Is the property listed with a brokerage right now?
+                        </label>
+                        <select
+                          id="sp-listed"
+                          name="currently_listed"
+                          defaultValue=""
+                          className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
+                        >
+                          <option value="">Select one&hellip;</option>
+                          <option value="No, not listed">No, it is not listed</option>
+                          <option value="Yes, currently listed">Yes, it is listed now</option>
+                          <option value="Listing recently expired or terminated">The listing recently expired or was terminated</option>
+                        </select>
+                        <p className="mt-1.5 text-[12.5px] text-navy-mute leading-snug">
+                          If you are under contract with another brokerage I cannot advise you on selling
+                          until it ends. Tell me the end date and I will follow up then.
+                        </p>
                       </div>
                     </div>
 
