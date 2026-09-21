@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { Phone, Lock, ArrowRight, CheckCircle2, Clock, ChevronRight, Gift, Scale } from 'lucide-react'
+import { Phone, MessageSquare, Lock, ArrowRight, CheckCircle2, Clock, ChevronRight, Gift, Scale } from 'lucide-react'
 import { Seo } from '@/components/seo/Seo'
 import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 
@@ -353,15 +353,25 @@ export function GetDealsPage() {
                       {submitting ? 'Sending…' : 'Send me the guide →'}
                     </button>
 
-                    <p className="mt-3 text-center text-[13px] text-navy-soft">
-                      Or call directly:{' '}
+                    <p className="mt-5 text-center text-[12px] uppercase tracking-[0.16em] font-semibold text-navy-soft">
+                      Or reach me directly
+                    </p>
+                    <div className="mt-3 flex flex-col sm:flex-row gap-3">
+                      <a
+                        href="sms:+13656457332"
+                        className="flex-1 inline-flex items-center justify-center gap-2 border border-navy/25 hover:border-navy/60 text-navy font-semibold py-3.5 px-4 rounded-[8px] text-[13.5px] transition-colors"
+                      >
+                        <MessageSquare className="h-4 w-4" />
+                        Text (365) 645-7332
+                      </a>
                       <a
                         href="tel:+13656457332"
-                        className="text-bronze hover:text-bronze-deep font-semibold transition-colors"
+                        className="flex-1 inline-flex items-center justify-center gap-2 border border-navy/25 hover:border-navy/60 text-navy font-semibold py-3.5 px-4 rounded-[8px] text-[13.5px] transition-colors"
                       >
-                        (365) 645-7332
+                        <Phone className="h-4 w-4" />
+                        Call instead
                       </a>
-                    </p>
+                    </div>
                   </form>
 
                   <p className="mt-4 text-[12px] text-navy-mute tracking-wide flex items-center gap-1.5">
