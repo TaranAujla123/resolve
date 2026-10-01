@@ -297,6 +297,16 @@
       form.addEventListener('submit',function(e){
         e.preventDefault();errEl.style.display='none';
         btn.disabled=true;btn.textContent='Sending…';
+        /* Phone and address are optional on purpose: filling them in is the
+           visitor putting their hand up. Say so in the subject line so the
+           inbox is pre-sorted and the email-only ones cost no attention. */
+        var ph=(form.phone&&form.phone.value||'').trim(), ad=(form.address&&form.address.value||'').trim();
+        var tag = (ph&&ad) ? 'FULL — phone + address'
+                : ph ? 'phone, no address'
+                : ad ? 'address, no phone'
+                : 'email only';
+        var subj=form.querySelector('input[name="_subject"]');
+        if(subj)subj.value='Homeowner Options — '+tag;
         fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
         .then(function(r){
           if(r.ok){
