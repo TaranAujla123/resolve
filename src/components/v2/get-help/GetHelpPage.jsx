@@ -80,6 +80,19 @@ const HERO_VARIANTS = {
      practice refocus. Any ?cat=separation or ?cat=disputes URL falls
      through to the default (general) hero via the ternary in the
      component body. Kept referenceable in git history for context. */
+  /* Sell-intent variant. The other heroes all name a distress the visitor
+     is already in, which selects for people researching how to keep the
+     house. This one selects for people who have accepted they are selling
+     and are choosing who to sell with. Deliberately broad in the headline
+     and differentiated in the sub, so an ordinary seller does not bounce
+     but a complicated one recognises themselves. */
+  selling: {
+    eyebrow: 'THINKING OF SELLING · ONTARIO',
+    headline: 'Thinking of selling?',
+    subLead: 'Particularly if there is something complicated in it.',
+    subEmph: 'An estate, a lender, a separation, a deadline.',
+    label: 'Thinking of Selling',
+  },
   default: {
     eyebrow: 'SELLER REPRESENTATION · ONTARIO',
     headline: 'A property situation that needs handling?',
@@ -115,6 +128,10 @@ export function GetHelpPage() {
     setError(null)
     const form = e.currentTarget
     const data = new FormData(form)
+    if (cat === 'selling' && (!data.get('email') || !data.get('property_address'))) {
+      setError('Email and property address are required so we can look at it before we call.')
+      return
+    }
     if (!data.get('first_name') || !data.get('phone')) {
       setError('First name and phone are required so we can reach you.')
       return
@@ -288,6 +305,51 @@ export function GetHelpPage() {
                           className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
                         />
                       </div>
+                      {/* Sell-intent traffic only. Two extra fields cost
+                          conversion, which is the right trade here: this
+                          visitor is choosing an agent, not asking for help,
+                          and the address is what makes a valuation possible
+                          before the first call. */}
+                      {cat === 'selling' && (
+                        <>
+                          <div>
+                            <label
+                              htmlFor="gh-email"
+                              className="block text-[13px] font-medium text-navy-soft mb-1.5"
+                            >
+                              Email <span className="text-bronze">*</span>
+                            </label>
+                            <input
+                              id="gh-email"
+                              name="email"
+                              type="email"
+                              inputMode="email"
+                              required
+                              autoComplete="email"
+                              className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
+                            />
+                          </div>
+                          <div>
+                            <label
+                              htmlFor="gh-address"
+                              className="block text-[13px] font-medium text-navy-soft mb-1.5"
+                            >
+                              Property address <span className="text-bronze">*</span>
+                            </label>
+                            <input
+                              id="gh-address"
+                              name="property_address"
+                              type="text"
+                              required
+                              autoComplete="street-address"
+                              className="w-full px-4 py-3 border border-divider rounded-[8px] text-[16px] text-navy bg-white focus:outline-none focus:border-bronze focus:ring-2 focus:ring-bronze/20 transition-all"
+                            />
+                            <p className="mt-1.5 text-[12px] text-stone/60">
+                              So the first call is about your property, not a general chat.
+                            </p>
+                          </div>
+                        </>
+                      )}
                     </div>
 
                     {error && (
@@ -335,6 +397,30 @@ export function GetHelpPage() {
                       you the time to sell on your terms &mdash; before they
                       take over and control the sale themselves.
                     </p>
+                  )}
+                  {/* Sell-intent traffic is choosing between agents, so this
+                      variant answers "why you" instead of "what is happening
+                      to me". Claims are all verifiable: experience, method,
+                      and capacity. No outcome promises. */}
+                  {cat === 'selling' && (
+                    <div className="mt-7 max-w-md">
+                      <p className="text-[12px] font-medium tracking-[0.14em] uppercase text-bronze">
+                        Why me
+                      </p>
+                      <ul className="mt-4 space-y-3.5">
+                        {[
+                          'Ten years as a real estate lawyer before this. I have read these agreements from the other side of the table.',
+                          'A price built from comparables and condition, with the working shown, so you can check it rather than take it.',
+                          'Complicated sales need sequencing. Lender, trustee, lawyer, tenant, contractor. That coordination is the job.',
+                          'A limited number of clients at a time, so yours is not one of forty.',
+                        ].map((line) => (
+                          <li key={line} className="flex gap-3 text-[15px] text-stone leading-relaxed">
+                            <CheckCircle2 className="h-[18px] w-[18px] text-bronze shrink-0 mt-[3px]" />
+                            <span>{line}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   )}
                   <p className="mt-4 text-[15px] text-stone-soft leading-relaxed max-w-md">
                     We help you keep more of the{' '}
