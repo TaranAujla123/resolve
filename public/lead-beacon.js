@@ -11,7 +11,10 @@
       var d = {};
       new FormData(f).forEach(function (v, k) { if (k.charAt(0) !== '_') d[k] = v; });
       d.name = d.name || ((d.first || '') + ' ' + (d.last || '')).trim();
-      d.address = d.address || d.property_address || '';
+      /* /contact collects an area rather than a street address, and a contact
+         submission with a phone and a described situation is at least as strong
+         a lead as a guide download. Count it. */
+      d.address = d.address || d.property_address || d.area || '';
       d.source = d.magnet || d.cat || d.source_page || '';
       var q = new URLSearchParams(location.search);
       d.page = location.pathname;
