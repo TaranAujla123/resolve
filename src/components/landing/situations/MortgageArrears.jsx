@@ -51,6 +51,57 @@ export function MortgageArrears() {
         </p>
       </SituationBlock>
 
+      {/* Cost of waiting. The paid arrears ads promise this argument, so it
+          sits ahead of the paths: the reader needs to see why the clock
+          matters before the three options mean anything. Worked example
+          uses public rates only, never a client file. Simple interest,
+          labelled as an illustration, so nothing here reads as a quote. */}
+      <SituationBlock label="What waiting costs" title="Every month behind adds to what you owe, and not to what the house is worth.">
+        <p>
+          Missed payments are the part people watch. The part that does the
+          damage is quieter. A mortgage in default keeps accruing interest on
+          the full balance, the lender adds its own fees and legal costs on
+          top, and in some files the lender pays the property taxes and adds
+          those too. None of that stops while you are deciding what to do.
+        </p>
+        <p>
+          On a $580,000 mortgage at 6.99%, the interest alone runs to roughly:
+        </p>
+        <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 rounded-[14px] border border-divider bg-stone px-6 py-5 text-[16px] tabular-nums">
+          <dt className="text-navy-mute">One month behind</dt>
+          <dd className="font-semibold text-navy">about $3,400 added</dd>
+          <dt className="text-navy-mute">Six months behind</dt>
+          <dd className="font-semibold text-navy">about $20,300 added</dd>
+          <dt className="text-navy-mute">Twelve months behind</dt>
+          <dd className="font-semibold text-navy">about $40,500 added</dd>
+          <dd className="col-span-2 mt-1 text-[13px] text-navy-mute">
+            Simple interest, for illustration, before any lender fees, legal
+            costs or tax arrears. Your own figures sit in your mortgage
+            statement.
+          </dd>
+        </dl>
+        <p>
+          The house, meanwhile, is worth what the market says it is worth that
+          month. That number does not climb because the balance did. So there
+          is a point where what is owed passes what the house would sell for,
+          and from that point on there is no sale that puts money in your
+          hands. The house changes hands either way. The only thing that is
+          different is whether you had a say in it.
+        </p>
+        <p>
+          If you are a few months behind, there is usually still a gap between
+          the two numbers, and that gap is what gives you choices. It is what
+          pays for a refinance to be worth doing, or for a sale to leave you
+          with something to start again on. It gets smaller every month, and
+          nobody writes to tell you when it closes.
+        </p>
+        <p>
+          That is the whole reason to find out where you stand now rather than
+          after the next letter. Knowing the gap does not commit you to selling.
+          It tells you how much time you actually have.
+        </p>
+      </SituationBlock>
+
       <SituationBlock label="How it works" title="The three real paths once arrears begin.">
         <p>
           There are usually three real paths once arrears begin. Bring
