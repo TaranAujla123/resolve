@@ -157,7 +157,8 @@
               <div class="field"><label for="name">First name</label><input id="name" name="name" type="text" autocomplete="given-name" required /></div>
               <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
               <div class="field"><label for="phone">Phone <span style="color:var(--muted);font-weight:400">(optional — only if you'd like me to personally walk you through your options)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" /></div>
-              <div class="field"><label for="address">Full property address <span style="color:var(--muted);font-weight:400">(optional &mdash; street, city and postal code, so I can look up your numbers before we speak)</span></label><input id="address" name="address" type="text" autocomplete="street-address" placeholder="123 Main St, Kitchener, ON  N2C 1R7" /></div>
+              <div class="field"><label for="postal">Postal code</label><input id="postal" name="postal_code" type="text" autocomplete="postal-code" inputmode="text" pattern="[A-Za-z][0-9][A-Za-z][ -]?[0-9][A-Za-z][0-9]" title="A Canadian postal code, like N2C 1R7" placeholder="N2C 1R7" maxlength="7" required /></div>
+              <div class="field"><label for="address">Street address <span style="color:var(--muted);font-weight:400">(optional &mdash; only if you'd like me to look up your numbers before we speak)</span></label><input id="address" name="address" type="text" autocomplete="street-address" placeholder="123 Main St, Kitchener" /></div>
               <div class="stage">
                 <span>Where does the mortgage stand?</span>
                 <label><input type="radio" name="mortgage_status" value="Up to date, or no mortgage" required /><span>Up to date, or no mortgage</span></label>

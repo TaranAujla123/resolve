@@ -32,6 +32,10 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
       toast.error('Please add your name and a phone number so we can reach you.')
       return
     }
+    if (!/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/.test((data.get('postal_code') || '').toString().trim())) {
+      toast.error('Please add the postal code, so we know which property and which area.')
+      return
+    }
     if (!data.get('mortgage_status')) {
       toast.error('Please pick where the mortgage stands. It is the one thing that changes your options.')
       return
@@ -88,6 +92,24 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
         <div>
           <Label htmlFor={`${fid}-phone`} required>Phone</Label>
           <Input id={`${fid}-phone`} name="phone" type="tel" autoComplete="tel" required />
+        </div>
+        {/* Postal code. Required because a street name alone is not a
+            property: "73 William St N" exists in more than one Ontario
+            town. Six characters pins the parcel and the service area
+            without asking for the full address, which stays optional
+            as the "please call me" signal. */}
+        <div>
+          <Label htmlFor={`${fid}-postal`} required>Postal code</Label>
+          <Input
+            id={`${fid}-postal`}
+            name="postal_code"
+            autoComplete="postal-code"
+            placeholder="N2C 1R7"
+            maxLength={7}
+            pattern="[A-Za-z][0-9][A-Za-z][ -]?[0-9][A-Za-z][0-9]"
+            title="A Canadian postal code, like N2C 1R7"
+            required
+          />
         </div>
         {/* Mortgage status. Self-selected, one tap, and the single field
             that segments a lead on something actionable: it separates a
