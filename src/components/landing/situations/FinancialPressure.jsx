@@ -162,8 +162,8 @@ export function FinancialPressure() {
           Even if you decide not to sell, having a clear view of what
           the sale would look like gives you real footing in the
           conversations you are about to have with lenders, brokers,
-          and lawyers. Confidential, no obligation, and nothing about
-          it needs to go anywhere.
+          and lawyers. It stays confidential, and nothing about it
+          needs to go anywhere.
         </p>
       </SituationBlock>
     </SituationPage>

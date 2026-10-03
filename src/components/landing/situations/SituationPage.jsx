@@ -66,7 +66,7 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
                 {[
                   'Complex, time-sensitive files, handled',
                   'A network of cash-ready buyers who can close',
-                  'Free, private, no pressure',
+                  'Private, and on your timeline',
                 ].map((c) => (
                   <li key={c} className="flex items-center gap-3 text-[15.5px] text-stone/90">
                     <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-bronze/20 text-bronze">
@@ -183,10 +183,9 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
                 A private conversation, on your terms.
               </h2>
               <p className="mt-4 text-[16px] text-navy-soft leading-relaxed">
-                No obligation, no pressure to list and nothing public. All
-                conversations stay private and some do not move further. That
-                is fine. The point is for you to see what a clean sale looks
-                like on your terms.
+                Nothing public, and nothing moves without you. Some
+                conversations do not go further, and that is fine. The point
+                is for you to see what a clean sale looks like on your terms.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3">
                 <Button as={Link} to="/contact" size="lg" variant="primary" className="group">

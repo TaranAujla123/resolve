@@ -186,8 +186,7 @@ export function MortgageArrears() {
         <p>
           Even if you decide not to sell, knowing what the clean sale
           looks like gives you real footing in the conversations you
-          are about to have. It costs nothing and commits you to
-          nothing.
+          are about to have.
         </p>
       </SituationBlock>
     </SituationPage>

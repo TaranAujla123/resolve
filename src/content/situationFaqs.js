@@ -36,7 +36,7 @@ export const SITUATION_FAQS = {
     },
     {
       q: 'Is a power of sale conversation confidential?',
-      a: 'Yes. Resolve works discreetly. A private conversation carries no obligation to list, and nothing is made public without your direction.',
+      a: 'Yes. Resolve works discreetly, and nothing is made public without your direction.',
     },
   ],
 
@@ -112,7 +112,7 @@ export const SITUATION_FAQS = {
     },
     {
       q: 'Will a financial-pressure conversation stay private?',
-      a: 'Yes. Nothing is made public, there is no obligation, and the conversation stays confidential.',
+      a: 'Yes. Nothing is made public, and the conversation stays confidential.',
     },
   ],
 }

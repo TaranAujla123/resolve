@@ -32,6 +32,10 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
       toast.error('Please add your name and a phone number so we can reach you.')
       return
     }
+    if (!data.get('mortgage_status')) {
+      toast.error('Please pick where the mortgage stands. It is the one thing that changes your options.')
+      return
+    }
     setSubmitting(true)
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -70,7 +74,7 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
       <input type="hidden" name="source_page" value={`/${situationSlug}`} />
 
       <h3 className="font-display font-medium text-navy text-[1.4rem] leading-snug">
-        Get your free, private options
+        Find out where you stand
       </h3>
       <p className="mt-1.5 text-[14px] text-navy-soft leading-relaxed">
         Tell us what&rsquo;s happening. We&rsquo;ll reply the same day.
@@ -85,6 +89,41 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
           <Label htmlFor={`${fid}-phone`} required>Phone</Label>
           <Input id={`${fid}-phone`} name="phone" type="tel" autoComplete="tel" required />
         </div>
+        {/* Mortgage status. Self-selected, one tap, and the single field
+            that segments a lead on something actionable: it separates a
+            homeowner at month three from one past a possession order. Same
+            field name and values as the homeowner-options guide so the
+            Make register gets one column for both. */}
+        <fieldset>
+          <legend className="block text-[14px] font-medium text-navy mb-1.5">
+            Where does the mortgage stand?<span className="ml-0.5 text-bronze">*</span>
+          </legend>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {[
+              'Up to date, or no mortgage',
+              'Behind on payments',
+              'Received a notice from my lender',
+              'A court process has started',
+            ].map((v) => (
+              <label
+                key={v}
+                className="flex items-center gap-2.5 rounded-md border border-divider bg-stone px-3 py-2.5 text-[14px] text-navy leading-snug cursor-pointer hover:border-bronze/70 has-[:checked]:border-bronze has-[:checked]:bg-bronze/10 transition-colors"
+              >
+                <input
+                  type="radio"
+                  name="mortgage_status"
+                  value={v}
+                  required
+                  className="h-4 w-4 flex-none accent-[#C8A56B]"
+                />
+                <span>{v}</span>
+              </label>
+            ))}
+          </div>
+          <p className="mt-1.5 text-[12px] text-navy-mute leading-relaxed">
+            This is the one thing that changes what your options actually are. It stays between us.
+          </p>
+        </fieldset>
         <div>
           <Label htmlFor={`${fid}-message`}>What&rsquo;s happening?</Label>
           <Textarea
@@ -105,16 +144,15 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
       >
         {submitting ? 'Sending…' : (
           <>
-            Get my free options
+            See where I stand
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </>
         )}
       </Button>
 
       <p className="mt-3 text-center text-[11.5px] text-navy-mute leading-relaxed">
-        No cost, no obligation. By submitting you acknowledge Resolve provides real estate
-        services, not legal advice, and this will not interfere with any existing listing
-        agreement. Cash-buyer close is subject to a qualified property and situation.
+        By submitting you acknowledge Resolve provides real estate services, not legal
+        advice, and that this will not interfere with any existing listing agreement.
       </p>
     </form>
   )

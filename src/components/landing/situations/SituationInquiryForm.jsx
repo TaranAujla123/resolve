@@ -104,10 +104,9 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
               A private conversation, on your terms.
             </h2>
             <p className="mt-5 text-[16px] text-navy-soft leading-relaxed max-w-xl mx-auto">
-              No obligation, no pressure to list and nothing public. All
-              conversations stay private and some do not move further. That
-              is fine. The point is for you to see what a clean sale looks
-              like on your terms.
+              Nothing public, and nothing moves without you. Some
+              conversations do not go further, and that is fine. The point
+              is for you to see what a clean sale looks like on your terms.
             </p>
           </div>
 
@@ -174,7 +173,7 @@ export function SituationInquiryForm({ situationLabel, situationSlug }) {
             </p>
 
             <p className="mt-6 text-center text-[13px] text-navy-soft leading-relaxed">
-              No obligation. Completely confidential. We typically reply within a few hours.
+              Completely confidential. We typically reply within a few hours.
             </p>
             <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
               <p className="text-[12.5px] text-navy-mute">
