@@ -118,15 +118,22 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
             Make register gets one column for both. */}
         <fieldset>
           <legend className="block text-[14px] font-medium text-navy mb-1.5">
-            Where does the mortgage stand?<span className="ml-0.5 text-bronze">*</span>
+            Which is closest to your situation?<span className="ml-0.5 text-bronze">*</span>
           </legend>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+          {/* Six, not four. "Up to date" on its own hid the best lead
+              there is: current but struggling, equity intact, time to
+              choose. And "no mortgage" is a different situation again,
+              equity-rich and cash-poor. Values are short for the register;
+              labels are what the person reads. */}
+          <div className="grid grid-cols-1 gap-2">
             {[
-              'Up to date, or no mortgage',
-              'Behind on payments',
-              'Received a notice from my lender',
-              'A court process has started',
-            ].map((v) => (
+              ['Current but struggling', 'Payments are up to date, but it is getting hard'],
+              ['Behind on payments', 'Behind on payments'],
+              ['Notice received', 'I have received a notice from my lender'],
+              ['Court process', 'A court process has started'],
+              ['No mortgage, money tight', 'No mortgage, but money is tight'],
+              ['Just reading', 'Just reading, or looking for someone else'],
+            ].map(([v, l]) => (
               <label
                 key={v}
                 className="flex items-center gap-2.5 rounded-md border border-divider bg-stone px-3 py-2.5 text-[14px] text-navy leading-snug cursor-pointer hover:border-bronze/70 has-[:checked]:border-bronze has-[:checked]:bg-bronze/10 transition-colors"
@@ -138,7 +145,7 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
                   required
                   className="h-4 w-4 flex-none accent-[#C8A56B]"
                 />
-                <span>{v}</span>
+                <span>{l}</span>
               </label>
             ))}
           </div>
