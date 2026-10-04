@@ -123,25 +123,26 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
           {/* Six, not four. "Up to date" on its own hid the best lead
               there is: current but struggling, equity intact, time to
               choose. And "no mortgage" is a different situation again,
-              equity-rich and cash-poor. Values are short for the register;
-              labels are what the person reads. */}
+              equity-rich and cash-poor. The stored value is the exact
+              sentence the person clicked, so the email and the register
+              read the same as the form. */}
           <div className="grid grid-cols-1 gap-2">
             {[
-              ['Current but struggling', 'Payments are up to date, but it is getting hard'],
-              ['Behind on payments', 'Behind on payments'],
-              ['Notice received', 'I have received a notice from my lender'],
-              ['Court process', 'A court process has started'],
-              ['No mortgage, money tight', 'No mortgage, but money is tight'],
-              ['Just reading', 'Just reading, or looking for someone else'],
-            ].map(([v, l]) => (
+              'Payments are up to date, but it is getting hard',
+              'Behind on payments',
+              'I have received a notice from my lender',
+              'A court process has started',
+              'No mortgage, but money is tight',
+              'Just reading, or looking for someone else',
+            ].map((l) => (
               <label
-                key={v}
+                key={l}
                 className="flex items-center gap-2.5 rounded-md border border-divider bg-stone px-3 py-2.5 text-[14px] text-navy leading-snug cursor-pointer hover:border-bronze/70 has-[:checked]:border-bronze has-[:checked]:bg-bronze/10 transition-colors"
               >
                 <input
                   type="radio"
                   name="mortgage_status"
-                  value={v}
+                  value={l}
                   required
                   className="h-4 w-4 flex-none accent-[#C8A56B]"
                 />
