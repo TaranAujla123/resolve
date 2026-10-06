@@ -119,6 +119,14 @@ const REAL_ESTATE_AGENT_LD = {
     { '@type': 'City', name: 'Kitchener' },
     { '@type': 'City', name: 'Waterloo' },
     { '@type': 'AdministrativeArea', name: 'Peel Region' },
+    { '@type': 'AdministrativeArea', name: 'York Region' },
+    { '@type': 'AdministrativeArea', name: 'Halton Region' },
+    { '@type': 'AdministrativeArea', name: 'Durham Region' },
+    { '@type': 'City', name: 'Oshawa' },
+    { '@type': 'City', name: 'Whitby' },
+    { '@type': 'City', name: 'Ajax' },
+    { '@type': 'City', name: 'Pickering' },
+    { '@type': 'City', name: 'Clarington' },
   ],
   knowsAbout: [
     'Power of sale',
@@ -492,8 +500,8 @@ function HomePage() {
   return (
     <>
       <Seo
-        title="Resolve · Real Estate · Ontario"
-        description="An Ontario real estate practice working both sides of the table: complex and high-value seller representation, and value-add, multiplex and income buying. Serving Toronto, Peel Region, Kitchener-Waterloo and Hamilton."
+        title="Power of Sale & Complex Home Sales in Ontario · Resolve Real Estate"
+        description="Selling under power of sale, mortgage arrears or financial pressure, or on a deadline. Complex seller representation and value-add buying across the GTA, Durham, Hamilton, Kitchener and Waterloo."
         canonical={`${SITE_URL}/`}
         jsonLd={HOME_JSONLD}
       />
@@ -521,7 +529,7 @@ function WhyUsRoutePage() {
     <>
       <Seo
         title="Why Resolve · How We Work · Ontario Real Estate"
-        description="Why Resolve is different: the same judgment applied on either side of the table. We read the real position, find the value most people miss, and represent one side fully. Sellers and buyers across the GTA, Hamilton and Kitchener-Waterloo."
+        description="Why Resolve is different: the same judgment applied on either side of the table. We read the real position, find the value most people miss, and represent one side fully. Sellers and buyers across the GTA, Durham, Hamilton, Kitchener and Waterloo."
         canonical={`${SITE_URL}/why-us/`}
         jsonLd={SITE_JSONLD}
       />

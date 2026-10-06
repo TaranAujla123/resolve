@@ -141,8 +141,8 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
         <div className="container pt-10 pb-2">
           <p className="mx-auto max-w-3xl text-[13px] text-navy-soft leading-relaxed">
             <span className="font-semibold text-navy">Where we work.</span>{' '}
-            Resolve represents Ontario homeowners across Toronto, Peel Region,
-            Hamilton and Kitchener-Waterloo.
+            Resolve represents Ontario homeowners across the GTA (Toronto, Peel,
+            York, Halton and Durham), Hamilton, Kitchener and Waterloo.
           </p>
         </div>
       </section>
