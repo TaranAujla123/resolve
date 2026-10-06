@@ -22,6 +22,7 @@ import { Button } from './Button'
 const NAV_ITEMS = [
   { to: '/sellers', label: 'For Sellers' },
   { to: '/buyers', label: 'For Buyers' },
+  { to: '/for-agents', label: 'For Agents' },
   { to: '/why-us', label: 'Why Us' },
   { to: '/about', label: 'About' },
 ]
