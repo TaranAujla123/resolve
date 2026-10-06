@@ -21,7 +21,14 @@ import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
  */
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 
-export function SituationHeroForm({ situationLabel, situationSlug }) {
+export function SituationHeroForm({
+  situationLabel,
+  situationSlug,
+  heading = 'Find out where you stand',
+  sub = 'Tell us what’s happening. We’ll reply the same day.',
+  buttonText = 'See where I stand',
+  showMessage = true,
+}) {
   const [submitting, setSubmitting] = useState(false)
   const navigate = useNavigate()
 
@@ -78,10 +85,10 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
       <input type="hidden" name="source_page" value={`/${situationSlug}`} />
 
       <h3 className="font-display font-medium text-navy text-[1.4rem] leading-snug">
-        Find out where you stand
+        {heading}
       </h3>
       <p className="mt-1.5 text-[14px] text-navy-soft leading-relaxed">
-        Tell us what&rsquo;s happening. We&rsquo;ll reply the same day.
+        {sub}
       </p>
 
       <div className="mt-5 space-y-3.5">
@@ -154,15 +161,17 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
             This is the one thing that changes what your options actually are. It stays between us.
           </p>
         </fieldset>
+        {showMessage && (
         <div>
-          <Label htmlFor={`${fid}-message`}>What&rsquo;s happening?</Label>
-          <Textarea
-            id={`${fid}-message`}
-            name="message"
-            rows={2}
-            placeholder="e.g. received a power of sale notice&hellip;"
-          />
-        </div>
+            <Label htmlFor={`${fid}-message`}>What&rsquo;s happening?</Label>
+            <Textarea
+              id={`${fid}-message`}
+              name="message"
+              rows={2}
+              placeholder="e.g. received a power of sale notice&hellip;"
+            />
+          </div>
+        )}
       </div>
 
       <Button
@@ -174,7 +183,7 @@ export function SituationHeroForm({ situationLabel, situationSlug }) {
       >
         {submitting ? 'Sending…' : (
           <>
-            See where I stand
+            {buttonText}
             <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
           </>
         )}

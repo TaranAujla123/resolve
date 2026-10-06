@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Calendar, Phone, Check } from 'lucide-react'
-import { Button } from '@/components/brand/Button'
+import { Phone, Check } from 'lucide-react'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
+import { SituationHeroForm } from '@/components/landing/situations/SituationHeroForm'
 
 /**
  * Hero — V3.5 home hero (navy, restored).
@@ -40,7 +40,10 @@ export function Hero({ headline } = {}) {
       <HeroBackdrop />
 
       <div className="relative container w-full pt-28 pb-14 sm:pt-40 sm:pb-20">
-        <div className="max-w-[600px]">
+        {/* Phones: text + pills, then the form, then the call line.
+            Desktop: text on the left, form on the right. */}
+        <div className="grid gap-y-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-x-14 lg:items-start">
+        <div className="max-w-[600px] lg:col-start-1">
           {/* Eyebrow: bronze hairline + label on one row (the "for Ontario
               homeowners" qualifier lives in the sub-headline below, so the
               eyebrow stays short). */}
@@ -92,11 +95,21 @@ export function Hero({ headline } = {}) {
             ))}
           </ul>
 
-          <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
-            <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center shadow-card">
-              <Calendar className="h-4 w-4" strokeWidth={1.9} />
-              Book a 15-minute call
-            </Button>
+        </div>
+
+        <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 w-full max-w-[460px] lg:justify-self-end">
+          <SituationHeroForm
+            situationLabel="Seller (sellers page)"
+            situationSlug="sellers"
+            heading="What would you walk away with?"
+            sub="Four quick details. A personal reply the same day."
+            buttonText="Show me my numbers"
+            showMessage={false}
+          />
+        </div>
+
+        <div className="max-w-[600px] lg:col-start-1">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
             <a
               href="tel:+13656457332"
               className="inline-flex items-center justify-center gap-2 font-sans font-semibold text-[15px] text-stone hover:text-bronze transition-colors"
@@ -122,6 +135,7 @@ export function Hero({ headline } = {}) {
             </span>
             . Independently Owned &amp; Operated.
           </p>
+        </div>
         </div>
       </div>
     </section>
