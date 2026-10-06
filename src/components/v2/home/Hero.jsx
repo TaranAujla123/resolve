@@ -23,6 +23,13 @@ import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
  * clearly visible beneath the copy (the image concept must land on a
  * phone). The global MobileStickyCta gives the persistent call bar.
  */
+const SITUATIONS = [
+  { label: 'Mortgage Arrears',   to: '/mortgage-arrears' },
+  { label: 'Power of Sale',      to: '/power-of-sale' },
+  { label: 'Financial Pressure', to: '/financial-pressure' },
+  { label: 'Time-Sensitive',     to: '/time-sensitive-sales' },
+]
+
 export function Hero({ headline } = {}) {
   return (
     <section
@@ -63,6 +70,27 @@ export function Hero({ headline } = {}) {
             equity as the priority.
           </p>
 
+          {/* Bronze-outlined pills on navy — the V2 accent balance:
+              bronze hairline border, stone text, bronze fill on hover. */}
+          <ul className="mt-7 grid gap-2.5 grid-cols-2 max-w-md">
+            {SITUATIONS.map((s) => (
+              <li key={s.label} className="flex">
+                <Link
+                  to={s.to}
+                  className="
+                    inline-flex items-center justify-center w-full
+                    px-4 sm:px-5 py-2.5 rounded-full
+                    border border-bronze/70 bg-navy/25 backdrop-blur-[2px]
+                    font-sans font-semibold text-[12.5px] sm:text-[13.5px] leading-none text-stone
+                    hover:border-bronze hover:bg-bronze hover:text-navy
+                    transition-colors duration-200 text-center
+                  "
+                >
+                  {s.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
 
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
             <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center shadow-card">
