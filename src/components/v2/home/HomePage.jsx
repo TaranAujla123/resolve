@@ -1,7 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Calendar, Phone } from 'lucide-react'
-import { Eyebrow } from '@/components/brand/Eyebrow'
 import { Button } from '@/components/brand/Button'
 import { BothSides } from './BothSides'
 import { ClosingCta } from './ClosingCta'
@@ -18,14 +17,10 @@ import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
  *   1. Hub hero      — navy, compact. The two-sided thesis in one line.
  *   2. BothSides     — the two audience doors (For Sellers -> /sellers,
  *                       For Buyers -> /buyers). The primary choice.
- *   3. Multiplex     — the flagship specialty band, framed as the thing
- *                       that spans both sides -> /multiplex. Placed UNDER
- *                       the two doors so it reads as "our specialty", not
- *                       a competing third audience.
- *   4. ClosingCta    — the close.
+ *   3. ClosingCta    — the close. (Multiplex band removed 6 Oct 2026.)
  *
  * The full seller experience lives at /sellers (SellersPage); the buyer
- * experience at /buyers; the multiplex hub at /multiplex.
+ * experience at /buyers.
  */
 export function HomePage() {
   return (
@@ -121,28 +116,6 @@ export function HomePage() {
       {/* The two audience doors */}
       <BothSides />
 
-      {/* Multiplex Advantage — the flagship specialty (navy) */}
-      <section data-surface="navy" className="bg-navy section-y">
-        <div className="container max-w-4xl">
-          <Eyebrow>The Specialty</Eyebrow>
-          <h2 className="mt-4 font-display font-medium text-stone text-display-lg leading-[1.1]">
-            The Multiplex{' '}
-            <span className="font-display italic text-bronze">Advantage.</span>
-          </h2>
-          <p className="mt-6 max-w-[650px] text-[17px] leading-relaxed text-stone/85">
-            Whether you are selling a lot that could hold more, or buying one to
-            build on, this is where we go deepest. Under Ontario&rsquo;s new
-            rules many lots can support three to six units, and we bring the
-            strategy and a build partner to turn it into a plan, subject to city
-            by-laws, permits and a site-specific review.
-          </p>
-          <div className="mt-8">
-            <Button as={Link} to="/multiplex" variant="contrast" size="lg">
-              Explore the Multiplex Advantage <ArrowRight className="h-4 w-4" />
-            </Button>
-          </div>
-        </div>
-      </section>
 
       <ClosingCta />
     </>

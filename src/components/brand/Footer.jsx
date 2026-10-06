@@ -92,19 +92,18 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* For Buyers & Multiplex */}
+          {/* For Buyers */}
           <div>
             <p className={headCls}>Buyers</p>
             <ul className="mt-5 space-y-2.5">
               <li><Link to="/buyers" className={linkCls}>For buyers</Link></li>
               <li><Ext href="/opportunities/">Current opportunities</Ext></li>
-              <li><Ext href="/plexcheck/">PlexCheck lot tool</Ext></li>
               <li className="pt-1">
                 <Link
                   to="/get-deals"
                   className="inline-flex items-center gap-1.5 font-semibold text-[14px] text-bronze hover:text-bronze-deep transition-colors"
                 >
-                  Get matched to lots
+                  Get matched to deals
                   <span aria-hidden="true">→</span>
                 </Link>
               </li>
@@ -115,8 +114,6 @@ export function Footer() {
           <div>
             <p className={headCls}>Guides &amp; Practice</p>
             <ul className="mt-5 space-y-2.5">
-              <li><Ext href="/lot-value/">Guide: your lot&rsquo;s value</Ext></li>
-              <li><Ext href="/pays-for-itself/">Guide: a home that pays for itself</Ext></li>
               <li><Ext href="/homeowner-options/">Guide: homeowner options</Ext></li>
               <li><Link to="/about" className={linkCls}>About Resolve</Link></li>
               <li><Link to="/why-us" className={linkCls}>Why Resolve</Link></li>

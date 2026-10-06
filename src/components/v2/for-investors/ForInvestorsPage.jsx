@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle2, ChevronRight, FileText, Wrench } from 'lucide-react'
+import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react'
 import { Seo } from '@/components/seo/Seo'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
@@ -9,7 +9,7 @@ import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
  * old "Investor Portal" nav item. Centralizes:
  *   1. How I Work With Investors (the selling point / anchor)
  *   2. Current Opportunities (links to /opportunities)
- *   3. Guides & Tools (existing static guides + PlexCheck)
+ *   3. (Guides & Tools section removed 6 Oct 2026: multiplex tools retired)
  *
  * The private gated portal (/investor-access) is no longer surfaced in
  * primary nav; it stays available by direct link for existing partners.
@@ -35,11 +35,6 @@ const STEPS = [
   { n: '3', t: 'You decide, I negotiate', d: 'The full picture, no pressure. When you move, I represent you through the close.' },
 ]
 
-const GUIDES = [
-  { href: '/plexcheck/', icon: Wrench, t: 'PlexCheck lot tool', d: 'Check a lot’s multiplex potential in seconds.' },
-  { href: '/lot-value/', icon: FileText, t: 'Guide: your lot’s value', d: 'What a lot is really worth, and why.' },
-  { href: '/pays-for-itself/', icon: FileText, t: 'A home that pays for itself', d: 'The added-unit and income playbook.' },
-]
 
 export function ForInvestorsPage() {
   return (
@@ -124,28 +119,6 @@ export function ForInvestorsPage() {
         </div>
       </section>
 
-      {/* GUIDES & TOOLS */}
-      <section className="bg-white border-t border-divider">
-        <div className="container py-12 md:py-16">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">Guides &amp; tools</p>
-          <h2 className="mt-3 font-display font-medium text-navy text-[24px] md:text-[30px] leading-[1.1]">Read the market the way we do.</h2>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {GUIDES.map((g) => {
-              const Inner = (
-                <>
-                  <g.icon className="h-6 w-6 text-bronze" strokeWidth={1.6} aria-hidden="true" />
-                  <h3 className="mt-3 font-display font-medium text-navy text-[16.5px] leading-tight">{g.t}</h3>
-                  <p className="mt-1.5 text-[13.5px] text-navy-soft leading-relaxed">{g.d}</p>
-                </>
-              )
-              const cls = 'group block bg-stone border border-divider rounded-[12px] p-5 hover:border-bronze transition-all'
-              return g.to
-                ? <Link key={g.t} to={g.to} className={cls}>{Inner}</Link>
-                : <a key={g.t} href={g.href} className={cls}>{Inner}</a>
-            })}
-          </div>
-        </div>
-      </section>
 
       {/* FINAL CTA */}
       <section className="bg-navy text-stone">
