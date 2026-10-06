@@ -87,7 +87,7 @@ export function HomePage() {
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
               <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center shadow-card">
                 <Calendar className="h-4 w-4" strokeWidth={1.9} />
-                Book a free 15-minute call
+                Book a 15-minute call
               </Button>
               <a
                 href="tel:+13656457332"

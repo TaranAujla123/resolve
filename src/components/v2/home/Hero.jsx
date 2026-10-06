@@ -95,7 +95,7 @@ export function Hero({ headline } = {}) {
           <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
             <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center shadow-card">
               <Calendar className="h-4 w-4" strokeWidth={1.9} />
-              Book a free 15-minute call
+              Book a 15-minute call
             </Button>
             <a
               href="tel:+13656457332"
@@ -107,7 +107,7 @@ export function Hero({ headline } = {}) {
           </div>
 
           <ul className="mt-6 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-[12.5px] text-stone-soft">
-            {['Confidential', 'Boutique practice', 'No obligation', 'Serving Ontario'].map((label) => (
+            {['Confidential', 'Boutique practice', 'On your timeline', 'Serving Ontario'].map((label) => (
               <li key={label} className="inline-flex items-center gap-1.5">
                 <Check className="h-3.5 w-3.5 text-bronze flex-shrink-0" strokeWidth={2.6} />
                 <span className="font-medium">{label}</span>

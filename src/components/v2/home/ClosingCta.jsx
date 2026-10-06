@@ -13,7 +13,7 @@ import { WhatThisCosts } from '@/components/brand/WhatThisCosts'
  *
  * Two-column layout. Left: Newsreader couplet ("Ready to talk? / We're
  * here when you're ready.") + body + navy CTA pointing to /contact.
- * Right: four small feature cells (Confidential / No Obligation /
+ * Right: four small feature cells (Confidential / On Your Timeline /
  * Ontario Focused / We're Here) with bronze Lucide icons.
  */
 const FEATURES = [
@@ -24,8 +24,8 @@ const FEATURES = [
   },
   {
     Icon: Calendar,
-    label: 'No Obligation',
-    body: 'A conversation does not commit you to anything.',
+    label: 'On Your Timeline',
+    body: 'Nothing moves until you decide it should.',
   },
   {
     Icon: MapPin,
@@ -59,7 +59,7 @@ export function ClosingCta() {
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center">
-              Book a free 15-minute call
+              Book a 15-minute call
             </Button>
             <Button
               as="a"

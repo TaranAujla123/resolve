@@ -85,7 +85,7 @@ export function Footer() {
                   to="/get-help"
                   className="inline-flex items-center gap-1.5 font-semibold text-[14px] text-bronze hover:text-bronze-deep transition-colors"
                 >
-                  Free 15-min seller call
+                  15-minute seller call
                   <span aria-hidden="true">→</span>
                 </Link>
               </li>
