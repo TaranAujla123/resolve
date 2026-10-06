@@ -67,7 +67,7 @@ const EXPERIENCE = [
     Icon: Award,
     title: 'A decade of combined experience',
     body:
-      'Across complex Ontario files on both sides of the deal: power of sale, mortgage arrears, time-sensitive sales, and value-add and multiplex purchases.',
+      'Across complex Ontario files on both sides of the deal: power of sale, mortgage arrears, time-sensitive sales, and value-add purchases.',
   },
   {
     Icon: Network,
@@ -79,7 +79,7 @@ const EXPERIENCE = [
     Icon: Users,
     title: 'Our own buyers and opportunities',
     body:
-      'Qualified buyers on one side, value-add and multiplex-eligible opportunities on the other. Either way, that means more than one path to a strong result.',
+      'Qualified buyers on one side, value-add opportunities on the other. Either way, that means more than one path to a strong result.',
   },
 ]
 
@@ -137,6 +137,66 @@ export function WhyUsPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* When a lender is involved — owner-led sale. Seller-first, but
+          written so lender counsel reading it sees why cooperating with
+          this sale makes sense. Consent is explicit: we act for the owner
+          only, and the coordination is how we protect the owner. */}
+      <section data-surface="white" className="bg-white section-y">
+        <div className="container">
+          <div className="max-w-3xl">
+            <Eyebrow>When a Lender Is Involved</Eyebrow>
+            <h2 className="mt-5 font-display font-medium text-navy text-display-md leading-[1.14]">
+              An owner-led sale,{' '}
+              <span className="italic text-bronze">with the lender kept informed.</span>
+            </h2>
+            <div className="mt-6 space-y-4 text-[16.5px] leading-relaxed text-navy-soft">
+              <p>
+                When a mortgage is in arrears or enforcement has started, the
+                sale that usually leaves you with the most is the one you run
+                before the lender has to. We act for you, and only for you.
+                Part of acting for you is bringing the lender in early, with
+                your written consent: the payout confirmed first, the price set
+                from real sales, every offer shared the day it arrives, and a
+                timetable everyone can rely on.
+              </p>
+              <p>
+                A lender that can see a credible sale under way has less reason
+                to run its own, and a lender-run sale is the one that costs you
+                the most. So the cooperation is not a favour to the lender. It
+                is how we protect your equity, your timing, and your say in how
+                this ends.
+              </p>
+            </div>
+          </div>
+          <ul className="mt-10 grid gap-5 grid-cols-1 md:grid-cols-3">
+            {[
+              ['You decide what is shared', 'Nothing goes to a lender without your written consent, and you see it first.'],
+              ['The lender sees a real plan', 'A price from comparable sales, weekly reporting and a clear timetable, not a request for more time.'],
+              ['Less added to what you owe', 'A sale you run avoids the enforcement and selling costs a lender adds to the account.'],
+            ].map(([t, d]) => (
+              <li key={t} className="rounded-[14px] border border-divider bg-stone p-6">
+                <div className="flex items-start gap-3">
+                  <span className="inline-flex h-[26px] w-[26px] flex-shrink-0 items-center justify-center rounded-full border border-bronze/60 text-bronze mt-[1px]">
+                    <Check className="h-3.5 w-3.5" strokeWidth={2.2} />
+                  </span>
+                  <div>
+                    <h3 className="font-display font-medium text-navy text-[1.15rem] leading-snug">{t}</h3>
+                    <p className="mt-2 text-[15px] leading-relaxed text-navy-soft">{d}</p>
+                  </div>
+                </div>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-8 text-[14px] leading-relaxed text-navy-mute">
+            Acting for a lender, or its counsel?{' '}
+            <Link to="/for-lenders" className="font-semibold text-bronze hover:text-navy transition-colors">
+              How we work with lenders
+            </Link>
+            .
+          </p>
         </div>
       </section>
 
