@@ -41,7 +41,7 @@ const ROUTES = [
   '/time-sensitive-sales',
   '/financial-pressure',
   '/for-agents',
-  '/multiplex',
+  '/for-lenders',
   '/privacy',
   '/terms',
   '/thanks',

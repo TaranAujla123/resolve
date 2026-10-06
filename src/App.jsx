@@ -21,7 +21,6 @@ import { InvestorAccessPage } from '@/components/v2/investor-access/InvestorAcce
 import { OpportunitiesPage } from '@/components/v2/opportunities/OpportunitiesPage'
 import { ForInvestorsPage } from '@/components/v2/for-investors/ForInvestorsPage'
 import { TaranProfile } from '@/components/v2/taran/TaranProfile'
-import { MultiplexPage } from '@/components/v2/multiplex/MultiplexPage'
 
 // Existing pages — kept as-is, restyled in-place to V2 surfaces and
 // typography via the updated SituationPage shell + Tailwind tokens.
@@ -34,6 +33,7 @@ import { PropertyDisputes } from '@/components/landing/situations/PropertyDisput
 import { TimeSensitiveSales } from '@/components/landing/situations/TimeSensitiveSales'
 import { FinancialPressure } from '@/components/landing/situations/FinancialPressure'
 import { ForAgents } from '@/components/landing/ForAgents'
+import { ForLenders } from '@/components/landing/ForLenders'
 import { ThankYou } from '@/components/landing/ThankYou'
 
 // SEO + analytics + Pixel/CAPI hooks — preserved verbatim.
@@ -420,53 +420,48 @@ const FOR_AGENTS_JSONLD = [
   },
 ]
 
-// /multiplex — the multiplex hub (front door). Indexable SEO page that
-// routes to the static PlexCheck tool + the two lead-magnet guides.
-// Tease-not-teach: names the outcome (a multiplex, 3–6 units, end-to-end
-// with a build partner); the playbook stays behind the tool/guides/call.
-const MULTIPLEX_JSONLD = [
+// /for-lenders — for lenders, mortgage administrators and their counsel on
+// enforcement files. Footer + direct links only (not in the main nav).
+const FOR_LENDERS_JSONLD = [
   ...SITE_JSONLD,
   {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: 'Multiplex Property in the GTA, Hamilton & Kitchener-Waterloo · Resolve',
-    url: `${SITE_URL}/multiplex/`,
+    name: 'For Lenders & Counsel · Mortgage Enforcement Sales · Resolve',
+    url: `${SITE_URL}/for-lenders/`,
     description:
-      'Many Ontario lots can now hold a multiplex of three to six units. Resolve finds, values, lists, and buys plex-potential property, with a build partner who prices and builds it. GTA, Hamilton, and Kitchener-Waterloo.',
+      'How Resolve works with lenders and their counsel on mortgage enforcement files: owner-led sales coordinated with counsel before possession, and lender listings after possession. One side per property.',
     isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
     breadcrumb: {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: 'Multiplex', item: `${SITE_URL}/multiplex/` },
+        { '@type': 'ListItem', position: 2, name: 'For Lenders', item: `${SITE_URL}/for-lenders/` },
       ],
     },
   },
   {
     '@context': 'https://schema.org',
     '@type': 'Service',
-    serviceType: 'Multiplex and Value-Add Property Representation (Ontario)',
+    serviceType: 'Real estate brokerage services for mortgage enforcement files (Ontario)',
     provider: RESOLVE_ORG,
-    areaServed: [
-      { '@type': 'Place', name: 'Greater Toronto Area' },
-      { '@type': 'City', name: 'Hamilton' },
-      { '@type': 'City', name: 'Kitchener-Waterloo' },
-    ],
+    areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
+    audience: { '@type': 'Audience', audienceType: 'Mortgage lenders, mortgage administrators and their counsel' },
     description:
-      'Resolve helps Ontario homeowners and buyers with plex-potential property: assessing how many units a lot can hold, valuing it, and representing the sale or purchase. A construction partner handles permits, build, and quote. Educational information; unit permissions and financing verified per lot with the municipality and a CMHC-approved lender.',
+      'Owner-led sales coordinated with the lender and its counsel before possession, and listing representation for lenders after possession. Payout-first pricing, same-day offer reporting, weekly activity reports. One side per property.',
   },
 ]
 
-function MultiplexRoutePage() {
+function ForLendersPage() {
   return (
     <>
       <Seo
-        title="Multiplex Property in the GTA, Hamilton & Kitchener-Waterloo · Resolve"
-        description="Many Ontario lots can now hold a multiplex of 3 to 6 units. Resolve finds, values, lists and buys plex-potential property — with a build partner who prices and builds it. GTA, Hamilton & Kitchener-Waterloo."
-        canonical={`${SITE_URL}/multiplex/`}
-        jsonLd={MULTIPLEX_JSONLD}
+        title="For Lenders & Counsel · Mortgage Enforcement Sales · Resolve"
+        description="Owner-led sales coordinated with lender counsel before possession, and lender listings after it. Payout-first pricing, every offer the same day, weekly reports. GTA, Durham, Hamilton, Kitchener and Waterloo."
+        canonical={`${SITE_URL}/for-lenders/`}
+        jsonLd={FOR_LENDERS_JSONLD}
       />
-      <MultiplexPage />
+      <ForLenders />
     </>
   )
 }
@@ -500,8 +495,8 @@ function HomePage() {
   return (
     <>
       <Seo
-        title="Power of Sale & Complex Home Sales in Ontario · Resolve Real Estate"
-        description="Selling under power of sale, mortgage arrears or financial pressure, or on a deadline. Complex seller representation and value-add buying across the GTA, Durham, Hamilton, Kitchener and Waterloo."
+        title="Selling When the Mortgage No Longer Works · Ontario · Resolve Real Estate"
+        description="Renewal payments that doubled, arrears, power of sale, or a deadline. Calm, private seller representation, plus value-add buying, across the GTA, Durham, Hamilton, Kitchener and Waterloo."
         canonical={`${SITE_URL}/`}
         jsonLd={HOME_JSONLD}
       />
@@ -821,8 +816,10 @@ export default function App() {
                 hard-navigation hits (search, bookmarks, social). */}
             <Route path="/life-transitions" element={<Navigate to="/time-sensitive-sales" replace />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
-            <Route path="/multiplex" element={<MultiplexRoutePage />} />
-            <Route path="/multiplex/" element={<MultiplexRoutePage />} />
+            <Route path="/for-lenders" element={<ForLendersPage />} />
+            {/* /multiplex retired 6 Oct 2026 (multiplex work lives with
+                PlexEdge). Redirect keeps inbound links landing somewhere. */}
+            <Route path="/multiplex" element={<Navigate to="/buyers" replace />} />
             {/* /resources retired — was a hub that only re-listed the
                 six situation deep-dive pages. The public/resources/
                 static stub handles direct hits + crawler redirects; this

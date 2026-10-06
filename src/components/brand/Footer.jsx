@@ -94,11 +94,10 @@ export function Footer() {
 
           {/* For Buyers & Multiplex */}
           <div>
-            <p className={headCls}>Buyers &amp; Multiplex</p>
+            <p className={headCls}>Buyers</p>
             <ul className="mt-5 space-y-2.5">
               <li><Link to="/buyers" className={linkCls}>For buyers</Link></li>
               <li><Ext href="/opportunities/">Current opportunities</Ext></li>
-              <li><Link to="/multiplex" className={linkCls}>The Multiplex Advantage</Link></li>
               <li><Ext href="/plexcheck/">PlexCheck lot tool</Ext></li>
               <li className="pt-1">
                 <Link
@@ -122,6 +121,7 @@ export function Footer() {
               <li><Link to="/about" className={linkCls}>About Resolve</Link></li>
               <li><Link to="/why-us" className={linkCls}>Why Resolve</Link></li>
               <li><Link to="/for-agents" className={linkCls}>For agents</Link></li>
+              <li><Link to="/for-lenders" className={linkCls}>For lenders &amp; counsel</Link></li>
               <li><Link to="/for-investors" className={linkCls}>For Investors</Link></li>
               <li><Link to="/contact" className={linkCls}>Confidential inquiry</Link></li>
             </ul>

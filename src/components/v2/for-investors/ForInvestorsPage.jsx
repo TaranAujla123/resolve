@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle2, ChevronRight, Compass, FileText, Wrench } from 'lucide-react'
+import { ArrowRight, CheckCircle2, ChevronRight, FileText, Wrench } from 'lucide-react'
 import { Seo } from '@/components/seo/Seo'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
@@ -39,7 +39,6 @@ const GUIDES = [
   { href: '/plexcheck/', icon: Wrench, t: 'PlexCheck lot tool', d: 'Check a lot’s multiplex potential in seconds.' },
   { href: '/lot-value/', icon: FileText, t: 'Guide: your lot’s value', d: 'What a lot is really worth, and why.' },
   { href: '/pays-for-itself/', icon: FileText, t: 'A home that pays for itself', d: 'The added-unit and income playbook.' },
-  { to: '/multiplex', icon: Compass, t: 'The Multiplex Advantage', d: 'How small multiplexes make money in Ontario.' },
 ]
 
 export function ForInvestorsPage() {
