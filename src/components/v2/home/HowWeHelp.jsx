@@ -1,5 +1,5 @@
 import React from 'react'
-import { Calculator, Handshake, Tag, FileCheck, Scale } from 'lucide-react'
+import { Calculator, Handshake, FileCheck, Scale, Home } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 
 /**
@@ -23,17 +23,12 @@ const STEPS = [
   {
     Icon: Calculator,
     title: 'The number first',
-    body: 'What it will sell for, what is owing, and what you keep, in writing, before anything lists.',
+    body: 'What it will sell for, priced from real sales and not the balance owing, what is owed, and what you keep. In writing, before anything lists.',
   },
   {
     Icon: Handshake,
     title: 'The lender, early',
     body: 'Where a lender is involved, we bring them in with your consent, so the sale has room to run.',
-  },
-  {
-    Icon: Tag,
-    title: 'Priced to sell',
-    body: 'From what has actually sold nearby, not from the balance owing.',
   },
   {
     Icon: FileCheck,
@@ -44,6 +39,11 @@ const STEPS = [
     Icon: Scale,
     title: 'Your lawyer in the loop',
     body: 'Through to closing, with what is left paid to you on closing day.',
+  },
+  {
+    Icon: Home,
+    title: 'Your next place',
+    body: 'Buying smaller with what is left, or renting. We help find it and line it up, so you move straight from one to the other.',
   },
 ]
 
