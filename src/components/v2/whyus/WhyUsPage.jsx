@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Check, FileSearch, UserCheck, Gem, Scale, ShieldCheck, Award, Network, Users } from 'lucide-react'
+import { Check, FileSearch, Gem, Scale, ShieldCheck, Award, Network, Users } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { ClosingCta } from '../home/ClosingCta'
@@ -27,12 +27,6 @@ const PRINCIPLES = [
     title: 'We read before we recommend.',
     body:
       'Every file starts with the documents and the real position, not a listing template. We understand what is actually going on before we move on it.',
-  },
-  {
-    Icon: UserCheck,
-    title: 'We represent one side, fully.',
-    body:
-      'Sellers and buyers are separate clients, each with their own goal. You get representation built around your side of the deal, and any shared interest is disclosed and consented to in writing.',
   },
   {
     Icon: Gem,
