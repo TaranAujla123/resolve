@@ -1,5 +1,5 @@
 import React from 'react'
-import { MessageCircle, Route, ClipboardCheck, Target, Lock } from 'lucide-react'
+import { Calculator, Handshake, Tag, FileCheck, Scale } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 
 /**
@@ -21,29 +21,29 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
  */
 const STEPS = [
   {
-    Icon: MessageCircle,
-    title: 'Understand Your Situation',
-    body: 'We listen, ask the right questions and lay out what the sale can look like.',
+    Icon: Calculator,
+    title: 'The number first',
+    body: 'What it will sell for, what is owing, and what you keep, in writing, before anything lists.',
   },
   {
-    Icon: Route,
-    title: 'Build the Sale Plan',
-    body: 'A listing strategy that protects your equity and keeps the timeline yours.',
+    Icon: Handshake,
+    title: 'The lender, early',
+    body: 'Where a lender is involved, we bring them in with your consent, so the sale has room to run.',
   },
   {
-    Icon: ClipboardCheck,
-    title: 'Run the Sale',
-    body: 'We market the property, coordinate the moving parts and keep the sale moving.',
+    Icon: Tag,
+    title: 'Priced to sell',
+    body: 'From what has actually sold nearby, not from the balance owing.',
   },
   {
-    Icon: Target,
-    title: 'Close on Your Terms',
-    body: 'The right sale at the right time, with as little friction as the file allows.',
+    Icon: FileCheck,
+    title: 'Offers built to close',
+    body: 'Dates, deposits and conditions that hold, including any lender sign-off.',
   },
   {
-    Icon: Lock,
-    title: 'Protect Your Privacy',
-    body: 'Discretion is at the core of everything we do.',
+    Icon: Scale,
+    title: 'Your lawyer in the loop',
+    body: 'Through to closing, with what is left paid to you on closing day.',
   },
 ]
 
@@ -52,9 +52,9 @@ export function HowWeHelp() {
     <section id="how-we-help" data-surface="mist" className="bg-mist section-y">
       <div className="container">
         <div className="text-center max-w-3xl mx-auto">
-          <Eyebrow>How We Help</Eyebrow>
+          <Eyebrow>How the Sale Runs</Eyebrow>
           <h2 className="mt-5 font-display font-medium text-navy text-display-lg">
-            Clear guidance. Practical solutions. Better outcomes.
+            Five steps, in this order.
           </h2>
         </div>
 
@@ -90,6 +90,9 @@ export function HowWeHelp() {
             </li>
           ))}
         </ul>
+        <p className="mt-12 text-center text-[14.5px] text-navy-soft">
+          Private throughout. Nothing in the listing says why the home is for sale.
+        </p>
       </div>
     </section>
   )
