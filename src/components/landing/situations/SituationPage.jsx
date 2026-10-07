@@ -23,7 +23,7 @@ import { SITUATION_FAQS } from '@/content/situationFaqs'
  * The eyebrow lockup keeps the "Resolve · <situation name>" return
  * pattern intact; only the surfaces and ink colors shift to V2.
  */
-export function SituationPage({ eyebrow, title, lead, situationLabel, situationSlug, children }) {
+export function SituationPage({ eyebrow, title, lead, situationLabel, situationSlug, afterBody = null, children }) {
   const faqs = (situationSlug && SITUATION_FAQS[situationSlug]) || null
   return (
     <>
@@ -101,6 +101,9 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
           <div className="max-w-3xl space-y-12">{children}</div>
         </div>
       </section>
+
+      {/* Optional full-width section after the body (e.g. CoordinatedSale). */}
+      {afterBody}
 
       {/* FAQ — visible, crawlable, and mirrored 1:1 by FAQPage JSON-LD in
           App.jsx. Targets the question-shaped searches for each situation

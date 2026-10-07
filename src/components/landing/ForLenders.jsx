@@ -314,6 +314,14 @@ export function ForLenders() {
                     always know whose side we are on, in writing, from the
                     first email.
                   </p>
+                  <p className="mt-3 text-[14.5px] text-navy-soft leading-relaxed">
+                    When the price may not cover everything owed, we run a
+                    coordinated sale.{' '}
+                    <Link to="/coordinated-sale" className="font-semibold text-bronze hover:text-navy transition-colors">
+                      See how it works, as the homeowner reads it
+                    </Link>
+                    .
+                  </p>
                 </div>
               </div>
             </div>

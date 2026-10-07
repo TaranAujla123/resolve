@@ -1,6 +1,7 @@
 import React from 'react'
 import { SituationPage, SituationBlock } from './SituationPage'
 import { RelatedSituations } from './RelatedSituations'
+import { CoordinatedSale } from '../CoordinatedSale'
 
 /**
  * Dedicated landing page for the "Mortgage Arrears" situation.
@@ -30,6 +31,7 @@ export function MortgageArrears() {
       title="Selling a Home in Mortgage Arrears or Default in Ontario."
       situationLabel="Mortgage arrears"
       situationSlug="mortgage-arrears"
+      afterBody={<CoordinatedSale />}
       lead={
         <>
           Falling behind on mortgage payments narrows the options week by

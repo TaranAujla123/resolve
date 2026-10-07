@@ -1,6 +1,7 @@
 import React from 'react'
 import { SituationPage, SituationBlock } from './SituationPage'
 import { RelatedSituations } from './RelatedSituations'
+import { CoordinatedSale } from '../CoordinatedSale'
 
 /**
  * Dedicated landing page for the "Power of Sale" situation.
@@ -30,6 +31,7 @@ export function PowerOfSale() {
       title="Selling a Home Facing Power of Sale in Ontario."
       situationLabel="Power of sale"
       situationSlug="power-of-sale"
+      afterBody={<CoordinatedSale />}
       lead={
         <>
           If your lender has started a power of sale, the clock is running

@@ -4,6 +4,7 @@ import { Situations } from '../home/Situations'
 import { WhyResolve } from '../home/WhyResolve'
 import { HowWeHelp } from '../home/HowWeHelp'
 import { ClosingCta } from '../home/ClosingCta'
+import { CoordinatedSale } from '@/components/landing/CoordinatedSale'
 
 /**
  * SellersPage — /sellers.
@@ -55,6 +56,7 @@ export function SellersPage() {
       <Situations />
       <WhyResolve />
       <HowWeHelp />
+      <CoordinatedSale ctaHref="/contact" />
       <GuideBand />
       <ClosingCta />
     </>

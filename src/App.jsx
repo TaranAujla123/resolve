@@ -34,6 +34,7 @@ import { TimeSensitiveSales } from '@/components/landing/situations/TimeSensitiv
 import { FinancialPressure } from '@/components/landing/situations/FinancialPressure'
 import { ForAgents } from '@/components/landing/ForAgents'
 import { ForLenders } from '@/components/landing/ForLenders'
+import { CoordinatedSalePage as CoordinatedSaleBody } from '@/components/landing/CoordinatedSalePage'
 import { ThankYou } from '@/components/landing/ThankYou'
 
 // SEO + analytics + Pixel/CAPI hooks — preserved verbatim.
@@ -466,11 +467,35 @@ function ForLendersPage() {
   )
 }
 
+function CoordinatedSaleRoutePage() {
+  return (
+    <>
+      <Seo
+        title="Coordinated Sale · When the Sale May Not Cover the Mortgage · Ontario · Resolve"
+        description="When the realistic price may not cover everything owed, Resolve runs a coordinated sale: the homeowner, the lender and both lawyers on the same numbers and timetable. GTA, Durham, Hamilton, Kitchener and Waterloo."
+        canonical={`${SITE_URL}/coordinated-sale/`}
+      />
+      <CoordinatedSaleBody />
+    </>
+  )
+}
+
 function ScrollToTopOnRouteChange() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
+    // Hash links (e.g. /power-of-sale#coordinated-sale) land on the section;
+    // everything else starts at the top.
+    if (hash) {
+      const id = decodeURIComponent(hash.slice(1))
+      const t = setTimeout(() => {
+        const el = document.getElementById(id)
+        if (el) el.scrollIntoView({ behavior: 'instant', block: 'start' })
+        else window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+      }, 60)
+      return () => clearTimeout(t)
+    }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
-  }, [pathname])
+  }, [pathname, hash])
   return null
 }
 
@@ -817,6 +842,7 @@ export default function App() {
             <Route path="/life-transitions" element={<Navigate to="/time-sensitive-sales" replace />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
             <Route path="/for-lenders" element={<ForLendersPage />} />
+            <Route path="/coordinated-sale" element={<CoordinatedSaleRoutePage />} />
             {/* /multiplex retired 6 Oct 2026 (multiplex work lives with
                 PlexEdge). Redirect keeps inbound links landing somewhere. */}
             <Route path="/multiplex" element={<Navigate to="/buyers" replace />} />

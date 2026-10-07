@@ -42,6 +42,7 @@ const ROUTES = [
   '/financial-pressure',
   '/for-agents',
   '/for-lenders',
+  '/coordinated-sale',
   '/privacy',
   '/terms',
   '/thanks',
