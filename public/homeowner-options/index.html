@@ -86,31 +86,36 @@
 
 
   /* bank sells it vs you sell it */
-  .vs{width:100%;max-width:900px;border-collapse:separate;border-spacing:0;margin-top:26px;table-layout:fixed}
+  .vs{width:100%;max-width:920px;border-collapse:separate;border-spacing:8px 0;margin:26px -8px 0;table-layout:fixed}
   .vs th,.vs td{padding:14px 16px;text-align:left;vertical-align:top;font-size:15px;line-height:1.5}
-  .vs tbody tr+tr td{border-top:1px solid var(--line)}
-  .vs td.l{width:22%;font-family:'Poppins';font-weight:600;font-size:13px;color:var(--muted)}
-  .vs td.b{width:36%;color:var(--muted)}
-  .vs td.y{width:42%;color:var(--navy);background:#EFE6D3}
-  .vs tbody tr:last-child td.y{border-radius:0 0 12px 12px}
+  .vs td.l{width:22%;font-family:'Poppins';font-weight:600;font-size:13px;color:var(--muted);padding-left:0}
+  .vs td.b{width:36%;color:#6b7380;background:#E9ECF0;padding-left:40px;position:relative}
+  .vs td.y{width:42%;color:var(--navy);background:#fff;font-weight:500;padding-left:42px;position:relative}
+  .vs td.b:before{content:"\2715";position:absolute;left:16px;top:15px;color:#a3aab5;font-size:12px}
+  .vs td.y:before{content:"\2713";position:absolute;left:16px;top:13px;color:var(--gold-d);font-weight:800;font-size:16px}
+  .vs tbody tr+tr td.l{border-top:1px solid var(--line)}
+  .vs tbody tr+tr td.b{border-top:1px solid #DCE0E6}
+  .vs tbody tr+tr td.y{border-top:1px solid #EFE8DA}
+  .vs tbody tr:last-child td.b,.vs tbody tr:last-child td.y{border-radius:0 0 12px 12px}
   .vs th .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:3px}
   .vs th .t{font-family:'Poppins';font-weight:600;font-size:16px}
-  .vs th.b{color:var(--muted)}.vs th.b .t{color:var(--navy)}
+  .vs th.b{background:#DDE1E7;color:#7a828e;border-radius:12px 12px 0 0}.vs th.b .t{color:#5b6472}
   .vs th.y{background:var(--navy);color:#fff;border-radius:12px 12px 0 0}.vs th.y .k{color:var(--gold)}
   .vsnote{margin-top:18px;max-width:64ch;font-size:15.5px;color:var(--navy)}
   .vsdisc{margin-top:10px;font-size:12px;color:var(--muted);max-width:80ch}
   @media(max-width:640px){
+    .vs{margin:22px 0 0;border-spacing:0}
     .vs thead{display:none}
     .vs,.vs tbody,.vs tr,.vs td{display:block;width:100%}
-    .vs tbody tr{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;margin-bottom:12px}
-    .vs tbody tr+tr td{border-top:none}
-    .vs td,.vs td.l,.vs td.b,.vs td.y{padding:0;width:auto}
-    .vs td.l{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
-    .vs td.b{font-size:14.5px;margin-bottom:8px}
-    .vs td.y,.vs tbody tr:last-child td.y{font-size:14.5px;border-radius:8px;padding:10px 12px}
-    .vs td.b:before,.vs td.y:before{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
-    .vs td.b:before{content:"The lender sells it";color:#9aa1ad}
-    .vs td.y:before{content:"You sell it first";color:var(--gold-d)}
+    .vs tbody tr{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 14px 14px;margin-bottom:12px}
+    .vs td,.vs td.l,.vs td.b,.vs td.y,.vs tbody tr+tr td.l,.vs tbody tr+tr td.b,.vs tbody tr+tr td.y{padding:0;width:auto;border-top:none}
+    .vs td.l{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:9px}
+    .vs td.b,.vs td.y,.vs tbody tr+tr td.b,.vs tbody tr+tr td.y,.vs tbody tr:last-child td.b,.vs tbody tr:last-child td.y{font-size:14.5px;border-radius:8px;padding:10px 12px}
+    .vs td.b{margin-bottom:8px}
+    .vs td.y,.vs tbody tr+tr td.y{border:1.5px solid var(--gold)}
+    .vs td.b:before,.vs td.y:before{position:static;display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
+    .vs td.b:before{content:"\2715  The lender sells it";color:#8d95a1}
+    .vs td.y:before{content:"\2713  You sell it first";color:var(--gold-d)}
   }
 
   /* who put this together */
