@@ -84,6 +84,35 @@
   .item h3{font-family:'Poppins';font-weight:600;font-size:16.5px;color:var(--navy);margin:6px 0 6px}
   .item p{font-size:14.5px;color:#4a515c}
 
+
+  /* bank sells it vs you sell it */
+  .vs{width:100%;max-width:900px;border-collapse:separate;border-spacing:0;margin-top:26px;table-layout:fixed}
+  .vs th,.vs td{padding:14px 16px;text-align:left;vertical-align:top;font-size:15px;line-height:1.5}
+  .vs tbody tr+tr td{border-top:1px solid var(--line)}
+  .vs td.l{width:22%;font-family:'Poppins';font-weight:600;font-size:13px;color:var(--muted)}
+  .vs td.b{width:36%;color:var(--muted)}
+  .vs td.y{width:42%;color:var(--navy);background:#EFE6D3}
+  .vs tbody tr:last-child td.y{border-radius:0 0 12px 12px}
+  .vs th .k{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:700;margin-bottom:3px}
+  .vs th .t{font-family:'Poppins';font-weight:600;font-size:16px}
+  .vs th.b{color:var(--muted)}.vs th.b .t{color:var(--navy)}
+  .vs th.y{background:var(--navy);color:#fff;border-radius:12px 12px 0 0}.vs th.y .k{color:var(--gold)}
+  .vsnote{margin-top:18px;max-width:64ch;font-size:15.5px;color:var(--navy)}
+  .vsdisc{margin-top:10px;font-size:12px;color:var(--muted);max-width:80ch}
+  @media(max-width:640px){
+    .vs thead{display:none}
+    .vs,.vs tbody,.vs tr,.vs td{display:block;width:100%}
+    .vs tbody tr{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:14px 14px 12px;margin-bottom:12px}
+    .vs tbody tr+tr td{border-top:none}
+    .vs td,.vs td.l,.vs td.b,.vs td.y{padding:0;width:auto}
+    .vs td.l{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:8px}
+    .vs td.b{font-size:14.5px;margin-bottom:8px}
+    .vs td.y,.vs tbody tr:last-child td.y{font-size:14.5px;border-radius:8px;padding:10px 12px}
+    .vs td.b:before,.vs td.y:before{display:block;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;margin-bottom:2px}
+    .vs td.b:before{content:"The lender sells it";color:#9aa1ad}
+    .vs td.y:before{content:"You sell it first";color:var(--gold-d)}
+  }
+
   /* who put this together */
   .who{display:grid;grid-template-columns:.72fr 1.28fr;gap:36px;align-items:center}
   .who .photo{width:100%;max-width:280px;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:16px;border:1px solid rgba(255,255,255,.14)}
@@ -214,6 +243,32 @@
         <div class="item"><div class="n">03</div><h3>Access your equity without a full sale</h3><p>Reverse mortgage, sever and sell surplus land, bring in a partner or sell-and-lease-back, rent-to-own.</p></div>
         <div class="item"><div class="n">04</div><h3>Raise the value before you refinance or sell</h3><p>Legalize an existing basement suite, targeted high-return improvements, clear the issues that scare lenders.</p></div>
       </div>
+    </div>
+  </section>
+
+  <!-- BANK SELLS IT OR YOU DO -->
+  <section class="cream">
+    <div class="wrap">
+      <div class="eyebrow">If a sale is on the table</div>
+      <h2 class="sec">The bank sells it. <span class="em">Or you do.</span></h2>
+      <p class="body" style="margin-top:12px">Same house. The difference is who runs the sale, and who it is run for.</p>
+      <table class="vs">
+        <thead><tr><th style="width:22%"></th>
+          <th class="b" style="width:36%"><div class="k">Lender-led</div><div class="t">The lender sells it</div></th>
+          <th class="y" style="width:42%"><div class="k">Owner-led</div><div class="t">You sell it first</div></th></tr></thead>
+        <tbody>
+            <tr><td class="l">Who it is run for</td><td class="b">The lender, to recover its loan</td><td class="y">You. Your agent and your lawyer work for you</td></tr>
+            <tr><td class="l">The price</td><td class="b">Enough to cover the loan and its costs</td><td class="y">Set by the market, from real recent sales</td></tr>
+            <tr><td class="l">Costs off the top</td><td class="b">The lender&rsquo;s legal and enforcement costs, its agent, then the mortgage</td><td class="y">Commission and your lawyer, then the mortgage</td></tr>
+            <tr><td class="l">How it is sold</td><td class="b">As-is, with no seller disclosure. Buyers price in the unknowns</td><td class="y">Prepared and presented properly, on terms you agree to</td></tr>
+            <tr><td class="l">Your move date</td><td class="b">Set by the lender&rsquo;s possession timeline</td><td class="y">Set around your next place</td></tr>
+            <tr><td class="l">If it falls short</td><td class="b">The difference stays your debt</td><td class="y">Raised with the lender before the sale, not after</td></tr>
+            <tr><td class="l">What is left for you</td><td class="b">Whatever remains after everyone else is paid, paid later</td><td class="y">Paid to you at closing</td></tr>
+            <tr><td class="l">On your record</td><td class="b">A power of sale on title</td><td class="y">An ordinary sale on title</td></tr>
+        </tbody>
+      </table>
+      <p class="vsnote">You can run the sale yourself while you still control the timing. Each month behind adds to what is owed, and nothing to what the house is worth.</p>
+      <p class="vsdisc">General information, not legal or financial advice. Every lender and every file is different, and nothing here guarantees an outcome.</p>
     </div>
   </section>
 
