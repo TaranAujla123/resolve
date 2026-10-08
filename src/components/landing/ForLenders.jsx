@@ -50,7 +50,7 @@ const afterPossession = [
 
 const compare = [
   ['Proceeds', 'Usually sooner. No motion, writ or possession step first.', 'Later. Possession has to be obtained before the listing.'],
-  ['Lender’s costs', 'One commission it approves. No enforcement or carrying costs.', 'Enforcement costs, plus carrying a vacant property until it closes.'],
+  ['Lender’s costs', 'A lean commission it approves. No enforcement or carrying costs.', 'Enforcement costs, plus carrying a vacant property until it closes.'],
   ['Presentation', 'Occupied and maintained. Shows like an ordinary listing.', 'Vacant and as-is. Buyers tend to discount lender sales.'],
   ['Control', 'The lender approves each offer through its consent to discharge.', 'Full control of price, timing and terms.'],
   ['Depends on', 'A cooperating owner and enough time before the action moves on.', 'Nothing from the borrower.'],

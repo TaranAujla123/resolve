@@ -35,7 +35,7 @@ const FOR_YOU = [
 
 const FOR_LENDER = [
   'An arm’s-length sale at market, priced from comparable sales.',
-  'One commission, and no enforcement or carrying costs.',
+  'A lean commission it approves, and no enforcement or carrying costs.',
   'A written timetable with dates.',
   'Every offer sent the day it arrives.',
   'A seller who is cooperating, with their own lawyer.',
