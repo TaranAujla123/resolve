@@ -92,8 +92,8 @@ export function TaranProfile() {
                 Taran Aujla
               </h1>
               <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-stone/80">
-                Real estate Salesperson in Ontario. Investor, former real
-                estate lawyer, and problem-solver, focused on complex sales and
+                Real estate Salesperson and investor in Ontario, and a
+                problem-solver, focused on complex sales and
                 on value-add property for buyers who look past the price to what
                 a home could become.
               </p>

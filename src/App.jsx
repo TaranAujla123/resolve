@@ -606,7 +606,7 @@ function TaranAujlaPage() {
     <>
       <Seo
         title="Taran Aujla · Real Estate Salesperson · Ontario"
-        description="Taran Aujla is a real estate Salesperson in Ontario with HomeLife G1 Realty Inc., Brokerage. Investor and former real estate lawyer, focused on complex sales and value-add property. RECO Reg. No. 6024721."
+        description="Taran Aujla is a real estate Salesperson and investor in Ontario with HomeLife G1 Realty Inc., Brokerage, focused on complex sales and value-add property. RECO Reg. No. 6024721."
         canonical={`${SITE_URL}/taranaujla/`}
         jsonLd={[
           ...SITE_JSONLD,
