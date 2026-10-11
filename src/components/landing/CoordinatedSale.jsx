@@ -20,7 +20,7 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
  */
 const STEPS = [
   ['The numbers first.', 'A price from real sales, and every amount owing confirmed, fees included.'],
-  ['A plan to the lender, before the listing.', 'With your written consent: the comparable sales, the proposed price and a timetable. The listing goes live once the lender approves the price in writing.'],
+  ['A plan to the lender, before the listing.', 'With your written consent: the comparable sales, the price and a timetable, sent to the lender before the listing goes live.'],
   ['Every offer, the same day.', 'Offers are signed on the condition of lender approval, so the buyer is held while the lender decides.'],
   ['A clean close.', 'The lender approves the discharge, your lawyer handles any balance, and the closing date is set around your move.'],
 ]
