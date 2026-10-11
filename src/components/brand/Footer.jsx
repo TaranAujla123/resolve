@@ -115,6 +115,7 @@ export function Footer() {
             <p className={headCls}>Guides &amp; Practice</p>
             <ul className="mt-5 space-y-2.5">
               <li><Ext href="/homeowner-options/">Guide: homeowner options</Ext></li>
+              <li><Ext href="/bank-sells-it-or-you-do/">Guide: the bank sells it, or you do</Ext></li>
               <li><Link to="/about" className={linkCls}>About Resolve</Link></li>
               <li><Link to="/why-us" className={linkCls}>Why Resolve</Link></li>
               <li><Link to="/for-agents" className={linkCls}>For agents</Link></li>
