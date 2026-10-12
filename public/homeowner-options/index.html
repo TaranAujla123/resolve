@@ -171,6 +171,10 @@
                 <p class="stagenote">This is the one thing that changes what your options actually are. It stays between us.</p>
               </div>
               <input type="hidden" name="magnet" value="Homeowner Options (financial difficulty)" />
+              <input type="hidden" name="ad_source" value="" />
+              <input type="hidden" name="utm_source" value="" />
+              <input type="hidden" name="utm_campaign" value="" />
+              <input type="hidden" name="utm_content" value="" />
               <input type="hidden" name="_subject" value="Homeowner Options guide — new lead" />
               <button class="btn" type="submit" id="mbtn">Send me my options</button>
               <p class="micro">Confidential. Most emails answered within one business day.</p>
@@ -336,6 +340,28 @@
       var form=document.getElementById('magnetform'), btn=document.getElementById('mbtn'), errEl=document.getElementById('merr');
       var PDF='/downloads/resolve-homeowner-options.pdf';
       function triggerDownload(){var a=document.createElement('a');a.href=PDF;a.download='';document.body.appendChild(a);a.click();document.body.removeChild(a);}
+      /* Attribution: which ad (or referrer) brought them here. Meta ads carry
+         utm_* if set in the ad's URL parameters, and always fbclid. Kept for the
+         session so a reload or a second page before submitting keeps the source. */
+      (function(){
+        try{
+          var q=new URLSearchParams(location.search), K='rs_attrib', saved=null;
+          try{ saved=JSON.parse(sessionStorage.getItem(K)||'null'); }catch(x){}
+          var a={ utm_source:q.get('utm_source')||'', utm_campaign:q.get('utm_campaign')||'', utm_content:q.get('utm_content')||'',
+                  fbclid:!!q.get('fbclid'), ref:document.referrer||'' };
+          if(!a.utm_source&&!a.utm_content&&!a.fbclid&&saved) a=saved;
+          var host=(a.ref||'').replace(/^https?:\/\//,'').split('/')[0];
+          a.ad_source = a.utm_content ? a.utm_content
+                      : a.utm_source ? (a.utm_source+(a.utm_campaign?' / '+a.utm_campaign:''))
+                      : a.fbclid ? 'Meta ad click (no UTM on ad)'
+                      : (host && host.indexOf('resolverealestate')<0) ? 'referral: '+host
+                      : host ? 'site navigation' : 'direct / typed';
+          try{ sessionStorage.setItem(K, JSON.stringify(a)); }catch(x){}
+          ['ad_source','utm_source','utm_campaign','utm_content'].forEach(function(n){
+            var el=form.querySelector('input[name="'+n+'"]'); if(el) el.value=a[n]||'';
+          });
+        }catch(e){}
+      })();
       form.addEventListener('submit',function(e){
         e.preventDefault();errEl.style.display='none';
         btn.disabled=true;btn.textContent='Sending…';
