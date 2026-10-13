@@ -125,7 +125,7 @@ export function TaranProfile() {
           <div className="mt-6 space-y-5 text-[16.5px] leading-relaxed text-navy-soft">
             <p>
               I come at real estate from two sides: as an investor, and for
-              nine years and nine months as a real estate lawyer. I began managing my
+              close to a decade in real estate law. I began managing my
               family&rsquo;s rentals as a teenager and have owned and operated my
               own since. In practice I closed several hundred transactions, and
               the same lesson held on both sides: most problems that surface at

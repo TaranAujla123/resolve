@@ -59,7 +59,7 @@ export function About() {
               />
               <blockquote className="mt-3 text-[15.5px] text-ink-soft leading-relaxed space-y-4">
                 <p>
-                  For nine years and nine months I practised real estate law in
+                  For close to a decade I practised real estate law in
                   Ontario, working through hundreds of transactions and the
                   complications that come with them. I was often the one
                   called in when a deal was tangled, time-sensitive, or

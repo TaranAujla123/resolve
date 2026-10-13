@@ -318,7 +318,7 @@ export function SellPrivatelyPage() {
                   A former real estate lawyer, on your side of the table.
                 </p>
                 <p className="mt-4 text-[15px] leading-relaxed text-stone/80">
-                  Taran spent nine years and nine months in real estate law before moving to the deal side. On a
+                  Taran spent close to a decade in real estate law before moving to the deal side. On a
                   private sale he represents <span className="italic text-bronze">you</span>, reads
                   the offer the way a lawyer reads it, and makes sure the terms hold up. The buyer is
                   never us.

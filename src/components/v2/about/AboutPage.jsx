@@ -135,7 +135,7 @@ export function AboutPage() {
               <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-stone-soft">
                 <p>
                   I come at real estate from two sides: as an investor, and
-                  for nine years and nine months as a real estate lawyer. I started
+                  for close to a decade in real estate law. I started
                   managing my parents&rsquo; multiplexes as a teenager and have
                   owned and operated my own since; in practice, I closed
                   several hundred transactions. Both taught me the same

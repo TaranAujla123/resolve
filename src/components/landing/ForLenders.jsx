@@ -263,8 +263,8 @@ export function ForLenders() {
               </h2>
               <div className="mt-5 space-y-4 text-[16px] text-ink-soft leading-relaxed">
                 <p>
-                  Taran Aujla practised real estate law in Ontario for nine years
-                  and nine months and closed several hundred real estate transactions before
+                  Taran Aujla practised real estate law in Ontario for
+                  close to a decade and closed several hundred real estate transactions before
                   moving to the sales side. Payout statements, per diems,
                   consents to discharge, the timeline from claim to motion to
                   writ: none of it needs explaining. Offers are structured so
