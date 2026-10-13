@@ -409,7 +409,7 @@ export function GetHelpPage() {
                       </p>
                       <ul className="mt-4 space-y-3.5">
                         {[
-                          'Ten years as a real estate lawyer before this. I have read these agreements from the other side of the table.',
+                          'Nine years and nine months as a real estate lawyer before this. I have read these agreements from the other side of the table.',
                           'A price built from comparables and condition, with the working shown, so you can check it rather than take it.',
                           'Complicated sales need sequencing. Lender, trustee, lawyer, tenant, contractor. That coordination is the job.',
                           'A limited number of clients at a time, so yours is not one of forty.',

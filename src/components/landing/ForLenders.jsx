@@ -32,12 +32,14 @@ import { Input, Textarea, Label } from '@/components/ui/Field'
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 
 const ownerLed = [
-  'Payout statement requested before a price is set.',
+  'Payout statement requested at the start, so everyone works from the same numbers.',
   'Price taken from comparable sales, shared with counsel before the listing goes live.',
   'Every offer sent to counsel the day it arrives, conditional on the lender’s consent to discharge.',
   'A written activity report every Monday.',
   'A dated timetable with an end date, so the lender knows when the plan has run its course.',
   'Any shortfall left where it belongs: between the lender and the borrower’s counsel.',
+  'The terms of any discharge kept confidential.',
+  'A reply the same day to anything counsel sends.',
 ]
 
 const afterPossession = [
@@ -50,7 +52,7 @@ const afterPossession = [
 
 const compare = [
   ['Proceeds', 'Usually sooner. No motion, writ or possession step first.', 'Later. Possession has to be obtained before the listing.'],
-  ['Lender’s costs', 'A lean commission it approves. No enforcement or carrying costs.', 'Enforcement costs, plus carrying a vacant property until it closes.'],
+  ['Lender’s costs', 'The commission is disclosed with every offer. No possession or vacant-property costs.', 'Enforcement costs, plus carrying a vacant property until it closes.'],
   ['Presentation', 'Occupied and maintained. Shows like an ordinary listing.', 'Vacant and as-is. Buyers tend to discount lender sales.'],
   ['Control', 'The lender approves each offer through its consent to discharge.', 'Full control of price, timing and terms.'],
   ['Depends on', 'A cooperating owner and enough time before the action moves on.', 'Nothing from the borrower.'],
@@ -122,9 +124,8 @@ export function ForLenders() {
             </h1>
             <p className="mt-5 sm:mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-stone-soft">
               For lenders, mortgage administrators and the lawyers who act for
-              them. A listing brokerage led by someone who spent close to ten
-              years as a real estate lawyer on these files, and knows what you
-              need to see before you consent to a sale.
+              them. A listing brokerage led by a former Ontario real estate lawyer
+              who knows what you need to see before you consent to a sale.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-stone-soft">
               The property sells either way. The question is which sale returns
@@ -167,8 +168,8 @@ export function ForLenders() {
                   The owner lists with us and we act for the owner. What changes
                   for the lender is that the price, the reporting and the offers
                   now come from a licensed third party with no interest in the
-                  debt, paid only if the property sells, at a commission the
-                  lender approves. Our interest and the lender’s point the same
+                  debt, paid only if the property sells, with the commission
+                  disclosed on every offer. Our interest and the lender’s point the same
                   way: the highest net the market will pay, as soon as it will
                   pay it.
                 </p>
@@ -262,8 +263,8 @@ export function ForLenders() {
               </h2>
               <div className="mt-5 space-y-4 text-[16px] text-ink-soft leading-relaxed">
                 <p>
-                  Taran Aujla spent close to ten years as a real estate lawyer
-                  in Ontario and closed several hundred transactions before
+                  Taran Aujla practised real estate law in Ontario for nine years
+                  and nine months and closed several hundred real estate transactions before
                   moving to the sales side. Payout statements, per diems,
                   consents to discharge, the timeline from claim to motion to
                   writ: none of it needs explaining. Offers are structured so
