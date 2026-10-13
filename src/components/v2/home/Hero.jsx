@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Phone, Check } from 'lucide-react'
+import { Phone, Check, Calendar } from 'lucide-react'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
-import { SituationHeroForm } from '@/components/landing/situations/SituationHeroForm'
+import { Button } from '@/components/brand/Button'
 
 /**
  * Hero — V3.5 home hero (navy, restored).
@@ -22,6 +22,11 @@ import { SituationHeroForm } from '@/components/landing/situations/SituationHero
  * doorway glow reads; vertical top-heavy on mobile so the doorway is
  * clearly visible beneath the copy (the image concept must land on a
  * phone). The global MobileStickyCta gives the persistent call bar.
+ *
+ * 13 Oct 2026: now used by /sellers only. The "Selling isn't always
+ * straightforward" headline moved to the home hero, so /sellers gets its
+ * own eyebrow + headline (no duplicate H1), and the right column is a
+ * booking card instead of a form (forms stay on the paid landing pages).
  */
 const SITUATIONS = [
   { label: 'Mortgage Arrears',   to: '/mortgage-arrears' },
@@ -31,6 +36,11 @@ const SITUATIONS = [
 ]
 
 export function Hero({ headline } = {}) {
+  const STEPS = [
+    'You tell us where things stand.',
+    'We give you a straight read on what the market will pay.',
+    'You decide what happens next.',
+  ]
   return (
     <section
       data-surface="navy"
@@ -50,7 +60,7 @@ export function Hero({ headline } = {}) {
           <div className="flex items-center gap-4">
             <span aria-hidden="true" className="h-px w-12 bg-bronze flex-shrink-0" />
             <p className="font-sans font-semibold text-[12.5px] uppercase tracking-[0.18em] text-bronze">
-              Seller Representation
+              For Sellers
             </p>
           </div>
 
@@ -59,10 +69,9 @@ export function Hero({ headline } = {}) {
           <h1 className="mt-5 font-sans font-semibold text-stone leading-[1.12] tracking-[-0.01em] text-[clamp(2.1rem,4.6vw,3.4rem)]">
             {headline || (
               <>
-                Selling isn&rsquo;t always straightforward.
-                <br />
-                <span className="font-medium">We make it </span>
-                <span className="font-emph italic font-normal text-bronze">clearer.</span>
+                Your sale, planned around{' '}
+                <span className="font-medium">your </span>
+                <span className="font-emph italic font-normal text-bronze">situation.</span>
               </>
             )}
           </h1>
@@ -98,14 +107,28 @@ export function Hero({ headline } = {}) {
         </div>
 
         <div className="lg:col-start-2 lg:row-start-1 lg:row-span-2 w-full max-w-[460px] lg:justify-self-end">
-          <SituationHeroForm
-            situationLabel="Seller (sellers page)"
-            situationSlug="sellers"
-            heading="What would you walk away with?"
-            sub="Four quick details. A personal reply the same day."
-            buttonText="Show me my numbers"
-            showMessage={false}
-          />
+          <div className="rounded-2xl bg-white p-7 sm:p-8 shadow-card">
+            <h2 className="font-sans font-semibold text-navy text-[22px] leading-snug">
+              Start with a 15-minute call
+            </h2>
+            <ol className="mt-5 space-y-3.5">
+              {STEPS.map((s, i) => (
+                <li key={s} className="flex gap-3 text-[15.5px] leading-relaxed text-navy-soft">
+                  <span className="flex-shrink-0 mt-0.5 h-6 w-6 rounded-full bg-bronze/15 text-navy font-semibold text-[13px] flex items-center justify-center">
+                    {i + 1}
+                  </span>
+                  <span>{s}</span>
+                </li>
+              ))}
+            </ol>
+            <Button as={Link} to="/contact" variant="primary" size="lg" className="mt-7 w-full justify-center">
+              <Calendar className="h-4 w-4" strokeWidth={1.9} />
+              Book a 15-minute call
+            </Button>
+            <p className="mt-3 text-center text-[13px] text-navy-soft">
+              Confidential, and no obligation.
+            </p>
+          </div>
         </div>
 
         <div className="max-w-[600px] lg:col-start-1">

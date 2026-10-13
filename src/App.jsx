@@ -521,7 +521,7 @@ function HomePage() {
     <>
       <Seo
         title="Selling When the Mortgage No Longer Works · Ontario · Resolve Real Estate"
-        description="Renewal payments that doubled, arrears, power of sale, or a deadline. Calm, private seller representation, plus value-add buying, across the GTA, Durham, Hamilton, Kitchener and Waterloo."
+        description="Seller representation for complex and high-value Ontario sales: renewal payments that doubled, arrears, power of sale, a deadline, or simply a lot at stake. Plus value-add buying, across the GTA, Durham, Hamilton, Kitchener and Waterloo."
         canonical={`${SITE_URL}/`}
         jsonLd={HOME_JSONLD}
       />

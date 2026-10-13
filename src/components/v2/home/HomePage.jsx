@@ -2,87 +2,62 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Calendar, Phone } from 'lucide-react'
 import { Button } from '@/components/brand/Button'
+import { Situations } from './Situations'
 import { BothSides } from './BothSides'
 import { ClosingCta } from './ClosingCta'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
 /**
- * HomePage — the root (/) HUB (Aug 2026 restructure).
+ * HomePage — the root (/), seller-led again (13 Oct 2026).
  *
- * The root used to be the seller page. Because paid traffic goes to
- * dedicated landing pages and only organic / brand / direct / referral
- * visitors land on "/", the home's real job is ORIENTATION, not
- * conversion — so it is now a lean router:
+ * The Aug 2026 two-door hub ("We find the value most people miss") is
+ * retired as the hero: the practice's real files are sellers in complex
+ * and high-value situations, so the home now speaks to them first,
+ * without excluding ordinary sales or buyers.
  *
- *   1. Hub hero      — navy, compact. The two-sided thesis in one line.
- *   2. BothSides     — the two audience doors (For Sellers -> /sellers,
- *                       For Buyers -> /buyers). The primary choice.
- *   3. ClosingCta    — the close. (Multiplex band removed 6 Oct 2026.)
+ *   1. Hero        — eyebrow "Complex & High-Value Sales" (matches the
+ *                    LinkedIn banner), the "Selling isn't always
+ *                    straightforward" headline (moved here from /sellers),
+ *                    one booking CTA, no form. Buyers get one line.
+ *   2. Situations  — the four situation cards (moved down from the hero,
+ *                    so distress labels never lead the first impression).
+ *   3. BothSides   — keeps the buyer door within the first scrolls.
+ *   4. ClosingCta  — the close.
  *
- * The full seller experience lives at /sellers (SellersPage); the buyer
- * experience at /buyers.
+ * No "how it works" mechanics here (lender notice, offer handling): that
+ * is backend process, not homepage copy.
  */
 export function HomePage() {
   return (
     <>
-      {/* Hub hero — full-bleed navy aerial: hundreds of dark homes, one lit.
-          The "value most people miss / standing out from the crowd" image,
-          pulled up under the sticky header. Two audience pills + a primary
-          CTA sit above the fold, then the page hands off to the two doors. */}
       <section
         data-surface="navy"
-        className="relative bg-navy overflow-hidden isolate min-h-[660px] sm:min-h-[600px] lg:min-h-[640px] -mt-16 sm:-mt-20"
+        className="relative bg-navy overflow-hidden isolate min-h-[620px] sm:min-h-[600px] lg:min-h-[640px] -mt-16 sm:-mt-20"
       >
-        {/* Shared navy hero backdrop (gradient + faint blueprint grid). */}
         <HeroBackdrop />
 
         <div className="relative container w-full pt-28 pb-14 sm:pt-40 sm:pb-20">
-          <div className="max-w-[600px]">
+          <div className="max-w-[640px]">
             <div className="flex items-center gap-4">
               <span aria-hidden="true" className="h-px w-12 bg-bronze flex-shrink-0" />
               <p className="font-sans font-semibold text-[12.5px] uppercase tracking-[0.18em] text-bronze">
-                Ontario Real Estate
+                Complex &amp; High-Value Sales
               </p>
             </div>
 
-            <h1 className="mt-5 font-sans font-semibold text-stone leading-[1.08] tracking-[-0.015em] text-[clamp(2.3rem,5vw,3.7rem)]">
-              We find the value
+            <h1 className="mt-5 font-sans font-semibold text-stone leading-[1.1] tracking-[-0.012em] text-[clamp(2.2rem,4.8vw,3.6rem)]">
+              Selling isn&rsquo;t always straightforward.
               <br />
-              most people{' '}
-              <span className="font-emph italic font-medium text-bronze">miss.</span>
+              <span className="font-medium">We make it </span>
+              <span className="font-emph italic font-normal text-bronze">clearer.</span>
             </h1>
 
-            <p className="mt-5 max-w-lg text-[16.5px] leading-[1.6] text-stone-soft">
-              Both sides of the table: complex, high-value sales for sellers,
-              and the upside most buyers scroll past. One eye for the details
-              that decide the outcome.
+            <p className="mt-5 max-w-xl text-[16.5px] leading-[1.6] text-stone-soft">
+              We represent Ontario homeowners whose sale involves more than a
+              sign on the lawn: a lender, a deadline, a family decision, or
+              simply a lot at stake. Priced from the market, coordinated with
+              every party, handled quietly.
             </p>
-
-            {/* Two audience pills — the primary routing decision, above the
-                fold. Bronze-outlined on navy, filling on hover. */}
-            <ul className="mt-7 grid grid-cols-2 gap-2.5 max-w-sm">
-              {[
-                { label: 'For Sellers', to: '/sellers' },
-                { label: 'For Buyers', to: '/buyers' },
-              ].map((p) => (
-                <li key={p.label} className="flex">
-                  <Link
-                    to={p.to}
-                    className="
-                      inline-flex items-center justify-center w-full gap-1.5
-                      px-5 py-2.5 rounded-full
-                      border border-bronze/70 bg-navy/25 backdrop-blur-[2px]
-                      font-sans font-semibold text-[13.5px] leading-none text-stone
-                      hover:border-bronze hover:bg-bronze hover:text-navy
-                      transition-colors duration-200
-                    "
-                  >
-                    {p.label}
-                    <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
               <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center shadow-card">
@@ -97,6 +72,17 @@ export function HomePage() {
                 Or call (365) 645-7332
               </a>
             </div>
+
+            <p className="mt-6 text-[14.5px] text-stone-soft">
+              Buying?{' '}
+              <Link
+                to="/buyers"
+                className="inline-flex items-center gap-1 font-semibold text-stone underline decoration-bronze/60 underline-offset-4 hover:text-bronze transition-colors"
+              >
+                We find the value most people miss
+                <ArrowRight className="h-3.5 w-3.5" strokeWidth={2} aria-hidden="true" />
+              </Link>
+            </p>
 
             <p className="mt-7 font-sans font-semibold text-[12px] uppercase tracking-[0.16em] text-stone-mute">
               GTA &middot; Durham &middot; Hamilton &middot; Kitchener-Waterloo
@@ -113,10 +99,8 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* The two audience doors */}
+      <Situations />
       <BothSides />
-
-
       <ClosingCta />
     </>
   )
