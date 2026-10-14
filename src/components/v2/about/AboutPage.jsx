@@ -147,14 +147,14 @@ export function AboutPage() {
                       the finish.
                     </p>
                     <p>
-                      I also keep a list of qualified buyers and investors. When a
-                      home fits what one of them is looking for, they hear about
-                      it the day it lists.
-                    </p>
-                    <p>
                       These sales can be emotional. My job is to keep them calm
                       and structured, and to help clients see the whole board
                       before they decide.
+                    </p>
+                    <p>
+                      I also keep a list of qualified buyers and investors. When a
+                      home fits what one of them is looking for, they hear about
+                      it the day it lists.
                     </p>
                   </>
                 )}
