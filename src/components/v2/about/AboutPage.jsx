@@ -156,6 +156,9 @@ export function AboutPage() {
                       home fits what one of them is looking for, they hear about
                       it the day it lists.
                     </p>
+                    <p className="font-sans font-semibold text-stone text-[17px]">
+                      Set it up right, and it closes.
+                    </p>
                   </>
                 )}
               </blockquote>
