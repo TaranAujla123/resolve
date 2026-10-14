@@ -60,28 +60,26 @@ export function AboutPage() {
       <section data-surface="stone" className="bg-stone py-16 sm:py-24">
         <div className="container max-w-4xl space-y-8">
           <div className="max-w-3xl space-y-5 text-[17px] leading-relaxed text-navy-soft">
-            <p>
-              I&rsquo;m Taran. My background spans decades in real estate,
-              including Ontario real estate law, property transactions, and
-              real estate investing across Ontario and Montreal, Quebec. That
-              experience helps me see issues early, read what a property is
-              really worth, and work either side of a deal with the same eye
-              for the details that decide the outcome.
+            <p className="font-sans font-semibold text-navy text-[22px] sm:text-[24px] leading-snug">
+              Most deals that go wrong at closing were set up wrong at the
+              start.
             </p>
             <p>
-              For sellers, that means the sales that need more than a standard
-              listing: mortgage arrears, power of sale, financial pressure,
-              time-sensitive closings, and high-value or complex homes where
-              protecting your equity is the point.
+              I know, because I spent close to a decade in real estate law and
+              closed several hundred real estate transactions. I saw what
+              arrived on the lawyer&rsquo;s desk, and what could have been
+              avoided.
             </p>
             <p>
-              For buyers, it means the value most people walk past: value-add
-              homes, multiplex-eligible lots, and income potential, bought on
-              strong bones and built up over time.
+              Now I work where deals are made. As a salesperson, I put them
+              together the way lawyers wish they arrived: priced on evidence,
+              terms that hold, timing that closes.
             </p>
             <p>
-              Whichever side you are on, the work is the same: understand the
-              real position, and make it work for the person I represent.
+              For sellers, that matters most in complex and high-value sales:
+              a lender in the picture, a deadline, a family decision, or simply
+              a lot at stake. For buyers, it means the value most people walk
+              past, and the risks that don&rsquo;t show.
             </p>
           </div>
 
@@ -112,8 +110,8 @@ export function AboutPage() {
                   RECO Reg. No. 6024721
                 </p>
                 <p className="mt-4 text-[12.5px] sm:text-[13px] text-stone-soft/85 leading-relaxed">
-                  Real estate investor &middot; Former real estate lawyer
-                  (10 yrs) &middot; Strategic Negotiator &middot; Problem-Solver
+                  Former real estate lawyer, now structuring deals properly
+                    from the start &middot; Real estate investor
                 </p>
                 <a
                   href="https://www.linkedin.com/in/itstaranaujla/"
@@ -138,18 +136,15 @@ export function AboutPage() {
                   for close to a decade in real estate law. I started
                   managing my parents&rsquo; multiplexes as a teenager and have
                   owned and operated my own since; in practice, I closed
-                  several hundred transactions. Both taught me the same
-                  lesson, and it shapes how I work now: most problems that
-                  surface at closing are preventable, and they trace back to
-                  how the deal was put together at the start.
+                  several hundred real estate transactions. Both sides taught me
+                  to read a deal for what it really is, before anyone signs.
                 </p>
                 {bioOpen && (
                   <>
                     <p>
-                      I work as a real estate Salesperson now, focused on the
-                      sales that are anything but routine: power of sale,
-                      mortgage arrears, estate sales, financial pressure, and
-                      time-sensitive closings. On those files the outcome
+                      I work as a real estate Salesperson now, focused on complex and
+                      high-value sales: a lender in the picture, a deadline, or
+                      simply a lot at stake. On those files the outcome
                       depends on the work done before the sign goes up: getting
                       involved early, reading the file, negotiating terms that
                       hold, and steering a clean path to closing. A signed

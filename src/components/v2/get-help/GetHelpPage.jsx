@@ -492,8 +492,8 @@ export function GetHelpPage() {
                     RECO Reg. No. 6024721
                   </p>
                   <p className="mt-2.5 text-[12px] text-stone-soft/85 leading-relaxed">
-                    Real estate investor &middot; Former real estate lawyer
-                    (10 yrs) &middot; Strategic Negotiator &middot; Problem-Solver
+                    Former real estate lawyer, now structuring deals properly
+                    from the start &middot; Real estate investor
                   </p>
                   <Link
                     to="/about"
