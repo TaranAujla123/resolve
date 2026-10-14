@@ -140,7 +140,7 @@ export function AboutPage() {
                 {bioOpen && (
                   <>
                     <p>
-                      On every file, the outcome depends on the work done before
+                      On every file I handle, the outcome depends on the work done before
                       the sign goes up: getting involved early, reading the file,
                       negotiating terms that hold, and steering a clean path to
                       closing. A signed agreement is the start of the work, not
