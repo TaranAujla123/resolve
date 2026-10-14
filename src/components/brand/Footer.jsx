@@ -10,7 +10,7 @@ import { ResolveWordmark } from './ResolveWordmark'
  *          columns that surface EVERY page, including the landing pages
  *          that are not in the top nav (situation pages, /deals showcase,
  *          multiplex tools, and the gated guides).
- *   Row 2: Led By (Taran + Dave, RECO numbers) + direct contact.
+ *   Row 2: Led By (Taran, RECO number) + direct contact.
  *   Bottom strip: © + Privacy + Terms + Primegate cross-link.
  *
  * IMPORTANT — link element choice:
@@ -137,11 +137,6 @@ export function Footer() {
                 </Link>
                 <p className="text-stone-mute">Salesperson</p>
                 <p className="text-stone-mute">RECO Reg. No. 6024721</p>
-              </li>
-              <li>
-                <p className="font-semibold text-stone">Dave Dhaliwal</p>
-                <p className="text-stone-mute">Salesperson</p>
-                <p className="text-stone-mute">RECO Reg. No. 5024155</p>
               </li>
             </ul>
           </div>
