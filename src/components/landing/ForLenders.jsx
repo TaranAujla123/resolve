@@ -124,8 +124,9 @@ export function ForLenders() {
             </h1>
             <p className="mt-5 sm:mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-stone-soft">
               For lenders, mortgage administrators and the lawyers who act for
-              them. A listing brokerage led by a former Ontario real estate lawyer
-              who knows what you need to see before you consent to a sale.
+              them. Led by a former real estate lawyer, now structuring deals
+              properly from the start, who knows what you need to see before you
+              consent to a sale.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-stone-soft">
               The property sells either way. The question is which sale returns
@@ -263,9 +264,10 @@ export function ForLenders() {
               </h2>
               <div className="mt-5 space-y-4 text-[16px] text-ink-soft leading-relaxed">
                 <p>
-                  Taran Aujla practised real estate law in Ontario for
-                  close to a decade and closed several hundred real estate transactions before
-                  moving to the sales side. Payout statements, per diems,
+                  Taran Aujla is a former real estate lawyer, now structuring
+                  deals properly from the start. He practised real estate law in
+                  Ontario for close to a decade and closed several hundred real
+                  estate transactions. Payout statements, per diems,
                   consents to discharge, the timeline from claim to motion to
                   writ: none of it needs explaining. Offers are structured so
                   they can close, and conditions are written so they hold.
