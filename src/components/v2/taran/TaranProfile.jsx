@@ -36,19 +36,9 @@ const PROPERTIES = [
     note: 'Off-market acquisitions and development.',
   },
   {
-    label: 'PlexEdge',
-    href: 'https://plexedge.ca',
-    note: 'Multiplex advisory and development.',
-  },
-  {
     label: 'taranaujla.ca',
     href: 'https://www.taranaujla.ca',
     note: 'Personal site and writing.',
-  },
-  {
-    label: 'ALFA Rebuild',
-    href: 'https://www.alfarebuild.com',
-    note: 'A venture I co-founded.',
   },
   {
     label: 'REALTOR.ca',
