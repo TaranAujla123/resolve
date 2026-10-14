@@ -67,6 +67,7 @@ export function TimeSensitiveSales() {
         <ul className="list-disc pl-5 space-y-2">
           <li>Estate and probate sales, with court deadlines and multiple beneficiaries</li>
           <li>Separation or divorce sales, with two decision-makers and a shared timeline</li>
+          <li>Family or business disputes over a property: siblings, partners or co-owners who need to sell, or buy one another out</li>
           <li>A firm closing date on another property already purchased</li>
           <li>Relocating for work or a family move</li>
           <li>Court-ordered or court-deadline closings</li>
@@ -75,6 +76,9 @@ export function TimeSensitiveSales() {
           <li>Health or lifestyle changes requiring a move on a defined schedule</li>
           <li>Situations where certainty of close matters more than waiting for the perfect buyer</li>
         </ul>
+        <p className="text-[15px] text-navy-mute leading-relaxed pt-2">
+          When co-owners disagree, the sale needs one plan every owner can sign: a price from the evidence, clear terms, and every offer shared with all of them.
+        </p>
         <p className="text-[15px] text-navy-mute leading-relaxed pt-2">
           Estate and probate sales carry their own mechanics: executor duties, court timelines, multiple beneficiaries, and coordination with the estate lawyer. We handle those files here, start to finish.
         </p>

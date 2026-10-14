@@ -718,8 +718,8 @@ function TimeSensitiveSalesPage() {
   return (
     <>
       <Seo
-        title="Estate, Divorce & Time-Sensitive Home Sales in Ontario · Resolve"
-        description="An estate or probate timeline, a separation or divorce, a job relocation, a closing date on the next home, a health or family timeline, a financial deadline. Resolve runs these time-sensitive Ontario home sales on your terms inside the time available, in coordination with the lenders, lawyers, executors, and advisors already on the file."
+        title="Estate, Divorce, Co-Owner & Time-Sensitive Home Sales in Ontario · Resolve"
+        description="An estate or probate timeline, a separation or divorce, a family or business dispute over a property, a job relocation, a closing date on the next home, a health or family timeline, a financial deadline. Resolve runs these time-sensitive Ontario home sales on your terms inside the time available, in coordination with the lenders, lawyers, executors, and advisors already on the file."
         canonical={`${SITE_URL}/time-sensitive-sales/`}
         jsonLd={TIME_SENSITIVE_SALES_JSONLD}
       />

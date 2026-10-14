@@ -52,7 +52,7 @@ const SITUATIONS = [
     Icon: Clock,
     title: 'Time-Sensitive Sales',
     to: '/time-sensitive-sales',
-    body: 'A closing date on the next home, an estate or probate timeline, a job relocation, a family deadline. Make the right decisions within the time available.',
+    body: 'A closing date on the next home, an estate or probate timeline, a family or business dispute over a property, a job relocation. Make the right decisions within the time available.',
   },
 ]
 
