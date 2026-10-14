@@ -132,36 +132,29 @@ export function AboutPage() {
               />
               <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-stone-soft">
                 <p>
-                  I come at real estate from two sides: as an investor, and
-                  for close to a decade in real estate law. I started
-                  managing my parents&rsquo; multiplexes as a teenager and have
-                  owned and operated my own since; in practice, I closed
-                  several hundred real estate transactions. Both sides taught me
-                  to read a deal for what it really is, before anyone signs.
+                  I come at real estate from two sides: as an investor since my
+                  teens, managing my parents&rsquo; multiplexes and then my own,
+                  and as a real estate lawyer for close to a decade. Both taught
+                  me to read a deal for what it really is, before anyone signs.
                 </p>
                 {bioOpen && (
                   <>
                     <p>
-                      I work as a real estate Salesperson now, focused on complex and
-                      high-value sales: a lender in the picture, a deadline, or
-                      simply a lot at stake. On those files the outcome
-                      depends on the work done before the sign goes up: getting
-                      involved early, reading the file, negotiating terms that
-                      hold, and steering a clean path to closing. A signed
-                      agreement is the start of the work, not the finish.
+                      On every file, the outcome depends on the work done before
+                      the sign goes up: getting involved early, reading the file,
+                      negotiating terms that hold, and steering a clean path to
+                      closing. A signed agreement is the start of the work, not
+                      the finish.
                     </p>
                     <p>
-                      I also keep my own list of qualified buyers and investors
-                      who are ready to buy. When a home fits what one of them is
-                      looking for, I can often sell it privately, without a long
-                      wait on the open market.
+                      I also keep a list of qualified buyers and investors. When a
+                      home fits what one of them is looking for, they hear about
+                      it the day it lists.
                     </p>
                     <p>
-                      The approach is document-first and position-driven: I read
-                      before I recommend, build the position before I move on it,
-                      and understand both sides of the table as carefully as the
-                      file. Strength in a transaction is doing the work, holding
-                      composure, and walking in with options, not noise.
+                      These sales can be emotional. My job is to keep them calm
+                      and structured, and to help clients see the whole board
+                      before they decide.
                     </p>
                   </>
                 )}
