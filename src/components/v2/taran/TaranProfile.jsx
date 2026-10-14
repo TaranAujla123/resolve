@@ -82,10 +82,9 @@ export function TaranProfile() {
                 Taran Aujla
               </h1>
               <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-stone/80">
-                Real estate Salesperson and investor in Ontario, and a
-                problem-solver, focused on complex sales and
-                on value-add property for buyers who look past the price to what
-                a home could become.
+                Real estate Salesperson and investor in Ontario. Complex and
+                high-value sales for sellers, and for buyers, the value most
+                people walk past.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button as={Link} to="/contact" variant="primary" size="md">
@@ -113,21 +112,20 @@ export function TaranProfile() {
         <div className="container max-w-3xl">
           <Eyebrow>Background</Eyebrow>
           <div className="mt-6 space-y-5 text-[16.5px] leading-relaxed text-navy-soft">
-            <p>
-              I come at real estate from two sides: as an investor, and for
-              close to a decade in real estate law. I began managing my
-              family&rsquo;s rentals as a teenager and have owned and operated my
-              own since. In practice I closed several hundred transactions, and
-              the same lesson held on both sides: most problems that surface at
-              closing are preventable, and they trace back to how the deal was
-              put together at the start.
+            <p className="font-sans font-semibold text-navy text-[20px] sm:text-[22px] leading-snug">
+              Former real estate lawyer, now structuring deals properly from
+              the start.
             </p>
             <p>
-              I work as a real estate Salesperson now, focused on the sales that
-              are anything but routine, power of sale, mortgage arrears, estate
-              sales, financial pressure, and time-sensitive closings, and on
-              value-add property for buyers who look past the price to what a
-              home could become.
+              I spent close to a decade in real estate law and closed several
+              hundred real estate transactions. I have also invested in
+              property since my teens, first managing my family&rsquo;s rentals
+              and then my own.
+            </p>
+            <p>
+              Now I work where deals are made: complex and high-value sales
+              for sellers, and for buyers, the value most people walk past and
+              the risks that don&rsquo;t show.
             </p>
             <p className="text-[14px] text-navy-mute">
               Salesperson, HomeLife G1 Realty Inc., Brokerage. Independently
