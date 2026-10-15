@@ -306,7 +306,7 @@
   <script>
     (function(){
       // Set the MLS link here once the listing is live (realtor.ca URL). Empty = hidden.
-      var MLS_URL = "";
+      var MLS_URL = "https://www.realtor.ca/real-estate/30406910/47-holyrod-drive-clarington-courtice";
       if (MLS_URL) { var m=document.getElementById('mlslink'); m.href=MLS_URL; m.style.display='inline-flex'; }
       var q=new URLSearchParams(location.search);
       ['utm_source','utm_campaign','utm_content'].forEach(function(k){ var el=document.getElementById(k); if(el) el.value=q.get(k)||(k==='utm_source'&&q.get('fbclid')?'facebook':''); });
