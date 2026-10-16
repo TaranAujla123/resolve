@@ -839,7 +839,8 @@ export default function App() {
                 hard-navigation hits (search, bookmarks, social). */}
             <Route path="/life-transitions" element={<Navigate to="/time-sensitive-sales" replace />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
-            <Route path="/for-lenders" element={<ForLendersPage />} />
+            {/* /for-lenders UNPUBLISHED 16 Oct 2026 (Taran): it mapped out the lender strategy for other agents. ForLendersPage and ForLenders.jsx are kept, not deleted, until a general lender angle is written. */}
+            <Route path="/for-lenders" element={<Navigate to="/" replace />} />
             <Route path="/coordinated-sale" element={<CoordinatedSaleRoutePage />} />
             {/* /multiplex retired 6 Oct 2026 (multiplex work lives with
                 PlexEdge). Redirect keeps inbound links landing somewhere. */}

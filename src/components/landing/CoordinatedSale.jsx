@@ -125,9 +125,6 @@ export function CoordinatedSale({ ctaHref = '#inquiry', ctaLabel = 'Ask about a 
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             )}
-            <Link to="/for-lenders" className="font-semibold text-bronze hover:text-navy transition-colors">
-              Lender or lender’s counsel? How we work with you
-            </Link>
           </div>
         </div>
       </div>

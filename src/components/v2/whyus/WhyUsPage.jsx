@@ -184,13 +184,6 @@ export function WhyUsPage() {
               </li>
             ))}
           </ul>
-          <p className="mt-8 text-[14px] leading-relaxed text-navy-mute">
-            Acting for a lender, or its counsel?{' '}
-            <Link to="/for-lenders" className="font-semibold text-bronze hover:text-navy transition-colors">
-              How we work with lenders
-            </Link>
-            .
-          </p>
         </div>
       </section>
 
