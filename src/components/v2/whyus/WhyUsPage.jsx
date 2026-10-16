@@ -134,10 +134,9 @@ export function WhyUsPage() {
         </div>
       </section>
 
-      {/* When a lender is involved — owner-led sale. Seller-first, but
-          written so lender counsel reading it sees why cooperating with
-          this sale makes sense. Consent is explicit: we act for the owner
-          only, and the coordination is how we protect the owner. */}
+      {/* When a lender is involved: owner-led sale, owner-facing only.
+          16 Oct 2026: say what the owner gets, never how (no reporting
+          cadence, offer handling or payout steps); other agents read this. */}
       <section data-surface="white" className="bg-white section-y">
         <div className="container">
           <div className="max-w-3xl">
@@ -152,9 +151,8 @@ export function WhyUsPage() {
                 sale that usually leaves you with the most is the one you run
                 before the lender has to. We act for you, and only for you.
                 Part of acting for you is bringing the lender in early, with
-                your written consent: the payout confirmed first, the price set
-                from real sales, every offer shared the day it arrives, and a
-                timetable everyone can rely on.
+                your written consent, so the sale stays on track to a clean
+                close.
               </p>
               <p>
                 A lender that can see a credible sale under way has less reason
@@ -168,7 +166,7 @@ export function WhyUsPage() {
           <ul className="mt-10 grid gap-5 grid-cols-1 md:grid-cols-3">
             {[
               ['You decide what is shared', 'Nothing goes to a lender without your written consent, and you see it first.'],
-              ['The lender sees a real plan', 'A price from comparable sales, weekly reporting and a clear timetable, not a request for more time.'],
+              ['Your plan, not the lender’s', 'A sale you lead, priced from real sales, instead of one the lender runs.'],
               ['Less added to what you owe', 'A sale you run avoids the enforcement and selling costs a lender adds to the account.'],
             ].map(([t, d]) => (
               <li key={t} className="rounded-[14px] border border-divider bg-stone p-6">

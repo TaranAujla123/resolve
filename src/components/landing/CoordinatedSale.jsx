@@ -6,23 +6,21 @@ import { Eyebrow } from '@/components/brand/Eyebrow'
 /**
  * CoordinatedSale — "When the sale may not cover everything owed."
  *
- * The thin-equity / shortfall sale: the work Resolve actually does on
- * enforcement files, written once and placed on /sellers, /mortgage-arrears
- * and /power-of-sale. Two readers on purpose: the owner (first, navy
- * column) and the lender or its counsel (second, white column), with the
- * same facts. Owner-first for RECO best interest: we act for the homeowner
- * only, and lender cooperation is how we protect the owner.
+ * The thin-equity / shortfall sale, written once and placed on /sellers,
+ * /mortgage-arrears and /power-of-sale. Written for the owner only.
  *
- * Category level only. Never publish Schedule A wording, letter templates
- * or negotiation tactics here (they live in the private SOPs).
+ * 16 Oct 2026 (Taran): say WHAT the owner gets, never HOW. No offer
+ * conditions, lender-consent mechanics, reporting cadence or payout steps,
+ * and no lender-facing column: other agents read this page. The method
+ * lives in the private SOPs.
  * Copy rules: no em dashes, no "!", no urgency, no guarantees, never state
  * what a lender must do.
  */
 const STEPS = [
-  ['The numbers first.', 'A price from real sales, and every amount owing confirmed, fees included.'],
-  ['A plan to the lender, before the listing.', 'With your written consent: the comparable sales, the price and a timetable, sent to the lender before the listing goes live.'],
-  ['Every offer, the same day.', 'Offers are signed on the condition of lender approval, so the buyer is held while the lender decides.'],
-  ['A clean close.', 'The lender approves the discharge, your lawyer handles any balance, and the closing date is set around your move.'],
+  ['A clear picture first.', 'What your home is worth today and what is owed, before you decide anything.'],
+  ['The lender, handled properly.', 'Brought in with your written consent, on terms that protect you.'],
+  ['A real market sale.', 'Listed and marketed like any other home, to every buyer.'],
+  ['A clean close.', 'The sale closes, and the closing date is set around your move.'],
 ]
 
 const FOR_YOU = [
@@ -33,12 +31,11 @@ const FOR_YOU = [
   'Time to plan where you go next.',
 ]
 
-const FOR_LENDER = [
-  'An arm’s-length sale at market, priced from comparable sales.',
-  'A lean commission it approves, and no enforcement or carrying costs.',
-  'A written timetable with dates.',
-  'Every offer sent the day it arrives.',
-  'A seller who is cooperating, with their own lawyer.',
+const PRIVATE = [
+  'Your situation is never mentioned in the marketing.',
+  'The listing reads like any other home for sale.',
+  'Any lender terms stay between you, your lawyer and the lender.',
+  'You see everything before it is shared.',
 ]
 
 export function CoordinatedSale({ ctaHref = '#inquiry', ctaLabel = 'Ask about a coordinated sale', eyebrow = 'When the sale may not cover everything owed' }) {
@@ -89,10 +86,10 @@ export function CoordinatedSale({ ctaHref = '#inquiry', ctaLabel = 'Ask about a 
           </div>
           <div className="rounded-[14px] border border-divider bg-stone p-6 sm:p-7">
             <h3 className="text-[12.5px] font-semibold uppercase tracking-[0.18em] text-navy-mute">
-              For the lender and its counsel
+              What stays private
             </h3>
             <ul className="mt-4 space-y-3">
-              {FOR_LENDER.map((x) => (
+              {PRIVATE.map((x) => (
                 <li key={x} className="flex items-start gap-3 text-[15.5px] leading-relaxed text-navy-soft">
                   <span className="mt-[3px] inline-flex h-5 w-5 flex-none items-center justify-center rounded-full border border-divider text-navy-mute">
                     <Check className="h-3 w-3" strokeWidth={2.5} aria-hidden="true" />

@@ -33,10 +33,9 @@ export function CoordinatedSalePage() {
               When the sale may not cover everything owed.
             </h1>
             <p className="mt-5 text-[17px] leading-relaxed text-stone/85 max-w-xl">
-              A coordinated sale puts the homeowner, the lender and both
-              lawyers on the same numbers and the same timetable. This page
-              explains how it works and what each side gets from it, for
-              homeowners and for lenders and their counsel alike.
+              A coordinated sale puts you, your lawyer and the lender on the
+              same numbers and the same timetable. This page explains what
+              that means for you.
             </p>
             <p className="mt-6 text-[13px] leading-relaxed text-stone/55">
               Taran Aujla, Salesperson &middot; former real estate lawyer &middot; HomeLife G1
