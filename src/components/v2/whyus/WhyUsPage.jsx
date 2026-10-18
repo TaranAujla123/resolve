@@ -59,9 +59,9 @@ const EXPECTATIONS = [
 const EXPERIENCE = [
   {
     Icon: Award,
-    title: 'A decade of combined experience',
+    title: 'Close to a decade in real estate law',
     body:
-      'Across complex Ontario files on both sides of the deal: power of sale, mortgage arrears, time-sensitive sales, and value-add purchases.',
+      'Several hundred purchase, sale and mortgage transactions closed on the legal side. Now complex Ontario sales for sellers and buyers: power of sale, mortgage arrears, time-sensitive sales and value-add purchases.',
   },
   {
     Icon: Network,

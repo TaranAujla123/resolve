@@ -66,7 +66,8 @@ export function AboutPage() {
             </p>
             <p>
               I know, because I spent close to a decade in real estate law and
-              closed several hundred real estate transactions. I saw what
+              closed several hundred purchase, sale and mortgage transactions.
+              I saw what
               arrived on the lawyer&rsquo;s desk, and what could have been
               avoided.
             </p>
