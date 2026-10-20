@@ -157,7 +157,7 @@
       <div class="field"><label for="price">Sale price</label><div class="inp"><span>$</span><input id="price" type="number" inputmode="decimal" value="600000"></div></div>
       <div class="field"><label for="comm">Total commission</label><div class="inp"><input id="comm" type="number" inputmode="decimal" step="0.1" value="4.5"><span>%</span></div></div>
       <div class="field"><label for="oMonths">Months to closing</label><div class="inp"><input id="oMonths" type="number" inputmode="decimal" step="0.5" value="3"><span>mo</span></div></div>
-      <div class="field"><label for="oLegal">First lender's legal on this path<small>Offer review and discharge</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="2500"></div></div>
+      <div class="field"><label for="oLegal">First lender's legal on this path<small>Offer review, consents, discharge and any steps taken meanwhile</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="5000"></div></div>
     </section>
     <section class="card enf">
       <h3>Path 2 · Enforcement sale (estimates)</h3>
@@ -358,9 +358,10 @@
       +'</div></div><p class="small">Interest is simple interest on the amount owing today, to each closing date. The first lender\'s own costs are added to its claim and paid first, then deducted again to show what it keeps, because it paid them out. Later creditors are paid only from what is left, in order of registration. Estimates only; payout statements and title searches replace them.</p>';
     const blockers=C.slice(1).filter(c=>c.gO<c.oweO-1).length;
     const winwin=C.every(c=>c.fO>=c.nE-0.5) && C.slice(1).every(c=>c.gO>=c.oweO-1 || c.fO>c.nE);
+    const costLine=C.length?`<p>Legal and enforcement costs billed to the first lender: about <b>${money(costO)}</b> on the owner-led sale, against about <b>${money(costE)}</b> on the enforcement path${costE>costO?`, <b>${money(costE-costO)} less</b>`:''}. On a shortfall, those costs come out of the recovery.</p>`:'';
     el('concl').innerHTML = (winwin?`<p style="color:var(--good)"><b>Win-win: every creditor receives more from the owner-led sale than from enforcement.</b></p>`:`<p style="color:var(--warn)"><b>Not yet win-win: at least one creditor is no better off. Adjust the share or the consent payments.</b></p>`) + (gain>=0
       ? `<p><b>On these figures, the owner-led sale puts ${money(more)} more in the creditors' hands${sooner>0?', about '+(Math.round(sooner*2)/2)+' months sooner':''}.</b> The first lender receives ${money(gain)} more than on the enforcement path, even after funding ${money(pay)} in consent payments to ${blockers} later creditor${blockers===1?'':'s'}.</p><p>Every creditor is paid in the same order on both paths. The difference is what enforcement adds: months of interest and carrying costs, legal costs, and a vacant, as-is sale.</p>`
-      : `<p><b>On these figures, the first lender would receive less on the owner-led sale after the consent payments shown.</b> Lower the consent payments or revisit the price; the owner-led sale should leave every creditor at least where enforcement would.</p>`);
+      : `<p><b>On these figures, the first lender would receive less on the owner-led sale after the consent payments shown.</b> Lower the consent payments or revisit the price; the owner-led sale should leave every creditor at least where enforcement would.</p>`)+costLine;
   }
   document.querySelectorAll('input,select').forEach(x=>x.addEventListener('input',calc));
   el('reset').addEventListener('click',()=>{setExample();history.replaceState(null,'',location.pathname);calc();});

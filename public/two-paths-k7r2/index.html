@@ -167,7 +167,7 @@
       <div class="field"><label for="oMonths">Months to closing</label><div class="inp"><input id="oMonths" type="number" inputmode="decimal" step="0.5" value="3"><span>mo</span></div></div>
       <div class="field"><label for="oPct">Price achieved<small>As a % of fair market value</small></label><div class="inp"><input id="oPct" type="number" inputmode="decimal" step="0.5" value="100"><span>%</span></div></div>
       <div class="field"><label for="ocomm">Total commission</label><div class="inp"><input id="ocomm" type="number" inputmode="decimal" step="0.1" value="4.5"><span>%</span></div></div>
-      <div class="field"><label for="oLegal">Your legal costs<small>Reviewing the offer and the discharge</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="2000"></div></div>
+      <div class="field"><label for="oLegal">Your legal costs<small>Offer review, consent, discharge and any steps taken meanwhile</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="5000"></div></div>
     </section>
 
     <section class="card enf">
@@ -323,6 +323,8 @@
       c.innerHTML=`<p><b>On these figures, the two paths are close, or the enforcement path is estimated to recover more.</b> The result turns mainly on the price each path achieves. An owner-led offer above about ${money(breakEven)} would net more than the estimated enforcement path.</p>
         <p>An owner-led sale costs nothing to allow: your enforcement continues, and nothing closes without your consent.</p>`;
     }
+    const cO=O.legal, cE=E.legal+E.other+E.carry;
+    c.innerHTML+=`<p>Legal and enforcement costs on your file: about <b>${money(cO)}</b> on the owner-led sale, against about <b>${money(cE)}</b> on the enforcement path${cE>cO?`, <b>${money(cE-cO)} less</b>`:''}. On a shortfall, those costs come out of your recovery.</p>`;
   }
   ids.forEach(id=>el(id).addEventListener('input',calc));
   el('reset').addEventListener('click',()=>{ ids.forEach(id=>el(id).value=defaults[id]); history.replaceState(null,'',location.pathname); calc(); });
