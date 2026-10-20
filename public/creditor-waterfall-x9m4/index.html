@@ -200,7 +200,7 @@
 
   <section class="results" aria-live="polite">
     <h2>What each creditor receives</h2>
-    <p class="sub">Every creditor on title, in order of priority. All figures are estimates from the inputs above; simple interest to each closing date.</p>
+    <p class="sub">Every creditor on title, in order of priority. Amounts are what each creditor keeps: for the first lender, after the legal and other costs it pays out on that path. Estimates from the inputs above; simple interest to each closing date.</p>
     <div class="verdict" id="verdict"></div>
     <div class="tbl"><table>
       <thead><tr><th>Creditor</th><th>Owed at closing</th><th class="o">Owner-led sale</th><th>Enforcement sale</th><th>Difference</th><th>On the owner-led sale</th></tr></thead>
@@ -293,24 +293,29 @@
       c.gO=Math.max(0,Math.min(c.oweO,remO)); remO-=c.gO;
       c.gE=Math.max(0,Math.min(c.oweE,remE)); remE-=c.gE;
     });
-    const extra=Math.max(0,C.reduce((s,c)=>s+c.gO,0)-C.reduce((s,c)=>s+c.gE,0));
+    const costO=n('oLegal'), costE=n('eLegal')+n('eOther')+n('carry')*n('vMonths');
+    C.forEach((c,k)=>{ c.nO=c.gO-(k===0?costO:0); c.nE=c.gE-(k===0?costE:0); });
+    const extra=Math.max(0,C.reduce((s,c)=>s+c.nO,0)-C.reduce((s,c)=>s+c.nE,0));
     const auto=el('mode').value==='auto';
     const juniors=C.slice(1).filter(c=>c.gO<c.oweO-1);
     const shortSum=juniors.reduce((s,c)=>s+(c.oweO-c.gO),0);
-    const pot=auto?extra*n('shareJ')/100:0;
+    const firstFull=!!(C[0]&&C[0].gO>=C[0].oweO-1);
+    const pot=(auto&&!firstFull)?extra*n('shareJ')/100:0;
     C.slice(1).forEach(c=>{ if(auto){ c.p=(c.gO<c.oweO-1&&shortSum>0)?pot*(c.oweO-c.gO)/shortSum:0; el('p'+c.i).value=Math.round(c.p); } });
     for(let i=2;i<=N;i++){ el('p'+i).disabled=auto||LOCK; }
     const pay=C.slice(1).reduce((s,c)=>s+c.p,0);
-    if(LOCK) el('lockNote').innerHTML = auto
+    if(LOCK) el('lockNote').innerHTML = firstFull
+      ? `The first lender is <b>paid in full</b> on the owner-led sale. What remains goes to the later creditors in order of priority, more than they would receive on the enforcement path.`
+      : auto
       ? `Proposed: <b>${n('shareJ')}% of the extra value</b> the owner-led sale creates (${money(pot)} on these figures) goes to the later creditors, split by what each is still owed. The first lender funds it from its share and remains better off than on the enforcement path.`
       : `Proposed consent payments to the later creditors total <b>${money(pay)}</b>, funded from the first lender's share. The first lender remains better off than on the enforcement path.`;
-    C.forEach((c,k)=>{c.fO=k===0?c.gO-pay:c.gO+c.p;});
-    const tO=C.reduce((s,c)=>s+c.gO,0), tE=C.reduce((s,c)=>s+c.gE,0);
+    C.forEach((c,k)=>{c.fO=k===0?c.nO-pay:c.nO+c.p;});
+    const tO=C.reduce((s,c)=>s+c.fO,0), tE=C.reduce((s,c)=>s+c.nE,0);
     const pill=c=>c.gO>=c.oweO-1?'<span class="pill ok">Paid in full</span>':(c.gO===0&&c.gE===0?'<span class="pill zero">$0 either way: consent payment to sign</span>':'<span class="pill short">Short: signs a discharge</span>');
-    el('rows').innerHTML=C.map((c,k)=>`<tr><td>${c.name}${k===0?'':'<br><small style="color:var(--muted)">'+(c.p?'incl. consent payment '+money(c.p):'no consent payment')+'</small>'}</td><td>${money(c.oweO)}</td><td class="${c.fO>c.gE?'better':''}">${money(c.fO)}</td><td>${money(c.gE)}</td><td>${money(c.fO-c.gE)}</td><td>${pill(c)}</td></tr>`).join('')
+    el('rows').innerHTML=C.map((c,k)=>`<tr><td>${c.name}${k===0?'':'<br><small style="color:var(--muted)">'+(c.p?'incl. consent payment '+money(c.p):'no consent payment')+'</small>'}</td><td>${money(c.oweO)}</td><td class="${c.fO>c.nE?'better':''}">${money(c.fO)}</td><td>${money(c.nE)}</td><td>${money(c.fO-c.nE)}</td><td>${pill(c)}</td></tr>`).join('')
       +`<tr class="tot"><td>All creditors</td><td>${money(C.reduce((s,c)=>s+c.oweO,0))}</td><td>${money(tO)}</td><td>${money(tE)}</td><td>${money(tO-tE)}</td><td></td></tr>`;
-    const first=C[0]||{fO:0,gE:0}, gain=first.fO-first.gE, more=tO-tE, sooner=eM-oM;
-    const laterGain=C.slice(1).reduce((t,c)=>t+(c.fO-c.gE),0);
+    const first=C[0]||{fO:0,nE:0}, gain=first.fO-first.nE, more=tO-tE, sooner=eM-oM;
+    const laterGain=C.slice(1).reduce((t,c)=>t+(c.fO-c.nE),0);
     const v=el('verdict');
     v.className='verdict '+(gain>=0?'good':'close');
     v.innerHTML=`<div><div class="k">More for the creditors</div><div class="v">${money(more)}</div></div><div><div class="k">First lender, after consent payments</div><div class="v">${(gain>=0?'+':'')+money(gain)}</div></div><div><div class="k">Later creditors, combined</div><div class="v">${C.length>1?(laterGain>=0?'+':'')+money(laterGain):'None'}</div></div><div><div class="k">Sooner</div><div class="v">${sooner>0?(Math.round(sooner*2)/2)+' months':'None'}</div></div>`;
@@ -333,24 +338,26 @@
         h+=row(`${c.name}: owed ${money(owe)}`, f+`<br>Receives the lesser of what is owed and what is left (${money(Math.max(rem,0))})`, money(got));
         rem-=got;
       });
-      h+=row('Left after all creditors (to the owners)','',money(Math.max(rem,0)),'t')+'</table>';
+      h+=row('Left after all creditors (to the owners)','',money(Math.max(rem,0)),'t');
+      if(C[0]) h+=row(`${C[0].name} keeps, after its own costs`, key==='o'?`${money(C[0].gO)} received - legal ${money(costO)} it pays out`:`${money(C[0].gE)} received - legal, enforcement and carrying ${money(costE)} it pays out`, money(key==='o'?C[0].nO:C[0].nE),'t');
+      h+='</table>';
       return h;
     };
     el('math').innerHTML='<div class="cols"><div>'
       +side('Path 1 · Owner-led sale',P,'',cO,`${money(P)} x ${n('comm')}% x (1 + ${n('hst')}% HST)`,oM,netO,'o')
       +(C.length>1?`<h4 style="margin-top:12px">Sharing the extra value</h4><table>`
-        +row('Owner-led sale: total to the creditors','',money(C.reduce((s,c)=>s+c.gO,0)))
-        +row('Enforcement: total to the creditors','',money(C.reduce((s,c)=>s+c.gE,0)))
+        +row('Owner-led sale: total the creditors keep','',money(C.reduce((s,c)=>s+c.nO,0)))
+        +row('Enforcement: total the creditors keep','',money(C.reduce((s,c)=>s+c.nE,0)))
         +row('Extra value the owner-led sale creates','',money(extra),'t')
         +(auto?row(`Offered to later creditors (${n('shareJ')}% of the extra)`,'Split by what each is still owed after the payout order',money(pot)):'')
         +C.slice(1).map(c=>row(`${c.name}: consent payment`,auto&&shortSum>0&&c.p?`${money(pot)} x ${money(c.oweO-c.gO)} still owed / ${money(shortSum)} = ${money(c.p)}`:'Amount entered',money(c.p))).join('')
-        +row(`${C[0].name}: final`,`${money(C[0].gO)} - consent payments ${money(pay)}`,money(C[0].fO),'t')
+        +row(`${C[0].name}: final`,`${money(C[0].nO)} kept - consent payments ${money(pay)}`,money(C[0].fO),'t')
         +'</table>':'')
       +'</div><div>'
       +side('Path 2 · Enforcement sale',Pe,`${money(P)} less ${n('disc')}% as-is discount`,cE,`${money(Pe)} x ${n('ecomm')}% x (1 + ${n('hst')}% HST)`,eM,netE,'e')
-      +'</div></div><p class="small">Interest is simple interest on the amount owing today, to each closing date. On the enforcement path the first lender\'s own costs are added to its claim and paid first. Later creditors are paid only from what is left, in order of registration. Estimates only; payout statements and title searches replace them.</p>';
+      +'</div></div><p class="small">Interest is simple interest on the amount owing today, to each closing date. The first lender\'s own costs are added to its claim and paid first, then deducted again to show what it keeps, because it paid them out. Later creditors are paid only from what is left, in order of registration. Estimates only; payout statements and title searches replace them.</p>';
     const blockers=C.slice(1).filter(c=>c.gO<c.oweO-1).length;
-    const winwin=C.every(c=>c.fO>=c.gE-0.5) && C.slice(1).every(c=>c.gO>=c.oweO-1 || c.fO>c.gE);
+    const winwin=C.every(c=>c.fO>=c.nE-0.5) && C.slice(1).every(c=>c.gO>=c.oweO-1 || c.fO>c.nE);
     el('concl').innerHTML = (winwin?`<p style="color:var(--good)"><b>Win-win: every creditor receives more from the owner-led sale than from enforcement.</b></p>`:`<p style="color:var(--warn)"><b>Not yet win-win: at least one creditor is no better off. Adjust the share or the consent payments.</b></p>`) + (gain>=0
       ? `<p><b>On these figures, the owner-led sale puts ${money(more)} more in the creditors' hands${sooner>0?', about '+(Math.round(sooner*2)/2)+' months sooner':''}.</b> The first lender receives ${money(gain)} more than on the enforcement path, even after funding ${money(pay)} in consent payments to ${blockers} later creditor${blockers===1?'':'s'}.</p><p>Every creditor is paid in the same order on both paths. The difference is what enforcement adds: months of interest and carrying costs, legal costs, and a vacant, as-is sale.</p>`
       : `<p><b>On these figures, the first lender would receive less on the owner-led sale after the consent payments shown.</b> Lower the consent payments or revisit the price; the owner-led sale should leave every creditor at least where enforcement would.</p>`);
