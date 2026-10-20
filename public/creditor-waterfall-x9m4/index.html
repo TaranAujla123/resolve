@@ -157,16 +157,16 @@
       <div class="field"><label for="price">Sale price</label><div class="inp"><span>$</span><input id="price" type="number" inputmode="decimal" value="600000"></div></div>
       <div class="field"><label for="comm">Total commission</label><div class="inp"><input id="comm" type="number" inputmode="decimal" step="0.1" value="4.5"><span>%</span></div></div>
       <div class="field"><label for="oMonths">Months to closing</label><div class="inp"><input id="oMonths" type="number" inputmode="decimal" step="0.5" value="3"><span>mo</span></div></div>
-      <div class="field"><label for="oLegal">First lender's legal on this path<small>Offer review, consents, discharge and any steps taken meanwhile</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="5000"></div></div>
+      <div class="field"><label for="oLegal">First lender's legal fees (optional)<small>Leave blank to exclude legal fees on both paths</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="" placeholder="0"></div></div>
     </section>
     <section class="card enf">
       <h3>Path 2 · Enforcement sale (estimates)</h3>
       <p class="note">The first lender takes possession, then sells vacant and as is.</p>
-      <div class="field"><label for="disc">Price discount vs the owner sale<small>As is, vacant, power of sale</small></label><div class="inp"><input id="disc" type="number" inputmode="decimal" step="0.5" value="5"><span>%</span></div></div>
+      <div class="field"><label for="disc">As-is, vacant, power-of-sale discount (estimate)<small>Applied to the enforcement price</small></label><div class="inp"><input id="disc" type="number" inputmode="decimal" step="0.5" value="5"><span>%</span></div></div>
       <div class="field"><label for="ecomm">Total commission</label><div class="inp"><input id="ecomm" type="number" inputmode="decimal" step="0.1" value="5"><span>%</span></div></div>
-      <div class="field"><label for="eMonths">Months to the lender's closing</label><div class="inp"><input id="eMonths" type="number" inputmode="decimal" step="0.5" value="9"><span>mo</span></div></div>
-      <div class="field"><label for="eLegal">First lender's legal and enforcement costs</label><div class="inp"><span>$</span><input id="eLegal" type="number" inputmode="decimal" value="25000"></div></div>
-      <div class="field"><label for="eOther">Other costs<small>Locks, inspections, appraisal</small></label><div class="inp"><span>$</span><input id="eOther" type="number" inputmode="decimal" value="6000"></div></div>
+      <div class="field"><label for="eMonths">Months to the lender's closing<small>An enforcement sale typically closes 6-8 months later: a court order for possession (if contested), a writ of possession, the sheriff, preparation, listing and closing.</small></label><div class="inp"><input id="eMonths" type="number" inputmode="decimal" step="0.5" value="10"><span>mo</span></div></div>
+      <div class="field"><label for="eLegal">Legal fees on enforcement (optional)<small>Leave blank to exclude</small></label><div class="inp"><span>$</span><input id="eLegal" type="number" inputmode="decimal" value="" placeholder="0"></div></div>
+      <div class="field"><label for="eOther">Other enforcement costs<small>Locks, inspections, appraisal, court and sheriff fees (not legal fees)</small></label><div class="inp"><span>$</span><input id="eOther" type="number" inputmode="decimal" value="6000"></div></div>
       <div class="field"><label for="carry">Carrying costs per month while vacant</label><div class="inp"><span>$</span><input id="carry" type="number" inputmode="decimal" value="1200"></div></div>
       <div class="field"><label for="vMonths">Months vacant</label><div class="inp"><input id="vMonths" type="number" inputmode="decimal" step="0.5" value="4"><span>mo</span></div></div>
     </section>
@@ -279,6 +279,7 @@
     el('lockNote').style.display='block';
     el('splitCard').querySelector('.note').style.display='none';
     el('reset').style.display='none';
+    el('disc').disabled=true;
   }
   function calc(){
     const hst=n('hst')/100, oM=n('oMonths'), eM=n('eMonths');
@@ -333,13 +334,13 @@
       let rem=net;
       C.forEach((c,k)=>{
         const base=c.a*(1+c.r*months/12);
-        const f=(c.r?`${money(c.a)} + simple interest ${pct(c.r*100)} x ${months}/12 = ${money(base)}`:`${money(c.a)}, no interest added`)+(k===0?(key==='o'?` + legal ${money(n('oLegal'))}`:` + legal and enforcement ${money(n('eLegal'))} + other ${money(n('eOther'))} + carrying ${money(n('carry'))} x ${n('vMonths')} mo`):'');
+        const f=(c.r?`${money(c.a)} + simple interest ${pct(c.r*100)} x ${months}/12 = ${money(base)}`:`${money(c.a)}, no interest added`)+(k===0?(key==='o'?(n('oLegal')?` + legal ${money(n('oLegal'))}`:''):`${n('eLegal')?` + legal ${money(n('eLegal'))}`:''} + other enforcement costs ${money(n('eOther'))} + carrying ${money(n('carry'))} x ${n('vMonths')} mo`):'');
         const owe=key==='o'?c.oweO:c.oweE, got=key==='o'?c.gO:c.gE;
         h+=row(`${c.name}: owed ${money(owe)}`, f+`<br>Receives the lesser of what is owed and what is left (${money(Math.max(rem,0))})`, money(got));
         rem-=got;
       });
       h+=row('Left after all creditors (to the owners)','',money(Math.max(rem,0)),'t');
-      if(C[0]) h+=row(`${C[0].name} keeps, after its own costs`, key==='o'?`${money(C[0].gO)} received - legal ${money(costO)} it pays out`:`${money(C[0].gE)} received - legal, enforcement and carrying ${money(costE)} it pays out`, money(key==='o'?C[0].nO:C[0].nE),'t');
+      if(C[0]) h+=row(`${C[0].name} keeps, after its own costs`, key==='o'?`${money(C[0].gO)} received - ${costO?`legal ${money(costO)}`:'no costs entered'} it pays out`:`${money(C[0].gE)} received - enforcement and carrying costs ${money(costE)} it pays out`, money(key==='o'?C[0].nO:C[0].nE),'t');
       h+='</table>';
       return h;
     };
@@ -358,7 +359,8 @@
       +'</div></div><p class="small">Interest is simple interest on the amount owing today, to each closing date. The first lender\'s own costs are added to its claim and paid first, then deducted again to show what it keeps, because it paid them out. Later creditors are paid only from what is left, in order of registration. Estimates only; payout statements and title searches replace them.</p>';
     const blockers=C.slice(1).filter(c=>c.gO<c.oweO-1).length;
     const winwin=C.every(c=>c.fO>=c.nE-0.5) && C.slice(1).every(c=>c.gO>=c.oweO-1 || c.fO>c.nE);
-    const costLine=C.length?`<p>Legal and enforcement costs billed to the first lender: about <b>${money(costO)}</b> on the owner-led sale, against about <b>${money(costE)}</b> on the enforcement path${costE>costO?`, <b>${money(costE-costO)} less</b>`:''}. On a shortfall, those costs come out of the recovery.</p>`:'';
+    const legalIn=n('oLegal')>0||n('eLegal')>0;
+    const costLine=C.length?`<p>${legalIn?`Costs to the first lender, including the legal fees entered: about <b>${money(costO)}</b> on the owner-led sale, against about <b>${money(costE)}</b> on the enforcement path.`:`<b>These figures exclude legal fees on both paths</b>; add your own if you wish. An enforcement sale involves more steps: a court order for possession (if contested), a writ of possession, the sheriff, preparation, listing and closing.`} On a shortfall, costs come out of the recovery.</p>`:'';
     el('concl').innerHTML = (winwin?`<p style="color:var(--good)"><b>Win-win: every creditor receives more from the owner-led sale than from enforcement.</b></p>`:`<p style="color:var(--warn)"><b>Not yet win-win: at least one creditor is no better off. Adjust the share or the consent payments.</b></p>`) + (gain>=0
       ? `<p><b>On these figures, the owner-led sale puts ${money(more)} more in the creditors' hands${sooner>0?', about '+(Math.round(sooner*2)/2)+' months sooner':''}.</b> The first lender receives ${money(gain)} more than on the enforcement path, even after funding ${money(pay)} in consent payments to ${blockers} later creditor${blockers===1?'':'s'}.</p><p>Every creditor is paid in the same order on both paths. The difference is what enforcement adds: months of interest and carrying costs, legal costs, and a vacant, as-is sale.</p>`
       : `<p><b>On these figures, the first lender would receive less on the owner-led sale after the consent payments shown.</b> Lower the consent payments or revisit the price; the owner-led sale should leave every creditor at least where enforcement would.</p>`)+costLine;

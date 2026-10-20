@@ -167,18 +167,18 @@
       <div class="field"><label for="oMonths">Months to closing</label><div class="inp"><input id="oMonths" type="number" inputmode="decimal" step="0.5" value="3"><span>mo</span></div></div>
       <div class="field"><label for="oPct">Price achieved<small>As a % of fair market value</small></label><div class="inp"><input id="oPct" type="number" inputmode="decimal" step="0.5" value="100"><span>%</span></div></div>
       <div class="field"><label for="ocomm">Total commission</label><div class="inp"><input id="ocomm" type="number" inputmode="decimal" step="0.1" value="4.5"><span>%</span></div></div>
-      <div class="field"><label for="oLegal">Your legal costs<small>Offer review, consent, discharge and any steps taken meanwhile</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="5000"></div></div>
+      <div class="field"><label for="oLegal">Your legal fees (optional)<small>Leave blank to exclude legal fees on both paths</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="" placeholder="0"></div></div>
     </section>
 
     <section class="card enf">
       <h3>Path 2 · Enforcement sale (your estimates)</h3>
-      <p class="note">Possession first, then a listing: vacant, as is, with no seller representations.</p>
-      <div class="field"><label for="eMonthsPos">Months to vacant possession<small>Notice or claim, judgment, possession</small></label><div class="inp"><input id="eMonthsPos" type="number" inputmode="decimal" step="0.5" value="6"><span>mo</span></div></div>
-      <div class="field"><label for="eMonthsSale">Months from possession to closing<small>Preparing, listing, selling, closing</small></label><div class="inp"><input id="eMonthsSale" type="number" inputmode="decimal" step="0.5" value="4"><span>mo</span></div></div>
-      <div class="field"><label for="ePct">Price achieved<small>As a % of fair market value</small></label><div class="inp"><input id="ePct" type="number" inputmode="decimal" step="0.5" value="95"><span>%</span></div></div>
+      <p class="note">Possession first, then a listing: vacant, as is, with no seller representations. An enforcement sale typically closes 6-8 months later: a court order for possession (if contested), a writ of possession, the sheriff, preparation, listing and closing.</p>
+      <div class="field"><label for="eMonthsPos">Months to vacant possession<small>Court order for possession (if contested), writ of possession, sheriff</small></label><div class="inp"><input id="eMonthsPos" type="number" inputmode="decimal" step="0.5" value="6"><span>mo</span></div></div>
+      <div class="field"><label for="eMonthsSale">Months from possession to closing<small>Preparation, listing, closing</small></label><div class="inp"><input id="eMonthsSale" type="number" inputmode="decimal" step="0.5" value="4"><span>mo</span></div></div>
+      <div class="field"><label for="ePct">Price achieved<small>As-is, vacant, power-of-sale discount (estimate): 5% below fair market value</small></label><div class="inp"><input id="ePct" type="number" inputmode="decimal" step="0.5" value="95"><span>%</span></div></div>
       <div class="field"><label for="ecomm">Total commission</label><div class="inp"><input id="ecomm" type="number" inputmode="decimal" step="0.1" value="5"><span>%</span></div></div>
-      <div class="field"><label for="eRate">Legal: hourly rate</label><div class="inp"><span>$</span><input id="eRate" type="number" inputmode="decimal" value="400"></div></div>
-      <div class="field"><label for="eHours">Legal: hours, from now to closing</label><div class="inp"><input id="eHours" type="number" inputmode="decimal" value="45"><span>hrs</span></div></div>
+      <div class="field"><label for="eRate">Legal fees: hourly rate (optional)</label><div class="inp"><span>$</span><input id="eRate" type="number" inputmode="decimal" value="" placeholder="0"></div></div>
+      <div class="field"><label for="eHours">Legal fees: hours (optional)</label><div class="inp"><input id="eHours" type="number" inputmode="decimal" value="" placeholder="0"><span>hrs</span></div></div>
       <div class="field"><label for="eOther">Other enforcement costs<small>Locks, inspections, appraisal, court and sheriff fees</small></label><div class="inp"><span>$</span><input id="eOther" type="number" inputmode="decimal" value="6000"></div></div>
       <div class="field"><label for="eCarry">Carrying costs per month after possession<small>Vacant insurance, utilities, maintenance, property management</small></label><div class="inp"><span>$</span><input id="eCarry" type="number" inputmode="decimal" value="1200"></div></div>
     </section>
@@ -236,6 +236,7 @@
   // prefill from URL (numbers only)
   const q=new URLSearchParams(location.search);
   ids.forEach(id=>{ if(q.has(id)){ const v=parseFloat(q.get(id)); if(isFinite(v)) el(id).value=v; } });
+  if(q.get('lock')==='1'){ el('ePct').value=95; el('ePct').disabled=true; el('reset').style.display='none'; }
   const n=id=>{ const v=parseFloat(el(id).value); return isFinite(v)?v:0; };
   const money=v=>(v<0?'-':'')+'$'+Math.round(Math.abs(v)).toLocaleString('en-CA');
   const mo=v=>(Math.round(v*2)/2).toLocaleString('en-CA')+' months';
@@ -292,16 +293,16 @@
       +mrow('Less commission + HST',`${money(X.price)} x ${commPct}% x (1 + ${n('hst')}% HST)`,'-'+money(X.comm))
       +mrow('Less property tax',`${money(n('taxArrears'))} arrears + ${money(n('taxMonthly'))} a month x ${X.months} months`,'-'+money(X.tax))
       +(X.ahead?row('Less other amounts ranking ahead','', '-'+money(X.ahead)):'')
-      +mrow('Less legal costs',legalF,(X.legal?'-':'')+money(X.legal))
+      +(X.legal?mrow('Less legal fees',legalF,'-'+money(X.legal)):mrow('Legal fees','Not included; enter your own above if you wish','n/a'))
       +mrow('Less other enforcement costs',otherF,(X.other?'-':'')+money(X.other))
       +mrow('Less carrying costs after possession',carryF,(X.carry?'-':'')+money(X.carry))
       +mrow('Reaches principal and interest','',money(X.net),'t')
       +mrow('Owing at closing',`${money(n('owing'))} + simple interest ${n('rate')}% x ${X.months}/12 (${money(X.interest)})`,money(X.owed))
       +mrow('Recovery',`${money(X.net)} / ${money(X.owed)}`,Math.round(X.rec)+' cents on the dollar','t')+'</table>';
     el('math').innerHTML='<div class="cols"><div>'
-      +side('Path 1 · Owner-led sale',O,n('oPct'),n('ocomm'),'Offer review and discharge','None','None')
+      +side('Path 1 · Owner-led sale',O,n('oPct'),n('ocomm'),'As entered','None','None')
       +'</div><div>'
-      +side('Path 2 · Enforcement sale',E,n('ePct'),n('ecomm'),`${money(n('eRate'))} an hour x ${n('eHours')} hours`,'Locks, inspections, appraisal, court and sheriff fees',`${money(n('eCarry'))} a month x ${n('eMonthsSale')} months`)
+      +side('Path 2 · Enforcement sale',E,n('ePct'),n('ecomm'),`${money(n('eRate'))} an hour x ${n('eHours')} hours (entered)`,'Locks, inspections, appraisal, court and sheriff fees',`${money(n('eCarry'))} a month x ${n('eMonthsSale')} months`)
       +`</div></div><p class="small">Break-even: an owner-led offer nets the same as the estimated enforcement path at (enforcement net ${money(E.net)} + owner-path tax ${money(n('taxArrears')+n('taxMonthly')*oM)} + amounts ahead ${money(n('ahead'))} + legal ${money(n('oLegal'))}) / (1 - ${n('ocomm')}% x (1 + ${n('hst')}%)) = ${money(breakEven)}. Interest is simple interest on the amount owing today. Estimates only.</p>`;
     const v=el('verdict');
     if(more>0){
@@ -324,7 +325,8 @@
         <p>An owner-led sale costs nothing to allow: your enforcement continues, and nothing closes without your consent.</p>`;
     }
     const cO=O.legal, cE=E.legal+E.other+E.carry;
-    c.innerHTML+=`<p>Legal and enforcement costs on your file: about <b>${money(cO)}</b> on the owner-led sale, against about <b>${money(cE)}</b> on the enforcement path${cE>cO?`, <b>${money(cE-cO)} less</b>`:''}. On a shortfall, those costs come out of your recovery.</p>`;
+    const legalIn=n('oLegal')>0||n('eRate')*n('eHours')>0;
+    c.innerHTML+= legalIn ? `<p>Costs on your file, including the legal fees entered: about <b>${money(cO)}</b> on the owner-led sale, against about <b>${money(cE)}</b> on the enforcement path. On a shortfall, costs come out of your recovery.</p>` : `<p><b>These figures exclude legal fees on both paths</b>; add your own if you wish. An enforcement sale involves more steps: a court order for possession (if contested), a writ of possession, the sheriff, preparation, listing and closing.</p>`;
   }
   ids.forEach(id=>el(id).addEventListener('input',calc));
   el('reset').addEventListener('click',()=>{ ids.forEach(id=>el(id).value=defaults[id]); history.replaceState(null,'',location.pathname); calc(); });
