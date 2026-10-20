@@ -111,6 +111,19 @@
     .reassure h2,.ri b{color:var(--navy)} .ri p,.reassure .sub,.contact{color:var(--ink)} .contact a{color:var(--navy)}
     .ri{border-color:var(--line)}
   }
+
+  .math{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:16px}
+  .math summary{cursor:pointer;font-family:'Poppins',sans-serif;font-weight:600;color:var(--navy);font-size:16px}
+  .math .cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px}
+  .math h4{font-family:'Poppins',sans-serif;font-weight:600;font-size:13.5px;color:var(--navy);margin:4px 0 6px}
+  .math table{width:100%;border-collapse:collapse;font-size:13px;border:0}
+  .math td{padding:5px 6px;border-bottom:1px solid #f0ebe1;vertical-align:top;text-align:left;white-space:normal}
+  .math td.v{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .math td.f{color:var(--muted);font-size:12px}
+  .math tr.t td{font-weight:600;color:var(--navy);border-top:1px solid var(--line)}
+  .math p.small{font-size:12.5px;color:var(--muted);margin-top:10px}
+  @media (max-width:860px){.math .cols{grid-template-columns:1fr}}
+  @media print{.math{break-inside:avoid}}
 </style>
 </head>
 <body>
@@ -186,6 +199,7 @@
     </table></div>
     <div class="bars" id="bars"></div>
     <div class="concl" id="concl"></div>
+    <details class="math" open><summary>How the numbers are calculated</summary><div id="math"></div></details>
   </section>
 
   <section class="reassure">
@@ -271,6 +285,24 @@
       <div class="bar"><div class="lab"><span><b>Enforcement sale</b> · ${mo(E.months)}</span><span>${money(E.net)}</span></div><div class="track"><div class="fill e" style="width:${Math.max(0,E.net/max*100)}%"></div></div></div>
       <p style="font-size:12.5px;color:var(--muted);margin-top:6px">Estimated amount reaching principal and interest on each path.</p>`;
 
+
+    const mrow=(lab,f,val,cls)=>`<tr${cls?` class="${cls}"`:''}><td>${lab}${f?`<br><span class="f">${f}</span>`:''}</td><td class="v">${val}</td></tr>`;
+    const side=(title,X,pricePct,commPct,legalF,otherF,carryF)=>`<h4>${title}</h4><table>`
+      +mrow('Sale price',`${money(n('fmv'))} x ${pricePct}% of fair market value`,money(X.price))
+      +mrow('Less commission + HST',`${money(X.price)} x ${commPct}% x (1 + ${n('hst')}% HST)`,'-'+money(X.comm))
+      +mrow('Less property tax',`${money(n('taxArrears'))} arrears + ${money(n('taxMonthly'))} a month x ${X.months} months`,'-'+money(X.tax))
+      +(X.ahead?row('Less other amounts ranking ahead','', '-'+money(X.ahead)):'')
+      +mrow('Less legal costs',legalF,(X.legal?'-':'')+money(X.legal))
+      +mrow('Less other enforcement costs',otherF,(X.other?'-':'')+money(X.other))
+      +mrow('Less carrying costs after possession',carryF,(X.carry?'-':'')+money(X.carry))
+      +mrow('Reaches principal and interest','',money(X.net),'t')
+      +mrow('Owing at closing',`${money(n('owing'))} + simple interest ${n('rate')}% x ${X.months}/12 (${money(X.interest)})`,money(X.owed))
+      +mrow('Recovery',`${money(X.net)} / ${money(X.owed)}`,Math.round(X.rec)+' cents on the dollar','t')+'</table>';
+    el('math').innerHTML='<div class="cols"><div>'
+      +side('Path 1 · Owner-led sale',O,n('oPct'),n('ocomm'),'Offer review and discharge','None','None')
+      +'</div><div>'
+      +side('Path 2 · Enforcement sale',E,n('ePct'),n('ecomm'),`${money(n('eRate'))} an hour x ${n('eHours')} hours`,'Locks, inspections, appraisal, court and sheriff fees',`${money(n('eCarry'))} a month x ${n('eMonthsSale')} months`)
+      +`</div></div><p class="small">Break-even: an owner-led offer nets the same as the estimated enforcement path at (enforcement net ${money(E.net)} + owner-path tax ${money(n('taxArrears')+n('taxMonthly')*oM)} + amounts ahead ${money(n('ahead'))} + legal ${money(n('oLegal'))}) / (1 - ${n('ocomm')}% x (1 + ${n('hst')}%)) = ${money(breakEven)}. Interest is simple interest on the amount owing today. Estimates only.</p>`;
     const v=el('verdict');
     if(more>0){
       v.className='verdict good';
