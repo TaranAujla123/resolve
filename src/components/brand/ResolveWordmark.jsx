@@ -22,11 +22,16 @@ import logoLight from '/logo-v3-light.png?url'
  *
  * Height is set by the caller via a Tailwind class in `className`
  * (e.g. "h-7"); width auto-scales. A default applies if none is given.
+ *
+ * tm={true} adds a small superscript ™ after the mark (RESOLVE,
+ * CIPO application 2509938, filed 24 Oct 2026). Use ® only once the
+ * mark is registered.
  */
 export function ResolveWordmark({
   variant = 'dark',
   className = '',
   showDescriptor = true,
+  tm = false,
 }) {
   let src
   if (!showDescriptor) {
@@ -37,7 +42,7 @@ export function ResolveWordmark({
     src = variant === 'light' ? logoLight : lockupNavy
   }
   const hasHeight = /\bh-/.test(className)
-  return (
+  const img = (
     <img
       src={src}
       alt="Resolve · Seller Representation"
@@ -45,5 +50,14 @@ export function ResolveWordmark({
       draggable={false}
       decoding="async"
     />
+  )
+  if (!tm) return img
+  return (
+    <span className="inline-flex items-start">
+      {img}
+      <span className="ml-[2px] font-sans text-[9px] sm:text-[10px] font-semibold leading-none text-bronze">
+        ™
+      </span>
+    </span>
   )
 }

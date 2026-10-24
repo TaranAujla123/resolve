@@ -51,7 +51,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.1fr]">
           {/* Brand + brokerage attribution (compliance) */}
           <div>
-            <ResolveWordmark variant="dark" className="h-12" />
+            <ResolveWordmark variant="dark" tm className="h-12" />
             <p className="mt-6 text-[14px] leading-relaxed text-stone-soft">
               Real estate services delivered through{' '}
               <span className="font-semibold text-stone">
@@ -159,7 +159,11 @@ export function Footer() {
         {/* Bottom strip */}
         <div className="mt-12 pt-8 border-t border-stone-mute/40">
           <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between text-[12.5px] text-stone-mute leading-relaxed">
-            <p>&copy; {new Date().getFullYear()} Resolve. All rights reserved.</p>
+            <p>
+              &copy; {new Date().getFullYear()} Resolve. All rights reserved.
+              <br />
+              RESOLVE&trade; is a trademark of Tarnjit Aujla.
+            </p>
             <p className="sm:text-right">
               <Link to="/privacy" className="underline hover:text-bronze">
                 Privacy Policy

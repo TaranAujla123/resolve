@@ -82,6 +82,7 @@ export function Header() {
             <ResolveWordmark
               variant={barSolid ? 'light' : 'dark'}
               showDescriptor={false}
+              tm
               className="h-[30px] sm:h-[35px]"
             />
             <span aria-hidden="true" className="mt-[6px] h-px w-[78%] bg-bronze/55" />
