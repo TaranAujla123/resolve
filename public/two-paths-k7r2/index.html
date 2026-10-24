@@ -248,11 +248,13 @@
     const comm=price*commPct/100*(1+hst);
     const tax=n('taxArrears')+n('taxMonthly')*months;
     const ahead=n('ahead');
-    const net=price-comm-tax-ahead-legal-other-carry;       // reaches principal and interest
+    const gross=price-comm-tax-ahead-legal-other-carry;     // what is left for this mortgage
+    const net=Math.max(0,gross);                             // a lender never receives less than nothing
     const interest=owing*r*months/12;
     const owed=owing+interest;
-    return {months,price,comm,tax,ahead,legal,other,carry,net,interest,owed,
-            rec:owed>0?net/owed*100:0, gap:owed-net};
+    const rcv=Math.min(net,owed);                            // a lender recovers at most what it is owed
+    return {months,price,comm,tax,ahead,legal,other,carry,gross,net,rcv,interest,owed,
+            rec:owed>0?rcv/owed*100:0, gap:owed-net};
   }
   function calc(){
     const oM=n('oMonths');
@@ -260,8 +262,8 @@
     const O=path(oM,n('oPct'),n('ocomm'),n('oLegal'),0,0);
     const E=path(eM,n('ePct'),n('ecomm'),n('eRate')*n('eHours'),n('eOther'),n('eCarry')*n('eMonthsSale'));
     const hst=n('hst')/100, oc=n('ocomm')/100*(1+hst);
-    const breakEven=oc<1?(E.net+n('taxArrears')+n('taxMonthly')*oM+n('ahead')+n('oLegal'))/(1-oc):0;
-    const more=O.net-E.net, sooner=eM-oM, lessGap=E.gap-O.gap;
+    const breakEven=oc<1?(E.rcv+n('taxArrears')+n('taxMonthly')*oM+n('ahead')+n('oLegal'))/(1-oc):0;
+    const more=O.rcv-E.rcv, sooner=eM-oM, lessGap=Math.max(E.gap,0)-Math.max(O.gap,0);
 
     const better=(a,b,hi)=>hi?(a>b?' class="better"':''):(a<b?' class="better"':'');
     const row=(lab,a,b,fmt,hi,cls)=>`<tr${cls?` class="${cls}"`:''}><td>${lab}</td><td${hi===undefined?'':better(a,b,hi)}>${fmt(a)}</td><td>${fmt(b)}</td></tr>`;
@@ -281,10 +283,10 @@
       row('Recovery, cents on the dollar',O.rec,E.rec,v=>Math.round(v)+'¢',true,'tot')+
       `<tr class="tot"><td>Balance not recovered from the sale</td><td${O.gap<E.gap?' class="better"':''}>${O.gap>0?money(O.gap):'None (surplus '+money(-O.gap)+')'}</td><td>${E.gap>0?money(E.gap):'None (surplus '+money(-E.gap)+')'}</td></tr>`;
 
-    const max=Math.max(O.net,E.net,1);
-    el('bars').innerHTML=`<div class="bar"><div class="lab"><span><b>Owner-led sale</b> · ${mo(O.months)}</span><span>${money(O.net)}</span></div><div class="track"><div class="fill o" style="width:${Math.max(0,O.net/max*100)}%"></div></div></div>
-      <div class="bar"><div class="lab"><span><b>Enforcement sale</b> · ${mo(E.months)}</span><span>${money(E.net)}</span></div><div class="track"><div class="fill e" style="width:${Math.max(0,E.net/max*100)}%"></div></div></div>
-      <p style="font-size:12.5px;color:var(--muted);margin-top:6px">Estimated amount reaching principal and interest on each path.</p>`;
+    const max=Math.max(O.rcv,E.rcv,1);
+    el('bars').innerHTML=`<div class="bar"><div class="lab"><span><b>Owner-led sale</b> · ${mo(O.months)}</span><span>${money(O.rcv)}</span></div><div class="track"><div class="fill o" style="width:${Math.max(0,O.rcv/max*100)}%"></div></div></div>
+      <div class="bar"><div class="lab"><span><b>Enforcement sale</b> · ${mo(E.months)}</span><span>${money(E.rcv)}</span></div><div class="track"><div class="fill e" style="width:${Math.max(0,E.rcv/max*100)}%"></div></div></div>
+      <p style="font-size:12.5px;color:var(--muted);margin-top:6px">Estimated recovery on each path (never more than the amount owing).</p>`;
 
 
     const mrow=(lab,f,val,cls)=>`<tr${cls?` class="${cls}"`:''}><td>${lab}${f?`<br><span class="f">${f}</span>`:''}</td><td class="v">${val}</td></tr>`;
@@ -296,14 +298,14 @@
       +(X.legal?mrow('Less legal fees',legalF,'-'+money(X.legal)):mrow('Legal fees','Not included; enter your own above if you wish','n/a'))
       +mrow('Less other enforcement costs',otherF,(X.other?'-':'')+money(X.other))
       +mrow('Less carrying costs after possession',carryF,(X.carry?'-':'')+money(X.carry))
-      +mrow('Reaches principal and interest','',money(X.net),'t')
+      +mrow('Reaches principal and interest',X.gross<0?`Nothing reaches this mortgage: the sale falls ${money(-X.gross)} short of the amounts ahead and the costs`:'',money(X.net),'t')
       +mrow('Owing at closing',`${money(n('owing'))} + simple interest ${n('rate')}% x ${X.months}/12 (${money(X.interest)})`,money(X.owed))
-      +mrow('Recovery',`${money(X.net)} / ${money(X.owed)}`,Math.round(X.rec)+' cents on the dollar','t')+'</table>';
+      +mrow('Recovery',`${money(X.rcv)} / ${money(X.owed)}${X.net>X.owed?` (paid in full; the remaining ${money(X.net-X.owed)} goes to the next in line)`:''}`,Math.round(X.rec)+' cents on the dollar','t')+'</table>';
     el('math').innerHTML='<div class="cols"><div>'
       +side('Path 1 · Owner-led sale',O,n('oPct'),n('ocomm'),'As entered','None','None')
       +'</div><div>'
       +side('Path 2 · Enforcement sale',E,n('ePct'),n('ecomm'),`${money(n('eRate'))} an hour x ${n('eHours')} hours (entered)`,'Locks, inspections, appraisal, court and sheriff fees',`${money(n('eCarry'))} a month x ${n('eMonthsSale')} months`)
-      +`</div></div><p class="small">Break-even: an owner-led offer nets the same as the estimated enforcement path at (enforcement net ${money(E.net)} + owner-path tax ${money(n('taxArrears')+n('taxMonthly')*oM)} + amounts ahead ${money(n('ahead'))} + legal ${money(n('oLegal'))}) / (1 - ${n('ocomm')}% x (1 + ${n('hst')}%)) = ${money(breakEven)}. Interest is simple interest on the amount owing today. Estimates only.</p>`;
+      +`</div></div><p class="small">Break-even: an owner-led offer nets the same as the estimated enforcement path at (enforcement recovery ${money(E.rcv)} + owner-path tax ${money(n('taxArrears')+n('taxMonthly')*oM)} + amounts ahead ${money(n('ahead'))} + legal ${money(n('oLegal'))}) / (1 - ${n('ocomm')}% x (1 + ${n('hst')}%)) = ${money(breakEven)}. Interest is simple interest on the amount owing today. Estimates only.</p>`;
     const v=el('verdict');
     if(more>0){
       v.className='verdict good';
