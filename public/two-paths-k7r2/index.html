@@ -67,6 +67,7 @@
   .verdict .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.75}
   .verdict .v{font-family:'Poppins',sans-serif;font-weight:600;font-size:26px;font-variant-numeric:tabular-nums;line-height:1.2;margin-top:2px}
   .verdict.good .v{color:var(--gold)}
+  .verdict .s{font-size:12.5px;opacity:.8;margin-top:4px;line-height:1.4}
   table{width:100%;border-collapse:collapse;background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:14px}
   .tbl{overflow-x:auto;border-radius:12px}
   th,td{padding:10px 14px;text-align:right;border-bottom:1px solid #f0ebe1;font-variant-numeric:tabular-nums;white-space:nowrap}
@@ -167,11 +168,11 @@
       <div class="field"><label for="oMonths">Months to closing</label><div class="inp"><input id="oMonths" type="number" inputmode="decimal" step="0.5" value="3"><span>mo</span></div></div>
       <div class="field"><label for="oPct">Price achieved<small>As a % of fair market value</small></label><div class="inp"><input id="oPct" type="number" inputmode="decimal" step="0.5" value="100"><span>%</span></div></div>
       <div class="field"><label for="ocomm">Total commission</label><div class="inp"><input id="ocomm" type="number" inputmode="decimal" step="0.1" value="4.5"><span>%</span></div></div>
-      <div class="field"><label for="oLegal">Your legal fees (optional)<small>Leave blank to exclude legal fees on both paths</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="" placeholder="0"></div></div>
+      <div class="field"><label for="oLegal">Lender's legal fees (optional)<small>Leave blank to exclude legal fees on both paths</small></label><div class="inp"><span>$</span><input id="oLegal" type="number" inputmode="decimal" value="" placeholder="0"></div></div>
     </section>
 
     <section class="card enf">
-      <h3>Path 2 · Enforcement sale (your estimates)</h3>
+      <h3>Path 2 · Enforcement sale (estimates)</h3>
       <p class="note">Possession first, then a listing: vacant, as is, with no seller representations. An enforcement sale typically closes 6-8 months later: a court order for possession (if contested), a writ of possession, the sheriff, preparation, listing and closing.</p>
       <div class="field"><label for="eMonthsPos">Months to vacant possession<small>Court order for possession (if contested), writ of possession, sheriff</small></label><div class="inp"><input id="eMonthsPos" type="number" inputmode="decimal" step="0.5" value="6"><span>mo</span></div></div>
       <div class="field"><label for="eMonthsSale">Months from possession to closing<small>Preparation, listing, closing</small></label><div class="inp"><input id="eMonthsSale" type="number" inputmode="decimal" step="0.5" value="4"><span>mo</span></div></div>
@@ -311,12 +312,12 @@
       v.className='verdict good';
       v.innerHTML=`<div><div class="k">Estimated additional recovery</div><div class="v">${money(more)}</div></div>
         <div><div class="k">Estimated time saved</div><div class="v">${sooner>0?mo(sooner):'None'}</div></div>
-        <div><div class="k">Owner-led offers net more above</div><div class="v">${money(breakEven)}</div></div>`;
+        <div><div class="k">Break-even offer price</div><div class="v">${money(breakEven)}</div><div class="s">Any owner-led offer above this recovers more than the enforcement sale.</div></div>`;
     } else {
       v.className='verdict close';
       v.innerHTML=`<div><div class="k">Estimated difference</div><div class="v">${money(more)}</div></div>
         <div><div class="k">Time difference</div><div class="v">${mo(sooner)}</div></div>
-        <div><div class="k">Owner-led offers net more above</div><div class="v">${money(breakEven)}</div></div>`;
+        <div><div class="k">Break-even offer price</div><div class="v">${money(breakEven)}</div><div class="s">Any owner-led offer above this recovers more than the enforcement sale.</div></div>`;
     }
     const c=el('concl');
     if(more>0){
@@ -324,11 +325,11 @@
         <p>Both paths sell to the same buyers. The difference is what the enforcement path adds: months of interest and carrying costs, legal costs, and a vacant, as-is sale. <b>Any owner-led offer above about ${money(breakEven)} nets more than the estimated enforcement path</b>, and you keep your full claim for any balance either way.</p>`;
     } else {
       c.innerHTML=`<p><b>On these figures, the two paths are close, or the enforcement path is estimated to recover more.</b> The result turns mainly on the price each path achieves. An owner-led offer above about ${money(breakEven)} would net more than the estimated enforcement path.</p>
-        <p>An owner-led sale costs nothing to allow: your enforcement continues, and nothing closes without your consent.</p>`;
+        <p>An owner-led sale costs nothing to allow: any enforcement continues, and nothing closes without your consent.</p>`;
     }
     const cO=O.legal, cE=E.legal+E.other+E.carry;
     const legalIn=n('oLegal')>0||n('eRate')*n('eHours')>0;
-    c.innerHTML+= legalIn ? `<p>Costs on your file, including the legal fees entered: about <b>${money(cO)}</b> on the owner-led sale, against about <b>${money(cE)}</b> on the enforcement path. On a shortfall, costs come out of your recovery.</p>` : `<p><b>These figures exclude legal fees on both paths</b>; add your own if you wish. An enforcement sale involves more steps: a court order for possession (if contested), a writ of possession, the sheriff, preparation, listing and closing.</p>`;
+    c.innerHTML+= legalIn ? `<p>Costs on the file, including the legal fees entered: about <b>${money(cO)}</b> on the owner-led sale, against about <b>${money(cE)}</b> on the enforcement path. On a shortfall, costs come out of your recovery.</p>` : `<p><b>These figures exclude legal fees on both paths</b>; add your own if you wish. An enforcement sale involves more steps: a court order for possession (if contested), a writ of possession, the sheriff, preparation, listing and closing.</p>`;
   }
   ids.forEach(id=>el(id).addEventListener('input',calc));
   el('reset').addEventListener('click',()=>{ ids.forEach(id=>el(id).value=defaults[id]); history.replaceState(null,'',location.pathname); calc(); });
