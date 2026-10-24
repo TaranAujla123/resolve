@@ -83,7 +83,7 @@ export function Header() {
               variant={barSolid ? 'light' : 'dark'}
               showDescriptor={false}
               tm
-              className="h-[30px] sm:h-[35px]"
+              className="h-[34px] sm:h-[40px]"
             />
             <span aria-hidden="true" className="mt-[6px] h-px w-[78%] bg-bronze/55" />
             <span className="mt-[5px] font-sans font-semibold text-[10px] sm:text-[11px] tracking-[0.34em] uppercase text-bronze pl-[0.34em]">
