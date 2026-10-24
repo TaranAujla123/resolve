@@ -52,10 +52,21 @@ export function ResolveWordmark({
     />
   )
   if (!tm) return img
+  // The ™ is absolutely positioned so it never changes the mark's size or
+  // centring. Offsets are where the visible ink ends inside each PNG
+  // (the files carry transparent padding): wordmark ink ends at 95.8% of
+  // the width and starts 13.6% down; the full lockup at 93.6% and 14.2%.
+  const pos = showDescriptor
+    ? { left: '94.2%', top: '18%' }
+    : { left: '96.4%', top: '20%' }
   return (
-    <span className="inline-flex items-start">
+    <span className="relative inline-block">
       {img}
-      <span className="ml-[2px] font-sans text-[9px] sm:text-[10px] font-semibold leading-none text-bronze">
+      <span
+        aria-hidden="true"
+        style={pos}
+        className="absolute font-sans text-[8px] sm:text-[9px] font-semibold leading-none text-bronze"
+      >
         ™
       </span>
     </span>
