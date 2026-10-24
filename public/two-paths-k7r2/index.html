@@ -292,7 +292,7 @@
       +mrow('Sale price',`${money(n('fmv'))} x ${pricePct}% of fair market value`,money(X.price))
       +mrow('Less commission + HST',`${money(X.price)} x ${commPct}% x (1 + ${n('hst')}% HST)`,'-'+money(X.comm))
       +mrow('Less property tax',`${money(n('taxArrears'))} arrears + ${money(n('taxMonthly'))} a month x ${X.months} months`,'-'+money(X.tax))
-      +(X.ahead?row('Less other amounts ranking ahead','', '-'+money(X.ahead)):'')
+      +(X.ahead?mrow('Less other amounts ranking ahead','Paid before this mortgage on any sale','-'+money(X.ahead)):'')
       +(X.legal?mrow('Less legal fees',legalF,'-'+money(X.legal)):mrow('Legal fees','Not included; enter your own above if you wish','n/a'))
       +mrow('Less other enforcement costs',otherF,(X.other?'-':'')+money(X.other))
       +mrow('Less carrying costs after possession',carryF,(X.carry?'-':'')+money(X.carry))
