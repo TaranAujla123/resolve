@@ -34,9 +34,9 @@ export function WhyResolve() {
         title="The experience these situations actually require."
         intro={
           <>
-            Between us, Taran and Dave bring{' '}
+            Taran brings{' '}
             <strong className="font-semibold text-ink">
-              more than a decade of combined experience
+              close to a decade of experience
             </strong>{' '}
             in complex Ontario real estate, from power of sale and estate files to
             estate work, and time-sensitive sales.

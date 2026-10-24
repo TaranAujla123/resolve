@@ -59,7 +59,7 @@ import { Terms } from '@/components/legal/Terms'
 //     stay brand-led.
 //
 // Compliance posture (still applies):
-//   - Practitioner roles are Salesperson (Taran) and Salesperson (Dave)
+//   - Practitioner role is Salesperson (Taran Aujla)
 //   - No present-tense legal-capacity claims, no outcome guarantees,
 //     no "specialist" / "exclusive" / "best" language
 //   - RECO registration numbers are factual identifiers in Person JSON-LD
@@ -83,7 +83,6 @@ const RESOLVE_ADDRESS = {
 const ORG_ID = `${SITE_URL}/#resolve`
 const WEBSITE_ID = `${SITE_URL}/#website`
 const TARAN_ID = `${SITE_URL}/#taran`
-const DAVE_ID = `${SITE_URL}/#dave`
 
 // Lightweight @id reference used as `worksFor` / `provider` / `publisher`
 // throughout the graph. Resolves to the full RealEstateAgent entity that
@@ -141,7 +140,6 @@ const REAL_ESTATE_AGENT_LD = {
   ],
   founder: [
     { '@type': 'Person', '@id': TARAN_ID },
-    { '@type': 'Person', '@id': DAVE_ID },
   ],
   sameAs: [
     'https://www.homelifeg1realty.com/Taran-Aujla',
@@ -222,22 +220,9 @@ const TARAN_PERSON_LD = {
   ],
 }
 
-const DAVE_PERSON_LD = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  '@id': DAVE_ID,
-  name: 'Dave Dhaliwal',
-  jobTitle: 'Salesperson',
-  identifier: 'RECO Registration No. 5024155',
-  url: `${SITE_URL}/`,
-  worksFor: RESOLVE_ORG,
-  areaServed: { '@type': 'AdministrativeArea', name: 'Ontario, Canada' },
-}
-
 const HOME_JSONLD = [
   ...SITE_JSONLD,
   TARAN_PERSON_LD,
-  DAVE_PERSON_LD,
 ]
 
 const BUYERS_JSONLD = [
@@ -562,9 +547,9 @@ function AboutRoutePage() {
       <Seo
         title="About Resolve · Real Estate · Ontario"
         ogTitle="Resolve · Real Estate · Ontario"
-        description="Resolve is an Ontario real estate practice led by Taran Aujla and Dave Dhaliwal, working both sides of the transaction under HomeLife G1 Realty Inc., Brokerage."
+        description="Resolve is an Ontario real estate practice led by Taran Aujla, working both sides of the transaction under HomeLife G1 Realty Inc., Brokerage."
         canonical={`${SITE_URL}/about/`}
-        jsonLd={[...SITE_JSONLD, TARAN_PERSON_LD, DAVE_PERSON_LD]}
+        jsonLd={[...SITE_JSONLD, TARAN_PERSON_LD]}
       />
       <AboutPage />
     </>

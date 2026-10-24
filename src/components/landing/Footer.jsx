@@ -44,10 +44,6 @@ export function Footer() {
                 <p className="font-semibold text-white">Taran Aujla, Salesperson</p>
                 <p className="text-white/70">RECO Registration No. 6024721</p>
               </div>
-              <div>
-                <p className="font-semibold text-white">Dave Dhaliwal, Salesperson</p>
-                <p className="text-white/70">RECO Registration No. 5024155</p>
-              </div>
             </div>
             <p className="mt-4 pt-4 border-t border-white/10 text-[14px]">
               <span className="text-white/55 uppercase tracking-[0.12em] text-[11px] font-medium">

@@ -112,7 +112,7 @@ export function InquiryForm() {
           />
           <div className="flex-1 min-w-0">
             <p className="text-[14.5px] text-ink leading-relaxed">
-              You&rsquo;ll speak directly with Taran or Dave. Never a call centre, never a hard sell.
+              You&rsquo;ll speak directly with Taran. Never a call centre, never a hard sell.
             </p>
             <div className="mt-3 flex flex-col sm:flex-row gap-2 sm:gap-2.5">
               <Button as="a" href="sms:+13656457332" variant="primary" size="sm" className="justify-center">

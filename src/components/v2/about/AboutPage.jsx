@@ -20,9 +20,7 @@ import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
  *
  * Hero uses the navy-hero overlay pattern (-mt-16/20 + pt-28/40) so the
  * sticky header sits transparent over it, then goes solid on scroll.
- *
- * Dave has no portrait file yet — render an editorial "coming soon"
- * frame until one lands in src/.
+
  */
 export function AboutPage() {
   const [bioOpen, setBioOpen] = useState(false)
@@ -175,65 +173,6 @@ export function AboutPage() {
             </div>
           </figure>
 
-          <div className="pt-6">
-            <Eyebrow>Team</Eyebrow>
-          </div>
-
-          {/* Dave — portrait pending */}
-          <figure className="rounded-[18px] bg-navy p-6 sm:p-8 shadow-card">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-              <div
-                aria-hidden="true"
-                className="w-48 sm:w-60 aspect-[4/5] rounded-[16px] border border-bronze/40 bg-white/[0.02] flex items-center justify-center shrink-0 px-3 text-center"
-              >
-                <span className="font-display italic text-bronze/90 text-[1rem] sm:text-[1.15rem] leading-snug">
-                  Portrait<br />coming soon
-                </span>
-              </div>
-              <div className="flex-1 min-w-0 pt-1">
-                <p className="font-display font-medium text-stone text-[1.7rem] sm:text-[2rem] leading-tight">
-                  Dave Dhaliwal
-                </p>
-                <p className="mt-1.5 font-sans text-[13px] sm:text-[13.5px] text-bronze font-semibold uppercase tracking-[0.16em]">
-                  Real Estate Salesperson
-                </p>
-                <p className="mt-3 text-[13.5px] text-stone-soft leading-relaxed">
-                  HomeLife G1 Realty Inc., Brokerage
-                  <br />
-                  RECO Reg. No. 5024155
-                </p>
-              </div>
-            </div>
-            <div className="mt-6 sm:mt-7 pt-6 sm:pt-7 border-t border-white/10">
-              <Quote
-                className="h-6 w-6 text-bronze/80"
-                strokeWidth={1.6}
-                aria-hidden="true"
-              />
-              <blockquote className="mt-3 space-y-4 text-[15.5px] leading-relaxed text-stone-soft">
-                <p>
-                  My route into real estate started outside the licence.
-                  More than a decade investing in Ontario property,
-                  acquiring, holding and operating residential and
-                  small-portfolio assets, gave me the read on what a
-                  property is really worth and what buyers actually respond
-                  to. The past five years as a registered Salesperson sit
-                  on top of that foundation.
-                </p>
-                <p>
-                  My approach to every file is the same: calm, practical
-                  and centred on the client. The files I take most often
-                  are the ones where the stakes are personal and the timing
-                  is not theirs. Separations, estate sales,
-                  financial-pressure transactions, partnership disputes,
-                  alongside the standard residential work that runs through
-                  every quarter. Honest numbers, clear options and a sale
-                  handled with care from the first conversation to the
-                  closing table.
-                </p>
-              </blockquote>
-            </div>
-          </figure>
         </div>
       </section>
     </>

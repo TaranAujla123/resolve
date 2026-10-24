@@ -32,11 +32,10 @@ export function About() {
             exposure.
           </p>
           <p>
-            Resolve is led by Taran Aujla, Salesperson, and Dave Dhaliwal,
-            Salesperson, both with HomeLife G1 Realty Inc., Brokerage. Both
-            came to real estate as investors first and now practise on the
-            deal side as Salespersons. The combination gives the practice a
-            working read of both sides of the table: what a property is
+            Resolve is led by Taran Aujla, Salesperson, HomeLife G1 Realty
+            Inc., Brokerage. Taran came to real estate as an investor first
+            and now practises on the deal side as a Salesperson. That gives
+            the practice a working read of both sides of the table: what a property is
             worth, what buyers respond to, and what carries a sale through
             closing.
           </p>
@@ -89,51 +88,6 @@ export function About() {
               </blockquote>
               <figcaption className="mt-4 text-[13px] uppercase tracking-[0.12em] font-semibold text-ink">
                 Taran Aujla, Salesperson
-              </figcaption>
-            </div>
-          </div>
-        </figure>
-
-        <figure className="mt-5 rounded-2xl border border-surface-line bg-white p-6 sm:p-7 shadow-card">
-          <div className="flex flex-col sm:flex-row gap-5 sm:gap-7">
-            <div
-              aria-hidden="true"
-              className="w-36 h-44 sm:w-40 sm:h-48 rounded-xl border border-surface-line bg-accent-soft flex items-center justify-center flex-shrink-0"
-            >
-              <span className="font-serif text-[3rem] sm:text-[3.25rem] text-accent-deep tracking-tight leading-none">
-                DD
-              </span>
-            </div>
-            <div className="flex-1">
-              <Quote
-                className="h-6 w-6 text-accent-deep/70"
-                strokeWidth={1.6}
-                aria-hidden="true"
-              />
-              <blockquote className="mt-3 text-[15.5px] text-ink-soft leading-relaxed space-y-4">
-                <p>
-                  My route into real estate started outside the licence. More
-                  than a decade investing in Ontario property, acquiring,
-                  holding, and operating residential and small-portfolio
-                  assets, gave me the read on what a property is really
-                  worth and what buyers actually respond to. The past five
-                  years as a registered Salesperson sit on top of that
-                  foundation.
-                </p>
-                <p>
-                  My approach to every file is the same: calm, practical,
-                  and centred on the client. The files I take most often
-                  are the ones where the stakes are personal and the timing
-                  isn&rsquo;t theirs. Separations, estate sales,
-                  financial-pressure transactions, partnership disputes,
-                  alongside the standard residential work that runs through
-                  every quarter. Honest numbers, clear options, and a sale
-                  handled with care from the first conversation to the
-                  closing table.
-                </p>
-              </blockquote>
-              <figcaption className="mt-4 text-[13px] uppercase tracking-[0.12em] font-semibold text-ink">
-                Dave Dhaliwal, Salesperson
               </figcaption>
             </div>
           </div>

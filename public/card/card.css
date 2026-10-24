@@ -1,5 +1,5 @@
 /* Resolve Digital Card — standalone styles
-   Shared by /card/taran-aujla/ and /card/dave-dhaliwal/. Built on
+   Used by /card/taran-aujla/ and /card/. Built on
    the V2 brand palette (Navy ground, Stone text, Bronze accent) and
    the locked typography (Newsreader for the wordmark and name,
    Inter for everything else). Mobile-first single-column layout,
@@ -365,7 +365,7 @@ a {
 }
 
 /* ============================== CHOOSER ============================== */
-/* /card/index.html — used when both Taran and Dave cards are listed
+/* /card/index.html — the card chooser page
    side-by-side. Same surface treatment as the personal cards. */
 
 .chooser {
