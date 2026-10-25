@@ -30,6 +30,7 @@ export function SituationHeroForm({
   showMessage = true,
 }) {
   const [submitting, setSubmitting] = useState(false)
+  const [askingFor, setAskingFor] = useState('')
   const navigate = useNavigate()
 
   async function handleSubmit(e) {
@@ -47,6 +48,9 @@ export function SituationHeroForm({
       toast.error('Please pick where the mortgage stands. It is the one thing that changes your options.')
       return
     }
+    // The two softest answers share one stored value (Make's no-auto-text rule matches it exactly);
+    // asking_for tells them apart. Neither is a Meta Lead: this form has no street address (Taran, 25 Oct 2026).
+    const countLead = data.get('mortgage_status') !== 'Just reading, or looking for someone else'
     setSubmitting(true)
     try {
       const res = await fetch(FORMSPREE_ENDPOINT, {
@@ -56,13 +60,15 @@ export function SituationHeroForm({
       })
       if (res.ok) {
         const eventId = genEventId()
-        trackLead({ content_category: situationLabel }, eventId)
-        sendLeadToCapi({
-          event_id: eventId,
-          event_source_url: window.location.href,
-          user_data: { phone: (data.get('phone') || '').toString(), email: '' },
-          custom_data: { situation: situationLabel, source_page: `/${situationSlug}`, form: 'hero' },
-        })
+        if (countLead) {
+          trackLead({ content_category: situationLabel }, eventId)
+          sendLeadToCapi({
+            event_id: eventId,
+            event_source_url: window.location.href,
+            user_data: { phone: (data.get('phone') || '').toString(), email: '' },
+            custom_data: { situation: situationLabel, source_page: `/${situationSlug}`, form: 'hero' },
+          })
+        }
         navigate('/thanks')
       } else {
         toast.error('Something went wrong on our side. Please call (365) 645-7332 or try again shortly.')
@@ -140,8 +146,9 @@ export function SituationHeroForm({
               'I have received a notice from my lender',
               'A court process has started',
               'No mortgage, but money is tight',
-              'Just reading, or looking for someone else',
-            ].map((l) => (
+              ['Just reading', 'Just reading, or looking for someone else', ''],
+              ['Asking for a family member or a client', 'Just reading, or looking for someone else', 'Family member or client'],
+            ].map((o) => [].concat(o)).map(([l, v = l, asking = '']) => (
               <label
                 key={l}
                 className="flex items-center gap-2.5 rounded-md border border-divider bg-stone px-3 py-2.5 text-[14px] text-navy leading-snug cursor-pointer hover:border-bronze/70 has-[:checked]:border-bronze has-[:checked]:bg-bronze/10 transition-colors"
@@ -149,7 +156,9 @@ export function SituationHeroForm({
                 <input
                   type="radio"
                   name="mortgage_status"
-                  value={l}
+                  value={v}
+                  data-asking-for={asking || undefined}
+                  onChange={() => setAskingFor(asking)}
                   required
                   className="h-4 w-4 flex-none accent-[#C8A56B]"
                 />
@@ -157,6 +166,7 @@ export function SituationHeroForm({
               </label>
             ))}
           </div>
+          <input type="hidden" name="asking_for" value={askingFor} readOnly />
           <p className="mt-1.5 text-[12px] text-navy-mute leading-relaxed">
             This is the one thing that changes what your options actually are. It stays between us.
           </p>
