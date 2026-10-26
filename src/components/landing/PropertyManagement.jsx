@@ -15,63 +15,64 @@ import {
   Building2,
   CalendarCheck,
   PhoneCall,
-  Home,
+  ClipboardCheck,
 } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Input, Textarea, Select, Label } from '@/components/ui/Field'
+import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 
 /**
- * /property-management — leasing and management for rental owners,
- * plus a lender section (properties in enforcement).
+ * /property-management — full-service property management for
+ * landlords and investors, with a separate section for lenders and
+ * their counsel (properties in enforcement).
  *
- * Front end = marketing copy only (Taran, 26 Oct 2026). One team, one
- * phone number. The structure behind it (leasing through HomeLife G1
- * under an OREA listing agreement; management by a separate company
- * under licence of the RESOLVE mark; family relationship; LTB and
- * condo exclusions) lives in the Property Management Agreement and
- * the Terms, not on this page. The page carries one attribution line
- * at the end; the site-wide brokerage strip and footer carry the rest.
+ * Front end = plain marketing copy (Taran, 26 Oct 2026): clear service
+ * names, the way property managers describe themselves; no clever
+ * lines, no compliance text. The structure behind it (leasing through
+ * HomeLife G1; management company under licence of the RESOLVE mark)
+ * lives in the Property Management Agreement and the Terms. The lender
+ * offer is its own section and does not mix with the investor pitch.
  */
 
 const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xkoezqwa'
 
-const benefits = [
+const services = [
   {
     icon: KeyRound,
-    title: 'The right tenant, not the first one',
-    body: 'Listed, shown and screened properly. Credit, income, references, and a lease done right.',
+    title: 'Tenant placement',
+    body: 'Marketing, showings and full screening: credit, income, employment and references. A signed Ontario Standard Lease.',
   },
   {
     icon: CalendarCheck,
-    title: 'Rent on the first',
-    body: 'Collected on the first, chased the day it is late, in your account by the 10th.',
+    title: 'Rent collection',
+    body: 'Collected on the first and followed up the day it is late. Deposited to your account by the 10th.',
   },
   {
     icon: Wrench,
-    title: 'Repairs at cost',
-    body: 'Licensed trades, their invoice, no markup. You approve anything over $500. Emergencies are handled first and reported the same day.',
+    title: 'Maintenance and repairs',
+    body: 'Licensed trades at cost, with no markup. Your approval for anything over $500. Emergencies handled right away and reported the same day.',
+  },
+  {
+    icon: ClipboardCheck,
+    title: 'Inspections',
+    body: 'Move-in, move-out and twice-yearly inspections, with photos, so you always know the condition of your property.',
   },
   {
     icon: Receipt,
-    title: 'A statement that adds up',
-    body: 'Rent in, costs out, balance to you. Every line, every month, plus a year-end summary for your accountant.',
+    title: 'Monthly owner statements',
+    body: 'Every dollar in and out, every month. A year-end summary for your accountant.',
   },
   {
     icon: PhoneCall,
-    title: 'Someone answers',
-    body: 'The tenant calls us, not you. You hear from us when it matters, and you can reach us when you want.',
-  },
-  {
-    icon: Home,
-    title: 'Nothing while it is empty',
-    body: 'No fee for a vacant month. We would rather fill it, and the listing goes up the same week.',
+    title: 'Tenant communication',
+    body: 'Your tenants call us, not you. Requests, complaints and notices handled properly and on time.',
   },
 ]
 
 const steps = [
-  'Call (365) 645-7332 or send the form. Tell us the address and what is going on.',
-  'A 15 minute call. The rent, the tenant, what has been difficult, what you want handled.',
-  'We start. Vacant: it is listed this week. Tenanted: we take over rent on the next first of the month.',
+  'Call (365) 645-7332 or send the form. Tell us about the property.',
+  'A 15 minute call about the rent, the tenant and what you need handled.',
+  'We take it from there. A vacant unit is listed that week. A tenanted unit moves to us on the next first of the month.',
 ]
 
 export function PropertyManagement() {
@@ -96,6 +97,14 @@ export function PropertyManagement() {
         body: data,
       })
       if (res.ok) {
+        const eventId = genEventId()
+        trackLead({ content_category: 'Property management' }, eventId)
+        sendLeadToCapi({
+          event_id: eventId,
+          event_source_url: window.location.href,
+          user_data: { phone: (data.get('phone') || '').toString(), email: (data.get('email') || '').toString() },
+          custom_data: { situation: 'Property management', source_page: '/property-management', form: 'property-management' },
+        })
         navigate('/thanks')
       } else {
         toast.error('Something went wrong on our side. Please call (365) 645-7332 or try again shortly.')
@@ -132,18 +141,18 @@ export function PropertyManagement() {
               <span className="font-emph italic font-normal text-bronze">repairs.</span>
             </h1>
             <p className="mt-5 sm:mt-6 text-[16.5px] sm:text-[1.2rem] leading-relaxed text-stone-soft">
-              Your rental should pay you, not call you. We find the tenant,
-              collect the rent, handle the repairs and send you one clean
-              statement a month. One phone number, across the GTA, Durham,
-              Hamilton and Kitchener-Waterloo.
+              Stress-free property management for landlords and investors. We
+              find and screen your tenant, collect the rent, take care of
+              maintenance and send you a clear statement every month.
             </p>
             <p className="mt-4 text-[15.5px] leading-relaxed text-stone-soft">
-              One house or a small portfolio. Tenanted or vacant. Also for
-              lenders holding a property through enforcement.
+              Single homes, basement units, condos and small portfolios in
+              Brampton, Mississauga, Caledon and across the GTA, Durham,
+              Hamilton and Kitchener-Waterloo.
             </p>
             <div className="mt-7 flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Button as="a" href="#management-form" size="lg" variant="contrast" className="group">
-                Ask About Your Property
+                Get a Management Quote
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Button>
               <Button as="a" href="tel:+13656457332" size="lg" variant="outline" className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone">
@@ -159,16 +168,16 @@ export function PropertyManagement() {
         <div className="container section-y">
           <div className="max-w-3xl space-y-14">
 
-            {/* What you get */}
+            {/* Services */}
             <div>
               <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
-                What you get
+                Our services
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                Everything between the listing and the sale, handled.
+                Full-service management, from tenant placement to monthly statements.
               </h2>
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {benefits.map(({ icon: Icon, title, body }) => (
+                {services.map(({ icon: Icon, title, body }) => (
                   <div key={title} className="rounded-2xl border border-surface-line bg-white p-6 shadow-card">
                     <div className="flex items-center gap-2.5">
                       <Icon className="h-5 w-5 text-accent-deep" strokeWidth={1.9} />
@@ -186,27 +195,27 @@ export function PropertyManagement() {
                 Fees
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                Plain fees. No surprises on the statement.
+                Simple, transparent pricing.
               </h2>
               <div className="mt-6 rounded-2xl border border-surface-line bg-white p-6 sm:p-7 shadow-card">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">To place a tenant</p>
+                    <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">Tenant placement</p>
                     <p className="mt-2 text-[1.35rem] font-semibold text-ink leading-tight">One month&rsquo;s rent</p>
-                    <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">Paid when the lease is signed. Nothing if we do not find one.</p>
+                    <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">Paid when the lease is signed. Nothing if we do not place a tenant.</p>
                   </div>
                   <div>
-                    <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">To manage it</p>
-                    <p className="mt-2 text-[1.35rem] font-semibold text-ink leading-tight">A flat monthly fee per unit</p>
-                    <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">Quoted before you sign. Deducted from the rent, so you never write us a cheque.</p>
+                    <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">Monthly management</p>
+                    <p className="mt-2 text-[1.35rem] font-semibold text-ink leading-tight">A flat fee per unit</p>
+                    <p className="mt-2 text-[14.5px] text-ink-soft leading-relaxed">Quoted before you sign and deducted from the rent collected.</p>
                   </div>
                 </div>
                 <ul className="mt-6 pt-5 border-t border-surface-line grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
                   {[
                     'No markup on repairs',
-                    'No fee while the unit is vacant',
-                    'No renewal fee when a good tenant stays',
-                    'No termination fee. Thirty days’ notice, any time',
+                    'No management fee while the unit is vacant',
+                    'No lease renewal fee',
+                    'No cancellation fee, 30 days’ notice',
                   ].map((line) => (
                     <li key={line} className="flex gap-2.5 text-[15px] text-ink-soft leading-relaxed">
                       <span aria-hidden="true" className="mt-2 h-1.5 w-1.5 rounded-full bg-accent-deep flex-shrink-0" />
@@ -217,73 +226,30 @@ export function PropertyManagement() {
               </div>
             </div>
 
-            {/* The whole cycle */}
+            {/* Buying or selling */}
             <div>
               <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
-                The whole cycle
+                Buying or selling
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                Buy it. Lease it. Manage it. Sell it.
+                Growing your portfolio? Ready to sell one?
               </h2>
               <p className="mt-4 text-[16px] text-ink-soft leading-relaxed">
-                Management is the middle of a rental&rsquo;s life. Resolve
-                covers both ends too, with the same team and the same phone
-                number.
+                The same team helps you buy your next investment property and,
+                when the time is right, sell one, tenanted or vacant.{' '}
+                <Link to="/for-investors" className="font-semibold text-accent-deep hover:text-navy underline underline-offset-4">For investors</Link>
+                {' · '}
+                <Link to="/sellers" className="font-semibold text-accent-deep hover:text-navy underline underline-offset-4">For sellers</Link>
               </p>
-              <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                <div className="rounded-2xl border border-surface-line bg-white p-5 shadow-card">
-                  <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">Acquire</p>
-                  <p className="mt-2 text-[15px] text-ink-soft leading-relaxed">
-                    The next one. Value others miss, on and off market, with
-                    the numbers run before you offer.{' '}
-                    <Link to="/for-investors" className="font-semibold text-accent-deep hover:text-navy underline underline-offset-4">For investors</Link>
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-bronze-deep/40 bg-rose p-5 shadow-card">
-                  <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-bronze">Hold</p>
-                  <p className="mt-2 text-[15px] text-navy-soft leading-relaxed">
-                    Leased, managed, and paying you every month. This page.
-                  </p>
-                </div>
-                <div className="rounded-2xl border border-surface-line bg-white p-5 shadow-card">
-                  <p className="text-[11px] uppercase tracking-[0.14em] font-semibold text-accent-deep">Sell</p>
-                  <p className="mt-2 text-[15px] text-ink-soft leading-relaxed">
-                    When the time comes, tenanted or vacant. We already know
-                    the property and the tenant.{' '}
-                    <Link to="/sellers" className="font-semibold text-accent-deep hover:text-navy underline underline-offset-4">For sellers</Link>
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            {/* Lenders */}
-            <div className="rounded-2xl border border-bronze-deep/40 bg-rose p-6 sm:p-7">
-              <div className="flex items-start gap-3">
-                <Building2 className="h-5 w-5 text-bronze flex-shrink-0 mt-0.5" strokeWidth={1.9} />
-                <div>
-                  <p className="text-[11px] uppercase tracking-[0.18em] font-semibold text-bronze">
-                    For lenders and their counsel
-                  </p>
-                  <h3 className="mt-2 text-[1.15rem] font-semibold text-navy leading-snug">
-                    A property in enforcement, held properly until it sells. One call.
-                  </h3>
-                  <div className="mt-3 space-y-2.5 text-[15px] text-navy-soft leading-relaxed">
-                    <p><strong className="text-navy font-semibold">Tenant in place:</strong> rent collected and accounted for to the dollar, the tenancy handled under the Residential Tenancies Act, nothing done that puts the file at risk.</p>
-                    <p><strong className="text-navy font-semibold">Vacant:</strong> checked weekly, secured, winterized, insurance kept in place, with photos on file.</p>
-                    <p><strong className="text-navy font-semibold">Ready to sell:</strong> listed the same week by the team that already holds the keys, priced from current sales, with a written activity report every Monday until it closes.</p>
-                    <p>One contact from possession to closing, and a monthly statement counsel can put straight on the file.</p>
-                  </div>
-                </div>
-              </div>
             </div>
 
             {/* How it starts */}
             <div>
               <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
-                How it starts
+                Getting started
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                Three steps. Usually within the week.
+                Three simple steps.
               </h2>
               <ol className="mt-6 space-y-4">
                 {steps.map((step, i) => (
@@ -306,10 +272,10 @@ export function PropertyManagement() {
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-8">
               <p className="text-[11px] uppercase tracking-[0.16em] font-semibold text-accent-deep">
-                Tell us about the property
+                Get a quote
               </p>
               <h2 className="mt-3 text-display-md text-ink font-display font-medium">
-                A tenant, management, or both.
+                Tell us about your property.
               </h2>
               <p className="mt-4 text-[15.5px] text-ink-soft leading-relaxed max-w-xl mx-auto">
                 The address and a line or two is enough. We reply personally,
@@ -363,9 +329,9 @@ export function PropertyManagement() {
                   <Label htmlFor="pm-need" required>What you need</Label>
                   <Select id="pm-need" name="service" required defaultValue="">
                     <option value="" disabled>Choose one</option>
-                    <option value="Leasing only">A tenant found</option>
+                    <option value="Leasing only">Tenant placement only</option>
                     <option value="Management only">Management of a tenanted unit</option>
-                    <option value="Leasing and management">Both: tenant and management</option>
+                    <option value="Leasing and management">Tenant placement and management</option>
                     <option value="Enforcement property">A property in enforcement</option>
                   </Select>
                 </div>
@@ -384,7 +350,7 @@ export function PropertyManagement() {
                   <Textarea
                     id="pm-notes"
                     name="message"
-                    placeholder="Current rent, number of units, what has been difficult. Optional."
+                    placeholder="Current rent, number of units, anything we should know. Optional."
                     maxLength={2000}
                   />
                 </div>
@@ -402,7 +368,7 @@ export function PropertyManagement() {
                 <Button type="submit" variant="primary" size="lg" disabled={submitting} className="group">
                   {submitting ? 'Sending…' : (
                     <>
-                      Send
+                      Get My Quote
                       <Send className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                     </>
                   )}
@@ -413,26 +379,52 @@ export function PropertyManagement() {
         </div>
       </section>
 
+      {/* Lenders: a separate audience, a separate section */}
+      <section id="lenders" data-surface="navy" className="relative bg-navy text-stone overflow-hidden isolate">
+        <HeroBackdrop />
+        <div className="relative container py-16 sm:py-20">
+          <div className="max-w-3xl">
+            <p className="flex items-center gap-2.5 text-[12px] uppercase tracking-[0.18em] font-semibold text-bronze">
+              <Building2 className="h-4 w-4" strokeWidth={1.9} />
+              For lenders and their counsel
+            </p>
+            <h2 className="mt-4 text-display-md text-stone font-sans font-semibold leading-[1.18]">
+              Properties in enforcement, managed until they{' '}
+              <span className="font-emph italic font-normal text-bronze">sell.</span>
+            </h2>
+            <p className="mt-5 text-[16px] text-stone-soft leading-relaxed">
+              Once a lender takes possession, the property has to be held,
+              protected and accounted for until the sale closes. We handle all
+              of it, with one point of contact for the file.
+            </p>
+            <ul className="mt-6 space-y-3 text-[15.5px] text-stone-soft leading-relaxed">
+              <li><strong className="text-stone font-semibold">Tenanted properties:</strong> rent collected and accounted for to the dollar, and the tenancy managed under the Residential Tenancies Act.</li>
+              <li><strong className="text-stone font-semibold">Vacant properties:</strong> weekly checks, securing, winterizing and insurance kept in place, with photos on file.</li>
+              <li><strong className="text-stone font-semibold">Reporting:</strong> a monthly statement and a written update every Monday, ready for the file.</li>
+              <li><strong className="text-stone font-semibold">The sale:</strong> listed by the same team that holds the keys, priced from current sales, with every offer to you the day it arrives.</li>
+            </ul>
+            <div className="mt-8 flex flex-col sm:flex-row gap-2 sm:gap-3">
+              <Button as="a" href="tel:+13656457332" size="lg" variant="contrast">
+                <Phone className="h-4 w-4" />
+                Call (365) 645-7332
+              </Button>
+              <Button as="a" href="mailto:taran@resolverealestate.ca?subject=Property%20in%20enforcement" size="lg" variant="outline" className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone">
+                taran@resolverealestate.ca
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Close */}
       <section className="bg-surface-tint">
-        <div className="container py-14 sm:py-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <div className="h-12 w-12 mx-auto rounded-full bg-accent-soft text-accent-deep flex items-center justify-center">
-              <Wrench className="h-6 w-6" strokeWidth={1.8} />
-            </div>
-            <p className="mt-5 text-[15px] text-ink-soft leading-relaxed max-w-xl mx-auto">
-              The tenant is found properly. The rent is collected and
-              accounted for every month. The repairs are handled at cost. When
-              you buy the next one, or sell this one, it is the same team and
-              the same phone number.
-            </p>
-            <p className="mt-5 text-[12.5px] text-ink-mute leading-relaxed max-w-xl mx-auto">
-              Leasing and sales by Taran Aujla, Salesperson, HomeLife G1
-              Realty Inc., Brokerage. Management by the Resolve management
-              team. Details in our{' '}
-              <Link to="/terms" className="underline underline-offset-4 hover:text-ink">terms</Link>.
-            </p>
-          </div>
+        <div className="container py-12 sm:py-14">
+          <p className="max-w-3xl mx-auto text-center text-[12.5px] text-ink-mute leading-relaxed">
+            Leasing and sales by Taran Aujla, Salesperson, HomeLife G1 Realty
+            Inc., Brokerage. Property management by the Resolve management
+            team. Details in our{' '}
+            <Link to="/terms" className="underline underline-offset-4 hover:text-ink">terms</Link>.
+          </p>
         </div>
       </section>
     </>
