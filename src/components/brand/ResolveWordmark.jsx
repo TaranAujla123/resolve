@@ -65,9 +65,9 @@ export function ResolveWordmark({
       <span
         aria-hidden="true"
         style={pos}
-        className="absolute font-sans text-[8px] sm:text-[9px] font-semibold leading-none text-bronze"
+        className="absolute font-sans text-[7px] sm:text-[7.5px] font-medium leading-none tracking-[0.08em] text-bronze"
       >
-        ™
+        TM
       </span>
     </span>
   )
