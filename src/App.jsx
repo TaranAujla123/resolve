@@ -33,6 +33,7 @@ import { PropertyDisputes } from '@/components/landing/situations/PropertyDisput
 import { TimeSensitiveSales } from '@/components/landing/situations/TimeSensitiveSales'
 import { FinancialPressure } from '@/components/landing/situations/FinancialPressure'
 import { ForAgents } from '@/components/landing/ForAgents'
+import { PropertyManagement } from '@/components/landing/PropertyManagement'
 import { ForLenders } from '@/components/landing/ForLenders'
 import { CoordinatedSalePage as CoordinatedSaleBody } from '@/components/landing/CoordinatedSalePage'
 import { ThankYou } from '@/components/landing/ThankYou'
@@ -371,6 +372,26 @@ const FINANCIAL_PRESSURE_JSONLD = situationJsonLd({
 // brokerage to brokerage between RECO-registered practitioners under
 // TRESA. Partnership framing carries in the WebPage name and H1, after
 // the audience is correctly identified.
+const PROPERTY_MANAGEMENT_JSONLD = [
+  ...SITE_JSONLD,
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    name: 'Property Management · Leasing and Management for Ontario Rental Owners',
+    url: `${SITE_URL}/property-management/`,
+    description:
+      'Leasing and property management for rental owners across the GTA, Durham, Hamilton and Kitchener-Waterloo. The unit is leased by a licensed salesperson through HomeLife G1 Realty Inc., Brokerage, and managed by a separate team: rent collection, repairs at cost, inspections, monthly statements. Also for lenders holding a property through enforcement.',
+    isPartOf: { '@type': 'WebSite', name: 'Resolve', url: `${SITE_URL}/` },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Resolve', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Property Management', item: `${SITE_URL}/property-management/` },
+      ],
+    },
+  },
+]
+
 const FOR_AGENTS_JSONLD = [
   ...SITE_JSONLD,
   {
@@ -741,6 +762,20 @@ function ForAgentsPage() {
   )
 }
 
+function PropertyManagementPage() {
+  return (
+    <>
+      <Seo
+        title="Property Management · Leasing and Management · Resolve"
+        description="Leasing and property management for rental owners across the GTA, Durham, Hamilton and Kitchener-Waterloo. Leased by a licensed salesperson through HomeLife G1 Realty Inc., Brokerage. Managed by a separate team: rent collected, repairs at cost, monthly statements. Also for lenders holding a property through enforcement."
+        canonical={`${SITE_URL}/property-management/`}
+        jsonLd={PROPERTY_MANAGEMENT_JSONLD}
+      />
+      <PropertyManagement />
+    </>
+  )
+}
+
 function PrivacyPage() {
   return (
     <>
@@ -824,6 +859,8 @@ export default function App() {
                 hard-navigation hits (search, bookmarks, social). */}
             <Route path="/life-transitions" element={<Navigate to="/time-sensitive-sales" replace />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
+            <Route path="/property-management" element={<PropertyManagementPage />} />
+            <Route path="/property-management/" element={<PropertyManagementPage />} />
             {/* /for-lenders UNPUBLISHED 16 Oct 2026 (Taran): it mapped out the lender strategy for other agents. ForLendersPage and ForLenders.jsx are kept, not deleted, until a general lender angle is written. */}
             <Route path="/for-lenders" element={<Navigate to="/" replace />} />
             <Route path="/coordinated-sale" element={<CoordinatedSaleRoutePage />} />
