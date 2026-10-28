@@ -18,10 +18,12 @@
       d.source = d.magnet || d.cat || d.source_page || '';
       var q = new URLSearchParams(location.search);
       d.page = location.pathname;
-      d.utm_source = q.get('utm_source') || '';
-      d.utm_medium = q.get('utm_medium') || '';
-      d.utm_campaign = q.get('utm_campaign') || '';
-      d.utm_content = q.get('utm_content') || '';
+      /* Prefer the URL, then the page's saved attribution (hidden fields), so a
+         visitor who moved around the site before submitting keeps the ad source. */
+      d.utm_source = q.get('utm_source') || d.utm_source || '';
+      d.utm_medium = q.get('utm_medium') || d.utm_medium || '';
+      d.utm_campaign = q.get('utm_campaign') || d.utm_campaign || '';
+      d.utm_content = q.get('utm_content') || d.utm_content || q.get('hsa_ad') || '';
       d.referrer = document.referrer || '';
       d.received = new Date().toISOString();
       d.completeness = (d.phone && d.address) ? 'Full'
