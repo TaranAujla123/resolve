@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- Published 29 Oct 2026 (Taran: "publish the page"). Buyer magnet: power of sale and priced-to-sell finder.
+     Snapshot figures = REALM pull 29 Oct 2026; refresh weekly (SNAPSHOT block near the bottom),
+     together with ad D and the guide PDF (homes-priced-to-sell-guide.pdf, built from
+     MARKETING/Guide/buyer-pos-guide/build_buyer_guide.py). -->
+<title>Power of Sale and Priced-to-Sell Homes · Resolve Real Estate</title>
+<meta name="description" content="Looking for a power of sale home in the GTA, Durham, Brampton, Hamilton or Kitchener-Waterloo? Resolve tracks the power of sale and price-reduced homes listed on MLS and sends you the ones that fit." />
+<link rel="canonical" href="https://www.resolverealestate.ca/power-of-sale-homes/" />
+<meta property="og:title" content="Power of sale homes, found for you." />
+<meta property="og:description" content="Power of sale and price-reduced homes listed on MLS across the GTA, Durham, Brampton, Hamilton and Kitchener-Waterloo, matched to what you want." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.resolverealestate.ca/power-of-sale-homes/" />
+<meta property="og:image" content="https://www.resolverealestate.ca/og-image.png" />
+<meta name="robots" content="index, follow" />
+<link rel="icon" href="/favicon.svg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{--navy:#0A1F44;--navy2:#12294f;--gold:#C4A468;--gold-d:#a9884f;--cream:#F5F1E8;--white:#fff;--ink:#2b2f38;--muted:#6f7683;--line:#e4ddcf;}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,'Segoe UI',sans-serif;color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .em{font-family:'Newsreader',Georgia,serif;font-style:italic;font-weight:500;color:var(--gold)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px}
+  h2.sec{font-family:'Poppins';font-weight:700;font-size:clamp(24px,3.2vw,32px);color:var(--navy);line-height:1.15;letter-spacing:-.5px;max-width:22ch}
+  .navy h2.sec,.navy .eyebrow~*{color:#fff}
+  section{padding:52px 0}
+  section.navy{background:var(--navy);color:#e7ecf3}
+  section.white{background:var(--white)}
+  section.cream{background:var(--cream)}
+  p.body{font-size:16.5px;line-height:1.65;max-width:64ch}
+  p.body + p.body{margin-top:1.1em}
+  .navy p.body{color:#cfd8e6}
+
+  /* hero */
+  .hero{background:linear-gradient(160deg,var(--navy),#0b2249 60%,var(--navy2));color:#fff;padding:34px 0 56px;position:relative;overflow:hidden}
+  .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 84% 4%,rgba(196,164,104,.18),transparent 70%);pointer-events:none}
+  .logo{height:38px;display:block;margin-bottom:30px;position:relative;z-index:1}
+  .hero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:start;position:relative;z-index:1}
+  h1{font-family:'Poppins';font-weight:700;font-size:clamp(30px,4.4vw,44px);line-height:1.08;letter-spacing:-.6px}
+  .hero .lede{color:#cfd8e6;font-size:17.5px;margin-top:18px;max-width:44ch}
+  .hero .areas{color:#9fb0c6;font-size:13.5px;margin-top:18px;letter-spacing:.02em}
+  .card{background:var(--white);border-radius:16px;padding:26px 26px 22px;box-shadow:0 18px 50px rgba(3,12,30,.3);color:var(--ink)}
+  .card h3{font-family:'Poppins';font-weight:700;font-size:19px;color:var(--navy)}
+  .card .sub{font-size:13.5px;color:var(--muted);margin:7px 0 16px}
+  .field{margin-bottom:11px}
+  .field label,.group > span{display:block;font-size:12px;font-weight:600;color:var(--navy);margin-bottom:5px}
+  .field input,.field select{width:100%;padding:12px 13px;border:1px solid var(--line);border-radius:9px;font-family:inherit;font-size:15px;color:var(--ink);background:#fdfcf9}
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(196,164,104,.18)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  /* Areas (checkboxes) and pre-approval (radio): same tap targets as the stage picker on /homeowner-options */
+  .group{margin:12px 0 12px}
+  .chips{display:flex;flex-wrap:wrap;gap:7px}
+  .chips label{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:9px;padding:9px 11px;font-size:14px;color:var(--ink);background:#fdfcf9;cursor:pointer;transition:border-color .15s,background .15s}
+  .chips label:hover{border-color:rgba(196,164,104,.7)}
+  .chips input{accent-color:var(--navy);width:16px;height:16px;flex:none;margin:0}
+  .chips label:has(input:checked){border-color:var(--gold);background:rgba(196,164,104,.09);font-weight:600;color:var(--navy)}
+  .btn{width:100%;margin-top:6px;background:var(--navy);color:#fff;border:none;border-radius:999px;padding:15px 18px;font-family:'Poppins';font-weight:600;font-size:15.5px;cursor:pointer;transition:background .15s}
+  .btn:hover{background:#0c2a58}.btn[disabled]{opacity:.6}
+  .micro{font-size:11.5px;color:var(--muted);margin-top:11px;line-height:1.5;text-align:center}
+  .reachlab{margin-top:18px;text-align:center;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#7b8898}
+  .reach{display:flex;flex-direction:column;gap:10px;margin-top:10px}
+  .reach a{display:flex;align-items:center;justify-content:center;gap:8px;border:1px solid rgba(10,31,68,.25);color:var(--navy);border-radius:999px;padding:13px 18px;font-family:'Poppins';font-weight:600;font-size:14.5px;text-decoration:none;transition:border-color .15s}
+  .reach a:hover{border-color:rgba(10,31,68,.6)}
+  @media(min-width:520px){.reach{flex-direction:row}.reach a{flex:1}}
+  .formerr{display:none;color:#a23b3b;font-size:13px;margin-top:9px;text-align:center}
+  .success{display:none;text-align:center;padding:6px 2px}
+  .success .tick{width:50px;height:50px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:25px;margin:0 auto 12px}
+  .success h3{margin-bottom:6px}.success p{font-size:14px;color:var(--ink);margin-bottom:12px}
+  .success .talk{margin-top:18px;padding-top:16px;border-top:1px solid rgba(10,31,68,.12)}
+  .success .talk h4{font-family:'Poppins';font-size:16px;color:var(--navy);margin:0 0 4px}
+  .success .talk p{font-size:13.5px;margin-bottom:12px}
+  .success .now{display:flex;flex-direction:column;gap:10px}
+  .success .now a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:999px;font-family:'Poppins';font-weight:600;font-size:15px;text-decoration:none}
+  .success .now .t{background:var(--navy);color:#fff}
+  .success .now .c{border:1px solid rgba(10,31,68,.3);color:var(--navy)}
+  .success .now a:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+  @media(min-width:520px){.success .now{flex-direction:row}.success .now a{flex:1}}
+  .success .talk .fine{font-size:12px;color:#7b8898;margin:10px 0 0}
+
+  /* area snapshot */
+  .snapwrap{margin-top:24px;background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .snaphead{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;padding:16px 20px;border-bottom:1px solid var(--line)}
+  .snaphead .wk{font-family:'Newsreader',Georgia,serif;font-style:italic;font-size:17px;color:var(--navy)}
+  .snaphead .src{font-size:12px;color:var(--muted)}
+  table.snap{width:100%;border-collapse:collapse;font-size:15px}
+  table.snap th{text-align:left;font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:12px 20px;background:#fbf9f4}
+  table.snap td{padding:14px 20px;border-top:1px solid var(--line);vertical-align:top}
+  table.snap td.a{font-family:'Poppins';font-weight:600;color:var(--navy)}
+  table.snap td.c{font-family:'Poppins';font-weight:700;color:var(--gold-d);white-space:nowrap}
+  table.snap td.r{white-space:nowrap}
+  table.snap td.m{color:#4a515c}
+  .placeholder-flag{display:none;margin:0;padding:10px 20px;background:#fff4e5;border-bottom:1px dashed #c98a2e;color:#7a4b10;font-size:12.5px;font-weight:600}
+  .snapnote{font-size:12.5px;color:var(--muted);margin-top:12px;max-width:76ch}
+  .snapcta{margin-top:22px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+  .snapcta p{flex:1 1 100%;font-family:'Poppins';font-weight:600;color:var(--navy);font-size:17px}
+  .snapcta a{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:999px;font-family:'Poppins';font-weight:600;font-size:15px;text-decoration:none}
+  .snapcta a.go{background:var(--navy);color:#fff}
+  .snapcta a.call{border:1px solid rgba(10,31,68,.3);color:var(--navy)}
+  .snapcta .fine{flex:1 1 100%;font-size:12.5px;color:var(--muted)}
+  @media(max-width:640px){
+    table.snap thead{display:none}
+    table.snap tr{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 10px;padding:12px 16px;border-top:1px solid var(--line)}
+    table.snap td{border:none;padding:2px 0}
+    table.snap td.a,table.snap td.r{grid-column:1/-1}
+    table.snap td.r{font-size:13.5px;color:#4a515c}
+    table.snap td.c::before{content:attr(data-l);display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+  }
+
+  /* what's involved cards */
+  .reveal{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:26px}
+  .item{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:20px 22px}
+  .item .n{font-family:'Poppins';font-weight:700;color:var(--gold);font-size:13px;letter-spacing:.06em}
+  .item h3{font-family:'Poppins';font-weight:600;font-size:16.5px;color:var(--navy);margin:6px 0 6px}
+  .item p{font-size:14.5px;color:#4a515c}
+
+  /* who */
+  .who{display:grid;grid-template-columns:.72fr 1.28fr;gap:36px;align-items:center}
+  .who .photo{width:100%;max-width:280px;aspect-ratio:4/5;object-fit:cover;object-position:center;border-radius:16px;border:1px solid rgba(255,255,255,.14)}
+  .creds{font-size:12.5px;color:#9fb0c6;margin-top:18px;line-height:1.7;border-top:1px solid rgba(255,255,255,.12);padding-top:16px}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:26px}
+  .step{background:var(--white);border:1px solid var(--line);border-radius:12px;padding:22px 20px}
+  .step .n{font-family:'Poppins';font-weight:700;color:var(--gold);font-size:22px;line-height:1}
+  .step h4{font-family:'Poppins';font-weight:600;color:var(--navy);font-size:16px;margin:8px 0 6px}
+  .step p{font-size:14px;color:#4a515c}
+
+  /* faq */
+  .faq{margin-top:24px;max-width:76ch}
+  .faq details{border-bottom:1px solid var(--line);padding:14px 0}
+  .faq summary{font-family:'Poppins';font-weight:600;font-size:16px;color:var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary:after{content:"+";color:var(--gold);font-weight:700;font-size:20px;line-height:1}
+  .faq details[open] summary:after{content:"\2212"}
+  .faq p{font-size:15px;color:#4a515c;margin-top:10px}
+
+  /* final cta */
+  .finalcta{text-align:center}
+  .finalcta h2{color:#fff;max-width:24ch;margin:0 auto}
+  .finalcta p{color:#cfd8e6;font-size:16px;margin:12px auto 22px;max-width:46ch}
+  .finalcta a.go{display:inline-block;background:var(--gold);color:var(--navy);font-family:'Poppins';font-weight:600;text-decoration:none;padding:14px 30px;border-radius:999px;font-size:15.5px}
+  .finalcta .micro2{color:#9fb0c6;font-size:12px;margin-top:16px}
+
+  footer{background:var(--navy);color:#8ea0b8;padding:30px 0 40px;font-size:12px;line-height:1.7}
+  footer .disc{font-size:11px;color:#7183a0;max-width:88ch;margin-bottom:12px}
+  footer .sig{color:#c3ccd9}footer .sig b{color:#fff}
+  footer .tm{font-size:11px;color:#7183a0;margin-top:8px}
+  footer a.home{color:#aebccf;text-decoration:underline}
+
+  .sticky{display:none}
+  @media(max-width:820px){
+    .hero .grid{grid-template-columns:1fr;gap:26px}.hero .lede{max-width:none}
+    .reveal{grid-template-columns:1fr}.who{grid-template-columns:1fr;gap:22px;text-align:center}
+    .who .photo{margin:0 auto}.steps{grid-template-columns:1fr}
+    .sticky{display:block;position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--navy);border-top:1px solid rgba(255,255,255,.12);padding:10px 16px}
+    .sticky a{display:block;text-align:center;background:var(--gold);color:var(--navy);font-family:'Poppins';font-weight:600;text-decoration:none;padding:13px;border-radius:999px;font-size:15px}
+    body{padding-bottom:72px}
+  }
+  @media(max-width:400px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="wrap">
+      <a href="/" aria-label="Resolve Real Estate home"><img class="logo" src="/resolve-lockup-dark.png" alt="re·solve Real Estate" /></a>
+      <div class="grid">
+        <div>
+          <div class="eyebrow">For buyers &middot; Power of sale and priced-to-sell homes</div>
+          <h1>Power of sale homes, <span class="em">found for you.</span></h1>
+          <p class="lede">We track the power of sale homes listed on MLS&reg; across the GTA, Durham, Brampton, Hamilton and Kitchener-Waterloo, along with the homes whose price has come down or that have been on the market a while, and send you the ones that fit. These are sellers ready to move, and many are priced to sell. Tell us what you want and we'll do the searching.</p>
+          <p class="lede" style="margin-top:10px">Free when you sign up: our buyer guide, <span class="em">Homes priced to sell.</span></p>
+          <p class="areas">Toronto &middot; Durham &middot; Brampton and Peel &middot; Hamilton &middot; Kitchener-Waterloo</p>
+        </div>
+
+        <div class="card" id="formcard">
+          <div id="formview">
+            <h3>Get matched</h3>
+            <p class="sub">From Taran Aujla, real estate Salesperson. Tell me what you're looking for and I'll be in touch to set up a short call.</p>
+            <form id="buyerform" action="https://formspree.io/f/xkoezqwa" method="POST">
+              <div class="field"><label for="name">First name</label><input id="name" name="name" type="text" autocomplete="given-name" required /></div>
+              <div class="two">
+                <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="(000) 000-0000" required /></div>
+                <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required /></div>
+              </div>
+
+              <!-- Areas: the checkboxes carry no name on purpose. lead-beacon.js builds
+                   its payload with FormData.forEach, which keeps only the LAST value of a
+                   repeated name, so five checkboxes named "areas" would reach Make as one
+                   area. The script joins the ticked areas into the hidden "area" field on
+                   every change (before the beacon reads the form in the capture phase).
+                   lead-beacon.js maps "area" into "address", the same way /contact works,
+                   which also makes Make score the lead "Full" (phone + area) so Taran's
+                   NEW LEAD alert text fires. -->
+              <div class="group">
+                <span>Areas you're looking in</span>
+                <div class="chips" id="areachips">
+                  <label><input type="checkbox" data-area="the GTA" /><span>Anywhere in the GTA</span></label>
+                  <label><input type="checkbox" data-area="Toronto" /><span>Toronto</span></label>
+                  <label><input type="checkbox" data-area="Durham" /><span>Durham</span></label>
+                  <label><input type="checkbox" data-area="Brampton/Peel" /><span>Brampton/Peel</span></label>
+                  <label><input type="checkbox" data-area="Hamilton" /><span>Hamilton</span></label>
+                  <label><input type="checkbox" data-area="Kitchener-Waterloo" /><span>Kitchener-Waterloo</span></label>
+                </div>
+                <input type="hidden" name="area" value="" />
+              </div>
+
+              <div class="two">
+                <div class="field"><label for="budget">Budget</label>
+                  <select id="budget" name="budget" required>
+                    <option value="">Choose a range</option>
+                    <option>Under $600K</option>
+                    <option>$600K to $800K</option>
+                    <option>$800K to $1M</option>
+                    <option>$1M to $1.5M</option>
+                    <option>Over $1.5M</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </div>
+                <div class="field"><label for="timing">Timing</label>
+                  <select id="timing" name="timing" required>
+                    <option value="">Choose timing</option>
+                    <option>Ready now</option>
+                    <option>Within 3 months</option>
+                    <option>3 to 6 months</option>
+                    <option>Just starting to look</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="group">
+                <span>Mortgage pre-approval</span>
+                <div class="chips">
+                  <label><input type="radio" name="preapproved" value="Yes" required /><span>Yes</span></label>
+                  <label><input type="radio" name="preapproved" value="Not yet" /><span>Not yet</span></label>
+                </div>
+              </div>
+
+              <!-- "situation" lands in the Lead Register notes column (Make maps
+                   situation/brief/message there). Filled by the script below. -->
+              <input type="hidden" name="situation" value="" />
+              <input type="hidden" name="magnet" value="Power of sale finder (buyer)" />
+              <input type="hidden" name="ad_source" value="" />
+              <input type="hidden" name="utm_source" value="" />
+              <input type="hidden" name="utm_campaign" value="" />
+              <input type="hidden" name="utm_content" value="" />
+              <input type="hidden" name="_subject" value="Power of sale buyer, new lead" />
+              <!-- Never add a mortgage_status field to this form. Make's seller auto text keys on it. -->
+              <button class="btn" type="submit" id="bbtn">Get matched</button>
+              <p class="micro">Private. Working together starts with a buyer representation agreement, which we go through on the call before you sign anything.</p>
+              <p class="reachlab">Or reach me directly</p>
+              <div class="reach">
+                <a href="sms:+13656457332">Text (365) 645-7332</a>
+                <a href="tel:+13656457332">Call instead</a>
+              </div>
+            </form>
+            <div class="formerr" id="berr">Something went wrong. Please try again, or call or text (365) 645-7332.</div>
+          </div>
+          <div class="success" id="successview">
+            <div class="tick">✓</div>
+            <h3>Thank you. I'll be in touch.</h3>
+            <p>I'll call you shortly to find a time for a short call about what you're looking for and what's out there now.</p>
+            <p>Working together starts with a buyer representation agreement. It sets out what I do for you and how I'm paid, and we go through it on that call. Once it's signed, I send you the homes that fit, as your agent.</p>
+            <!-- Guide PDF: copy the final (no -DRAFT, real figures) from MARKETING/Guide/buyer-pos-guide/ to this folder as homes-priced-to-sell-guide.pdf before publishing. -->
+            <p style="margin-top:14px"><a class="btn" style="display:inline-block;width:auto;padding:13px 26px;text-decoration:none" href="homes-priced-to-sell-guide.pdf" download onclick="window.fbq&amp;&amp;fbq('track','ViewContent',{content_name:'Buyer guide download'})">Download your guide: Homes priced to sell</a></p>
+            <div class="talk">
+              <h4>Rather talk now?</h4>
+              <p>Text or call, whichever is easier.</p>
+              <div class="now">
+                <a class="t" href="sms:+13656457332?&amp;body=Hi%20Taran%2C%20I%20just%20filled%20in%20your%20power%20of%20sale%20form.%20When%20can%20we%20talk%3F" onclick="window.fbq&amp;&amp;fbq('track','Contact',{content_name:'Buyer thank-you text'})">Text me now</a>
+                <a class="c" href="tel:+13656457332" onclick="window.fbq&amp;&amp;fbq('track','Contact',{content_name:'Buyer thank-you call'})">Call (365) 645-7332</a>
+              </div>
+              <p class="fine">Taran Aujla, Salesperson, HomeLife G1 Realty Inc., Brokerage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- AREA SNAPSHOT (statistics only; filled from the SNAPSHOT block at the bottom) -->
+  <section class="cream" id="snapshot">
+    <div class="wrap">
+      <div class="eyebrow">Area snapshot</div>
+      <h2 class="sec">Power of sale, price drops and 60+ days on MLS&reg;.</h2>
+      <p class="body" style="margin-top:12px">Counts and price ranges by area, so you can see what is out there right now. The homes themselves, with my notes on each, go to the buyers I work with.</p>
+      <div class="snapwrap">
+        <p class="placeholder-flag" id="snapflag">DRAFT: placeholder figures. Replace from the live REALM pull before publishing.</p>
+        <div class="snaphead"><span class="wk" id="snapweek">As of 29 October 2026</span><span class="src" id="snapsrc">Source: MLS&reg; listings, Taran's search</span></div>
+        <table class="snap">
+          <thead><tr><th>Area</th><th>Power of sale</th><th>Price drops</th><th>60+ days</th><th>Most priced</th></tr></thead>
+          <tbody id="snapbody">
+            <!-- Rows are written by the script from SNAPSHOT. This fallback shows the placeholders if JS is off. -->
+            <tr><td class="a">Toronto</td><td class="c" data-l="Power of sale">61</td><td class="c" data-l="Price drops">1,724</td><td class="c" data-l="60+ days">2,864</td><td class="r">$399K to $3.8M</td></tr>
+            <tr><td class="a">Durham</td><td class="c" data-l="Power of sale">28</td><td class="c" data-l="Price drops">469</td><td class="c" data-l="60+ days">777</td><td class="r">$380K to $2.6M</td></tr>
+            <tr><td class="a">Brampton/Peel</td><td class="c" data-l="Power of sale">45</td><td class="c" data-l="Price drops">773</td><td class="c" data-l="60+ days">1,490</td><td class="r">$425K to $3.1M</td></tr>
+            <tr><td class="a">Hamilton</td><td class="c" data-l="Power of sale">9</td><td class="c" data-l="Price drops">590</td><td class="c" data-l="60+ days">810</td><td class="r">$320K to $2.65M</td></tr>
+            <tr><td class="a">Kitchener-Waterloo</td><td class="c" data-l="Power of sale">3</td><td class="c" data-l="Price drops">222</td><td class="c" data-l="60+ days">364</td><td class="r">$289K to $1.8M</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="snapnote">Counts of residential homes for sale on MLS&reg; on the date shown: listings whose remarks mention power of sale, listings priced below their first asking price, and listings on the market 60 days or more. A home can appear in more than one column. &ldquo;Most priced&rdquo; is the middle 90% of asking prices across the three groups. Listings change daily, and my own listings are not counted.</p>
+      <div class="snapcta">
+        <p>Want the details on any of these?</p>
+        <a class="go" href="#top">Get matched</a>
+        <a class="call" href="tel:+13656457332">Call Taran, (365) 645-7332</a>
+        <span class="fine">Working together starts with a buyer representation agreement. Details on individual homes follow once it's signed.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT IT INVOLVES -->
+  <section class="white">
+    <div class="wrap">
+      <div class="eyebrow">Why buyers look at them</div>
+      <h2 class="sec">Real homes, <span class="em">motivated sellers.</span></h2>
+      <p class="body" style="margin-top:12px">A power of sale is a home sold by the lender after the owner falls behind on the mortgage. It is listed on MLS&reg; like any other home. What makes it different is the seller: a lender that wants to be repaid, not to hold out for top dollar.</p>
+      <p class="body" style="margin-top:12px">The same goes for homes where the price has already come down, or that have been listed for two months or more. The seller has seen what the market will pay and is ready to talk.</p>
+      <div class="reveal">
+        <div class="item"><div class="n">01</div><h3>Priced to sell</h3><p>Lenders price to attract offers, and many power of sale homes sell for less than similar homes nearby.</p></div>
+        <div class="item"><div class="n">02</div><h3>A seller that looks at the numbers</h3><p>No emotional pricing and no attachment to the house. The lender wants a clean offer and a timely close.</p></div>
+        <div class="item"><div class="n">03</div><h3>Often vacant</h3><p>Many are empty by the time they are listed, which can make visits and closing dates easier to arrange.</p></div>
+        <div class="item"><div class="n">04</div><h3>Room to negotiate</h3><p>A price that has already dropped, or weeks on the market, usually means a seller open to a sensible offer.</p></div>
+      </div>
+      <p class="body" style="margin-top:22px">Worth knowing on power of sale homes: they sell as is, with no warranties from the seller, the lender adds its own terms to the offer, and it can take a few days to answer. I walk you through all of it, so you can offer with confidence.</p>
+    </div>
+  </section>
+
+  <!-- WHY A CAREFUL AGENT -->
+  <section class="navy">
+    <div class="wrap">
+      <div class="eyebrow">Why work with me</div>
+      <div class="who">
+        <img class="photo" src="/get-help/taran-headshot.jpg" alt="Taran Aujla" loading="lazy" />
+        <div>
+          <h2 class="sec" style="color:#fff">I do the searching. <span class="em">You pick the home.</span></h2>
+          <p class="body" style="margin-top:14px">I'm Taran Aujla, a real estate Salesperson with HomeLife G1 Realty. I track the power of sale and price-reduced listings every week, flag the ones worth a look, and help you put together an offer that gets taken seriously. Then I negotiate it for you.</p>
+          <p class="body">Before I became a Salesperson I spent close to a decade on Ontario real estate transactions, so I know how these sales run from listing to closing.</p>
+          <div class="creds">HomeLife G1 Realty Inc., Brokerage · RECO Reg. No. 6024721 · Serving the GTA, Durham, Brampton, Hamilton, Kitchener &amp; Waterloo · English, French, Punjabi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BUYER INCENTIVE: Taran confirmed 29 Oct 2026 it is still on. Paid through G1.
+       Open: any cap on the legal fees or other condition; if so, add it to the fine line. -->
+  <section class="white">
+    <div class="wrap">
+      <div class="eyebrow">When you buy through me</div>
+      <h2 class="sec">More than a tour <span class="em">of homes.</span></h2>
+      <p class="body" style="margin-top:12px">I find the homes, read each one for what the listing doesn't say, and negotiate the offer. And when you close, two things on top.</p>
+      <div class="reveal">
+        <div class="item"><h3>Your legal fees, covered</h3><p>I cover your real estate lawyer's fees on closing.</p></div>
+        <div class="item"><h3>A $1,000 gift card</h3><p>A thank-you when you get your keys.</p></div>
+      </div>
+      <p class="snapnote" style="margin-top:16px">For buyer clients under a buyer representation agreement with Taran Aujla who complete a purchase. Paid through HomeLife G1 Realty Inc., Brokerage, on closing.</p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="cream">
+    <div class="wrap">
+      <div class="eyebrow">How working together starts</div>
+      <h2 class="sec">Four steps, in this order.</h2>
+      <div class="steps">
+        <div class="step"><div class="n">01</div><h4>Tell me what you're after</h4><p>Areas, budget and timing, on the form above. About a minute.</p></div>
+        <div class="step"><div class="n">02</div><h4>A short call</h4><p>What you want, where your financing stands, and what's out there now.</p></div>
+        <div class="step"><div class="n">03</div><h4>Buyer representation agreement</h4><p>Working together starts with one. It sets out what I do for you and how I'm paid. We go through it before you sign.</p></div>
+        <div class="step"><div class="n">04</div><h4>Matching homes, as they list</h4><p>I send the homes on MLS&reg; that fit, and help you move quickly on the right one.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="white">
+    <div class="wrap">
+      <div class="eyebrow">Common questions</div>
+      <h2 class="sec">Straight answers.</h2>
+      <div class="faq">
+        <details><summary>Can I see the list of homes now?</summary><p>The area snapshot above shows how many are listed and the price ranges. The homes themselves, with my notes on each, go to the buyers I work with, once we sign a buyer representation agreement.</p></details>
+        <details><summary>Why include homes with price drops?</summary><p>A price that has come down, or two months or more on the market, tells you the seller has seen what buyers will pay. Those sellers are often the most open to a fair offer, and most buyers scroll past them. I look at why each one has sat before you spend time on it.</p></details>
+        <details><summary>Are power of sale homes cheaper?</summary><p>Often. Lenders price to sell, and many power of sale homes sell for less than similar homes nearby. Every home is different, so we look at the numbers together before you offer.</p></details>
+        <details><summary>Do I need a pre-approval first?</summary><p>It helps. Lenders like clean offers, and a pre-approval lets you move quickly when the right home comes up.</p></details>
+        <details><summary>Do I still need a lawyer?</summary><p>Yes. As with any purchase, you'll have your own real estate lawyer for closing.</p></details>
+        <details><summary>What is a buyer representation agreement?</summary><p>A written agreement between you and the brokerage that sets out what I do for you, for how long, in which areas, and how I am paid. Working together starts with one. We go through it on the call, and you sign only once you are comfortable with it.</p></details>
+        <details><summary>Is this private?</summary><p>Yes. What you tell me about your budget and plans stays between us.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="navy">
+    <div class="wrap finalcta">
+      <h2 class="sec">Looking for a home priced to sell? Start with a short call.</h2>
+      <p>Tell me the areas, the budget and the timing, and I'll be in touch to find a time.</p>
+      <a class="go" href="#top">Get matched</a>
+      <div class="micro2">Serving the GTA, Durham, Brampton, Hamilton &amp; Kitchener-Waterloo.</div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <p class="disc">This page is general information only and is not legal, mortgage, tax, or financial advice, and is not an offer of those services. Every purchase depends on its own terms and should be reviewed with your own lawyer and lender before you act. No outcome is guaranteed. Area figures are counts and price ranges of power of sale, price-reduced and longer-listed homes on MLS&reg; during the week shown and change daily. Not intended to solicit buyers or sellers already under contract with a brokerage.</p>
+      <p class="sig">Taran Aujla, Salesperson · Real estate services by Resolve, delivered through <b>HomeLife G1 Realty Inc., Brokerage</b>. Independently Owned &amp; Operated. &nbsp;<a class="home" href="/" target="_blank" rel="noopener">resolverealestate.ca</a></p>
+      <p class="tm">RESOLVE&trade; is a trademark of Taran Aujla.</p>
+    </div>
+  </footer>
+
+  <div class="sticky"><a href="#top">Get matched</a></div>
+
+  <!-- Meta Pixel (Resolve · 26914854838125099) -->
+  <script>
+    (function(){
+      if(location.hostname==='localhost'||location.hostname==='127.0.0.1')return;
+      !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init','26914854838125099');fbq('track','PageView');
+    })();
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=26914854838125099&ev=PageView&noscript=1" alt=""/></noscript>
+  <!-- End Meta Pixel -->
+
+  <!-- =====================================================================
+       SNAPSHOT: weekly area figures. STATISTICS ONLY.
+       Refresh weekly from the REALM pull. Method and definitions:
+       MARKETING/Guide/buyer-pos-guide/snapshots/ (first pull 29 Oct 2026). Groups: remarks mention
+       power of sale; price below first asking price; DOM 60+. Range = middle 90% across the groups.
+       Rules:
+         - Counts and the middle-90% price range only.
+         - Never an address, postal code, MLS number, photo, per-property row,
+           or anything that points to a single home.
+         - If an area has fewer than 3 listings, set low and high to "" so
+           only the counts show (a range across one or two homes gives away
+           their asking prices).
+         - Leave Taran's own listings out of the counts.
+         - week_of = the Monday of the pull, written like "2 November 2026".
+       While any value still contains "[", the page shows an orange DRAFT bar.
+       ===================================================================== -->
+  <script>
+    var SNAPSHOT = {
+      week_of: "29 October 2026",
+      source: "Source: MLS® listings, Taran's REALM search",
+      areas: [
+        { area: "Toronto",            pos: "61", drops: "1,724", dom60: "2,864", low: "$399K", high: "$3.8M" },
+        { area: "Durham",             pos: "28", drops: "469",   dom60: "777",   low: "$380K", high: "$2.6M" },
+        { area: "Brampton/Peel",      pos: "45", drops: "773",   dom60: "1,490", low: "$425K", high: "$3.1M" },
+        { area: "Hamilton",           pos: "9",  drops: "590",   dom60: "810",   low: "$320K", high: "$2.65M" },
+        { area: "Kitchener-Waterloo", pos: "3",  drops: "222",   dom60: "364",   low: "$289K", high: "$1.8M" }
+      ]
+    };
+  </script>
+
+  <script>
+    /* Render the snapshot table from SNAPSHOT. */
+    (function(){
+      try{
+        var S=window.SNAPSHOT; if(!S) return;
+        function esc(t){return String(t==null?'':t).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+        var body=document.getElementById('snapbody'), html='', ph=/\[/.test(S.week_of);
+        S.areas.forEach(function(r){
+          if(/\[/.test(r.pos+r.drops+r.dom60+r.low+r.high)) ph=true;
+          var range=(r.low&&r.high)?(r.low+' to '+r.high):'';
+          html+='<tr><td class="a">'+esc(r.area)+'</td><td class="c" data-l="Power of sale">'+esc(r.pos)+'</td><td class="c" data-l="Price drops">'+esc(r.drops)+'</td><td class="c" data-l="60+ days">'+esc(r.dom60)+'</td><td class="r">'+esc(range)+'</td></tr>';
+        });
+        body.innerHTML=html;
+        document.getElementById('snapweek').textContent='As of '+S.week_of;
+        if(S.source) document.getElementById('snapsrc').textContent=S.source;
+        if(ph) document.getElementById('snapflag').style.display='block';
+      }catch(e){}
+    })();
+  </script>
+
+  <script>
+    (function(){
+      var form=document.getElementById('buyerform'), btn=document.getElementById('bbtn'), errEl=document.getElementById('berr');
+      var boxes=[].slice.call(document.querySelectorAll('#areachips input[type="checkbox"]'));
+      var areaEl=form.querySelector('input[name="area"]'), sitEl=form.querySelector('input[name="situation"]');
+
+      /* Attribution: same as /homeowner-options. Kept for the session. */
+      (function(){
+        try{
+          var q=new URLSearchParams(location.search), K='rs_attrib', saved=null;
+          try{ saved=JSON.parse(sessionStorage.getItem(K)||'null'); }catch(x){}
+          var a={ utm_source:q.get('utm_source')||'', utm_campaign:q.get('utm_campaign')||'', utm_content:q.get('utm_content')||'',
+                  fbclid:!!q.get('fbclid'), ref:document.referrer||'' };
+          if(!a.utm_source&&!a.utm_content&&!a.fbclid&&saved) a=saved;
+          var host=(a.ref||'').replace(/^https?:\/\//,'').split('/')[0];
+          a.ad_source = a.utm_content ? a.utm_content
+                      : a.utm_source ? (a.utm_source+(a.utm_campaign?' / '+a.utm_campaign:''))
+                      : a.fbclid ? 'Meta ad click (no UTM on ad)'
+                      : (host && host.indexOf('resolverealestate')<0) ? 'referral: '+host
+                      : host ? 'site navigation' : 'direct / typed';
+          try{ sessionStorage.setItem(K, JSON.stringify(a)); }catch(x){}
+          ['ad_source','utm_source','utm_campaign','utm_content'].forEach(function(n){
+            var el=form.querySelector('input[name="'+n+'"]'); if(el) el.value=a[n]||'';
+          });
+        }catch(e){}
+      })();
+
+      /* Keep the hidden fields current on every change, so lead-beacon.js (capture
+         phase, before the submit handler) sends the same values Formspree gets. */
+      function sync(){
+        var picked=boxes.filter(function(b){return b.checked;}).map(function(b){return b.getAttribute('data-area');});
+        areaEl.value=picked.join(', ');
+        /* At least one area: native validation blocks the submit (and the beacon) until one is ticked. */
+        boxes[0].setCustomValidity(picked.length?'':'Please choose at least one area.');
+        var pre=form.querySelector('input[name="preapproved"]:checked');
+        sitEl.value='BUYER (power of sale) · Areas: '+(areaEl.value||'-')
+          +' · Budget: '+(form.budget.value||'-')
+          +' · Pre-approved: '+(pre?pre.value:'-')
+          +' · Timing: '+(form.timing.value||'-');
+        var subj=form.querySelector('input[name="_subject"]');
+        if(subj) subj.value='Power of sale buyer · '+(areaEl.value||'no area')+' · '+(form.budget.value||'no budget')+' · pre-approved: '+(pre?pre.value:'-');
+      }
+      form.addEventListener('change',sync);
+      form.addEventListener('input',sync);
+      sync();
+
+      form.addEventListener('submit',function(e){
+        e.preventDefault();errEl.style.display='none';
+        sync();
+        btn.disabled=true;btn.textContent='Sending…';
+        fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}})
+        .then(function(r){
+          if(r.ok){
+            if(window.fbq)fbq('track','Lead',{content_name:'Power of sale finder',content_category:'Buyer · Power of sale'});
+            document.getElementById('formview').style.display='none';
+            document.getElementById('successview').style.display='block';
+            document.getElementById('formcard').scrollIntoView({behavior:'smooth',block:'start'});
+          } else { throw new Error('bad'); }
+        })
+        .catch(function(){ errEl.style.display='block';btn.disabled=false;btn.textContent='Get matched'; });
+      });
+    })();
+  </script>
+  <script src="/lead-beacon.js"></script>
+</body>
+</html>
