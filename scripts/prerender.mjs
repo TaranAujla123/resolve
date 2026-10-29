@@ -50,11 +50,6 @@ const ROUTES = [
   '/get-deals',
   '/sell-privately',
   '/investor-access',
-  '/opportunities',
-  '/opportunities/kw-legal-duplex',
-  '/opportunities/kw-distressed-detached',
-  '/opportunities/kw-downtown-multiunit',
-  '/opportunities/kw-character-restoration',
   '/for-investors',
   '/taranaujla',
 ]

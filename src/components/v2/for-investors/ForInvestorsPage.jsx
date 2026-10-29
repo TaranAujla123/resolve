@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { ArrowRight, CheckCircle2, ChevronRight } from 'lucide-react'
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { Seo } from '@/components/seo/Seo'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 
@@ -8,19 +8,12 @@ import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
  * ForInvestorsPage — /for-investors. The investor hub that replaces the
  * old "Investor Portal" nav item. Centralizes:
  *   1. How I Work With Investors (the selling point / anchor)
- *   2. Current Opportunities (links to /opportunities)
+ *   2. (Current Opportunities removed 29 Oct 2026; CTAs now go to /get-deals)
  *   3. (Guides & Tools section removed 6 Oct 2026: multiplex tools retired)
  *
  * The private gated portal (/investor-access) is no longer surfaced in
  * primary nav; it stays available by direct link for existing partners.
  */
-
-const OPPS = [
-  { slug: 'kw-legal-duplex', label: 'Legal duplex, Kitchener', arv: '$715–760K ARV' },
-  { slug: 'kw-distressed-detached', label: 'Power of sale, Kitchener', arv: '~$660K ARV' },
-  { slug: 'kw-downtown-multiunit', label: 'Downtown multi-unit', arv: '$650–700K ARV' },
-  { slug: 'kw-character-restoration', label: 'Character restoration', arv: '$800–900K ARV' },
-]
 
 const BRING = [
   'Sourced across the whole market, including off-cycle and off-market files most buyers walk past',
@@ -41,7 +34,7 @@ export function ForInvestorsPage() {
     <>
       <Seo
         title="For Investors · Vetted value-add deals · Resolve"
-        description="Vetted, underwritten value-add and off-market deals across the GTA and Kitchener-Waterloo. See current opportunities with the numbers, how Taran works with investors, and the guides and tools."
+        description="Vetted, underwritten value-add and off-market deals across the GTA and Kitchener-Waterloo. How Taran works with investors, and how to get matched to deals that fit."
         canonical="https://www.resolverealestate.ca/for-investors/"
       />
 
@@ -57,36 +50,13 @@ export function ForInvestorsPage() {
             I find, analyze, and vet value-add homes across the GTA and Kitchener-Waterloo, and I bring investors only the ones where the numbers actually work. If a deal will not make money, you never see it.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
-            <Link to="/opportunities" className="inline-flex items-center justify-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
-              See current opportunities <ArrowRight className="h-4 w-4" />
+            <Link to="/get-deals" className="inline-flex items-center justify-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
+              Get matched to deals <ArrowRight className="h-4 w-4" />
             </Link>
             <a href="#how" className="inline-flex items-center justify-center gap-2 border-2 border-stone/40 text-stone hover:border-bronze hover:text-bronze font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all">
               How I work
             </a>
           </div>
-        </div>
-      </section>
-
-      {/* CURRENT OPPORTUNITIES */}
-      <section className="bg-mist border-y border-divider">
-        <div className="container py-12 md:py-16">
-          <div className="flex items-end justify-between flex-wrap gap-4">
-            <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-bronze">Current opportunities</p>
-              <h2 className="mt-3 font-display font-medium text-navy text-[26px] md:text-[34px] leading-[1.1]">Real deals. Real numbers.</h2>
-            </div>
-            <Link to="/opportunities" className="inline-flex items-center gap-1 text-[14px] font-semibold text-bronze hover:text-bronze-deep">View all <ChevronRight className="h-4 w-4" /></Link>
-          </div>
-          <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {OPPS.map((o) => (
-              <Link key={o.slug} to={`/opportunities/${o.slug}`} className="group block bg-white border border-divider rounded-[12px] p-5 hover:border-bronze transition-all">
-                <p className="font-display font-medium text-navy text-[16px] leading-tight">{o.label}</p>
-                <p className="mt-2 font-display font-semibold text-bronze-deep text-[18px] tabular-nums">{o.arv}</p>
-                <span className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-bronze group-hover:text-bronze-deep">Breakdown <ChevronRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" /></span>
-              </Link>
-            ))}
-          </div>
-          <p className="mt-5 text-[11.5px] text-navy-mute max-w-2xl">Figures are illustrative estimates for discussion, not appraisals or guarantees. Specific listings are represented on a disclosed cooperating basis.</p>
         </div>
       </section>
 
@@ -126,8 +96,8 @@ export function ForInvestorsPage() {
           <h2 className="font-display font-medium text-[26px] md:text-[38px] leading-[1.08] max-w-2xl mx-auto">Tell me your box. I will bring the ones that fit.</h2>
           <p className="mt-4 text-[15px] text-stone/80 max-w-xl mx-auto">Area, budget, and what you would take on. When a file matches, you see it first.</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <Link to="/opportunities" className="inline-flex items-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
-              See opportunities <ArrowRight className="h-4 w-4" />
+            <Link to="/get-deals" className="inline-flex items-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
+              Get matched to deals <ArrowRight className="h-4 w-4" />
             </Link>
             <a href="tel:+13656457332" className="inline-flex items-center gap-2 border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all">(365) 645-7332</a>
           </div>

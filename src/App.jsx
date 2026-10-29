@@ -18,7 +18,6 @@ import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
 import { GetDealsPage } from '@/components/v2/get-deals/GetDealsPage'
 import { SellPrivatelyPage } from '@/components/v2/sell-privately/SellPrivatelyPage'
 import { InvestorAccessPage } from '@/components/v2/investor-access/InvestorAccessPage'
-import { OpportunitiesPage } from '@/components/v2/opportunities/OpportunitiesPage'
 import { ForInvestorsPage } from '@/components/v2/for-investors/ForInvestorsPage'
 import { TaranProfile } from '@/components/v2/taran/TaranProfile'
 
@@ -895,9 +894,8 @@ export default function App() {
             <Route path="/sell-privately/" element={<SellPrivatelyPage />} />
             <Route path="/investor-access" element={<InvestorAccessPage />} />
             <Route path="/investor-access/" element={<InvestorAccessPage />} />
-            <Route path="/opportunities" element={<OpportunitiesPage />} />
-            <Route path="/opportunities/" element={<OpportunitiesPage />} />
-            <Route path="/opportunities/:slug" element={<OpportunitiesPage />} />
+            {/* /opportunities removed 29 Oct 2026 (Taran). Old links land on /get-deals. */}
+            <Route path="/opportunities/*" element={<Navigate to="/get-deals" replace />} />
             <Route path="/for-investors" element={<ForInvestorsPage />} />
             <Route path="/for-investors/" element={<ForInvestorsPage />} />
             <Route path="/taranaujla" element={<TaranAujlaPage />} />

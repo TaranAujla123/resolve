@@ -97,7 +97,6 @@ export function Footer() {
             <p className={headCls}>Buyers</p>
             <ul className="mt-5 space-y-2.5">
               <li><Link to="/buyers" className={linkCls}>For buyers</Link></li>
-              <li><Ext href="/opportunities/">Current opportunities</Ext></li>
               <li className="pt-1">
                 <Link
                   to="/get-deals"
