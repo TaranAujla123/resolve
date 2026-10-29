@@ -18,7 +18,7 @@ import portrait from '@/portrait.jpg'
  * Compliance: same conservative register as the About page — credibility
  * sourced to Realtor merit; the legal background is a single factual
  * past-tense line; no holding-out, no guarantees, no em dashes. The legal
- * name (Tarnjit Singh Aujla) is NOT declared anywhere — not on-page and
+ * name is NOT declared anywhere — not on-page and
  * (as of 2026-08-17) NOT in structured data either: strategy is to win the
  * "Taran Aujla" query without self-merging to the legal-name/LSO record.
  */

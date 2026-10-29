@@ -187,7 +187,7 @@ const TARAN_PERSON_LD = {
   '@id': TARAN_ID,
   name: 'Taran Aujla',
   // Legal-name variants deliberately OMITTED. Strategy (2026-08-17): win the
-  // "Taran Aujla" entity query only; do NOT declare Tarnjit Singh Aujla as an
+  // "Taran Aujla" entity query only; do NOT declare the legal name as an
   // alternateName, since that self-merges the professional entity with the
   // legal-name/LSO record and works against the goal.
   jobTitle: 'Salesperson',
