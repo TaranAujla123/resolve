@@ -163,7 +163,7 @@ export function Footer() {
             <p>
               &copy; {new Date().getFullYear()} Resolve. All rights reserved.
               <br />
-              RESOLVE&trade; is a trademark of Tarnjit Aujla.
+              RESOLVE&trade; is a trademark of Taran Aujla.
             </p>
             <p className="sm:text-right">
               <Link to="/privacy" className="underline hover:text-bronze">
