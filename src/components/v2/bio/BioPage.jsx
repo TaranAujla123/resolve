@@ -4,7 +4,8 @@ import { FileSearch, Globe, FileCheck, Handshake, Users, CalendarCheck, Phone, M
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { ResolveWordmark } from '@/components/brand/ResolveWordmark'
-import aboutPortrait from '@/taran-about.jpg'
+import portrait from '@/portrait.jpg'
+import { Button } from '@/components/brand/Button'
 
 /**
  * BioPage — /taran. The profile link on Taran's MLS listings.
@@ -13,7 +14,7 @@ import aboutPortrait from '@/taran-about.jpg'
  * is run and nothing about any seller's situation (Taran, 1 Nov 2026).
  * Global Header, Footer and sticky CTA are hidden on this route (App.jsx):
  * the wordmark is the only way back to the main site. noindex.
- * Hero is the About hero, unchanged. Brokerage attribution stays at the top
+ * Profile hero with call/email CTAs first (Taran, 1 Nov 2026). Brokerage attribution stays at the top
  * (BrokerageStrip) and in the closing block (RECO Bulletin 5.1).
  */
 
@@ -50,9 +51,6 @@ const PRACTICE = [
   },
 ]
 
-const contactCls =
-  'inline-flex items-center gap-2 font-sans font-semibold text-[14px] text-bronze hover:text-stone transition-colors'
-
 export function BioPage() {
   return (
     <>
@@ -71,69 +69,62 @@ export function BioPage() {
         </div>
       </div>
 
-      {/* Hero: the About hero as it stands. */}
-      <section data-surface="navy" className="relative bg-navy overflow-hidden isolate min-h-[500px] lg:min-h-[540px]">
+      {/* Profile hero: the focus is Taran, with call and email right at the top
+          (the /taranaujla hero pattern, his choice 1 Nov 2026). */}
+      <section data-surface="navy" className="relative bg-navy overflow-hidden isolate">
         <HeroBackdrop />
-        <div className="relative container max-w-4xl w-full pt-32 pb-16 sm:pt-44 sm:pb-24">
-          <Eyebrow>About Resolve</Eyebrow>
-          <h1 className="mt-5 font-display font-medium text-stone text-display-xl">About Resolve.</h1>
-          <p className="mt-1 font-display font-medium italic text-bronze text-display-lg leading-[1.05]">
-            Why this practice exists.
-          </p>
-          <p className="mt-8 font-display font-medium text-stone text-[clamp(1.4rem,2.2vw,1.7rem)] leading-[1.45] max-w-[620px]">
-            <span className="font-display italic text-bronze">Resolve</span>
-            {' '}exists because some property situations need more than a standard approach.
-          </p>
+        <div className="relative container max-w-4xl w-full pt-28 pb-14 sm:pt-36 sm:pb-20">
+          <div className="flex flex-col sm:flex-row gap-7 sm:gap-9 items-start">
+            <img
+              src={portrait}
+              alt="Taran Aujla, Real Estate Salesperson"
+              width="176"
+              height="224"
+              className="w-32 h-40 sm:w-44 sm:h-56 object-cover object-center rounded-[16px] border border-stone/20 flex-shrink-0"
+            />
+            <div className="min-w-0">
+              <Eyebrow>Salesperson · HomeLife G1 Realty Inc., Brokerage</Eyebrow>
+              <h1 className="mt-4 font-display font-medium text-stone text-display-xl leading-[1.05]">
+                Taran Aujla
+              </h1>
+              <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-stone/80">
+                Former real estate lawyer, now structuring deals properly from the start.
+              </p>
+              <div className="mt-8 flex flex-col sm:flex-row gap-3">
+                <Button as="a" href="tel:+13656457332" variant="primary" size="md">
+                  <Phone className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                  Call (365) 645-7332
+                </Button>
+                <Button
+                  as="a"
+                  href="mailto:taran@resolverealestate.ca"
+                  variant="outline"
+                  size="md"
+                  className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
+                >
+                  <Mail className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
+                  Email Taran
+                </Button>
+              </div>
+              <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 text-[13px] text-stone-soft">
+                <span>RECO Reg. No. 6024721</span>
+                <a
+                  href="https://www.linkedin.com/in/itstaranaujla/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 font-semibold text-bronze hover:text-stone transition-colors"
+                >
+                  <Linkedin className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
+                  LinkedIn
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       <section data-surface="stone" className="bg-stone py-16 sm:py-24">
         <div className="container max-w-4xl space-y-14 sm:space-y-16">
-          {/* Identity card (the About card, without the bio paragraphs). */}
-          <figure className="rounded-[18px] bg-navy p-6 sm:p-8 shadow-card">
-            <div className="flex flex-col sm:flex-row gap-6 sm:gap-8 items-start">
-              <div className="shrink-0 rounded-[16px] border border-bronze/60 p-1.5">
-                <img
-                  src={aboutPortrait}
-                  alt="Taran Aujla, Real Estate Salesperson"
-                  className="w-48 sm:w-60 h-auto rounded-[11px] block"
-                />
-              </div>
-              <div className="flex-1 min-w-0 pt-1">
-                <p className="font-display font-medium text-stone text-[1.7rem] sm:text-[2rem] leading-tight">
-                  Taran Aujla
-                </p>
-                <p className="mt-1.5 font-sans text-[13px] sm:text-[13.5px] text-bronze font-semibold uppercase tracking-[0.16em]">
-                  Real Estate Salesperson
-                </p>
-                <p className="mt-3 text-[13.5px] text-stone-soft leading-relaxed">
-                  HomeLife G1 Realty Inc., Brokerage
-                  <br />
-                  RECO Reg. No. 6024721
-                </p>
-                <div className="mt-5 flex flex-col gap-3">
-                  <a href="tel:+13656457332" className={contactCls}>
-                    <Phone className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
-                    365-645-7332
-                  </a>
-                  <a href="mailto:taran@resolverealestate.ca" className={contactCls}>
-                    <Mail className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
-                    taran@resolverealestate.ca
-                  </a>
-                  <a
-                    href="https://www.linkedin.com/in/itstaranaujla/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={contactCls}
-                  >
-                    <Linkedin className="h-4 w-4" strokeWidth={1.8} aria-hidden="true" />
-                    Connect on LinkedIn
-                  </a>
-                </div>
-              </div>
-            </div>
-          </figure>
-
           {/* The line, then how a listing is run (the How We Work pattern). */}
           <div>
             <Eyebrow>How I Run a Listing</Eyebrow>
