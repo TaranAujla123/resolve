@@ -70,9 +70,11 @@ export function AboutPage() {
               avoided.
             </p>
             <p>
-              Now I work where deals are made. As a salesperson, I put them
-              together the way lawyers wish they arrived: priced on evidence,
-              terms that hold, timing that closes.
+              Now I work where deals are made. As a salesperson, I do that
+              work at the start, while there is still time to get it right:
+              the price set on evidence, the figures every party will need
+              gathered early, and the terms worked out well before closing.
+              Priced on evidence, terms that hold, timing that closes.
             </p>
             <p>
               For sellers, that matters most in complex and high-value sales:
@@ -110,7 +112,7 @@ export function AboutPage() {
                 </p>
                 <p className="mt-4 text-[12.5px] sm:text-[13px] text-stone-soft/85 leading-relaxed">
                   Former real estate lawyer, now structuring deals properly
-                    from the start &middot; Real estate investor
+                  from the start
                 </p>
                 <a
                   href="https://www.linkedin.com/in/itstaranaujla/"
@@ -140,7 +142,7 @@ export function AboutPage() {
                   <>
                     <p>
                       On every file I handle, the outcome depends on the work done before
-                      the sign goes up: getting involved early, reading the file,
+                      the listing goes live: getting involved early, reading the file,
                       negotiating terms that hold, and steering a clean path to
                       closing. A signed agreement is the start of the work, not
                       the finish.
@@ -149,11 +151,6 @@ export function AboutPage() {
                       These sales can be emotional. My job is to keep them calm
                       and structured, and to help clients see the whole board
                       before they decide.
-                    </p>
-                    <p>
-                      I also keep a list of qualified buyers and investors. When a
-                      home fits what one of them is looking for, they hear about
-                      it the day it lists.
                     </p>
                     <p className="font-sans font-semibold text-stone text-[17px]">
                       Set it up right, and it closes.
