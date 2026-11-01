@@ -52,6 +52,7 @@ const ROUTES = [
   '/investor-access',
   '/for-investors',
   '/taranaujla',
+  '/taran',
 ]
 const PORT = 4321
 const NAV_TIMEOUT_MS = 30_000

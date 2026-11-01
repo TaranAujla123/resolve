@@ -44,6 +44,7 @@ import { Analytics, AnalyticsRouteTracker, fireConversion } from '@/components/s
 import { useMetaPixel, useMetaPixelContactLinks } from '@/lib/metaPixel'
 import { PrivacyPolicy } from '@/components/legal/PrivacyPolicy'
 import { Terms } from '@/components/legal/Terms'
+import { BioPage } from '@/components/v2/bio/BioPage'
 
 // -----------------------------------------------------------------------
 // Per-route SEO payloads
@@ -747,6 +748,30 @@ function FinancialPressurePage() {
   )
 }
 
+// /taran: the profile link on Taran's MLS listings (buyer agents, lenders,
+// counsel). Logo-only page: global Header, Footer and sticky CTA hidden (see
+// SiteChrome). noindex so it does not compete with /about or /taranaujla.
+const BARE_ROUTES = ['/taran', '/taran/']
+
+function SiteChrome({ children }) {
+  const { pathname } = useLocation()
+  return BARE_ROUTES.includes(pathname) ? null : children
+}
+
+function BioRoutePage() {
+  return (
+    <>
+      <Seo
+        title="Taran Aujla · Salesperson · Resolve Real Estate"
+        description="How Taran Aujla, Salesperson with HomeLife G1 Realty Inc., Brokerage, runs a listing: priced on evidence, full MLS exposure, schedules up front, every offer answered."
+        canonical={`${SITE_URL}/taran/`}
+        noindex
+      />
+      <BioPage />
+    </>
+  )
+}
+
 function ForAgentsPage() {
   return (
     <>
@@ -826,7 +851,7 @@ export default function App() {
           under, not as a separately marketed property.
         */}
         <BrokerageStrip />
-        <Header />
+        <SiteChrome><Header /></SiteChrome>
         <main>
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -898,13 +923,15 @@ export default function App() {
             <Route path="/opportunities/*" element={<Navigate to="/get-deals" replace />} />
             <Route path="/for-investors" element={<ForInvestorsPage />} />
             <Route path="/for-investors/" element={<ForInvestorsPage />} />
+            <Route path="/taran" element={<BioRoutePage />} />
+            <Route path="/taran/" element={<BioRoutePage />} />
             <Route path="/taranaujla" element={<TaranAujlaPage />} />
             <Route path="/taranaujla/" element={<TaranAujlaPage />} />
             <Route path="*" element={<HomePage />} />
           </Routes>
         </main>
-        <Footer />
-        <MobileStickyCta />
+        <SiteChrome><Footer /></SiteChrome>
+        <SiteChrome><MobileStickyCta /></SiteChrome>
         <Toaster
           position="top-center"
           toastOptions={{
