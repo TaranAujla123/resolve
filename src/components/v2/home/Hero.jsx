@@ -29,10 +29,10 @@ import { Button } from '@/components/brand/Button'
  * booking card instead of a form (forms stay on the paid landing pages).
  */
 const SITUATIONS = [
-  { label: 'Mortgage Arrears',   to: '/mortgage-arrears' },
-  { label: 'Power of Sale',      to: '/power-of-sale' },
-  { label: 'Financial Pressure', to: '/financial-pressure' },
-  { label: 'Time-Sensitive',     to: '/time-sensitive-sales' },
+  { label: 'Mortgage Arrears',   to: '/mortgage-arrears/' },
+  { label: 'Power of Sale',      to: '/power-of-sale/' },
+  { label: 'Financial Pressure', to: '/financial-pressure/' },
+  { label: 'Time-Sensitive',     to: '/time-sensitive-sales/' },
 ]
 
 export function Hero({ headline } = {}) {
@@ -121,7 +121,7 @@ export function Hero({ headline } = {}) {
                 </li>
               ))}
             </ol>
-            <Button as={Link} to="/contact" variant="primary" size="lg" className="mt-7 w-full justify-center">
+            <Button as={Link} to="/contact/" variant="primary" size="lg" className="mt-7 w-full justify-center">
               <Calendar className="h-4 w-4" strokeWidth={1.9} />
               Book a 15-minute call
             </Button>

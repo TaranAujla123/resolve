@@ -40,6 +40,44 @@ export const SITUATION_FAQS = {
     },
   ],
 
+  'notice-of-sale': [
+    {
+      q: 'How long do I have after a Notice of Sale in Ontario?',
+      a: 'Ontario’s Mortgages Act says the sale cannot happen until at least 35 days after the notice is given (section 32). Your notice states the date that applies to your mortgage, and your lawyer can confirm it. The earlier you act inside that window, the more choices you have.',
+    },
+    {
+      q: 'Can I stop the sale by paying the arrears?',
+      a: 'The Mortgages Act lets an owner pay the amount in arrears, plus the lender’s necessary expenses, at any time before the sale and be relieved of the default (section 22). Your lawyer can confirm the exact figure on your file.',
+    },
+    {
+      q: 'Can I sell my house after getting a Notice of Sale?',
+      a: 'Usually, yes. Until the lender completes its own sale, you can list the home, accept an offer and close. The sale has to pay out the mortgage, or the lender has to agree to accept the net proceeds.',
+    },
+    {
+      q: 'Is a Notice of Sale the same as foreclosure?',
+      a: 'No. Under power of sale the lender sells the home and is paid from the proceeds, and any surplus belongs to the owner. Foreclosure is a court process in which the lender can take ownership, and it is rarely used in Ontario.',
+    },
+  ],
+
+  'sell-during-power-of-sale': [
+    {
+      q: 'Can I sell my house if my lender has started power of sale?',
+      a: 'Usually, yes. Until the lender sells the home itself, you can list it, accept an offer and close. The lender is paid from the sale proceeds on closing.',
+    },
+    {
+      q: 'Do I need the lender’s permission to list my home?',
+      a: 'No. You do not need permission to list your own home. The lender’s agreement matters at closing: the mortgage has to be paid out, or the lender has to accept the net proceeds, for the sale to close.',
+    },
+    {
+      q: 'What if the sale price is less than what I owe?',
+      a: 'The lender has to agree to discharge the mortgage for the net proceeds, and any shortfall normally remains a debt. A sale at full market value keeps that shortfall as small as possible.',
+    },
+    {
+      q: 'Can I stay in the house while it is for sale?',
+      a: 'In most cases, yes, unless the lender has already taken possession. A lived-in, well-kept home usually shows better than a vacant one.',
+    },
+  ],
+
   'mortgage-arrears': [
     {
       q: 'Can I sell a house that is in mortgage arrears?',

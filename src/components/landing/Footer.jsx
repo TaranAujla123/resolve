@@ -61,7 +61,7 @@ export function Footer() {
           <p className="text-[12.5px] text-white/55 leading-relaxed">
             Real estate professional with a complex seller file?{' '}
             <Link
-              to="/for-agents"
+              to="/for-agents/"
               className="text-white/80 hover:text-accent transition-colors underline-offset-4 hover:underline"
             >
               See how Resolve takes referrals
@@ -98,7 +98,7 @@ export function Footer() {
               which campaigns bring people here. No session recording, and no sale of your information. When you
               submit the form, a hashed, non-readable version of your contact details may be shared with Meta only to
               measure that ad result. Form submissions are used to respond to your inquiry. See our{' '}
-              <Link to="/privacy" className="text-white/80 hover:text-accent transition-colors underline underline-offset-4">
+              <Link to="/privacy/" className="text-white/80 hover:text-accent transition-colors underline underline-offset-4">
                 Privacy Policy
               </Link>
               .
@@ -108,7 +108,7 @@ export function Footer() {
               <span className="text-white/70 uppercase tracking-[0.12em] text-[11px] font-medium">Privacy:</span>{' '}
               No analytics or tracking scripts are loaded on this site. Form submissions are used only to respond to
               your inquiry. See our{' '}
-              <Link to="/privacy" className="text-white/80 hover:text-accent transition-colors underline underline-offset-4">
+              <Link to="/privacy/" className="text-white/80 hover:text-accent transition-colors underline underline-offset-4">
                 Privacy Policy
               </Link>
               .

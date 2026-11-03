@@ -15,8 +15,8 @@ const homeLinks = [
   { href: '#why', label: 'Why Us', type: 'anchor' },
   { href: '#process', label: 'Process', type: 'anchor' },
   { href: '#about', label: 'About', type: 'anchor' },
-  { to: '/buyers', label: 'Buyers', type: 'route' },
-  { to: '/for-agents', label: 'For Agents', type: 'route' },
+  { to: '/buyers/', label: 'Buyers', type: 'route' },
+  { to: '/for-agents/', label: 'For Agents', type: 'route' },
 ]
 
 export function Nav() {

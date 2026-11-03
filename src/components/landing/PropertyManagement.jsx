@@ -237,9 +237,9 @@ export function PropertyManagement() {
               <p className="mt-4 text-[16px] text-ink-soft leading-relaxed">
                 The same team helps you buy your next investment property and,
                 when the time is right, sell one, tenanted or vacant.{' '}
-                <Link to="/for-investors" className="font-semibold text-accent-deep hover:text-navy underline underline-offset-4">For investors</Link>
+                <Link to="/for-investors/" className="font-semibold text-accent-deep hover:text-navy underline underline-offset-4">For investors</Link>
                 {' · '}
-                <Link to="/sellers" className="font-semibold text-accent-deep hover:text-navy underline underline-offset-4">For sellers</Link>
+                <Link to="/sellers/" className="font-semibold text-accent-deep hover:text-navy underline underline-offset-4">For sellers</Link>
               </p>
             </div>
 
@@ -423,7 +423,7 @@ export function PropertyManagement() {
             Leasing and sales by Taran Aujla, Salesperson, HomeLife G1 Realty
             Inc., Brokerage. Property management by the Resolve management
             team. Details in our{' '}
-            <Link to="/terms" className="underline underline-offset-4 hover:text-ink">terms</Link>.
+            <Link to="/terms/" className="underline underline-offset-4 hover:text-ink">terms</Link>.
           </p>
         </div>
       </section>

@@ -74,7 +74,7 @@ export function WhyResolve() {
           </ul>
           <p className="mt-8 text-[14px] text-navy-mute">
             The experience behind it is on{' '}
-            <Link to="/why-us" className="font-semibold text-bronze hover:text-navy transition-colors">
+            <Link to="/why-us/" className="font-semibold text-bronze hover:text-navy transition-colors">
               Why Resolve
             </Link>
             .

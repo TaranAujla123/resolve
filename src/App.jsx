@@ -25,6 +25,8 @@ import { TaranProfile } from '@/components/v2/taran/TaranProfile'
 // typography via the updated SituationPage shell + Tailwind tokens.
 import { Buyers } from '@/components/landing/Buyers'
 import { PowerOfSale } from '@/components/landing/situations/PowerOfSale'
+import { NoticeOfSale } from '@/components/landing/situations/NoticeOfSale'
+import { SellDuringPowerOfSale } from '@/components/landing/situations/SellDuringPowerOfSale'
 import { MortgageArrears } from '@/components/landing/situations/MortgageArrears'
 import { EstateSale } from '@/components/landing/situations/EstateSale'
 import { DivorceRealEstate } from '@/components/landing/situations/DivorceRealEstate'
@@ -308,6 +310,24 @@ const POWER_OF_SALE_JSONLD = situationJsonLd({
   breadcrumbName: 'Power of Sale',
   description:
     'Power of sale is a lender-driven sale process in Ontario. Resolve lists and sells for homeowners inside the window: quietly, on your timeline, with as much of your equity preserved as the sale allows.',
+})
+
+const NOTICE_OF_SALE_JSONLD = situationJsonLd({
+  slug: 'notice-of-sale',
+  name: 'Got a Notice of Sale in Ontario? What Happens Now · Resolve',
+  serviceType: 'Real Estate Representation: Notice of Sale and Power of Sale (Ontario)',
+  breadcrumbName: 'Notice of Sale',
+  description:
+    'A Notice of Sale means your lender has started power of sale. In Ontario the sale cannot happen until at least 35 days after the notice, and until the lender sells, the home is still yours to sell.',
+})
+
+const SELL_DURING_POS_JSONLD = situationJsonLd({
+  slug: 'sell-during-power-of-sale',
+  name: 'Can I Sell My House During Power of Sale in Ontario? · Resolve',
+  serviceType: 'Real Estate Representation: Selling During Power of Sale (Ontario)',
+  breadcrumbName: 'Selling During Power of Sale',
+  description:
+    'Usually, yes. Until your lender sells the home, you can list it, accept an offer and close. A sale you run at market value usually leaves you better off than a lender sale.',
 })
 
 const MORTGAGE_ARREARS_JSONLD = situationJsonLd({
@@ -645,6 +665,34 @@ function PowerOfSalePage() {
   )
 }
 
+function NoticeOfSalePage() {
+  return (
+    <>
+      <Seo
+        title="Got a Notice of Sale in Ontario? What Happens Now · Resolve"
+        description="A Notice of Sale means your lender has started power of sale. The sale cannot happen until at least 35 days after the notice, and until then the home is still yours to sell. What it means and what to do this week."
+        canonical={`${SITE_URL}/notice-of-sale/`}
+        jsonLd={NOTICE_OF_SALE_JSONLD}
+      />
+      <NoticeOfSale />
+    </>
+  )
+}
+
+function SellDuringPowerOfSalePage() {
+  return (
+    <>
+      <Seo
+        title="Can I Sell My House During Power of Sale in Ontario? · Resolve"
+        description="Usually, yes. Until your lender sells the home, you can list it, accept an offer and close, even if the price will not cover everything owed. Why your own sale usually leaves you better off."
+        canonical={`${SITE_URL}/sell-during-power-of-sale/`}
+        jsonLd={SELL_DURING_POS_JSONLD}
+      />
+      <SellDuringPowerOfSale />
+    </>
+  )
+}
+
 function MortgageArrearsPage() {
   return (
     <>
@@ -861,18 +909,20 @@ export default function App() {
             <Route path="/contact" element={<ContactRoutePage />} />
             <Route path="/buyers" element={<BuyersPage />} />
             <Route path="/power-of-sale" element={<PowerOfSalePage />} />
+            <Route path="/notice-of-sale" element={<NoticeOfSalePage />} />
+            <Route path="/sell-during-power-of-sale" element={<SellDuringPowerOfSalePage />} />
             <Route path="/mortgage-arrears" element={<MortgageArrearsPage />} />
             {/* Estate/probate folded into Time-Sensitive Sales (the estate
                 timeline is one of its named cases). Redirect keeps the old
                 URL and any inbound links working. */}
-            <Route path="/estate-sale" element={<Navigate to="/time-sensitive-sales" replace />} />
+            <Route path="/estate-sale" element={<Navigate to="/time-sensitive-sales/" replace />} />
             {/* /divorce-real-estate and /property-disputes routes retired
                 as part of the 4-lane practice refocus. Practice deliberately
                 stopped taking separation/divorce and ownership-dispute files
                 (emotional load + litigious mechanics did not match the
                 practitioner voice). Any inbound links redirect to the
                 homepage so bookmark/search hits still land somewhere useful. */}
-            <Route path="/divorce-real-estate" element={<Navigate to="/time-sensitive-sales" replace />} />
+            <Route path="/divorce-real-estate" element={<Navigate to="/time-sensitive-sales/" replace />} />
             <Route path="/property-disputes" element={<Navigate to="/" replace />} />
             <Route path="/time-sensitive-sales" element={<TimeSensitiveSalesPage />} />
             <Route path="/financial-pressure" element={<FinancialPressurePage />} />
@@ -881,7 +931,7 @@ export default function App() {
                 canonical /time-sensitive-sales/. Will also be handled by
                 a static /life-transitions/index.html stub for direct
                 hard-navigation hits (search, bookmarks, social). */}
-            <Route path="/life-transitions" element={<Navigate to="/time-sensitive-sales" replace />} />
+            <Route path="/life-transitions" element={<Navigate to="/time-sensitive-sales/" replace />} />
             <Route path="/for-agents" element={<ForAgentsPage />} />
             <Route path="/property-management" element={<PropertyManagementPage />} />
             <Route path="/property-management/" element={<PropertyManagementPage />} />
@@ -890,7 +940,7 @@ export default function App() {
             <Route path="/coordinated-sale" element={<CoordinatedSaleRoutePage />} />
             {/* /multiplex retired 6 Oct 2026 (multiplex work lives with
                 PlexEdge). Redirect keeps inbound links landing somewhere. */}
-            <Route path="/multiplex" element={<Navigate to="/buyers" replace />} />
+            <Route path="/multiplex" element={<Navigate to="/buyers/" replace />} />
             {/* /resources retired — was a hub that only re-listed the
                 six situation deep-dive pages. The public/resources/
                 static stub handles direct hits + crawler redirects; this
@@ -920,7 +970,7 @@ export default function App() {
             <Route path="/investor-access" element={<InvestorAccessPage />} />
             <Route path="/investor-access/" element={<InvestorAccessPage />} />
             {/* /opportunities removed 29 Oct 2026 (Taran). Old links land on /get-deals. */}
-            <Route path="/opportunities/*" element={<Navigate to="/get-deals" replace />} />
+            <Route path="/opportunities/*" element={<Navigate to="/get-deals/" replace />} />
             <Route path="/for-investors" element={<ForInvestorsPage />} />
             <Route path="/for-investors/" element={<ForInvestorsPage />} />
             <Route path="/taran" element={<BioRoutePage />} />

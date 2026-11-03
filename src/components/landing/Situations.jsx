@@ -16,7 +16,7 @@ const items = [
   {
     icon: AlertCircle,
     title: 'Mortgage Arrears',
-    href: '/mortgage-arrears',
+    href: '/mortgage-arrears/',
     situation:
       'When payments fall behind and the calls get heavier each week, it’s hard to see a way out, and the longer it waits, the narrower the options become.',
     help:
@@ -25,7 +25,7 @@ const items = [
   {
     icon: Gavel,
     title: 'Power of Sale',
-    href: '/power-of-sale',
+    href: '/power-of-sale/',
     situation:
       'Your lender has started enforcement and the clock is running. The real fear is losing the home, and the equity in it, on the bank’s timeline instead of yours.',
     help:
@@ -34,7 +34,7 @@ const items = [
   {
     icon: Scroll,
     title: 'Estate or Probate',
-    href: '/time-sensitive-sales',
+    href: '/time-sensitive-sales/',
     situation:
       'Selling a loved one’s home as an executor means carrying probate timelines, multiple beneficiaries, and the weight of the loss all at the same time.',
     help:
@@ -43,7 +43,7 @@ const items = [
   {
     icon: Clock,
     title: 'Time-Sensitive Sales',
-    href: '/time-sensitive-sales',
+    href: '/time-sensitive-sales/',
     situation:
       'A closing date on the next home, a job relocation, a family or health timeline, a financial deadline. The calendar is the binding constraint.',
     help:

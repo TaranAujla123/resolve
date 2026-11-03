@@ -185,8 +185,8 @@ export function BioPage() {
             </p>
           </div>
           <div className="flex gap-6 text-[13px]">
-            <Link to="/privacy" className="text-stone-soft hover:text-bronze transition-colors">Privacy</Link>
-            <Link to="/terms" className="text-stone-soft hover:text-bronze transition-colors">Terms</Link>
+            <Link to="/privacy/" className="text-stone-soft hover:text-bronze transition-colors">Privacy</Link>
+            <Link to="/terms/" className="text-stone-soft hover:text-bronze transition-colors">Terms</Link>
           </div>
         </div>
       </footer>

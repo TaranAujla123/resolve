@@ -82,7 +82,7 @@ export function MultiplexPage() {
             </Button>
             <Button
               as={Link}
-              to="/contact"
+              to="/contact/"
               variant="outline"
               size="lg"
               className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"

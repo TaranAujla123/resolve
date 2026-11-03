@@ -97,7 +97,7 @@ export function InvestorAccessPage() {
               </p>
               <Button
                 as={Link}
-                to="/get-deals"
+                to="/get-deals/"
                 variant="outline"
                 size="md"
                 className="mt-6 w-full justify-center text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"

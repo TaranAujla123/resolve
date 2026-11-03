@@ -91,7 +91,7 @@ export function Terms() {
             When you send a message through the site, you confirm that the
             information you provide is accurate and that you have the right to
             share it. We handle the information you send as described in our{' '}
-            <Link to="/privacy" className="text-accent-deep hover:text-ink transition-colors font-semibold">
+            <Link to="/privacy/" className="text-accent-deep hover:text-ink transition-colors font-semibold">
               Privacy Policy
             </Link>
             .

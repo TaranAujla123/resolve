@@ -63,7 +63,7 @@ export function RelatedSituations({ relatedSlugs }) {
             {items.map((it) => (
               <Link
                 key={it.slug}
-                to={`/${it.slug}`}
+                to={`/${it.slug}/`}
                 className="group bg-white rounded-2xl border border-surface-line p-6 shadow-card hover:shadow-card-hover hover:-translate-y-0.5 hover:border-accent/30 transition-all duration-300 flex flex-col"
               >
                 <h3 className="text-[1.05rem] font-semibold text-ink">{it.title}</h3>

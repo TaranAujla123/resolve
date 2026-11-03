@@ -115,7 +115,7 @@ export function Buyers() {
               On and off market.
             </p>
             <div className="mt-9 flex flex-col sm:flex-row gap-3">
-              <Button as={Link} to="/get-deals" variant="contrast" size="md">
+              <Button as={Link} to="/get-deals/" variant="contrast" size="md">
                 <Calendar className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
                 Get on the buyer list
               </Button>
@@ -310,7 +310,7 @@ export function Buyers() {
             the upside, what it would take, and what to watch for.
           </p>
           <div className="mt-8 flex justify-center">
-            <Button as={Link} to="/get-deals" variant="primary" size="lg">
+            <Button as={Link} to="/get-deals/" variant="primary" size="lg">
               <Calendar className="h-4 w-4" strokeWidth={1.9} aria-hidden="true" />
               Book a free 15-minute call
             </Button>

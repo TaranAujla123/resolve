@@ -191,7 +191,7 @@ export function SituationPage({ eyebrow, title, lead, situationLabel, situationS
                 is for you to see what a clean sale looks like on your terms.
               </p>
               <div className="mt-6 flex flex-col sm:flex-row gap-2 sm:gap-3">
-                <Button as={Link} to="/contact" size="lg" variant="primary" className="group">
+                <Button as={Link} to="/contact/" size="lg" variant="primary" className="group">
                   Request a Private Consultation
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
                 </Button>

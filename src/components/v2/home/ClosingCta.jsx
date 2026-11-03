@@ -58,7 +58,7 @@ export function ClosingCta() {
             forward. Quiet, structured, and on your terms.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
-            <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center">
+            <Button as={Link} to="/contact/" variant="contrast" size="lg" className="justify-center">
               Book a 15-minute call
             </Button>
             <Button

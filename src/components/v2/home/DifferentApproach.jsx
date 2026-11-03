@@ -71,7 +71,7 @@ export function DifferentApproach() {
             </p>
             <Button
               as={Link}
-              to="/about"
+              to="/about/"
               variant="outline"
               size="md"
               className="mt-8 text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"

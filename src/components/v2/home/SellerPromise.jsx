@@ -77,7 +77,7 @@ export function SellerPromise() {
         </ul>
 
         <Link
-          to="/get-help"
+          to="/get-help/"
           className="
             mt-9 inline-flex items-center gap-1.5
             font-sans font-semibold text-[12.5px] uppercase tracking-[0.14em]

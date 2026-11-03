@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { SituationPage, SituationBlock } from './SituationPage'
 import { RelatedSituations } from './RelatedSituations'
 import { CoordinatedSale } from '../CoordinatedSale'
@@ -129,6 +130,21 @@ export function PowerOfSale() {
           A homeowner-led sale, communicated cleanly with the lender,
           often nets you materially more than a lender-driven listing
           even when the gross sale prices are similar.
+        </p>
+      </SituationBlock>
+
+      <SituationBlock label="Common questions" title="The two questions owners ask first.">
+        <p>
+          <Link to="/notice-of-sale/" className="text-navy underline underline-offset-4 decoration-bronze/60 hover:decoration-bronze">
+            I got a Notice of Sale. What happens now?
+          </Link>{' '}
+          What the notice means, how long the lender has to wait, and what you can still do.
+        </p>
+        <p>
+          <Link to="/sell-during-power-of-sale/" className="text-navy underline underline-offset-4 decoration-bronze/60 hover:decoration-bronze">
+            Can I still sell my house during power of sale?
+          </Link>{' '}
+          Usually, yes, including when the price will not cover everything owed.
         </p>
       </SituationBlock>
 

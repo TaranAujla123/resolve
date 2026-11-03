@@ -20,10 +20,10 @@ import { Button } from './Button'
  * BrokerageStrip sits above the header in flow and scrolls away.
  */
 const NAV_ITEMS = [
-  { to: '/sellers', label: 'For Sellers' },
-  { to: '/buyers', label: 'For Buyers' },
-  { to: '/why-us', label: 'Why Us' },
-  { to: '/about', label: 'About' },
+  { to: '/sellers/', label: 'For Sellers' },
+  { to: '/buyers/', label: 'For Buyers' },
+  { to: '/why-us/', label: 'Why Us' },
+  { to: '/about/', label: 'About' },
 ]
 
 export function Header() {
@@ -129,13 +129,13 @@ export function Header() {
             ),
           )}
           {barSolid ? (
-            <Button as={Link} to="/contact" variant="primary" size="sm">
+            <Button as={Link} to="/contact/" variant="primary" size="sm">
               Contact us
             </Button>
           ) : (
             <Button
               as={Link}
-              to="/contact"
+              to="/contact/"
               variant="outline"
               size="sm"
               className="text-stone border-stone/50 hover:bg-stone/10 hover:text-stone"
@@ -188,7 +188,7 @@ export function Header() {
             )}
             <Button
               as={Link}
-              to="/contact"
+              to="/contact/"
               variant="primary"
               size="md"
               className="mt-3 mb-2 w-full justify-center"

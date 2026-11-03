@@ -496,7 +496,7 @@ export function GetHelpPage() {
                     from the start &middot; Real estate investor
                   </p>
                   <Link
-                    to="/about"
+                    to="/about/"
                     className="mt-3 inline-flex items-center gap-1 text-[12.5px] font-semibold text-bronze hover:text-stone transition-colors group"
                   >
                     Learn more

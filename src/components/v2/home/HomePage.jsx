@@ -60,7 +60,7 @@ export function HomePage() {
             </p>
 
             <div className="mt-8 flex flex-col sm:flex-row sm:items-center gap-3">
-              <Button as={Link} to="/contact" variant="contrast" size="lg" className="justify-center shadow-card">
+              <Button as={Link} to="/contact/" variant="contrast" size="lg" className="justify-center shadow-card">
                 <Calendar className="h-4 w-4" strokeWidth={1.9} />
                 Book a 15-minute call
               </Button>
@@ -76,7 +76,7 @@ export function HomePage() {
             <p className="mt-6 text-[14.5px] text-stone-soft">
               Buying?{' '}
               <Link
-                to="/buyers"
+                to="/buyers/"
                 className="inline-flex items-center gap-1 font-semibold text-stone underline decoration-bronze/60 underline-offset-4 hover:text-bronze transition-colors"
               >
                 We find the value most people miss

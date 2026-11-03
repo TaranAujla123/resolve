@@ -87,7 +87,7 @@ export function TaranProfile() {
                 people walk past.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
-                <Button as={Link} to="/contact" variant="primary" size="md">
+                <Button as={Link} to="/contact/" variant="primary" size="md">
                   Work with Taran
                   <ArrowRight className="h-4 w-4" strokeWidth={2} aria-hidden="true" />
                 </Button>

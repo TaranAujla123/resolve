@@ -47,7 +47,7 @@ export function BothSides() {
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-5">
           {/* SELLER CARD */}
           <Link
-            to="/get-help"
+            to="/get-help/"
             className="
               group relative flex flex-col
               rounded-2xl border border-divider bg-stone
@@ -85,7 +85,7 @@ export function BothSides() {
 
           {/* BUYER CARD */}
           <Link
-            to="/buyers"
+            to="/buyers/"
             className="
               group relative flex flex-col
               rounded-2xl border border-divider bg-stone

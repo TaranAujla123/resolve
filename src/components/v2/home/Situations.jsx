@@ -33,25 +33,25 @@ const SITUATIONS = [
   {
     Icon: AlertCircle,
     title: 'Mortgage Arrears',
-    to: '/mortgage-arrears',
+    to: '/mortgage-arrears/',
     body: 'When payments fall behind and the lender’s tone changes, the options narrow week by week. Move from reactive to planned.',
   },
   {
     Icon: Gavel,
     title: 'Power of Sale',
-    to: '/power-of-sale',
+    to: '/power-of-sale/',
     body: 'Enforcement is underway and the clock is running. Sell properly on your timeline rather than the bank’s.',
   },
   {
     Icon: TrendingDown,
     title: 'Financial Pressure',
-    to: '/financial-pressure',
+    to: '/financial-pressure/',
     body: 'Not behind yet, but the carry has become unsustainable. A renewal that doubled the payment, a property that costs more than it returns, a closing you cannot fund. Options are widest exactly now, before arrears start.',
   },
   {
     Icon: Clock,
     title: 'Time-Sensitive Sales',
-    to: '/time-sensitive-sales',
+    to: '/time-sensitive-sales/',
     body: 'A closing date on the next home, an estate or probate timeline, a family or business dispute over a property, a job relocation. Make the right decisions within the time available.',
   },
 ]
@@ -176,7 +176,7 @@ export function Situations() {
           </div>
           <Button
             as={Link}
-            to="/contact"
+            to="/contact/"
             variant="contrast"
             size="lg"
             className="flex-shrink-0"

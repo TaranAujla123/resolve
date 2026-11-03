@@ -103,7 +103,7 @@ export function MobileStickyCta() {
             </span>
           </a>
           <Link
-            to="/contact"
+            to="/contact/"
             className="
               flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
               rounded-[12px] bg-bronze text-white

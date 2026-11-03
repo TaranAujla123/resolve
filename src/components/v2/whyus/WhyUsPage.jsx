@@ -246,7 +246,7 @@ export function WhyUsPage() {
           </ul>
           <p className="mt-10 max-w-2xl text-[14px] leading-relaxed text-navy-mute">
             More about the people behind the practice is on the{' '}
-            <Link to="/about" className="font-semibold text-bronze hover:text-navy transition-colors">
+            <Link to="/about/" className="font-semibold text-bronze hover:text-navy transition-colors">
               About page
             </Link>
             .

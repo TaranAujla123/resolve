@@ -50,7 +50,7 @@ export function ForInvestorsPage() {
             I find, analyze, and vet value-add homes across the GTA and Kitchener-Waterloo, and I bring investors only the ones where the numbers actually work. If a deal will not make money, you never see it.
           </p>
           <div className="mt-9 flex flex-col sm:flex-row gap-3">
-            <Link to="/get-deals" className="inline-flex items-center justify-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
+            <Link to="/get-deals/" className="inline-flex items-center justify-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
               Get matched to deals <ArrowRight className="h-4 w-4" />
             </Link>
             <a href="#how" className="inline-flex items-center justify-center gap-2 border-2 border-stone/40 text-stone hover:border-bronze hover:text-bronze font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all">
@@ -96,7 +96,7 @@ export function ForInvestorsPage() {
           <h2 className="font-display font-medium text-[26px] md:text-[38px] leading-[1.08] max-w-2xl mx-auto">Tell me your box. I will bring the ones that fit.</h2>
           <p className="mt-4 text-[15px] text-stone/80 max-w-xl mx-auto">Area, budget, and what you would take on. When a file matches, you see it first.</p>
           <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center items-center">
-            <Link to="/get-deals" className="inline-flex items-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
+            <Link to="/get-deals/" className="inline-flex items-center gap-2 bg-bronze hover:bg-bronze-deep text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all" style={{ boxShadow: '0 2px 12px rgba(172, 142, 92, 0.32)' }}>
               Get matched to deals <ArrowRight className="h-4 w-4" />
             </Link>
             <a href="tel:+13656457332" className="inline-flex items-center gap-2 border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all">(365) 645-7332</a>

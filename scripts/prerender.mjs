@@ -37,6 +37,8 @@ const ROUTES = [
   '/contact',
   '/buyers',
   '/power-of-sale',
+  '/notice-of-sale',
+  '/sell-during-power-of-sale',
   '/mortgage-arrears',
   '/time-sensitive-sales',
   '/financial-pressure',

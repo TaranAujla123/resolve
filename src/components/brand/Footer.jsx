@@ -75,14 +75,14 @@ export function Footer() {
           <div>
             <p className={headCls}>For Sellers</p>
             <ul className="mt-5 space-y-2.5">
-              <li><Link to="/sellers" className={linkCls}>Seller representation</Link></li>
-              <li><Link to="/power-of-sale" className={linkCls}>Power of sale</Link></li>
-              <li><Link to="/mortgage-arrears" className={linkCls}>Mortgage arrears</Link></li>
-              <li><Link to="/financial-pressure" className={linkCls}>Financial pressure</Link></li>
-              <li><Link to="/time-sensitive-sales" className={linkCls}>Time-sensitive sales</Link></li>
+              <li><Link to="/sellers/" className={linkCls}>Seller representation</Link></li>
+              <li><Link to="/power-of-sale/" className={linkCls}>Power of sale</Link></li>
+              <li><Link to="/mortgage-arrears/" className={linkCls}>Mortgage arrears</Link></li>
+              <li><Link to="/financial-pressure/" className={linkCls}>Financial pressure</Link></li>
+              <li><Link to="/time-sensitive-sales/" className={linkCls}>Time-sensitive sales</Link></li>
               <li className="pt-1">
                 <Link
-                  to="/get-help"
+                  to="/get-help/"
                   className="inline-flex items-center gap-1.5 font-semibold text-[14px] text-bronze hover:text-bronze-deep transition-colors"
                 >
                   15-minute seller call
@@ -96,10 +96,10 @@ export function Footer() {
           <div>
             <p className={headCls}>Buyers</p>
             <ul className="mt-5 space-y-2.5">
-              <li><Link to="/buyers" className={linkCls}>For buyers</Link></li>
+              <li><Link to="/buyers/" className={linkCls}>For buyers</Link></li>
               <li className="pt-1">
                 <Link
-                  to="/get-deals"
+                  to="/get-deals/"
                   className="inline-flex items-center gap-1.5 font-semibold text-[14px] text-bronze hover:text-bronze-deep transition-colors"
                 >
                   Get matched to deals
@@ -115,12 +115,12 @@ export function Footer() {
             <ul className="mt-5 space-y-2.5">
               <li><Ext href="/homeowner-options/">Guide: homeowner options</Ext></li>
               <li><Ext href="/bank-sells-it-or-you-do/">Guide: the bank sells it, or you do</Ext></li>
-              <li><Link to="/about" className={linkCls}>About Resolve</Link></li>
-              <li><Link to="/why-us" className={linkCls}>Why Resolve</Link></li>
-              <li><Link to="/for-agents" className={linkCls}>For agents</Link></li>
-              <li><Link to="/property-management" className={linkCls}>Property management</Link></li>
-              <li><Link to="/for-investors" className={linkCls}>For Investors</Link></li>
-              <li><Link to="/contact" className={linkCls}>Confidential inquiry</Link></li>
+              <li><Link to="/about/" className={linkCls}>About Resolve</Link></li>
+              <li><Link to="/why-us/" className={linkCls}>Why Resolve</Link></li>
+              <li><Link to="/for-agents/" className={linkCls}>For agents</Link></li>
+              <li><Link to="/property-management/" className={linkCls}>Property management</Link></li>
+              <li><Link to="/for-investors/" className={linkCls}>For Investors</Link></li>
+              <li><Link to="/contact/" className={linkCls}>Confidential inquiry</Link></li>
             </ul>
           </div>
         </div>
@@ -131,7 +131,7 @@ export function Footer() {
             <p className={headCls}>Led By</p>
             <ul className="mt-5 flex flex-col sm:flex-row gap-6 sm:gap-12 text-[14px] leading-relaxed text-stone-soft">
               <li>
-                <Link to="/taranaujla" className="font-semibold text-stone hover:text-bronze transition-colors">
+                <Link to="/taranaujla/" className="font-semibold text-stone hover:text-bronze transition-colors">
                   Taran Aujla
                 </Link>
                 <p className="text-stone-mute">Salesperson</p>
@@ -165,11 +165,11 @@ export function Footer() {
               RESOLVE&trade; is a trademark of Taran Aujla.
             </p>
             <p className="sm:text-right">
-              <Link to="/privacy" className="underline hover:text-bronze">
+              <Link to="/privacy/" className="underline hover:text-bronze">
                 Privacy Policy
               </Link>
               {' · '}
-              <Link to="/terms" className="underline hover:text-bronze">
+              <Link to="/terms/" className="underline hover:text-bronze">
                 Terms &amp; Conditions
               </Link>
             </p>
