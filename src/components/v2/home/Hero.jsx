@@ -152,7 +152,7 @@ export function Hero({ headline } = {}) {
           </ul>
 
           <p className="mt-4 max-w-md text-[12px] text-stone-mute leading-relaxed">
-            Real estate services by Resolve, delivered through{' '}
+            Real estate services provided by Taran Aujla, Salesperson, through{' '}
             <span className="font-semibold text-stone">
               HomeLife G1 Realty Inc., Brokerage
             </span>

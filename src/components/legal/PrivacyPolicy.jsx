@@ -41,8 +41,9 @@ export function PrivacyPolicy() {
 
           <P>
             This policy explains what information this website collects, why, and
-            how it is handled. Resolve provides seller representation through
-            HomeLife G1 Realty Inc., Brokerage. We keep data collection lean and
+            how it is handled. RESOLVE&trade; is a trademark of Taran Aujla,
+            Salesperson, who provides seller representation through HomeLife G1
+            Realty Inc., Brokerage. We keep data collection lean and
             use it only for the purposes set out below.
           </P>
 

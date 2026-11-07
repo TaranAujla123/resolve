@@ -20,7 +20,8 @@ export function About() {
 
         <div className="mt-6 max-w-3xl space-y-4 text-[16.5px] leading-relaxed text-ink-soft">
           <p>
-            Resolve is a boutique seller representation practice operating through
+            Resolve is a boutique seller representation practice led by Taran
+            Aujla, Salesperson, with real estate services provided through
             HomeLife G1 Realty Inc., Brokerage. It was built to handle the files
             that don&rsquo;t fit the standard listing playbook, where timing,
             discretion, equity, and the right representation matter more than maximum
@@ -32,8 +33,7 @@ export function About() {
             exposure.
           </p>
           <p>
-            Resolve is led by Taran Aujla, Salesperson, HomeLife G1 Realty
-            Inc., Brokerage. Taran came to real estate as an investor first
+            Resolve is led by Taran Aujla, Salesperson. Taran came to real estate as an investor first
             and now practises on the deal side as a Salesperson. That gives
             the practice a working read of both sides of the table: what a property is
             worth, what buyers respond to, and what carries a sale through

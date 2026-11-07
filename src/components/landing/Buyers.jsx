@@ -316,9 +316,9 @@ export function Buyers() {
             </Button>
           </div>
           <p className="mt-10 text-[12px] leading-relaxed text-stone/55">
-            Real estate services by Resolve, delivered through HomeLife G1
-            Realty Inc., Brokerage. Independently Owned &amp; Operated. RECO
-            Reg. No. 6024721.
+            Real estate services provided by Taran Aujla, Salesperson, through
+            HomeLife G1 Realty Inc., Brokerage. Independently Owned &amp;
+            Operated. RECO Reg. No. 6024721. RESOLVE&trade; is a trademark of Taran Aujla.
           </p>
         </div>
       </section>

@@ -591,7 +591,7 @@ export function GetDealsPage() {
           </div>
 
           <p className="mt-10 text-[12px] text-stone/60 leading-relaxed">
-            Resolve · HomeLife G1 Realty Inc., Brokerage · Independently Owned &amp; Operated · RECO Reg. No. 6024721
+            Taran Aujla, Salesperson · HomeLife G1 Realty Inc., Brokerage · Independently Owned &amp; Operated · RECO Reg. No. 6024721 · RESOLVE&trade; is a trademark of Taran Aujla.
           </p>
         </div>
       </section>

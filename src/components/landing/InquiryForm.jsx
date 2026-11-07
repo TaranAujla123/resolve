@@ -96,7 +96,7 @@ export function InquiryForm() {
         intro={
           FORM_DISABLED
             ? 'The confidential inquiry form is opening shortly. In the meantime, you are welcome to call (365) 645-7332. Calls are answered personally and remain confidential.'
-            : 'Your message goes to Resolve at HomeLife G1 Realty Inc., Brokerage. We read every message personally and typically reply within a few hours during business hours.'
+            : 'Your message goes directly to Taran Aujla, Salesperson. We read every message personally and typically reply within a few hours during business hours.'
         }
         align="center"
       />

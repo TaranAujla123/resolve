@@ -102,7 +102,7 @@ const REAL_ESTATE_AGENT_LD = {
   name: 'Resolve',
   alternateName: ['Resolve Real Estate', 'Resolve · Seller Representation'],
   description:
-    'Boutique seller representation for Ontario homeowners navigating power of sale, mortgage arrears, financial pressure, estate sales, and time-sensitive sales. Real estate services provided through HomeLife G1 Realty Inc., Brokerage.',
+    'Boutique seller representation for Ontario homeowners navigating power of sale, mortgage arrears, financial pressure, estate sales, and time-sensitive sales. Real estate services provided by Taran Aujla, Salesperson, through HomeLife G1 Realty Inc., Brokerage.',
   url: `${SITE_URL}/`,
   image: `${SITE_URL}/og-image.png`,
   logo: { '@type': 'ImageObject', url: `${SITE_URL}/icon-512.png` },
@@ -588,7 +588,7 @@ function AboutRoutePage() {
       <Seo
         title="About Resolve · Real Estate · Ontario"
         ogTitle="Resolve · Real Estate · Ontario"
-        description="Resolve is an Ontario real estate practice led by Taran Aujla, working both sides of the transaction under HomeLife G1 Realty Inc., Brokerage."
+        description="Resolve is an Ontario real estate practice led by Taran Aujla, Salesperson, working both sides of the transaction. Real estate services are provided through HomeLife G1 Realty Inc., Brokerage."
         canonical={`${SITE_URL}/about/`}
         jsonLd={[...SITE_JSONLD, TARAN_PERSON_LD]}
       />
@@ -853,7 +853,7 @@ function PrivacyPage() {
     <>
       <Seo
         title="Privacy Policy · Resolve"
-        description="What this site collects, why, who it is shared with, and how to withdraw. Resolve seller representation through HomeLife G1 Realty Inc., Brokerage."
+        description="What this site collects, why, who it is shared with, and how to withdraw. Real estate services provided by Taran Aujla, Salesperson, through HomeLife G1 Realty Inc., Brokerage."
         canonical={`${SITE_URL}/privacy/`}
         jsonLd={SITE_JSONLD}
       />
@@ -867,7 +867,7 @@ function TermsPage() {
     <>
       <Seo
         title="Terms & Conditions · Resolve"
-        description="Terms of use for resolverealestate.ca. Real estate services delivered through HomeLife G1 Realty Inc., Brokerage. Information only, not advice; no guarantees; TRESA applies."
+        description="Terms of use for resolverealestate.ca. Real estate services provided by Taran Aujla, Salesperson, through HomeLife G1 Realty Inc., Brokerage. Information only, not advice; no guarantees; TRESA applies."
         canonical={`${SITE_URL}/terms/`}
         jsonLd={SITE_JSONLD}
       />

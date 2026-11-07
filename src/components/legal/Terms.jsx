@@ -49,7 +49,8 @@ export function Terms() {
 
           <H>Who we are</H>
           <P>
-            Resolve is the marketing identity of Taran Aujla, Salesperson. Real
+            Resolve is the marketing identity of Taran Aujla, Salesperson, and
+            RESOLVE&trade; is his trademark. Real
             estate services are provided through HomeLife G1 Realty Inc.,
             Brokerage (RECO Registration No. 6024721), Independently Owned and
             Operated. Any real estate relationship is governed by a separate

@@ -101,7 +101,7 @@ export function ContactPage() {
             Confidential. No obligation.
           </p>
           <p className="mt-6 text-[16.5px] text-navy-soft leading-relaxed">
-            Your message goes to Resolve at HomeLife G1 Realty Inc., Brokerage.
+            Your message goes directly to Taran Aujla, Salesperson.
             We read every message personally and typically reply within a few
             hours during business hours.
           </p>

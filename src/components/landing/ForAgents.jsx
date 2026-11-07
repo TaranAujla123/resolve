@@ -197,7 +197,7 @@ export function ForAgents() {
               <div className="mt-5 space-y-4 text-[16px] text-ink-soft leading-relaxed">
                 <p>
                   <strong className="text-ink font-semibold">Refer the file.</strong>{' '}
-                  The default path. Resolve takes the listing under HomeLife
+                  The default path. Taran takes the listing through HomeLife
                   G1 Realty Inc., Brokerage, under a TRESA brokerage-to-
                   brokerage referral agreement. You stay close to the client
                   and keep the long-term relationship. We control execution:

@@ -418,8 +418,8 @@ export function ForLenders() {
           <div className="max-w-3xl mx-auto flex items-start gap-3">
             <ShieldCheck className="h-5 w-5 text-accent-deep flex-shrink-0 mt-0.5" strokeWidth={1.9} />
             <p className="text-[13px] text-ink-mute leading-relaxed">
-              Real estate services by Resolve, delivered through HomeLife G1
-              Realty Inc., Brokerage. This page is general information about how
+              Real estate services provided by Taran Aujla, Salesperson, through
+              HomeLife G1 Realty Inc., Brokerage. RESOLVE&trade; is a trademark of Taran Aujla. This page is general information about how
               we work. It is not legal advice and does not describe what any
               lender is required to do on a particular file. No outcome is
               guaranteed.

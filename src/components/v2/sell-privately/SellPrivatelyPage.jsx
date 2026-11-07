@@ -519,8 +519,8 @@ export function SellPrivatelyPage() {
               </a>
             </div>
             <p className="mt-10 text-[12px] leading-relaxed text-stone/55">
-              Real estate services by Resolve, delivered through HomeLife G1 Realty Inc., Brokerage.
-              Independently Owned &amp; Operated.. A private-sale offer is not
+              Real estate services provided by Taran Aujla, Salesperson, through HomeLife G1 Realty Inc., Brokerage.
+              Independently Owned &amp; Operated. RESOLVE&trade; is a trademark of Taran Aujla. A private-sale offer is not
               guaranteed and depends on the property and a buyer&rsquo;s own due diligence.
             </p>
           </div>

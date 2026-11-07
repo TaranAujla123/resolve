@@ -110,8 +110,9 @@ export function InvestorAccessPage() {
 
           <p className="mt-10 text-[12px] leading-relaxed text-stone/45 max-w-2xl">
             The Investment Desk is a private workspace, shared by invitation.
-            Real estate services by Resolve, delivered through HomeLife G1
-            Realty Inc., Brokerage. Independently Owned &amp; Operated.
+            Real estate services provided by Taran Aujla, Salesperson, through
+            HomeLife G1 Realty Inc., Brokerage. Independently Owned &amp;
+            Operated. RESOLVE&trade; is a trademark of Taran Aujla.
           </p>
         </div>
       </section>

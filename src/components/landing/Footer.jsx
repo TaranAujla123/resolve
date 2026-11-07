@@ -12,10 +12,10 @@ export function Footer() {
           <div className="lg:col-span-5">
             <Wordmark tone="invert" />
             <p className="mt-5 text-[14.5px] leading-relaxed text-white/70 max-w-md">
-              Real estate services by Resolve are delivered through HomeLife G1
-              Realty Inc., Brokerage. Resolve is not itself a brokerage and does
-              not itself trade in real estate. All real estate trades are made
-              through HomeLife G1 Realty Inc., Brokerage.
+              Real estate services are provided by Taran Aujla, Salesperson,
+              through HomeLife G1 Realty Inc., Brokerage. RESOLVE&trade; is a trademark of Taran Aujla.
+              Resolve is not a brokerage and does not itself trade in real
+              estate.
             </p>
           </div>
 
@@ -86,7 +86,7 @@ export function Footer() {
               written representation agreement and are conducted under TRESA.
             </p>
             <p className="lg:col-span-4 text-[12.5px] text-white/55 lg:text-right">
-              &copy; {new Date().getFullYear()} Resolve. HomeLife G1 Realty Inc., Brokerage.
+              &copy; {new Date().getFullYear()} Resolve. RESOLVE&trade; is a trademark of Taran Aujla.
             </p>
           </div>
           {import.meta.env.VITE_GA_MEASUREMENT_ID ||

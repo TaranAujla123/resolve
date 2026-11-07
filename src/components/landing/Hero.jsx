@@ -108,12 +108,12 @@ export function Hero() {
           custom={2}
           className="mt-6 sm:mt-7 max-w-3xl text-[12.5px] text-ink-mute leading-relaxed"
         >
-          Real estate services by Resolve, delivered through{' '}
+          Real estate services provided by Taran Aujla, Salesperson, through{' '}
           <span className="font-semibold text-ink-soft">
             HomeLife G1 Realty Inc., Brokerage
           </span>
-          . Independently Owned &amp; Operated. &ldquo;Resolve&rdquo; is a name
-          used in connection with these services and is not itself a brokerage.
+          . Independently Owned &amp; Operated. RESOLVE&trade; is a trademark of Taran Aujla. Resolve is not
+          a brokerage.
         </motion.p>
         <motion.div
           initial="hidden"

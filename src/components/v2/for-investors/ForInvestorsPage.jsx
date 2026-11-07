@@ -101,7 +101,7 @@ export function ForInvestorsPage() {
             </Link>
             <a href="tel:+13656457332" className="inline-flex items-center gap-2 border-2 border-bronze text-bronze hover:bg-bronze hover:text-white font-semibold py-4 px-8 rounded-[8px] uppercase tracking-[0.10em] text-[13px] transition-all">(365) 645-7332</a>
           </div>
-          <p className="mt-9 text-[12px] text-stone/60 leading-relaxed max-w-2xl mx-auto">Resolve · Taran Aujla, Salesperson · HomeLife G1 Realty Inc., Brokerage · Independently Owned &amp; Operated · RECO Reg. No. 6024721</p>
+          <p className="mt-9 text-[12px] text-stone/60 leading-relaxed max-w-2xl mx-auto">Taran Aujla, Salesperson · HomeLife G1 Realty Inc., Brokerage · Independently Owned &amp; Operated · RECO Reg. No. 6024721 · RESOLVE&trade; is a trademark of Taran Aujla.</p>
         </div>
       </section>
     </>
