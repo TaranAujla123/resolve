@@ -10,7 +10,6 @@ import {
   Gavel,
   Lock,
   KeyRound,
-  DoorOpen,
   Phone,
 } from 'lucide-react'
 import { Input, Textarea, Select, Label } from '@/components/ui/Field'
@@ -122,12 +121,6 @@ const COMMITMENTS = [
     Icon: KeyRound,
     title: 'Access for your appraiser',
     body: 'When you ask, your appraiser sees the property.',
-  },
-  {
-    Icon: DoorOpen,
-    title: 'A clean exit',
-    body:
-      'If the lender takes possession, my listing comes down. I don’t compete with the lender’s own sale.',
   },
 ]
 
