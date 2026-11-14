@@ -499,6 +499,7 @@ function CoordinatedSaleRoutePage() {
         title="Coordinated Sale · When the Sale May Not Cover the Mortgage · Ontario · Resolve"
         description="When the realistic price may not cover everything owed, Resolve runs a coordinated sale: the homeowner, the lender and both lawyers on the same numbers and timetable. GTA, Durham, Hamilton, Kitchener and Waterloo."
         canonical={`${SITE_URL}/coordinated-sale/`}
+        jsonLd={[...SITE_JSONLD, faqPageLd('coordinated-sale')]}
       />
       <CoordinatedSaleBody />
     </>
@@ -562,7 +563,7 @@ function SellersRoutePage() {
         title="Discreet Seller Representation for Complex Ontario Sales · Resolve"
         description="Boutique seller representation for Ontario homeowners: mortgage arrears, power of sale, financial pressure, estate and time-sensitive sales, and high-value or complex homes. Equity-led and document-first."
         canonical={`${SITE_URL}/sellers/`}
-        jsonLd={SITE_JSONLD}
+        jsonLd={[...SITE_JSONLD, faqPageLd('sellers')]}
       />
       <V2SellersPage />
     </>
@@ -590,7 +591,7 @@ function WorkingWithLendersRoutePage() {
         title="Working With Lenders · Owner-Led Sales Before Enforcement · Resolve"
         description="How Resolve works alongside lenders and their counsel when a home is sold by its owners during enforcement. The lender keeps every right; the owners cooperate; every offer is sent the day it arrives."
         canonical={`${SITE_URL}/working-with-lenders/`}
-        jsonLd={SITE_JSONLD}
+        jsonLd={[...SITE_JSONLD, faqPageLd('working-with-lenders')]}
       />
       <V2WorkingWithLendersPage />
     </>

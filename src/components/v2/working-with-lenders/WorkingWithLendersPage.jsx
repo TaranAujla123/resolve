@@ -15,6 +15,7 @@ import {
 import { Input, Textarea, Select, Label } from '@/components/ui/Field'
 import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
 import { Eyebrow } from '@/components/brand/Eyebrow'
+import { FaqSection } from '@/components/brand/FaqSection'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { ClosingCta } from '../home/ClosingCta'
 
@@ -459,6 +460,8 @@ export function WorkingWithLendersPage() {
       </section>
 
       <ListWithUs />
+
+      <FaqSection slug="working-with-lenders" heading="Selling during enforcement, answered." />
 
       {/* Who you'll be dealing with */}
       <section data-surface="white" className="bg-white section-y">

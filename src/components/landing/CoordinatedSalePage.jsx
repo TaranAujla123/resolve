@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { CoordinatedSale } from './CoordinatedSale'
+import { FaqSection } from '@/components/brand/FaqSection'
 
 /**
  * /coordinated-sale — the shareable link.
@@ -45,6 +46,7 @@ export function CoordinatedSalePage() {
         </div>
       </section>
       <CoordinatedSale ctaHref="/contact" eyebrow="How it works" />
+      <FaqSection slug="coordinated-sale" heading="A sale that may not cover what is owed, answered." />
     </>
   )
 }

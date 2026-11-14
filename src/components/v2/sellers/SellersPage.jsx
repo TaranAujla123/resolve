@@ -4,6 +4,7 @@ import { Situations } from '../home/Situations'
 import { WhyResolve } from '../home/WhyResolve'
 import { HowWeHelp } from '../home/HowWeHelp'
 import { ClosingCta } from '../home/ClosingCta'
+import { FaqSection } from '@/components/brand/FaqSection'
 import { CoordinatedSale } from '@/components/landing/CoordinatedSale'
 
 /**
@@ -57,6 +58,7 @@ export function SellersPage() {
       <WhyResolve />
       <HowWeHelp />
       <CoordinatedSale ctaHref="/contact" />
+      <FaqSection slug="sellers" heading="Selling with Resolve, answered." />
       <GuideBand />
       <ClosingCta />
     </>

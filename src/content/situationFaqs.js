@@ -153,4 +153,71 @@ export const SITUATION_FAQS = {
       a: 'Yes. Nothing is made public, and the conversation stays confidential.',
     },
   ],
+
+  // 14 Nov 2026 (Taran approved): AEO sets for the three non-situation pages.
+  // Rendered by FaqSection on each page + FAQPage JSON-LD from App.jsx.
+  'working-with-lenders': [
+    {
+      q: 'Can a homeowner sell while the lender is enforcing the mortgage?',
+      a: 'Usually, yes. Until the lender takes possession or completes its own sale, the owners can list the home on MLS, accept an offer and close. The sale has to pay out the mortgage, or the lender has to consent in writing to a discharge on payment of the net proceeds.',
+    },
+    {
+      q: 'Does the lender have to agree to the sale?',
+      a: 'Only if the sale will not pay the mortgage in full. Then the lender decides whether to consent to a discharge on the net proceeds, and that decision is entirely the lender’s. A listing does not stop the lender’s enforcement steps.',
+    },
+    {
+      q: 'What does the lender gain from a sale by the owners?',
+      a: 'The home stays lived in, insured and maintained, with no possession, security or management costs before the sale, and buyers see an ordinary listing rather than a power of sale. The lender can compare a real offer against its own alternative before it decides.',
+    },
+    {
+      q: 'Will the lender see the offers?',
+      a: 'Yes, with the owners’ written authority. Each offer goes to the lender’s counsel the day it arrives, with its terms in full. The buyer’s personal details are withheld until there is a deal to close.',
+    },
+    {
+      q: 'What happens to any amount still owing after the sale?',
+      a: 'It remains owing. A discharge of the mortgage is not a release of the debt, and any judgment stays in place for the balance. A sale at full market value keeps that balance as small as possible.',
+    },
+    {
+      q: 'Does Resolve also list properties for lenders?',
+      a: 'Yes. Owners can list with Taran Aujla before possession, and lenders can list with him after possession, under their power of sale. He never acts for both on the same property.',
+    },
+  ],
+
+  'coordinated-sale': [
+    {
+      q: 'Can I sell my house if I owe more than it is worth?',
+      a: 'Yes, but the lender has to agree. When the sale price will not pay the mortgage in full, the lender must consent to discharge its mortgage on payment of the net proceeds. Any amount left owing normally remains a debt unless the lender agrees otherwise.',
+    },
+    {
+      q: 'Will my lender accept less than what I owe?',
+      a: 'Sometimes. It is the lender’s decision. A lender weighs a fair market offer against the time and cost of selling the home itself. Nothing guarantees its consent, which is why evidence of value and a well-run listing matter.',
+    },
+    {
+      q: 'Do I need the lender’s permission to list my home?',
+      a: 'No. You can list your own home without permission. The lender’s agreement matters when an offer comes in, because a sale that does not pay the mortgage in full cannot close without it.',
+    },
+    {
+      q: 'What happens to the shortfall after the sale?',
+      a: 'It normally remains a debt. A sale at full market value keeps it as small as possible. Questions about settling or repaying the balance belong with your own lawyer or financial advisor.',
+    },
+  ],
+
+  sellers: [
+    {
+      q: 'What does it cost to sell with Resolve?',
+      a: 'There is nothing to pay upfront. The commission is paid from the sale proceeds on closing, as set out in the listing agreement you sign.',
+    },
+    {
+      q: 'How is the list price set?',
+      a: 'From the recent sales a buyer would compare your home with, and on files where a lender is involved, from an independent appraisal as well. The aim is a price the market will pay, agreed with you before the listing goes live.',
+    },
+    {
+      q: 'Do I need a lawyer to sell my home?',
+      a: 'Yes. Every seller in Ontario needs a real estate lawyer to close the sale. Resolve works alongside your lawyer and does not give legal advice.',
+    },
+    {
+      q: 'Is my situation kept private?',
+      a: 'Yes. Details of your finances and your lender stay between you, your lawyer and, where you authorize it, your lender. The listing describes the home, never your situation.',
+    },
+  ],
 }
