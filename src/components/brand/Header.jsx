@@ -20,11 +20,12 @@ import { Button } from './Button'
  * BrokerageStrip sits above the header in flow and scrolls away.
  */
 const NAV_ITEMS = [
+  { to: '/about/', label: 'About' },
+  { to: '/why-us/', label: 'Why Us' },
   { to: '/sellers/', label: 'For Sellers' },
   { to: '/buyers/', label: 'For Buyers' },
-  { to: '/why-us/', label: 'Why Us' },
+  { to: '/for-agents/', label: 'For Agents' },
   { to: '/working-with-lenders/', label: 'Working With Lenders' },
-  { to: '/about/', label: 'About' },
 ]
 
 export function Header() {
