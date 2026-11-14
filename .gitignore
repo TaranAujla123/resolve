@@ -105,3 +105,9 @@ Thumbs.db
 
 # private business records (trademark receipts, PREC docs)
 BUSINESS/
+
+# Private admin, legal and business documents (removed from the public repo 14 Nov 2026).
+ADMIN STUFF/
+Real Estate Wholesaling/
+Trust Agreement*.doc
+*.bak-*
