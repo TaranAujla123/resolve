@@ -443,7 +443,7 @@ export function WorkingWithLendersPage() {
           <div className="max-w-3xl">
             <Eyebrow>What You Can Expect From Me</Eyebrow>
             <h2 className="mt-5 font-display font-medium text-navy text-display-lg">
-              Plain dealing,{' '}
+              A cooperative sale,{' '}
               <span className="italic text-bronze">from the first contact.</span>
             </h2>
           </div>
