@@ -23,12 +23,15 @@ import { Phone, MessageSquare, ArrowRight } from 'lucide-react'
  *   - Navy field with bronze accents
  *   - "Inquire" button is bronze-fill (primary) so it reads as the
  *     hero action; Call + Text are quieter outlined chips
- *   - Inquire links to /contact (V2 has no homepage inline form)
+ *   - Inquire links to /contact (V2 has no homepage inline form), except
+ *     on /working-with-lenders, where it jumps to the #list form (13 Nov)
  */
 export function MobileStickyCta() {
   const [visible, setVisible] = useState(false)
   const location = useLocation()
   const onHome = location.pathname === '/'
+  // On /working-with-lenders, Inquire jumps to the page's own listing form.
+  const onLenders = location.pathname.startsWith('/working-with-lenders')
   // Routes where the bar is suppressed entirely.
   const SUPPRESS = ['/contact', '/thanks']
   const suppressed = SUPPRESS.some(
@@ -102,19 +105,35 @@ export function MobileStickyCta() {
               Call
             </span>
           </a>
-          <Link
-            to="/contact/"
-            className="
-              flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
-              rounded-[12px] bg-bronze text-white
-              hover:bg-bronze-deep active:bg-bronze-deep transition-colors
-            "
-          >
-            <ArrowRight className="h-4 w-4" strokeWidth={2} />
-            <span className="font-sans font-semibold text-[11.5px] tracking-wide">
-              Inquire
-            </span>
-          </Link>
+          {onLenders ? (
+            <a
+              href="#list"
+              className="
+                flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
+                rounded-[12px] bg-bronze text-white
+                hover:bg-bronze-deep active:bg-bronze-deep transition-colors
+              "
+            >
+              <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              <span className="font-sans font-semibold text-[11.5px] tracking-wide">
+                Inquire
+              </span>
+            </a>
+          ) : (
+            <Link
+              to="/contact/"
+              className="
+                flex flex-col items-center justify-center gap-1 py-2.5 min-h-[48px]
+                rounded-[12px] bg-bronze text-white
+                hover:bg-bronze-deep active:bg-bronze-deep transition-colors
+              "
+            >
+              <ArrowRight className="h-4 w-4" strokeWidth={2} />
+              <span className="font-sans font-semibold text-[11.5px] tracking-wide">
+                Inquire
+              </span>
+            </Link>
+          )}
         </div>
       </div>
     </div>

@@ -43,6 +43,7 @@ const ROUTES = [
   '/time-sensitive-sales',
   '/financial-pressure',
   '/for-agents',
+  '/working-with-lenders',
   '/property-management',
   '/coordinated-sale',
   '/privacy',

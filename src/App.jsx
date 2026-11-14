@@ -12,6 +12,7 @@ import { BrokerageStrip } from '@/components/landing/BrokerageStrip'
 import { HomePage as V2HomePage } from '@/components/v2/home/HomePage'
 import { SellersPage as V2SellersPage } from '@/components/v2/sellers/SellersPage'
 import { WhyUsPage as V2WhyUsPage } from '@/components/v2/whyus/WhyUsPage'
+import { WorkingWithLendersPage as V2WorkingWithLendersPage } from '@/components/v2/working-with-lenders/WorkingWithLendersPage'
 import { ContactPage } from '@/components/v2/contact/ContactPage'
 import { AboutPage } from '@/components/v2/about/AboutPage'
 import { GetHelpPage } from '@/components/v2/get-help/GetHelpPage'
@@ -582,6 +583,20 @@ function WhyUsRoutePage() {
   )
 }
 
+function WorkingWithLendersRoutePage() {
+  return (
+    <>
+      <Seo
+        title="Working With Lenders · Owner-Led Sales Before Enforcement · Resolve"
+        description="How Resolve works alongside lenders and their counsel when a home is sold by its owners during enforcement. The lender keeps every right; the owners cooperate; every offer is sent the day it arrives."
+        canonical={`${SITE_URL}/working-with-lenders/`}
+        jsonLd={SITE_JSONLD}
+      />
+      <V2WorkingWithLendersPage />
+    </>
+  )
+}
+
 function AboutRoutePage() {
   return (
     <>
@@ -936,7 +951,9 @@ export default function App() {
             <Route path="/property-management" element={<PropertyManagementPage />} />
             <Route path="/property-management/" element={<PropertyManagementPage />} />
             {/* /for-lenders UNPUBLISHED 16 Oct 2026 (Taran): it mapped out the lender strategy for other agents. ForLendersPage and ForLenders.jsx are kept, not deleted, until a general lender angle is written. */}
-            <Route path="/for-lenders" element={<Navigate to="/" replace />} />
+            <Route path="/for-lenders" element={<Navigate to="/working-with-lenders/" replace />} />
+            {/* 13 Nov 2026 (Taran): general lender angle, information not process. */}
+            <Route path="/working-with-lenders" element={<WorkingWithLendersRoutePage />} />
             <Route path="/coordinated-sale" element={<CoordinatedSaleRoutePage />} />
             {/* /multiplex retired 6 Oct 2026 (multiplex work lives with
                 PlexEdge). Redirect keeps inbound links landing somewhere. */}

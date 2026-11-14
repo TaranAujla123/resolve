@@ -23,6 +23,7 @@ const NAV_ITEMS = [
   { to: '/sellers/', label: 'For Sellers' },
   { to: '/buyers/', label: 'For Buyers' },
   { to: '/why-us/', label: 'Why Us' },
+  { to: '/working-with-lenders/', label: 'Working With Lenders' },
   { to: '/about/', label: 'About' },
 ]
 
