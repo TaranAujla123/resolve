@@ -357,7 +357,7 @@ function ListWithUs() {
             disabled={submitting}
             className="mt-6 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-[12px] bg-navy px-6 py-3 text-[16px] font-semibold text-stone hover:bg-bronze hover:text-navy transition-colors disabled:opacity-60"
           >
-            {submitting ? 'Sending…' : (<>Send to Taran <Send className="h-4 w-4" /></>)}
+            {submitting ? 'Sending…' : 'Submit'}
           </button>
         </form>
       </div>
