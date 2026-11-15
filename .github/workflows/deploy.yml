@@ -67,3 +67,27 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+      # IndexNow: tell Bing (and other IndexNow engines) that the sitemap
+      # pages changed, so they recrawl now instead of on their own schedule.
+      # The key is public by design; its file sits at the site root.
+      # A failure here never fails the deploy.
+      - name: Checkout sitemap for IndexNow
+        uses: actions/checkout@v4
+        with:
+          sparse-checkout: public/sitemap.xml
+          sparse-checkout-cone-mode: false
+
+      - name: Ping IndexNow
+        continue-on-error: true
+        env:
+          INDEXNOW_KEY: 58fa927c26352a8955b609e33de79d19
+          SITE_HOST: www.resolverealestate.ca
+        run: |
+          urls=$(grep -o '<loc>[^<]*</loc>' public/sitemap.xml | sed -e 's#<loc>##' -e 's#</loc>##' | jq -R . | jq -s -c .)
+          body=$(jq -n -c --arg host "$SITE_HOST" --arg key "$INDEXNOW_KEY" \
+            --arg loc "https://$SITE_HOST/$INDEXNOW_KEY.txt" --argjson urls "$urls" \
+            '{host:$host,key:$key,keyLocation:$loc,urlList:$urls}')
+          code=$(curl -s -o /dev/null -w '%{http_code}' -X POST 'https://api.indexnow.org/indexnow' \
+            -H 'Content-Type: application/json; charset=utf-8' -d "$body")
+          echo "IndexNow response: $code ($(echo "$urls" | jq length) URLs)"
