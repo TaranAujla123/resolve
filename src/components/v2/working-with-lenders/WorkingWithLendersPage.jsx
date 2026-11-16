@@ -67,6 +67,11 @@ const PATHS = [
     'Costs of possession, management and sale come out of the proceeds first.',
   ],
   [
+    'Interest',
+    'Stops when the sale closes.',
+    'Keeps running through the court steps, possession, listing and sale, added to a balance the sale may not cover.',
+  ],
+  [
     'How buyers see it',
     'An ordinary listing on MLS.',
     'A power of sale listing, which often draws buyers looking for a discount.',
@@ -84,7 +89,7 @@ const PATHS = [
   [
     'The lender’s control',
     'If the sale falls short, the lender decides whether to consent, with the offer and the evidence in front of it.',
-    'The lender runs the sale.',
+    'The lender runs the sale and answers for it: it must take reasonable care to get a fair market price, and it carries a vacant property it never planned to own until a buyer closes.',
   ],
   ['Any balance', 'Remains owing.', 'Remains owing.'],
 ]
