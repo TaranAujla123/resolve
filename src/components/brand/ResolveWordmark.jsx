@@ -2,14 +2,14 @@ import React from 'react'
 import wordmarkNavy from '/logo-wordmark-navy.png?url'
 import wordmarkLight from '/logo-wordmark-light.png?url'
 import lockupNavy from '/logo-lockup-navy-realestate.png?url'
-import logoLight from '/logo-v3-light.png?url'
+import logoLight from '/resolve-lockup-light.png?url'
 
 /**
  * ResolveWordmark — the canonical Resolve brand mark (V3.5).
  *
  * Pre-baked PNG lockups: Poppins "re" (bronze) + the interpunct dot +
- * Newsreader italic "solve". The full lockup also carries the "SELLER
- * REPRESENTATION" descriptor.
+ * Newsreader italic "solve". The full lockup also carries the "REAL
+ * ESTATE" descriptor (the old "SELLER REPRESENTATION" mark is retired).
  *
  * V3.5 surfaces are navy (nav + footer), so the primary assets are the
  * bronze-on-navy renders:
@@ -17,8 +17,8 @@ import logoLight from '/logo-v3-light.png?url'
  *     "solve". No descriptor (it garbles at nav size).
  *   - variant="dark" (default full lockup) → full lockup with descriptor
  *     for the navy footer.
- *   - variant="light" → light-surface full lockup, kept for any light
- *     placement (not currently mounted).
+ *   - variant="light" → light-surface full lockup (REAL ESTATE descriptor,
+ *     navy "solve"), kept for any light placement (not currently mounted).
  *
  * Height is set by the caller via a Tailwind class in `className`
  * (e.g. "h-7"); width auto-scales. A default applies if none is given.
