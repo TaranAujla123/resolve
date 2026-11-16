@@ -91,7 +91,11 @@ const PATHS = [
     'If the sale falls short, the lender decides whether to consent, with the offer and the evidence in front of it.',
     'The lender runs the sale and answers for it: it must take reasonable care to get a fair market price, and it carries a vacant property it never planned to own until a buyer closes.',
   ],
-  ['Any balance', 'Remains owing.', 'Remains owing.'],
+  [
+    'Any balance',
+    'Remains owing. The owners have cooperated with the sale and can agree on a payment arrangement with the lender.',
+    'Remains owing, to be recovered through the judgment from borrowers the lender has been in litigation with.',
+  ],
 ]
 
 const COMMITMENTS = [
