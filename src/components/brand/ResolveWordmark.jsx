@@ -1,7 +1,7 @@
 import React from 'react'
 import wordmarkNavy from '/logo-wordmark-navy.png?url'
 import wordmarkLight from '/logo-wordmark-light.png?url'
-import lockupNavy from '/logo-lockup-navy.png?url'
+import lockupNavy from '/logo-lockup-navy-realestate.png?url'
 import logoLight from '/logo-v3-light.png?url'
 
 /**
