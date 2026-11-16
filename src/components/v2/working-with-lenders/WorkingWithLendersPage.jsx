@@ -38,7 +38,7 @@ const KEEPS = [
     Icon: Gavel,
     title: 'Its decision',
     body:
-      'No sale closes without the lender’s written consent. Whether to consent to a discharge on the net proceeds is entirely the lender’s call.',
+      'If a sale won’t pay the mortgage in full, it needs the lender’s written consent to a discharge on the net proceeds. The decision is the lender’s, made on real numbers: the offer, the evidence behind the price, and the cost and time of its own sale.',
   },
   {
     Icon: Scale,
@@ -83,7 +83,7 @@ const PATHS = [
   ],
   [
     'The lender’s control',
-    'The lender decides whether to consent to the sale.',
+    'If the sale falls short, the lender decides whether to consent, with the offer and the evidence in front of it.',
     'The lender runs the sale.',
   ],
   ['Any balance', 'Remains owing.', 'Remains owing.'],
@@ -405,7 +405,7 @@ export function WorkingWithLendersPage() {
             <Eyebrow>What the Lender Keeps</Eyebrow>
             <h2 className="mt-5 font-display font-medium text-navy text-display-lg">
               Every right,{' '}
-              <span className="italic text-bronze">and the final say.</span>
+              <span className="italic text-bronze">and the full picture.</span>
             </h2>
           </div>
           <ul className="mt-12 grid gap-x-10 gap-y-10 grid-cols-1 md:grid-cols-3">

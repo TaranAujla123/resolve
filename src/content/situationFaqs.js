@@ -163,7 +163,7 @@ export const SITUATION_FAQS = {
     },
     {
       q: 'Does the lender have to agree to the sale?',
-      a: 'Only if the sale will not pay the mortgage in full. Then the lender decides whether to consent to a discharge on the net proceeds, and that decision is entirely the lender’s. A listing does not stop the lender’s enforcement steps.',
+      a: 'Only if the sale will not pay the mortgage in full. If it will, the mortgage is paid out on closing like any other sale. If it won’t, the lender decides whether to consent to a discharge on the net proceeds, and I put the full picture in front of it: the offer, the evidence behind the price, and how it compares with the cost and time of the lender’s own sale. A listing does not stop the lender’s enforcement steps.',
     },
     {
       q: 'What does the lender gain from a sale by the owners?',
