@@ -59,7 +59,7 @@ const PATHS = [
   [
     'The property',
     'The owners stay in it, keep it insured, heated and maintained, and make it available for showings.',
-    'The lender takes possession, then secures, insures and maintains a vacant home.',
+    'The lender takes possession, usually after a lengthy and costly legal proceeding, then secures, insures and maintains a vacant home.',
   ],
   [
     'Costs before the sale',
