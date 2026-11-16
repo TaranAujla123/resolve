@@ -181,14 +181,14 @@ function TwoPaths() {
           </div>
 
           {/* Lender sale: muted */}
-          <div className="relative rounded-[18px] border border-divider bg-white/60 p-7 sm:p-9">
+          <div className="relative rounded-[18px] border border-divider bg-white p-7 sm:p-9">
             <span className="absolute -top-3 left-7 inline-flex items-center rounded-full border border-divider bg-white px-3.5 py-1 text-[12px] font-semibold uppercase tracking-[0.16em] text-navy-mute">
               After possession
             </span>
             <h3 className="font-display font-medium text-[1.45rem] leading-snug text-navy-soft">
               The lender’s own sale
             </h3>
-            <p className="mt-1.5 text-[16px] text-navy-mute">
+            <p className="mt-1.5 text-[16px] text-navy-soft">
               The lender carries a vacant home until it sells.
             </p>
             <dl className="mt-7 divide-y divide-divider">
@@ -198,10 +198,10 @@ function TwoPaths() {
                     <Minus className="h-3.5 w-3.5" strokeWidth={2.2} />
                   </span>
                   <div>
-                    <dt className="text-[13px] font-semibold uppercase tracking-[0.14em] text-navy-mute">
+                    <dt className="text-[13px] font-semibold uppercase tracking-[0.14em] text-navy-soft">
                       {label}
                     </dt>
-                    <dd className="mt-1 text-[16px] leading-relaxed text-navy-mute">{lender}</dd>
+                    <dd className="mt-1 text-[16px] leading-relaxed text-navy-soft">{lender}</dd>
                   </div>
                 </div>
               ))}

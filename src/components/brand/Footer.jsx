@@ -51,7 +51,7 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 sm:gap-12 md:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr_1.1fr]">
           {/* Brand + brokerage attribution (compliance) */}
           <div>
-            <ResolveWordmark variant="dark" tm className="h-12" />
+            <ResolveWordmark variant="dark" tm className="h-16" />
             <p className="mt-6 text-[14px] leading-relaxed text-stone-soft">
               Real estate services delivered through{' '}
               <span className="font-semibold text-stone">

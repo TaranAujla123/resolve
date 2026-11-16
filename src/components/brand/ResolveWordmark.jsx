@@ -45,7 +45,7 @@ export function ResolveWordmark({
   const img = (
     <img
       src={src}
-      alt="Resolve · Seller Representation"
+      alt="Resolve Real Estate"
       className={`block w-auto ${hasHeight ? '' : 'h-10'} ${className}`.trim()}
       draggable={false}
       decoding="async"
