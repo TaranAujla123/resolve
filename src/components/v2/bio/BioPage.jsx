@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FileSearch, Globe, FileCheck, Handshake, Users, CalendarCheck, Phone, Mail, Linkedin } from 'lucide-react'
+import { FileSearch, FileCheck, MessageSquare, Handshake, Users, CalendarCheck, Phone, Mail, Linkedin } from 'lucide-react'
 import { Eyebrow } from '@/components/brand/Eyebrow'
 import { HeroBackdrop } from '@/components/brand/HeroBackdrop'
 import { ResolveWordmark } from '@/components/brand/ResolveWordmark'
@@ -21,32 +21,32 @@ import { Button } from '@/components/brand/Button'
 const PRACTICE = [
   {
     Icon: FileSearch,
-    title: 'Price',
-    body: 'Set from sold comparables, current supply and an independent appraisal.',
-  },
-  {
-    Icon: Globe,
-    title: 'Exposure',
-    body: 'Every listing goes on MLS, open to every buyer and every agent.',
+    title: 'Priced on evidence',
+    body: 'Every price comes from sold comparables, current supply and an independent appraisal. Ask for the numbers behind it and I’ll send them.',
   },
   {
     Icon: FileCheck,
-    title: 'Paperwork',
-    body: 'The schedules are in the listing from day one, so offers come in on known terms.',
+    title: 'A complete file',
+    body: 'Before a listing goes live on MLS, the property details are checked against the records, and the photos, tour, schedules and offer instructions are all in place. You know the terms before you write.',
+  },
+  {
+    Icon: MessageSquare,
+    title: 'Answers from the source',
+    body: 'When a buyer has a question, I get the answer from the source: the sellers in writing, a contractor’s quote, the record itself. I don’t guess.',
   },
   {
     Icon: CalendarCheck,
-    title: 'Showings',
-    body: 'I book and confirm each one myself, daily 9 to 8, with an hour’s notice.',
+    title: 'Showings and follow-up',
+    body: 'I book and confirm every showing myself, daily 9 to 8 with an hour’s notice, and I follow up with the agent afterwards.',
   },
   {
     Icon: Handshake,
     title: 'Offers and negotiation',
-    body: 'Every offer goes to my sellers. Every agent gets a clear answer, and negotiation stays direct, civil and in writing.',
+    body: 'Every offer is reviewed the day it arrives. I look for terms both sides can live with, and I keep the negotiation direct, civil and in writing.',
   },
   {
     Icon: Users,
-    title: 'Coordination',
+    title: 'Through to closing',
     body: 'From acceptance to closing, I keep the buyer’s agent, both lawyers and everyone else the deal depends on working to the same dates.',
   },
 ]
