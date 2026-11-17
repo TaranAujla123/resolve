@@ -88,7 +88,8 @@ export function BioPage() {
                 Taran Aujla
               </h1>
               <p className="mt-5 max-w-xl text-[17px] leading-relaxed text-stone/80">
-                Former real estate lawyer, now structuring deals properly from the start.
+                I put deals together. When a sale gets complicated, I find the way through and keep
+                everyone at the table.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-3">
                 <Button as="a" href="tel:+13656457332" variant="primary" size="md">
