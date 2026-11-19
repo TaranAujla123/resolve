@@ -11,6 +11,7 @@ import {
   Lock,
   KeyRound,
   Phone,
+  Handshake,
 } from 'lucide-react'
 import { Input, Textarea, Select, Label } from '@/components/ui/Field'
 import { genEventId, trackLead, sendLeadToCapi } from '@/lib/metaPixel'
@@ -73,7 +74,7 @@ const PATHS = [
   ],
   [
     'How buyers see it',
-    'An ordinary listing on MLS.',
+    'An ordinary listing on MLS, shown by owners who live in it and cooperate with every showing.',
     'A power of sale listing, which often draws buyers looking for a discount.',
   ],
   [
@@ -99,6 +100,12 @@ const PATHS = [
 ]
 
 const COMMITMENTS = [
+  {
+    Icon: Handshake,
+    title: 'The owners’ full cooperation',
+    body:
+      'Cooperation is a condition of my listing. The owners keep the home in showing condition, allow showings, answer within a business day and consider every offer in good faith. If they stop cooperating, I can end the listing.',
+  },
   {
     Icon: FileSignature,
     title: 'The owners’ written authority',
@@ -388,7 +395,8 @@ export function WorkingWithLendersPage() {
             When a mortgage is in default, the owners can still sell. I act for
             them, and I keep the lender and its lawyers informed from the start,
             so a fair offer can reach the lender while the home is still lived
-            in, cared for and easy to show.
+            in, cared for and easy to show. Every owner I act for agrees, as a
+            condition of my listing, to cooperate fully with the sale.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <a
@@ -451,8 +459,15 @@ export function WorkingWithLendersPage() {
             </h2>
           </div>
           <ul className="mt-12 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {COMMITMENTS.map(({ Icon, title, body }) => (
-              <li key={title} className="rounded-[14px] border border-divider bg-stone p-6">
+            {COMMITMENTS.map(({ Icon, title, body }, i) => (
+              <li
+                key={title}
+                className={
+                  i === 0
+                    ? 'rounded-[14px] border border-bronze/55 bg-stone p-6 md:col-span-2 lg:col-span-3'
+                    : 'rounded-[14px] border border-divider bg-stone p-6'
+                }
+              >
                 <div className="flex items-start gap-3.5">
                   <span className="inline-flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full border border-bronze/55 text-bronze">
                     <Icon className="h-[18px] w-[18px]" strokeWidth={1.6} />
