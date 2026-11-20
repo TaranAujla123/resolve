@@ -104,7 +104,7 @@ const COMMITMENTS = [
     Icon: Handshake,
     title: 'The owners’ full cooperation',
     body:
-      'Cooperation is a condition of my listing. The owners keep the home in showing condition, allow showings, answer within a business day and consider every offer in good faith. If they stop cooperating, I can end the listing.',
+      'Cooperation is a condition of my listing. The owners keep the home in showing condition, allow showings, answer within a business day and consider every offer in good faith.',
   },
   {
     Icon: FileSignature,
@@ -116,7 +116,7 @@ const COMMITMENTS = [
     Icon: Scale,
     title: 'A price backed by evidence',
     body:
-      'The list price is supported by an independent appraisal and by the sales a buyer would look at, and I share that evidence with you.',
+      'The list price is supported by an independent appraisal and by the sales a buyer would look at, and I share that evidence with you. The owners have agreed to weigh your view on the price, and any pricing guideline you follow.',
   },
   {
     Icon: Send,
@@ -137,7 +137,7 @@ const COMMITMENTS = [
   {
     Icon: KeyRound,
     title: 'Access for your appraiser',
-    body: 'When you ask, your appraiser sees the property.',
+    body: 'When you ask, your appraiser sees the property within 48 hours, and I’ll walk them through the comparable sales.',
   },
 ]
 
