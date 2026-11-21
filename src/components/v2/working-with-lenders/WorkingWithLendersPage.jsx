@@ -69,7 +69,7 @@ const PATHS = [
   ],
   [
     'Interest',
-    'Stops when the sale closes.',
+    'The sale pays the debt down sooner, so interest stops on what the sale covers.',
     'Keeps running through the court steps, possession, listing and sale, added to a balance the sale may not cover.',
   ],
   [
