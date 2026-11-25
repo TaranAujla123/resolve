@@ -12,6 +12,7 @@
     '52540726499695': 'Seller H2: Notice of sale letter',
     '52540726577895': 'Seller H3: Bank served a claim (old, before 6 Nov)',
     '52542850787095': 'Seller H3: Bank served a claim',
+    '52547837449495': 'Seller H2: Notice of sale letter',
     '52541171825295': 'Buyer A: We find them for you',
     '52541171825095': 'Buyer B: Priced to sell',
     '52541171824695': 'Buyer C: Tracked in one place',
